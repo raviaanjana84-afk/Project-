@@ -224,3 +224,7 @@ footer p { font-size: 0.75rem; color: var(--text-muted); }
   nav ul { display: none; }
 }
 
+/* Better rendering for Hindi script */
+body:has(.lang-btn[data-lang="hi"].active) {
+  font-family: 'Noto Sans Devanagari', 'Outfit', sans-serif;
+}
