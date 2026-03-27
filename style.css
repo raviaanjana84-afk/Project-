@@ -228,3 +228,18 @@ footer p { font-size: 0.75rem; color: var(--text-muted); }
 body:has(.lang-btn[data-lang="hi"].active) {
   font-family: 'Noto Sans Devanagari', 'Outfit', sans-serif;
 }
+@media (max-width: 900px) {
+  nav ul { display: none; } /* Yeh navigation links ko hide kar deta hai */
+}
+.lang-toggle {
+  position: relative;
+  z-index: 101; /* Isse buttons hamesha upar rahenge */
+  margin-left: 20px;
+  display: flex !important; /* Force display */
+}
+
+.lang-btn {
+  cursor: pointer !important;
+  border: 1px solid var(--gold) !important;
+  background: rgba(201,169,110,0.1);
+}
