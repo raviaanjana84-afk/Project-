@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>राशिफल — Sanatan Gyan Kosh</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ राशिफल</span>
+            <h1>आज का राशिफल</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <main>
+        <div class="card">
+            <div id="rashiSelectView">
+                <p style="margin:0 0 12px;font-size:14px;color:var(--ink-soft);">अपनी राशि चुनें और रोज़ अपना व्यक्तिगत राशिफल देखें</p>
+                <select id="rashiSelect" class="select-input">
+                    <option value="">राशि चुनें...</option>
+                    <option value="aries">मेष</option>
+                    <option value="taurus">वृषभ</option>
+                    <option value="gemini">मिथुन</option>
+                    <option value="cancer">कर्क</option>
+                    <option value="leo">सिंह</option>
+                    <option value="virgo">कन्या</option>
+                    <option value="libra">तुला</option>
+                    <option value="scorpio">वृश्चिक</option>
+                    <option value="sagittarius">धनु</option>
+                    <option value="capricorn">मकर</option>
+                    <option value="aquarius">कुंभ</option>
+                    <option value="pisces">मीन</option>
+                </select>
+                <button class="btn-primary" id="rashiConfirmBtn">राशिफल देखें</button>
+            </div>
+            <div id="rashiDisplayView" style="display:none;">
+                <div class="rashi-header">
+                    <span class="rashi-badge" id="rashiName">—</span>
+                    <button class="link-btn" id="rashiChangeBtn">बदलें</button>
+                </div>
+                <p class="rashi-text" id="rashiText">लोड हो रहा है...</p>
+            </div>
+        </div>
+
+        <a href="index.html" class="btn-primary" style="text-align:center;display:block;text-decoration:none;">🏠 होम पेज पर जाएँ</a>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('darkToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            this.querySelector('i').classList.toggle('fa-moon');
+            this.querySelector('i').classList.toggle('fa-sun');
+        });
+
+        const rashiData = {
+            aries: { name: 'मेष', today: 'आज आपका दिन अच्छा रहेगा। नए कार्यों की शुरुआत करें।' },
+            taurus: { name: 'वृषभ', today: 'आज धन लाभ हो सकता है। पुराने कार्यों को पूरा करें।' },
+            gemini: { name: 'मिथुन', today: 'आज संचार के क्षेत्र में सफलता मिलेगी। नए लोगों से मिलें।' },
+            cancer: { name: 'कर्क', today: 'आज भावनात्मक रूप से मजबूत रहें। परिवार के साथ समय बिताएँ।' },
+            leo: { name: 'सिंह', today: 'आज नेतृत्व के गुण दिखेंगे। आपकी बात सुनी जाएगी।' },
+            virgo: { name: 'कन्या', today: 'आज स्वास्थ्य का ध्यान रखें। योग और ध्यान करें।' },
+            libra: { name: 'तुला', today: 'आज रिश्तों में मिठास आएगी। पार्टनर के साथ समय बिताएँ।' },
+            scorpio: { name: 'वृश्चिक', today: 'आज आपकी ताकत बढ़ेगी। किसी भी चुनौती का सामना करें।' },
+            sagittarius: { name: 'धनु', today: 'आज यात्रा के योग हैं। नई जगहों पर जाएँ।' },
+            capricorn: { name: 'मकर', today: 'आज करियर में अच्छी खबर मिल सकती है। मेहनत रंग लाएगी।' },
+            aquarius: { name: 'कुंभ', today: 'आज दोस्तों के साथ समय बिताएँ। नए विचार आएँगे।' },
+            pisces: { name: 'मीन', today: 'आज कला और रचनात्मकता में रुचि बढ़ेगी। अपने शौक पूरे करें।' }
+        };
+
+        const tabs = document.querySelectorAll('.rashi-tab');
+        let currentRashi = '';
+
+        document.getElementById('rashiConfirmBtn').addEventListener('click', function() {
+            const val = document.getElementById('rashiSelect').value;
+            if (!val) { alert('कृपया राशि चुनें'); return; }
+            currentRashi = val;
+            document.getElementById('rashiSelectView').style.display = 'none';
+            document.getElementById('rashiDisplayView').style.display = 'block';
+            document.getElementById('rashiName').textContent = rashiData[val].name;
+            document.getElementById('rashiText').textContent = rashiData[val].today;
+        });
+
+        document.getElementById('rashiChangeBtn').addEventListener('click', function() {
+            document.getElementById('rashiDisplayView').style.display = 'none';
+            document.getElementById('rashiSelectView').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
