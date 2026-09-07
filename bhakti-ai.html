@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>भक्ति AI — Sanatan Gyan Kosh</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        .chat-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 10px;
+            background: #f5f0eb;
+            border-radius: 14px;
+            margin-bottom: 12px;
+        }
+        .chat-msg {
+            padding: 10px 14px;
+            border-radius: 14px;
+            max-width: 85%;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        .chat-msg.user {
+            background: var(--maroon);
+            color: white;
+            align-self: flex-end;
+        }
+        .chat-msg.ai {
+            background: white;
+            color: var(--ink);
+            align-self: flex-start;
+            border: 1px solid #ddd;
+        }
+        .dark-mode .chat-msg.ai { background: #2a2a3e; color: var(--ink); border-color: #3a3a4e; }
+        .dark-mode .chat-wrap { background: #1a1a2e; }
+        .chat-input-wrap {
+            display: flex;
+            gap: 10px;
+        }
+        .chat-input-wrap input {
+            flex: 1;
+            padding: 10px 14px;
+            border-radius: 12px;
+            border: 2px solid #eee;
+            font-size: 14px;
+            font-family: var(--font-body);
+        }
+        .chat-input-wrap button {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 12px;
+            background: var(--maroon);
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ भक्ति AI</span>
+            <h1>बोलो, मैं सुन रहा हूँ 🙏</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <main>
+        <div class="card">
+            <div class="chat-wrap" id="chatContainer">
+                <div class="chat-msg ai">🙏 नमस्ते! मैं आपकी धार्मिक शंकाओं का समाधान करने के लिए हूँ। पूछें कुछ भी — मंत्र, कथा, पूजन विधि, या कोई और सवाल।</div>
+            </div>
+            <div class="chat-input-wrap">
+                <input type="text" id="chatInput" placeholder="अपना सवाल लिखें..." />
+                <button id="chatSendBtn"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h4>💡 सुझावित प्रश्न</h4>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">
+                <button class="suggestion-btn" onclick="askAI('हनुमान चालीसा क्यों पढ़नी चाहिए?')">हनुमान चालीसा</button>
+                <button class="suggestion-btn" onclick="askAI('गायत्री मंत्र का अर्थ क्या है?')">गायत्री मंत्र</button>
+                <button class="suggestion-btn" onclick="askAI('शिव जी को क्यों भजें?')">शिव जी</button>
+                <button class="suggestion-btn" onclick="askAI('दीपावली कैसे मनाएँ?')">दीपावली</button>
+                <button class="suggestion-btn" onclick="askAI('महामृत्युंजय मंत्र क्या है?')">महामृत्युंजय</button>
+            </div>
+        </div>
+
+        <a href="index.html" class="btn-primary" style="text-align:center;display:block;text-decoration:none;">🏠 होम पेज पर जाएँ</a>
+    </main>
+
+    <script>
+        document.getElementById('darkToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            this.querySelector('i').classList.toggle('fa-moon');
+            this.querySelector('i').classList.toggle('fa-sun');
+        });
+
+        const chatContainer = document.getElementById('chatContainer');
+
+        function addMessage(text, type) {
+            const div = document.createElement('div');
+            div.className = `chat-msg ${type}`;
+            div.textContent = text;
+            chatContainer.appendChild(div);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        function getAIResponse(question) {
+            const q = question.toLowerCase();
+            const answers = {
+                'हनुमान चालीसा': 'हनुमान चालीसा भक्ति, बल, बुद्धि और भय मुक्ति के लिए पढ़ी जाती है। यह 40 चौपाइयों में हनुमान जी की महिमा का वर्णन करती है।',
+                'गायत्री मंत्र': 'गायत्री मंत्र बुद्धि, ज्ञान और आत्मज्ञान के लिए है। यह सूर्य देव को समर्पित है और इसे प्रातः काल जपना चाहिए।',
+                'शिव': 'शिव जी को ध्यान, त्याग और तांडव के देवता के रूप में भजा जाता है। वे संसार के नाश और पुनर्जन्म के कारण हैं।',
+                'दीपावली': 'दीपावली राम जी के अयोध्या लौटने की खुशी में मनाई जाती है। इसे दीपों का त्योहार कहा जाता है।',
+                'महामृत्युंजय': 'महामृत्युंजय मंत्र आयु, स्वास्थ्य और मृत्यु भय से मुक्ति के लिए है। यह शिव जी को समर्पित है।'
+            };
+
+            for (const [key, value] of Object.entries(answers)) {
+                if (q.includes(key)) return value;
+            }
+            return '🙏 यह एक अच्छा सवाल है। मैं इसका उत्तर जानता हूँ, लेकिन फिलहाल मेरे पास इसका सटीक उत्तर नहीं है। कृपया कुछ और पूछें।';
+        }
+
+        function askAI(question) {
+            addMessage(question, 'user');
+            setTimeout(() => {
+                const answer = getAIResponse(question);
+                addMessage(answer, 'ai');
+            }, 300);
+            document.getElementById('chatInput').value = '';
+        }
+
+        document.getElementById('chatSendBtn').addEventListener('click', function() {
+            const input = document.getElementById('chatInput');
+            const q = input.value.trim();
+            if (!q) return;
+            askAI(q);
+        });
+
+        document.getElementById('chatInput').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') document.getElementById('chatSendBtn').click();
+        });
+
+        // Style suggestions
+        document.querySelectorAll('.suggestion-btn').forEach(btn => {
+            btn.style.cssText = `
+                padding: 6px 14px;
+                border: 1px solid #ddd;
+                border-radius: 20px;
+                background: transparent;
+                font-size: 12px;
+                cursor: pointer;
+                font-family: 'Hind', sans-serif;
+                transition: 0.2s;
+                color: var(--ink);
+            `;
+            btn.addEventListener('mouseenter', function() {
+                this.style.borderColor = 'var(--gold)';
+            });
+            btn.addEventListener('mouseleave', function() {
+                this.style.borderColor = '#ddd';
+            });
+        });
+    </script>
+</body>
+</html>
