@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>पूजन विधि — Sanatan Gyan Kosh</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ पूजन विधि</span>
+            <h1>पूजन</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <main>
+        <div class="card">
+            <h2>🪔 पूजन क्या है?</h2>
+            <p>पूजन भगवान की आराधना, स्तुति और समर्पण का भाव है। यह श्रद्धा और भक्ति से किया जाता है।</p>
+        </div>
+
+        <div class="card">
+            <h3>📋 पूजन सामग्री</h3>
+            <ul>
+                <li>🌸 फूल, पत्ते, जल</li>
+                <li>🪔 दीपक, घी, कपूर</li>
+                <li>🌿 चंदन, सिंदूर, कुमकुम</li>
+                <li>🍎 फल, मिठाई, पान</li>
+                <li>🔔 घंटी, शंख</li>
+                <li>📿 माला, तुलसी दल</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>📖 पूजन विधि (16 उपचार — षोडशोपचार)</h3>
+            <ol>
+                <li><strong>ध्यान:</strong> भगवान का ध्यान करें</li>
+                <li><strong>आवाहन:</strong> भगवान को आमंत्रित करें</li>
+                <li><strong>आसन:</strong> आसन प्रदान करें</li>
+                <li><strong>अर्घ्य:</strong> जल और फूल अर्पित करें</li>
+                <li><strong>स्नान:</strong> जल से स्नान कराएँ</li>
+                <li><strong>वस्त्र:</strong> वस्त्र अर्पित करें</li>
+                <li><strong>गंध:</strong> चंदन लगाएँ</li>
+                <li><strong>पुष्प:</strong> फूल अर्पित करें</li>
+                <li><strong>धूप:</strong> धूप दिखाएँ</li>
+                <li><strong>दीप:</strong> दीप दिखाएँ</li>
+                <li><strong>नैवेद्य:</strong> भोजन अर्पित करें</li>
+                <li><strong>ताम्बूल:</strong> पान अर्पित करें</li>
+                <li><strong>दक्षिणा:</strong> दान दें</li>
+                <li><strong>आरती:</strong> आरती करें</li>
+                <li><strong>प्रदक्षिणा:</strong> परिक्रमा करें</li>
+                <li><strong>विसर्जन:</strong> विदाई दें</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h3>🙏 पूजन के लाभ</h3>
+            <ul>
+                <li>✅ मानसिक शांति और संतोष</li>
+                <li>✅ सकारात्मक ऊर्जा</li>
+                <li>✅ भगवान की कृपा</li>
+                <li>✅ मनोकामनाओं की पूर्ति</li>
+                <li>✅ पारिवारिक सुख-शांति</li>
+            </ul>
+        </div>
+
+        <a href="index.html" class="btn-primary" style="text-align:center;display:block;text-decoration:none;">🏠 होम पेज पर जाएँ</a>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('darkToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            this.querySelector('i').classList.toggle('fa-moon');
+            this.querySelector('i').classList.toggle('fa-sun');
+        });
+    </script>
+</body>
+</html>
