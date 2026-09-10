@@ -1,1 +1,894 @@
 
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>दुर्गा माता — संपूर्ण ज्ञान | Sanatan Gyan Kosh</title>
+    <meta name="description" content="दुर्गा माता का संपूर्ण ज्ञान — परिचय, कथा, स्वरूप, नवदुर्गा, मंत्र, स्तोत्र, आरती, मंदिर, त्योहार, व्रत और बहुत कुछ।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .devta-hero {
+            text-align: center;
+            padding: 24px 20px;
+            background: linear-gradient(135deg, rgba(212,175,55,0.12), rgba(122,46,46,0.08));
+            border-radius: var(--radius);
+            margin-bottom: 14px;
+            border: 1px solid var(--border);
+        }
+        .devta-hero .icon { font-size: 72px; display: block; line-height: 1; }
+        .devta-hero .name {
+            font-family: var(--font-display);
+            font-size: 30px;
+            color: var(--maroon);
+            margin-top: 6px;
+        }
+        .devta-hero .subtitle {
+            font-size: 13px;
+            color: var(--ink-soft);
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+
+        .devta-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 18px 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .devta-section h2 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--maroon);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 8px;
+        }
+        .devta-section h2 .sec-icon { font-size: 24px; }
+
+        .devta-section p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+            margin-bottom: 8px;
+        }
+        .devta-section p strong { color: var(--maroon); }
+
+        .mantra-box {
+            background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(122,46,46,0.05));
+            border-left: 4px solid var(--gold);
+            padding: 14px 16px;
+            border-radius: 12px;
+            font-family: var(--font-display);
+            font-size: 18px;
+            text-align: center;
+            margin: 10px 0;
+            line-height: 1.8;
+            color: var(--maroon);
+            font-weight: 600;
+        }
+        .mantra-box small {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 12px;
+            color: var(--ink-soft);
+            font-weight: 400;
+            margin-top: 6px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .info-item {
+            background: var(--bg);
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 13px;
+        }
+        .info-item .lbl {
+            font-size: 10px;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-item .val {
+            font-weight: 600;
+            color: var(--maroon);
+            margin-top: 2px;
+        }
+
+        .devta-section ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 8px;
+        }
+        .devta-section ul li {
+            padding: 8px 0;
+            font-size: 13.5px;
+            line-height: 1.6;
+            border-bottom: 1px dashed var(--border);
+            color: var(--ink-soft);
+        }
+        .devta-section ul li:last-child { border-bottom: none; }
+        .devta-section ul li strong { color: var(--maroon); }
+
+        .accordion-item {
+            border-bottom: 1px solid var(--border);
+        }
+        .accordion-item:last-child { border-bottom: none; }
+        .accordion-head {
+            padding: 12px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--maroon);
+            font-family: var(--font-display);
+        }
+        .accordion-head i {
+            transition: transform 0.3s;
+            color: var(--gold);
+        }
+        .accordion-item.open .accordion-head i {
+            transform: rotate(180deg);
+        }
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            font-size: 13px;
+            color: var(--ink-soft);
+            line-height: 1.8;
+        }
+        .accordion-item.open .accordion-body {
+            max-height: 4000px;
+            padding-bottom: 12px;
+        }
+
+        .temple-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .temple-item {
+            padding: 10px 14px;
+            background: var(--bg);
+            border-radius: 10px;
+            border-left: 3px solid var(--gold);
+            font-size: 13px;
+        }
+        .temple-item strong { color: var(--maroon); }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .related-link {
+            padding: 10px 12px;
+            background: var(--bg);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--maroon);
+            font-weight: 600;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .related-link:hover {
+            background: var(--card-bg);
+            border-color: var(--gold);
+        }
+
+        .navdurga-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .navdurga-item {
+            background: var(--bg);
+            padding: 12px 14px;
+            border-radius: 12px;
+            border-left: 4px solid var(--gold);
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .navdurga-item .nav-icon {
+            font-size: 28px;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+        .navdurga-item .nav-name {
+            font-weight: 700;
+            color: var(--maroon);
+            font-size: 14px;
+        }
+        .navdurga-item .nav-desc {
+            font-size: 12px;
+            color: var(--ink-soft);
+            margin-top: 2px;
+            line-height: 1.6;
+        }
+
+        .shakti-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .shakti-item {
+            background: var(--bg);
+            padding: 12px 14px;
+            border-radius: 12px;
+            border-left: 4px solid var(--gold);
+        }
+        .shakti-item .shakti-name {
+            font-weight: 700;
+            color: var(--maroon);
+            font-size: 14px;
+        }
+        .shakti-item .shakti-loc {
+            font-size: 11px;
+            color: var(--ink-light);
+            margin-top: 2px;
+        }
+
+        .back-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--maroon);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 16px rgba(122,46,46,0.4);
+            z-index: 90;
+        }
+        .back-top.show { display: flex; }
+
+        @media (max-width: 420px) {
+            .devta-hero .icon { font-size: 60px; }
+            .devta-hero .name { font-size: 24px; }
+            .devta-section h2 { font-size: 17px; }
+            .mantra-box { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ देवता ज्ञान</span>
+            <h1>दुर्गा माता</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <!-- Hero -->
+        <div class="devta-hero">
+            <span class="icon">🌺</span>
+            <div class="name">दुर्गा माता</div>
+            <div class="subtitle">शक्ति · माँ भवानी · जगदम्बा · महिषासुरमर्दिनी</div>
+        </div>
+
+        <!-- Quick Info -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📋</span> एक नज़र में</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="lbl">अन्य नाम</div>
+                    <div class="val">पार्वती, भवानी, जगदम्बा, शेरावाली, महिषासुरमर्दिनी, चामुंडा, अम्बे</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">स्वरूप</div>
+                    <div class="val">आदि शक्ति, प्रकृति, माँ</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">वाहन</div>
+                    <div class="val">सिंह (शेर)</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">आयुध</div>
+                    <div class="val">त्रिशूल, चक्र, गदा, धनुष-बाण, तलवार, कमल</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">पति</div>
+                    <div class="val">भगवान शिव</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">पुत्र</div>
+                    <div class="val">गणेश, कार्तिकेय</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रमुख पर्व</div>
+                    <div class="val">नवरात्रि (चैत्र, शारदीय), दुर्गा पूजा</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय रंग</div>
+                    <div class="val">लाल</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय भोग</div>
+                    <div class="val">केला, नारियल, मिठाई, लाल फूल</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय दिन</div>
+                    <div class="val">नवरात्रि, अष्टमी, नवमी</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">निवास</div>
+                    <div class="val">कैलाश पर्वत, मणिद्वीप</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">शक्तिपीठ</div>
+                    <div class="val">51 शक्तिपीठ</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- परिचय -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📖</span> परिचय</h2>
+            <p>
+                <strong>माँ दुर्गा</strong> हिंदू धर्म की सबसे शक्तिशाली देवी हैं। वे <strong>आदि शक्ति</strong> हैं — सृष्टि की मूल ऊर्जा, जिससे ब्रह्मांड की उत्पत्ति हुई। वे <strong>माँ</strong> हैं — जो अपने भक्तों की रक्षा करती हैं और उन्हें शक्ति प्रदान करती हैं।
+            </p>
+            <p>
+                दुर्गा माता को <strong>पार्वती</strong>, <strong>भवानी</strong>, <strong>जगदम्बा</strong>, <strong>शेरावाली</strong>, <strong>महिषासुरमर्दिनी</strong>, और <strong>चामुंडा</strong> जैसे कई नामों से जाना जाता है। वे <strong>शिव जी की पत्नी</strong> हैं और <strong>गणेश</strong> तथा <strong>कार्तिकेय</strong> की माता हैं।
+            </p>
+            <p>
+                वे <strong>शक्ति, साहस, और विजय</strong> की देवी हैं। उन्होंने <strong>महिषासुर</strong>, <strong>शुंभ-निशुंभ</strong>, और <strong>रक्तबीज</strong> जैसे राक्षसों का वध करके धर्म की स्थापना की। इसलिए उन्हें <strong>महिषासुरमर्दिनी</strong> कहा जाता है।
+            </p>
+            <p>
+                नवरात्रि में उनके <strong>नौ रूपों (नवदुर्गा)</strong> की पूजा की जाती है। वे <strong>शक्तिपीठों</strong> में विराजमान हैं — 51 स्थान जहाँ सती माता के अंग गिरे थे।
+            </p>
+        </div>
+
+        <!-- जन्म और प्रकट कथा -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📜</span> प्रकट कथा</h2>
+            <p>
+                पौराणिक कथा के अनुसार, जब <strong>महिषासुर</strong> नामक राक्षस ने देवताओं को पराजित किया और स्वर्ग पर अधिकार कर लिया, तब सभी देवता <strong>ब्रह्मा, विष्णु, और महेश</strong> के पास गए।
+            </p>
+            <p>
+                तीनों देवों के <strong>तेज (ऊर्जा)</strong> से एक दिव्य स्त्री प्रकट हुई — <strong>माँ दुर्गा</strong>। उनका मुख शिव से, बाहें विष्णु से, और कमर इंद्र से बनी। सभी देवताओं ने अपने-अपने अस्त्र-शस्त्र उन्हें दिए।
+            </p>
+            <p>
+                शिव जी ने <strong>त्रिशूल</strong>, विष्णु ने <strong>चक्र</strong>, इंद्र ने <strong>वज्र</strong>, ब्रह्मा ने <strong>कमंडलु</strong>, और हिमालय ने <strong>सिंह</strong> प्रदान किया। इस प्रकार माँ दुर्गा ने महिषासुर का वध किया और देवताओं को मुक्त कराया।
+            </p>
+            <p>
+                यह दिन <strong>आश्विन शुक्ल अष्टमी या नवमी</strong> को मनाया जाता है — जो <strong>दुर्गा पूजा</strong> का सबसे महत्वपूर्ण दिन है।
+            </p>
+        </div>
+
+        <!-- स्वरूप -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🎨</span> स्वरूप</h2>
+            <p>
+                माँ दुर्गा का स्वरूप <strong>तेजस्वी, शक्तिशाली, और करुणामयी</strong> है।
+            </p>
+            <ul>
+                <li><strong>रंग:</strong> स्वर्ण वर्ण (सुनहरी आभा)</li>
+                <li><strong>वस्त्र:</strong> लाल रेशमी वस्त्र</li>
+                <li><strong>आभूषण:</strong> स्वर्ण आभूषण, मुकुट</li>
+                <li><strong>हाथ:</strong> 8 या 10 हाथ (अष्टभुजा या दशभुजा)</li>
+                <li><strong>आयुध:</strong> त्रिशूल, चक्र, गदा, धनुष, तलवार, कमल, शंख</li>
+                <li><strong>वाहन:</strong> सिंह (शेर)</li>
+                <li><strong>नेत्र:</strong> बड़े, कमल के समान</li>
+                <li><strong>मुद्रा:</strong> अभय मुद्रा, शांत और तेजस्वी</li>
+                <li><strong>साथ:</strong> गणेश, कार्तिकेय, लक्ष्मी, सरस्वती</li>
+                <li><strong>विशेष:</strong> महिषासुर पर पैर रखे हुए (महिषासुरमर्दिनी रूप)</li>
+            </ul>
+        </div>
+
+        <!-- मुख्य मंत्र -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🌺</span> मुख्य मंत्र</h2>
+
+            <p><strong>1. दुर्गा मूल मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ दुं दुर्गायै नमः
+                <small>अर्थ: हे दुर्गा माता, मैं आपको नमस्कार करता हूँ। यह दुर्गा का बीज मंत्र है।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>2. सर्वमंगल मांगल्ये (दुर्गा मंत्र):</strong></p>
+            <div class="mantra-box">
+                ॐ सर्वमंगल मांगल्ये शिवे सर्वार्थ साधिके ।<br>
+                शरण्ये त्र्यम्बके गौरि नारायणि नमोऽस्तु ते ॥
+                <small>अर्थ: हे सर्वमंगलमयी, शिवा, सर्वार्थसाधिका, शरणागतवत्सला, त्रिनेत्रा, गौरी, नारायणी — आपको नमस्कार है।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>3. दुर्गा गायत्री मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ कात्यायनाय विद्महे ।<br>
+                कन्याकुमारी धीमहि ।<br>
+                तन्नो दुर्गिः प्रचोदयात् ॥
+                <small>अर्थ: हम कात्यायनी का ध्यान करते हैं, कन्याकुमारी का ध्यान करते हैं, दुर्गा हमें प्रेरित करें।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>4. महिषासुरमर्दिनी मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ ऐं ह्रीं क्लीं चामुण्डायै विच्चे
+                <small>अर्थ: यह महिषासुरमर्दिनी का मंत्र है — शत्रु नाश और विजय के लिए।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>5. दुर्गा सप्तशती (संक्षिप्त):</strong></p>
+            <div class="mantra-box" style="font-size:15px;">
+                या देवी सर्वभूतेषु शक्तिरूपेण संस्थिता ।<br>
+                नमस्तस्यै नमस्तस्यै नमस्तस्यै नमो नमः ॥
+                <small>अर्थ: जो देवी सभी प्राणियों में शक्ति रूप में स्थित हैं, उन्हें बार-बार नमस्कार है।</small>
+            </div>
+        </div>
+
+        <!-- नवदुर्गा (9 रूप) -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🙏</span> नवदुर्गा — 9 रूप</h2>
+            <p style="font-size:13px;margin-bottom:8px;">
+                नवरात्रि के 9 दिनों में माँ दुर्गा के <strong>9 रूपों (नवदुर्गा)</strong> की पूजा की जाती है।
+            </p>
+            <div class="navdurga-grid">
+                <div class="navdurga-item">
+                    <div class="nav-icon">🌸</div>
+                    <div>
+                        <div class="nav-name">1. शैलपुत्री</div>
+                        <div class="nav-desc">हिमालय की पुत्री — प्रथम दिवस, गोवर्धन पर्वत पर विराजमान, बैल की सवारी।</div>
+                    </div>
+                </div>
+                <div class="navdurga-item">
+                    <div class="nav-icon">🕉️</div>
+                    <div>
+                        <div class="nav-name">2. ब्रह्मचारिणी</div>
+                        <div class="nav-desc">तपस्विनी — द्वितीय दिवस, जप और तप की देवी, अखंड सुहाग का वरदान।</div>
+                    </div>
+                </div>
+                <div class="navdurga-item">
+                    <div class="nav-icon">🔔</div>
+                    <div>
+                        <div class="nav-name">3. चंद्रघंटा</div>
+                        <div class="nav-desc">घंटे के आकार का चंद्रमा — तृतीय दिवस, शेर पर सवार, तीन हाथों में अस्त्र।</div>
+                    </div>
+                </div>
+                <div class="navdurga-item">
+                    <div class="nav-icon">🌺</div>
+                    <div>
+                        <div class="nav-name">4. कूष्मांडा</div>
+                        <div class="nav-desc">ब्रह्मांड की रचयिता — चतुर्थ दिवस, शेर पर सवार, 8 हाथ।</div>
+                    </div>
+                </div>
+                <div class="navdurga-item">
+                    <div class="nav-icon">👑</div>
+                    <div>
+                        <div class="nav-name">5. स्कंदमाता</div>
+                        <div class="nav-desc">कार्तिकेय की माता — पंचम दिवस, शेर पर सवार, कार्तिकेय गोद में।</div>
+                    </div>
+                </div>
+                <div class="navdurga-item">
+                    <div class="nav-icon">🍯</div>
+                    <div>
+                        <div class="nav-name">6. कात्यायनी</div>
+                        <div class="nav-desc">कात्यायन की पुत्री — षष्ठ दिवस, शेर पर सवार, महिषासुर मर्दिनी स्वरूप।</div>
+                    </div>
+                </div>
+                <div class="navdurga-item">
+                    <div class="nav-icon">🔥</div>
+                    <div>
+                        <div class="nav-name">7. कालरात्रि</div>
+                              <div class="nav-desc">रात्रि की देवी — सप्तम दिवस, काले रंग की, गधे पर सवार, शुभ फलदायी।</div>
+                    </div>
+                </div>
+                <div class="navdurga-item">
+                    <div class="nav-icon">🪷</div>
+                    <div>
+                        <div class="nav-name">8. महागौरी</div>
+                        <div class="nav-desc">गौर वर्ण की देवी — अष्टम दिवस, श्वेत वस्त्र, बैल पर सवार।</div>
+                    </div>
+                </div>
+                <div class="navdurga-item">
+                    <div class="nav-icon">🌟</div>
+                    <div>
+                        <div class="nav-name">9. सिद्धिदात्री</div>
+                        <div class="nav-desc">सभी सिद्धियों की दाता — नवम दिवस, कमल पर विराजमान, शेर पर सवार।</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 51 शक्तिपीठ (प्रमुख) -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🛕</span> प्रमुख शक्तिपीठ</h2>
+            <p style="font-size:13px;margin-bottom:8px;">
+                <strong>51 शक्तिपीठ</strong> वे पवित्र स्थल हैं जहाँ सती माता के अंग गिरे थे। यहाँ कुछ प्रमुख शक्तिपीठ दिए गए हैं।
+            </p>
+            <div class="shakti-grid">
+                <div class="shakti-item">
+                    <div class="shakti-name">वैष्णो देवी, जम्मू-कश्मीर</div>
+                    <div class="shakti-loc">📍 त्रिकूट पर्वत, कटरा</div>
+                </div>
+                <div class="shakti-item">
+                    <div class="shakti-name">कामाख्या देवी, असम</div>
+                    <div class="shakti-loc">📍 गुवाहाटी, नीलांचल पर्वत</div>
+                </div>
+                <div class="shakti-item">
+                    <div class="shakti-name">कालीघाट, कोलकाता</div>
+                    <div class="shakti-loc">📍 पश्चिम बंगाल</div>
+                </div>
+                <div class="shakti-item">
+                    <div class="shakti-name">तारापीठ, बिहार</div>
+                    <div class="shakti-loc">📍 बीरभूम, पश्चिम बंगाल</div>
+                </div>
+                <div class="shakti-item">
+                    <div class="shakti-name">हरसिद्धि माता, उज्जैन</div>
+                    <div class="shakti-loc">📍 मध्य प्रदेश</div>
+                </div>
+                <div class="shakti-item">
+                    <div class="shakti-name">चामुंडेश्वरी, मैसूर</div>
+                    <div class="shakti-loc">📍 कर्नाटक</div>
+                </div>
+                <div class="shakti-item">
+                    <div class="shakti-name">ज्वालामुखी, हिमाचल</div>
+                    <div class="shakti-loc">📍 कांगड़ा</div>
+                </div>
+                <div class="shakti-item">
+                    <div class="shakti-name">नैना देवी, हिमाचल</div>
+                    <div class="shakti-loc">📍 बिलासपुर</div>
+                </div>
+                <div class="shakti-item">
+                    <div class="shakti-name">कन्याकुमारी, तमिलनाडु</div>
+                    <div class="shakti-loc">📍 त्रिवेणी संगम</div>
+                </div>
+                <div class="shakti-item">
+                    <div class="shakti-name">महालक्ष्मी, कोल्हापुर</div>
+                    <div class="shakti-loc">📍 महाराष्ट्र</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- जप विधि -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📿</span> जप विधि</h2>
+            <ul>
+                <li><strong>समय:</strong> नवरात्रि, अष्टमी, नवमी, या प्रातः 5-7 बजे</li>
+                <li><strong>स्थान:</strong> पूर्व दिशा में मुख करके, स्वच्छ स्थान पर</li>
+                <li><strong>माला:</strong> लाल चंदन, मूंगा, या स्फटिक माला</li>
+                <li><strong>संख्या:</strong> 108 बार (1 माला), या 1008 बार</li>
+                <li><strong>वस्त्र:</strong> लाल वस्त्र (सबसे शुभ)</li>
+                <li><strong>भोग:</strong> केला, नारियल, मिठाई, लाल फूल, सिंदूर</li>
+                <li><strong>धूप/दीप:</strong> धूप, घी का दीपक, कपूर</li>
+                <li><strong>विशेष:</strong> दुर्गा सप्तशती पाठ, दुर्गा चालीसा, अर्गला स्तोत्र</li>
+            </ul>
+        </div>
+
+        <!-- दुर्गा स्तोत्र (Accordion) -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📜</span> दुर्गा स्तोत्र / आरती</h2>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 दुर्गा आरती (जय अम्बे गौरी)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:15px;text-align:left;line-height:2;">
+                        जय अम्बे गौरी, मैया जय श्यामा गौरी ।<br>
+                        तुमको निशिदिन ध्यावत, हरि ब्रह्मा शिवरी ॥<br>
+                        जय अम्बे गौरी... ॥<br><br>
+                        माँग सिंदूर विराजत, टीको मृगमद को ।<br>
+                        उज्ज्वल से दोउ नैना, चन्द्रवदन नीको ॥<br>
+                        जय अम्बे गौरी... ॥<br><br>
+                        कनक समान कलेवर, रक्ताम्बर राजै ।<br>
+                        रक्तपुष्प गल माला, कण्ठन पर साजै ॥<br>
+                        जय अम्बे गौरी... ॥<br><br>
+                        केहरि वाहन राजत, खड्ग खप्परधारी ।<br>
+                        सुर-नर-मुनिजन सेवत, तिनके दुखहारी ॥<br>
+                        जय अम्बे गौरी... ॥<br><br>
+                        कानन कुण्डल शोभित, नासाग्रे मोती ।<br>
+                        कोटिक चन्द्र दिवाकर, सम राजत ज्योति ॥<br>
+                        जय अम्बे गौरी... ॥<br><br>
+                        शुम्भ निशुम्भ बिदारे, महिषासुर घाती ।<br>
+                        धूम्र विलोचन निहारे, निशिदिन माती ॥<br>
+                        जय अम्बे गौरी... ॥<br><br>
+                        चण्ड-मुण्ड संहारे, शोणित बीज हरे ।<br>
+                        मधु-कैटभ दोउ मारे, सुर भयहीन करे ॥<br>
+                        जय अम्बे गौरी... ॥<br><br>
+                        ब्रह्माणी, रुद्राणी, तुम कमला रानी ।<br>
+                        आगम निगम बखानी, तुम शिव पटरानी ॥<br>
+                        जय अम्बे गौरी... ॥<br><br>
+                        चौंसठ योगिनी मंगल गावैं, बाजत ताल मृदंगा ।<br>
+                        भरत बिनोद करत हैं, गावत सुर संगा ॥<br>
+                        जय अम्बे गौरी... ॥<br><br>
+                        श्री अम्बेजी की आरती, जो कोई नर गावै ।<br>
+                        कहत शिवानन्द स्वामी, सुख संपत्ति पावै ॥<br>
+                        जय अम्बे गौरी... ॥
+                    </div>
+                </div>
+            </div>
+              <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 दुर्गा चालीसा</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        नमो नमो दुर्गे सुख करनी । नमो नमो अम्बे दुःख हरनी ॥<br>
+                        निरंकार है ज्योति तुम्हारी । तिहूँ लोक फैली उजियारी ॥<br>
+                        शशि ललाट मुख महाविशाला । नेत्र लाल भृकुटि विकराला ॥<br>
+                        रूप मातु को अधिक सुहावे । दरश करत जन अति सुख पावे ॥<br>
+                        तुम संसार शक्ति लय कीना । पालन हेतु अन्न धन दीना ॥<br>
+                        अन्नपूर्णा हुई जग पाला । तुम ही आदि सुन्दरी बाला ॥<br>
+                        प्रलयकाल सब नाशन हारी । तुम गौरी शिवशंकर प्यारी ॥<br>
+                        शिव योगी तुम्हरे गुण गावें । ब्रह्मा विष्णु तुम्हें नित ध्यावें ॥<br>
+                        ... (40 चौपाइयाँ — पूरा पाठ)
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 अर्गला स्तोत्र (संक्षिप्त)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <p style="margin-bottom:8px;font-size:13px;">
+                        <strong>अर्गला स्तोत्र</strong> दुर्गा सप्तशती का प्रथम स्तोत्र है — शत्रु नाश और विजय के लिए।
+                    </p>
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        जय त्वं देवि चामुण्डे जय भूतार्तिहारिणि ।<br>
+                        जय सर्वगते देवि कालरात्रि नमोऽस्तु ते ॥<br><br>
+                        जय त्वं देवि चामुण्डे जय भूतार्तिहारिणि ।<br>
+                        जय सर्वगते देवि कालरात्रि नमोऽस्तु ते ॥<br><br>
+                        ... (अर्गला स्तोत्र — 38 श्लोक)
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 काली माता की आरती</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:15px;text-align:left;line-height:2;">
+                        आरती कीजै काली माता की ।<br>
+                        दुष्ट दलन की, कृपा की दाता की ॥<br><br>
+                        माँ काली की महिमा न्यारी ।<br>
+                        जय-जयकार करे सब नर-नारी ॥<br>
+                        आरती कीजै काली माता की... ॥<br><br>
+                        जो नर ध्यावे माँ काली को ।<br>
+                        सब दुःख दूर हो जावे उसको ॥<br>
+                        आरती कीजै काली माता की... ॥
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- प्रमुख मंदिर -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🛕</span> प्रमुख मंदिर</h2>
+            <div class="temple-list">
+                <div class="temple-item">
+                    <strong>वैष्णो देवी मंदिर, कटरा (जम्मू-कश्मीर)</strong><br>
+                    त्रिकूट पर्वत पर स्थित, भारत का सबसे प्रसिद्ध देवी मंदिर। गुफा में तीन पिंड (महाकाली, महालक्ष्मी, महासरस्वती)।
+                </div>
+                <div class="temple-item">
+                    <strong>कामाख्या देवी मंदिर, गुवाहाटी (असम)</strong><br>
+                    51 शक्तिपीठों में सबसे प्रमुख, यहाँ सती का योनि भाग गिरा था। महाम्बा मेला यहाँ लगता है।
+                </div>
+                <div class="temple-item">
+                    <strong>दुर्गा मंदिर, वाराणसी (उत्तर प्रदेश)</strong><br>
+                    दुर्गाकुंड में स्थित, काशी की प्रसिद्ध देवी।
+                </div>
+                <div class="temple-item">
+                    <strong>कालीघाट मंदिर, कोलकाता</strong><br>
+                    माँ काली का प्रसिद्ध मंदिर, जहाँ बली प्रथा थी।
+                </div>
+                <div class="temple-item">
+                    <strong>ज्वालामुखी मंदिर, कांगड़ा (हिमाचल)</strong><br>
+                    यहाँ जलती ज्योतियाँ हैं — देवी का अग्नि स्वरूप।
+                </div>
+                <div class="temple-item">
+                    <strong>चामुंडेश्वरी मंदिर, मैसूर (कर्नाटक)</strong><br>
+                    दक्षिण भारत का प्रसिद्ध देवी मंदिर, चामुंडा का स्वरूप।
+                </div>
+                <div class="temple-item">
+                    <strong>नैना देवी मंदिर, बिलासपुर (हिमाचल)</strong><br>
+                    यहाँ सती की आँखें गिरी थीं।
+                </div>
+                <div class="temple-item">
+                    <strong>महालक्ष्मी मंदिर, कोल्हापुर (महाराष्ट्र)</strong><br>
+                    शक्तिपीठ, लक्ष्मी-अम्बाबाई का स्वरूप।
+                </div>
+            </div>
+        </div>
+
+        <!-- त्योहार और व्रत -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🎉</span> प्रमुख त्योहार और व्रत</h2>
+            <ul>
+                <li><strong>चैत्र नवरात्रि:</strong> चैत्र शुक्ल प्रतिपदा से नवमी तक — वसंत ऋतु में।</li>
+                <li><strong>शारदीय नवरात्रि:</strong> आश्विन शुक्ल प्रतिपदा से नवमी तक — सबसे प्रमुख।</li>
+                <li><strong>दुर्गा पूजा:</strong> बंगाल में सबसे बड़ा पर्व — पूरे 5 दिन।</li>
+                <li><strong>अष्टमी:</strong> कन्या पूजन, दुर्गा पूजा का मुख्य दिन।</li>
+                <li><strong>नवमी:</strong> हवन, कन्या भोज, विसर्जन।</li>
+                <li><strong>दशहरा (विजयादशमी):</strong> रावण वध की विजय।</li>
+                <li><strong>महाष्टमी:</strong> महाष्टमी का दिन, देवी का प्रकटोत्सव।</li>
+                <li><strong>नवरात्रि व्रत:</strong> 9 दिन का व्रत, केवल फलाहार।</li>
+            </ul>
+        </div>
+
+        <!-- भक्ति और लाभ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🙏</span> दुर्गा माता को क्यों भजें?</h2>
+            <ul>
+                <li><strong>शक्ति और साहस:</strong> माँ दुर्गा की कृपा से आत्मविश्वास और साहस बढ़ता है।</li>
+                <li><strong>शत्रु नाश:</strong> दुर्गा मंत्र जप से शत्रु और बाधाएँ दूर होती हैं।</li>
+                <li><strong>भय मुक्ति:</strong> माँ की भक्ति से सभी भय दूर होते हैं।</li>
+                <li><strong>रोग नाश:</strong> दुर्गा पूजा से स्वास्थ्य लाभ होता है।</li>
+                <li><strong>संतान प्राप्ति:</strong> संतानहीन दंपत्ति को माँ की कृपा से संतान मिलती है।</li>
+                <li><strong>विवाह:</strong> अविवाहित लड़कियों के लिए दुर्गा पूजा से अच्छा वर मिलता है।</li>
+                <li><strong>धन प्राप्ति:</strong> माँ लक्ष्मी दुर्गा का ही रूप हैं, इसलिए धन लाभ होता है।</li>
+                <li><strong>मोक्ष:</strong> दुर्गा सप्तशती पाठ से मोक्ष प्राप्त होता है।</li>
+            </ul>
+        </div>
+
+        <!-- वर्जित कार्य -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🚫</span> क्या न करें?</h2>
+            <ul>
+                <li>❌ माँ दुर्गा की मूर्ति को <strong>अशुद्ध हाथों</strong> से न छुएँ</li>
+                <li>❌ <strong>बिना स्नान</strong> दुर्गा पूजा न करें</li>
+                <li>❌ <strong>तुलसी</strong> को दाँत से न तोड़ें</li>
+                <li>❌ <strong>बासी</strong> या <strong>अशुद्ध</strong> भोग न चढ़ाएँ</li>
+                <li>❌ देवी के सामने <strong>झूठ</strong> न बोलें</li>
+                <li>❌ <strong>नवरात्रि</strong> में <strong>तामसिक</strong> भोजन न करें</li>
+                <li>❌ <strong>दुर्गा सप्तशती</strong> का अनादर न करें</li>
+                <li>❌ कन्या पूजन में <strong>अशुद्ध</strong> न करें</li>
+            </ul>
+        </div>
+
+        <!-- FAQ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>दुर्गा माता का प्राकट्य कैसे हुआ?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    महिषासुर के अत्याचार से परेशान देवताओं ने ब्रह्मा, विष्णु, और महेश से प्रार्थना की। तीनों देवों के <strong>तेज से माँ दुर्गा प्रकट हुईं</strong> और सभी देवताओं ने अपने अस्त्र-शस्त्र उन्हें दिए। माँ ने महिषासुर का वध किया।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>नवरात्रि में 9 दिन क्यों मनाई जाती है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    नवरात्रि <strong>9 दिनों</strong> का पर्व है — जिसमें <strong>नवदुर्गा</strong> के 9 रूपों की पूजा की जाती है। यह <strong>शक्ति और भक्ति</strong> का पर्व है। राम जी ने भी रावण वध से पहले शारदीय नवरात्रि में दुर्गा पूजा की थी।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>दुर्गा सप्तशती क्या है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>दुर्गा सप्तशती</strong> (चंडी पाठ) <strong>700 श्लोकों</strong> का ग्रंथ है — <strong>13 अध्यायों</strong> में विभाजित। इसमें माँ दुर्गा की महिमा और महिषासुर वध की कथा है। इसे पढ़ने से <strong>सभी संकट दूर</strong> होते हैं।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>कन्या पूजन क्यों किया जाता है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>कन्या पूजन</strong> में <strong>2 से 10 वर्ष की कन्याओं</strong> को माँ दुर्गा का स्वरूप मानकर पूजा जाता है। यह <strong>नवरात्रि की अष्टमी या नवमी</strong> को किया जाता है। इसमें कन्याओं को भोजन, वस्त्र, और उपहार दिए जाते हैं।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>क्या दुर्गा पूजा से शत्रु नाश होता है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    हाँ, <strong>दुर्गा सप्तशती पाठ, अर्गला स्तोत्र, कीलक स्तोत्र, और दुर्गा मंत्र जप</strong> से शत्रु नाश होता है। माँ दुर्गा <strong>शत्रु नाशिनी</strong> हैं — वे अपने भक्तों की रक्षा करती हैं।
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Links -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🔗</span> संबंधित लिंक</h2>
+            <div class="related-grid">
+                <a href="../mantra/index.html" class="related-link">📿 सभी मंत्र</a>
+                <a href="../stotra/durga-saptashati.html" class="related-link">📜 दुर्गा सप्तशती</a>
+                <a href="../stotra/argala-stotra.html" class="related-link">📜 अर्गला स्तोत्र</a>
+                <a href="../tyohar/navratri.html" class="related-link">🎉 नवरात्रि</a>
+                <a href="../katha/durga-katha.html" class="related-link">📖 दुर्गा कथाएँ</a>
+                <a href="../quiz/index.html" class="related-link">🎯 दुर्गा क्विज</a>
+            </div>
+        </div>
+
+        <!-- Share -->
+        <button class="btn-primary" onclick="sharePage()" style="margin-top:10px;">
+            <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+        </button>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय माता दी</p>
+        </footer>
+
+    </main>
+
+    <button class="back-top" id="backTop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-calendar-days"></i><p>पंचांग</p></a>
+        <a href="../quiz/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>क्विज</p></a>
+    </nav>
+
+    <script src="../script.js"></script>
+    <script>
+        function toggleAccordion(el) {
+            const item = el.parentElement;
+            item.classList.toggle('open');
+        }
+
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backTop');
+            if (btn) {
+                if (window.scrollY > 400) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+  </html>
+                  
