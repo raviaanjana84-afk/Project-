@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>भैरव बाबा — संपूर्ण ज्ञान | Sanatan Gyan Kosh</title>
+    <meta name="description" content="भैरव बाबा (काल भैरव) का संपूर्ण ज्ञान — परिचय, कथा, स्वरूप, अष्ट भैरव, मंत्र, स्तोत्र, आरती, मंदिर, त्योहार, व्रत और बहुत कुछ।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .devta-hero {
+            text-align: center;
+            padding: 24px 20px;
+            background: linear-gradient(135deg, rgba(75,0,130,0.12), rgba(212,175,55,0.08));
+            border-radius: var(--radius);
+            margin-bottom: 14px;
+            border: 1px solid var(--border);
+        }
+        .devta-hero .icon { font-size: 72px; display: block; line-height: 1; }
+        .devta-hero .name {
+            font-family: var(--font-display);
+            font-size: 30px;
+            color: var(--maroon);
+            margin-top: 6px;
+        }
+        .devta-hero .subtitle {
+            font-size: 13px;
+            color: var(--ink-soft);
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+
+        .devta-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 18px 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .devta-section h2 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--maroon);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 8px;
+        }
+        .devta-section h2 .sec-icon { font-size: 24px; }
+
+        .devta-section p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+            margin-bottom: 8px;
+        }
+        .devta-section p strong { color: var(--maroon); }
+
+        .mantra-box {
+            background: linear-gradient(135deg, rgba(75,0,130,0.08), rgba(212,175,55,0.05));
+            border-left: 4px solid var(--gold);
+            padding: 14px 16px;
+            border-radius: 12px;
+            font-family: var(--font-display);
+            font-size: 18px;
+            text-align: center;
+            margin: 10px 0;
+            line-height: 1.8;
+            color: var(--maroon);
+            font-weight: 600;
+        }
+        .mantra-box small {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 12px;
+            color: var(--ink-soft);
+            font-weight: 400;
+            margin-top: 6px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .info-item {
+            background: var(--bg);
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 13px;
+        }
+        .info-item .lbl {
+            font-size: 10px;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-item .val {
+            font-weight: 600;
+            color: var(--maroon);
+            margin-top: 2px;
+        }
+
+        .devta-section ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 8px;
+        }
+        .devta-section ul li {
+            padding: 8px 0;
+            font-size: 13.5px;
+            line-height: 1.6;
+            border-bottom: 1px dashed var(--border);
+            color: var(--ink-soft);
+        }
+        .devta-section ul li:last-child { border-bottom: none; }
+        .devta-section ul li strong { color: var(--maroon); }
+
+        .accordion-item {
+            border-bottom: 1px solid var(--border);
+        }
+        .accordion-item:last-child { border-bottom: none; }
+        .accordion-head {
+            padding: 12px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--maroon);
+            font-family: var(--font-display);
+        }
+        .accordion-head i {
+            transition: transform 0.3s;
+            color: var(--gold);
+        }
+        .accordion-item.open .accordion-head i {
+            transform: rotate(180deg);
+        }
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            font-size: 13px;
+            color: var(--ink-soft);
+            line-height: 1.8;
+        }
+        .accordion-item.open .accordion-body {
+            max-height: 4000px;
+            padding-bottom: 12px;
+        }
+
+        .temple-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .temple-item {
+            padding: 10px 14px;
+            background: var(--bg);
+            border-radius: 10px;
+            border-left: 3px solid var(--gold);
+            font-size: 13px;
+        }
+        .temple-item strong { color: var(--maroon); }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .related-link {
+            padding: 10px 12px;
+            background: var(--bg);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--maroon);
+            font-weight: 600;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .related-link:hover {
+            background: var(--card-bg);
+            border-color: var(--gold);
+        }
+
+        .names-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .name-item {
+            background: var(--bg);
+            padding: 8px 12px;
+            border-radius: 8px;
+            border-left: 3px solid var(--gold);
+            font-size: 12px;
+        }
+        .name-item strong {
+            color: var(--maroon);
+            font-family: var(--font-display);
+            font-size: 14px;
+        }
+
+        .ashtabhairav-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .ab-item {
+            background: var(--bg);
+            padding: 12px 14px;
+            border-radius: 12px;
+            border-left: 4px solid var(--gold);
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .ab-item .ab-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+        .ab-item .ab-name {
+            font-weight: 700;
+            color: var(--maroon);
+            font-size: 14px;
+        }
+        .ab-item .ab-loc {
+            font-size: 11px;
+            color: var(--ink-light);
+            margin-top: 2px;
+        }
+        .ab-item .ab-desc {
+            font-size: 12px;
+            color: var(--ink-soft);
+            margin-top: 4px;
+            line-height: 1.6;
+        }
+
+        .back-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--maroon);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 16px rgba(122,46,46,0.4);
+            z-index: 90;
+        }
+        .back-top.show { display: flex; }
+
+        @media (max-width: 420px) {
+            .devta-hero .icon { font-size: 60px; }
+            .devta-hero .name { font-size: 24px; }
+            .devta-section h2 { font-size: 17px; }
+            .mantra-box { font-size: 16px; }
+            .names-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ देवता ज्ञान</span>
+            <h1>भैरव बाबा</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <!-- Hero -->
+        <div class="devta-hero">
+            <span class="icon">🐕</span>
+            <div class="name">भैरव बाबा</div>
+            <div class="subtitle">काल भैरव · शिव अवतार · क्षेत्रपाल · रक्षक</div>
+        </div>
+
+        <!-- Quick Info -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📋</span> एक नज़र में</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="lbl">अन्य नाम</div>
+                    <div class="val">काल भैरव, क्षेत्रपाल, दंडपाणि, स्वामी भैरव, अन्नदानी भैरव</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">स्वरूप</div>
+                    <div class="val">शिव का अंश, रक्षक देवता</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">वाहन</div>
+                    <div class="val">श्वान (कुत्ता)</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">आयुध</div>
+                    <div class="val">त्रिशूल, डमरू, पाश, दंड, खड्ग</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय दिन</div>
+                    <div class="val">मंगलवार, शनिवार, भैरव अष्टमी, कालाष्टमी</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय भोग</div>
+                    <div class="val">काली मिर्च, जलेबी, दूध, मदिरा, मांस (कुछ परंपराओं में)</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय रंग</div>
+                    <div class="val">लाल, काला, नीला</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">निवास</div>
+                    <div class="val">श्मशान, काशी, मंदिर के द्वार</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रमुख पर्व</div>
+                    <div class="val">भैरव अष्टमी, कालाष्टमी, भैरव जयंती</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">विशेष</div>
+                    <div class="val">काशी के कोतवाल, रक्षक</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय फूल</div>
+                    <div class="val">लाल फूल, कनेर, धतूरा</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">अष्ट भैरव</div>
+                    <div class="val">8 रूप — काशी, उज्जैन, दिल्ली आदि</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- परिचय -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📖</span> परिचय</h2>
+            <p>
+                <strong>भैरव बाबा</strong> हिंदू धर्म के सबसे शक्तिशाली और रहस्यमय देवताओं में से एक हैं। वे <strong>भगवान शिव के अंश</strong> हैं और उन्हें <strong>काल भैरव</strong> कहा जाता है — अर्थात् समय के भैरव, जो काल (मृत्यु) के भी स्वामी हैं।
+            </p>
+            <p>
+                भैरव को <strong>क्षेत्रपाल</strong> (क्षेत्र के रक्षक) कहा जाता है। वे मंदिरों के द्वार पर, नगरों की सीमाओं पर, और श्मशानों में रक्षक के रूप में विराजमान रहते हैं। <strong>काशी</strong> में भैरव को <strong>कोतवाल</strong> (नगर-रक्षक) माना जाता है — काशी की रक्षा का भार उन्हीं पर है।
+            </p>
+            <p>
+                भैरव बाबा को <strong>अन्नदानी भैरव</strong> भी कहा जाता है — जो अपने भक्तों को अन्न, धन, और समृद्धि प्रदान करते हैं। वे <strong>भय, शत्रु, रोग, और बाधाओं</strong> का नाश करते हैं।
+            </p>
+            <p>
+                भैरव की पूजा <strong>तांत्रिक साधना</strong> में विशेष महत्व रखती है। वे <strong>तंत्र, मंत्र, और यंत्र</strong> के स्वामी हैं। उनकी पूजा से <strong>शीघ्र फल</strong> मिलता है — इसलिए इसे <strong>भैरव साधना</strong> कहा जाता है।
+            </p>
+        </div>
+
+        <!-- प्रकट कथा -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📜</span> प्रकट कथा</h2>
+            <p>
+                एक पौराणिक कथा के अनुसार, <strong>ब्रह्मा जी और विष्णु जी</strong> में यह विवाद हुआ कि <strong>दोनों में श्रेष्ठ कौन है</strong>। तब <strong>शिव जी</strong> एक <strong>अग्नि स्तंभ</strong> के रूप में प्रकट हुए। ब्रह्मा और विष्णु दोनों उस स्तंभ के आदि-अंत का पता नहीं लगा सके।
+            </p>
+            <p>
+                लेकिन <strong>ब्रह्मा जी</strong> ने <strong>झूठ बोला</strong> कि उन्होंने स्तंभ का अंत खोज लिया। शिव जी ने ब्रह्मा के झूठ से <strong>क्रोधित</strong> होकर <strong>भैरव को प्रकट किया</strong> — जो स्वयं शिव का ही अंश थे।
+            </p>
+            <p>
+                भैरव ने <strong>ब्रह्मा जी का पाँचवाँ सिर काट दिया</strong>, क्योंकि ब्रह्मा ने झूठ बोला था। इस पाप के कारण भैरव को <strong>ब्रह्महत्या का दोष</strong> लगा।
+            </p>
+            <p>
+                उस दोष से मुक्ति के लिए भैरव ने घोर तपस्या की और <strong>काशी</strong> में जाकर निवास किया। शिव जी ने उन्हें वरदान दिया कि <strong>काशी में उनकी पूजा सर्वप्रथम होगी</strong> और वे <strong>काशी के कोतवाल</strong> कहलाएँगे।
+            </p>
+            <p>
+                एक अन्य कथा के अनुसार, भैरव <strong>शिव जी के रौद्र रूप</strong> से प्रकट हुए थे, जब <strong>दक्ष प्रजापति</strong> ने सती का अपमान किया था।
+            </p>
+        </div>
+
+        <!-- स्वरूप -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🎨</span> स्वरूप</h2>
+            <p>
+                भैरव बाबा का स्वरूप <strong>भयानक, तेजस्वी, और शक्तिशाली</strong> है।
+            </p>
+            <ul>
+                <li><strong>रंग:</strong> काला, नीला, लाल (गहरा)</li>
+                <li><strong>वस्त्र:</strong> बाघ की खाल, या लाल वस्त्र</li>
+                <li><strong>मुख:</strong> भयंकर, लाल नेत्र, दाढ़ें बाहर</li>
+                <li><strong>हाथ:</strong> 2, 4, या 8 हाथ</li>
+                <li><strong>आयुध:</strong> त्रिशूल, डमरू, पाश, दंड, खड्ग, कपाल</li>
+                <li><strong>वाहन:</strong> श्वान (काला कुत्ता) — जो धर्म और न्याय का प्रतीक है</li>
+                <li><strong>मुकुट:</strong> रत्नों से जड़ित, या जटाओं में</li>
+                <li><strong>आभूषण:</strong> सर्प, रुद्राक्ष, सिर की माला</li>
+                <li><strong>मुद्रा:</strong> अभय मुद्रा और वरद मुद्रा</li>
+                <li><strong>विशेष:</strong> भैरव के साथ उनकी श्वान (कुत्ता) और भैरवी</li>
+                <li><strong>अन्नदानी रूप:</strong> हाथ में भिक्षापात्र और अन्न</li>
+            </ul>
+        </div>
+
+        <!-- मुख्य मंत्र -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🐕</span> मुख्य मंत्र</h2>
+
+            <p><strong>1. भैरव मूल मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ भ्रं भ्रं भैरवाय नमः
+                <small>अर्थ: हे भैरव बाबा, मैं आपको नमस्कार करता हूँ। 'भ्रं' भैरव का बीज मंत्र है।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>2. काल भैरव मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ कालभैरवाय नमः
+                <small>अर्थ: हे काल भैरव, मैं आपको नमस्कार करता हूँ। यह सरल और प्रभावी मंत्र है।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>3. भैरव गायत्री मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ शिवात्मकाय विद्महे ।<br>
+                कालभैरवाय धीमहि ।<br>
+                तन्नो भैरवः प्रचोदयात् ॥
+                <small>अर्थ: हम शिव के अंश का ध्यान करते हैं, काल भैरव का ध्यान करते हैं, भैरव हमें प्रेरित करें।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>4. अन्नदानी भैरव मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ भैरवाय अन्नदानी नमः
+                <small>अर्थ: हे अन्नदानी भैरव, मैं आपको नमस्कार करता हूँ। यह धन और अन्न के लिए है।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>5. कालाष्टमी मंत्र (काला भैरव):</strong></p>
+            <div class="mantra-box" style="font-size:15px;">
+                ॐ ह्रां ह्रीं ह्रूं कालभैरवाय नमः
+                <small>अर्थ: यह काल भैरव का शक्तिशाली मंत्र है — शत्रु नाश और रक्षा के लिए।</small>
+            </div>
+        </div>
+
+        <!-- अष्ट भैरव -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🔱</span> अष्ट भैरव — 8 स्वरूप</h2>
+            <p style="font-size:13px;margin-bottom:8px;">
+                भैरव बाबा के <strong>8 प्रमुख स्वरूप (अष्ट भैरव)</strong> हैं — हर स्वरूप का अलग महत्व और मंदिर है।
+            </p>
+            <div class="ashtabhairav-grid">
+                <div class="ab-item">
+                    <div class="ab-icon">⚫</div>
+                    <div>
+                        <div class="ab-name">1. काल भैरव</div>
+                        <div class="ab-loc">📍 काशी (वाराणसी), उत्तर प्रदेश</div>
+                        <div class="ab-desc">शिव के सबसे प्रमुख रूप, काशी के कोतवाल। विश्वनाथ मंदिर के पास स्थित।</div>
+                    </div>
+                </div>
+                <div class="ab-item">
+                    <div class="ab-icon">🐕</div>
+                    <div>
+                        <div class="ab-name">2. भैरव (गोकर्ण)</div>
+                        <div class="ab-loc">📍 गोकर्ण, कर्नाटक</div>
+                        <div class="ab-desc">अष्टभैरव का दूसरा रूप, शिव ने स्वयं स्थापित किया।</div>
+                    </div>
+                </div>
+                <div class="ab-item">
+                    <div class="ab-icon">🔥</div>
+                    <div>
+                        <div class="ab-name">3. भीषण भैरव</div>
+                        <div class="ab-loc">📍 पटना, बिहार</div>
+                        <div class="ab-desc">भैरव का भयंकर स्वरूप, दुर्गा मंदिर के पास स्थित।</div>
+                    </div>
+                </div>
+                <div class="ab-item">
+                    <div class="ab-icon">🗡️</div>
+                    <div>
+                        <div class="ab-name">4. दंडी भैरव</div>
+                        <div class="ab-loc">📍 काठमांडू, नेपाल</div>
+                        <div class="ab-desc">भैरव का दंडधारी स्वरूप, पशुपतिनाथ के पास।</div>
+                    </div>
+                </div>
+                <div class="ab-item">
+                    <div class="ab-icon">👁️</div>
+                    <div>
+                        <div class="ab-name">5. उन्मत्त भैरव</div>
+                        <div class="ab-loc">📍 वाराणसी, उत्तर प्रदेश</div>
+                        <div class="ab-desc">भैरव का उन्मत्त स्वरूप, अविमुक्तेश्वर के पास।</div>
+                    </div>
+                </div>
+                <div class="ab-item">
+                    <div class="ab-icon">🐍</div>
+                    <div>
+                        <div class="ab-name">6. भैरव (क्रोध)</div>
+                        <div class="ab-loc">📍 हरिद्वार, उत्तराखंड</div>
+                        <div class="ab-desc">भैरव का क्रोधी स्वरूप, माया देवी मंदिर के पास।</div>
+                    </div>
+                </div>
+                <div class="ab-item">
+                    <div class="ab-icon">💀</div>
+                    <div>
+                        <div class="ab-name">7. चंड भैरव</div>
+                        <div class="ab-loc">📍 दिल्ली</div>
+                        <div class="ab-desc">भैरव का चंड (प्रचंड) स्वरूप, कालकाजी मंदिर के पास।</div>
+                    </div>
+                </div>
+                <div class="ab-item">
+                    <div class="ab-icon">🐎</div>
+                    <div>
+                        <div class="ab-name">8. भैरव (स्वर्ण आख्य)</div>
+                        <div class="ab-loc">📍 सोनपुर, बिहार</div>
+                        <div class="ab-desc">भैरव का विशिष्ट स्वरूप, सोनपुर में प्रसिद्ध।</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- भैरव के 108 नाम (24 प्रमुख) -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📿</span> भैरव बाबा के 108 नाम (24 प्रमुख)</h2>
+            <p style="font-size:13px;margin-bottom:8px;">
+                भैरव बाबा के 108 नाम हैं — इनका जप करने से भय नाश, शत्रु नाश, और रक्षा होती है।
+            </p>
+            <div class="names-grid">
+                <div class="name-item"><strong>भैरव</strong> — भय का नाश करने वाले</div>
+                <div class="name-item"><strong>काल भैरव</strong> — काल के स्वामी</div>
+                <div class="name-item"><strong>क्षेत्रपाल</strong> — क्षेत्र के रक्षक</div>
+                <div class="name-item"><strong>दंडपाणि</strong> — दंड धारण करने वाले</div>
+                <div class="name-item"><strong>स्वामी भैरव</strong> — स्वामी</div>
+                <div class="name-item"><strong>अन्नदानी भैरव</strong> — अन्न देने वाले</div>
+                <div class="name-item"><strong>काशी कोतवाल</strong> — काशी के रक्षक</div>
+                <div class="name-item"><strong>शिवात्मक</strong> — शिव के अंश</div>
+                <div class="name-item"><strong>श्वानवाहन</strong> — कुत्ते पर सवार</div>
+                <div class="name-item"><strong>शूलपाणि</strong> — त्रिशूल धारण करने वाले</div>
+                <div class="name-item"><strong>कपालधारी</strong> — कपाल धारण करने वाले</div>
+                <div class="name-item"><strong>खड्गधारी</strong> — तलवार धारण करने वाले</div>
+                <div class="name-item"><strong>रुद्रांश</strong> — रुद्र के अंश</div>
+                <div class="name-item"><strong>भीषण</strong> — भयंकर रूप</div>
+                <div class="name-item"><strong>उग्र</strong> — प्रचंड</div>
+                <div class="name-item"><strong>चंड</strong> — क्रोधी</div>
+                <div class="name-item"><strong>प्रचंड</strong> — अत्यंत शक्तिशाली</div>
+                <div class="name-item"><strong>अनल</strong> — अग्नि स्वरूप</div>
+                <div class="name-item"><strong>क्रोधराज</strong> — क्रोध के राजा</div>
+                <div class="name-item"><strong>श्मशानवासी</strong> — श्मशान में रहने वाले</div>
+                <div class="name-item"><strong>भूतनाथ</strong> — भूतों के स्वामी</div>
+                <div class="name-item"><strong>योगीश्वर</strong> — योगियों के ईश्वर</div>
+                <div class="name-item"><strong>सिद्धिदाता</strong> — सिद्धि देने वाले</div>
+                <div class="name-item"><strong>मोक्षदाता</strong> — मोक्ष देने वाले</div>
+            </div>
+        </div>
+
+        <!-- जप विधि -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📿</span> जप विधि</h2>
+            <ul>
+                <li><strong>समय:</strong> रात्रि 10 बजे से 2 बजे तक (विशेष), या मंगलवार/शनिवार</li>
+                <li><strong>स्थान:</strong> भैरव मंदिर में, श्मशान में, या पूर्व/दक्षिण दिशा में मुख करके</li>
+                <li><strong>माला:</strong> रुद्राक्ष, काली हड्डी, या स्फटिक माला</li>
+                <li><strong>संख्या:</strong> 108 बार (1 माला), या 1008 बार</li>
+                <li><strong>वस्त्र:</strong> लाल, काला, या नीला</li>
+                <li><strong>भोग:</strong> काली मिर्च, जलेबी, दूध, मदिरा (कुछ परंपराओं में)</li>
+                <li><strong>धूप/दीप:</strong> धूप, सरसों के तेल का दीपक</li>
+                <li><strong>विशेष:</strong> भैरव स्तोत्र, काल भैरव अष्टकम्, बटुक भैरव कवच</li>
+                <li><strong>अर्घ्य:</strong> लाल फूल और जल अर्पित करें</li>
+                <li><strong>कुत्तों को भोजन:</strong> भैरव पूजा के बाद कुत्तों को भोजन कराएँ</li>
+            </ul>
+        </div>
+
+        <!-- भैरव स्तोत्र (Accordion) -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📜</span> भैरव स्तोत्र / आरती</h2>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 भैरव आरती (जय भैरव दयाल)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:15px;text-align:left;line-height:2;">
+                        जय भैरव दयाल, जय भैरव दयाल ।<br>
+                        जय भैरव दयाल, जय भैरव दयाल ॥<br><br>
+                        तुम हो काशी के कोतवाल, तुम हो सबके रखवाल ।<br>
+                        जय भैरव दयाल... ॥<br><br>
+                        जो तुमको नित ध्यावे, सब सुख सम्पत्ति पावे ।<br>
+                        दुःख दारिद्र्य मिटावे, भव सागर तर जावे ॥<br>
+                        जय भैरव दयाल... ॥<br><br>
+                        तुम अन्नदानी देव, तुम हो सबके स्वामी ।<br>
+                        तुम हो शिव के अंश, तुम हो अंतर्यामी ॥<br>
+                        जय भैरव दयाल... ॥<br><br>
+                        तुम्हरे भजन से जन, सब दुःख से छूटे ।<br>
+                        तुम्हरे ध्यान से जन, भव बंधन तोड़े ॥<br>
+                        जय भैरव दयाल... ॥<br><br>
+                        जय भैरव दयाल, जय भैरव दयाल ।<br>
+                        जय भैरव दयाल, जय भैरव दयाल ॥
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 काल भैरव अष्टकम् (संपूर्ण)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <p style="margin-bottom:8px;font-size:13px;">
+                        <strong>रचयिता:</strong> आदि शंकराचार्य — यह स्तोत्र काल भैरव की स्तुति में लिखा गया है।
+                    </p>
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        देवराजसेव्यमानपावनांघ्रिपङ्कजं ।<br>
+                        व्यालयज्ञसूत्रमिन्दुशेखरं कृपाकरम् ।<br>
+                        नारदादियोगिवृन्दवन्दितं दिगंबरं ।<br>
+                        काशिकापुराधिनाथकालभैरवं भजे ॥१॥<br><br>
+                        भानुकोटिभास्करं भवाब्धितारकं परं ।<br>
+                        नीलकण्ठमीप्सितार्थदायकं त्रिलोचनम् ।<br>
+                        कालकालमंबुजाक्षमक्षशूलमक्षरं ।<br>
+                        काशिकापुराधिनाथकालभैरवं भजे ॥२॥<br><br>
+                        शूलटंकपाशदण्डपाणिमादिकारणं ।<br>
+                        श्यामकायमादिदेवमक्षरं निरामयम् ।<br>
+                        भीमविक्रमं प्रभुं विचित्रताण्डवप्रियं ।<br>
+                        काशिकापुराधिनाथकालभैरवं भजे ॥३॥<br><br>
+                        भुक्तिमुक्तिदायकं प्रशस्तचारुविग्रहं ।<br>
+                        भक्तवत्सलं स्थितं समस्तलोकविग्रहम् ।<br>
+                        विनिक्वणन्मनोज्ञहेमकिङ्किणीलसत्कटिं ।<br>
+                        काशिकापुराधिनाथकालभैरवं भजे ॥४॥<br><br>
+                        धर्मसेतुपालकं त्वधर्ममार्गनाशकं ।<br>
+                        कर्मपाशमोचकं सुशर्मदायकं विभुम् ।<br>
+                        स्वर्णवर्णशेषपाशपाशिताङ्घ्रिपङ्कजं ।<br>
+                        काशिकापुराधिनाथकालभैरवं भजे ॥५॥<br><br>
+                        रत्नपादुकाप्रभाभिरामपादयुग्मकं ।<br>
+                        नित्यमद्वितीयमिष्टदैवतं निरंजनम् ।<br>
+                        मृत्युदर्पनाशनं करालदंष्ट्रमोक्षणं ।<br>
+                        काशिकापुराधिनाथकालभैरवं भजे ॥६॥<br><br>
+                        अट्टहासभिन्नपद्मजाण्डकोशसन्ततिं ।<br>
+                        दृष्टिपातनष्टपापजालमुग्रशासनम् ।<br>
+                        अष्टसिद्धिदायकं कपालमालिकाधरं ।<br>
+                        काशिकापुराधिनाथकालभैरवं भजे ॥७॥<br><br>
+                        भुवनकोशमानसूनुवंशसंकुलं विभुम् ।<br>
+                        कालदण्डधारिणं भवाब्धिपोतनाविकम् ।<br>
+                        नित्यमद्वितीयमिष्टदैवतं निरंजनं ।<br>
+                        काशिकापुराधिनाथकालभैरवं भजे ॥८॥
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 बटुक भैरव कवच (संक्षिप्त)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        ॐ शिरो मे बटुकः पातु भालं पातु त्रिलोचनः ।<br>
+                        नेत्रे पातु महाशूरः श्रोत्रे पातु शुभप्रदः ॥<br><br>
+                        घ्राणं पातु महाभीमो मुखं भैरवरूपवान् ।<br>
+                        जिह्वां पातु त्रिशूलेशः कण्ठं कालकुलान्तकः ॥<br><br>
+                        स्कन्धौ पातु महाकायो बाहू मे सर्वपालकः ।<br>
+                        हृदयं पातु भैरवश्च नाभिं पापप्रणाशनः ॥<br><br>
+                        कटिं मे पातु कालाग्निः ऊरू पातु दिगंबरः ।<br>
+                        जानुनी पातु शर्वश्च जंघे पातु महाबलः ॥<br><br>
+                        पादौ मे पातु सर्वेशः सर्वाङ्गं पातु भैरवः ।
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 भैरव चालीसा</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        जय श्री भैरव दयाल, जय जय काशी कोतवाल ।<br>
+                        दुष्ट दलन करण, भक्त जन रक्षा करण ॥<br><br>
+                        भैरव तुम्हरी महिमा भारी, काल दंड के हो अधिकारी ।<br>
+                        शिव के अंश तुम हो दयाला, भक्तों के तुम हो रखवाला ॥<br><br>
+                        ... (भैरव चालीसा — 40 चौपाइयाँ)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- प्रमुख मंदिर -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🛕</span> प्रमुख मंदिर</h2>
+            <div class="temple-list">
+                <div class="temple-item">
+                    <strong>काल भैरव मंदिर, काशी (वाराणसी)</strong><br>
+                    काशी का सबसे प्रमुख भैरव मंदिर, विश्वनाथ मंदिर के पास। काशी के कोतवाल।
+                </div>
+                <div class="temple-item">
+                    <strong>काल भैरव मंदिर, उज्जैन (मध्य प्रदेश)</strong><br>
+                    महाकालेश्वर मंदिर के पास स्थित, तंत्र साधना का प्रमुख स्थल।
+                </div>
+                <div class="temple-item">
+                    <strong>कालकाजी मंदिर, दिल्ली</strong><br>
+                    चंड भैरव का प्रसिद्ध मंदिर, दक्षिण दिल्ली में स्थित।
+                </div>
+                <div class="temple-item">
+                    <strong>भैरव मंदिर, गोकर्ण (कर्नाटक)</strong><br>
+                    गोकर्ण भैरव का मंदिर, जहाँ शिव जी ने स्वयं स्थापना की।
+                </div>
+                <div class="temple-item">
+                    <strong>भैरव मंदिर, सोनपुर (बिहार)</strong><br>
+                    बिहार का प्रसिद्ध भैरव मंदिर, काली मंदिर के पास।
+                </div>
+                <div class="temple-item">
+                    <strong>भैरव मंदिर, हरिद्वार (उत्तराखंड)</strong><br>
+                    माया देवी मंदिर के पास स्थित, भैरव का प्रसिद्ध मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>भैरव मंदिर, पटना (बिहार)</strong><br>
+                    भीषण भैरव का मंदिर, पटना का प्रसिद्ध स्थल।
+                </div>
+                <div class="temple-item">
+                    <strong>भैरव मंदिर, काठमांडू (नेपाल)</strong><br>
+                    दंडी भैरव का मंदिर, पशुपतिनाथ के पास।
+                </div>
+            </div>
+        </div>
+
+        <!-- त्योहार और व्रत -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🎉</span> प्रमुख त्योहार और व्रत</h2>
+            <ul>
+                <li><strong>भैरव अष्टमी:</strong> मार्गशीर्ष शुक्ल अष्टमी — भैरव बाबा का प्रकटोत्सव।</li>
+                <li><strong>कालाष्टमी:</strong> कार्तिक कृष्ण अष्टमी — काल भैरव की पूजा, दीपदान।</li>
+                <li><strong>भैरव जयंती:</strong> भैरव अष्टमी पर ही मनाई जाती है।</li>
+                <li><strong>मंगलवार व्रत:</strong> हर मंगलवार — भैरव का प्रिय दिन।</li>
+                <li><strong>शनिवार व्रत:</strong> हर शनिवार — भैरव पूजा।</li>
+                <li><strong>रात्रि पूजा:</strong> भैरव की पूजा रात्रि में विशेष फलदायी।</li>
+                <li><strong>अन्नकूट:</strong> दीपावली के बाद — भैरव को अन्न का भोग।</li>
+                <li><strong>कुत्तों को भोजन:</strong> भैरव पूजा के बाद कुत्तों को भोजन कराना शुभ।</li>
+            </ul>
+        </div>
+
+        <!-- भक्ति और लाभ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🙏</span> भैरव बाबा को क्यों भजें?</h2>
+            <ul>
+                <li><strong>भय नाश:</strong> भैरव पूजा से सभी भय (भूत, प्रेत, शत्रु, रोग) दूर होते हैं।</li>
+                <li><strong>शत्रु नाश:</strong> भैरव मंत्र जप से शत्रु नष्ट होते हैं।</li>
+                <li><strong>रक्षा:</strong> भैरव घर, नगर, और मंदिर के रक्षक हैं।</li>
+                <li><strong>धन प्राप्ति:</strong> अन्नदानी भैरव की कृपा से धन और अन्न मिलता है।</li>
+                <li><strong>कर्ज मुक्ति:</strong> भैरव पूजा से कर्ज से मुक्ति मिलती है।</li>
+                <li><strong>तंत्र साधना:</strong> भैरव तंत्र के स्वामी हैं — साधना में सफलता।</li>
+                <li><strong>अदालती मुकदमे:</strong> भैरव पूजा से अदालती मुकदमों में विजय।</li>
+                <li><strong>मोक्ष:</strong> भैरव की भक्ति से मोक्ष प्राप्त होता है।</li>
+            </ul>
+        </div>
+
+        <!-- वर्जित कार्य -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🚫</span> क्या न करें?</h2>
+            <ul>
+                <li>❌ भैरव की मूर्ति को <strong>अशुद्ध हाथों</strong> से न छुएँ</li>
+                <li>❌ <strong>बिना स्नान</strong> भैरव पूजा न करें</li>
+                <li>❌ भैरव को <strong>तुलसी</strong> न चढ़ाएँ (लाल फूल, कनेर, धतूरा चढ़ाएँ)</li>
+                <li>❌ भैरव पूजा में <strong>नमक</strong> न चढ़ाएँ</li>
+                <li>❌ भैरव मंदिर में <strong>शोर</strong> न करें</li>
+                <li>❌ भैरव के सामने <strong>झूठ</strong> न बोलें</li>
+                <li>❌ <strong>कुत्तों</strong> को न मारें (भैरव का वाहन है)</li>
+                <li>❌ भैरव पूजा <strong>अशुद्ध मन</strong> से न करें</li>
+                <li>❌ भैरव की मूर्ति को <strong>ज़मीन पर</strong> न रखें</li>
+                <li>❌ भैरव मंत्र का <strong>अनादर</strong> न करें</li>
+            </ul>
+        </div>
+
+        <!-- FAQ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>भैरव बाबा का प्राकट्य कैसे हुआ?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    जब ब्रह्मा और विष्णु में श्रेष्ठता का विवाद हुआ, तब शिव जी अग्नि स्तंभ के रूप में प्रकट हुए। ब्रह्मा जी ने झूठ बोला कि उन्होंने स्तंभ का अंत खोज लिया। तब शिव जी ने क्रोधित होकर <strong>भैरव को प्रकट किया</strong>, जिन्होंने ब्रह्मा का पाँचवाँ सिर काट दिया।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>भैरव को 'काशी का कोतवाल' क्यों कहते हैं?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    ब्रह्महत्या के दोष से मुक्ति के लिए भैरव ने काशी में निवास किया। शिव जी ने उन्हें वरदान दिया कि वे <strong>काशी के कोतवाल</strong> (नगर-रक्षक) होंगे। काशी में आने वाले हर व्यक्ति को <strong>भैरव के दर्शन</strong> करने होते हैं — तभी काशी यात्रा पूर्ण मानी जाती है।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>भैरव का वाहन कुत्ता क्यों है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>कुत्ता</strong> <strong>धर्म और न्याय</strong> का प्रतीक है। कुत्ता अपने स्वामी के प्रति अत्यंत वफादार होता है और <strong>रक्षक</strong> होता है। भैरव काशी के कोतवाल हैं — उनका वाहन कुत्ता उनके <strong>रक्षक स्वभाव</strong> का प्रतीक है। इसलिए भैरव पूजा में <strong>कुत्तों को भोजन कराना</strong> पुण्य माना जाता है।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>कालाष्टमी का क्या महत्व है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>कालाष्टमी</strong> (कार्तिक कृष्ण अष्टमी) को <strong>काल भैरव की विशेष पूजा</strong> की जाती है। इस दिन <strong>रात्रि में दीपदान</strong> किया जाता है — जो पितरों को मार्ग दिखाता है। मान्यता है कि इस दिन <strong>काल भैरव की पूजा</strong> से कालसर्प दोष, शनि दोष, और पितृ दोष दूर होते हैं।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>क्या भैरव पूजा से अदालती मुकदमों में विजय मिलती है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    हाँ, <strong>भैरव पूजा, काल भैरव अष्टकम्, और भैरव मंत्र जप</strong> से अदालती मुकदमों में विजय मिलती है। भैरव <strong>न्याय के देवता</strong> हैं — वे अपने भक्तों को न्याय दिलाते हैं। मंगलवार और शनिवार को भैरव पूजा विशेष फलदायी है।
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Links -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🔗</span> संबंधित लिंक</h2>
+            <div class="related-grid">
+                <a href="../mantra/index.html" class="related-link">📿 सभी मंत्र</a>
+                <a href="../stotra/kal-bhairav-ashtakam.html" class="related-link">📜 काल भैरव अष्टकम्</a>
+                <a href="../stotra/batuk-bhairav-kavach.html" class="related-link">📜 बटुक भैरव कवच</a>
+                <a href="../tyohar/bhairav-ashtami.html" class="related-link">🎉 भैरव अष्टमी</a>
+                <a href="../katha/bhairav-katha.html" class="related-link">📖 भैरव कथाएँ</a>
+                <a href="../quiz/index.html" class="related-link">🎯 भैरव क्विज</a>
+            </div>
+        </div>
+
+        <!-- Share -->
+        <button class="btn-primary" onclick="sharePage()" style="margin-top:10px;">
+            <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+        </button>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय भैरव बाबा</p>
+        </footer>
+
+    </main>
+
+    <button class="back-top" id="backTop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-calendar-days"></i><p>पंचांग</p></a>
+        <a href="../quiz/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>क्विज</p></a>
+    </nav>
+
+    <script src="../script.js"></script>
+    <script>
+        function toggleAccordion(el) {
+            const item = el.parentElement;
+            item.classList.toggle('open');
+        }
+
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backTop');
+            if (btn) {
+                if (window.scrollY > 400) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
