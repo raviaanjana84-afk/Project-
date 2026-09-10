@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>भक्ति AI — संपूर्ण ज्ञान | Sanatan Gyan Kosh</title>
+    <meta name="description" content="भक्ति AI — आपके धार्मिक सवालों का जवाब। मंत्र, कथा, पूजा विधि, ज्योतिष, व्रत, त्योहार और बहुत कुछ।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .chat-container {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            margin-bottom: 14px;
+            display: flex;
+            flex-direction: column;
+            height: 70vh;
+            max-height: 600px;
+        }
+        .chat-header {
+            background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
+            color: white;
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .chat-header .ai-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), #f0a500);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+        .chat-header .ai-info h3 {
+            margin: 0;
+            font-family: var(--font-display);
+            font-size: 16px;
+        }
+        .chat-header .ai-info .ai-status {
+            font-size: 11px;
+            opacity: 0.85;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 2px;
+        }
+        .chat-header .ai-info .ai-status .dot {
+            width: 8px;
+            height: 8px;
+            background: #4ade80;
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.15); }
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background: var(--bg);
+        }
+        .chat-message {
+            display: flex;
+            gap: 8px;
+            max-width: 85%;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .chat-message.user {
+            align-self: flex-end;
+            flex-direction: row-reverse;
+        }
+        .chat-message.ai {
+            align-self: flex-start;
+        }
+        .chat-bubble {
+            padding: 11px 15px;
+            border-radius: 18px;
+            font-size: 13.5px;
+            line-height: 1.7;
+            word-wrap: break-word;
+        }
+        .chat-message.user .chat-bubble {
+            background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+        .chat-message.ai .chat-bubble {
+            background: var(--card-bg);
+            color: var(--ink);
+            border: 1px solid var(--border);
+            border-bottom-left-radius: 4px;
+        }
+        .chat-message.ai .chat-bubble strong { color: var(--maroon); }
+        .chat-message.ai .chat-bubble a { color: var(--maroon); text-decoration: underline; }
+
+        .chat-avatar-small {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+        .chat-message.ai .chat-avatar-small {
+            background: linear-gradient(135deg, var(--gold), #f0a500);
+        }
+        .chat-message.user .chat-avatar-small {
+            background: var(--maroon);
+            color: white;
+            font-size: 14px;
+        }
+
+        .typing-indicator {
+            display: flex;
+            gap: 4px;
+            padding: 12px 16px;
+            background: var(--card-bg);
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            width: fit-content;
+        }
+        .typing-indicator span {
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+            30% { transform: translateY(-6px); opacity: 1; }
+        }
+
+        .chat-input-area {
+            padding: 12px;
+            background: var(--card-bg);
+            border-top: 1px solid var(--border);
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        .chat-input {
+            flex: 1;
+            padding: 11px 16px;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            font-family: var(--font-body);
+            font-size: 13.5px;
+            color: var(--ink);
+            outline: none;
+            transition: var(--transition);
+        }
+        .chat-input:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(212,175,55,0.15);
+        }
+        .chat-send-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+        .chat-send-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(122,46,46,0.3);
+        }
+        .chat-send-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Quick suggestions */
+        .quick-suggestions {
+            padding: 10px 12px;
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+            overflow-x: auto;
+            white-space: nowrap;
+            scrollbar-width: none;
+        }
+        .quick-suggestions::-webkit-scrollbar { display: none; }
+        .suggestion-chip {
+            display: inline-block;
+            padding: 6px 14px;
+            margin-right: 6px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 11px;
+            color: var(--maroon);
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-weight: 600;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        .suggestion-chip:hover {
+            background: var(--maroon);
+            color: white;
+            border-color: var(--maroon);
+        }
+
+        /* Info Banner */
+        .ai-info-banner {
+            background: linear-gradient(135deg, rgba(212,175,55,0.12), rgba(122,46,46,0.08));
+            border: 1px solid var(--gold);
+            border-radius: var(--radius);
+            padding: 14px 16px;
+            margin-bottom: 14px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .ai-info-banner .banner-icon {
+            font-size: 28px;
+            line-height: 1;
+        }
+        .ai-info-banner .banner-text {
+            flex: 1;
+        }
+        .ai-info-banner .banner-text h4 {
+            font-family: var(--font-display);
+            font-size: 14px;
+            color: var(--maroon);
+            margin-bottom: 4px;
+        }
+        .ai-info-banner .banner-text p {
+            font-size: 12px;
+            color: var(--ink-soft);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 420px) {
+            .chat-container { height: 65vh; }
+            .chat-header .ai-info h3 { font-size: 14px; }
+            .chat-bubble { font-size: 13px; padding: 10px 13px; }
+            .chat-message { max-width: 90%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="../index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ सनातन ज्ञान कोश</span>
+            <h1>भक्ति AI</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <!-- Info Banner -->
+        <div class="ai-info-banner">
+            <div class="banner-icon">🕉️</div>
+            <div class="banner-text">
+                <h4>नमस्ते, धर्म जिज्ञासु!</h4>
+                <p>मैं आपकी धार्मिक शंकाओं का समाधान करने के लिए हूँ। मंत्र, कथा, पूजा विधि, ज्योतिष, व्रत, त्योहार — कुछ भी पूछें!</p>
+            </div>
+        </div>
+
+        <!-- Chat Container -->
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="ai-avatar">🕉️</div>
+                <div class="ai-info">
+                    <h3>भक्ति AI</h3>
+                    <div class="ai-status">
+                        <span class="dot"></span> ऑनलाइन · तुरंत जवाब
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Suggestions -->
+            <div class="quick-suggestions" id="quickSuggestions">
+                <button class="suggestion-chip" onclick="askQuick('हनुमान चालीसा क्यों पढ़नी चाहिए?')">🐒 हनुमान चालीसा</button>
+                <button class="suggestion-chip" onclick="askQuick('गायत्री मंत्र का अर्थ क्या है?')">📿 गायत्री मंत्र</button>
+                <button class="suggestion-chip" onclick="askQuick('शिव जी को क्यों भजें?')">🔱 शिव जी</button>
+                <button class="suggestion-chip" onclick="askQuick('दीपावली कैसे मनाएँ?')">🪔 दीपावली</button>
+                <button class="suggestion-chip" onclick="askQuick('महामृत्युंजय मंत्र क्या है?')">🕉️ महामृत्युंजय</button>
+                <button class="suggestion-chip" onclick="askQuick('करवा चौथ का व्रत कैसे करें?')">🌙 करवा चौथ</button>
+                <button class="suggestion-chip" onclick="askQuick('मेरी राशि का रत्न क्या है?')">💎 रत्न</button>
+                <button class="suggestion-chip" onclick="askQuick('गीता का सार क्या है?')">📖 गीता सार</button>
+            </div>
+
+            <!-- Messages -->
+            <div class="chat-messages" id="chatMessages">
+                <div class="chat-message ai">
+                    <div class="chat-avatar-small">🕉️</div>
+                    <div class="chat-bubble">
+                        🙏 <strong>नमस्ते!</strong> मैं भक्ति AI हूँ — आपका धार्मिक मार्गदर्शक।<br><br>
+                        आप मुझसे पूछ सकते हैं:<br>
+                        • 📿 मंत्र और उनके अर्थ<br>
+                        • 📖 कथाएँ और पुराण<br>
+                        • 🪔 पूजा विधि और व्रत<br>
+                        • 🔮 ज्योतिष और रत्न<br>
+                        • 🎉 त्योहार और संस्कार<br><br>
+                        नीचे अपना सवाल लिखें या ऊपर दिए सुझावों पर क्लिक करें! ✨
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="chat-input-area">
+                <input
+                    type="text"
+                    class="chat-input"
+                    id="chatInput"
+                    placeholder="अपना सवाल लिखें..."
+                    onkeydown="if(event.key==='Enter') sendMessage()"
+                />
+                <button class="chat-send-btn" onclick="sendMessage()">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Popular Topics -->
+        <div class="card">
+            <h3 style="font-family: var(--font-display); color: var(--maroon); font-size: 16px; margin-bottom: 10px;">
+                🔥 लोकप्रिय विषय
+            </h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                <button class="suggestion-chip" style="padding: 10px; width: 100%;" onclick="askQuick('ॐ नमः शिवाय मंत्र का अर्थ और लाभ')">🔱 शिव मंत्र</button>
+                <button class="suggestion-chip" style="padding: 10px; width: 100%;" onclick="askQuick('हनुमान जी की कथा सुनाओ')">🐒 हनुमान कथा</button>
+                <button class="suggestion-chip" style="padding: 10px; width: 100%;" onclick="askQuick('नवरात्रि में क्या करें?')">🌺 नवरात्रि</button>
+                <button class="suggestion-chip" style="padding: 10px; width: 100%;" onclick="askQuick('कालसर्प दोष के उपाय')">🪐 कालसर्प दोष</button>
+                <button class="suggestion-chip" style="padding: 10px; width: 100%;" onclick="askQuick('विष्णु सहस्रनाम क्या है?')">🕉️ विष्णु सहस्रनाम</button>
+                <button class="suggestion-chip" style="padding: 10px; width: 100%;" onclick="askQuick('सूर्य नमस्कार के लाभ')">🌞 सूर्य नमस्कार</button>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">भक्ति AI सामान्य जानकारी प्रदान करता है · सटीक सलाह के लिए योग्य आचार्य से परामर्श करें</p>
+        </footer>
+
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="../devta/index.html" class="nav-link"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-robot"></i><p>भक्ति AI</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-calendar-days"></i><p>पंचांग</p></a>
+    </nav>
+
+    <script>
+        // ============================================================
+        //  BHAKTI AI — Knowledge Base
+        // ============================================================
+
+        const knowledgeBase = [
+            // ---------- मंत्र ----------
+            {
+                keywords: ['हनुमान चालीसा', 'हनुमान चालीसा क्यों', 'चालीसा'],
+                answer: '🙏 <strong>हनुमान चालीसा</strong> के पाठ के लाभ:<br><br>• 🐒 <strong>भय मुक्ति:</strong> सभी प्रकार के भय दूर होते हैं<br>• 💪 <strong>बल और बुद्धि:</strong> शरीर में शक्ति और मन में बुद्धि आती है<br>• 🛡️ <strong>शत्रु नाश:</strong> शत्रु और बाधाएँ दूर होती हैं<br>• 🌿 <strong>रोग नाश:</strong> स्वास्थ्य लाभ होता है<br>• 🕉️ <strong>राम कृपा:</strong> हनुमान जी की कृपा से राम जी की कृपा मिलती है<br><br>💡 <strong>कब पढ़ें:</strong> मंगलवार और शनिवार को, 7 या 21 बार।<br><br>📖 पूरी चालीसा <a href="../stotra/index.html">स्तोत्र कोश</a> में देखें।'
+            },
+            {
+                keywords: ['गायत्री मंत्र', 'गायत्री', 'gayatri'],
+                answer: '🕉️ <strong>गायत्री मंत्र</strong><br><br><em>"ॐ भूर्भुवः स्वः । तत्सवितुर्वरेण्यम् । भर्गो देवस्य धीमहि । धियो यो नः प्रचोदयात् ॥"</em><br><br><strong>📖 अर्थ:</strong> हम उस परम तेजस्वी सविता (सूर्य) का ध्यान करते हैं, जो हमारी बुद्धि को प्रेरित करे।<br><br><strong>✨ लाभ:</strong><br>• बुद्धि और एकाग्रता में वृद्धि<br>• आत्मविश्वास और साहस<br>• नकारात्मक ऊर्जा का नाश<br>• मोक्ष का मार्ग<br><br>💡 <strong>जप विधि:</strong> सूर्योदय से पहले, 108 बार, पूर्व दिशा में बैठकर।'
+            },
+            {
+                keywords: ['महामृत्युंजय', 'मृत्युंजय', 'mrityunjaya'],
+                answer: '🕉️ <strong>महामृत्युंजय मंत्र</strong><br><br><em>"ॐ त्र्यम्बकं यजामहे । सुगन्धिं पुष्टिवर्धनम् । उर्वारुकमिव बन्धनान् । मृत्योर्मुक्षीय माऽमृतात् ॥"</em><br><br><strong>📖 अर्थ:</strong> हम त्रिनेत्र शिव की पूजा करते हैं, जो सुगंधित और पोषक हैं। जैसे खीरा बेल से अलग हो जाता है, वैसे ही हमें मृत्यु के बंधन से मुक्त करें।<br><br><strong>✨ लाभ:</strong><br>• आयु वृद्धि<br>• रोग नाश<br>• मृत्यु भय से मुक्ति<br>• आरोग्य और शांति<br><br>💡 <strong>जप:</strong> सुबह/शाम, 108 बार, रुद्राक्ष माला से।'
+            },
+            {
+                keywords: ['शिव मंत्र', 'ॐ नमः शिवाय', 'om namah shivaya'],
+                answer: '🔱 <strong>ॐ नमः शिवाय</strong> — पंचाक्षर मंत्र<br><br><strong>📖 अर्थ:</strong> मैं शिव को नमस्कार करता हूँ।<br><br><strong>✨ लाभ:</strong><br>• सभी पापों का नाश<br>• शिव कृपा और मोक्ष<br>• आत्मज्ञान और शांति<br>• भय नाश<br><br>💡 <strong>जप:</strong> प्रातः/सायं, 108 बार, रुद्राक्ष माला से।<br><br>🔱 यह सबसे सरल और शक्तिशाली शिव मंत्र है।'
+            },
+
+            // ---------- देवता ----------
+            {
+                keywords: ['शिव जी', 'शिव', 'shiva', 'महादेव'],
+                answer: '🔱 <strong>भगवान शिव</strong> — महादेव<br><br><strong>👤 परिचय:</strong> शिव हिंदू धर्म के त्रिदेवों में से एक हैं — संहार के देवता। वे भोलेनाथ, नीलकंठ, और त्रिनेत्र के नाम से जाने जाते हैं।<br><br><strong>💑 परिवार:</strong> पत्नी — पार्वती, पुत्र — गणेश और कार्तिकेय<br><br><strong>🚗 वाहन:</strong> नंदी (बैल)<br><br><strong>🔱 आयुध:</strong> त्रिशूल, डमरू<br><br><strong>🙏 क्यों भजें:</strong><br>• मोक्ष प्राप्ति<br>• रोग नाश<br>• मन की शांति<br>• कालसर्प दोष नाश<br>• भय मुक्ति<br><br>📖 पूरी जानकारी <a href="../devta/shiva.html">शिव जी</a> पेज पर।'
+            },
+            {
+                keywords: ['हनुमान जी', 'हनुमान', 'hanuman', 'बजरंगबली'],
+                answer: '🐒 <strong>भगवान हनुमान</strong> — बजरंगबली<br><br><strong>👤 परिचय:</strong> हनुमान जी भगवान राम के परम भक्त हैं। वे रुद्र के अवतार और सात चिरंजीवियों में से एक हैं।<br><br><strong>👨‍👩‍👦 परिवार:</strong> माता — अंजना, पिता — केसरी, गुरु — सूर्यदेव<br><br><strong>🚗 वाहन:</strong> स्वयं (उड़ान)<br><br><strong>🙏 क्यों भजें:</strong><br>• बल और वीरता<br>• बुद्धि और विवेक<br>• भय मुक्ति<br>• रोग नाश<br>• शत्रु नाश<br><br>📖 पूरी जानकारी <a href="../devta/hanuman.html">हनुमान जी</a> पेज पर।'
+            },
+            {
+                keywords: ['गणेश जी', 'गणेश', 'ganesh', 'गणपति', 'विघ्नहर्ता'],
+                answer: '🐘 <strong>भगवान गणेश</strong> — विघ्नहर्ता<br><br><strong>👤 परिचय:</strong> गणेश जी शिव और पार्वती के पुत्र हैं। वे सभी देवताओं के अग्रपूज्य हैं।<br><br><strong>💑 पत्नी:</strong> ऋद्धि और सिद्धि<br><br><strong>🚗 वाहन:</strong> मूषक (चूहा)<br><br><strong>🙏 क्यों भजें:</strong><br>• विघ्न नाश<br>• बुद्धि और सफलता<br>• व्यापार में लाभ<br>• विवाह में सफलता<br>• धन प्राप्ति<br><br>💡 <strong>मंत्र:</strong> ॐ गं गणपतये नमः<br><br>📖 पूरी जानकारी <a href="../devta/ganesh.html">गणेश जी</a> पेज पर।'
+            },
+            {
+                keywords: ['दुर्गा', 'दुर्गा माता', 'durga', 'माँ दुर्गा'],
+                answer: '🌺 <strong>माँ दुर्गा</strong> — शक्ति की देवी<br><br><strong>👤 परिचय:</strong> माँ दुर्गा आदि शक्ति हैं — सृष्टि की मूल ऊर्जा। वे पार्वती, भवानी, और जगदम्बा के नाम से जानी जाती हैं।<br><br><strong>🚗 वाहन:</strong> सिंह (शेर)<br><br><strong>🔱 आयुध:</strong> त्रिशूल, चक्र, गदा<br><br><strong>🙏 क्यों भजें:</strong><br>• शक्ति और साहस<br>• शत्रु नाश<br>• भय मुक्ति<br>• रोग नाश<br>• विवाह में सफलता<br><br>💡 <strong>मंत्र:</strong> ॐ दुं दुर्गायै नमः<br><br>📖 पूरी जानकारी <a href="../devta/durga.html">दुर्गा माता</a> पेज पर।'
+            },
+
+            // ---------- त्योहार ----------
+            {
+                keywords: ['दीपावली', 'दिवाली', 'diwali'],
+                answer: '🪔 <strong>दीपावली</strong> — दीपों का उत्सव<br><br><strong>📖 महत्व:</strong> दीपावली राम जी के अयोध्या वापसी की खुशी में मनाई जाती है। यह हिंदू धर्म का सबसे बड़ा त्योहार है।<br><br><strong>📅 कब:</strong> कार्तिक अमावस्या (अक्टूबर-नवंबर)<br><br><strong>🪔 पूजा विधि:</strong><br>1. घर-आँगन दीपों से सजाएँ<br>2. लक्ष्मी-गणेश की पूजा करें<br>3. रंगोली बनाएँ<br>4. मिठाइयाँ बाँटें<br>5. दीपदान करें<br><br><strong>✨ लाभ:</strong> धन, समृद्धि, सौभाग्य, पारिवारिक सुख।<br><br>💡 <strong>5 दिन:</strong> धनतेरस, नरक चतुर्दशी, दीपावली, गोवर्धन, भाई दूज।'
+            },
+            {
+                keywords: ['होली', 'holi', 'रंगोत्सव'],
+                answer: '🎨 <strong>होली</strong> — रंगों का त्योहार<br><br><strong>📖 महत्व:</strong> होली बुराई पर अच्छाई की जीत का प्रतीक है। यह प्रह्लाद और होलिका की कथा से जुड़ी है।<br><br><strong>📅 कब:</strong> फाल्गुन पूर्णिमा (मार्च)<br><br><strong>🎉 विधि:</strong><br>1. होलिका दहन (पूर्णिमा की रात)<br>2. अगले दिन रंग खेलें<br>3. गुजिया, पकवान बनाएँ<br>4. आपसी प्रेम बाँटें<br><br><strong>✨ लाभ:</strong> पुराने दुःख दूर, नई ऊर्जा, आपसी प्रेम।'
+            },
+            {
+                keywords: ['नवरात्रि', 'navratri', 'नवरात्र'],
+                answer: '🌺 <strong>नवरात्रि</strong> — 9 रातों का पर्व<br><br><strong>📖 महत्व:</strong> नवरात्रि में माँ दुर्गा के 9 रूपों की पूजा की जाती है।<br><br><strong>📅 कब:</strong> चैत्र और आश्विन (मार्च-अप्रैल, सितंबर-अक्टूबर)<br><br><strong>🙏 विधि:</strong><br>1. 9 दिन व्रत रखें<br>2. कलश स्थापना करें<br>3. दुर्गा सप्तशती पाठ करें<br>4. कन्या पूजन करें<br>5. हवन कराएँ<br><br><strong>✨ लाभ:</strong> शक्ति, रक्षा, शत्रु नाश, विवाह, संतान, धन।'
+            },
+            {
+                keywords: ['जन्माष्टमी', 'janmashtami', 'कृष्ण जन्म'],
+                answer: '🟡 <strong>जन्माष्टमी</strong> — भगवान कृष्ण का जन्मोत्सव<br><br><strong>📖 महत्व:</strong> यह भगवान श्री कृष्ण के मथुरा में जन्म की खुशी में मनाया जाता है।<br><br><strong>📅 कब:</strong> भाद्रपद कृष्ण अष्टमी (अगस्त-सितंबर)<br><br><strong>🙏 विधि:</strong><br>1. पूरे दिन व्रत रखें<br>2. रात्रि 12 बजे कृष्ण जन्म की पूजा<br>3. माखन-मिश्री का भोग<br>4. झूला सजाएँ<br>5. कृष्ण की झाँकी सजाएँ<br><br><strong>✨ लाभ:</strong> कृष्ण कृपा, संतान, प्रेम, भक्ति।'
+            },
+            {
+                keywords: ['महाशिवरात्रि', 'shivratri', 'शिवरात्रि'],
+                answer: '🔱 <strong>महाशिवरात्रि</strong> — शिव जी का सबसे बड़ा पर्व<br><br><strong>📖 महत्व:</strong> इस दिन शिव जी ने पार्वती से विवाह किया था और शिवलिंग प्रकट हुआ था।<br><br><strong>📅 कब:</strong> फाल्गुन कृष्ण चतुर्दशी (फरवरी-मार्च)<br><br><strong>🙏 विधि:</strong><br>1. पूरे दिन और रात व्रत रखें<br>2. 4 प्रहर शिव पूजा करें<br>3. रात्रि जागरण करें<br>4. महामृत्युंजय मंत्र जपें<br>5. शिवलिंग पर जल-दूध-बेलपत्र चढ़ाएँ<br><br><strong>✨ लाभ:</strong> मोक्ष, आरोग्य, भय नाश, शिव कृपा।'
+            },
+            {
+                keywords: ['राम नवमी', 'ram navami', 'राम जन्म'],
+                answer: '🏹 <strong>राम नवमी</strong> — भगवान राम का जन्मोत्सव<br><br><strong>📖 महत्व:</strong> यह भगवान श्री राम के अयोध्या में जन्म की खुशी में मनाया जाता है।<br><br><strong>📅 कब:</strong> चैत्र शुक्ल नवमी (मार्च-अप्रैल)<br><br><strong>🙏 विधि:</strong><br>1. व्रत रखें<br>2. रामचरितमानस पाठ करें<br>3. राम दरबार की पूजा करें<br>4. सुंदरकांड पाठ करें<br>5. हवन कराएँ<br><br><strong>✨ लाभ:</strong> राम कृपा, धर्म, पारिवारिक सुख।'
+            },
+
+            // ---------- व्रत ----------
+            {
+                keywords: ['करवा चौथ', 'karwa chauth', 'करवाचौथ'],
+                answer: '🌙 <strong>करवा चौथ</strong> — विवाहित स्त्रियों का व्रत<br><br><strong>📖 महत्व:</strong> यह व्रत विवाहित स्त्रियाँ अपने पति की लंबी आयु के लिए रखती हैं।<br><br><strong>📅 कब:</strong> कार्तिक कृष्ण चतुर्थी (अक्टूबर-नवंबर)<br><br><strong>🙏 विधि:</strong><br>1. निर्जला व्रत रखें<br>2. सायं करवा कथा सुनें<br>3. चंद्र दर्शन करें<br>4. पति के हाथ से जल ग्रहण करें<br>5. पति की लंबी आयु की प्रार्थना करें<br><br><strong>✨ लाभ:</strong> सुहाग, पति की लंबी आयु, पारिवारिक सुख।'
+            },
+            {
+                keywords: ['एकादशी', 'ekadashi', 'एकादशी व्रत'],
+                answer: '📿 <strong>एकादशी व्रत</strong> — भगवान विष्णु को समर्पित<br><br><strong>📖 महत्व:</strong> हर महीने की 11वीं तिथि को रखा जाता है।<br><br><strong>📅 कब:</strong> हर महीने की शुक्ल और कृष्ण एकादशी<br><br><strong>🙏 विधि:</strong><br>1. दशमी की रात से व्रत शुरू<br>2. फलाहार करें<br>3. विष्णु पूजा करें<br>4. विष्णु सहस्रनाम पाठ करें<br>5. रात्रि जागरण करें<br>6. द्वादशी को पारण करें<br><br><strong>✨ लाभ:</strong> पाप नाश, विष्णु कृपा, मोक्ष, धन, संतान।<br><br>💡 <strong>24 एकादशी</strong> एक वर्ष में — हर एकादशी का अलग नाम और महत्व।'
+            },
+            {
+                keywords: ['सोमवार व्रत', 'somvar vrat', 'सोमवार'],
+                answer: '🔱 <strong>सोमवार व्रत</strong> — भगवान शिव को समर्पित<br><br><strong>📖 महत्व:</strong> "सोम" का अर्थ चंद्रमा है, और चंद्र शिव जी के मस्तक पर विराजमान हैं।<br><br><strong>🙏 विधि:</strong><br>1. प्रातः स्नान करें<br>2. शिवलिंग पर जल-दूध-बेलपत्र चढ़ाएँ<br>3. "ॐ नमः शिवाय" जपें<br>4. शाम को व्रत कथा पढ़ें<br>5. फलाहार करें<br><br><strong>✨ लाभ:</strong> शिव कृपा, पारिवारिक सुख, विवाह में लाभ, पति-पत्नी में प्रेम।<br><br>💡 अविवाहित लड़कियों के लिए यह व्रत विशेष लाभकारी है।'
+            },
+
+            // ---------- ज्योतिष ----------
+            {
+                keywords: ['रत्न', 'gemstone', 'रत्न धारण'],
+                answer: '💎 <strong>नवरत्न — 9 रत्न</strong><br><br>हर ग्रह का अपना रत्न है:<br><br>• 🌞 <strong>सूर्य:</strong> माणिक्य<br>• 🌙 <strong>चंद्र:</strong> मोती<br>• 🔴 <strong>मंगल:</strong> मूंगा<br>• 🟢 <strong>बुध:</strong> पन्ना<br>• 🟡 <strong>गुरु:</strong> पुखराज<br>• 💎 <strong>शुक्र:</strong> हीरा<br>• 🪐 <strong>शनि:</strong> नीलम<br>• 🔵 <strong>राहु:</strong> गोमेद<br>• ⚫ <strong>केतु:</strong> लहसुनिया<br><br>⚠️ <strong>ध्यान दें:</strong> रत्न धारण करने से पहले ज्योतिषी से परामर्श अवश्य करें।<br><br>📖 पूरी जानकारी <a href="../jyotish/index.html">ज्योतिष कोश</a> में।'
+            },
+            {
+                keywords: ['कालसर्प', 'kaal sarp', 'कालसर्प दोष'],
+                answer: '🪐 <strong>कालसर्प दोष</strong><br><br><strong>📖 क्या है:</strong> जब राहु और केतु कुंडली में सभी ग्रहों को एक तरफ घेर लेते हैं।<br><br><strong>⚠️ प्रभाव:</strong><br>• जीवन में बार-बार बाधाएँ<br>• विवाह में देरी<br>• संतान कष्ट<br>• आर्थिक कठिनाई<br><br><strong>🙏 उपाय:</strong><br>1. राहु-केतु मंत्र जप<br>2. त्र्यंबकेश्वर यात्रा<br>3. नाग पंचमी पूजा<br>4. कालसर्प दोष पूजा<br>5. उड़द, काला तिल का दान<br><br>💡 त्र्यंबकेश्वर (नासिक) में कालसर्प दोष पूजा विशेष रूप से की जाती है।'
+            },
+            {
+                keywords: ['शनि', 'shani', 'साढ़े साती', 'शनि दोष'],
+                answer: '🪐 <strong>शनि देव और साढ़े साती</strong><br><br><strong>📖 साढ़े साती:</strong> 7.5 वर्ष की अवधि जब शनि कुंडली में गोचर करता है।<br><br><strong>⚠️ प्रभाव:</strong><br>• कार्यों में बाधा<br>• आर्थिक कठिनाई<br>• मानसिक तनाव<br>• स्वास्थ्य समस्याएँ<br><br><strong>🙏 उपाय:</strong><br>1. शनि पूजा (शनिवार)<br>2. "ॐ प्रां प्रीं प्रौं सः शनैश्चराय नमः" जप<br>3. तेल, उड़द, लोहे का दान<br>4. हनुमान चालीसा पाठ<br>5. शनि चालीसा पाठ<br>6. नीलम धारण<br><br>💡 शनि की साढ़े साती में हनुमान पूजा विशेष लाभकारी है।'
+            },
+
+            // ---------- पूजा ----------
+            {
+                keywords: ['तिलक', 'tilak', 'तिलक कैसे लगाएँ'],
+                answer: '🕉️ <strong>तिलक लगाने के नियम</strong><br><br><strong>🙏 विधि:</strong><br>1. स्नान के बाद तिलक लगाएँ<br>2. चंदन/कुमकुम से लगाएँ<br>3. भ्रूमध्य (दोनों भौंहों के बीच) पर<br>4. अंगूठे या अनामिका से<br>5. "ॐ नमः शिवाय" मंत्र पढ़ें<br><br><strong>🚫 क्या न करें:</strong><br>• बिना स्नान तिलक न लगाएँ<br>• अशुद्ध हाथों से न लगाएँ<br>• तर्जनी से न लगाएँ<br><br>💡 तिलक भगवान का आशीर्वाद और आत्म-सम्मान का प्रतीक है।'
+            },
+            {
+                keywords: ['दीपक', 'diya', 'दीपक जलाना'],
+                answer: '🪔 <strong>दीपक जलाने के नियम</strong><br><br><strong>🙏 विधि:</strong><br>1. सूर्योदय/सूर्यास्त के समय जलाएँ<br>2. शुद्ध घी/सरसों का तेल डालें<br>3. पूर्व/उत्तर दिशा में रखें<br>4. "ॐ अग्नये नमः" मंत्र पढ़ें<br>5. स्वयं बुझने दें<br><br><strong>🚫 क्या न करें:</strong><br>• फूँक से न बुझाएँ<br>• पानी से न बुझाएँ<br>• दक्षिण दिशा में न रखें<br><br>💡 दीपक को फूँक से बुझाना पाप माना जाता है।'
+            },
+            {
+                keywords: ['भोजन', 'bhojan', 'खाना', 'भोजन के नियम'],
+                answer: '🍛 <strong>भोजन के नियम</strong><br><br><strong>✅ क्या करें:</strong><br>• बैठकर भोजन करें<br>• हाथ-पैर धोकर करें<br>• दक्षिण दिशा में मुख करें<br>• 5 प्राणों का बलिदान करें<br>• तुलसी दल/गंगाजल का सेवन करें<br><br><strong>❌ क्या न करें:</strong><br>• चलते-फिरते भोजन न करें<br>• जूठा न छोड़ें<br>• बासी/अशुद्ध भोजन न करें<br>• सूर्यास्त के बाद भोजन न करें<br>• भोजन के समय बात न करें<br><br>💡 भोजन को भगवान का प्रसाद मानकर ग्रहण करें।'
+            },
+            {
+                keywords: ['जप', 'mala', 'माला', 'जप कैसे करें'],
+                answer: '📿 <strong>जप और माला के नियम</strong><br><br><strong>🙏 विधि:</strong><br>1. ब्रह्म मुहूर्त (4-6 AM) में जप करें<br>2. पूर्व दिशा में मुख करें<br>3. रुद्राक्ष/तुलसी माला उपयोग करें<br>4. माला हाथ में छिपाकर रखें<br>5. 108 बार जप करें<br><br><strong>🚫 क्या न करें:</strong><br>• बिना स्नान जप न करें<br>• जूते पहनकर जप न करें<br>• माला ज़मीन पर न रखें<br>• सुमेरु मणि को पार न करें<br><br>💡 जप के समय मन एकाग्र रखें।'
+            },
+
+            // ---------- कथा ----------
+            {
+                keywords: ['रामायण', 'ramayan', 'राम कथा'],
+                answer: '🏹 <strong>रामायण</strong> — भगवान राम की कथा<br><br><strong>📖 रचयिता:</strong> वाल्मीकि (संस्कृत), तुलसीदास (रामचरितमानस)<br><br><strong>📚 7 कांड:</strong><br>1. बाल कांड — राम जन्म, विवाह<br>2. अयोध्या कांड — वनवास<br>3. अरण्य कांड — सीता हरण<br>4. किष्किंधा कांड — हनुमान मिलन<br>5. सुंदर कांड — लंका दहन<br>6. लंका कांड — रावण वध<br>7. उत्तर कांड — राम राज्य<br><br><strong>✨ पढ़ने के लाभ:</strong> धर्म, सत्य, पारिवारिक सुख, मोक्ष।<br><br>📖 पूरी कथाएँ <a href="../katha/index.html">कथा कोश</a> में।'
+            },
+            {
+                keywords: ['गीता सार', 'gita', 'भगवद् गीता', 'गीता'],
+                answer: '📖 <strong>भगवद् गीता का सार</strong><br><br><strong>📖 क्या है:</strong> महाभारत के भीष्म पर्व में कृष्ण द्वारा अर्जुन को दिया गया उपदेश।<br><br><strong>📚 18 अध्याय, 700 श्लोक</strong><br><br><strong>🎯 मुख्य शिक्षाएँ:</strong><br>• <strong>कर्म योग:</strong> फल की चाह बिना कर्म करो<br>• <strong>भक्ति योग:</strong> भगवान की शरण में जाओ<br>• <strong>ज्ञान योग:</strong> आत्मज्ञान प्राप्त करो<br>• <strong>ध्यान योग:</strong> मन को एकाग्र करो<br><br><strong>💡 प्रमुख श्लोक:</strong><br><em>"कर्मण्येवाधिकारस्ते मा फलेषु कदाचन"</em><br>— तुम्हारा अधिकार केवल कर्म करने में है, फल में नहीं।'
+            },
+            {
+                keywords: ['समुद्र मंथन', 'samudra manthan', 'मंथन'],
+                answer: '🌊 <strong>समुद्र मंथन</strong><br><br><strong>📖 कथा:</strong> देवताओं और असुरों ने मिलकर क्षीरसागर का मंथन किया।<br><br><strong>💎 14 रत्न:</strong><br>1. लक्ष्मी<br>2. कौस्तुभ मणि<br>3. कल्पवृक्ष<br>4. कामधेनु<br>5. ऐरावत हाथी<br>6. उच्चैःश्रवा घोड़ा<br>7. पारिजात वृक्ष<br>8. रंभा अप्सरा<br>9. चंद्रमा<br>10. अमृत कलश<br>11. धन्वंतरि<br>12. शंख<br>13. हलाहल विष<br>14. माता लक्ष्मी<br><br><strong>💡 महत्व:</strong> शिव जी ने हलाहल विष पीकर संसार की रक्षा की — नीलकंठ।'
+            },
+
+            // ---------- अन्य ----------
+            {
+                keywords: ['कुंभ मेला', 'kumbh', 'कुंभ'],
+                answer: '🌊 <strong>कुंभ मेला</strong><br><br><strong>📖 क्या है:</strong> हिंदू धर्म का सबसे बड़ा धार्मिक मेला।<br><br><strong>📍 4 स्थान:</strong><br>1. प्रयागराज (गंगा-यमुना-सरस्वती संगम)<br>2. हरिद्वार (गंगा)<br>3. नासिक (गोदावरी)<br>4. उज्जैन (शिप्रा)<br><br><strong>📅 कब:</strong><br>• कुंभ — 12 वर्ष<br>• अर्ध कुंभ — 6 वर्ष<br>• महाकुंभ — 144 वर्ष<br>• सिंहस्थ — उज्जैन में<br><br><strong>✨ महत्व:</strong> कुंभ स्नान से सभी पापों का नाश और मोक्ष की प्राप्ति।'
+            },
+            {
+                keywords: ['108', 'संख्या', '108 क्यों'],
+                answer: '🔢 <strong>108 का महत्व</strong><br><br><strong>🕉️ क्यों 108?</strong><br>• 108 उपनिषद हैं<br>• 108 बीज मंत्र हैं<br>• सूर्य की व्यास = 108<br>• चंद्रमा की व्यास = 108<br>• पृथ्वी-सूर्य दूरी = 108 सूर्य व्यास<br>• 108 = 1+0+8 = 9 (पूर्ण संख्या)<br><br><strong>📿 जप में 108 क्यों?</strong><br>• माला में 108 मनके<br>• 108 बार जप से मन एकाग्र होता है<br>• 108 पूर्णता का प्रतीक है<br><br>💡 108 सनातन धर्म की पवित्र संख्या है।'
+            },
+            {
+                keywords: ['ॐ', 'om', 'ओम', 'प्रणव'],
+                answer: '🕉️ <strong>ॐ (प्रणव मंत्र)</strong><br><br><strong>📖 क्या है:</strong> ॐ ब्रह्म का मूल ध्वनि रूप है। यह सृष्टि की प्रथम ध्वनि है।<br><br><strong>🔤 तीन अक्षर:</strong><br>• <strong>अ</strong> — सृष्टि (ब्रह्मा)<br>• <strong>उ</strong> — स्थिति (विष्णु)<br>• <strong>म</strong> — संहार (शिव)<br><br><strong>✨ लाभ:</strong><br>• मन की शांति<br>• एकाग्रता<br>• आध्यात्मिक ऊर्जा<br>• ध्यान में सहायक<br>• मोक्ष का मार्ग<br><br><strong>💡 जप:</strong> किसी भी समय, 3, 11, 21, या 108 बार।'
+            },
+            {
+                keywords: ['नमस्ते', 'namaste', 'प्रणाम'],
+                answer: '🙏 <strong>नमस्ते / प्रणाम</strong><br><br><strong>📖 अर्थ:</strong> "नमः" + "ते" = मैं आपको नमस्कार करता हूँ।<br><br><strong>🤲 विधि:</strong><br>• हाथ जोड़कर<br>• सिर झुकाकर<br>• मन में भाव रखकर<br>• दाहिने हाथ से पैर छुएँ (बड़ों के)<br><br><strong>✨ लाभ:</strong><br>• विनम्रता<br>• सम्मान<br>• सकारात्मक ऊर्जा<br>• मन की शांति<br><br>💡 भारतीय संस्कृति में नमस्ते का विशेष महत्व है।'
+            }
+        ];
+
+        // ============================================================
+        //  CHAT LOGIC
+        // ============================================================
+
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+
+        function addMessage(text, type) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `chat-message ${type}`;
+
+            if (type === 'ai') {
+                msgDiv.innerHTML = `
+                    <div class="chat-avatar-small">🕉️</div>
+                    <div class="chat-bubble">${text}</div>
+                `;
+            } else {
+                msgDiv.innerHTML = `
+                    <div class="chat-avatar-small"><i class="fa-solid fa-user"></i></div>
+                    <div class="chat-bubble">${text}</div>
+                `;
+            }
+
+            chatMessages.appendChild(msgDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function showTyping() {
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'chat-message ai';
+            typingDiv.id = 'typingIndicator';
+            typingDiv.innerHTML = `
+                <div class="chat-avatar-small">🕉️</div>
+                <div class="typing-indicator">
+                    <span></span><span></span><span></span>
+                </div>
+            `;
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function hideTyping() {
+            const typing = document.getElementById('typingIndicator');
+            if (typing) typing.remove();
+        }
+
+        function findAnswer(question) {
+            const q = question.toLowerCase().trim();
+            let bestMatch = null;
+            let maxScore = 0;
+
+            for (const item of knowledgeBase) {
+                let score = 0;
+                for (const keyword of item.keywords) {
+                    if (q.includes(keyword.toLowerCase())) {
+                        score += keyword.length;
+                    }
+                }
+                if (score > maxScore) {
+                    maxScore = score;
+                    bestMatch = item;
+                }
+            }
+
+            if (bestMatch && maxScore >= 2) {
+                return bestMatch.answer;
+            }
+            return null;
+        }
+
+        function sendMessage() {
+            const text = chatInput.value.trim();
+            if (!text) return;
+
+            addMessage(text, 'user');
+            chatInput.value = '';
+
+            showTyping();
+
+            setTimeout(() => {
+                hideTyping();
+                const answer = findAnswer(text);
+                if (answer) {
+                    addMessage(answer, 'ai');
+                } else {
+                    addMessage(
+                        `🙏 माफ़ करें, मुझे इसका सटीक उत्तर नहीं मिला।<br><br>
+                        <strong>आप ये पूछ सकते हैं:</strong><br>
+                        • 📿 मंत्र और उनके अर्थ<br>
+                        • 📖 कथाएँ और पुराण<br>
+                        • 🪔 पूजा विधि और व्रत<br>
+                        • 🔮 ज्योतिष और रत्न<br>
+                        • 🎉 त्योहार और संस्कार<br><br>
+                        या ऊपर दिए सुझावों पर क्लिक करें! ✨`,
+                        'ai'
+                    );
+                }
+            }, 800 + Math.random() * 700);
+        }
+
+        function askQuick(question) {
+            chatInput.value = question;
+            sendMessage();
+        }
+
+        // ============================================================
+        //  DARK MODE
+        // ============================================================
+
+        const darkToggle = document.getElementById('darkToggle');
+        if (darkToggle) {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+                darkToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            }
+            darkToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                const icon = this.querySelector('i');
+                const isDark = document.body.classList.contains('dark-mode');
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+                localStorage.setItem('darkMode', isDark);
+            });
+        }
+
+        // Focus input on load
+        document.addEventListener('DOMContentLoaded', function() {
+            chatInput.focus();
+        });
+    </script>
+</body>
+</html>
