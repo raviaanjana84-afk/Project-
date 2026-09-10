@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>हनुमान जी — संपूर्ण ज्ञान | Sanatan Gyan Kosh</title>
+    <meta name="description" content="हनुमान जी का संपूर्ण ज्ञान — परिचय, कथा, स्वरूप, मंत्र, चालीसा, आरती, मंदिर, त्योहार, भजन और बहुत कुछ।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        /* Hero */
+        .devta-hero {
+            text-align: center;
+            padding: 24px 20px;
+            background: linear-gradient(135deg, rgba(212,175,55,0.12), rgba(122,46,46,0.08));
+            border-radius: var(--radius);
+            margin-bottom: 14px;
+            border: 1px solid var(--border);
+        }
+        .devta-hero .icon { font-size: 72px; display: block; line-height: 1; }
+        .devta-hero .name {
+            font-family: var(--font-display);
+            font-size: 30px;
+            color: var(--maroon);
+            margin-top: 6px;
+        }
+        .devta-hero .subtitle {
+            font-size: 13px;
+            color: var(--ink-soft);
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+
+        /* Section */
+        .devta-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 18px 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .devta-section h2 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--maroon);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 8px;
+        }
+        .devta-section h2 .sec-icon { font-size: 24px; }
+
+        .devta-section p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+            margin-bottom: 8px;
+        }
+        .devta-section p strong {
+            color: var(--maroon);
+        }
+
+        /* Mantra Box */
+        .mantra-box {
+            background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(122,46,46,0.05));
+            border-left: 4px solid var(--gold);
+            padding: 14px 16px;
+            border-radius: 12px;
+            font-family: var(--font-display);
+            font-size: 18px;
+            text-align: center;
+            margin: 10px 0;
+            line-height: 1.8;
+            color: var(--maroon);
+            font-weight: 600;
+        }
+        .mantra-box small {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 12px;
+            color: var(--ink-soft);
+            font-weight: 400;
+            margin-top: 6px;
+        }
+
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .info-item {
+            background: var(--bg);
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 13px;
+        }
+        .info-item .lbl {
+            font-size: 10px;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-item .val {
+            font-weight: 600;
+            color: var(--maroon);
+            margin-top: 2px;
+        }
+
+        /* List */
+        .devta-section ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 8px;
+        }
+        .devta-section ul li {
+            padding: 8px 0;
+            font-size: 13.5px;
+            line-height: 1.6;
+            border-bottom: 1px dashed var(--border);
+            color: var(--ink-soft);
+        }
+        .devta-section ul li:last-child { border-bottom: none; }
+        .devta-section ul li strong { color: var(--maroon); }
+
+        /* Accordion */
+        .accordion-item {
+            border-bottom: 1px solid var(--border);
+        }
+        .accordion-item:last-child { border-bottom: none; }
+        .accordion-head {
+            padding: 12px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--maroon);
+            font-family: var(--font-display);
+        }
+        .accordion-head i {
+            transition: transform 0.3s;
+            color: var(--gold);
+        }
+        .accordion-item.open .accordion-head i {
+            transform: rotate(180deg);
+        }
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            font-size: 13px;
+            color: var(--ink-soft);
+            line-height: 1.8;
+        }
+        .accordion-item.open .accordion-body {
+            max-height: 2000px;
+            padding-bottom: 12px;
+        }
+
+        /* Temple List */
+        .temple-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .temple-item {
+            padding: 10px 14px;
+            background: var(--bg);
+            border-radius: 10px;
+            border-left: 3px solid var(--gold);
+            font-size: 13px;
+        }
+        .temple-item strong { color: var(--maroon); }
+
+        /* Related Links */
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .related-link {
+            padding: 10px 12px;
+            background: var(--bg);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--maroon);
+            font-weight: 600;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .related-link:hover {
+            background: var(--card-bg);
+            border-color: var(--gold);
+        }
+
+        /* Back Top */
+        .back-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--maroon);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 16px rgba(122,46,46,0.4);
+            z-index: 90;
+        }
+        .back-top.show { display: flex; }
+
+        @media (max-width: 420px) {
+            .devta-hero .icon { font-size: 60px; }
+            .devta-hero .name { font-size: 24px; }
+            .devta-section h2 { font-size: 17px; }
+            .mantra-box { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ देवता ज्ञान</span>
+            <h1>हनुमान जी</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <!-- Hero -->
+        <div class="devta-hero">
+            <span class="icon">🐒</span>
+            <div class="name">हनुमान जी</div>
+            <div class="subtitle">बजरंगबली · संकट मोचन · राम भक्त</div>
+        </div>
+
+        <!-- Quick Info -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📋</span> एक नज़र में</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="lbl">अन्य नाम</div>
+                    <div class="val">बजरंगबली, संकट मोचन, महावीर, पवनपुत्र</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">माता</div>
+                    <div class="val">अंजना देवी</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">पिता</div>
+                    <div class="val">केसरी (वानर राजा)</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">जन्म तिथि</div>
+                    <div class="val">चैत्र पूर्णिमा</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">गुरु</div>
+                    <div class="val">सूर्यदेव</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">वाहन</div>
+                    <div class="val">स्वयं (उड़ान)</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">आराध्य</div>
+                    <div class="val">भगवान राम</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय भोग</div>
+                    <div class="val">बेसन के लड्डू, केला</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- परिचय -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📖</span> परिचय</h2>
+            <p>
+                <strong>हनुमान जी</strong> हिंदू धर्म के सबसे पूजनीय देवताओं में से एक हैं। वे भगवान राम के परम भक्त हैं और अपनी <strong>अटूट भक्ति, अतुलित बल, असीम बुद्धि और वीरता</strong> के लिए प्रसिद्ध हैं। उन्हें <strong>बजरंगबली</strong>, <strong>संकट मोचन</strong>, <strong>महावीर</strong>, <strong>पवनपुत्र</strong> और <strong>अंजनीसुत</strong> जैसे कई नामों से जाना जाता है।
+            </p>
+            <p>
+                हनुमान जी <strong>रुद्र के अवतार</strong> माने जाते हैं और <strong>सात चिरंजीवियों</strong> में से एक हैं, जो हमेशा जीवित रहते हैं। वे कलियुग में सबसे जल्दी प्रसन्न होने वाले देवता माने जाते हैं।
+            </p>
+        </div>
+
+        <!-- जन्म कथा -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📜</span> जन्म कथा</h2>
+            <p>
+                हनुमान जी का जन्म <strong>चैत्र मास की पूर्णिमा</strong> को हुआ था। उनकी माता <strong>अंजना देवी</strong> और पिता <strong>केसरी</strong> थे। पौराणिक कथा के अनुसार, अंजना देवी ने भगवान शिव की घोर तपस्या की थी और उन्हें पुत्र प्राप्ति का वरदान मिला था।
+            </p>
+            <p>
+                एक अन्य कथा के अनुसार, अंजना देवी ने वानर राजा केसरी से विवाह किया और वायु देव ने उनके पुत्र को जन्म दिया, इसलिए हनुमान जी को <strong>पवनपुत्र</strong> भी कहा जाता है।
+            </p>
+        </div>
+
+        <!-- स्वरूप -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🎨</span> स्वरूप</h2>
+            <p>
+                हनुमान जी का शरीर <strong>वानर (बंदर)</strong> जैसा है। उनका रंग लाल-भूरा है और उनकी एक <strong>लंबी पूँछ</strong> है। उनके हाथ में एक <strong>गदा</strong> (मूसल) सुशोभित है।
+            </p>
+            <ul>
+                <li><strong>वक्ष:</strong> भगवान राम और माता सीता का चित्र अंकित</li>
+                <li><strong>मुख:</strong> शांत, भक्ति भाव में लीन</li>
+                <li><strong>नेत्र:</strong> करुणा और बल से भरे</li>
+                <li><strong>वस्त्र:</strong> लाल रंग के वस्त्र (धोती)</li>
+                <li><strong>आभूषण:</strong> सोने के आभूषण, मूंज की मेखला</li>
+                <li><strong>हाथ:</strong> गदा और राम नाम की मुद्रिका</li>
+            </ul>
+        </div>
+
+        <!-- मुख्य मंत्र -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🔱</span> मुख्य मंत्र</h2>
+
+            <p><strong>1. मूल मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ श्री हनुमते नमः
+                <small>अर्थ: हे हनुमान, मैं आपको नमस्कार करता हूँ।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>2. बीज मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ हं हनुमते रुद्रात्मकाय हुं फट्
+                <small>अर्थ: हे हनुमान, जो रुद्र के अवतार हैं, मैं आपको नमस्कार करता हूँ।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>3. हनुमान गायत्री मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ आंजनेयाय विद्महे महावीराय धीमहि ।<br>
+                तन्नो हनुमानः प्रचोदयात् ॥
+                <small>अर्थ: हम अंजना के पुत्र का ध्यान करते हैं, महावीर का ध्यान करते हैं, हनुमान हमें प्रेरित करें।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>4. संकट मोचन मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ श्री हनुमते नमः, संकट मोचनाय नमः
+                <small>अर्थ: हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+            </div>
+        </div>
+
+        <!-- जप विधि -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📿</span> जप विधि</h2>
+            <ul>
+                <li><strong>समय:</strong> मंगलवार या शनिवार, सुबह 5-7 बजे या शाम 6-8 बजे</li>
+                <li><strong>स्थान:</strong> पूर्व दिशा की ओर मुख करके, स्वच्छ स्थान पर</li>
+                <li><strong>माला:</strong> लाल रुद्राक्ष या मूंगे की माला</li>
+                <li><strong>संख्या:</strong> कम से कम 108 बार (1 माला), या 1008 बार (9 माला)</li>
+                <li><strong>वस्त्र:</strong> लाल वस्त्र धारण करें (विशेष लाभ)</li>
+                <li><strong>भोग:</strong> बेसन के लड्डू, केला, लाल फूल, चमेली का तेल</li>
+                <li><strong>धूप/दीप:</strong> लाल चंदन, कपूर, घी का दीपक</li>
+                <li><strong>विधि:</strong> माला की सुमेरु मणि को पार न करें, मन में भक्ति भाव रखें</li>
+            </ul>
+        </div>
+
+        <!-- हनुमान चालीसा (Accordion) -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📜</span> हनुमान चालीसा (संपूर्ण)</h2>
+            <p style="font-size:13px; margin-bottom:10px;">
+                हनुमान चालीसा <strong>तुलसीदास</strong> जी द्वारा रचित है। इसमें <strong>40 चौपाइयाँ</strong> हैं। नियमित पाठ से भय, संकट, रोग और दुःख दूर होते हैं।
+            </p>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 दोहा (शुरुआत)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:15px;text-align:left;line-height:2;">
+                        श्रीगुरु चरन सरोज रज, निज मनु मुकुरु सुधारि ।<br>
+                        बरनउँ रघुबर बिमल जसु, जो दायकु फल चारि ॥<br><br>
+                        बुद्धिहीन तनु जानिके, सुमिरौं पवन-कुमार ।<br>
+                        बल बुधि बिद्या देहु मोहिं, हरहु कलेस बिकार ॥
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 चौपाई 1-10</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        जय हनुमान ज्ञान गुन सागर । जय कपीस तिहुँ लोक उजागर ॥<br>
+                        राम दूत अतुलित बल धामा । अंजनि-पुत्र पवनसुत नामा ॥<br>
+                        महाबीर बिक्रम बजरंगी । कुमति निवार सुमति के संगी ॥<br>
+                        कंचन बरन बिराज सुबेसा । कानन कुंडल कुंद बर बेसा ॥<br>
+                        हाथ बज्र औ ध्वजा बिराजै । काँधे मूँज जनेऊ साजै ॥<br>
+                        संकर सुवन केसरीनंदन । तेज प्रताप महा जग बंदन ॥<br>
+                        बिद्यावान गुनी अति चातुर । राम काज करिबे को आतुर ॥<br>
+                        प्रभु चरित्र सुनिबे को रसिया । राम लखन सीता मन बसिया ॥<br>
+                        सूक्ष्म रूप धरि सियहिं दिखावा । बिकट रूप धरि लंक जरावा ॥<br>
+                        भीम रूप धरि असुर सँहारे । रामचंद्र के काज सँवारे ॥
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 चौपाई 11-20</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        लाय सजीवन लखन जियाये । श्रीरघुबीर हरषि उर लाये ॥<br>
+                        रघुपति कीन्ही बहुत बड़ाई । तुम मम प्रिय भरतहि सम भाई ॥<br>
+                        सहस बदन तुम्हरो जस गावैं । अस कहि श्रीपति कंठ लगावैं ॥<br>
+                        सनकादिक ब्रह्मादि मुनीसा । नारद सारद सहित अहीसा ॥<br>
+                        जम कुबेर दिगपाल जहाँ ते । कबि कोबिद कहि सके कहाँ ते ॥<br>
+                        तुम उपकार सुग्रीवहिं कीन्हा । राम मिलाय राज पद दीन्हा ॥<br>
+                        तुम्हरो मंत्र बिभीषन माना । लंकेस्वर भए सब जग जाना ॥<br>
+                        जुग सहस्र जोजन पर भानू । लील्यो ताहि मधुर फल जानू ॥<br>
+                        प्रभु मुद्रिका मेलि मुख माहीं । जलधि लांघि गये अचरज नाहीं ॥<br>
+                        दुर्गम काज जगत के जेते । सुगम अनुग्रह तुम्हरे तेते ॥
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 चौपाई 21-30</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        राम दुआरे तुम रखवारे । होत न आज्ञा बिनु पैसारे ॥<br>
+                        सब सुख लहै तुम्हारी सरना । तुम रक्षक काहू को डर ना ॥<br>
+                        आपन तेज सम्हारो आपै । तीनों लोक हाँक तें काँपै ॥<br>
+                        भूत पिसाच निकट नहिं आवै । महाबीर जब नाम सुनावै ॥<br>
+                        नासै रोग हरै सब पीरा । जपत निरंतर हनुमत बीरा ॥<br>
+                        संकट तें हनुमान छुड़ावै । मन क्रम बचन ध्यान जो लावै ॥<br>
+                        सब पर राम तपस्वी राजा । तिन के काज सकल तुम साजा ॥<br>
+                        और मनोरथ जो कोई लावै । सोइ अमित जीवन फल पावै ॥<br>
+                        चारों जुग परताप तुम्हारा । है परसिद्ध जगत उजियारा ॥<br>
+                        साधु-संत के तुम रखवारे । असुर निकंदन राम दुलारे ॥
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 चौपाई 31-40</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        अष्ट सिद्धि नौ निधि के दाता । अस बर दीन जानकी माता ॥<br>
+                        राम रसायन तुम्हरे पासा । सदा रहो रघुपति के दासा ॥<br>
+                        तुम्हरे भजन राम को पावै । जनम-जनम के दुख बिसरावै ॥<br>
+                        अंत काल रघुबर पुर जाई । जहाँ जन्म हरि-भक्त कहाई ॥<br>
+                        और देवता चित्त न धरई । हनुमत सेइ सर्ब सुख करई ॥<br>
+                        संकट कटै मिटै सब पीरा । जो सुमिरै हनुमत बलबीरा ॥<br>
+                        जय जय जय हनुमान गोसाईं । कृपा करहु गुरुदेव की नाईं ॥<br>
+                        जो सत बार पाठ कर कोई । छूटहि बंदि महा सुख होई ॥<br>
+                        जो यह पढ़ै हनुमान चालीसा । होय सिद्धि साखी गौरीसा ॥<br>
+                        तुलसीदास सदा हरि चेरा । कीजै नाथ हृदय महँ डेरा ॥
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 दोहा (अंत)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:15px;text-align:left;line-height:2;">
+                        पवनतनय संकट हरन, मंगल मूरति रूप ।<br>
+                        राम लखन सीता सहित, हृदय बसहु सुर भूप ॥
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- आरती -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🪔</span> हनुमान आरती</h2>
+            <div class="mantra-box" style="font-size:15px;text-align:left;line-height:2;">
+                आरती कीजै हनुमान लला की ।<br>
+                दुष्ट दलन रघुनाथ कला की ॥<br>
+                जाके बल से गिरिवर काँपे ।<br>
+                रोग दोष जाके निकट न झाँपे ॥<br>
+                अंजनि पुत्र महा बलदाई ।<br>
+                संतन के प्रभु सदा सहाई ॥<br>
+                दे बीरा रघुनाथ पठाए ।<br>
+                लंका जारि सिय सुधि लाए ॥<br>
+                लंका सो कोट समुद्र सी खाई ।<br>
+                जात पवनसुत बार न लाई ॥<br>
+                लंका जारि असुर संहारे ।<br>
+                सियारामजी के काज सँवारे ॥<br>
+                लक्ष्मण मूर्छित पड़े सकारे ।<br>
+                आनि सजीवन प्राण उबारे ॥<br>
+                पैठि पताल तोरि जम कारे ।<br>
+                अहिरावन की छाती विदारे ॥<br>
+                भुजा बिकट अति भीम प्रचंडा ।<br>
+                नख अग्र बज्र सम दंडा ॥<br>
+                कल्की ब्रह्मा गावैं गुण कीरा ।<br>
+                कबि कोबिद करैं कलि कीरा ॥<br>
+                जय जय जय हनुमान गोसाईं ।<br>
+                कृपा करहु गुरुदेव की नाईं ॥
+                <small>— आरती संपूर्ण</small>
+            </div>
+        </div>
+
+        <!-- प्रमुख मंदिर -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🛕</span> प्रमुख मंदिर</h2>
+            <div class="temple-list">
+                <div class="temple-item">
+                    <strong>हनुमानगढ़ी, अयोध्या</strong><br>
+                    अयोध्या का सबसे प्रमुख मंदिर, जहाँ हनुमान जी बाल रूप में विराजमान हैं।
+                </div>
+                <div class="temple-item">
+                    <strong>सालासर बालाजी, राजस्थान</strong><br>
+                    सालासर में हनुमान जी के दर्शन मात्र से सभी मनोकामनाएँ पूर्ण होती हैं।
+                </div>
+                <div class="temple-item">
+                    <strong>महावीर मंदिर, पटना</strong><br>
+                    पटना का प्रसिद्ध हनुमान मंदिर, जहाँ देशभर से भक्त आते हैं।
+                </div>
+                <div class="temple-item">
+                    <strong>हनुमान मंदिर, कनाट प्लेस, दिल्ली</strong><br>
+                    दिल्ली का प्रसिद्ध हनुमान मंदिर, जहाँ हर मंगलवार और शनिवार को भीड़ रहती है।
+                </div>
+                <div class="temple-item">
+                    <strong>काशी हनुमान मंदिर, वाराणसी</strong><br>
+                    गंगा किनारे स्थित प्राचीन हनुमान मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>जामसावली हनुमान मंदिर, महाराष्ट्र</strong><br>
+                    महाराष्ट्र का प्रसिद्ध हनुमान मंदिर, जो समुद्र के बीच स्थित है।
+                </div>
+            </div>
+        </div>
+
+        <!-- त्योहार -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🎉</span> प्रमुख त्योहार</h2>
+            <ul>
+                <li><strong>हनुमान जयंती:</strong> चैत्र मास की पूर्णिमा (मार्च-अप्रैल) को मनाई जाती है। इस दिन हनुमान जी का जन्म हुआ था। भक्त लाल वस्त्र धारण करते हैं, सिंदूर चढ़ाते हैं और चालीसा पाठ करते हैं।</li>
+                <li><strong>मंगलवार व्रत:</strong> हनुमान जी का प्रिय दिन माना जाता है। इस दिन व्रत रखने से शत्रु नाश और भय मुक्ति होती है।</li>
+                <li><strong>शनिवार व्रत:</strong> हनुमान जी को शनि देव का भाई माना जाता है, इसलिए शनिवार को भी उनकी विशेष पूजा होती है।</li>
+                <li><strong>दीपावली के बाद:</strong> कार्तिक मास में हनुमान जी की विशेष पूजा का विधान है।</li>
+            </ul>
+        </div>
+
+        <!-- भक्ति और लाभ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🙏</span> हनुमान जी को क्यों भजें?</h2>
+            <ul>
+                <li><strong>बल और वीरता:</strong> हनुमान जी की कृपा से आत्मविश्वास और साहस बढ़ता है। शरीर में शक्ति आती है।</li>
+                <li><strong>बुद्धि और विवेक:</strong> वे विद्या और बुद्धि के दाता हैं। विद्यार्थियों के लिए विशेष लाभदायक हैं।</li>
+                <li><strong>भय मुक्ति:</strong> संकट मोचन — सभी प्रकार के भय, संकट और बाधाओं से मुक्ति मिलती है।</li>
+                <li><strong>रोग नाश:</strong> हनुमान जी की कृपा से स्वास्थ्य लाभ होता है और रोग दूर होते हैं।</li>
+                <li><strong>शत्रु नाश:</strong> शत्रुओं और बाधाओं से रक्षा होती है।</li>
+                <li><strong>ग्रह शांति:</strong> शनि और मंगल ग्रह की शांति के लिए हनुमान जी की पूजा की जाती है।</li>
+                <li><strong>मोक्ष:</strong> अंत में हनुमान जी की भक्ति से राम नाम मिलता है और मोक्ष प्राप्त होता है।</li>
+            </ul>
+        </div>
+
+        <!-- वर्जित कार्य -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🚫</span> क्या न करें?</h2>
+            <ul>
+                <li>❌ हनुमान जी को <strong>तुलसी</strong> न चढ़ाएँ (उन्हें तुलसी प्रिय नहीं है)</li>
+                <li>❌ हनुमान जी की मूर्ति को <strong>स्पर्श</strong> न करें (बिना स्नान)</li>
+                <li>❌ हनुमान जी के सामने <strong>अशुद्ध</strong> न जाएँ</li>
+                <li>❌ <strong>चमेली का तेल</strong> चढ़ाने के बाद उसे वापस न लाएँ</li>
+                <li>❌ मंगलवार/शनिवार को <strong>नमक</strong> न खाएँ (व्रत में)</li>
+                <li>❌ हनुमान चालीसा <strong>गलत उच्चारण</strong> में न पढ़ें</li>
+            </ul>
+        </div>
+
+        <!-- FAQ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>हनुमान जी को सिंदूर क्यों चढ़ाते हैं?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    माता सीता ने अपनी सुहाग की रक्षा के लिए सिंदूर लगाया था। जब हनुमान जी ने पूछा, तो सीता माता ने बताया कि यह सुहाग का प्रतीक है। तब हनुमान जी ने अपने पूरे शरीर पर सिंदूर लगा लिया — राम भक्ति के प्रतीक के रूप में। इसलिए हनुमान जी को सिंदूर और चमेली का तेल चढ़ाया जाता है।
+                </div>
+            </div>
+                 <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>हनुमान जी की पूजा में लाल रंग क्यों?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    लाल रंग <strong>वीरता, शक्ति, और मंगल</strong> का प्रतीक है। हनुमान जी मंगल ग्रह के देवता हैं, इसलिए लाल रंग उन्हें प्रिय है।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>क्या हनुमान जी की पूजा से शनि दोष दूर होता है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    हाँ, हनुमान जी को <strong>शनि देव का भाई</strong> माना जाता है। शनिवार को हनुमान जी की पूजा करने से शनि दोष और कालसर्प दोष दूर होता है।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>हनुमान चालीसा कितनी बार पढ़नी चाहिए?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    शास्त्रों के अनुसार, <strong>7 बार, 21 बार, या 108 बार</strong> हनुमान चालीसा पढ़ने से विशेष लाभ होता है। मंगलवार और शनिवार को 7 या 21 बार पढ़ना शुभ माना जाता है।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>क्या हनुमान जी की पूजा से सন্তान प्राप्ति होती है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    हाँ, संतान प्राप्ति के लिए हनुमान जी की पूजा, <strong>हनुमान चालीसा पाठ, बजरंग बाण पाठ और संकट मोचन मंदिर में जाकर दर्शन</strong> करने से लाभ मिलता है।
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Links -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🔗</span> संबंधित लिंक</h2>
+            <div class="related-grid">
+                <a href="../mantra/index.html" class="related-link">📿 सभी मंत्र</a>
+                <a href="../stotra/hanuman-chalisa.html" class="related-link">📜 हनुमान चालीसा</a>
+                <a href="../stotra/bajrang-baan.html" class="related-link">🏹 बजरंग बाण</a>
+                <a href="../tyohar/hanuman-jayanti.html" class="related-link">🎉 हनुमान जयंती</a>
+                <a href="../katha/hanuman-katha.html" class="related-link">📖 हनुमान कथाएँ</a>
+                <a href="../quiz/index.html" class="related-link">🎯 हनुमान क्विज</a>
+            </div>
+        </div>
+
+        <!-- Share -->
+        <button class="btn-primary" onclick="sharePage()" style="margin-top:10px;">
+            <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+        </button>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय श्री राम</p>
+        </footer>
+
+    </main>
+
+    <!-- Back to Top -->
+    <button class="back-top" id="backTop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-calendar-days"></i><p>पंचांग</p></a>
+        <a href="../quiz/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>क्विज</p></a>
+    </nav>
+
+    <script src="../script.js"></script>
+    <script>
+        // Accordion
+        function toggleAccordion(el) {
+            const item = el.parentElement;
+            item.classList.toggle('open');
+        }
+
+        // Back to Top
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backTop');
+            if (btn) {
+                if (window.scrollY > 400) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
