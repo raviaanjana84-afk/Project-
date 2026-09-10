@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>तुलसी माता — संपूर्ण ज्ञान | Sanatan Gyan Kosh</title>
+    <meta name="description" content="तुलसी माता का संपूर्ण ज्ञान — परिचय, कथा, स्वरूप, मंत्र, स्तोत्र, आरती, मंदिर, त्योहार, व्रत और बहुत कुछ।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .devta-hero {
+            text-align: center;
+            padding: 24px 20px;
+            background: linear-gradient(135deg, rgba(144,238,144,0.15), rgba(212,175,55,0.08));
+            border-radius: var(--radius);
+            margin-bottom: 14px;
+            border: 1px solid var(--border);
+        }
+        .devta-hero .icon { font-size: 72px; display: block; line-height: 1; }
+        .devta-hero .name {
+            font-family: var(--font-display);
+            font-size: 30px;
+            color: var(--maroon);
+            margin-top: 6px;
+        }
+        .devta-hero .subtitle {
+            font-size: 13px;
+            color: var(--ink-soft);
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+
+        .devta-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 18px 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .devta-section h2 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--maroon);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 8px;
+        }
+        .devta-section h2 .sec-icon { font-size: 24px; }
+
+        .devta-section p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+            margin-bottom: 8px;
+        }
+        .devta-section p strong { color: var(--maroon); }
+
+        .mantra-box {
+            background: linear-gradient(135deg, rgba(144,238,144,0.12), rgba(212,175,55,0.05));
+            border-left: 4px solid var(--gold);
+            padding: 14px 16px;
+            border-radius: 12px;
+            font-family: var(--font-display);
+            font-size: 18px;
+            text-align: center;
+            margin: 10px 0;
+            line-height: 1.8;
+            color: var(--maroon);
+            font-weight: 600;
+        }
+        .mantra-box small {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 12px;
+            color: var(--ink-soft);
+            font-weight: 400;
+            margin-top: 6px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .info-item {
+            background: var(--bg);
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 13px;
+        }
+        .info-item .lbl {
+            font-size: 10px;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-item .val {
+            font-weight: 600;
+            color: var(--maroon);
+            margin-top: 2px;
+        }
+
+        .devta-section ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 8px;
+        }
+        .devta-section ul li {
+            padding: 8px 0;
+            font-size: 13.5px;
+            line-height: 1.6;
+            border-bottom: 1px dashed var(--border);
+            color: var(--ink-soft);
+        }
+        .devta-section ul li:last-child { border-bottom: none; }
+        .devta-section ul li strong { color: var(--maroon); }
+
+        .accordion-item {
+            border-bottom: 1px solid var(--border);
+        }
+        .accordion-item:last-child { border-bottom: none; }
+        .accordion-head {
+            padding: 12px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--maroon);
+            font-family: var(--font-display);
+        }
+        .accordion-head i {
+            transition: transform 0.3s;
+            color: var(--gold);
+        }
+        .accordion-item.open .accordion-head i {
+            transform: rotate(180deg);
+        }
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            font-size: 13px;
+            color: var(--ink-soft);
+            line-height: 1.8;
+        }
+        .accordion-item.open .accordion-body {
+            max-height: 4000px;
+            padding-bottom: 12px;
+        }
+
+        .temple-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .temple-item {
+            padding: 10px 14px;
+            background: var(--bg);
+            border-radius: 10px;
+            border-left: 3px solid var(--gold);
+            font-size: 13px;
+        }
+        .temple-item strong { color: var(--maroon); }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .related-link {
+            padding: 10px 12px;
+            background: var(--bg);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--maroon);
+            font-weight: 600;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .related-link:hover {
+            background: var(--card-bg);
+            border-color: var(--gold);
+        }
+
+        .names-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .name-item {
+            background: var(--bg);
+            padding: 8px 12px;
+            border-radius: 8px;
+            border-left: 3px solid var(--gold);
+            font-size: 12px;
+        }
+        .name-item strong {
+            color: var(--maroon);
+            font-family: var(--font-display);
+            font-size: 14px;
+        }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .benefit-item {
+            background: var(--bg);
+            padding: 12px 14px;
+            border-radius: 12px;
+            border-left: 4px solid var(--gold);
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .benefit-item .b-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+        .benefit-item .b-name {
+            font-weight: 700;
+            color: var(--maroon);
+            font-size: 14px;
+        }
+        .benefit-item .b-desc {
+            font-size: 12px;
+            color: var(--ink-soft);
+            margin-top: 2px;
+            line-height: 1.6;
+        }
+
+        .back-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--maroon);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 16px rgba(122,46,46,0.4);
+            z-index: 90;
+        }
+        .back-top.show { display: flex; }
+
+        @media (max-width: 420px) {
+            .devta-hero .icon { font-size: 60px; }
+            .devta-hero .name { font-size: 24px; }
+            .devta-section h2 { font-size: 17px; }
+            .mantra-box { font-size: 16px; }
+            .names-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ देवता ज्ञान</span>
+            <h1>तुलसी माता</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <!-- Hero -->
+        <div class="devta-hero">
+            <span class="icon">🌿</span>
+            <div class="name">तुलसी माता</div>
+            <div class="subtitle">वृंदा · हरिप्रिया · विष्णुप्रिया · पवित्रा</div>
+        </div>
+
+        <!-- Quick Info -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📋</span> एक नज़र में</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="lbl">अन्य नाम</div>
+                    <div class="val">वृंदा, हरिप्रिया, विष्णुप्रिया, पवित्रा, भूतघ्नी, सुरसा</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">पति</div>
+                    <div class="val">भगवान विष्णु (शालिग्राम रूप)</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रकट स्थान</div>
+                    <div class="val">पृथ्वी पर वृंदावन</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय दिन</div>
+                    <div class="val">गुरुवार, कार्तिक मास, तुलसी विवाह</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय रंग</div>
+                    <div class="val">हरा, पीला</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय भोग</div>
+                    <div class="val">गंगाजल, दूध, सफेद फूल, मिश्री</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">विशेष दिन</div>
+                    <div class="val">तुलसी विवाह (कार्तिक शुक्ल एकादशी)</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रमुख पर्व</div>
+                    <div class="val">तुलसी विवाह, तुलसी पूजन, कार्तिक मास</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">दर्शन</div>
+                    <div class="val">प्रातः स्नान के बाद, घर के आँगन में</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">जल अर्पण</div>
+                    <div class="val">प्रातः और सायं, ताम्र पात्र से</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">वैज्ञानिक नाम</div>
+                    <div class="val">ओसीमम टेनुइफ्लोरम (Ocimum tenuiflorum)</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">महत्व</div>
+                    <div class="val">स्वास्थ्य, भक्ति, समृद्धि, पाप नाश</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- परिचय -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📖</span> परिचय</h2>
+            <p>
+                <strong>तुलसी माता</strong> हिंदू धर्म की सबसे पवित्र और पूजनीय देवियों में से एक हैं। वे केवल एक पौधा नहीं, बल्कि <strong>जीवित देवी</strong> हैं — जो हर हिंदू घर के आँगन में विराजमान रहती हैं। तुलसी को <strong>हरिप्रिया</strong> (विष्णु की प्रिय) कहा जाता है।
+            </p>
+            <p>
+                तुलसी माता को <strong>वृंदा</strong>, <strong>हरिप्रिया</strong>, <strong>विष्णुप्रिया</strong>, <strong>पवित्रा</strong>, और <strong>भूतघ्नी</strong> जैसे कई नामों से जाना जाता है। वे <strong>भगवान विष्णु की पत्नी</strong> हैं — शालिग्राम रूप में।
+            </p>
+            <p>
+                तुलसी का पौधा <strong>औषधीय गुणों से भरपूर</strong> है। इसकी पत्तियाँ, बीज, और जड़ें — सभी औषधि के रूप में प्रयुक्त होती हैं। तुलसी <strong>स्वास्थ्य, भक्ति, और समृद्धि</strong> की प्रतीक हैं।
+            </p>
+            <p>
+                हिंदू धर्म में तुलसी के बिना कोई पूजा पूर्ण नहीं मानी जाती। विष्णु पूजा, सत्यनारायण व्रत, और सभी शुभ कार्यों में तुलसी दल का उपयोग अनिवार्य है।
+            </p>
+        </div>
+
+        <!-- प्रकट कथा -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📜</span> प्रकट कथा</h2>
+            <p>
+                एक पौराणिक कथा के अनुसार, <strong>वृंदा</strong> नामक एक पतिव्रता स्त्री थीं। उनके पति <strong>जलंधर</strong> नामक असुर थे, जो अत्यंत शक्तिशाली था। वृंदा की पतिव्रता के कारण जलंधर को कोई हरा नहीं सकता था।
+            </p>
+            <p>
+                देवताओं ने विष्णु जी से प्रार्थना की। तब विष्णु जी ने जलंधर का रूप धारण किया और वृंदा के पास गए। धोखे से वृंदा की पतिव्रता भंग हुई और जलंधर मारा गया।
+            </p>
+            <p>
+                जब वृंदा को यह पता चला, तो उन्होंने विष्णु जी को <strong>पत्थर बनने का श्राप</strong> दिया — जो <strong>शालिग्राम</strong> कहलाए। फिर वृंदा ने <strong>अपने शरीर का त्याग</strong> किया और उनके शरीर से <strong>तुलसी का पौधा</strong> प्रकट हुआ।
+            </p>
+            <p>
+                विष्णु जी ने वृंदा को वरदान दिया कि वे <strong>तुलसी के रूप में हमेशा उनके साथ रहेंगी</strong>। तब से <strong>तुलसी और शालिग्राम</strong> की पूजा एक साथ होती है। <strong>तुलसी विवाह</strong> में शालिग्राम से तुलसी का विवाह कराया जाता है।
+            </p>
+            <p>
+                एक अन्य कथा के अनुसार, तुलसी <strong>समुद्र मंथन</strong> से प्रकट हुईं और विष्णु जी ने उन्हें अपनी पत्नी के रूप में स्वीकार किया।
+            </p>
+        </div>
+
+        <!-- स्वरूप -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🎨</span> स्वरूप</h2>
+            <p>
+                तुलसी माता का स्वरूप <strong>हरे रंग की पवित्र देवी</strong> के रूप में है।
+            </p>
+            <ul>
+                <li><strong>रंग:</strong> हरा, पीला, हल्का बैंगनी (श्यामा तुलसी)</li>
+                <li><strong>वस्त्र:</strong> हरे या पीले रेशमी वस्त्र</li>
+                <li><strong>आभूषण:</strong> स्वर्ण आभूषण, मुकुट</li>
+                <li><strong>हाथ:</strong> 2 या 4 हाथ</li>
+                <li><strong>प्रतीक:</strong> तुलसी की मंजरी, कमल</li>
+                <li><strong>विशेष:</strong> पौधे के रूप में — जड़ें, तना, पत्ते, मंजरी</li>
+                <li><strong>नेत्र:</strong> कमल के समान सुंदर</li>
+                <li><strong>मुद्रा:</strong> अभय मुद्रा और वरद मुद्रा</li>
+                <li><strong>साथ:</strong> भगवान विष्णु (शालिग्राम), श्रीकृष्ण</li>
+                <li><strong>निवास:</strong> आँगन, वृंदावन, वैकुंठ</li>
+                <li><strong>प्रकार:</strong> रामा तुलसी (हरी), श्यामा तुलसी (बैंगनी), कृष्ण तुलसी</li>
+            </ul>
+        </div>
+
+        <!-- मुख्य मंत्र -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🌿</span> मुख्य मंत्र</h2>
+
+            <p><strong>1. तुलसी मूल मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ ह्रीं तुलस्यै नमः
+                <small>अर्थ: हे तुलसी माता, मैं आपको नमस्कार करता हूँ। 'ह्रीं' तुलसी का बीज मंत्र है।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>2. तुलसी गायत्री मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ तुलस्यै च विद्महे ।<br>
+                विष्णुप्रियायै धीमहि ।<br>
+                तन्नो तुलसी प्रचोदयात् ॥
+                <small>अर्थ: हम तुलसी का ध्यान करते हैं, विष्णुप्रिया का ध्यान करते हैं, तुलसी हमें प्रेरित करें।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>3. तुलसी वंदना (श्लोक):</strong></p>
+            <div class="mantra-box">
+                महाप्रसादजननी सर्वसौभाग्यवर्धिनी ।<br>
+                आधिव्याधिहरा नित्यं तुलसी त्वं नमोऽस्तु ते ॥
+                <small>अर्थ: हे तुलसी, जो महाप्रसाद देने वाली हैं, सौभाग्य बढ़ाने वाली हैं, रोग दूर करने वाली हैं — मैं आपको नमस्कार करता हूँ।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>4. तुलसी प्रणाम मंत्र:</strong></p>
+            <div class="mantra-box">
+                वृन्दायै तुलसीदेव्यै प्रियायै केशवस्य च ।<br>
+                विष्णुभक्तिप्रदायै च सत्यायै ते नमो नमः ॥
+                <small>अर्थ: हे वृंदा, हे तुलसी देवी, केशव की प्रिया, विष्णु भक्ति देने वाली, सत्य स्वरूपा — आपको नमस्कार।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>5. तुलसी जल अर्पण मंत्र:</strong></p>
+            <div class="mantra-box" style="font-size:15px;">
+                ॐ गंगे च यमुने चैव गोदावरि सरस्वति ।<br>
+                तुलसी सहितं तोयं गृहाण त्वं नमोऽस्तु ते ॥
+                <small>अर्थ: हे गंगा, यमुना, गोदावरी, सरस्वती सहित तुलसी, यह जल ग्रहण करें, आपको नमस्कार।</small>
+            </div>
+        </div>
+
+        <!-- तुलसी के 108 नाम (24 प्रमुख) -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🔱</span> तुलसी माता के 108 नाम (24 प्रमुख)</h2>
+            <p style="font-size:13px;margin-bottom:8px;">
+                तुलसी माता के 108 नाम हैं — इनका जप करने से सौभाग्य, स्वास्थ्य, और भक्ति बढ़ती है।
+            </p>
+            <div class="names-grid">
+                <div class="name-item"><strong>तुलसी</strong> — अनुपमा</div>
+                <div class="name-item"><strong>वृंदा</strong> — वृंदावन की देवी</div>
+                <div class="name-item"><strong>हरिप्रिया</strong> — विष्णु की प्रिय</div>
+                <div class="name-item"><strong>विष्णुप्रिया</strong> — विष्णु को प्रिय</div>
+                <div class="name-item"><strong>पवित्रा</strong> — पवित्र करने वाली</div>
+                <div class="name-item"><strong>भूतघ्नी</strong> — भूत-प्रेत नाश करने वाली</div>
+                <div class="name-item"><strong>सुरसा</strong> — देवताओं को प्रिय</div>
+                <div class="name-item"><strong>वैष्णवी</strong> — विष्णु की शक्ति</div>
+                <div class="name-item"><strong>कृष्णा</strong> — कृष्ण प्रिया</div>
+                <div class="name-item"><strong>श्यामा</strong> — श्याम वर्ण वाली</div>
+                <div class="name-item"><strong>विश्वपूजिता</strong> — विश्व द्वारा पूजित</div>
+                <div class="name-item"><strong>विश्वपावनी</strong> — विश्व को पवित्र करने वाली</div>
+                <div class="name-item"><strong>सर्वसौभाग्यदायिनी</strong> — सौभाग्य देने वाली</div>
+                <div class="name-item"><strong>पापहारिणी</strong> — पाप हरने वाली</div>
+                <div class="name-item"><strong>रोगनाशिनी</strong> — रोग नाश करने वाली</div>
+                <div class="name-item"><strong>सुखप्रदा</strong> — सुख देने वाली</div>
+                <div class="name-item"><strong>मोक्षप्रदा</strong> — मोक्ष देने वाली</div>
+                <div class="name-item"><strong>देवपूजिता</strong> — देवताओं द्वारा पूजित</div>
+                <div class="name-item"><strong>शुभप्रदा</strong> — शुभ देने वाली</div>
+                <div class="name-item"><strong>सद्गुणप्रदा</strong> — सद्गुण देने वाली</div>
+                <div class="name-item"><strong>भक्तवत्सला</strong> — भक्तों पर प्रेम करने वाली</div>
+                <div class="name-item"><strong>नित्यपूजिता</strong> — नित्य पूजित</div>
+                <div class="name-item"><strong>मंगलदायिनी</strong> — मंगल देने वाली</div>
+                <div class="name-item"><strong>सत्यवती</strong> — सत्य वाली</div>
+            </div>
+        </div>
+
+        <!-- तुलसी के प्रकार -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🌱</span> तुलसी के प्रकार</h2>
+            <p style="font-size:13px;margin-bottom:8px;">
+                हिंदू धर्म में तुलसी के <strong>7 प्रमुख प्रकार</strong> माने जाते हैं — हर प्रकार का अलग महत्व है।
+            </p>
+            <div class="benefit-grid">
+                <div class="benefit-item">
+                    <div class="b-icon">🌿</div>
+                    <div>
+                        <div class="b-name">1. रामा तुलसी</div>
+                        <div class="b-desc">हरी पत्तियों वाली, सबसे सामान्य। विष्णु पूजा में उपयोग।</div>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="b-icon">🍇</div>
+                    <div>
+                        <div class="b-name">2. श्यामा तुलसी</div>
+                        <div class="b-desc">बैंगनी-नीली पत्तियों वाली। कृष्ण पूजा में उपयोग, अधिक औषधीय गुण।</div>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="b-icon">🌸</div>
+                    <div>
+                        <div class="b-name">3. कृष्ण तुलसी</div>
+                        <div class="b-desc">गहरे बैंगनी रंग की। कृष्ण को प्रिय, औषधीय गुणों से भरपूर।</div>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="b-icon">💚</div>
+                    <div>
+                        <div class="b-name">4. विष्णु तुलसी</div>
+                        <div class="b-desc">विष्णु को प्रिय, हरी पत्तियों वाली।</div>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="b-icon">🌳</div>
+                    <div>
+                        <div class="b-name">5. वन तुलसी</div>
+                        <div class="b-desc">जंगली तुलसी, औषधीय गुणों में सर्वश्रेष्ठ।</div>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="b-icon">🍋</div>
+                    <div>
+                        <div class="b-name">6. अर्जक तुलसी</div>
+                        <div class="b-desc">नींबू जैसी सुगंध वाली, पथरी में लाभकारी।</div>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="b-icon">🪷</div>
+                    <div>
+                        <div class="b-name">7. कर्पूर तुलसी</div>
+                        <div class="b-desc">कपूर जैसी सुगंध वाली, सर्दी-खांसी में उपयोगी।</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- जप विधि -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📿</span> जप विधि</h2>
+            <ul>
+                <li><strong>समय:</strong> प्रातः 5-7 बजे (स्नान के बाद), या सायं 6-7 बजे (दीपदान के समय)</li>
+                <li><strong>स्थान:</strong> तुलसी के पौधे के सामने, पूर्व या उत्तर दिशा में मुख करके</li>
+                <li><strong>माला:</strong> तुलसी माला, स्फटिक, या कमल गट्टा माला</li>
+                <li><strong>संख्या:</strong> 108 बार (1 माला), या 1008 बार</li>
+                <li><strong>वस्त्र:</strong> स्वच्छ, हरे या पीले वस्त्र</li>
+                <li><strong>भोग:</strong> गंगाजल, दूध, सफेद फूल, मिश्री</li>
+                <li><strong>धूप/दीप:</strong> घी का दीपक (प्रातः-सायं), धूप</li>
+                <li><strong>विशेष:</strong> तुलसी स्तोत्र, तुलसी चालीसा, तुलसी आरती</li>
+                <li><strong>जल अर्पण:</strong> ताम्र पात्र से जल, प्रातः-सायं</li>
+                <li><strong>दीपदान:</strong> सायंकाल में तुलसी के नीचे दीपक जलाएँ</li>
+            </ul>
+        </div>
+
+        <!-- तुलसी स्तोत्र (Accordion) -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📜</span> तुलसी स्तोत्र / आरती</h2>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 तुलसी आरती (जय जय तुलसी माता)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:15px;text-align:left;line-height:2;">
+                        जय जय तुलसी माता, जय जय तुलसी माता ।<br>
+                        जय जय तुलसी माता, सब जग की विख्याता ॥<br>
+                        जय जय तुलसी माता... ॥<br><br>
+                        पतित पावनि तुलसी, जग की रक्षा करनी ।<br>
+                        भक्तजनों की प्रिय हो, मनोरथ की पूरनी ॥<br>
+                        जय जय तुलसी माता... ॥<br><br>
+                        शालिग्राम की प्रिय हो, विष्णु की हो रानी ।<br>
+                        नारद मुनि गावें, तुम्हरी महिमा भारी ॥<br>
+                        जय जय तुलसी माता... ॥<br><br>
+                        निर्मल जल से तुमको, नित्य स्नान करावें ।<br>
+                        दूध मिश्री का भोग, भक्तजन चढ़ावें ॥<br>
+                        जय जय तुलसी माता... ॥<br><br>
+                        तुलसी की महिमा बड़ी, सब जग में गाई ।<br>
+                        तुलसी के पत्ते से, पाप हर जाई ॥<br>
+                        जय जय तुलसी माता... ॥<br><br>
+                        जय जय तुलसी माता, जय जय तुलसी माता ।<br>
+                        जय जय तुलसी माता, सब जग की विख्याता ॥
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 तुलसी स्तोत्र (संपूर्ण)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        महाप्रसादजननी सर्वसौभाग्यवर्धिनी ।<br>
+                        आधिव्याधिहरा नित्यं तुलसी त्वं नमोऽस्तु ते ॥<br><br>
+                        नमस्तुलसि कल्याणि नमस्ते विष्णुवल्लभे ।<br>
+                        नमस्ते पापशमनि नमस्ते भक्तवत्सले ॥<br><br>
+                        नमस्ते शोकसंहर्त्रि नमस्ते पापनाशिनि ।<br>
+                        नमस्ते सर्वदुःखघ्नि नमस्ते पुण्यदायिनि ॥<br><br>
+                        यन्मूले सर्वतीर्थानि यन्मध्ये सर्वदेवताः ।<br>
+                        यदग्रे सर्ववेदाश्च तुलसीं तां नमाम्यहम् ॥<br><br>
+                        तुलसि त्वं परं पुण्यं पवित्रं पापनाशनम् ।<br>
+                        दर्शनात् स्पर्शनात् पापं नश्यत्येव न संशयः ॥<br><br>
+                        ... (तुलसी स्तोत्र — कई श्लोक)
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 तुलसी स्तुति (वृंदा स्तोत्र)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        वृंदा वृंदावनेश्वरी, विष्णुप्रिया, हरिप्रिया ।<br>
+                        पतिव्रता सती श्रेष्ठा, तुलसी त्वं नमोऽस्तु ते ॥<br><br>
+                        नारायणप्रिया देवी, नित्यं नारायणे रता ।<br>
+                        तुलसी देवदेवस्य, प्रिया त्वं पाहि मां सदा ॥<br><br>
+                        देवैर्दानवैः संस्तुता, मुनिभिर्वन्दिता सदा ।<br>
+                        सर्वसम्पत्प्रदा देवी, तुलसी त्वं नमोऽस्तु ते ॥
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 तुलसी चालीसा</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        जय जय तुलसी माता, जय जय तुलसी माता ।<br>
+                        जय जय तुलसी माता, सब जग की विख्याता ॥<br><br>
+                        विष्णुप्रिया कल्याणी, पाप विनाशिनी ।<br>
+                        पतिव्रता सती देवी, सदा सुख दायिनी ॥<br><br>
+                        ... (तुलसी चालीसा — 40 चौपाइयाँ)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- प्रमुख मंदिर -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🛕</span> प्रमुख मंदिर</h2>
+            <div class="temple-list">
+                <div class="temple-item">
+                    <strong>वृंदावन, उत्तर प्रदेश</strong><br>
+                    तुलसी माता का सबसे पवित्र स्थान। जहाँ तुलसी देवी प्रकट हुईं। हर मंदिर के आँगन में तुलसी है।
+                </div>
+                <div class="temple-item">
+                    <strong>तुलसी मानस मंदिर, वृंदावन</strong><br>
+                    तुलसीदास जी द्वारा स्थापित, रामचरितमानस की रचना स्थल।
+                </div>
+                <div class="temple-item">
+                    <strong>तुलसी मंदिर, अयोध्या</strong><br>
+                    अयोध्या में स्थित तुलसी माता का मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>तुलसी मंदिर, प्रयागराज</strong><br>
+                    गंगा-यमुना संगम के पास तुलसी माता का मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>तुलसी मंदिर, काशी (वाराणसी)</strong><br>
+                    तुलसी घाट, गंगा तट पर स्थित।
+                </div>
+                <div class="temple-item">
+                    <strong>तुलसी वन, वृंदावन</strong><br>
+                    तुलसी का पवित्र वन, जहाँ हर पौधा तुलसी का है।
+                </div>
+                <div class="temple-item">
+                    <strong>श्री राम जानकी मंदिर, वृंदावन</strong><br>
+                    तुलसीदास जी द्वारा स्थापित, तुलसी माता का विशेष स्थान।
+                </div>
+                <div class="temple-item">
+                    <strong>तुलसी मंदिर, चित्रकूट</strong><br>
+                    चित्रकूट में स्थित, राम जी के वनवास काल से संबंधित।
+                </div>
+            </div>
+        </div>
+
+        <!-- तुलसी सेवा के नियम -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📖</span> तुलसी सेवा के नियम</h2>
+            <ul>
+                <li><strong>प्रातः स्नान:</strong> स्नान के बाद तुलसी दर्शन करें</li>
+                <li><strong>जल अर्पण:</strong> ताम्र पात्र से जल अर्पित करें, प्रातः-सायं</li>
+                <li><strong>दीपदान:</strong> सायंकाल में तुलसी के नीचे घी का दीपक जलाएँ</li>
+                <li><strong>पत्ते तोड़ना:</strong> कभी दाँत से न तोड़ें, हाथ से या नाखून से तोड़ें</li>
+                <li><strong>तोड़ने का समय:</strong> प्रातः स्नान के बाद, या सायं दीपदान के बाद</li>
+                <li><strong>न तोड़ें:</strong> रविवार, एकादशी, पूर्णिमा, अमावस्या को न तोड़ें</li>
+                <li><strong>प्रदक्षिणा:</strong> तुलसी की 4, 7, या 11 बार प्रदक्षिणा करें</li>
+                <li><strong>जल:</strong> रोज़ जल दें, बिना जल न रहने दें</li>
+                <li><strong>मंजरी:</strong> मंजरी (बीज) चढ़ाना अत्यंत शुभ है</li>
+                <li><strong>सूखी पत्तियाँ:</strong> तुलसी की सूखी पत्तियाँ जल में प्रवाहित करें</li>
+            </ul>
+        </div>
+
+        <!-- त्योहार और व्रत -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🎉</span> प्रमुख त्योहार और व्रत</h2>
+            <ul>
+                <li><strong>तुलसी विवाह:</strong> कार्तिक शुक्ल एकादशी (देव उठनी एकादशी) — तुलसी और शालिग्राम का विवाह।</li>
+                <li><strong>तुलसी पूजन:</strong> कार्तिक मास में विशेष पूजा।</li>
+                <li><strong>गुरुवार व्रत:</strong> तुलसी और विष्णु की पूजा।</li>
+                <li><strong>कार्तिक मास:</strong> पूरा महीना तुलसी सेवा का।</li>
+                <li><strong>देव उठनी एकादशी:</strong> तुलसी विवाह का प्रमुख दिन।</li>
+                <li><strong>तुलसी जयंती:</strong> कार्तिक शुक्ल नवमी — तुलसी प्रकटोत्सव।</li>
+                <li><strong>श्रावण मास:</strong> तुलसी पूजन का विशेष महीना।</li>
+                <li><strong>विष्णु पूजा:</strong> हर पूजा में तुलसी दल अनिवार्य।</li>
+            </ul>
+        </div>
+
+        <!-- स्वास्थ्य लाभ (वैज्ञानिक) -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">💚</span> तुलसी के स्वास्थ्य लाभ (वैज्ञानिक)</h2>
+            <div class="benefit-grid">
+                <div class="benefit-item">
+                    <div class="b-icon">🛡️</div>
+                    <div>
+                        <div class="b-name">रोग प्रतिरोधक क्षमता</div>
+                        <div class="b-desc">तुलसी में एंटीऑक्सीडेंट और एंटी-बैक्टीरियल गुण हैं, जो रोग प्रतिरोधक क्षमता बढ़ाते हैं।</div>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="b-icon">🤧</div>
+                    <div>
+                        <div class="b-name">सर्दी-खांसी</div>
+                        <div class="b-desc">तुलसी की पत्तियाँ सर्दी, खांसी, जुकाम में रामबाण हैं।</div>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="b-icon">🫁</div>
+                    <div>
+                        <div class="b-name">श्वसन तंत्र</div>
+                        <div class="b-desc">अस्थमा, ब्रोंकाइटिस में तुलसी लाभकारी है।</div>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="b-icon">❤️</div>
+                    <div>
+                        <div class="b-name">हृदय स्वास्थ्य</div>
+                        <div class="b-desc">तुलसी रक्तचाप और कोलेस्ट्रॉल को नियंत्रित करती है।</div>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="b-icon">🧠</div>
+                    <div>
+                        <div class="b-name">मानसिक शांति</div>
+                        <div class="b-desc">तुलसी तनाव, चिंता, और अवसाद में लाभकारी है।</div>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="b-icon">🦟</div>
+                    <div>
+                        <div class="b-name">मच्छर भगाने वाली</div>
+                        <div class="b-desc">तुलसी का पौधा मच्छरों को दूर रखता है — डेंगू, मलेरिया से रक्षा।</div>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="b-icon">🩸</div>
+                    <div>
+                        <div class="b-name">रक्त शुद्धि</div>
+                        <div class="b-desc">तुलसी रक्त को शुद्ध करती है और त्वचा रोगों में लाभकारी है।</div>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="b-icon">🍽️</div>
+                    <div>
+                        <div class="b-name">पाचन तंत्र</div>
+                        <div class="b-desc">तुलसी पाचन में सहायक है और पेट के रोगों में लाभकारी।</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- वर्जित कार्य -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🚫</span> क्या न करें?</h2>
+            <ul>
+                <li>❌ तुलसी के पत्ते <strong>दाँत से</strong> न तोड़ें</li>
+                <li>❌ <strong>रविवार, एकादशी, पूर्णिमा, अमावस्या</strong> को तुलसी न तोड़ें</li>
+                <li>❌ तुलसी के पौधे को <strong>पैरों</strong> से न छुएँ</li>
+                <li>❌ तुलसी को <strong>अशुद्ध हाथों</strong> से न छुएँ</li>
+                <li>❌ तुलसी के पौधे को <strong>कैंची</strong> से न काटें</li>
+                <li>❌ तुलसी को <strong>सूखा</strong> न रहने दें</li>
+                <li>❌ तुलसी के पौधे के नीचे <strong>अशुद्ध</strong> कार्य न करें</li>
+                <li>❌ तुलसी की जड़ को <strong>नुकसान</strong> न पहुँचाएँ</li>
+                <li>❌ तुलसी के पत्तों को <strong>फेंकें</strong> नहीं, जल में प्रवाहित करें</li>
+                <li>❌ तुलसी के पौधे को <strong>अंधकार</strong> में न रखें</li>
+            </ul>
+        </div>
+
+        <!-- FAQ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>तुलसी माता का प्राकट्य कैसे हुआ?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>वृंदा</strong> नामक पतिव्रता स्त्री ने अपने पति जलंधर की मृत्यु के बाद अपने शरीर का त्याग किया। उनके शरीर से <strong>तुलसी का पौधा प्रकट हुआ</strong>। विष्णु जी ने उन्हें वरदान दिया कि वे तुलसी के रूप में हमेशा उनके साथ रहेंगी।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>तुलसी विवाह क्यों किया जाता है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>तुलसी विवाह</strong> (कार्तिक शुक्ल एकादशी) को <strong>तुलसी और शालिग्राम</strong> का विवाह कराया जाता है। यह <strong>वृंदा और विष्णु के मिलन</strong> का प्रतीक है। इस दिन <strong>विवाहित स्त्रियाँ</strong> अपने सौभाग्य के लिए व्रत रखती हैं और तुलसी-शालिग्राम की पूजा करती हैं।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>तुलसी के पत्ते कब नहीं तोड़ने चाहिए?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>रविवार, एकादशी, पूर्णिमा, अमावस्या, द्वादशी, और चतुर्दशी</strong> को तुलसी के पत्ते नहीं तोड़ने चाहिए। <strong>सूर्यास्त के बाद</strong> भी तुलसी नहीं तोड़नी चाहिए। इसके अलावा <strong>स्नान से पहले</strong> भी तुलसी नहीं तोड़नी चाहिए।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>क्या तुलसी के नीचे सोना चाहिए?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    नहीं, <strong>तुलसी के नीचे सोना वर्जित</strong> है। तुलसी के नीचे सोने से <strong>पाप लगता है</strong> और स्वास्थ्य पर बुरा असर पड़ता है। तुलसी के पौधे के नीचे <strong>अशुद्ध कार्य, झूठ, कलह, और मांस-मदिरा</strong> का सेवन भी वर्जित है।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>क्या तुलसी के पत्ते खाने चाहिए?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    हाँ, <strong>तुलसी के पत्ते</strong> खाना अत्यंत लाभकारी है — विशेषकर <strong>सर्दी-खांसी, जुकाम, और रोग प्रतिरोधक क्षमता</strong> के लिए। लेकिन <strong>एकादशी, रविवार, और व्रत के दिन</strong> तुलसी के पत्ते नहीं खाने चाहिए। तुलसी के पत्ते <strong>सुबह खाली पेट</strong> खाना सर्वोत्तम है।
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Links -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🔗</span> संबंधित लिंक</h2>
+            <div class="related-grid">
+                <a href="../mantra/index.html" class="related-link">📿 सभी मंत्र</a>
+                <a href="../stotra/tulsi-stotram.html" class="related-link">📜 तुलसी स्तोत्र</a>
+                <a href="../stotra/tulsi-chalisa.html" class="related-link">📜 तुलसी चालीसा</a>
+                <a href="../tyohar/tulsi-vivah.html" class="related-link">🎉 तुलसी विवाह</a>
+                <a href="../katha/tulsi-katha.html" class="related-link">📖 तुलसी कथाएँ</a>
+                <a href="../quiz/index.html" class="related-link">🎯 तुलसी क्विज</a>
+            </div>
+        </div>
+
+        <!-- Share -->
+        <button class="btn-primary" onclick="sharePage()" style="margin-top:10px;">
+            <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+        </button>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय तुलसी माता</p>
+        </footer>
+
+    </main>
+
+    <button class="back-top" id="backTop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-calendar-days"></i><p>पंचांग</p></a>
+        <a href="../quiz/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>क्विज</p></a>
+    </nav>
+
+    <script src="../script.js"></script>
+    <script>
+        function toggleAccordion(el) {
+            const item = el.parentElement;
+            item.classList.toggle('open');
+        }
+
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backTop');
+            if (btn) {
+                if (window.scrollY > 400) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
