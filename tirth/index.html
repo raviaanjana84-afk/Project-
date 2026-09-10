@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>तीर्थ कोश — संपूर्ण ज्ञान | Sanatan Gyan Kosh</title>
+    <meta name="description" content="20+ हिंदू तीर्थ स्थलों का संपूर्ण संग्रह — चार धाम, 12 ज्योतिर्लिंग, 51 शक्तिपीठ, कुंभ स्थल, सप्तपुरी और बहुत कुछ।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .search-wrap {
+            background: var(--card-bg);
+            border-radius: var(--radius-sm);
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 12px;
+            border: 1px solid var(--border);
+        }
+        .search-wrap i { color: var(--gold); font-size: 18px; }
+        .search-wrap input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            background: transparent;
+            font-family: var(--font-body);
+            color: var(--ink);
+        }
+        .search-wrap input::placeholder { color: var(--ink-light); }
+
+        .cat-tabs {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 4px 0 14px;
+            scrollbar-width: none;
+        }
+        .cat-tabs::-webkit-scrollbar { display: none; }
+        .cat-tab {
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1.5px solid var(--border);
+            background: var(--card-bg);
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: var(--transition);
+            color: var(--ink-soft);
+            font-family: var(--font-body);
+        }
+        .cat-tab.active {
+            background: var(--maroon);
+            color: white;
+            border-color: var(--maroon);
+        }
+        .cat-tab:hover:not(.active) {
+            border-color: var(--gold);
+            color: var(--maroon);
+        }
+
+        .tirth-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .tirth-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 18px 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--gold);
+            transition: var(--transition);
+        }
+        .tirth-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+            border-left-color: var(--maroon);
+        }
+        .tirth-card .t-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            gap: 10px;
+        }
+        .tirth-card .t-title {
+            font-family: var(--font-display);
+            font-size: 18px;
+            color: var(--maroon);
+            font-weight: 700;
+            flex: 1;
+        }
+        .tirth-card .t-title .t-en {
+            font-family: var(--font-body);
+            font-size: 10px;
+            font-weight: 400;
+            color: var(--ink-light);
+            display: block;
+            margin-top: 2px;
+        }
+        .tirth-card .t-badge {
+            font-size: 9px;
+            background: var(--maroon);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .tirth-card .t-badge.gold { background: var(--gold); color: var(--maroon); }
+        .tirth-card .t-badge.green { background: #27ae60; }
+        .tirth-card .t-badge.blue { background: #2980b9; }
+        .tirth-card .t-badge.purple { background: #8e44ad; }
+        .tirth-card .t-badge.red { background: #e74c3c; }
+
+        .tirth-card .t-location {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .tirth-card .t-location i {
+            font-size: 12px;
+        }
+
+        .tirth-card .t-desc {
+            background: #f8f4f0;
+            border-radius: 10px;
+            padding: 10px 12px;
+            font-size: 13px;
+            color: var(--ink-soft);
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+        .tirth-card .t-desc strong { color: var(--maroon); }
+
+        .tirth-card .t-benefits {
+            background: #eef7ee;
+            border-radius: 10px;
+            padding: 10px 12px;
+            font-size: 13px;
+            color: var(--ink-soft);
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+        .tirth-card .t-benefits strong { color: #27ae60; }
+
+        .tirth-card .t-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed var(--border);
+        }
+        .tirth-card .t-meta span {
+            font-size: 10px;
+            background: var(--bg);
+            padding: 4px 10px;
+            border-radius: 10px;
+            color: var(--ink-soft);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .tirth-card .t-meta span i {
+            color: var(--gold);
+            font-size: 10px;
+        }
+
+        .tirth-details {
+            margin-top: 8px;
+        }
+        .tirth-details summary {
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--maroon);
+            padding: 6px 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .tirth-details summary::-webkit-details-marker { display: none; }
+        .tirth-details summary::before {
+            content: '➕';
+            font-size: 11px;
+            transition: transform 0.3s;
+        }
+        .tirth-details[open] summary::before {
+            content: '➖';
+        }
+        .tirth-details .d-body {
+            padding: 10px 0;
+            font-size: 12.5px;
+            color: var(--ink-soft);
+            line-height: 1.8;
+            background: var(--bg);
+            padding: 12px;
+            border-radius: 10px;
+            margin-top: 6px;
+        }
+
+        .no-result {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--ink-light);
+            font-size: 14px;
+        }
+        .no-result i {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--border);
+        }
+
+        @media (max-width: 420px) {
+            .tirth-card { padding: 14px 12px; }
+            .tirth-card .t-title { font-size: 16px; }
+            .tirth-card .t-desc,
+            .tirth-card .t-benefits { font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="../index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ सनातन ज्ञान कोश</span>
+            <h1>तीर्थ कोश</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <div class="hero-banner">
+            <h2>🛕 तीर्थ कोश</h2>
+            <p><strong>20+ पवित्र तीर्थ स्थल</strong> — चार धाम, ज्योतिर्लिंग, शक्तिपीठ, कुंभ स्थल।</p>
+        </div>
+
+        <div class="search-wrap">
+            <i class="fa-solid fa-search"></i>
+            <input type="text" id="tirthSearch" placeholder="तीर्थ खोजें... (जैसे: काशी, द्वारका, तिरुपति)" oninput="filterTirths()" />
+        </div>
+
+        <div class="cat-tabs" id="catTabs">
+            <button class="cat-tab active" data-cat="all">✨ सभी</button>
+            <button class="cat-tab" data-cat="char-dham">🕉️ चार धाम</button>
+            <button class="cat-tab" data-cat="jyotirlinga">🔱 ज्योतिर्लिंग</button>
+            <button class="cat-tab" data-cat="shakti">🌺 शक्तिपीठ</button>
+            <button class="cat-tab" data-cat="kumbh">🌊 कुंभ</button>
+            <button class="cat-tab" data-cat="saptapuri">🏛️ सप्तपुरी</button>
+            <button class="cat-tab" data-cat="other">📍 अन्य</button>
+        </div>
+
+        <div class="tirth-grid" id="tirthGrid"></div>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय श्री राम</p>
+        </footer>
+
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="../devta/index.html" class="nav-link"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-temple"></i><p>तीर्थ</p></a>
+        <a href="../quiz/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>क्विज</p></a>
+    </nav>
+
+    <script>
+        // ============================================================
+        //  TIRTH DATABASE — 20+ Tirth Sthal (Deep)
+        // ============================================================
+
+        const tirths = [
+            // ========== चार धाम ==========
+            {
+                title: 'बद्रीनाथ',
+                en: 'Badrinath',
+                location: 'चमोली, उत्तराखंड',
+                desc: 'चार धाम में से एक, भगवान विष्णु का प्रमुख मंदिर। यह अलकनंदा नदी के किनारे, नार-नारायण पर्वत के बीच स्थित है।',
+                benefits: 'मोक्ष, विष्णु कृपा, पाप नाश, सभी पापों से मुक्ति।',
+                category: 'char-dham',
+                god: 'विष्णु (बद्रीनारायण)',
+                when: 'अप्रैल-नवंबर (शीतकाल में बंद)',
+                extra: 'आदि शंकराचार्य ने 8वीं सदी में इस मंदिर की स्थापना की। बद्रीनाथ में विष्णु जी की 1 मीटर ऊँची शालिग्राम प्रतिमा है।'
+            },
+            {
+                title: 'जगन्नाथ पुरी',
+                en: 'Jagannath Puri',
+                location: 'पुरी, ओडिशा',
+                desc: 'चार धाम में से एक, भगवान जगन्नाथ (कृष्ण) का प्रमुख मंदिर। यहाँ जगन्नाथ, बलभद्र, और सुभद्रा विराजमान हैं।',
+                benefits: 'मोक्ष, कृष्ण कृपा, पाप नाश, मनोकामना पूर्ति।',
+                category: 'char-dham',
+                god: 'जगन्नाथ (कृष्ण)',
+                when: 'पूरे वर्ष (रथ यात्रा विशेष)',
+                extra: 'यहाँ की रथ यात्रा विश्व प्रसिद्ध है। मंदिर में रोज़ महाप्रसाद बनता है।'
+            },
+            {
+                title: 'द्वारका',
+                en: 'Dwarka',
+                location: 'देवभूमि द्वारका, गुजरात',
+                desc: 'चार धाम में से एक, भगवान कृष्ण की राजधानी। यह गोमती नदी के किनारे, अरब सागर के तट पर स्थित है।',
+                benefits: 'मोक्ष, कृष्ण कृपा, धन, समृद्धि।',
+                category: 'char-dham',
+                god: 'कृष्ण (द्वारकाधीश)',
+                when: 'पूरे वर्ष',
+                extra: 'यहाँ द्वारकाधीश मंदिर, बेट द्वारका, और नागेश्वर ज्योतिर्लिंग हैं।'
+            },
+            {
+                title: 'रामेश्वरम',
+                en: 'Rameshwaram',
+                location: 'रामनाथपुरम, तमिलनाडु',
+                desc: 'चार धाम में से एक, भगवान शिव का प्रमुख मंदिर। यह राम जी द्वारा स्थापित ज्योतिर्लिंग है।',
+                benefits: 'मोक्ष, शिव कृपा, पाप नाश, कर्ज मुक्ति।',
+                category: 'char-dham',
+                god: 'शिव (रामनाथस्वामी)',
+                when: 'पूरे वर्ष',
+                extra: 'राम जी ने रावण वध के बाद यहाँ शिवलिंग की स्थापना की थी।'
+            },
+
+            // ========== 12 ज्योतिर्लिंग ==========
+            {
+                title: 'सोमनाथ',
+                en: 'Somnath',
+                location: 'सौराष्ट्र, गुजरात',
+                desc: 'प्रथम ज्योतिर्लिंग, चंद्र देव द्वारा स्थापित। यह अरब सागर के तट पर स्थित है।',
+                benefits: 'शिव कृपा, चंद्र दोष शांति, पाप नाश।',
+                category: 'jyotirlinga',
+                god: 'शिव',
+                when: 'पूरे वर्ष',
+                extra: 'सोमनाथ मंदिर को कई बार तोड़ा और बनाया गया — यह भारत की अमर आस्था का प्रतीक है।'
+            },
+            {
+                title: 'महाकालेश्वर',
+                en: 'Mahakaleshwar',
+                location: 'उज्जैन, मध्य प्रदेश',
+                desc: 'एकमात्र दक्षिणमुखी ज्योतिर्लिंग, काल के स्वामी महाकाल। यह शिप्रा नदी के किनारे स्थित है।',
+                benefits: 'मृत्यु भय नाश, कालसर्प दोष शांति, शिव कृपा।',
+                category: 'jyotirlinga',
+                god: 'शिव (महाकाल)',
+                when: 'पूरे वर्ष',
+                extra: 'महाकाल की भस्म आरती विश्व प्रसिद्ध है। यहाँ सिंहस्थ कुंभ लगता है।'
+            },
+            {
+                title: 'काशी विश्वनाथ',
+                en: 'Kashi Vishwanath',
+                location: 'वाराणसी, उत्तर प्रदेश',
+                desc: '12 ज्योतिर्लिंगों में सबसे प्रसिद्ध, गंगा तट पर स्थित। काशी को मोक्ष की नगरी कहा जाता है।',
+                benefits: 'मोक्ष, शिव कृपा, पाप नाश, आत्मज्ञान।',
+                category: 'jyotirlinga',
+                god: 'शिव (विश्वनाथ)',
+                when: 'पूरे वर्ष',
+                extra: 'कहा जाता है कि काशी में मृत्यु होने पर मोक्ष मिलता है। यहाँ भैरव बाबा कोतवाल हैं।'
+            },
+            {
+                title: 'केदारनाथ',
+                en: 'Kedarnath',
+                location: 'रुद्रप्रयाग, उत्तराखंड',
+                desc: 'चार धाम और 12 ज्योतिर्लिंग दोनों में शामिल, हिमालय में स्थित।',
+                benefits: 'मोक्ष, शिव कृपा, पाप नाश।',
+                category: 'jyotirlinga',
+                god: 'शिव',
+                when: 'मई-अक्टूबर (शीतकाल में बंद)',
+                extra: 'पांडवों ने महाभारत युद्ध के बाद यहाँ शिव की स्थापना की थी।'
+            },
+            {
+                title: 'त्र्यंबकेश्वर',
+                en: 'Trimbakeshwar',
+                location: 'नासिक, महाराष्ट्र',
+                desc: '12 ज्योतिर्लिंगों में से एक, गोदावरी नदी का उद्गम स्थल।',
+                benefits: 'शिव कृपा, कालसर्प दोष शांति, पाप नाश।',
+                category: 'jyotirlinga',
+                god: 'शिव',
+                when: 'पूरे वर्ष',
+                extra: 'यहाँ कालसर्प दोष की पूजा विशेष रूप से की जाती है।'
+            },
+            {
+                title: 'वैद्यनाथ',
+                en: 'Vaidyanath',
+                location: 'देवघर, झारखंड',
+                desc: '12 ज्योतिर्लिंगों में से एक, रावण द्वारा स्थापित।',
+                benefits: 'रोग नाश, शिव कृपा, पाप नाश।',
+                category: 'jyotirlinga',
+                god: 'शिव',
+                when: 'पूरे वर्ष',
+                extra: 'रावण शिव जी का परम भक्त था — उसने यहाँ शिवलिंग की स्थापना की।'
+            },
+            {
+                title: 'ओंकारेश्वर',
+                en: 'Omkareshwar',
+                location: 'खंडवा, मध्य प्रदेश',
+                desc: '12 ज्योतिर्लिंगों में से एक, नर्मदा नदी के द्वीप पर स्थित।',
+                benefits: 'शिव कृपा, मोक्ष, पाप नाश।',
+                category: 'jyotirlinga',
+                god: 'शिव',
+                when: 'पूरे वर्ष',
+                extra: 'यहाँ ॐ का आकार बना हुआ है — इसलिए ओंकारेश्वर कहलाता है।'
+            },
+            {
+                title: 'भीमाशंकर',
+                en: 'Bhimashankar',
+                location: 'पुणे, महाराष्ट्र',
+                desc: '12 ज्योतिर्लिंगों में से एक, भीम नामक राक्षस के वध से संबंधित।',
+                benefits: 'शिव कृपा, रोग नाश, पाप नाश।',
+                category: 'jyotirlinga',
+                god: 'शिव',
+                when: 'पूरे वर्ष',
+                extra: 'यह मंदिर सह्याद्रि पर्वत पर स्थित है।'
+            },
+            {
+                title: 'नागेश्वर',
+                en: 'Nageshwar',
+                location: 'द्वारका, गुजरात',
+                desc: '12 ज्योतिर्लिंगों में से एक, नागों के देवता।',
+                benefits: 'शिव कृपा, नाग दोष शांति, कालसर्प दोष नाश।',
+                category: 'jyotirlinga',
+                god: 'शिव',
+                when: 'पूरे वर्ष',
+                extra: 'यह दारुक वन में स्थित है — जहाँ दारुक नामक राक्षस का वध हुआ।'
+            },
+            {
+                title: 'मल्लिकार्जुन',
+                en: 'Mallikarjuna',
+                location: 'श्रीशैलम, आंध्र प्रदेश',
+                desc: '12 ज्योतिर्लिंगों में से एक, शिव और पार्वती का संयुक्त रूप।',
+                benefits: 'शिव-पार्वती कृपा, मोक्ष, पाप नाश।',
+                category: 'jyotirlinga',
+                god: 'शिव-पार्वती',
+                when: 'पूरे वर्ष',
+                extra: 'यह कृष्णा नदी के किनारे, श्रीशैलम पर्वत पर स्थित है।'
+            },
+            {
+                title: 'घृष्णेश्वर',
+                en: 'Grishneshwar',
+                location: 'औरंगाबाद, महाराष्ट्र',
+                desc: '12 ज्योतिर्लिंगों में से एक, 12वाँ ज्योतिर्लिंग।',
+                benefits: 'शिव कृपा, पाप नाश, मोक्ष।',
+                category: 'jyotirlinga',
+                god: 'शिव',
+                when: 'पूरे वर्ष',
+                extra: 'यह अंतिम ज्योतिर्लिंग है — यहाँ शिव और पार्वती का विवाह हुआ था।'
+            },
+
+            // ========== शक्तिपीठ ==========
+            {
+                title: 'वैष्णो देवी',
+                en: 'Vaishno Devi',
+                location: 'त्रिकूट पर्वत, कटरा, जम्मू-कश्मीर',
+                desc: '51 शक्तिपीठों में सबसे प्रमुख, माँ दुर्गा का पवित्र गुफा मंदिर।',
+                benefits: 'मनोकामना पूर्ति, शक्ति, रक्षा, मोक्ष।',
+                category: 'shakti',
+                god: 'दुर्गा (वैष्णो देवी)',
+                when: 'पूरे वर्ष (नवरात्रि विशेष)',
+                extra: 'यहाँ तीन पिंड (महाकाली, महालक्ष्मी, महासरस्वती) विराजमान हैं। 13 किमी की यात्रा पैदल की जाती है।'
+            },
+            {
+                title: 'कामाख्या देवी',
+                en: 'Kamakhya Devi',
+                location: 'नीलांचल पर्वत, गुवाहाटी, असम',
+                desc: '51 शक्तिपीठों में सबसे प्रमुख, यहाँ सती का योनि भाग गिरा था।',
+                benefits: 'शक्ति, संतान, रक्षा, मोक्ष।',
+                category: 'shakti',
+                god: 'दुर्गा (कामाख्या)',
+                when: 'पूरे वर्ष (अंबुबाची मेला विशेष)',
+                extra: 'यहाँ महाम्बा मेला लगता है — जहाँ तंत्र साधना की जाती है।'
+            },
+            {
+                title: 'कालीघाट',
+                en: 'Kalighat',
+                location: 'कोलकाता, पश्चिम बंगाल',
+                desc: '51 शक्तिपीठों में से एक, माँ काली का प्रसिद्ध मंदिर।',
+                benefits: 'शक्ति, शत्रु नाश, भय मुक्ति।',
+                category: 'shakti',
+                god: 'काली',
+                when: 'पूरे वर्ष',
+                extra: 'यहाँ सती की दाहिनी अंगुली की नोक गिरी थी।'
+            },
+            {
+                title: 'ज्वालामुखी',
+                en: 'Jwalamukhi',
+                location: 'कांगड़ा, हिमाचल प्रदेश',
+                desc: '51 शक्तिपीठों में से एक, जहाँ देवी की ज्योतियाँ जलती हैं।',
+                benefits: 'शक्ति, रक्षा, मनोकामना पूर्ति।',
+                category: 'shakti',
+                god: 'दुर्गा (ज्वालामुखी)',
+                when: 'पूरे वर्ष',
+                extra: 'यहाँ बिना किसी ईंधन के 9 ज्योतियाँ जलती हैं।'
+            },
+
+            // ========== कुंभ स्थल ==========
+            {
+                title: 'प्रयागराज',
+                en: 'Prayagraj',
+                location: 'प्रयागराज, उत्तर प्रदेश',
+                desc: 'गंगा-यमुना-सरस्वती का पवित्र संगम, कुंभ मेले का सबसे बड़ा स्थल।',
+                benefits: 'मोक्ष, पाप नाश, कुंभ स्नान का पुण्य।',
+                category: 'kumbh',
+                god: 'त्रिवेणी संगम',
+                when: 'कुंभ मेला (12 वर्ष), अर्ध कुंभ (6 वर्ष)',
+                extra: 'यहाँ कुंभ मेला दुनिया का सबसे बड़ा धार्मिक मेला है।'
+            },
+            {
+                title: 'हरिद्वार',
+                en: 'Haridwar',
+                location: 'हरिद्वार, उत्तराखंड',
+                desc: 'गंगा के किनारे स्थित, कुंभ मेले का प्रमुख स्थल। हर की पौड़ी प्रसिद्ध घाट है।',
+                benefits: 'मोक्ष, पाप नाश, गंगा स्नान का पुण्य।',
+                category: 'kumbh',
+                god: 'गंगा',
+                when: 'कुंभ मेला (12 वर्ष), गंगा दशहरा',
+                extra: 'यहाँ गंगा पर्वत छोड़कर मैदान में आती हैं।'
+            },
+            {
+                title: 'नासिक',
+                en: 'Nashik',
+                location: 'नासिक, महाराष्ट्र',
+                desc: 'गोदावरी नदी के किनारे, कुंभ मेले का प्रमुख स्थल।',
+                benefits: 'मोक्ष, पाप नाश, कुंभ स्नान का पुण्य।',
+                category: 'kumbh',
+                god: 'शिव (त्र्यंबकेश्वर)',
+                when: 'कुंभ मेला (12 वर्ष)',
+                extra: 'यहाँ त्र्यंबकेश्वर ज्योतिर्लिंग भी है।'
+            },
+            {
+                title: 'उज्जैन',
+                en: 'Ujjain',
+                location: 'उज्जैन, मध्य प्रदेश',
+                desc: 'शिप्रा नदी के किनारे, महाकालेश्वर ज्योतिर्लिंग, कुंभ (सिंहस्थ) स्थल।',
+                benefits: 'मोक्ष, शिव कृपा, कुंभ स्नान का पुण्य।',
+                category: 'kumbh',
+                god: 'शिव (महाकाल)',
+                when: 'सिंहस्थ कुंभ (12 वर्ष)',
+                extra: 'यहाँ की सिंहस्थ कुंभ विश्व प्रसिद्ध है।'
+            },
+
+            // ========== सप्तपुरी ==========
+            {
+                title: 'अयोध्या',
+                en: 'Ayodhya',
+                location: 'अयोध्या, उत्तर प्रदेश',
+                desc: 'सप्तपुरी में से एक, भगवान राम की जन्मभूमि, सरयू नदी के किनारे।',
+                benefits: 'राम कृपा, मोक्ष, पाप नाश।',
+                category: 'saptapuri',
+                god: 'राम',
+                when: 'पूरे वर्ष (राम नवमी, दीपावली विशेष)',
+                extra: 'यहाँ राम जन्मभूमि मंदिर, हनुमानगढ़ी, कनक भवन हैं।'
+            },
+            {
+                title: 'मथुरा-वृंदावन',
+                en: 'Mathura-Vrindavan',
+                location: 'मथुरा, उत्तर प्रदेश',
+                desc: 'सप्तपुरी में से एक, भगवान कृष्ण की जन्मभूमि और लीला स्थल।',
+                benefits: 'कृष्ण कृपा, मोक्ष, प्रेम, भक्ति।',
+                category: 'saptapuri',
+                god: 'कृष्ण',
+                when: 'पूरे वर्ष (जन्माष्टमी, होली विशेष)',
+                extra: 'यहाँ कृष्ण जन्मभूमि, बांके बिहारी मंदिर, द्वारकाधीश मंदिर हैं।'
+            },
+            {
+                title: 'काशी (वाराणसी)',
+                en: 'Kashi (Varanasi)',
+                location: 'वाराणसी, उत्तर प्रदेश',
+                desc: 'सप्तपुरी में से एक, मोक्ष की नगरी, गंगा तट पर स्थित।',
+                benefits: 'मोक्ष, शिव कृपा, पाप नाश।',
+                category: 'saptapuri',
+                god: 'शिव (विश्वनाथ)',
+                when: 'पूरे वर्ष',
+                extra: 'काशी विश्वनाथ मंदिर, गंगा आरती, मणिकर्णिका घाट प्रसिद्ध हैं।'
+            },
+            {
+                title: 'कांचीपुरम',
+                en: 'Kanchipuram',
+                location: 'कांचीपुरम, तमिलनाडु',
+                desc: 'सप्तपुरी में से एक, दक्षिण भारत का पवित्र शहर।',
+                benefits: 'मोक्ष, शिव कृपा, पाप नाश।',
+                category: 'saptapuri',
+                god: 'शिव',
+                when: 'पूरे वर्ष',
+                extra: 'यहाँ कामाक्षी अम्मन मंदिर, एकांबरेश्वर मंदिर प्रसिद्ध हैं।'
+            },
+            {
+                title: 'अवंतिका (उज्जैन)',
+                en: 'Avantika (Ujjain)',
+                location: 'उज्जैन, मध्य प्रदेश',
+                desc: 'सप्तपुरी में से एक, महाकालेश्वर की नगरी, काल के स्वामी की भूमि।',
+                benefits: 'मोक्ष, शिव कृपा, कालसर्प दोष नाश।',
+                category: 'saptapuri',
+                god: 'शिव (महाकाल)',
+                when: 'पूरे वर्ष',
+                extra: 'यहाँ महाकालेश्वर, काल भैरव, हरसिद्धि माता के मंदिर हैं।'
+            },
+            {
+                title: 'द्वारका',
+                en: 'Dwarka',
+                location: 'द्वारका, गुजरात',
+                desc: 'सप्तपुरी में से एक, कृष्ण की राजधानी, चार धाम में भी शामिल।',
+                benefits: 'मोक्ष, कृष्ण कृपा, धन।',
+                category: 'saptapuri',
+                god: 'कृष्ण',
+                when: 'पूरे वर्ष',
+                extra: 'यहाँ द्वारकाधीश मंदिर, नागेश्वर ज्योतिर्लिंग हैं।'
+            },
+
+            // ========== अन्य ==========
+            {
+                title: 'तिरुपति बालाजी',
+                en: 'Tirupati Balaji',
+                location: 'तिरुमला, आंध्र प्रदेश',
+                desc: 'भगवान वेंकटेश्वर (विष्णु) का विश्व प्रसिद्ध मंदिर, सात पहाड़ियों पर स्थित।',
+                benefits: 'धन, समृद्धि, मनोकामना पूर्ति, मोक्ष।',
+                category: 'other',
+                god: 'विष्णु (वेंकटेश्वर)',
+                when: 'पूरे वर्ष',
+                extra: 'यह दुनिया का सबसे अमीर मंदिर है — यहाँ रोज़ लाखों भक्त दर्शन करते हैं।'
+            },
+            {
+                title: 'शिरडी साईं बाबा',
+                en: 'Shirdi Sai Baba',
+                location: 'शिरडी, महाराष्ट्र',
+                desc: 'साईं बाबा का प्रसिद्ध मंदिर, जो सभी धर्मों के लिए पूजनीय है।',
+                benefits: 'साईं कृपा, मनोकामना पूर्ति, रोग नाश।',
+                category: 'other',
+                god: 'साईं बाबा',
+                when: 'पूरे वर्ष',
+                extra: 'साईं बाबा को सभी धर्मों का संत माना जाता है।'
+            },
+            {
+                title: 'तिरुवन्नामलai',
+                en: 'Tiruvannamalai',
+                location: 'तिरुवन्नामलai, तमिलनाडु',
+                desc: 'अरुणाचल पर्वत पर स्थित, भगवान शिव का प्रमुख मंदिर।',
+                benefits: 'मोक्ष, शिव कृपा, आत्मज्ञान।',
+                category: 'other',
+                god: 'शिव (अरुणाचलेश्वर)',
+                when: 'पूरे वर्ष (कार्तिक दीपम विशेष)',
+                extra: 'यहाँ रामana महर्षि ने आत्मज्ञान प्राप्त किया था।'
+            },
+            {
+                title: 'गंगोत्री',
+                en: 'Gangotri',
+                location: 'उत्तरकाशी, उत्तराखंड',
+                desc: 'गंगा नदी का उद्गम स्थल, चार धाम में से एक।',
+                benefits: 'मोक्ष, गंगा कृपा, पाप नाश।',
+                category: 'char-dham',
+                god: 'गंगा',
+                when: 'मई-अक्टूबर (शीतकाल में बंद)',
+                extra: 'यहाँ गंगा माता का मंदिर है — जहाँ भगीरथ ने तपस्या की थी।'
+            },
+            {
+                title: 'यमुनोत्री',
+                en: 'Yamunotri',
+                location: 'उत्तरकाशी, उत्तराखंड',
+                desc: 'यमुना नदी का उद्गम स्थल, चार धाम में से एक।',
+                benefits: 'मोक्ष, यमुना कृपा, पाप नाश।',
+                category: 'char-dham',
+                god: 'यमुना',
+                when: 'मई-अक्टूबर (शीतकाल में बंद)',
+                extra: 'यहाँ यमुना माता का मंदिर है — जो सूर्य देव की पुत्री हैं।'
+            }
+        ];
+
+        // ============================================================
+        //  RENDER FUNCTIONS
+        // ============================================================
+
+        let currentCategory = 'all';
+        let searchQuery = '';
+
+        function renderTirths() {
+            const grid = document.getElementById('tirthGrid');
+            const filtered = tirths.filter(t => {
+                const matchCat = currentCategory === 'all' || t.category === currentCategory;
+                const matchSearch = t.title.includes(searchQuery) ||
+                                    t.en.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                    t.location.includes(searchQuery) ||
+                                    t.god.includes(searchQuery);
+                return matchCat && matchSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div class="no-result">
+                    <i class="fa-solid fa-search"></i>
+                    कोई तीर्थ नहीं मिला। कृपया दूसरा शब्द खोजें।
+                </div>`;
+                return;
+            }
+
+            const badgeClass = (cat) => {
+                if (cat === 'char-dham') return 'gold';
+                if (cat === 'jyotirlinga') return 'blue';
+                if (cat === 'shakti') return 'green';
+                if (cat === 'kumbh') return 'blue';
+                if (cat === 'saptapuri') return 'purple';
+                return '';
+            };
+
+            const catName = (cat) => {
+                const names = {
+                    'char-dham': 'चार धाम',
+                    'jyotirlinga': 'ज्योतिर्लिंग',
+                    'shakti': 'शक्तिपीठ',
+                    'kumbh': 'कुंभ स्थल',
+                    'saptapuri': 'सप्तपुरी',
+                    'other': 'अन्य'
+                };
+                return names[cat] || cat;
+            };
+
+            grid.innerHTML = filtered.map(t => `
+                <div class="tirth-card">
+                    <div class="t-header">
+                        <div class="t-title">
+                            ${t.title}
+                            <span class="t-en">${t.en}</span>
+                        </div>
+                        <span class="t-badge ${badgeClass(t.category)}">${catName(t.category)}</span>
+                    </div>
+                    <div class="t-location">
+                        <i class="fa-solid fa-location-dot"></i> ${t.location}
+                    </div>
+                    <div class="t-desc">
+                        <strong>📖 परिचय:</strong> ${t.desc}
+                    </div>
+                    <div class="t-benefits">
+                        <strong>✨ लाभ:</strong> ${t.benefits}
+                    </div>
+                    <div class="t-meta">
+                        <span><i class="fa-solid fa-om"></i> ${t.god}</span>
+                        <span><i class="fa-solid fa-calendar"></i> ${t.when}</span>
+                    </div>
+                    <details class="tirth-details">
+                        <summary>अधिक जानकारी</summary>
+                        <div class="d-body">${t.extra || ''}</div>
+                    </details>
+                </div>
+            `).join('');
+        }
+
+        function filterTirths() {
+            searchQuery = document.getElementById('tirthSearch').value.trim();
+            renderTirths();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderTirths();
+
+            document.querySelectorAll('.cat-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    currentCategory = this.dataset.cat;
+                    renderTirths();
+                });
+            });
+        });
+
+        // Dark mode
+        const darkToggle = document.getElementById('darkToggle');
+        if (darkToggle) {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+                darkToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            }
+            darkToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                const icon = this.querySelector('i');
+                const isDark = document.body.classList.contains('dark-mode');
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+                localStorage.setItem('darkMode', isDark);
+            });
+        }
+
+        function sharePage() {
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    text: '🕉️ सनातन ज्ञान कोश — तीर्थ कोश',
+                    url: window.location.href
+                }).catch(() => {});
+            } else {
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    alert('लिंक कॉपी हो गया!');
+                });
+            }
+        }
+    </script>
+</body>
+</html>
