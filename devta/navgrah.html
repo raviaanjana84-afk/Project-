@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>नवग्रह — संपूर्ण ज्ञान | Sanatan Gyan Kosh</title>
+    <meta name="description" content="नवग्रह का संपूर्ण ज्ञान — 9 ग्रह, उनके मंत्र, रत्न, दान, उपाय, मंदिर, त्योहार और बहुत कुछ।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .devta-hero {
+            text-align: center;
+            padding: 24px 20px;
+            background: linear-gradient(135deg, rgba(75,0,130,0.12), rgba(212,175,55,0.08));
+            border-radius: var(--radius);
+            margin-bottom: 14px;
+            border: 1px solid var(--border);
+        }
+        .devta-hero .icon { font-size: 72px; display: block; line-height: 1; }
+        .devta-hero .name {
+            font-family: var(--font-display);
+            font-size: 30px;
+            color: var(--maroon);
+            margin-top: 6px;
+        }
+        .devta-hero .subtitle {
+            font-size: 13px;
+            color: var(--ink-soft);
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+
+        .devta-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 18px 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .devta-section h2 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--maroon);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 8px;
+        }
+        .devta-section h2 .sec-icon { font-size: 24px; }
+
+        .devta-section p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+            margin-bottom: 8px;
+        }
+        .devta-section p strong { color: var(--maroon); }
+
+        .mantra-box {
+            background: linear-gradient(135deg, rgba(75,0,130,0.08), rgba(212,175,55,0.05));
+            border-left: 4px solid var(--gold);
+            padding: 14px 16px;
+            border-radius: 12px;
+            font-family: var(--font-display);
+            font-size: 18px;
+            text-align: center;
+            margin: 10px 0;
+            line-height: 1.8;
+            color: var(--maroon);
+            font-weight: 600;
+        }
+        .mantra-box small {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 12px;
+            color: var(--ink-soft);
+            font-weight: 400;
+            margin-top: 6px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .info-item {
+            background: var(--bg);
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 13px;
+        }
+        .info-item .lbl {
+            font-size: 10px;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-item .val {
+            font-weight: 600;
+            color: var(--maroon);
+            margin-top: 2px;
+        }
+
+        .devta-section ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 8px;
+        }
+        .devta-section ul li {
+            padding: 8px 0;
+            font-size: 13.5px;
+            line-height: 1.6;
+            border-bottom: 1px dashed var(--border);
+            color: var(--ink-soft);
+        }
+        .devta-section ul li:last-child { border-bottom: none; }
+        .devta-section ul li strong { color: var(--maroon); }
+
+        .accordion-item {
+            border-bottom: 1px solid var(--border);
+        }
+        .accordion-item:last-child { border-bottom: none; }
+        .accordion-head {
+            padding: 12px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--maroon);
+            font-family: var(--font-display);
+        }
+        .accordion-head i {
+            transition: transform 0.3s;
+            color: var(--gold);
+        }
+        .accordion-item.open .accordion-head i {
+            transform: rotate(180deg);
+        }
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            font-size: 13px;
+            color: var(--ink-soft);
+            line-height: 1.8;
+        }
+        .accordion-item.open .accordion-body {
+            max-height: 5000px;
+            padding-bottom: 12px;
+        }
+
+        .temple-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .temple-item {
+            padding: 10px 14px;
+            background: var(--bg);
+            border-radius: 10px;
+            border-left: 3px solid var(--gold);
+            font-size: 13px;
+        }
+        .temple-item strong { color: var(--maroon); }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .related-link {
+            padding: 10px 12px;
+            background: var(--bg);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--maroon);
+            font-weight: 600;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .related-link:hover {
+            background: var(--card-bg);
+            border-color: var(--gold);
+        }
+
+        /* Navgrah Grid */
+        .grah-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .grah-item {
+            background: var(--bg);
+            padding: 14px;
+            border-radius: 12px;
+            border-left: 5px solid var(--gold);
+            transition: var(--transition);
+        }
+        .grah-item:hover {
+            background: var(--card-bg);
+            border-left-color: var(--maroon);
+        }
+        .grah-item .grah-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+        .grah-item .grah-icon {
+            font-size: 30px;
+            line-height: 1;
+        }
+        .grah-item .grah-name {
+            font-family: var(--font-display);
+            font-size: 18px;
+            color: var(--maroon);
+            font-weight: 700;
+        }
+        .grah-item .grah-eng {
+            font-size: 10px;
+            color: var(--ink-light);
+        }
+        .grah-item .grah-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            font-size: 12px;
+            margin-top: 8px;
+        }
+        .grah-item .grah-detail-item {
+            background: rgba(255,255,255,0.4);
+            padding: 6px 8px;
+            border-radius: 8px;
+        }
+        .grah-item .grah-detail-item .lbl {
+            font-size: 9px;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .grah-item .grah-detail-item .val {
+            font-weight: 600;
+            color: var(--maroon);
+            margin-top: 1px;
+            font-size: 12px;
+        }
+        .grah-item .grah-mantra {
+            font-family: var(--font-display);
+            font-size: 13px;
+            color: var(--maroon);
+            background: rgba(212,175,55,0.1);
+            padding: 8px;
+            border-radius: 8px;
+            margin-top: 8px;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .back-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--maroon);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 16px rgba(122,46,46,0.4);
+            z-index: 90;
+        }
+        .back-top.show { display: flex; }
+
+        @media (max-width: 420px) {
+            .devta-hero .icon { font-size: 60px; }
+            .devta-hero .name { font-size: 24px; }
+            .devta-section h2 { font-size: 17px; }
+            .mantra-box { font-size: 16px; }
+            .grah-item .grah-details { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ देवता ज्ञान</span>
+            <h1>नवग्रह</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <!-- Hero -->
+        <div class="devta-hero">
+            <span class="icon">🪐</span>
+            <div class="name">नवग्रह</div>
+            <div class="subtitle">9 ग्रह · ज्योतिष के आधार · कर्म के साक्षी</div>
+        </div>
+
+        <!-- Quick Info -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📋</span> एक नज़र में</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="lbl">नवग्रह</div>
+                    <div class="val">सूर्य, चंद्र, मंगल, बुध, गुरु, शुक्र, शनि, राहु, केतु</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">उपयोग</div>
+                    <div class="val">ज्योतिष, कुंडली, राशिफल, दशा-फल</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रमुख रत्न</div>
+                    <div class="val">माणिक्य, मोती, मूंगा, पन्ना, पुखराज, हीरा, नीलम, गोमेद, लहसुनिया</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय दिन</div>
+                    <div class="val">रवि, सोम, मंगल, बुध, गुरु, शुक्र, शनि</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रमुख देवता</div>
+                    <div class="val">सूर्य-नारायण, चंद्र-शिव, मंगल-कार्तिकेय, बुध-गणेश, गुरु-ब्रह्मा, शुक्र-लक्ष्मी, शनि-भैरव, राहु-दुर्गा, केतु-गणेश</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रमुख अन्न</div>
+                    <div class="val">गेहूं, चावल, मसूर, मूंग, चना, राजमा, तिल, उड़द, काला तिल</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रमुख रंग</div>
+                    <div class="val">लाल, सफेद, लाल, हरा, पीला, सफेद, काला, नीला, धुआं</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रमुख दिशा</div>
+                    <div class="val">पूर्व, उत्तर-पश्चिम, दक्षिण, उत्तर, उत्तर-पूर्व, दक्षिण-पूर्व, पश्चिम, दक्षिण-पश्चिम, दक्षिण</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रमुख धातु</div>
+                    <div class="val">ताम्र, चांदी, ताम्र, कांस्य, स्वर्ण, चांदी, लोहा, सीसा, लोहा</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">दान</div>
+                    <div class="val">गेहूं-गुड़, चावल-दूध, मसूर, मूंग, चना-हल्दी, राजमा-दही, तिल-लोहा, उड़द, काला तिल</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">जप संख्या</div>
+                    <div class="val">7000, 11000, 10000, 9000, 19000, 16000, 23000, 18000, 17000</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रमुख मंदिर</div>
+                    <div class="val">कोणार्क, सोमनाथ, अंगारकेश्वर, बुध मंदिर, बृहस्पति मंदिर, शुक्र मंदिर, शनि मंदिर, राहु मंदिर, केतु मंदिर</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- परिचय -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📖</span> परिचय</h2>
+            <p>
+                <strong>नवग्रह</strong> हिंदू ज्योतिष के <strong>9 प्रमुख ग्रह</strong> हैं — जो मनुष्य के जीवन, भाग्य, और कर्म को प्रभावित करते हैं। ये 9 ग्रह <strong>कर्म के साक्षी</strong> हैं — जो हमारे पूर्वजन्म के कर्मों का फल देते हैं।
+            </p>
+            <p>
+                नवग्रहों में <strong>7 वास्तविक ग्रह</strong> (सूर्य, चंद्र, मंगल, बुध, गुरु, शुक्र, शनि) और <strong>2 छाया ग्रह</strong> (राहु, केतु) हैं। इनमें से <strong>सूर्य और चंद्र</strong> को ज्योतिष में ग्रह माना जाता है, हालांकि खगोलशास्त्र में वे तारे और उपग्रह हैं।
+            </p>
+            <p>
+                नवग्रह हमारे जीवन के <strong>हर पहलू</strong> को प्रभावित करते हैं — स्वास्थ्य, धन, विवाह, संतान, करियर, और मोक्ष। ग्रहों की स्थिति के अनुसार ही <strong>कुंडली, राशिफल, और दशा-फल</strong> बनाए जाते हैं।
+            </p>
+            <p>
+                ग्रहों की शांति के लिए <strong>मंत्र जप, रत्न धारण, दान, और उपाय</strong> किए जाते हैं। हर ग्रह का अपना <strong>मंत्र, रत्न, दान, देवता, और व्रत</strong> है।
+            </p>
+        </div>
+
+        <!-- 9 ग्रह — विस्तृत जानकारी -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🪐</span> 9 ग्रह — विस्तृत जानकारी</h2>
+
+            <!-- सूर्य -->
+            <div class="grah-grid">
+                <div class="grah-item" style="border-left-color:#FF9933;">
+                    <div class="grah-header">
+                        <div class="grah-icon">🌞</div>
+                        <div>
+                            <div class="grah-name">1. सूर्य</div>
+                            <div class="grah-eng">Sun · रवि · आदित्य</div>
+                        </div>
+                    </div>
+                    <p style="font-size:12.5px;">आत्मा, पिता, राजा, आत्मविश्वास, नेतृत्व, यश, और आरोग्य के कारक।</p>
+                    <div class="grah-details">
+                        <div class="grah-detail-item"><div class="lbl">रत्न</div><div class="val">माणिक्य</div></div>
+                        <div class="grah-detail-item"><div class="lbl">दिन</div><div class="val">रविवार</div></div>
+                        <div class="grah-detail-item"><div class="lbl">देवता</div><div class="val">भगवान विष्णु</div></div>
+                        <div class="grah-detail-item"><div class="lbl">दान</div><div class="val">गेहूं, गुड़, ताम्र</div></div>
+                        <div class="grah-detail-item"><div class="lbl">रंग</div><div class="val">लाल, केसरिया</div></div>
+                        <div class="grah-detail-item"><div class="lbl">दिशा</div><div class="val">पूर्व</div></div>
+                    </div>
+                    <div class="grah-mantra">ॐ ह्रां ह्रीं ह्रौं सः सूर्याय नमः</div>
+                    <p style="font-size:12px;margin-top:8px;color:var(--ink-soft);"><strong>व्रत:</strong> रविवार · <strong>जप:</strong> 7000 · <strong>मंदिर:</strong> कोणार्क</p>
+                </div>
+
+                <!-- चंद्र -->
+                <div class="grah-item" style="border-left-color:#E0E0E0;">
+                    <div class="grah-header">
+                        <div class="grah-icon">🌙</div>
+                        <div>
+                            <div class="grah-name">2. चंद्र</div>
+                            <div class="grah-eng">Moon · सोम · शशि</div>
+                        </div>
+                    </div>
+                    <p style="font-size:12.5px;">मन, माता, भावनाएँ, शांति, सौम्यता, और मानसिक स्वास्थ्य के कारक।</p>
+                    <div class="grah-details">
+                        <div class="grah-detail-item"><div class="lbl">रत्न</div><div class="val">मोती</div></div>
+                        <div class="grah-detail-item"><div class="lbl">दिन</div><div class="val">सोमवार</div></div>
+                        <div class="grah-detail-item"><div class="lbl">देवता</div><div class="val">भगवान शिव</div></div>
+                        <div class="grah-detail-item"><div class="lbl">दान</div><div class="val">चावल, दूध, चांदी</div></div>
+                        <div class="grah-detail-item"><div class="lbl">रंग</div><div class="val">सफेद</div></div>
+                        <div class="grah-detail-item"><div class="lbl">दिशा</div><div class="val">उत्तर-पश्चिम</div></div>
+                    </div>
+                    <div class="grah-mantra">ॐ श्रां श्रीं श्रौं सः चंद्राय नमः</div>
+                    <p style="font-size:12px;margin-top:8px;color:var(--ink-soft);"><strong>व्रत:</strong> सोमवार · <strong>जप:</strong> 11000 · <strong>मंदिर:</strong> सोमनाथ</p>
+                </div>
+
+                <!-- मंगल -->
+                <div class="grah-item" style="border-left-color:#DC143C;">
+                    <div class="grah-header">
+                        <div class="grah-icon">🔴</div>
+                        <div>
+                            <div class="grah-name">3. मंगल</div>
+                            <div class="grah-eng">Mars · अंगारक · भौम</div>
+                        </div>
+                    </div>
+                    <p style="font-size:12.5px;">साहस, वीरता, शक्ति, ऊर्जा, और रक्त के कारक।</p>
+                    <div class="grah-details">
+                        <div class="grah-detail-item"><div class="lbl">रत्न</div><div class="val">मूंगा</div></div>
+                        <div class="grah-detail-item"><div class="lbl">दिन</div><div class="val">मंगलवार</div></div>
+                        <div class="grah-detail-item"><div class="lbl">देवता</div><div class="val">कार्तिकेय</div></div>
+                        <div class="grah-detail-item"><div class="lbl">दान</div><div class="val">मसूर, ताम्र</div></div>
+                        <div class="grah-detail-item"><div class="lbl">रंग</div><div class="val">लाल</div></div>
+                        <div class="grah-detail-item"><div class="lbl">दिशा</div><div class="val">दक्षिण</div></div>
+                    </div>
+                    <div class="grah-mantra">ॐ क्रां क्रीं क्रौं सः भौमाय नमः</div>
+                    <p style="font-size:12px;margin-top:8px;color:var(--ink-soft);"><strong>व्रत:</strong> मंगलवार · <strong>जप:</strong> 10000 · <strong>मंदिर:</strong> अंगारकेश्वर</p>
+                </div>
+
+                <!-- बुध -->
+                <div class="grah-item" style="border-left-color:#228B22;">
+                    <div class="grah-header">
+                        <div class="grah-icon">🟢</div>
+                        <div>
+                            <div class="grah-name">4. बुध</div>
+                            <div class="grah-eng">Mercury · सौम्य</div>
+                        </div>
+                    </div>
+                    <p style="font-size:12.5px;">बुद्धि, वाणी, व्यापार, संचार, और गणित के कारक।</p>
+                    <div class="grah-details">
+                        <div class="grah-detail-item"><div class="lbl">रत्न</div><div class="val">पन्ना</div></div>
+                        <div class="grah-detail-item"><div class="lbl">दिन</div><div class="val">बुधवार</div></div>
+                        <div class="grah-detail-item"><div class="lbl">देवता</div><div class="val">गणेश जी</div></div>
+                        <div class="grah-detail-item"><div class="lbl">दान</div><div class="val">मूंग, कांस्य</div></div>
+                        <div class="grah-detail-item"><div class="lbl">रंग</div><div class="val">हरा</div></div>
+                        <div class="grah-detail-item"><div class="lbl">दिशा</div><div class="val">उत्तर</div></div>
+                    </div>
+                    <div class="grah-mantra">ॐ ब्रां ब्रीं ब्रौं सः बुधाय नमः</div>
+                    <p style="font-size:12px;margin-top:8px;color:var(--ink-soft);"><strong>व्रत:</strong> बुधवार · <strong>जप:</strong> 9000 · <strong>मंदिर:</strong> बुध मंदिर (तिरुवेंगडु)</p>
+                </div>
+
+                <!-- गुरु -->
+                <div class="grah-item" style="border-left-color:#FFD700;">
+                    <div class="grah-header">
+                        <div class="grah-icon">🟡</div>
+                        <div>
+                            <div class="grah-name">5. गुरु</div>
+                            <div class="grah-eng">Jupiter · बृहस्पति · देवगुरु</div>
+                        </div>
+                    </div>
+                    <p style="font-size:12.5px;">ज्ञान, धन, संतान, भाग्य, धर्म, और विवेक के कारक।</p>
+                    <div class="grah-details">
+                        <div class="grah-detail-item"><div class="lbl">रत्न</div><div class="val">पुखराज</div></div>
+                        <div class="grah-detail-item"><div class="lbl">दिन</div><div class="val">गुरुवार</div></div>
+                        <div class="grah-detail-item"><div class="lbl">देवता</div><div class="val">ब्रह्मा जी</div></div>
+                        <div class="grah-detail-item"><div class="lbl">दान</div><div class="val">चना, हल्दी, स्वर्ण</div></div>
+                        <div class="grah-detail-item"><div class="lbl">रंग</div><div class="val">पीला</div></div>
+                        <div class="grah-detail-item"><div class="lbl">दिशा</div><div class="val">उत्तर-पूर्व</div></div>
+                    </div>
+                    <div class="grah-mantra">ॐ ग्रां ग्रीं ग्रौं सः गुरवे नमः</div>
+                    <p style="font-size:12px;margin-top:8px;color:var(--ink-soft);"><strong>व्रत:</strong> गुरुवार · <strong>जप:</strong> 19000 · <strong>मंदिर:</strong> बृहस्पति मंदिर</p>
+                </div>
+
+                <!-- शुक्र -->
+                <div class="grah-item" style="border-left-color:#FFC0CB;">
+                    <div class="grah-header">
+                        <div class="grah-icon">💎</div>
+                        <div>
+                            <div class="grah-name">6. शुक्र</div>
+                            <div class="grah-eng">Venus · भृगु · शुक्राचार्य</div>
+                        </div>
+                    </div>
+                    <p style="font-size:12.5px;">प्रेम, विवाह, सौंदर्य, कला, संगीत, और वैभव के कारक।</p>
+                    <div class="grah-details">
+                        <div class="grah-detail-item"><div class="lbl">रत्न</div><div class="val">हीरा</div></div>
+                        <div class="grah-detail-item"><div class="lbl">दिन</div><div class="val">शुक्रवार</div></div>
+                        <div class="grah-detail-item"><div class="lbl">देवता</div><div class="val">लक्ष्मी माता</div></div>
+                        <div class="grah-detail-item"><div class="lbl">दान</div><div class="val">राजमा, दही, चांदी</div></div>
+                        <div class="grah-detail-item"><div class="lbl">रंग</div><div class="val">सफेद</div></div>
+                        <div class="grah-detail-item"><div class="lbl">दिशा</div><div class="val">दक्षिण-पूर्व</div></div>
+                    </div>
+                    <div class="grah-mantra">ॐ द्रां द्रीं द्रौं सः शुक्राय नमः</div>
+                    <p style="font-size:12px;margin-top:8px;color:var(--ink-soft);"><strong>व्रत:</strong> शुक्रवार · <strong>जप:</strong> 16000 · <strong>मंदिर:</strong> शुक्र मंदिर</p>
+                </div>
+
+                <!-- शनि -->
+                <div class="grah-item" style="border-left-color:#2F4F4F;">
+                    <div class="grah-header">
+                        <div class="grah-icon">🪐</div>
+                        <div>
+                            <div class="grah-name">7. शनि</div>
+                            <div class="grah-eng">Saturn · शनैश्चर · कोण</div>
+                        </div>
+                    </div>
+                    <p style="font-size:12.5px;">कर्म, न्याय, दंड, वृद्धावस्था, और त्याग के कारक।</p>
+                    <div class="grah-details">
+                        <div class="grah-detail-item"><div class="lbl">रत्न</div><div class="val">नीलम</div></div>
+                        <div class="grah-detail-item"><div class="lbl">दिन</div><div class="val">शनिवार</div></div>
+                        <div class="grah-detail-item"><div class="lbl">देवता</div><div class="val">भैरव बाबा</div></div>
+                        <div class="grah-detail-item"><div class="lbl">दान</div><div class="val">तिल, लोहा, काला वस्त्र</div></div>
+                        <div class="grah-detail-item"><div class="lbl">रंग</div><div class="val">काला, नीला</div></div>
+                        <div class="grah-detail-item"><div class="lbl">दिशा</div><div class="val">पश्चिम</div></div>
+                    </div>
+                    <div class="grah-mantra">ॐ प्रां प्रीं प्रौं सः शनैश्चराय नमः</div>
+                    <p style="font-size:12px;margin-top:8px;color:var(--ink-soft);"><strong>व्रत:</strong> शनिवार · <strong>जप:</strong> 23000 · <strong>मंदिर:</strong> शनि मंदिर (शनि शिंगणापुर)</p>
+                </div>
+
+                <!-- राहु -->
+                <div class="grah-item" style="border-left-color:#4B0082;">
+                    <div class="grah-header">
+                        <div class="grah-icon">🔵</div>
+                        <div>
+                            <div class="grah-name">8. राहु</div>
+                            <div class="grah-eng">Rahu · छाया ग्रह</div>
+                        </div>
+                    </div>
+                    <p style="font-size:12.5px;">माया, छल, अवरोध, और अचानक परिवर्तन के कारक।</p>
+                    <div class="grah-details">
+                        <div class="grah-detail-item"><div class="lbl">रत्न</div><div class="val">गोमेद</div></div>
+                        <div class="grah-detail-item"><div class="lbl">दिन</div><div class="val">शनिवार, बुधवार</div></div>
+                        <div class="grah-detail-item"><div class="lbl">देवता</div><div class="val">दुर्गा माता</div></div>
+                        <div class="grah-detail-item"><div class="lbl">दान</div><div class="val">उड़द, सीसा, नीला वस्त्र</div></div>
+                        <div class="grah-detail-item"><div class="lbl">रंग</div><div class="val">नीला, धुआं</div></div>
+                        <div class="grah-detail-item"><div class="lbl">दिशा</div><div class="val">दक्षिण-पश्चिम</div></div>
+                    </div>
+                    <div class="grah-mantra">ॐ रां रीं रौं सः राहवे नमः</div>
+                    <p style="font-size:12px;margin-top:8px;color:var(--ink-soft);"><strong>व्रत:</strong> शनिवार · <strong>जप:</strong> 18000 · <strong>मंदिर:</strong> राहु मंदिर</p>
+                </div>
+
+                <!-- केतु -->
+                <div class="grah-item" style="border-left-color:#696969;">
+                    <div class="grah-header">
+                        <div class="grah-icon">⚫</div>
+                        <div>
+                            <div class="grah-name">9. केतु</div>
+                            <div class="grah-eng">Ketu · छाया ग्रह</div>
+                        </div>
+                    </div>
+                    <p style="font-size:12.5px;">मोक्ष, वैराग्य, ज्ञान, और अचानक घटनाओं के कारक।</p>
+                    <div class="grah-details">
+                        <div class="grah-detail-item"><div class="lbl">रत्न</div><div class="val">लहसुनिया</div></div>
+                        <div class="grah-detail-item"><div class="lbl">दिन</div><div class="val">मंगलवार, बुधवार</div></div>
+                        <div class="grah-detail-item"><div class="lbl">देवता</div><div class="val">गणेश जी</div></div>
+                        <div class="grah-detail-item"><div class="lbl">दान</div><div class="val">काला तिल, लोहा, कंबल</div></div>
+                        <div class="grah-detail-item"><div class="lbl">रंग</div><div class="val">धुआं, धूसर</div></div>
+                        <div class="grah-detail-item"><div class="lbl">दिशा</div><div class="val">दक्षिण</div></div>
+                    </div>
+                    <div class="grah-mantra">ॐ कें कीं कौं सः केतवे नमः</div>
+                    <p style="font-size:12px;margin-top:8px;color:var(--ink-soft);"><strong>व्रत:</strong> मंगलवार · <strong>जप:</strong> 17000 · <strong>मंदिर:</strong> केतु मंदिर</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- नवग्रह शांति मंत्र -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🔱</span> नवग्रह शांति मंत्र</h2>
+            <p style="font-size:13px;margin-bottom:8px;">
+                यह मंत्र सभी ग्रहों की शांति के लिए है — नियमित जप से ग्रह दोष दूर होते हैं।
+            </p>
+
+            <p><strong>1. नवग्रह स्तोत्र (संक्षिप्त):</strong></p>
+            <div class="mantra-box">
+                ॐ ब्रह्मा मुरारिस्त्रिपुरान्तकारी ।<br>
+                भानुः शशी भूमिसुतो बुधश्च ॥<br>
+                गुरुश्च शुक्रः शनिराहुकेतवः ।<br>
+                कुर्वन्तु सर्वे मम सुप्रभातम् ॥
+                <small>अर्थ: ब्रह्मा, विष्णु, शिव, सूर्य, चंद्र, मंगल, बुध, गुरु, शुक्र, शनि, राहु, केतु — सभी मेरा कल्याण करें।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>2. ग्रह शांति मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ नवग्रहा शांतिं कुर्वन्तु ।<br>
+                ॐ शांतिः शांतिः शांतिः ॥
+                <small>अर्थ: हे नवग्रह, शांति प्रदान करें। शांति, शांति, शांति।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>3. कालसर्प दोष मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ राहवे नमः, ॐ केतवे नमः ।<br>
+                ॐ कालसर्पदोषं नाशय नाशय ॥
+                <small>अर्थ: राहु और केतु को नमस्कार। कालसर्प दोष का नाश करें।</small>
+            </div>
+        </div>
+
+        <!-- ग्रह शांति के उपाय -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🛕</span> ग्रह शांति के सामान्य उपाय</h2>
+            <ul>
+                <li><strong>सूर्य:</strong> रविवार को ताम्र पात्र से सूर्य को जल अर्पित करें। आदित्य हृदय स्तोत्र पढ़ें।</li>
+                <li><strong>चंद्र:</strong> सोमवार को शिवलिंग पर दूध चढ़ाएँ। चंद्र मंत्र जपें।</li>
+                <li><strong>मंगल:</strong> मंगलवार को हनुमान चालीसा पढ़ें। मूंगा धारण करें।</li>
+                <li><strong>बुध:</strong> बुधवार को गणेश जी की पूजा करें। पन्ना धारण करें।</li>
+                <li><strong>गुरु:</strong> गुरुवार को विष्णु सहस्रनाम पढ़ें। पुखराज धारण करें।</li>
+                <li><strong>शुक्र:</strong> शुक्रवार को लक्ष्मी पूजा करें। हीरा धारण करें।</li>
+                <li><strong>शनि:</strong> शनिवार को शनि देव की पूजा करें, तेल-उड़द का दान करें। नीलम धारण करें।</li>
+                <li><strong>राहु:</strong> दुर्गा सप्तशती पढ़ें, गोमेद धारण करें।</li>
+                <li><strong>केतु:</strong> गणेश पूजा करें, लहसुनिया धारण करें।</li>
+                <li><strong>सामान्य:</strong> नवग्रह मंदिर में दीपदान करें। ग्रह शांति हवन कराएँ।</li>
+            </ul>
+        </div>
+
+        <!-- नवग्रह से संबंधित देवता और व्रत -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📅</span> नवग्रह और उनके व्रत</h2>
+            <ul>
+                <li><strong>रविवार:</strong> सूर्य — व्रत, सूर्य नमस्कार, आदित्य हृदय स्तोत्र</li>
+                <li><strong>सोमवार:</strong> चंद्र — शिव पूजा, व्रत, चंद्र मंत्र</li>
+                <li><strong>मंगलवार:</strong> मंगल — हनुमान पूजा, व्रत, मूंगा</li>
+                <li><strong>बुधवार:</strong> बुध — गणेश पूजा, व्रत, पन्ना</li>
+                <li><strong>गुरुवार:</strong> गुरु — विष्णु पूजा, व्रत, पुखराज</li>
+                <li><strong>शुक्रवार:</strong> शुक्र — लक्ष्मी पूजा, व्रत, हीरा</li>
+                <li><strong>शनिवार:</strong> शनि — शनि पूजा, व्रत, नीलम</li>
+                <li><strong>ग्रहण काल:</strong> राहु-केतु — विशेष पूजा, दान</li>
+            </ul>
+        </div>
+
+        <!-- नवग्रह मंदिर -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🛕</span> प्रमुख नवग्रह मंदिर</h2>
+            <div class="temple-list">
+                <div class="temple-item">
+                    <strong>कोणार्क सूर्य मंदिर, ओडिशा</strong><br>
+                    सूर्य देव का भव्य मंदिर, विश्व धरोहर।
+                </div>
+                <div class="temple-item">
+                    <strong>सोमनाथ मंदिर, गुजरात</strong><br>
+                    चंद्र देव द्वारा स्थापित, प्रथम ज्योतिर्लिंग।
+                </div>
+                <div class="temple-item">
+                    <strong>अंगारकेश्वर मंदिर, वाराणसी</strong><br>
+                    मंगल ग्रह का प्रमुख मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>तिरुवेंगडु मंदिर, तमिलनाडु</strong><br>
+                    बुध ग्रह का प्रमुख मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>अलंगुडी मंदिर, तमिलनाडु</strong><br>
+                    गुरु ग्रह का प्रमुख मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>शुक्र मंदिर, कांचीपुरम</strong><br>
+                    शुक्र ग्रह का प्रमुख मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>शनि शिंगणापुर, महाराष्ट्र</strong><br>
+                    शनि देव का प्रमुख मंदिर, साढ़े साती में लाभ।
+                </div>
+                <div class="temple-item">
+                    <strong>राहु-केतु मंदिर, वाराणसी</strong><br>
+                    राहु-केतु की शांति के लिए प्रमुख स्थल।
+                </div>
+            </div>
+        </div>
+
+        <!-- भक्ति और लाभ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🙏</span> नवग्रह पूजा से लाभ</h2>
+            <ul>
+                <li><strong>ग्रह दोष शांति:</strong> नवग्रह पूजा से सभी ग्रह दोष दूर होते हैं।</li>
+                <li><strong>कालसर्प दोष:</strong> राहु-केतु पूजा से कालसर्प दोष दूर होता है।</li>
+                <li><strong>शनि साढ़े साती:</strong> शनि पूजा से साढ़े साती और ढैया में लाभ होता है।</li>
+                <li><strong>मंगल दोष:</strong> मंगल पूजा से मंगल दोष दूर होता है, विवाह में लाभ।</li>
+                <li><strong>राहु-केतु:</strong> इनकी पूजा से अचानक संकट दूर होते हैं।</li>
+                <li><strong>धन प्राप्ति:</strong> गुरु-शुक्र पूजा से धन और समृद्धि।</li>
+                <li><strong>आरोग्य:</strong> सूर्य-चंद्र पूजा से स्वास्थ्य लाभ।</li>
+                <li><strong>मोक्ष:</strong> सभी ग्रहों की शांति से मोक्ष का मार्ग।</li>
+            </ul>
+        </div>
+
+        <!-- FAQ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>नवग्रह में राहु-केतु कौन हैं?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>राहु और केतु</strong> वास्तविक ग्रह नहीं हैं — वे <strong>छाया ग्रह</strong> हैं। समुद्र मंथन के समय <strong>स्वरभानु</strong> नामक असुर ने छल से अमृत पी लिया। चंद्र और सूर्य ने उसे पहचान लिया और विष्णु जी ने उसका सिर काट दिया। सिर <strong>राहु</strong> और धड़ <strong>केतु</strong> बन गया। इसलिए राहु-केतु को <strong>ग्रहण</strong> का कारण माना जाता है।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>शनि की साढ़े साती क्या है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>साढ़े साती</strong> वह अवधि है जब शनि ग्रह <strong>साढ़े सात वर्ष</strong> तक किसी व्यक्ति की राशि से गुज़रता है — उससे पहले, दौरान, और बाद में। इस दौरान <strong>कार्यों में बाधा, आर्थिक कठिनाई, और मानसिक तनाव</strong> हो सकता है। लेकिन यह <strong>कर्म शुद्धि</strong> का समय भी है — शनि पूजा से लाभ होता है।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>कौन सा रत्न धारण करें?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    रत्न <strong>जन्म कुंडली</strong> के आधार पर धारण करें — ज्योतिषी की सलाह से। सामान्यतः:<br>
+                    • <strong>सूर्य:</strong> माणिक्य<br>
+                    • <strong>चंद्र:</strong> मोती<br>
+                    • <strong>मंगल:</strong> मूंगा<br>
+                    • <strong>बुध:</strong> पन्ना<br>
+                    • <strong>गुरु:</strong> पुखराज<br>
+                    • <strong>शुक्र:</strong> हीरा<br>
+                    • <strong>शनि:</strong> नीलम<br>
+                    • <strong>राहु:</strong> गोमेद<br>
+                    • <strong>केतु:</strong> लहसुनिया
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>कालसर्प दोष क्या है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>कालसर्प दोष</strong> तब होता है जब <strong>राहु और केतु</strong> कुंडली में सभी ग्रहों को एक तरफ घेर लेते हैं। इससे <strong>जीवन में बार-बार बाधाएँ, विवाह में देरी, संतान कष्ट, और आर्थिक कठिनाई</strong> होती है। <strong>कालसर्प दोष पूजा</strong> — राहु-केतु मंत्र, त्रयंबकेश्वर यात्रा, और नाग पंचमी पर विशेष पूजा से दूर होता है।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>नवग्रह शांति हवन कब कराएँ?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    नवग्रह शांति हवन <strong>जन्म कुंडली में ग्रह दोष</strong> होने पर, <strong>साढ़े साती</strong> के समय, <strong>मंगल दोष</strong> में, या <strong>कालसर्प दोष</strong> में कराया जाता है। इसके अलावा <strong>जन्मदिन, विवाह की वर्षगांठ, ग्रहण काल, और नवरात्रि</strong> में नवग्रह शांति हवन अत्यंत शुभ माना जाता है।
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Links -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🔗</span> संबंधित लिंक</h2>
+            <div class="related-grid">
+                <a href="../mantra/index.html" class="related-link">📿 सभी मंत्र</a>
+                <a href="../stotra/navgrah-stotram.html" class="related-link">📜 नवग्रह स्तोत्र</a>
+                <a href="../stotra/aditya-hridayam.html" class="related-link">📜 आदित्य हृदय स्तोत्र</a>
+                <a href="../jyotish/index.html" class="related-link">🔮 ज्योतिष ज्ञान</a>
+                <a href="../katha/navgrah-katha.html" class="related-link">📖 नवग्रह कथाएँ</a>
+                <a href="../quiz/index.html" class="related-link">🎯 नवग्रह क्विज</a>
+            </div>
+        </div>
+
+        <!-- Share -->
+        <button class="btn-primary" onclick="sharePage()" style="margin-top:10px;">
+            <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+        </button>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय नवग्रह</p>
+        </footer>
+
+    </main>
+
+    <button class="back-top" id="backTop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-calendar-days"></i><p>पंचांग</p></a>
+        <a href="../quiz/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>क्विज</p></a>
+    </nav>
+
+    <script src="../script.js"></script>
+    <script>
+        function toggleAccordion(el) {
+            const item = el.parentElement;
+            item.classList.toggle('open');
+        }
+
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backTop');
+            if (btn) {
+                if (window.scrollY > 400) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
