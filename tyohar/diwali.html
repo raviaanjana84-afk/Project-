@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>दीपावली — 5 दिनों की संपूर्ण जानकारी | Sanatan Gyan Kosh</title>
+    <meta name="description" content="दीपावली का संपूर्ण ज्ञान — 5 दिन (धनतेरस, नरक चतुर्दशी, दीपावली, गोवर्धन, भाई दूज), हर दिन की कथा, विधि, प्रसाद, और बहुत कुछ।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        /* Hero */
+        .festival-hero {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, rgba(255,165,0,0.2), rgba(122,46,46,0.12));
+            border-radius: var(--radius);
+            margin-bottom: 16px;
+            border: 2px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+        .festival-hero::before {
+            content: '🪔';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            font-size: 140px;
+            opacity: 0.06;
+        }
+        .festival-hero .hero-icon {
+            font-size: 80px;
+            display: block;
+            line-height: 1;
+            animation: glow 2s ease-in-out infinite;
+        }
+        @keyframes glow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(255,165,0,0.5)); }
+            50% { transform: scale(1.05); filter: drop-shadow(0 0 25px rgba(255,165,0,0.9)); }
+        }
+        .festival-hero .hero-name {
+            font-family: var(--font-display);
+            font-size: 34px;
+            color: var(--maroon);
+            margin-top: 8px;
+            font-weight: 700;
+        }
+        .festival-hero .hero-subtitle {
+            font-size: 14px;
+            color: var(--ink-soft);
+            margin-top: 6px;
+            letter-spacing: 1px;
+        }
+        .festival-hero .hero-date {
+            display: inline-block;
+            background: var(--maroon);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        /* Section */
+        .festival-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 20px 18px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .festival-section h2 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--maroon);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+        }
+        .festival-section h2 .sec-icon { font-size: 26px; }
+        .festival-section h3 {
+            font-family: var(--font-display);
+            font-size: 16px;
+            color: var(--maroon);
+            margin: 16px 0 8px;
+        }
+        .festival-section p {
+            font-size: 14px;
+            line-height: 1.9;
+            color: var(--ink-soft);
+            margin-bottom: 10px;
+        }
+        .festival-section p strong { color: var(--maroon); }
+
+        /* Day Cards */
+        .day-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 12px;
+        }
+        .day-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--border);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .day-card:hover {
+            border-color: var(--gold);
+            box-shadow: var(--shadow-hover);
+        }
+        .day-card.open {
+            border-color: var(--maroon);
+        }
+        .day-card.main-day {
+            border: 2px solid var(--gold);
+            background: linear-gradient(135deg, #fff, #fff8e7);
+        }
+        .day-card.main-day.open {
+            border-color: var(--maroon);
+        }
+        .day-header {
+            padding: 16px 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: var(--transition);
+        }
+        .day-header:hover {
+            background: var(--bg);
+        }
+        .day-card.open .day-header {
+            background: linear-gradient(135deg, rgba(212,175,55,0.12), rgba(122,46,46,0.06));
+            border-bottom: 1px solid var(--border);
+        }
+        .day-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--maroon), var(--gold));
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(122,46,46,0.25);
+        }
+        .day-card.main-day .day-badge {
+            background: linear-gradient(135deg, var(--gold), #ff9800);
+            color: var(--maroon);
+            box-shadow: 0 4px 14px rgba(255,165,0,0.5);
+        }
+        .day-badge .day-num {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1;
+        }
+        .day-badge .day-text {
+            font-size: 8px;
+            opacity: 0.9;
+            margin-top: 2px;
+            letter-spacing: 0.5px;
+        }
+        .day-info {
+            flex: 1;
+        }
+        .day-name {
+            font-family: var(--font-display);
+            font-size: 18px;
+            color: var(--maroon);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .day-name .main-tag {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--maroon);
+            font-size: 9px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-family: var(--font-body);
+            font-weight: 700;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+        .day-sub {
+            font-size: 11px;
+            color: var(--ink-soft);
+            margin-top: 3px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .day-sub span {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+        .day-sub i {
+            color: var(--gold);
+            font-size: 10px;
+        }
+        .day-arrow {
+            color: var(--gold);
+            font-size: 18px;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+        .day-card.open .day-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Day Body */
+        .day-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        .day-card.open .day-body {
+            max-height: 5000px;
+        }
+        .day-body-inner {
+            padding: 18px;
+        }
+
+        .day-section {
+            margin-bottom: 14px;
+        }
+        .day-section:last-child { margin-bottom: 0; }
+        .day-section-title {
+            font-family: var(--font-display);
+            font-size: 14px;
+            color: var(--maroon);
+            font-weight: 700;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .day-section-title .ri { font-size: 16px; }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 6px;
+        }
+        .info-item {
+            background: var(--bg);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+        }
+        .info-item .lbl {
+            font-size: 9px;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-item .val {
+            font-weight: 600;
+            color: var(--maroon);
+            margin-top: 2px;
+            font-size: 12.5px;
+        }
+
+        .mantra-box {
+            background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(122,46,46,0.05));
+            border-left: 4px solid var(--gold);
+            padding: 12px 14px;
+            border-radius: 10px;
+            font-family: var(--font-display);
+            font-size: 15px;
+            text-align: center;
+            margin: 8px 0;
+            line-height: 1.8;
+            color: var(--maroon);
+            font-weight: 600;
+        }
+        .mantra-box small {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 11px;
+            color: var(--ink-soft);
+            font-weight: 400;
+            margin-top: 4px;
+        }
+
+        .day-body p {
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+        }
+        .day-body p strong { color: var(--maroon); }
+
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 6px;
+        }
+        .benefit-list li {
+            padding: 5px 0 5px 22px;
+            font-size: 12.5px;
+            line-height: 1.6;
+            color: var(--ink-soft);
+            position: relative;
+        }
+        .benefit-list li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            font-size: 12px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(212,175,55,0.12), rgba(122,46,46,0.06));
+            border-left: 4px solid var(--gold);
+            padding: 12px 14px;
+            border-radius: 10px;
+            margin: 8px 0;
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+        }
+        .highlight-box strong { color: var(--maroon); }
+
+        .steps-list {
+            list-style: none;
+            padding: 0;
+            counter-reset: step-counter;
+            margin: 8px 0;
+        }
+        .steps-list li {
+            counter-increment: step-counter;
+            padding: 8px 10px 8px 40px;
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+            border-bottom: 1px dashed var(--border);
+            position: relative;
+        }
+        .steps-list li:last-child { border-bottom: none; }
+        .steps-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--maroon), var(--gold));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        /* Back Button */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg);
+            color: var(--maroon);
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+        .back-btn:hover {
+            background: var(--maroon);
+            color: white;
+        }
+
+        /* Back Top */
+        .back-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--maroon);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 16px rgba(122,46,46,0.4);
+            z-index: 90;
+        }
+        .back-top.show { display: flex; }
+
+        /* Do-Dont */
+        .do-dont-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .do-box, .dont-box {
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+        .do-box {
+            background: #eef7ee;
+            border-left: 3px solid #27ae60;
+        }
+        .do-box h4 {
+            color: #27ae60;
+            font-size: 12px;
+            margin-bottom: 6px;
+        }
+        .dont-box {
+            background: #fdecea;
+            border-left: 3px solid #dc3545;
+        }
+        .dont-box h4 {
+            color: #dc3545;
+            font-size: 12px;
+            margin-bottom: 6px;
+        }
+        .do-box ul, .dont-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        .do-box ul li, .dont-box ul li {
+            padding: 2px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 5px;
+        }
+        .do-box ul li::before { content: '✅'; flex-shrink: 0; font-size: 11px; }
+        .dont-box ul li::before { content: '❌'; flex-shrink: 0; font-size: 11px; }
+
+        /* Related */
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .related-link {
+            padding: 12px;
+            background: var(--bg);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--maroon);
+            font-weight: 600;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .related-link:hover {
+            background: var(--card-bg);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 420px) {
+            .festival-hero .hero-icon { font-size: 60px; }
+            .festival-hero .hero-name { font-size: 26px; }
+            .festival-section h2 { font-size: 17px; }
+            .day-name { font-size: 15px; }
+            .day-badge { width: 48px; height: 48px; }
+            .day-badge .day-num { font-size: 17px; }
+            .do-dont-grid { grid-template-columns: 1fr; }
+            .info-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ त्योहार</span>
+            <h1>दीपावली</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <a href="index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i> सभी त्योहार
+        </a>
+
+        <!-- Hero -->
+        <div class="festival-hero">
+            <span class="hero-icon">🪔</span>
+            <div class="hero-name">दीपावली</div>
+            <div class="hero-subtitle">दीपों का उत्सव · 5 दिन · रोशनी का पर्व</div>
+            <div class="hero-date">📅 कार्तिक अमावस्या · अक्टूबर-नवंबर</div>
+        </div>
+
+        <!-- 1. परिचय -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">📖</span> दीपावली क्या है?</h2>
+            <p>
+                <strong>दीपावली</strong> (दीप + आवली = दीपों की पंक्ति) हिंदू धर्म का सबसे बड़ा और सबसे प्रिय त्योहार है। यह <strong>रोशनी, खुशी, और नई शुरुआत</strong> का प्रतीक है। इस दिन पूरे भारत में — और दुनिया भर में जहाँ हिंदू रहते हैं — <strong>घर-घर में दीप जलाए जाते हैं</strong>, रंगोली बनाई जाती है, मिठाइयाँ बाँटी जाती हैं, और माँ लक्ष्मी तथा गणेश जी की पूजा की जाती है।
+            </p>
+            <p>
+                दीपावली को <strong>"प्रकाश पर्व"</strong> भी कहा जाता है। यह अंधकार पर प्रकाश, अज्ञान पर ज्ञान, और बुराई पर अच्छाई की जीत का प्रतीक है।
+            </p>
+            <div class="highlight-box">
+                <strong>🪔 मुख्य बात:</strong> दीपावली को <strong>5 दिनों</strong> तक मनाया जाता है — धनतेरस, नरक चतुर्दशी, दीपावली, गोवर्धन पूजा, और भाई दूज। हर दिन का अपना अलग महत्व है।
+            </div>
+        </div>
+
+        <!-- 2. कथा -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">📜</span> दीपावली की कथाएँ</h2>
+
+            <h3>🏹 1. राम जी की अयोध्या वापसी</h3>
+            <p>
+                <strong>सबसे प्रसिद्ध कथा:</strong> जब भगवान राम ने 14 वर्ष का वनवास पूरा किया और रावण का वध करके <strong>अयोध्या वापस लौटे</strong>, तो अयोध्या के निवासियों ने उनके स्वागत में <strong>पूरी नगरी को दीपों से सजा दिया</strong>। यही परंपरा आज दीपावली के रूप में जारी है।
+            </p>
+
+            <h3>🌊 2. समुद्र मंथन से लक्ष्मी प्रकट</h3>
+            <p>
+                एक अन्य कथा के अनुसार, <strong>समुद्र मंथन</strong> के समय <strong>माँ लक्ष्मी</strong> प्रकट हुईं। यह दिन <strong>कार्तिक अमावस्या</strong> को था। इसलिए इस दिन <strong>माँ लक्ष्मी की पूजा</strong> की जाती है — धन और समृद्धि के लिए।
+            </p>
+
+            <h3>👑 3. राजा बलि और वामन अवतार</h3>
+            <p>
+                कथा के अनुसार, <strong>वामन अवतार</strong> ने राजा बलि को पाताल लोक भेज दिया था। बलि की भक्ति से प्रसन्न होकर विष्णु जी ने उसे <strong>वर्ष में एक बार पृथ्वी पर आने</strong> का वरदान दिया। यह दिन <strong>दीपावली</strong> है।
+            </p>
+
+            <h3>⚔️ 4. नरकासुर वध</h3>
+            <p>
+                कथा के अनुसार, <strong>कृष्ण जी</strong> ने <strong>नरकासुर</strong> नामक राक्षस का वध किया और 16,108 राजकुमारियों को उसकी कैद से मुक्त कराया। यह दिन <strong>नरक चतुर्दशी</strong> को हुआ।
+            </p>
+        </div>
+
+        <!-- 3. 5 दिन विस्तृत -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">📅</span> दीपावली के 5 दिन — विस्तृत जानकारी</h2>
+            <p style="font-size:13px; color: var(--ink-soft);">
+                कार्ड पर <strong>click करें</strong> और हर दिन की पूरी जानकारी पढ़ें — कथा, विधि, प्रसाद, और बहुत कुछ।
+            </p>
+
+            <div class="day-grid" id="dayGrid">
+                <!-- JS renders here -->
+            </div>
+        </div>
+
+        <!-- 4. पूजा विधि -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🙏</span> दीपावली पूजा विधि (Step by Step)</h2>
+            <p>दीपावली के मुख्य दिन (कार्तिक अमावस्या) लक्ष्मी-गणेश की पूजा का विधान है।</p>
+            <ol class="steps-list">
+                <li><strong>स्नान और तैयारी:</strong> प्रातः स्नान करके स्वच्छ वस्त्र धारण करें।</li>
+                <li><strong>घर की सफाई:</strong> पूरे घर को साफ करें, क्योंकि माँ लक्ष्मी साफ घर में निवास करती हैं।</li>
+                <li><strong>रंगोली:</strong> मुख्य द्वार पर रंगोली बनाएँ (कमल, लक्ष्मी चरण, या स्वास्तिक)।</li>
+                <li><strong>मंदिर सजावट:</strong> पूजा स्थान को फूलों और दीपों से सजाएँ।</li>
+                <li><strong>कलश स्थापना:</strong> तांबे के कलश में जल, सुपारी, सिक्का डालकर स्थापित करें।</li>
+                <li><strong>लक्ष्मी-गणेश प्रतिमा:</strong> माँ लक्ष्मी और गणेश जी की प्रतिमा को चौकी पर रखें।</li>
+                <li><strong>संकल्प:</strong> "ॐ विष्णुः विष्णुः विष्णुः" कहते हुए संकल्प लें।</li>
+                <li><strong>गणेश पूजा:</strong> सबसे पहले गणेश जी की पूजा करें — "ॐ गं गणपतये नमः"।</li>
+                <li><strong>लक्ष्मी पूजा:</strong> माँ लक्ष्मी की पूजा करें — "ॐ श्रीं ह्रीं क्लीं महालक्ष्म्यै नमः"।</li>
+                <li><strong>षोडशोपचार पूजा:</strong> 16 उपचारों से पूजा करें।</li>
+                <li><strong>नैवेद्य:</strong> खीर, मिठाई, फल, पान-सुपारी अर्पित करें।</li>
+                <li><strong>आरती:</strong> "ॐ जय लक्ष्मी माता" आरती गाएँ।</li>
+                <li><strong>दीपदान:</strong> घर के हर कोने में दीप जलाएँ।</li>
+                <li><strong>प्रसाद वितरण:</strong> सभी को प्रसाद बाँटें।</li>
+            </ol>
+
+            <h3>📿 मुख्य मंत्र</h3>
+            <div class="mantra-box">
+                ॐ श्रीं ह्रीं क्लीं महालक्ष्म्यै नमः
+                <small>लक्ष्मी पूजा का मुख्य मंत्र — 108 बार जपें</small>
+            </div>
+            <div class="mantra-box">
+                ॐ गं गणपतये नमः
+                <small>गणेश पूजा का मुख्य मंत्र — विघ्न नाश के लिए</small>
+            </div>
+        </div>
+
+        <!-- 5. सामग्री -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🛒</span> पूजा सामग्री</h2>
+            <ul style="list-style: none; padding: 0; font-size: 13.5px; line-height: 2;">
+                <li>✅ माँ लक्ष्मी और गणेश जी की प्रतिमा</li>
+                <li>✅ मिट्टी के दीपक (कम से कम 11)</li>
+                <li>✅ घी या सरसों का तेल</li>
+                <li>✅ रुई की बत्ती</li>
+                <li>✅ रोली, कुमकुम, हल्दी, सिंदूर</li>
+                <li>✅ अक्षत (चावल)</li>
+                <li>✅ पान, सुपारी, लौंग, इलायची</li>
+                <li>✅ फूल, माला, गेंदा, कमल</li>
+                <li>✅ फल — केला, सेब, संतरा, नारियल</li>
+                <li>✅ मिठाई, खीर</li>
+                <li>✅ धूप, अगरबत्ती, कपूर</li>
+                <li>✅ पंचामृत — दूध, दही, घी, शहद, गुड़</li>
+                <li>✅ तांबे का कलश</li>
+                <li>✅ चौकी और लाल कपड़ा</li>
+                <li>✅ आरती की थाली</li>
+                <li>✅ घंटी, शंख</li>
+                <li>✅ रंगोली के रंग</li>
+                <li>✅ गणेश जी के लिए दूर्वा और मोदक</li>
+                <li>✅ लक्ष्मी माता के लिए कमल का फूल</li>
+            </ul>
+        </div>
+
+        <!-- 6. क्या करें / क्या न करें -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">✅</span> क्या करें और क्या न करें</h2>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <h4>✅ क्या करें</h4>
+                    <ul>
+                        <li>घर की सफाई करें</li>
+                        <li>रंगोली बनाएँ</li>
+                        <li>दीप जलाएँ</li>
+                        <li>लक्ष्मी-गणेश पूजा करें</li>
+                        <li>मिठाइयाँ बाँटें</li>
+                        <li>परिवार के साथ समय बिताएँ</li>
+                        <li>गरीबों को दान करें</li>
+                        <li>बच्चों को कथा सुनाएँ</li>
+                    </ul>
+                </div>
+                <div class="dont-box">
+                    <h4>❌ क्या न करें</h4>
+                    <ul>
+                        <li>घर में अंधकार न रखें</li>
+                        <li>झाड़ू को पैर से न छुएँ</li>
+                        <li>दीपक फूँक से न बुझाएँ</li>
+                        <li>क्रोध न करें</li>
+                        <li>झूठ न बोलें</li>
+                        <li>तामसिक भोजन न करें</li>
+                        <li>किसी से कलह न करें</li>
+                        <li>उधार न लें</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. Related Links -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🔗</span> संबंधित लिंक</h2>
+            <div class="related-grid">
+                <a href="../devta/lakshmi.html" class="related-link">🌺 लक्ष्मी माता</a>
+                <a href="../devta/ganesh.html" class="related-link">🐘 गणेश जी</a>
+                <a href="../stotra/lakshmi-aarti.html" class="related-link">🪔 लक्ष्मी आरती</a>
+                <a href="../stotra/lakshmi-chalisa.html" class="related-link">📜 लक्ष्मी चालीसा</a>
+                <a href="../katha/lakshmi-katha.html" class="related-link">📖 लक्ष्मी कथा</a>
+                <a href="index.html" class="related-link">🎉 अन्य त्योहार</a>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय माता लक्ष्मी</p>
+        </footer>
+
+    </main>
+
+    <button class="back-top" id="backTop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="../devta/index.html" class="nav-link"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-calendar-days"></i><p>त्योहार</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>पंचांग</p></a>
+    </nav>
+
+    <script>
+        // ============================================================
+        //  DIWALI — 5 Days Deep Detail
+        // ============================================================
+
+        const diwaliDays = [
+            {
+                day: 1,
+                name: 'धनतेरस',
+                en: 'Dhanteras',
+                meaning: 'धन + तेरस = धन का तेरहवाँ दिन',
+                date: 'कार्तिक कृष्ण त्रयोदशी',
+                isMain: false,
+                katha: 'समुद्र मंथन के समय इस दिन <strong>धन्वंतरि</strong> (आयुर्वेद के देवता) अमृत कलश लेकर प्रकट हुए। इसलिए इस दिन धन्वंतरि और कुबेर (धन के देवता) की पूजा की जाती है। एक अन्य कथा के अनुसार, राजा हिमा के पुत्र की मृत्यु इस दिन होनी थी, लेकिन उनकी पत्नी ने चतुराई से यमराज को रोक दिया — इसलिए धनतेरस पर यमराज की भी पूजा होती है।',
+                form: 'धन्वंतरि — हाथ में अमृत कलश, आयुर्वेद के जनक। कुबेर — धन के देवता।',
+                vidhi: [
+                    'प्रातः स्नान करके स्वच्छ वस्त्र पहनें',
+                    'घर के मुख्य द्वार पर रंगोली बनाएँ',
+                    'संध्या काल में धन्वंतरि, कुबेर और यमराज की पूजा करें',
+                    'तांबे या पीतल के बर्तन में जल भरकर दीपक जलाएँ',
+                    'धन, स्वास्थ्य, और समृद्धि की प्रार्थना करें',
+                    'नए बर्तन, सोना, चांदी खरीदें'
+                ],
+                mantra: 'ॐ धन्वंतरये नमः · ॐ कुबेराय नमः',
+                mantraMeaning: 'धन्वंतरि और कुबेर दोनों का मंत्र',
+                prasad: 'मिठाई, खीर, और गुड़',
+                dos: [
+                    'नए बर्तन/सोना/चांदी खरीदें',
+                    'झाड़ू खरीदें (शुभ)',
+                    'धन्वंतरि और कुबेर पूजा करें',
+                    'सायं दीप जलाएँ',
+                    'गरीबों को दान करें'
+                ],
+                donts: [
+                    'खाली हाथ न सोएँ',
+                    'कर्ज न लें',
+                    'किसी का अपमान न करें',
+                    'अशुद्ध न रहें'
+                ],
+                benefits: [
+                    'धन और स्वास्थ्य',
+                    'आरोग्य',
+                    'समृद्धि',
+                    'आयु वृद्धि',
+                    'यम भय नाश'
+                ],
+                significance: 'धनतेरस दीपावली की शुरुआत है। इस दिन जो भी खरीदारी करते हैं — वह साल भर बढ़ती है।'
+            },
+            {
+                day: 2,
+                name: 'नरक चतुर्दशी',
+                en: 'Narak Chaturdashi',
+                meaning: 'नरकासुर के वध का दिन',
+                date: 'कार्तिक कृष्ण चतुर्दशी',
+                isMain: false,
+                katha: 'नरकासुर नामक राक्षस ने 16,108 राजकुमारियों को बंदी बना लिया था। उसे ब्रह्मा जी से वरदान मिला था कि उसकी मृत्यु केवल एक स्त्री के हाथों होगी। कृष्ण जी ने सत्यभामा के साथ मिलकर नरकासुर का वध किया और सभी राजकुमारियों को मुक्त कराया। यह दिन "छोटी दीपावली" के रूप में भी मनाया जाता है।',
+                form: 'कृष्ण जी — नरकासुर के वधकर्ता। यमराज — मृत्यु के देवता।',
+                vidhi: [
+                    'प्रातः सूर्योदय से पहले उठें',
+                    'अभ्यंग स्नान करें (तेल + उबटन)',
+                    'घर के मुख्य द्वार पर दीपक जलाएँ',
+                    'रात्रि में दक्षिण दिशा में यमराज के लिए दीपक जलाएँ',
+                    'कृष्ण जी और सत्यभामा की पूजा करें',
+                    'पाप और नकारात्मकता का नाश करें'
+                ],
+                mantra: 'ॐ नरकान्तकाय नमः',
+                mantraMeaning: 'नरकासुर का वध करने वाले कृष्ण जी का मंत्र',
+                prasad: 'मिठाई, चावल, और गुड़',
+                dos: [
+                    'अभ्यंग स्नान करें',
+                    'मुख्य द्वार पर दीपक जलाएँ',
+                    'यम देवता की पूजा करें',
+                    'कृष्ण जी का ध्यान करें',
+                    'घर में सफाई करें'
+                ],
+                donts: [
+                    'अंधकार न रखें',
+                    'क्रोध न करें',
+                    'तामसिक भोजन न करें',
+                    'अशुद्ध न रहें'
+                ],
+                benefits: [
+                    'पाप नाश',
+                    'भय मुक्ति',
+                    'नरक दोष नाश',
+                    'आयु वृद्धि',
+                    'नकारात्मक ऊर्जा नाश'
+                ],
+                significance: 'इस दिन "अभ्यंग स्नान" का विशेष महत्व है। यह दिन "छोटी दीपावली" के रूप में भी मनाया जाता है।'
+            },
+            {
+                day: 3,
+                name: 'लक्ष्मी पूजन (दीपावली)',
+                en: 'Lakshmi Pujan (Diwali)',
+                meaning: 'माँ लक्ष्मी का प्राकट्य दिवस',
+                date: 'कार्तिक अमावस्या',
+                isMain: true,
+                katha: 'समुद्र मंथन के समय कार्तिक अमावस्या को <strong>माँ लक्ष्मी</strong> क्षीरसागर से प्रकट हुईं। उन्हें देखकर सभी देवताओं ने उनकी स्तुति की और विष्णु जी ने उन्हें अपनी पत्नी के रूप में स्वीकार किया। इसी दिन भगवान राम भी 14 वर्ष का वनवास पूरा करके अयोध्या लौटे थे — जहाँ नगरवासियों ने दीपों से उनका स्वागत किया। इसलिए यह दिन <strong>दीपावली का मुख्य दिन</strong> है।',
+                form: 'माँ लक्ष्मी — कमल पर विराजमान, हाथों में कमल, शंख, अमृत कलश। गणेश जी — विघ्नहर्ता, बुद्धि और सिद्धि के दाता।',
+                vidhi: [
+                    'प्रातः स्नान करके स्वच्छ वस्त्र धारण करें',
+                    'पूरे घर को साफ करके गंगाजल छिड़कें',
+                    'मुख्य द्वार पर रंगोली बनाएँ',
+                    'पूजा स्थान को फूलों और दीपों से सजाएँ',
+                    'तांबे के कलश में जल, सुपारी, सिक्का डालकर स्थापित करें',
+                    'लक्ष्मी-गणेश की प्रतिमा को चौकी पर रखें',
+                    'संकल्प लें — "ॐ विष्णुः विष्णुः विष्णुः"',
+                    'सबसे पहले गणेश जी की पूजा करें',
+                    'लक्ष्मी माता की षोडशोपचार पूजा करें',
+                    'खीर, मिठाई, फल का भोग लगाएँ',
+                    'आरती गाएँ — "ॐ जय लक्ष्मी माता"',
+                    'घर के हर कोने में दीपक जलाएँ',
+                    'प्रसाद बाँटें'
+                ],
+                mantra: 'ॐ श्रीं ह्रीं क्लीं महालक्ष्म्यै नमः',
+                mantraMeaning: 'लक्ष्मी पूजा का मुख्य मंत्र — 108 बार जपें',
+                prasad: 'खीर, मिठाई, नारियल, और पान',
+                dos: [
+                    'घर की पूरी सफाई करें',
+                    'रंगोली बनाएँ',
+                    'लक्ष्मी-गणेश पूजा करें',
+                    'दीपक जलाएँ',
+                    'मिठाइयाँ बाँटें',
+                    'गरीबों को दान करें'
+                ],
+                donts: [
+                    'घर में अंधकार न रखें',
+                    'झाड़ू को पैर से न छुएँ',
+                    'दीपक फूँक से न बुझाएँ',
+                    'क्रोध न करें',
+                    'तामसिक भोजन न करें'
+                ],
+                benefits: [
+                    'धन, समृद्धि, सौभाग्य',
+                    'पारिवारिक सुख',
+                    'कर्ज मुक्ति',
+                    'व्यापार में लाभ',
+                    'मोक्ष'
+                ],
+                significance: 'यह दीपावली का <strong>मुख्य दिन</strong> है — जब माँ लक्ष्मी पृथ्वी पर आती हैं। जिस घर में सफाई, रोशनी, और भक्ति होती है — वहाँ वे निवास करती हैं।'
+            },
+            {
+                day: 4,
+                name: 'गोवर्धन पूजा (अन्नकूट)',
+                en: 'Govardhan Puja',
+                meaning: 'गोवर्धन पर्वत की पूजा',
+                date: 'कार्तिक शुक्ल प्रतिपदा',
+                isMain: false,
+                katha: 'कृष्ण जी ने ब्रजवासियों को इंद्र देव की पूजा के बजाय <strong>गोवर्धन पर्वत</strong> की पूजा करने की सलाह दी। इंद्र क्रोधित होकर प्रलयकारी वर्षा करने लगे। तब कृष्ण जी ने सात दिनों तक गोवर्धन पर्वत को अपनी छोटी उंगली पर उठाकर सभी ब्रजवासियों की रक्षा की। अहंकार टूटने पर इंद्र ने कृष्ण जी से क्षमा माँगी।',
+                form: 'कृष्ण जी — गोवर्धन धारण करने वाले। इंद्र देव — वर्षा के देवता। गौ माता — पूजनीय।',
+                vidhi: [
+                    'प्रातः स्नान करें',
+                    'गोबर से गोवर्धन पर्वत की आकृति बनाएँ',
+                    'गोवर्धन पर्वत की पूजा करें',
+                    '56 प्रकार के व्यंजन (अन्नकूट) बनाएँ',
+                    'कृष्ण जी को भोग लगाएँ',
+                    'गौ माता की पूजा करें',
+                    'अपने गुरु और बड़ों का आशीर्वाद लें'
+                ],
+                mantra: 'ॐ गोवर्धनाय नमः',
+                mantraMeaning: 'गोवर्धन पर्वत का मंत्र',
+                prasad: '56 प्रकार के व्यंजन (अन्नकूट)',
+                dos: [
+                    'गोवर्धन बनाएँ',
+                    'अन्नकूट का भोग लगाएँ',
+                    'गौ माता की पूजा करें',
+                    'कृष्ण जी का ध्यान करें',
+                    'बड़ों का आशीर्वाद लें'
+                ],
+                donts: [
+                    'गौ माता का अपमान न करें',
+                    'अन्न का अपमान न करें',
+                    'तामसिक भोजन न करें'
+                ],
+                benefits: [
+                    'अन्न और धन',
+                    'गौ कृपा',
+                    'प्रकृति रक्षा',
+                    'इंद्र दोष नाश',
+                    'पारिवारिक सुख'
+                ],
+                significance: 'इस दिन <strong>अन्नकूट</strong> (56 प्रकार के व्यंजन) बनाए जाते हैं — जो भगवान को अर्पित किए जाते हैं।'
+            },
+            {
+                day: 5,
+                name: 'भाई दूज (यम द्वितीया)',
+                en: 'Bhai Dooj',
+                meaning: 'भाई-बहन के प्रेम का पर्व',
+                date: 'कार्तिक शुक्ल द्वितीया',
+                isMain: false,
+                katha: 'यमुना ने अपने भाई <strong>यमराज</strong> को भोजन पर बुलाया। यमराज ने यमुना को वरदान दिया कि जो बहन भाई को तिलक करेगी, उसका भाई दीर्घायु होगा और उनका प्रेम अटूट रहेगा। इसलिए इस दिन बहन भाई को तिलक करती है।',
+                form: 'यमराज — मृत्यु के देवता। यमुना — यमराज की बहन।',
+                vidhi: [
+                    'प्रातः स्नान करें',
+                    'बहन भाई को तिलक करे',
+                    'आरती उतारें',
+                    'मिठाई खिलाएँ',
+                    'भाई बहन के घर जाकर भोजन करे',
+                    'भाई बहन को उपहार दे',
+                    'यमुना में स्नान और यमराज की पूजा करें'
+                ],
+                mantra: 'ॐ यमाय नमः',
+                mantraMeaning: 'यमराज का मंत्र',
+                prasad: 'मिठाई, पकवान, और पान',
+                dos: [
+                    'तिलक करें',
+                    'आरती उतारें',
+                    'मिठाई खिलाएँ',
+                    'भाई को उपहार दें',
+                    'यमुना पूजा करें'
+                ],
+                donts: [
+                    'झूठा वचन न दें',
+                    'भाई-बहन का अपमान न करें',
+                    'कलह न करें'
+                ],
+                benefits: [
+                    'भाई-बहन का प्रेम',
+                    'भाई की दीर्घायु',
+                    'यम भय नाश',
+                    'पारिवारिक सुख',
+                    'सौभाग्य'
+                ],
+                significance: 'इस दिन बहन भाई को तिलक करके उनकी लंबी आयु की प्रार्थना करती है। यह <strong>भाई-बहन के अटूट प्रेम</strong> का पर्व है।'
+            }
+        ];
+
+        function renderDays() {
+            const grid = document.getElementById('dayGrid');
+            grid.innerHTML = diwaliDays.map(d => `
+                <div class="day-card ${d.isMain ? 'main-day' : ''}" id="day-${d.day}">
+                    <div class="day-header" onclick="toggleDay(${d.day})">
+                        <div class="day-badge">
+                            <span class="day-num">${d.day}</span>
+                            <span class="day-text">दिन</span>
+                        </div>
+                        <div class="day-info">
+                            <div class="day-name">
+                                ${d.name}
+                                ${d.isMain ? '<span class="main-tag">⭐ मुख्य दिन</span>' : ''}
+                            </div>
+                            <div class="day-sub">
+                                <span><i class="fa-solid fa-om"></i> ${d.en}</span>
+                                <span><i class="fa-solid fa-calendar"></i> ${d.date}</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-down day-arrow"></i>
+                    </div>
+                    <div class="day-body">
+                        <div class="day-body-inner">
+
+                            <!-- Quick Info -->
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <div class="lbl">अर्थ</div>
+                                    <div class="val" style="font-size:11px;">${d.meaning}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="lbl">तिथि</div>
+                                    <div class="val">${d.date}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="lbl">प्रसाद</div>
+                                    <div class="val" style="font-size:11px;">${d.prasad}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="lbl">मंत्र</div>
+                                    <div class="val" style="font-size:10px;">${d.mantra}</div>
+                                </div>
+                            </div>
+
+                            <!-- कथा -->
+                            <div class="day-section">
+                                <div class="day-section-title"><span class="ri">📜</span> कथा</div>
+                                <p>${d.katha}</p>
+                            </div>
+
+                            <!-- स्वरूप -->
+                            <div class="day-section">
+                                <div class="day-section-title"><span class="ri">🎨</span> पूजनीय देवता</div>
+                                <p>${d.form}</p>
+                            </div>
+
+                            <!-- विधि -->
+                            <div class="day-section">
+                                <div class="day-section-title"><span class="ri">🙏</span> पूजा विधि</div>
+                                <ol class="steps-list">
+                                    ${d.vidhi.map(v => `<li>${v}</li>`).join('')}
+                                </ol>
+                            </div>
+
+                            <!-- मंत्र -->
+                            <div class="day-section">
+                                <div class="day-section-title"><span class="ri">📿</span> मंत्र</div>
+                                <div class="mantra-box">
+                                    ${d.mantra}
+                                    <small>${d.mantraMeaning}</small>
+                                </div>
+                            </div>
+
+                            <!-- क्या करें / न करें -->
+                            <div class="day-section">
+                                <div class="day-section-title"><span class="ri">✅</span> क्या करें और क्या न करें</div>
+                                <div class="do-dont-grid">
+                                    <div class="do-box">
+                                        <h4>✅ क्या करें</h4>
+                                        <ul>${d.dos.map(x => `<li>${x}</li>`).join('')}</ul>
+                                    </div>
+                                    <div class="dont-box">
+                                        <h4>❌ क्या न करें</h4>
+                                        <ul>${d.donts.map(x => `<li>${x}</li>`).join('')}</ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- लाभ -->
+                            <div class="day-section">
+                                <div class="day-section-title"><span class="ri">✨</span> लाभ</div>
+                                <ul class="benefit-list">
+                                    ${d.benefits.map(b => `<li>${b}</li>`).join('')}
+                                </ul>
+                            </div>
+
+                            <!-- महत्व -->
+                            <div class="day-section">
+                                <div class="day-section-title"><span class="ri">🌟</span> महत्व</div>
+                                <div class="highlight-box">${d.significance}</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleDay(day) {
+            const card = document.getElementById(`day-${day}`);
+            card.classList.toggle('open');
+            if (card.classList.contains('open')) {
+                setTimeout(() => {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 300);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderDays();
+        });
+
+        // Back to Top
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backTop');
+            if (btn) {
+                if (window.scrollY > 400) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Dark mode
+        const darkToggle = document.getElementById('darkToggle');
+        if (darkToggle) {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+                darkToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            }
+            darkToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                const icon = this.querySelector('i');
+                const isDark = document.body.classList.contains('dark-mode');
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+                localStorage.setItem('darkMode', isDark);
+            });
+        }
+    </script>
+</body>
+</html>
