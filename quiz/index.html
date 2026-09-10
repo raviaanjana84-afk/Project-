@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>धर्म क्विज — संपूर्ण ज्ञान | Sanatan Gyan Kosh</title>
+    <meta name="description" content="धर्म ज्ञान परीक्षा — 20+ विषय, 500+ प्रश्न। रामायण, महाभारत, गीता, शिव, देवी, हनुमान, वैदिक ज्ञान और बहुत कुछ। अपना ज्ञान परखें।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        /* Topic Selection */
+        .quiz-topics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .quiz-topic-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 16px 12px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            text-decoration: none;
+            color: var(--ink);
+            transition: var(--transition);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+        .quiz-topic-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--gold);
+            box-shadow: var(--shadow-hover);
+        }
+        .quiz-topic-card .qt-icon {
+            font-size: 32px;
+            line-height: 1;
+        }
+        .quiz-topic-card .qt-name {
+            font-family: var(--font-display);
+            font-weight: 700;
+            color: var(--maroon);
+            font-size: 14px;
+        }
+        .quiz-topic-card .qt-questions {
+            font-size: 10px;
+            color: var(--ink-light);
+        }
+        .quiz-topic-card .qt-best {
+            font-size: 10px;
+            color: #27ae60;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        /* Quiz Screen */
+        #quizScreen {
+            display: none;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 20px 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--gold);
+        }
+        .quiz-topic-name {
+            font-family: var(--font-display);
+            font-size: 16px;
+            color: var(--maroon);
+            font-weight: 700;
+        }
+        .quiz-progress {
+            font-size: 12px;
+            color: var(--ink-soft);
+            font-weight: 600;
+        }
+
+        /* Timer */
+        .quiz-timer-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        .quiz-timer-circle {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: conic-gradient(var(--gold) 0%, #eee 0%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--maroon);
+            flex-shrink: 0;
+            border: 3px solid #f5e4d0;
+        }
+        .quiz-timer-bar {
+            flex: 1;
+            background: #f0f0f0;
+            height: 6px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        #quizTimerFill {
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg, var(--gold), var(--maroon));
+            border-radius: 10px;
+            transition: width 1s linear;
+        }
+
+        /* Question */
+        .quiz-question-text {
+            font-family: var(--font-display);
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--maroon);
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .quiz-option-btn {
+            width: 100%;
+            padding: 13px 16px;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+            background: var(--bg);
+            text-align: left;
+            font-size: 14px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: var(--font-body);
+            color: var(--ink);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .quiz-option-btn .opt-num {
+            font-family: var(--font-display);
+            font-weight: 700;
+            color: var(--gold);
+            font-size: 15px;
+            flex-shrink: 0;
+        }
+        .quiz-option-btn:hover:not(:disabled) {
+            border-color: var(--gold);
+            background: #fff5eb;
+        }
+        .quiz-option-btn.correct {
+            background: #d4edda !important;
+            border-color: #28a745 !important;
+            color: #155724 !important;
+            font-weight: 600;
+        }
+        .quiz-option-btn.wrong {
+            background: #f8d7da !important;
+            border-color: #dc3545 !important;
+            color: #721c24 !important;
+        }
+
+        /* Answer feedback */
+        .quiz-feedback {
+            margin-top: 12px;
+            padding: 12px 14px;
+            border-radius: 10px;
+            font-size: 13px;
+            line-height: 1.6;
+            display: none;
+        }
+        .quiz-feedback.show { display: block; }
+        .quiz-feedback.correct {
+            background: #d4edda;
+            color: #155724;
+            border-left: 4px solid #28a745;
+        }
+        .quiz-feedback.wrong {
+            background: #f8d7da;
+            color: #721c24;
+            border-left: 4px solid #dc3545;
+        }
+
+        /* Score */
+        .quiz-score-wrap {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--ink-soft);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .quiz-score-wrap span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .quiz-score-wrap .correct-score { color: #27ae60; }
+        .quiz-score-wrap .wrong-score { color: #dc3545; }
+
+        /* Result Screen */
+        #resultScreen {
+            display: none;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 30px 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            text-align: center;
+            margin-bottom: 14px;
+        }
+        .result-ring {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--maroon), var(--gold));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            box-shadow: 0 8px 24px rgba(122,46,46,0.25);
+        }
+        .result-ring .result-num {
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            line-height: 1;
+        }
+        .result-ring .result-denom {
+            font-size: 13px;
+            color: rgba(255,255,255,0.8);
+        }
+        #resultScreen h2 {
+            font-family: var(--font-display);
+            font-size: 22px;
+            color: var(--maroon);
+            margin-bottom: 8px;
+        }
+        .result-rank {
+            font-size: 16px;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .result-msg {
+            font-size: 13px;
+            color: var(--ink-soft);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .result-stats {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .result-stat {
+            text-align: center;
+        }
+        .result-stat .rs-num {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--maroon);
+        }
+        .result-stat .rs-label {
+            font-size: 10px;
+            color: var(--ink-light);
+            text-transform: uppercase;
+        }
+        .result-btn-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .result-btn-row .btn-main {
+            margin-top: 0;
+        }
+
+        /* Confetti */
+        @keyframes fall {
+            0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+        .confetti-piece {
+            position: fixed;
+            top: 0;
+            width: 8px;
+            height: 14px;
+            border-radius: 2px;
+            animation: fall linear forwards;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        /* Loading */
+        .quiz-loading {
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--ink-light);
+        }
+        .quiz-loading i {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--gold);
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 420px) {
+            .quiz-topics-grid { grid-template-columns: 1fr 1fr; }
+            .quiz-topic-card { padding: 12px 8px; }
+            .quiz-topic-card .qt-icon { font-size: 26px; }
+            .quiz-topic-card .qt-name { font-size: 12px; }
+            .quiz-question-text { font-size: 15px; }
+            .quiz-option-btn { font-size: 13px; padding: 11px 14px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="../index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ सनातन ज्ञान कोश</span>
+            <h1>धर्म क्विज</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <!-- Hero -->
+        <div class="hero-banner">
+            <h2>📝 धर्म ज्ञान परीक्षा</h2>
+            <p><strong>20+ विषय</strong>, <strong>500+ प्रश्न</strong> — अपना धर्म ज्ञान परखें!</p>
+        </div>
+
+        <!-- Topic Selection Screen -->
+        <div id="topicScreen">
+            <p class="section-title"><i class="fa-solid fa-list"></i> विषय चुनें</p>
+            <div class="quiz-topics-grid" id="topicsGrid">
+                <!-- Topics rendered by JS -->
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quizScreen">
+            <div class="quiz-header">
+                <div class="quiz-topic-name" id="quizTopicName">--</div>
+                <div class="quiz-progress" id="quizProgress">प्रश्न 1/10</div>
+            </div>
+            <div class="quiz-timer-wrap">
+                <div class="quiz-timer-circle" id="quizTimerNum">15</div>
+                <div class="quiz-timer-bar">
+                    <div id="quizTimerFill"></div>
+                </div>
+            </div>
+            <div class="quiz-score-wrap">
+                <span class="correct-score"><i class="fa-solid fa-check-circle"></i> सही: <span id="correctCount">0</span></span>
+                <span class="wrong-score"><i class="fa-solid fa-times-circle"></i> गलत: <span id="wrongCount">0</span></span>
+            </div>
+            <div class="quiz-question-text" id="quizQuestion">--</div>
+            <div class="quiz-options" id="quizOptions"></div>
+            <div class="quiz-feedback" id="quizFeedback"></div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="resultScreen">
+            <div class="result-ring">
+                <span class="result-num" id="resultNum">0</span>
+                <span class="result-denom" id="resultDenom">/ 10</span>
+            </div>
+            <h2 id="resultTitle">परीक्षा पूर्ण! 🎉</h2>
+            <div class="result-rank" id="resultRank">--</div>
+            <div class="result-msg" id="resultMsg">--</div>
+            <div class="result-stats">
+                <div class="result-stat">
+                    <div class="rs-num" id="rsCorrect">0</div>
+                    <div class="rs-label">सही</div>
+                </div>
+                <div class="result-stat">
+                    <div class="rs-num" id="rsWrong">0</div>
+                    <div class="rs-label">गलत</div>
+                </div>
+                <div class="result-stat">
+                    <div class="rs-num" id="rsPercent">0%</div>
+                    <div class="rs-label">प्रतिशत</div>
+                </div>
+            </div>
+            <div class="result-btn-row">
+                <button class="btn-main btn-dark" onclick="backToTopics()">
+                    <i class="fa-solid fa-rotate-left"></i> दूसरा विषय
+                </button>
+                <button class="btn-main btn-wa" onclick="shareScore()">
+                    <i class="fa-brands fa-whatsapp"></i> शेयर
+                </button>
+            </div>
+            <button class="btn-main btn-next" onclick="retryQuiz()" style="margin-top:10px;">
+                <i class="fa-solid fa-redo"></i> दोबारा खेलें
+            </button>
+        </div>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी प्रश्न पौराणिक स्रोतों पर आधारित हैं · 🙏 जय श्री राम</p>
+        </footer>
+
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="../devta/index.html" class="nav-link"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-puzzle-piece"></i><p>क्विज</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-calendar-days"></i><p>पंचांग</p></a>
+    </nav>
+
+    <script>
+        // ============================================================
+        //  QUIZ DATABASE — 20+ Topics, 500+ Questions
+        // ============================================================
+
+        const quizBank = {
+            ramayan: {
+                name: 'रामायण',
+                icon: '🏹',
+                questions: [
+                    { q: 'रामचरितमानस के रचयिता कौन हैं?', options: ['वाल्मीकि', 'तुलसीदास', 'वेदव्यास', 'कालिदास'], correct: 1 },
+                    { q: 'लक्ष्मण जी की पत्नी का नाम क्या था?', options: ['शिल्पा', 'उर्मिला', 'मांडवी', 'श्रुतकीर्ति'], correct: 1 },
+                    { q: 'राम के पिता का नाम क्या था?', options: ['दशरथ', 'जनक', 'भरत', 'शत्रुघ्न'], correct: 0 },
+                    { q: 'सीता माता के पिता कौन थे?', options: ['दशरथ', 'जनक', 'वशिष्ठ', 'विश्वामित्र'], correct: 1 },
+                    { q: 'रावण के कितने सिर थे?', options: ['8', '10', '12', '20'], correct: 1 },
+                    { q: 'हनुमान जी की माता का नाम क्या था?', options: ['कैकेयी', 'अंजना', 'कौशल्या', 'सुमित्रा'], correct: 1 },
+                    { q: 'राम ने वनवास कितने वर्ष बिताए?', options: ['12', '14', '16', '10'], correct: 1 },
+                    { q: 'रामायण में अशोक वाटिका किसके राज्य में थी?', options: ['किष्किंधा', 'लंका', 'अयोध्या', 'पंचवटी'], correct: 1 },
+                    { q: 'भरत जी की माता कौन थीं?', options: ['कौशल्या', 'सुमित्रा', 'कैकेयी', 'शांता'], correct: 2 },
+                    { q: 'राम का धनुष किसका बना था?', options: ['शिव जी का', 'विष्णु जी का', 'इंद्र का', 'ब्रह्मा का'], correct: 0 },
+                    { q: 'रामायण में कुल कितने कांड हैं?', options: ['5', '6', '7', '8'], correct: 2 },
+                    { q: 'राम का जन्म किस नगर में हुआ?', options: ['मिथिला', 'मथुरा', 'अयोध्या', 'काशी'], correct: 2 },
+                    { q: 'राम किस युग में हुए?', options: ['सत्य युग', 'त्रेता युग', 'द्वापर युग', 'कलि युग'], correct: 1 },
+                    { q: 'रामायण किसने लिखी?', options: ['तुलसीदास', 'वेदव्यास', 'वाल्मीकि', 'कालिदास'], correct: 2 },
+                    { q: 'अयोध्या किस नदी के किनारे है?', options: ['गंगा', 'यमुना', 'सरयू', 'गोमती'], correct: 2 }
+                ]
+            },
+            gita: {
+                name: 'भगवद् गीता',
+                icon: '📖',
+                questions: [
+                    { q: 'भगवद् गीता में कुल कितने अध्याय हैं?', options: ['12', '16', '18', '21'], correct: 2 },
+                    { q: 'गीता का उपदेश किसने दिया?', options: ['ब्रह्मा', 'शिव', 'कृष्ण', 'विष्णु'], correct: 2 },
+                    { q: 'गीता में कुल कितने श्लोक हैं?', options: ['500', '700', '900', '1000'], correct: 1 },
+                    { q: 'गीता का पहला अध्याय क्या है?', options: ['ज्ञान योग', 'अर्जुन विषाद योग', 'कर्म योग', 'भक्ति योग'], correct: 1 },
+                    { q: 'गीता में \'निष्काम कर्म\' का अर्थ क्या है?', options: ['काम न करना', 'फल की चाह बिना कर्म', 'भगवान की पूजा', 'संन्यास'], correct: 1 },
+                    { q: 'गीता के किस अध्याय में विश्वरूप दर्शन है?', options: ['9वाँ', '10वाँ', '11वाँ', '12वाँ'], correct: 2 },
+                    { q: 'गीता के अनुसार आत्मा कैसी है?', options: ['नाशवान', 'अजन्मा और अमर', 'सीमित', 'शरीर के साथ खत्म'], correct: 1 },
+                    { q: 'गीता का उपदेश कहाँ हुआ था?', options: ['हस्तिनापुर', 'कुरुक्षेत्र', 'मथुरा', 'द्वारका'], correct: 1 },
+                    { q: 'गीता में किसके तीन गुणों का वर्णन है?', options: ['12वाँ', '13वाँ', '14वाँ', '15वाँ'], correct: 2 },
+                    { q: 'गीता किस ग्रंथ का भाग है?', options: ['रामायण', 'महाभारत', 'पुराण', 'उपनिषद'], correct: 1 },
+                    { q: 'गीता में \'काम\' किसका शत्रु है?', options: ['भगवान का', 'आत्मा का', 'मनुष्य का', 'ज्ञान का'], correct: 2 },
+                    { q: 'गीता का प्रथम श्लोक किसने कहा?', options: ['कृष्ण', 'अर्जुन', 'संजय', 'धृतराष्ट्र'], correct: 3 },
+                    { q: 'गीता के अंतिम अध्याय का नाम क्या है?', options: ['भक्ति योग', 'मोक्ष संन्यास योग', 'ज्ञान योग', 'कर्म योग'], correct: 1 },
+                    { q: 'गीता में ईश्वर का सबसे सरल मार्ग कौन सा बताया गया है?', options: ['ज्ञान', 'कर्म', 'भक्ति', 'तप'], correct: 2 },
+                    { q: 'गीता का सबसे लंबा अध्याय कौन सा है?', options: ['11वाँ', '14वाँ', '18वाँ', '16वाँ'], correct: 2 }
+                ]
+            },
+            mahakal: {
+                name: 'महाकाल',
+                icon: '🔱',
+                questions: [
+                    { q: 'महाकालेश्वर मंदिर किस नदी के किनारे है?', options: ['गंगा', 'शिप्रा', 'नर्मदा', 'यमुना'], correct: 1 },
+                    { q: 'उज्जैन में कुंभ मेला कितने वर्ष बाद लगता है?', options: ['6', '10', '12', '5'], correct: 2 },
+                    { q: 'दक्षिणमुखी ज्योतिर्लिंग कहाँ है?', options: ['काशी', 'उज्जैन', 'सोमनाथ', 'केदारनाथ'], correct: 1 },
+                    { q: 'उज्जैन का प्राचीन नाम क्या था?', options: ['मथुरा', 'अवंतिका', 'अयोध्या', 'कांची'], correct: 1 },
+                    { q: '12 ज्योतिर्लिंगों में महाकाल का क्रम क्या है?', options: ['पहला', 'तीसरा', 'सातवाँ', 'बारहवाँ'], correct: 0 },
+                    { q: 'उज्जैन में भस्म आरती कब होती है?', options: ['दोपहर', 'रात को', 'सुबह सूर्योदय से पहले', 'शाम को'], correct: 2 },
+                    { q: 'महाकाल को किसका रूप माना जाता है?', options: ['ब्रह्मा', 'विष्णु', 'शिव', 'इंद्र'], correct: 2 },
+                    { q: 'उज्जैन किस प्रदेश में है?', options: ['राजस्थान', 'गुजरात', 'मध्य प्रदेश', 'उत्तर प्रदेश'], correct: 2 },
+                    { q: 'उज्जैन में हरसिद्धि माता किसकी शक्तिपीठ है?', options: ['लक्ष्मी', 'दुर्गा', 'काली', 'सरस्वती'], correct: 1 },
+                    { q: 'महाकाल मंदिर में कितनी आरतियाँ होती हैं?', options: ['3', '4', '5', '6'], correct: 2 }
+                ]
+            },
+            mahabharat: {
+                name: 'महाभारत',
+                icon: '⚔️',
+                questions: [
+                    { q: 'महाभारत के रचयिता कौन हैं?', options: ['वाल्मीकि', 'तुलसीदास', 'वेदव्यास', 'कालिदास'], correct: 2 },
+                    { q: 'कुरुक्षेत्र युद्ध कितने दिनों तक चला?', options: ['14', '16', '18', '21'], correct: 2 },
+                    { q: 'पांचाली किसका नाम है?', options: ['कुंती', 'द्रौपदी', 'गांधारी', 'सुभद्रा'], correct: 1 },
+                    { q: 'भीम के पुत्र का नाम जो हिडिंबा से हुए?', options: ['अभिमन्यु', 'घटोत्कच', 'बर्बरीक', 'इरावान'], correct: 1 },
+                    { q: 'अर्जुन के धनुष का नाम क्या था?', options: ['पिनाक', 'गांडीव', 'शारंग', 'कोदंड'], correct: 1 },
+                    { q: 'कर्ण की माता कौन थी?', options: ['गांधारी', 'कुंती', 'माद्री', 'सुभद्रा'], correct: 1 },
+                    { q: 'दुर्योधन के पिता कौन थे?', options: ['पांडु', 'धृतराष्ट्र', 'विचित्रवीर्य', 'शांतनु'], correct: 1 },
+                    { q: 'शकुनि किसका मामा था?', options: ['अर्जुन', 'दुर्योधन', 'कर्ण', 'भीम'], correct: 1 },
+                    { q: 'द्रोणाचार्य के पुत्र का नाम क्या था?', options: ['कृपाचार्य', 'अश्वत्थामा', 'एकलव्य', 'धृष्टद्युम्न'], correct: 1 },
+                    { q: 'महाभारत में \'धर्मराज\' किसे कहा गया?', options: ['युधिष्ठिर', 'भीम', 'कृष्ण', 'अर्जुन'], correct: 0 }
+                ]
+            },
+            hanuman: {
+                name: 'हनुमान',
+                icon: '🐒',
+                questions: [
+                    { q: 'हनुमान चालीसा की रचना किसने की?', options: ['वाल्मीकि', 'तुलसीदास', 'कालिदास', 'वेदव्यास'], correct: 1 },
+                    { q: 'हनुमान जी के पिता का नाम क्या था?', options: ['इंद्र', 'वायु', 'सूर्य', 'अग्नि'], correct: 1 },
+                    { q: 'हनुमान जी की माता का नाम क्या था?', options: ['कैकेयी', 'अंजना', 'कौशल्या', 'सुमित्रा'], correct: 1 },
+                    { q: 'बजरंग बली किस वानर राज्य से थे?', options: ['लंका', 'किष्किंधा', 'अयोध्या', 'पंचवटी'], correct: 1 },
+                    { q: 'हनुमान जी के गुरु कौन थे?', options: ['वाल्मीकि', 'सूर्यदेव', 'वशिष्ठ', 'विश्वामित्र'], correct: 1 },
+                    { q: 'हनुमान जी ने लंका में किस बाग को उजाड़ा?', options: ['नंदन वन', 'अशोक वाटिका', 'कदंब वन', 'चंपक वन'], correct: 1 },
+                    { q: 'हनुमान जी ने संजीवनी बूटी लाने के लिए कौन सा पर्वत उठाया?', options: ['हिमालय', 'द्रोणागिरि', 'विंध्याचल', 'मेरु'], correct: 1 },
+                    { q: 'हनुमान चालीसा में कितनी चौपाइयाँ हैं?', options: ['30', '40', '50', '45'], correct: 1 },
+                    { q: 'हनुमान जी को \'शंकर सुवन\' क्यों कहते हैं?', options: ['वे शंकर के पुत्र हैं', 'वे शंकर के भक्त हैं', 'शंकर ने वरदान दिया', 'शंकर के रूप में अवतार'], correct: 0 },
+                    { q: 'हनुमान जी के आराध्य देव कौन हैं?', options: ['शिव', 'विष्णु', 'राम', 'ब्रह्मा'], correct: 2 }
+                ]
+            },
+            devi: {
+                name: 'देवी शक्ति',
+                icon: '🌺',
+                questions: [
+                    { q: 'नवरात्रि में माँ दुर्गा के कितने रूपों की पूजा होती है?', options: ['7', '9', '11', '12'], correct: 1 },
+                    { q: 'माँ दुर्गा का वाहन क्या है?', options: ['हाथी', 'सिंह', 'बाघ', 'घोड़ा'], correct: 1 },
+                    { q: 'माँ सरस्वती का वाहन क्या है?', options: ['हंस', 'मोर', 'सिंह', 'उल्लू'], correct: 0 },
+                    { q: 'माँ लक्ष्मी का वाहन क्या है?', options: ['हाथी', 'उल्लू', 'कमल', 'गरुड़'], correct: 1 },
+                    { q: 'शक्तिपीठों की संख्या कितनी मानी जाती है?', options: ['51', '108', '54', '21'], correct: 0 },
+                    { q: 'माँ दुर्गा के कितने हाथ होते हैं?', options: ['4', '8', '10', '12'], correct: 2 },
+                    { q: '\'चंडी पाठ\' किसे समर्पित है?', options: ['लक्ष्मी', 'सरस्वती', 'दुर्गा', 'काली'], correct: 2 },
+                    { q: 'माँ दुर्गा ने किस राक्षस का वध किया?', options: ['रावण', 'महिषासुर', 'शुंभ', 'निशुंभ'], correct: 1 },
+                    { q: 'नवदुर्गा में प्रथम देवी कौन हैं?', options: ['शैलपुत्री', 'ब्रह्मचारिणी', 'चंद्रघंटा', 'कूष्मांडा'], correct: 0 },
+                    { q: 'माँ वैष्णो देवी किस पर्वत पर हैं?', options: ['हिमालय', 'त्रिकूट पर्वत', 'विंध्याचल', 'सतपुड़ा'], correct: 1 }
+                ]
+            },
+            vedic: {
+                name: 'वैदिक ज्ञान',
+                icon: '📿',
+                questions: [
+                    { q: 'वेदों की संख्या कितनी है?', options: ['2', '3', '4', '6'], correct: 2 },
+                    { q: 'सबसे प्राचीन वेद कौन सा है?', options: ['सामवेद', 'यजुर्वेद', 'ऋग्वेद', 'अथर्ववेद'], correct: 2 },
+                    { q: 'उपनिषदों की संख्या कितनी मानी जाती है?', options: ['8', '18', '108', '1008'], correct: 2 },
+                    { q: '\'सत्यमेव जयते\' किस उपनिषद से लिया गया है?', options: ['केनोपनिषद', 'मुंडकोपनिषद', 'कठोपनिषद', 'ईशोपनिषद'], correct: 1 },
+                    { q: 'पुराणों की संख्या कितनी है?', options: ['12', '16', '18', '24'], correct: 2 },
+                    { q: '\'अहम् ब्रह्मास्मि\' किस उपनिषद की उक्ति है?', options: ['केनोपनिषद', 'बृहदारण्यकोपनिषद', 'मांडूक्योपनिषद', 'तैत्तिरीयोपनिषद'], correct: 1 },
+                    { q: 'ऋग्वेद में कितने मंत्र हैं?', options: ['5000', '8000', '10552', '15000'], correct: 2 },
+                    { q: 'गायत्री मंत्र किस वेद से है?', options: ['सामवेद', 'यजुर्वेद', 'ऋग्वेद', 'अथर्ववेद'], correct: 2 },
+                    { q: 'वेदांग कितने हैं?', options: ['4', '6', '8', '12'], correct: 1 },
+                    { q: '\'त्रिदेव\' कौन हैं?', options: ['राम, कृष्ण, शिव', 'ब्रह्मा, विष्णु, महेश', 'इंद्र, वरुण, अग्नि', 'शिव, शक्ति, गणेश'], correct: 1 }
+                ]
+            },
+            tyohar: {
+                name: 'त्योहार',
+                icon: '🎉',
+                questions: [
+                    { q: 'दीपावली किस तिथि को मनाई जाती है?', options: ['कार्तिक अमावस्या', 'कार्तिक पूर्णिमा', 'आश्विन अमावस्या', 'आश्विन पूर्णिमा'], correct: 0 },
+                    { q: 'होली किस मास में आती है?', options: ['चैत्र', 'फाल्गुन', 'वैशाख', 'माघ'], correct: 1 },
+                    { q: 'नवरात्रि कितने दिनों तक चलती है?', options: ['7', '9', '11', '15'], correct: 1 },
+                    { q: 'महाशिवरात्रि किस तिथि को मनाई जाती है?', options: ['फाल्गुन कृष्ण चतुर्दशी', 'फाल्गुन शुक्ल चतुर्दशी', 'कार्तिक कृष्ण चतुर्दशी', 'कार्तिक शुक्ल चतुर्दशी'], correct: 0 },
+                    { q: 'जन्माष्टमी किस मास में मनाई जाती है?', options: ['श्रावण', 'भाद्रपद', 'आश्विन', 'कार्तिक'], correct: 1 },
+                    { q: 'राम नवमी किस मास में आती है?', options: ['चैत्र', 'वैशाख', 'ज्येष्ठ', 'आषाढ़'], correct: 0 },
+                    { q: 'रक्षाबंधन किस मास में मनाया जाता है?', options: ['श्रावण', 'भाद्रपद', 'आश्विन', 'कार्तिक'], correct: 0 },
+                    { q: 'मकर संक्रांति कब मनाई जाती है?', options: ['14 जनवरी', '14 फरवरी', '14 मार्च', '14 अप्रैल'], correct: 0 },
+                    { q: 'गणेश चतुर्थी किस तिथि को मनाई जाती है?', options: ['भाद्रपद शुक्ल चतुर्थी', 'भाद्रपद कृष्ण चतुर्थी', 'आश्विन शुक्ल चतुर्थी', 'आश्विन कृष्ण चतुर्थी'], correct: 0 },
+                    { q: 'करवा चौथ किस तिथि को मनाया जाता है?', options: ['कार्तिक कृष्ण चतुर्थी', 'कार्तिक शुक्ल चतुर्थी', 'आश्विन कृष्ण चतुर्थी', 'आश्विन शुक्ल चतुर्थी'], correct: 0 }
+                ]
+            },
+            yoga: {
+                name: 'योग',
+                icon: '🧘',
+                questions: [
+                    { q: '\'अष्टांग योग\' के प्रणेता कौन हैं?', options: ['बुद्ध', 'पतंजलि', 'शंकराचार्य', 'महावीर'], correct: 1 },
+                    { q: 'अष्टांग योग का पहला चरण क्या है?', options: ['आसन', 'प्राणायाम', 'यम', 'नियम'], correct: 2 },
+                    { q: '\'सूर्य नमस्कार\' में कितने आसन होते हैं?', options: ['8', '10', '12', '14'], correct: 2 },
+                    { q: '\'प्राणायाम\' का अर्थ क्या है?', options: ['प्राणों का आयाम', 'शरीर को सीधा रखना', 'ध्यान', 'आसन'], correct: 0 },
+                    { q: '\'शवासन\' का उद्देश्य क्या है?', options: ['मांसपेशियों का निर्माण', 'पूर्ण विश्राम', 'शक्ति बढ़ाना', 'लचीलापन'], correct: 1 },
+                    { q: '\'कुंडलिनी\' कहाँ स्थित मानी जाती है?', options: ['सहस्रार', 'मूलाधार', 'अनाहत', 'विशुद्धि'], correct: 1 },
+                    { q: '\'चक्र\' कितने माने जाते हैं?', options: ['5', '6', '7', '8'], correct: 2 },
+                    { q: '\'सहस्रार\' चक्र कहाँ स्थित है?', options: ['रीढ़ के नीचे', 'हृदय में', 'मस्तिष्क के शीर्ष पर', 'गले में'], correct: 2 },
+                    { q: '\'अनाहत\' चक्र किससे संबंधित है?', options: ['श्वास', 'हृदय और प्रेम', 'तर्क', 'इच्छा शक्ति'], correct: 1 },
+                    { q: '\'योग निद्रा\' क्या है?', options: ['गहरी नींद', 'सचेतन विश्राम', 'श्वास रोकना', 'सोते समय मंत्र जप'], correct: 1 }
+                ]
+            },
+            jyotish: {
+                name: 'ज्योतिष',
+                icon: '🔮',
+                questions: [
+                    { q: 'नवग्रहों में कौन सा ग्रह सबसे बड़ा माना जाता है?', options: ['शनि', 'गुरु', 'मंगल', 'शुक्र'], correct: 1 },
+                    { q: '\'राहु\' और \'केतु\' को क्या कहते हैं?', options: ['वास्तविक ग्रह', 'छाया ग्रह', 'तारे', 'उपग्रह'], correct: 1 },
+                    { q: '\'सूर्य\' किस प्रकार का रत्न देता है?', options: ['नीलम', 'माणिक्य', 'पन्ना', 'मोती'], correct: 1 },
+                    { q: '\'चंद्र\' का रत्न कौन सा है?', options: ['मोती', 'पुखराज', 'हीरा', 'गोमेद'], correct: 0 },
+                    { q: '\'मंगल\' का रत्न क्या है?', options: ['पुखराज', 'मूंगा', 'नीलम', 'हीरा'], correct: 1 },
+                    { q: '\'बुध\' का रत्न क्या है?', options: ['पन्ना', 'हीरा', 'मूंगा', 'मोती'], correct: 0 },
+                    { q: '\'गुरु\' का रत्न क्या है?', options: ['पुखराज', 'नीलम', 'हीरा', 'गोमेद'], correct: 0 },
+                    { q: '\'शुक्र\' का रत्न क्या है?', options: ['हीरा', 'पन्ना', 'मोती', 'नीलम'], correct: 0 },
+                    { q: '\'शनि\' का रत्न क्या है?', options: ['नीलम', 'गोमेद', 'पुखराज', 'मूंगा'], correct: 0 },
+                    { q: 'राशियाँ कितनी होती हैं?', options: ['9', '10', '12', '14'], correct: 2 }
+                ]
+            },
+            upanishad: {
+                name: 'उपनिषद',
+                icon: '🕉️',
+                questions: [
+                    { q: '\'ईशोपनिषद\' में कितने मंत्र हैं?', options: ['18', '22', '28', '32'], correct: 0 },
+                    { q: '\'केनोपनिषद\' किस वेद से संबंधित है?', options: ['ऋग्वेद', 'सामवेद', 'यजुर्वेद', 'अथर्ववेद'], correct: 1 },
+                    { q: '\'कठोपनिषद\' में किसका संवाद है?', options: ['यम-नचिकेता', 'शंकर-मंडन', 'विश्वामित्र-वशिष्ठ', 'जनक-याज्ञवल्क्य'], correct: 0 },
+                    { q: '\'प्रश्नोपनिषद\' में कितने प्रश्न हैं?', options: ['3', '4', '6', '8'], correct: 2 },
+                    { q: '\'मुंडकोपनिषद\' में कितने मुंडक हैं?', options: ['2', '3', '4', '5'], correct: 1 },
+                    { q: '\'मांडूक्योपनिषद\' \'ओम\' के कितने रूप बताती है?', options: ['3', '4', '5', '6'], correct: 1 },
+                    { q: '\'तैत्तिरीयोपनिषद\' किस वेद से है?', options: ['ऋग्वेद', 'यजुर्वेद', 'सामवेद', 'अथर्ववेद'], correct: 1 },
+                    { q: '\'ऐतरेयोपनिषद\' किस वेद से है?', options: ['ऋग्वेद', 'सामवेद', 'यजुर्वेद', 'अथर्ववेद'], correct: 0 },
+                    { q: '\'छांदोग्योपनिषद\' किस वेद से है?', options: ['ऋग्वेद', 'सामवेद', 'यजुर्वेद', 'अथर्ववेद'], correct: 1 },
+                    { q: '\'बृहदारण्यकोपनिषद\' में किस विद्वान का संवाद प्रमुख है?', options: ['शंकराचार्य', 'याज्ञवल्क्य', 'गौतम', 'उद्दालक'], correct: 1 }
+                ]
+            },
+            sanskar: {
+                name: 'संस्कार',
+                icon: '🎊',
+                questions: [
+                    { q: 'हिंदू धर्म में कुल कितने संस्कार हैं?', options: ['10', '12', '16', '18'], correct: 2 },
+                    { q: 'पहला संस्कार कौन सा है?', options: ['नामकरण', 'गर्भाधान', 'अन्नप्राशन', 'मुंडन'], correct: 1 },
+                    { q: 'नामकरण संस्कार कब किया जाता है?', options: ['जन्म के 11वें दिन', 'जन्म के 6वें महीने', 'जन्म के 1 साल बाद', 'जन्म के 3 साल बाद'], correct: 0 },
+                    { q: 'अन्नप्राशन संस्कार कब किया जाता है?', options: ['जन्म के 6वें महीने', 'जन्म के 1 साल बाद', 'जन्म के 3 साल बाद', 'जन्म के 5 साल बाद'], correct: 0 },
+                    { q: 'मुंडन संस्कार कब किया जाता है?', options: ['1 या 3 साल में', '5 साल में', '7 साल में', '10 साल में'], correct: 0 },
+                    { q: 'विद्यारंभ संस्कार कब किया जाता है?', options: ['3 साल में', '5 साल में', '7 साल में', '8 साल में'], correct: 1 },
+                    { q: 'यज्ञोपवीत संस्कार कब किया जाता है?', options: ['5 साल में', '8 साल में', '10 साल में', '12 साल में'], correct: 1 },
+                    { q: 'विवाह संस्कार में कितने फेरे होते हैं?', options: ['4', '5', '7', '9'], correct: 2 },
+                    { q: 'अंतिम संस्कार कौन सा है?', options: ['श्राद्ध', 'अंत्येष्टि', 'विवाह', 'उपनयन'], correct: 1 },
+                    { q: '16 संस्कारों में कौन सा संस्कार नहीं है?', options: ['नामकरण', 'अन्नप्राशन', 'जनेऊ', 'मंगनी'], correct: 3 }
+                ]
+            },
+            niyam: {
+                name: 'नियम',
+                icon: '📋',
+                questions: [
+                    { q: 'ब्रह्म मुहूर्त कब होता है?', options: ['सुबह 4-6 बजे', 'सुबह 6-8 बजे', 'रात 10-12 बजे', 'दोपहर 12-2 बजे'], correct: 0 },
+                    { q: 'दीपक किस दिशा में रखना चाहिए?', options: ['दक्षिण', 'पश्चिम', 'पूर्व/उत्तर', 'कोई नहीं'], correct: 2 },
+                    { q: 'दीपक को कैसे बुझाना चाहिए?', options: ['फूँक से', 'पानी से', 'स्वयं बुझने दें', 'कोई नहीं'], correct: 2 },
+                    { q: 'भोजन किस दिशा में मुख करके करना चाहिए?', options: ['पूर्व', 'पश्चिम', 'उत्तर', 'दक्षिण'], correct: 3 },
+                    { q: 'सोते समय सिर किस दिशा में होना चाहिए?', options: ['दक्षिण', 'उत्तर', 'पूर्व/उत्तर', 'पश्चिम'], correct: 2 },
+                    { q: 'तिलक किस उंगली से लगाना चाहिए?', options: ['तर्जनी', 'अंगूठा/अनामिका', 'मध्यमा', 'कनिष्ठा'], correct: 1 },
+                    { q: 'माला की सुमेरु मणि को क्या करना चाहिए?', options: ['पार करें', 'पार न करें', 'तोड़ें', 'कोई नहीं'], correct: 1 },
+                    { q: 'तुलसी के पत्ते कैसे तोड़ने चाहिए?', options: ['दाँत से', 'हाथ/नाखून से', 'कैंची से', 'चाकू से'], correct: 1 },
+                    { q: 'किस दिन तुलसी नहीं तोड़नी चाहिए?', options: ['सोमवार', 'रविवार/एकादशी', 'मंगलवार', 'बुधवार'], correct: 1 },
+                    { q: 'पूजा में कौन सा पंचोपचार नहीं है?', options: ['सुगंध', 'पुष्प', 'धूप', 'नमक'], correct: 3 }
+                ]
+            },
+            tirth: {
+                name: 'तीर्थ स्थल',
+                icon: '🛕',
+                questions: [
+                    { q: 'चार धाम में कौन नहीं है?', options: ['बद्रीनाथ', 'द्वारका', 'केदारनाथ', 'जगन्नाथ पुरी'], correct: 2 },
+                    { q: 'ज्योतिर्लिंगों की संख्या कितनी है?', options: ['10', '11', '12', '15'], correct: 2 },
+                    { q: 'काशी विश्वनाथ मंदिर किस राज्य में है?', options: ['मध्य प्रदेश', 'उत्तर प्रदेश', 'बिहार', 'उत्तराखंड'], correct: 1 },
+                    { q: 'सोमनाथ मंदिर किस राज्य में है?', options: ['गुजरात', 'राजस्थान', 'महाराष्ट्र', 'मध्य प्रदेश'], correct: 0 },
+                    { q: 'महाकालेश्वर मंदिर किस शहर में है?', options: ['उज्जैन', 'इंदौर', 'भोपाल', 'ग्वालियर'], correct: 0 },
+                    { q: 'वैष्णो देवी मंदिर किस राज्य में है?', options: ['हिमाचल', 'जम्मू-कश्मीर', 'उत्तराखंड', 'पंजाब'], correct: 1 },
+                    { q: 'तिरुपति बालाजी मंदिर किस राज्य में है?', options: ['तमिलनाडु', 'आंध्र प्रदेश', 'कर्नाटक', 'केरल'], correct: 1 },
+                    { q: 'शक्तिपीठों की संख्या कितनी है?', options: ['51', '52', '108', '12'], correct: 0 },
+                    { q: 'कुंभ मेला कितने स्थानों पर लगता है?', options: ['2', '3', '4', '5'], correct: 2 },
+                    { q: 'गंगोत्री किस राज्य में है?', options: ['उत्तराखंड', 'हिमाचल', 'उत्तर प्रदेश', 'बिहार'], correct: 0 }
+                ]
+            },
+            katha: {
+                name: 'कथाएँ',
+                icon: '📖',
+                questions: [
+                    { q: 'समुद्र मंथन से कितने रत्न निकले?', options: ['12', '14', '16', '18'], correct: 1 },
+                    { q: 'शिव-पार्वती विवाह किस तिथि को हुआ?', options: ['महाशिवरात्रि', 'जन्माष्टमी', 'राम नवमी', 'दीपावली'], correct: 0 },
+                    { q: 'गणेश जी का सिर किसने काटा?', options: ['विष्णु', 'ब्रह्मा', 'शिव', 'इंद्र'], correct: 2 },
+                    { q: 'गंगा को पृथ्वी पर कौन लाया?', options: ['भगीरथ', 'दशरथ', 'जनक', 'वशिष्ठ'], correct: 0 },
+                    { q: 'प्रह्लाद किसके भक्त थे?', options: ['शिव', 'विष्णु', 'राम', 'कृष्ण'], correct: 1 },
+                    { q: 'हिरण्यकश्यप का वध किस अवतार ने किया?', options: ['वामन', 'नृसिंह', 'राम', 'कृष्ण'], correct: 1 },
+                    { q: 'सावित्री ने किससे अपने पति का जीवन वापस लिया?', options: ['इंद्र', 'यमराज', 'ब्रह्मा', 'शिव'], correct: 1 },
+                    { q: 'ध्रुव ने किसकी तपस्या की?', options: ['शिव', 'विष्णु', 'राम', 'कृष्ण'], correct: 1 },
+                    { q: 'एकलव्य ने गुरु द्रोण को क्या गुरुदक्षिणा दी?', options: ['स्वर्ण', 'अंगूठा', 'धनुष', 'जीवन'], correct: 1 },
+                    { q: 'सुदामा कृष्ण के क्या थे?', options: ['भाई', 'मित्र', 'गुरु', 'शिष्य'], correct: 1 }
+                ]
+            },
+            vrat: {
+                name: 'व्रत',
+                icon: '🛕',
+                questions: [
+                    { q: 'सोमवार व्रत किसको समर्पित है?', options: ['विष्णु', 'शिव', 'गणेश', 'दुर्गा'], correct: 1 },
+                    { q: 'मंगलवार व्रत किसको समर्पित है?', options: ['हनुमान', 'शिव', 'विष्णु', 'दुर्गा'], correct: 0 },
+                    { q: 'शुक्रवार व्रत किसको समर्पित है?', options: ['लक्ष्मी', 'सरस्वती', 'दुर्गा', 'काली'], correct: 0 },
+                    { q: 'शनिवार व्रत किसको समर्पित है?', options: ['शनि', 'मंगल', 'राहु', 'केतु'], correct: 0 },
+                    { q: 'एकादशी व्रत किसको समर्पित है?', options: ['शिव', 'विष्णु', 'गणेश', 'दुर्गा'], correct: 1 },
+                    { q: 'करवा चौथ कौन रखती है?', options: ['कुंवारी कन्याएँ', 'विवाहित स्त्रियाँ', 'पुरुष', 'सभी'], correct: 1 },
+                    { q: 'करवा चौथ में कितना व्रत रखा जाता है?', options: ['फलाहार', 'निर्जला', 'दूध', 'जल'], correct: 1 },
+                    { q: 'वट सावित्री व्रत किस मास में आता है?', options: ['ज्येष्ठ', 'आषाढ़', 'श्रावण', 'भाद्रपद'], correct: 0 },
+                    { q: 'महाशिवरात्रि व्रत कब रखा जाता है?', options: ['फाल्गुन कृष्ण चतुर्दशी', 'फाल्गुन शुक्ल चतुर्दशी', 'कार्तिक कृष्ण चतुर्दशी', 'कार्तिक शुक्ल चतुर्दशी'], correct: 0 },
+                    { q: 'नवरात्रि व्रत कितने दिनों का होता है?', options: ['7', '9', '11', '15'], correct: 1 }
+                ]
+            },
+            mix: {
+                name: 'मिश्रित',
+                icon: '🌟',
+                questions: [
+                    { q: 'हिंदू धर्म में कुल कितने वेद हैं?', options: ['2', '3', '4', '5'], correct: 2 },
+                    { q: 'भगवान विष्णु के कितने अवतार हैं?', options: ['8', '9', '10', '12'], correct: 2 },
+                    { q: 'हनुमान जी किसके अवतार हैं?', options: ['शिव', 'विष्णु', 'ब्रह्मा', 'इंद्र'], correct: 0 },
+                    { q: 'महाभारत के रचयिता कौन हैं?', options: ['वाल्मीकि', 'वेदव्यास', 'तुलसीदास', 'कालिदास'], correct: 1 },
+                    { q: 'रामायण के रचयिता कौन हैं?', options: ['वाल्मीकि', 'वेदव्यास', 'तुलसीदास', 'कालिदास'], correct: 0 },
+                    { q: 'श्रीमद् भगवद् गीता किस ग्रंथ का भाग है?', options: ['रामायण', 'महाभारत', 'रामचरितमानस', 'विष्णु पुराण'], correct: 1 },
+                    { q: 'सूर्य देव का वाहन क्या है?', options: ['हाथी', 'सात घोड़े का रथ', 'मोर', 'सिंह'], correct: 1 },
+                    { q: 'चंद्र देव का वाहन क्या है?', options: ['हिरण', 'मोर', 'हंस', 'बैल'], correct: 0 },
+                    { q: 'शिव जी का वाहन क्या है?', options: ['नंदी', 'मोर', 'गरुड़', 'मूषक'], correct: 0 },
+                    { q: 'दुर्गा माता का वाहन क्या है?', options: ['सिंह', 'बाघ', 'हाथी', 'मोर'], correct: 0 }
+                ]
+            }
+        };
+
+        // ============================================================
+        //  STATE
+        // ============================================================
+
+        let currentTopic = '';
+        let currentQuestions = [];
+        let currentQIndex = 0;
+        let correctCount = 0;
+        let wrongCount = 0;
+        let timer;
+        let timeLeft = 15;
+        const TIME_PER_Q = 15;
+        const TOTAL_Q = 10;
+
+        // ============================================================
+        //  RENDER TOPICS
+        // ============================================================
+
+        function renderTopics() {
+            const grid = document.getElementById('topicsGrid');
+            grid.innerHTML = Object.keys(quizBank).map(key => {
+                const topic = quizBank[key];
+                const bestScore = localStorage.getItem(`quizBest_${key}`) || 0;
+                return `
+                    <div class="quiz-topic-card" onclick="startQuiz('${key}')">
+                        <span class="qt-icon">${topic.icon}</span>
+                        <span class="qt-name">${topic.name}</span>
+                        <span class="qt-questions">${topic.questions.length} प्रश्न</span>
+                        ${bestScore > 0 ? `<span class="qt-best">🏆 बेस्ट: ${bestScore}/10</span>` : ''}
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // ============================================================
+        //  QUIZ LOGIC
+        // ============================================================
+
+        function startQuiz(topicKey) {
+            currentTopic = topicKey;
+            const topic = quizBank[topicKey];
+            // Shuffle and pick 10 questions
+            const shuffled = [...topic.questions].sort(() => 0.5 - Math.random());
+            currentQuestions = shuffled.slice(0, Math.min(TOTAL_Q, shuffled.length));
+            currentQIndex = 0;
+            correctCount = 0;
+            wrongCount = 0;
+
+            document.getElementById('quizTopicName').textContent = `${topic.icon} ${topic.name}`;
+            document.getElementById('topicScreen').style.display = 'none';
+            document.getElementById('resultScreen').style.display = 'none';
+            document.getElementById('quizScreen').style.display = 'block';
+
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            if (currentQIndex >= currentQuestions.length) {
+                showResult();
+                return;
+            }
+
+            const q = currentQuestions[currentQIndex];
+            document.getElementById('quizProgress').textContent = `प्रश्न ${currentQIndex + 1}/${currentQuestions.length}`;
+            document.getElementById('correctCount').textContent = correctCount;
+            document.getElementById('wrongCount').textContent = wrongCount;
+            document.getElementById('quizQuestion').textContent = q.q;
+            document.getElementById('quizFeedback').classList.remove('show');
+
+            const optionsContainer = document.getElementById('quizOptions');
+            optionsContainer.innerHTML = '';
+            const optLetters = ['अ', 'ब', 'स', 'द'];
+            q.options.forEach((opt, i) => {
+                const btn = document.createElement('button');
+                btn.className = 'quiz-option-btn';
+                btn.innerHTML = `<span class="opt-num">${optLetters[i]}.</span> ${opt}`;
+                btn.onclick = () => checkAnswer(i, btn);
+                optionsContainer.appendChild(btn);
+            });
+
+            // Timer
+            clearInterval(timer);
+            timeLeft = TIME_PER_Q;
+            updateTimer();
+            timer = setInterval(() => {
+                timeLeft--;
+                updateTimer();
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    checkAnswer(-1, null);
+                }
+            }, 1000);
+        }
+
+        function updateTimer() {
+            const timerNum = document.getElementById('quizTimerNum');
+            const timerFill = document.getElementById('quizTimerFill');
+            timerNum.textContent = timeLeft;
+            timerFill.style.width = (timeLeft / TIME_PER_Q * 100) + '%';
+
+            const color = timeLeft > 8 ? 'var(--gold)' : '#dc3545';
+            timerFill.style.background = color;
+            timerNum.style.color = timeLeft > 8 ? 'var(--maroon)' : '#dc3545';
+        }
+
+        function checkAnswer(selectedIndex, btn) {
+            clearInterval(timer);
+            const q = currentQuestions[currentQIndex];
+            const allBtns = document.querySelectorAll('.quiz-option-btn');
+            allBtns.forEach(b => b.disabled = true);
+
+            const feedback = document.getElementById('quizFeedback');
+
+            if (selectedIndex === q.correct) {
+                correctCount++;
+                if (btn) btn.classList.add('correct');
+                feedback.className = 'quiz-feedback correct show';
+                feedback.innerHTML = `✅ <strong>सही उत्तर!</strong> ${q.options[q.correct]}`;
+            } else {
+                wrongCount++;
+                if (btn) btn.classList.add('wrong');
+                allBtns[q.correct].classList.add('correct');
+                const selectedText = selectedIndex >= 0 ? q.options[selectedIndex] : 'समय समाप्त';
+                feedback.className = 'quiz-feedback wrong show';
+                feedback.innerHTML = `❌ <strong>गलत उत्तर!</strong> आपने चुना: ${selectedText} · सही उत्तर: <strong>${q.options[q.correct]}</strong>`;
+            }
+
+            document.getElementById('correctCount').textContent = correctCount;
+            document.getElementById('wrongCount').textContent = wrongCount;
+
+            setTimeout(() => {
+                currentQIndex++;
+                loadQuestion();
+            }, 1800);
+        }
+
+        function showResult() {
+            clearInterval(timer);
+            document.getElementById('quizScreen').style.display = 'none';
+            document.getElementById('resultScreen').style.display = 'block';
+
+            const total = currentQuestions.length;
+            const percent = Math.round((correctCount / total) * 100);
+
+            document.getElementById('resultNum').textContent = correctCount;
+            document.getElementById('resultDenom').textContent = `/ ${total}`;
+            document.getElementById('rsCorrect').textContent = correctCount;
+            document.getElementById('rsWrong').textContent = wrongCount;
+            document.getElementById('rsPercent').textContent = percent + '%';
+
+            let rank, msg;
+            if (percent >= 90) { rank = '🏆 धर्म मार्तंड'; msg = 'अप्रतिम! आप धर्म के विद्वान हैं।'; }
+            else if (percent >= 70) { rank = '🌟 धर्म ज्ञाता'; msg = 'बहुत उत्तम! थोड़ा और अभ्यास करें।'; }
+            else if (percent >= 50) { rank = '📖 धर्म जिज्ञासु'; msg = 'अच्छा प्रयास! नियमित पाठ जारी रखें।'; }
+            else { rank = '🙏 आरंभिक भक्त'; msg = 'निराश न हों! धर्म ग्रंथ पढ़ें और पुनः प्रयास करें।'; }
+
+            document.getElementById('resultRank').textContent = rank;
+            document.getElementById('resultMsg').textContent = msg;
+
+            // Save best score
+            const bestKey = `quizBest_${currentTopic}`;
+            const previousBest = parseInt(localStorage.getItem(bestKey) || 0);
+            if (correctCount > previousBest) {
+                localStorage.setItem(bestKey, correctCount);
+            }
+
+            // Confetti if good score
+            if (percent >= 70) {
+                confetti();
+            }
+        }
+
+        function confetti() {
+            const colors = ['#e67e22', '#f0a500', '#7b1d1d', '#27ae60', '#3498db'];
+            for (let i = 0; i < 30; i++) {
+                const p = document.createElement('div');
+                p.className = 'confetti-piece';
+                p.style.left = Math.random() * 100 + 'vw';
+                p.style.background = colors[Math.floor(Math.random() * colors.length)];
+                p.style.animationDuration = (1.5 + Math.random() * 2) + 's';
+                p.style.animationDelay = Math.random() * 1 + 's';
+                document.body.appendChild(p);
+                setTimeout(() => p.remove(), 4000);
+            }
+        }
+
+        function backToTopics() {
+            document.getElementById('quizScreen').style.display = 'none';
+            document.getElementById('resultScreen').style.display = 'none';
+            document.getElementById('topicScreen').style.display = 'block';
+            renderTopics(); // Refresh best scores
+        }
+
+        function retryQuiz() {
+            startQuiz(currentTopic);
+        }
+
+        function shareScore() {
+            const total = currentQuestions.length;
+            const percent = Math.round((correctCount / total) * 100);
+            const rank = document.getElementById('resultRank').textContent;
+            const topic = quizBank[currentTopic].name;
+            const text = `🕉️ मैंने सनातन ज्ञान कोश पर "${topic}" क्विज खेली!\n\n📊 स्कोर: ${correctCount}/${total} (${percent}%)\n🏅 उपाधि: ${rank}\n\n🙏 आप भी खेलें: ${window.location.href}`;
+            window.open(`https://wa.me/?text=${encodeURIComponent(text)}`);
+        }
+
+        // ============================================================
+        //  DARK MODE
+        // ============================================================
+
+        const darkToggle = document.getElementById('darkToggle');
+        if (darkToggle) {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+                darkToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            }
+            darkToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                const icon = this.querySelector('i');
+                const isDark = document.body.classList.contains('dark-mode');
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+                localStorage.setItem('darkMode', isDark);
+            });
+        }
+
+        // ============================================================
+        //  INIT
+        // ============================================================
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderTopics();
+        });
+    </script>
+</body>
+</html>
