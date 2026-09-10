@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>लक्ष्मी माता — संपूर्ण ज्ञान | Sanatan Gyan Kosh</title>
+    <meta name="description" content="लक्ष्मी माता का संपूर्ण ज्ञान — परिचय, कथा, स्वरूप, अष्टलक्ष्मी, मंत्र, स्तोत्र, आरती, मंदिर, त्योहार, व्रत और बहुत कुछ।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .devta-hero {
+            text-align: center;
+            padding: 24px 20px;
+            background: linear-gradient(135deg, rgba(255,192,203,0.15), rgba(212,175,55,0.1));
+            border-radius: var(--radius);
+            margin-bottom: 14px;
+            border: 1px solid var(--border);
+        }
+        .devta-hero .icon { font-size: 72px; display: block; line-height: 1; }
+        .devta-hero .name {
+            font-family: var(--font-display);
+            font-size: 30px;
+            color: var(--maroon);
+            margin-top: 6px;
+        }
+        .devta-hero .subtitle {
+            font-size: 13px;
+            color: var(--ink-soft);
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+
+        .devta-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 18px 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .devta-section h2 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--maroon);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 8px;
+        }
+        .devta-section h2 .sec-icon { font-size: 24px; }
+
+        .devta-section p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+            margin-bottom: 8px;
+        }
+        .devta-section p strong { color: var(--maroon); }
+
+        .mantra-box {
+            background: linear-gradient(135deg, rgba(255,192,203,0.1), rgba(212,175,55,0.05));
+            border-left: 4px solid var(--gold);
+            padding: 14px 16px;
+            border-radius: 12px;
+            font-family: var(--font-display);
+            font-size: 18px;
+            text-align: center;
+            margin: 10px 0;
+            line-height: 1.8;
+            color: var(--maroon);
+            font-weight: 600;
+        }
+        .mantra-box small {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 12px;
+            color: var(--ink-soft);
+            font-weight: 400;
+            margin-top: 6px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .info-item {
+            background: var(--bg);
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 13px;
+        }
+        .info-item .lbl {
+            font-size: 10px;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-item .val {
+            font-weight: 600;
+            color: var(--maroon);
+            margin-top: 2px;
+        }
+
+        .devta-section ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 8px;
+        }
+        .devta-section ul li {
+            padding: 8px 0;
+            font-size: 13.5px;
+            line-height: 1.6;
+            border-bottom: 1px dashed var(--border);
+            color: var(--ink-soft);
+        }
+        .devta-section ul li:last-child { border-bottom: none; }
+        .devta-section ul li strong { color: var(--maroon); }
+
+        .accordion-item {
+            border-bottom: 1px solid var(--border);
+        }
+        .accordion-item:last-child { border-bottom: none; }
+        .accordion-head {
+            padding: 12px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--maroon);
+            font-family: var(--font-display);
+        }
+        .accordion-head i {
+            transition: transform 0.3s;
+            color: var(--gold);
+        }
+        .accordion-item.open .accordion-head i {
+            transform: rotate(180deg);
+        }
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            font-size: 13px;
+            color: var(--ink-soft);
+            line-height: 1.8;
+        }
+        .accordion-item.open .accordion-body {
+            max-height: 4000px;
+            padding-bottom: 12px;
+        }
+
+        .temple-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .temple-item {
+            padding: 10px 14px;
+            background: var(--bg);
+            border-radius: 10px;
+            border-left: 3px solid var(--gold);
+            font-size: 13px;
+        }
+        .temple-item strong { color: var(--maroon); }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .related-link {
+            padding: 10px 12px;
+            background: var(--bg);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--maroon);
+            font-weight: 600;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .related-link:hover {
+            background: var(--card-bg);
+            border-color: var(--gold);
+        }
+
+        .ashtalakshmi-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .al-item {
+            background: var(--bg);
+            padding: 12px 14px;
+            border-radius: 12px;
+            border-left: 4px solid var(--gold);
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .al-item .al-icon {
+            font-size: 26px;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+        .al-item .al-name {
+            font-weight: 700;
+            color: var(--maroon);
+            font-size: 14px;
+        }
+        .al-item .al-desc {
+            font-size: 12px;
+            color: var(--ink-soft);
+            margin-top: 2px;
+            line-height: 1.6;
+        }
+
+        .names-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .name-item {
+            background: var(--bg);
+            padding: 8px 12px;
+            border-radius: 8px;
+            border-left: 3px solid var(--gold);
+            font-size: 12px;
+        }
+        .name-item strong {
+            color: var(--maroon);
+            font-family: var(--font-display);
+            font-size: 14px;
+        }
+
+        .back-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--maroon);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 16px rgba(122,46,46,0.4);
+            z-index: 90;
+        }
+        .back-top.show { display: flex; }
+
+        @media (max-width: 420px) {
+            .devta-hero .icon { font-size: 60px; }
+            .devta-hero .name { font-size: 24px; }
+            .devta-section h2 { font-size: 17px; }
+            .mantra-box { font-size: 16px; }
+            .names-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ देवता ज्ञान</span>
+            <h1>लक्ष्मी माता</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <!-- Hero -->
+        <div class="devta-hero">
+            <span class="icon">🌺</span>
+            <div class="name">लक्ष्मी माता</div>
+            <div class="subtitle">श्री · कमला · पद्मा · धनलक्ष्मी · महालक्ष्मी</div>
+        </div>
+
+        <!-- Quick Info -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📋</span> एक नज़र में</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="lbl">अन्य नाम</div>
+                    <div class="val">श्री, कमला, पद्मा, धनलक्ष्मी, महालक्ष्मी, हरिप्रिया, चंचला</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">पति</div>
+                    <div class="val">भगवान विष्णु</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">पुत्र</div>
+                    <div class="val">कामदेव</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">वाहन</div>
+                    <div class="val">उल्लू (सफेद उल्लू)</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">आयुध</div>
+                    <div class="val">कमल, शंख, अमृत कलश, चक्र</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय दिन</div>
+                    <div class="val">शुक्रवार, दीपावली, नवरात्रि</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय रंग</div>
+                    <div class="val">लाल, गुलाबी, सुनहरा</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय भोग</div>
+                    <div class="val">खीर, मिठाई, कमल, नारियल, लड्डू</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय पुष्प</div>
+                    <div class="val">कमल, गुलाब, चम्पा</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">निवास</div>
+                    <div class="val">वैकुंठ, क्षीरसागर, कमल</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रमुख पर्व</div>
+                    <div class="val">दीपावली, अक्षय तृतीया, शुक्रवार व्रत</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">अष्टलक्ष्मी</div>
+                    <div class="val">8 स्वरूप — धन, धान्य, सौभाग्य, आदि</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- परिचय -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📖</span> परिचय</h2>
+            <p>
+                <strong>माँ लक्ष्मी</strong> हिंदू धर्म की सबसे पूजनीय देवियों में से एक हैं। वे <strong>धन, समृद्धि, सौभाग्य, और ऐश्वर्य</strong> की देवी हैं। "लक्ष्मी" शब्द का अर्थ है — <strong>लक्ष्य</strong> — अर्थात् जीवन का लक्ष्य।
+            </p>
+            <p>
+                वे <strong>भगवान विष्णु की पत्नी</strong> हैं और उनके साथ <strong>वैकुंठ</strong> में निवास करती हैं। जब-जब विष्णु ने अवतार लिया, तब-तब लक्ष्मी ने भी उनके साथ अवतार लिया — <strong>सीता, राधा, रुक्मिणी</strong> आदि रूपों में।
+            </p>
+            <p>
+                माँ लक्ष्मी <strong>समुद्र मंथन</strong> से प्रकट हुई थीं। उन्हें <strong>श्री</strong>, <strong>कमला</strong>, <strong>पद्मा</strong>, <strong>धनलक्ष्मी</strong>, और <strong>महालक्ष्मी</strong> जैसे कई नामों से जाना जाता है।
+            </p>
+            <p>
+                वे <strong>चंचला</strong> हैं — चंचल, जो एक जगह नहीं रुकतीं। इसलिए उन्हें प्रसन्न करने के लिए <strong>नियमित पूजा, भक्ति, और सेवा</strong> की आवश्यकता होती है।
+            </p>
+        </div>
+
+        <!-- प्रकट कथा -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📜</span> प्रकट कथा</h2>
+            <p>
+                <strong>समुद्र मंथन</strong> के समय देवताओं और असुरों ने मिलकर <strong>क्षीरसागर</strong> का मंथन किया। मंथन से <strong>14 रत्न</strong> निकले, जिनमें से एक <strong>माँ लक्ष्मी</strong> थीं।
+            </p>
+            <p>
+                वे <strong>कमल के फूल</strong> पर विराजमान होकर प्रकट हुईं — इसलिए उन्हें <strong>पद्मा</strong> (कमल पर विराजमान) कहा जाता है। उनके हाथों में <strong>कमल, शंख, अमृत कलश</strong> थे।
+            </p>
+            <p>
+                सभी देवताओं ने उनकी स्तुति की। तब <strong>भगवान विष्णु</strong> ने उन्हें अपनी पत्नी के रूप में स्वीकार किया। इसलिए लक्ष्मी <strong>विष्णु की शक्ति</strong> हैं — बिना लक्ष्मी के विष्णु अधूरे हैं।
+            </p>
+            <p>
+                एक अन्य कथा के अनुसार, लक्ष्मी माता <strong>भृगु ऋषि</strong> की पुत्री हैं और उन्होंने <strong>समुद्र राज</strong> की पुत्री के रूप में भी जन्म लिया।
+            </p>
+        </div>
+
+        <!-- स्वरूप -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🎨</span> स्वरूप</h2>
+            <p>
+                माँ लक्ष्मी का स्वरूप <strong>अत्यंत सुंदर, तेजस्वी, और करुणामयी</strong> है।
+            </p>
+            <ul>
+                <li><strong>रंग:</strong> स्वर्ण वर्ण (सुनहरी आभा), गुलाबी</li>
+                <li><strong>वस्त्र:</strong> लाल या गुलाबी रेशमी वस्त्र</li>
+                <li><strong>आभूषण:</strong> स्वर्ण आभूषण, मुकुट, हार</li>
+                <li><strong>हाथ:</strong> 4 हाथ (चतुर्भुजा)</li>
+                <li><strong>आयुध:</strong> कमल (पद्म), शंख, अमृत कलश, चक्र या वरद मुद्रा</li>
+                <li><strong>वाहन:</strong> उल्लू (सफेद उल्लू) — जो अंधकार में भी देख सकता है</li>
+                <li><strong>नेत्र:</strong> कमल के समान सुंदर, बड़े</li>
+                <li><strong>मुद्रा:</strong> अभय मुद्रा और वरद मुद्रा</li>
+                <li><strong>आसन:</strong> कमल का फूल</li>
+                <li><strong>साथ:</strong> भगवान विष्णु, गरुड़, उल्लू</li>
+                <li><strong>विशेष:</strong> स्वर्ण वर्षा करती हुई (कहीं-कहीं)</li>
+            </ul>
+        </div>
+
+        <!-- मुख्य मंत्र -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🌺</span> मुख्य मंत्र</h2>
+
+            <p><strong>1. लक्ष्मी मूल मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ श्रीं ह्रीं क्लीं महालक्ष्म्यै नमः
+                <small>अर्थ: हे महालक्ष्मी, मैं आपको नमस्कार करता हूँ। यह तीन बीज अक्षरों का शक्तिशाली मंत्र है।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>2. लक्ष्मी बीज मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ श्रीं श्रियै नमः
+                <small>अर्थ: 'श्रीं' लक्ष्मी का बीज मंत्र है — धन, समृद्धि, और सौभाग्य के लिए।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>3. लक्ष्मी गायत्री मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ महालक्ष्म्यै च विद्महे ।<br>
+                विष्णुपत्न्यै च धीमहि ।<br>
+                तन्नो लक्ष्मीः प्रचोदयात् ॥
+                <small>अर्थ: हम महालक्ष्मी का ध्यान करते हैं, विष्णु पत्नी का ध्यान करते हैं, लक्ष्मी हमें प्रेरित करें।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>4. धन लक्ष्मी मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ श्रीं ह्रीं श्रीं कमले कमलालये प्रसीद प्रसीद ।<br>
+                ॐ श्रीं ह्रीं श्रीं महालक्ष्म्यै नमः
+                <small>अर्थ: हे कमल पर विराजमान लक्ष्मी, प्रसन्न हों, प्रसन्न हों।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>5. कनकधारा स्तोत्र (संक्षिप्त):</strong></p>
+            <div class="mantra-box" style="font-size:15px;">
+                अङ्गं हरेः पुलकभूषणमाश्रयन्ती ।<br>
+                भृङ्गाङ्गनेव मुकुलाभरणं तमालम् ॥
+                <small>अर्थ: जो लक्ष्मी हरि के अंगों को कंपित करती हैं, वे मुझे धन दें।</small>
+            </div>
+        </div>
+
+        <!-- अष्टलक्ष्मी (8 स्वरूप) -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🙏</span> अष्टलक्ष्मी — 8 स्वरूप</h2>
+            <p style="font-size:13px;margin-bottom:8px;">
+                माँ लक्ष्मी के <strong>8 स्वरूप (अष्टलक्ष्मी)</strong> हैं — हर स्वरूप एक विशेष वरदान देता है।
+            </p>
+            <div class="ashtalakshmi-grid">
+                <div class="al-item">
+                    <div class="al-icon">💰</div>
+                    <div>
+                        <div class="al-name">1. धनलक्ष्मी</div>
+                        <div class="al-desc">धन, संपत्ति, और वित्तीय समृद्धि की देवी।</div>
+                    </div>
+                </div>
+                <div class="al-item">
+                    <div class="al-icon">🌾</div>
+                    <div>
+                        <div class="al-name">2. धान्यलक्ष्मी</div>
+                        <div class="al-desc">अन्न, धान्य, और खाद्य समृद्धि की देवी।</div>
+                    </div>
+                </div>
+                <div class="al-item">
+                    <div class="al-icon">🐄</div>
+                    <div>
+                        <div class="al-name">3. गजलक्ष्मी</div>
+                        <div class="al-desc">पशुधन और ऐश्वर्य की देवी, हाथियों से घिरी।</div>
+                    </div>
+                </div>
+                <div class="al-item">
+                    <div class="al-icon">👶</div>
+                    <div>
+                        <div class="al-name">4. संतानलक्ष्मी</div>
+                        <div class="al-desc">संतान, परिवार, और वंश वृद्धि की देवी।</div>
+                    </div>
+                </div>
+                <div class="al-item">
+                    <div class="al-icon">⚔️</div>
+                    <div>
+                        <div class="al-name">5. वीरलक्ष्मी</div>
+                        <div class="al-desc">साहस, वीरता, और विजय की देवी।</div>
+                    </div>
+                </div>
+                <div class="al-item">
+                    <div class="al-icon">🎓</div>
+                    <div>
+                        <div class="al-name">6. विद्यालक्ष्मी</div>
+                        <div class="al-desc">विद्या, ज्ञान, और बुद्धि की देवी।</div>
+                    </div>
+                </div>
+                <div class="al-item">
+                    <div class="al-icon">🏆</div>
+                    <div>
+                        <div class="al-name">7. विजयलक्ष्मी</div>
+                        <div class="al-desc">विजय, यश, और सफलता की देवी।</div>
+                    </div>
+                </div>
+                <div class="al-item">
+                    <div class="al-icon">💎</div>
+                    <div>
+                        <div class="al-name">8. राजलक्ष्मी</div>
+                        <div class="al-desc">राज्य, सत्ता, और प्रतिष्ठा की देवी।</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- लक्ष्मी के 108 नाम (24 प्रमुख) -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🔱</span> लक्ष्मी माता के 108 नाम (24 प्रमुख)</h2>
+            <p style="font-size:13px;margin-bottom:8px;">
+                लक्ष्मी माता के 108 नाम हैं — इनका जप करने से धन, समृद्धि, और सौभाग्य बढ़ता है।
+            </p>
+            <div class="names-grid">
+                <div class="name-item"><strong>लक्ष्मी</strong> — धन की देवी</div>
+                <div class="name-item"><strong>श्री</strong> — समृद्धि</div>
+                <div class="name-item"><strong>कमला</strong> — कमल पर विराजमान</div>
+                <div class="name-item"><strong>पद्मा</strong> — कमल के समान</div>
+                <div class="name-item"><strong>हरिप्रिया</strong> — विष्णु की प्रिय</div>
+                <div class="name-item"><strong>पद्मालया</strong> — कमल में निवास करने वाली</div>
+                <div class="name-item"><strong>पद्महस्ता</strong> — हाथ में कमल धारण करने वाली</div>
+                <div class="name-item"><strong>चंचला</strong> — चंचल</div>
+                <div class="name-item"><strong>महालक्ष्मी</strong> — सर्वोच्च लक्ष्मी</div>
+                <div class="name-item"><strong>धनलक्ष्मी</strong> — धन की देवी</div>
+                <div class="name-item"><strong>धान्यलक्ष्मी</strong> — अन्न की देवी</div>
+                <div class="name-item"><strong>वरलक्ष्मी</strong> — वरदान देने वाली</div>
+                <div class="name-item"><strong>सिद्धिलक्ष्मी</strong> — सिद्धि की देवी</div>
+                <div class="name-item"><strong>मोक्षलक्ष्मी</strong> — मोक्ष की देवी</div>
+                <div class="name-item"><strong>जयलक्ष्मी</strong> — विजय की देवी</div>
+                <div class="name-item"><strong>शांतिलक्ष्मी</strong> — शांति की देवी</div>
+                <div class="name-item"><strong>सौभाग्यलक्ष्मी</strong> — सौभाग्य की देवी</div>
+                <div class="name-item"><strong>विद्यालक्ष्मी</strong> — विद्या की देवी</div>
+                <div class="name-item"><strong>राजलक्ष्मी</strong> — राज्य की देवी</div>
+                <div class="name-item"><strong>गृहलक्ष्मी</strong> — घर की देवी</div>
+                <div class="name-item"><strong>आदिलक्ष्मी</strong> — आदि लक्ष्मी</div>
+                <div class="name-item"><strong>सर्वलक्ष्मी</strong> — सभी की देवी</div>
+                <div class="name-item"><strong>अनंतलक्ष्मी</strong> — अनंत लक्ष्मी</div>
+                <div class="name-item"><strong>शुभलक्ष्मी</strong> — शुभ की देवी</div>
+            </div>
+        </div>
+
+        <!-- जप विधि -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📿</span> जप विधि</h2>
+            <ul>
+                <li><strong>समय:</strong> प्रातः 5-7 बजे, या शुक्रवार, दीपावली, नवरात्रि</li>
+                <li><strong>स्थान:</strong> पूर्व या उत्तर दिशा में मुख करके, स्वच्छ स्थान पर</li>
+                <li><strong>माला:</strong> कमल गट्टा, स्फटिक, या मोती माला</li>
+                <li><strong>संख्या:</strong> 108 बार (1 माला), या 1008 बार</li>
+                <li><strong>वस्त्र:</strong> लाल, गुलाबी, या सफेद वस्त्र</li>
+                <li><strong>भोग:</strong> खीर, मिठाई, कमल, नारियल, लड्डू</li>
+                <li><strong>धूप/दीप:</strong> धूप, घी का दीपक, कपूर</li>
+                <li><strong>विशेष:</strong> श्री सूक्तम्, कनकधारा स्तोत्र, लक्ष्मी चालीसा</li>
+                <li><strong>अर्घ्य:</strong> कमल के फूल और जल अर्पित करें</li>
+                <li><strong>दीपदान:</strong> दीपावली पर घी के दीपक जलाएँ</li>
+            </ul>
+        </div>
+
+        <!-- लक्ष्मी स्तोत्र (Accordion) -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📜</span> लक्ष्मी स्तोत्र / आरती</h2>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 लक्ष्मी आरती (ॐ जय लक्ष्मी माता)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:15px;text-align:left;line-height:2;">
+                        ॐ जय लक्ष्मी माता, मैया जय लक्ष्मी माता ।<br>
+                        तुमको निशिदिन सेवत, हर विष्णु विधाता ॥<br>
+                        ॐ जय लक्ष्मी माता... ॥<br><br>
+                        उमा रमा ब्रह्माणी, तुम ही जग माता ।<br>
+                        सूर्य चन्द्रमा ध्यावत, नारद ऋषि गाता ॥<br>
+                        ॐ जय लक्ष्मी माता... ॥<br><br>
+                        दुर्गा रूप निरंजन, सुख सम्पत्ति दाता ।<br>
+                        जो तुमको निशिदिन ध्यावत, सुख सम्पत्ति पाता ॥<br>
+                        ॐ जय लक्ष्मी माता... ॥<br><br>
+                        तुम पाताल निवासिनि, तुम ही शुभदाता ।<br>
+                        कर्म प्रभाव प्रकाशिनि, भव निधि की त्राता ॥<br>
+                        ॐ जय लक्ष्मी माता... ॥<br><br>
+                        जिस घर में तुम रहतीं, सब सद्गुण आता ।<br>
+                        सब सम्पत्ति भर जाती, मन नहीं घबराता ॥<br>
+                        ॐ जय लक्ष्मी माता... ॥<br><br>
+                        तुम बिन यह जग सारा, सब जग उजियारा ।<br>
+                        सब सम्पत्ति भर लो, जो कोई तुम्हें ध्यावे ॥<br>
+                        ॐ जय लक्ष्मी माता... ॥<br><br>
+                        ॐ जय लक्ष्मी माता, मैया जय लक्ष्मी माता ।<br>
+                        तुमको निशिदिन सेवत, हर विष्णु विधाता ॥
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 श्री सूक्तम् (संक्षिप्त)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <p style="margin-bottom:8px;font-size:13px;">
+                        <strong>महत्व:</strong> यह स्तोत्र <strong>ऋग्वेद</strong> से लिया गया है और इसमें <strong>15 श्लोक</strong> हैं। लक्ष्मी पूजन में इसका पाठ अत्यंत शुभ माना जाता है।
+                    </p>
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        ॐ हिरण्यवर्णां हरिणीं सुवर्णरजतस्रजाम् ।<br>
+                        चन्द्रां हिरण्मयीं लक्ष्मीं जातवेदो म आवह ॥<br><br>
+                        तां म आवह जातवेदो लक्ष्मीमनपगामिनीम् ।<br>
+                        यस्यां हिरण्यं विन्देयं गामश्वं पुरुषानहम् ॥<br><br>
+                        अश्वपूर्वां रथमध्यां हस्तिनादप्रबोधिनीम् ।<br>
+                        श्रियं देवीमुपह्वये श्रीर्मा देवी जुषताम् ॥<br><br>
+                        कां सोस्मितां हिरण्यप्राकारामार्द्रां ज्वलन्तीं तृप्तां तर्पयन्तीम् ।<br>
+                        पद्मे स्थितां पद्मवर्णां त्वां देवीमुपह्वये श्रियम् ॥<br><br>
+                        चन्द्रां प्रभासां यशसा ज्वलन्तीं श्रियं लोके देवजुष्टामुदाराम् ।<br>
+                        तां पद्मिनीमीं शरणमहं प्रपद्येऽलक्ष्मीर्मे नश्यतां त्वां वृणे ॥
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 कनकधारा स्तोत्र (संपूर्ण)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <p style="margin-bottom:8px;font-size:13px;">
+                        <strong>रचयिता:</strong> आदि शंकराचार्य — यह स्तोत्र <strong>धन प्राप्ति</strong> और <strong>दरिद्रता नाश</strong> के लिए अत्यंत प्रभावी है।
+                    </p>
+                    <div class="mantra-box" style="font-size:13.5px;text-align:left;line-height:2;">
+                        अङ्गं हरेः पुलकभूषणमाश्रयन्ती ।<br>
+                        भृङ्गाङ्गनेव मुकुलाभरणं तमालम् ।<br>
+                        अङ्गीकृताखिलविभूतिरपां समूहः ।<br>
+                        सा मे श्रियं दिशतु सागरसम्भवायाः ॥१॥<br><br>
+                        आमीलिताक्षमधिगम्य मुदा मुकुन्दम् ।<br>
+                        आनन्दकन्दमनिमेषमनङ्गतन्त्रम् ।<br>
+                        आकेकरस्थितकनीनिकपक्ष्मनेत्रम् ।<br>
+                        भक्त्या भजे शशिकिशोरमुखारविन्दम् ॥२॥<br><br>
+                        ... (कनकधारा स्तोत्र — 8 श्लोक)
+                    </div>
+                    <p style="font-size:13px;line-height:1.8;margin-top:8px;">
+                        <strong>लाभ:</strong> धन प्राप्ति, दरिद्रता नाश, कर्ज मुक्ति, व्यापार में लाभ।
+                    </p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 लक्ष्मी चालीसा</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        नमोऽस्तु महालक्ष्म्यै, नमोऽस्तु कमलालये ।<br>
+                        नमोऽस्तु वसुधे देवि, नमोऽस्तु हरिवल्लभे ॥<br><br>
+                        सिंहासन स्थितां देवीं, पद्महस्तां वरप्रदाम् ।<br>
+                        शुभां सुवर्णवर्णाभां, ध्यायेत् सर्वार्थसिद्धये ॥<br><br>
+                        ... (लक्ष्मी चालीसा — 40 चौपाइयाँ)
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 महालक्ष्मी अष्टकम्</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        नमस्तेऽस्तु महामाये श्रीपीठे सुरपूजिते ।<br>
+                        शङ्खचक्रगदाहस्ते महालक्ष्मि नमोऽस्तु ते ॥<br><br>
+                        नमस्ते गरुडारूढे कोलासुरभयङ्करि ।<br>
+                        सर्वपापहरे देवि महालक्ष्मि नमोऽस्तु ते ॥<br><br>
+                        सर्वज्ञे सर्ववरदे सर्वदुष्टभयङ्करि ।<br>
+                        सर्वदुःखहरे देवि महालक्ष्मि नमोऽस्तु ते ॥<br><br>
+                        सिद्धिबुद्धिप्रदे देवि भुक्तिमुक्तिप्रदायिनि ।<br>
+                        मन्त्रपूते सदा देवि महालक्ष्मि नमोऽस्तु ते ॥<br><br>
+                        आद्यन्तरहिते देवि आदिशक्ति महेश्वरि ।<br>
+                        योगजे योगसम्भूते महालक्ष्मि नमोऽस्तु ते ॥<br><br>
+                        स्थूलसूक्ष्ममहारौद्रे महाशक्ति महोदरे ।<br>
+                        महापापहरे देवि महालक्ष्मि नमोऽस्तु ते ॥<br><br>
+                        पद्मासनस्थिते देवि परब्रह्मस्वरूपिणि ।<br>
+                        परमेशि जगन्मातर्महालक्ष्मि नमोऽस्तु ते ॥<br><br>
+                        श्वेताम्बरधरे देवि नानालङ्कारभूषिते ।<br>
+                        जगत्स्थिते जगन्मातर्महालक्ष्मि नमोऽस्तु ते ॥
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- प्रमुख मंदिर -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🛕</span> प्रमुख मंदिर</h2>
+            <div class="temple-list">
+                <div class="temple-item">
+                    <strong>महालक्ष्मी मंदिर, कोल्हापुर (महाराष्ट्र)</strong><br>
+                    अंबाबाई मंदिर के नाम से प्रसिद्ध, 51 शक्तिपीठों में से एक। यहाँ महालक्ष्मी का दर्शन अत्यंत शुभ माना जाता है।
+                </div>
+                <div class="temple-item">
+                    <strong>महालक्ष्मी मंदिर, मुंबई</strong><br>
+                    महालक्ष्मी चौक में स्थित, धन-समृद्धि के लिए प्रसिद्ध।
+                </div>
+                <div class="temple-item">
+                    <strong>पद्मावती मंदिर, तिरुपति (आंध्र प्रदेश)</strong><br>
+                    तिरुपति बालाजी के साथ पद्मावती देवी का मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>दोड्डा गणेश मंदिर, बेंगलुरु</strong><br>
+                    केम्पेगौड़ा द्वारा बनवाया गया, लक्ष्मी-नारायण का मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>कनकधारा मंदिर, वाराणसी</strong><br>
+                    वाराणसी में स्थित, शंकराचार्य द्वारा स्थापित।
+                </div>
+                <div class="temple-item">
+                    <strong>श्री पद्मनाभस्वामी मंदिर, तिरुवनंतपुरम</strong><br>
+                    विष्णु और लक्ष्मी का भव्य मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>लक्ष्मी नारायण मंदिर, दिल्ली</strong><br>
+                    बिड़ला मंदिर, लक्ष्मी-नारायण को समर्पित।
+                </div>
+                <div class="temple-item">
+                    <strong>अष्टलक्ष्मी मंदिर, चेन्नई</strong><br>
+                    अष्टलक्ष्मी के 8 स्वरूपों का मंदिर।
+                </div>
+            </div>
+        </div>
+
+        <!-- त्योहार और व्रत -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🎉</span> प्रमुख त्योहार और व्रत</h2>
+            <ul>
+                <li><strong>दीपावली:</strong> कार्तिक अमावस्या — लक्ष्मी पूजा का सबसे बड़ा पर्व। घर-आँगन दीपों से सजाया जाता है।</li>
+                <li><strong>शुक्रवार व्रत:</strong> हर शुक्रवार — लक्ष्मी माता का प्रिय दिन।</li>
+                <li><strong>अक्षय तृतीया:</strong> वैशाख शुक्ल तृतीया — स्वर्ण खरीदने का शुभ दिन।</li>
+                <li><strong>नवरात्रि:</strong> शारदीय और चैत्र नवरात्रि में लक्ष्मी पूजा।</li>
+                <li><strong>कोजागरी पूर्णिमा:</strong> आश्विन पूर्णिमा — लक्ष्मी पूजा का दिन।</li>
+                <li><strong>धनतेरस:</strong> कार्तिक कृष्ण त्रयोदशी — धन और स्वास्थ्य का पर्व।</li>
+                <li><strong>शरद पूर्णिमा:</strong> आश्विन पूर्णिमा — लक्ष्मी पूजा।</li>
+                <li><strong>वरमहालक्ष्मी व्रत:</strong> श्रावण शुक्ल शुक्रवार — विवाहित स्त्रियों का व्रत।</li>
+            </ul>
+        </div>
+
+        <!-- भक्ति और लाभ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🙏</span> लक्ष्मी माता को क्यों भजें?</h2>
+            <ul>
+                <li><strong>धन प्राप्ति:</strong> लक्ष्मी माता की कृपा से धन, संपत्ति, और समृद्धि आती है।</li>
+                <li><strong>दरिद्रता नाश:</strong> कनकधारा स्तोत्र और लक्ष्मी मंत्र से दरिद्रता दूर होती है।</li>
+                <li><strong>व्यापार में लाभ:</strong> व्यापारियों के लिए लक्ष्मी पूजा विशेष लाभदायक है।</li>
+                <li><strong>पारिवारिक सुख:</strong> लक्ष्मी की कृपा से पारिवारिक सुख-शांति मिलती है।</li>
+                <li><strong>सौभाग्य:</strong> विवाहित स्त्रियों के लिए सौभाग्य की प्राप्ति।</li>
+                <li><strong>संतान प्राप्ति:</strong> संतानलक्ष्मी की कृपा से संतान मिलती है।</li>
+                <li><strong>कर्ज मुक्ति:</strong> लक्ष्मी पूजा से कर्ज से मुक्ति मिलती है।</li>
+                <li><strong>मोक्ष:</strong> लक्ष्मी-नारायण की भक्ति से मोक्ष प्राप्त होता है।</li>
+            </ul>
+        </div>
+
+        <!-- वर्जित कार्य -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🚫</span> क्या न करें?</h2>
+            <ul>
+                <li>❌ लक्ष्मी माता की मूर्ति को <strong>अशुद्ध हाथों</strong> से न छुएँ</li>
+                <li>❌ <strong>बिना स्नान</strong> लक्ष्मी पूजा न करें</li>
+                <li>❌ लक्ष्मी माता को <strong>तुलसी</strong> न चढ़ाएँ (तुलसी विष्णु को प्रिय है, पर लक्ष्मी को नहीं)</li>
+                <li>❌ <strong>बासी</strong> या <strong>अशुद्ध</strong> भोग न चढ़ाएँ</li>
+                <li>❌ लक्ष्मी माता के सामने <strong>झूठ</strong> न बोलें</li>
+                <li>❌ <strong>शुक्रवार</strong> को <strong>नमक</strong> न खाएँ (कुछ परंपराओं में)</li>
+                <li>❌ <strong>दीपावली</strong> पर <strong>तामसिक</strong> भोजन न करें</li>
+                <li>❌ <strong>झाड़ू</strong> को पैर से न छुएँ (लक्ष्मी का प्रतीक)</li>
+                <li>❌ घर में <strong>अंधकार</strong> न रखें (दीपावली पर विशेष)</li>
+                <li>❌ लक्ष्मी माता के सामने <strong>शोर</strong> न करें</li>
+            </ul>
+        </div>
+
+        <!-- FAQ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>लक्ष्मी माता का प्राकट्य कैसे हुआ?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    लक्ष्मी माता <strong>समुद्र मंथन</strong> से प्रकट हुईं — जब देवताओं और असुरों ने मिलकर क्षीरसागर का मंथन किया। वे <strong>कमल के फूल</strong> पर विराजमान होकर निकलीं और भगवान विष्णु ने उन्हें अपनी पत्नी के रूप में स्वीकार किया।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>लक्ष्मी माता को 'चंचला' क्यों कहते हैं?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>चंचला</strong> का अर्थ है — चंचल, जो एक जगह नहीं रुकती। लक्ष्मी माता <strong>धन की देवी</strong> हैं और धन एक जगह नहीं रुकता — वह हाथ से हाथ तक जाता है। इसलिए लक्ष्मी को <strong>चंचला</strong> कहा जाता है। उन्हें रोकने के लिए <strong>नियमित पूजा, भक्ति, और सेवा</strong> आवश्यक है।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>दीपावली पर लक्ष्मी पूजा क्यों की जाती है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>दीपावली</strong> के दिन <strong>माँ लक्ष्मी</strong> की पूजा की जाती है क्योंकि यह <strong>कार्तिक अमावस्या</strong> की रात है — जब माँ लक्ष्मी पृथ्वी पर आती हैं और जो घर साफ-सुथरा, रोशन, और भक्ति भाव से भरा होता है, वहाँ निवास करती हैं। यह <strong>धन, समृद्धि, और सौभाग्य</strong> का पर्व है।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>क्या लक्ष्मी पूजा से कर्ज मुक्ति होती है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    हाँ, <strong>कनकधारा स्तोत्र, श्री सूक्तम्, और लक्ष्मी मंत्र जप</strong> से कर्ज मुक्ति होती है। <strong>शुक्रवार व्रत, दीपदान, और लक्ष्मी पूजा</strong> से धन की बर्बादी रुकती है और धन-धान्य में वृद्धि होती है।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>लक्ष्मी माता की पूजा में तुलसी क्यों नहीं चढ़ाते?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>तुलसी</strong> भगवान विष्णु को अत्यंत प्रिय है, लेकिन <strong>लक्ष्मी माता</strong> को तुलसी प्रिय नहीं है। कथा के अनुसार, तुलसी ने विष्णु से विवाह की इच्छा की थी, जिससे लक्ष्मी माता ने उन्हें श्राप दिया था। इसलिए लक्ष्मी पूजा में <strong>तुलसी की जगह कमल, गुलाब, या चम्पा</strong> के फूल चढ़ाए जाते हैं।
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Links -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🔗</span> संबंधित लिंक</h2>
+            <div class="related-grid">
+                <a href="../mantra/index.html" class="related-link">📿 सभी मंत्र</a>
+                <a href="../stotra/shri-suktam.html" class="related-link">📜 श्री सूक्तम्</a>
+                <a href="../stotra/kanakadhara.html" class="related-link">📜 कनकधारा स्तोत्र</a>
+                <a href="../tyohar/diwali.html" class="related-link">🎉 दीपावली</a>
+                <a href="../katha/lakshmi-katha.html" class="related-link">📖 लक्ष्मी कथाएँ</a>
+                <a href="../quiz/index.html" class="related-link">🎯 लक्ष्मी क्विज</a>
+            </div>
+        </div>
+
+        <!-- Share -->
+        <button class="btn-primary" onclick="sharePage()" style="margin-top:10px;">
+            <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+        </button>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय माता लक्ष्मी</p>
+        </footer>
+
+    </main>
+
+    <button class="back-top" id="backTop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-calendar-days"></i><p>पंचांग</p></a>
+        <a href="../quiz/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>क्विज</p></a>
+    </nav>
+
+    <script src="../script.js"></script>
+    <script>
+        function toggleAccordion(el) {
+            const item = el.parentElement;
+            item.classList.toggle('open');
+        }
+
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backTop');
+            if (btn) {
+                if (window.scrollY > 400) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
