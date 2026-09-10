@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>गणेश जी — संपूर्ण ज्ञान | Sanatan Gyan Kosh</title>
+    <meta name="description" content="गणेश जी का संपूर्ण ज्ञान — परिचय, कथा, स्वरूप, अष्टविनायक, मंत्र, स्तोत्र, आरती, मंदिर, त्योहार, व्रत और बहुत कुछ।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .devta-hero {
+            text-align: center;
+            padding: 24px 20px;
+            background: linear-gradient(135deg, rgba(212,175,55,0.12), rgba(122,46,46,0.08));
+            border-radius: var(--radius);
+            margin-bottom: 14px;
+            border: 1px solid var(--border);
+        }
+        .devta-hero .icon { font-size: 72px; display: block; line-height: 1; }
+        .devta-hero .name {
+            font-family: var(--font-display);
+            font-size: 30px;
+            color: var(--maroon);
+            margin-top: 6px;
+        }
+        .devta-hero .subtitle {
+            font-size: 13px;
+            color: var(--ink-soft);
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+
+        .devta-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 18px 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .devta-section h2 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--maroon);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 8px;
+        }
+        .devta-section h2 .sec-icon { font-size: 24px; }
+
+        .devta-section p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+            margin-bottom: 8px;
+        }
+        .devta-section p strong { color: var(--maroon); }
+
+        .mantra-box {
+            background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(122,46,46,0.05));
+            border-left: 4px solid var(--gold);
+            padding: 14px 16px;
+            border-radius: 12px;
+            font-family: var(--font-display);
+            font-size: 18px;
+            text-align: center;
+            margin: 10px 0;
+            line-height: 1.8;
+            color: var(--maroon);
+            font-weight: 600;
+        }
+        .mantra-box small {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 12px;
+            color: var(--ink-soft);
+            font-weight: 400;
+            margin-top: 6px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .info-item {
+            background: var(--bg);
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 13px;
+        }
+        .info-item .lbl {
+            font-size: 10px;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-item .val {
+            font-weight: 600;
+            color: var(--maroon);
+            margin-top: 2px;
+        }
+
+        .devta-section ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 8px;
+        }
+        .devta-section ul li {
+            padding: 8px 0;
+            font-size: 13.5px;
+            line-height: 1.6;
+            border-bottom: 1px dashed var(--border);
+            color: var(--ink-soft);
+        }
+        .devta-section ul li:last-child { border-bottom: none; }
+        .devta-section ul li strong { color: var(--maroon); }
+
+        .accordion-item {
+            border-bottom: 1px solid var(--border);
+        }
+        .accordion-item:last-child { border-bottom: none; }
+        .accordion-head {
+            padding: 12px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--maroon);
+            font-family: var(--font-display);
+        }
+        .accordion-head i {
+            transition: transform 0.3s;
+            color: var(--gold);
+        }
+        .accordion-item.open .accordion-head i {
+            transform: rotate(180deg);
+        }
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            font-size: 13px;
+            color: var(--ink-soft);
+            line-height: 1.8;
+        }
+        .accordion-item.open .accordion-body {
+            max-height: 4000px;
+            padding-bottom: 12px;
+        }
+
+        .temple-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .temple-item {
+            padding: 10px 14px;
+            background: var(--bg);
+            border-radius: 10px;
+            border-left: 3px solid var(--gold);
+            font-size: 13px;
+        }
+        .temple-item strong { color: var(--maroon); }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .related-link {
+            padding: 10px 12px;
+            background: var(--bg);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--maroon);
+            font-weight: 600;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .related-link:hover {
+            background: var(--card-bg);
+            border-color: var(--gold);
+        }
+
+        .ashtavinayak-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .ashtavinayak-item {
+            background: var(--bg);
+            padding: 12px 14px;
+            border-radius: 12px;
+            border-left: 4px solid var(--gold);
+        }
+        .ashtavinayak-item .av-name {
+            font-weight: 700;
+            color: var(--maroon);
+            font-size: 14px;
+        }
+        .ashtavinayak-item .av-loc {
+            font-size: 11px;
+            color: var(--ink-light);
+            margin-top: 2px;
+        }
+        .ashtavinayak-item .av-desc {
+            font-size: 12px;
+            color: var(--ink-soft);
+            margin-top: 4px;
+            line-height: 1.6;
+        }
+
+        .names-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .name-item {
+            background: var(--bg);
+            padding: 8px 12px;
+            border-radius: 8px;
+            border-left: 3px solid var(--gold);
+            font-size: 12px;
+        }
+        .name-item strong {
+            color: var(--maroon);
+            font-family: var(--font-display);
+            font-size: 14px;
+        }
+
+        .back-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--maroon);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 16px rgba(122,46,46,0.4);
+            z-index: 90;
+        }
+        .back-top.show { display: flex; }
+
+        @media (max-width: 420px) {
+            .devta-hero .icon { font-size: 60px; }
+            .devta-hero .name { font-size: 24px; }
+            .devta-section h2 { font-size: 17px; }
+            .mantra-box { font-size: 16px; }
+            .names-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ देवता ज्ञान</span>
+            <h1>गणेश जी</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <!-- Hero -->
+        <div class="devta-hero">
+            <span class="icon">🐘</span>
+            <div class="name">गणेश जी</div>
+            <div class="subtitle">विघ्नहर्ता · गणपति · गजानन · वक्रतुण्ड</div>
+        </div>
+
+        <!-- Quick Info -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📋</span> एक नज़र में</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="lbl">अन्य नाम</div>
+                    <div class="val">गणपति, गजानन, वक्रतुण्ड, एकदन्त, लम्बोदर, विनायक, विघ्नहर्ता, सिद्धिविनायक, मंगलमूर्ति</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">माता-पिता</div>
+                    <div class="val">शिव और पार्वती</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">भाई</div>
+                    <div class="val">कार्तिकेय</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">पत्नी</div>
+                    <div class="val">ऋद्धि और सिद्धि</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">पुत्र</div>
+                    <div class="val">क्षेम, लाभ</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">वाहन</div>
+                    <div class="val">मूषक (चूहा)</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">आयुध</div>
+                    <div class="val">परशु, पाश, अंकुश</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय भोग</div>
+                    <div class="val">मोदक (लड्डू), दूर्वा, केला</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय दिन</div>
+                    <div class="val">बुधवार, चतुर्थी</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय रंग</div>
+                    <div class="val">लाल, पीला</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रमुख पर्व</div>
+                    <div class="val">गणेश चतुर्थी, अनंत चतुर्दशी</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">अष्टविनायक</div>
+                    <div class="val">8 प्रमुख मंदिर (महाराष्ट्र)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- परिचय -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📖</span> परिचय</h2>
+            <p>
+                <strong>भगवान गणेश</strong> हिंदू धर्म के सबसे पूजनीय देवताओं में से एक हैं। वे <strong>विघ्नहर्ता</strong> हैं — सभी बाधाओं को दूर करने वाले। किसी भी शुभ कार्य से पहले <strong>गणेश जी की पूजा</strong> सबसे पहले की जाती है।
+            </p>
+            <p>
+                गणेश जी को <strong>गणपति</strong>, <strong>गजानन</strong>, <strong>वक्रतुण्ड</strong>, <strong>एकदन्त</strong>, <strong>लम्बोदर</strong>, <strong>विनायक</strong>, और <strong>मंगलमूर्ति</strong> जैसे 108 नामों से जाना जाता है। वे <strong>शिव और पार्वती</strong> के पुत्र हैं और <strong>कार्तिकेय</strong> के भाई हैं।
+            </p>
+            <p>
+                गणेश जी <strong>बुद्धि, विवेक, सिद्धि, और समृद्धि</strong> के दाता हैं। वे <strong>विद्या, कला, व्यापार, और विवाह</strong> में सफलता प्रदान करते हैं। उनकी पत्नियाँ <strong>ऋद्धि और सिद्धि</strong> हैं और पुत्र <strong>क्षेम और लाभ</strong> हैं।
+            </p>
+            <p>
+                गणेश जी का वाहन <strong>मूषक (चूहा)</strong> है, जो <strong>इच्छाओं और वासनाओं</strong> का प्रतीक है — जिन्हें गणेश जी ने वश में किया है।
+            </p>
+        </div>
+
+        <!-- जन्म कथा -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📜</span> जन्म कथा</h2>
+            <p>
+                एक दिन माता <strong>पार्वती</strong> स्नान करने जा रही थीं। उन्होंने अपने शरीर के उबटन से एक <strong>बालक की मूर्ति</strong> बनाई और उसमें प्राण डाल दिए। उन्होंने बालक को <strong>द्वारपाल</strong> बनाया और कहा — "जब तक मैं स्नान कर रही हूँ, किसी को अंदर न आने देना।"
+            </p>
+            <p>
+                उसी समय <strong>शिव जी</strong> वहाँ आए। बालक ने उन्हें रोक दिया। शिव जी ने कहा — "मैं पार्वती का पति हूँ।" लेकिन बालक ने माता के आदेश का पालन करते हुए उन्हें अंदर नहीं जाने दिया।
+            </p>
+            <p>
+                इस पर <strong>शिव जी को क्रोध आया</strong> और उन्होंने अपने <strong>त्रिशूल</strong> से बालक का सिर काट दिया। जब पार्वती बाहर आईं, तो उन्हें बहुत दुःख हुआ। उन्होंने शिव जी से बालक को जीवित करने को कहा।
+            </p>
+            <p>
+                शिव जी ने अपने गणों से कहा — "जो भी प्राणी उत्तर दिशा की ओर मुख करके सो रहा हो, उसका सिर ले आओ।" गण <strong>हाथी</strong> का सिर ले आए। शिव जी ने उस सिर को बालक के धड़ पर जोड़ दिया और उसे जीवनदान दिया।
+            </p>
+            <p>
+                इस प्रकार <strong>गजानन (हाथी के मुख वाले)</strong> गणेश जी का जन्म हुआ। शिव जी ने उन्हें <strong>सभी देवताओं का अग्रपूज्य</strong> होने का वरदान दिया — इसलिए किसी भी पूजा में सबसे पहले <strong>गणेश जी की पूजा</strong> की जाती है।
+            </p>
+        </div>
+
+        <!-- स्वरूप -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🎨</span> स्वरूप</h2>
+            <p>
+                गणेश जी का स्वरूप <strong>विलक्षण और मनोहर</strong> है — हर अंग का गहरा अर्थ है।
+            </p>
+            <ul>
+                <li><strong>हाथी का सिर:</strong> बुद्धि, विवेक, और ज्ञान का प्रतीक</li>
+                <li><strong>बड़े कान:</strong> अधिक सुनने का प्रतीक — अच्छी बातें सुनें</li>
+                <li><strong>छोटी आँखें:</strong> एकाग्रता और ध्यान का प्रतीक</li>
+                <li><strong>लंबी सूंड:</strong> क्षमता, बल, और लचीलेपन का प्रतीक</li>
+                <li><strong>एक दाँत:</strong> मोक्ष और त्याग का प्रतीक (एकदन्त)</li>
+                <li><strong>बड़ा पेट:</strong> सभी अनुभवों को पचाने का प्रतीक (लम्बोदर)</li>
+                <li><strong>चार हाथ:</strong> मन, बुद्धि, अहंकार, और चित्त का प्रतीक</li>
+                <li><strong>परशु:</strong> इच्छाओं को काटने का प्रतीक</li>
+                <li><strong>पाश:</strong> मोह और बंधनों को पकड़ने का प्रतीक</li>
+                <li><strong>अंकुश:</strong> क्रोध और इच्छाओं को नियंत्रित करने का प्रतीक</li>
+                <li><strong>मोदक (लड्डू):</strong> सिद्धियों का फल और मधुरता का प्रतीक</li>
+                <li><strong>मूषक (चूहा):</strong> इच्छाओं और वासनाओं का प्रतीक — जो गणेश जी ने वश में किया</li>
+                <li><strong>पैर:</strong> एक ज़मीन पर, एक हवा में — सांसारिक और आध्यात्मिक संतुलन</li>
+            </ul>
+        </div>
+
+        <!-- मुख्य मंत्र -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🐘</span> मुख्य मंत्र</h2>
+
+            <p><strong>1. गणेश मूल मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ गं गणपतये नमः
+                <small>अर्थ: हे गणपति, मैं आपको नमस्कार करता हूँ। यह गणेश का बीज मंत्र है — 'गं' बीज है।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>2. गणेश गायत्री मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ एकदन्ताय विद्महे ।<br>
+                वक्रतुण्डाय धीमहि ।<br>
+                तन्नो दन्तिः प्रचोदयात् ॥
+                <small>अर्थ: हम एकदन्त का ध्यान करते हैं, वक्रतुण्ड का ध्यान करते हैं, गणेश हमें प्रेरित करें।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>3. विघ्नहर्ता मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ गं गणपतये सर्वविघ्नं हर हर गणपतये नमः
+                <small>अर्थ: हे गणपति, सभी विघ्नों को दूर करें, हे गणपति, मैं आपको नमस्कार करता हूँ।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>4. गणेश सिद्धि मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ सिद्धि बुद्धि सहिताय श्री गणेशाय नमः
+                <small>अर्थ: सिद्धि और बुद्धि सहित श्री गणेश को नमस्कार।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>5. गणेश अथर्वशीर्ष (संक्षिप्त):</strong></p>
+            <div class="mantra-box" style="font-size:15px;">
+                ॐ नमस्ते गणपतये ।<br>
+                त्वमेव प्रत्यक्षं तत्वमसि ॥
+                <small>अर्थ: हे गणपति, आपको नमस्कार। आप ही साक्षात ब्रह्म हैं।</small>
+            </div>
+        </div>
+
+        <!-- 108 नाम (प्रमुख 24) -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🔱</span> गणेश जी के 108 नाम (प्रमुख 24)</h2>
+            <p style="font-size:13px;margin-bottom:8px;">
+                गणेश जी के 108 नाम हैं। यहाँ कुछ प्रमुख नाम दिए गए हैं।
+            </p>
+            <div class="names-grid">
+                <div class="name-item"><strong>गणपति</strong> — गणों के स्वामी</div>
+                <div class="name-item"><strong>गजानन</strong> — हाथी के मुख वाले</div>
+                <div class="name-item"><strong>वक्रतुण्ड</strong> — टेढ़ी सूंड वाले</div>
+                <div class="name-item"><strong>एकदन्त</strong> — एक दाँत वाले</div>
+                <div class="name-item"><strong>लम्बोदर</strong> — बड़े पेट वाले</div>
+                <div class="name-item"><strong>विनायक</strong> — विशेष नायक</div>
+                <div class="name-item"><strong>विघ्नहर्ता</strong> — विघ्न दूर करने वाले</div>
+                <div class="name-item"><strong>सिद्धिविनायक</strong> — सिद्धि देने वाले</div>
+                <div class="name-item"><strong>बुद्धिनाथ</strong> — बुद्धि के स्वामी</div>
+                <div class="name-item"><strong>गणेश्वर</strong> — गणों के ईश्वर</div>
+                <div class="name-item"><strong>मंगलमूर्ति</strong> — मंगल करने वाले</div>
+                <div class="name-item"><strong>सुमुख</strong> — सुंदर मुख वाले</div>
+                <div class="name-item"><strong>दूर्वाभर</strong> — दूर्वा प्रिय</div>
+                <div class="name-item"><strong>मोदकप्रिय</strong> — मोदक प्रिय</div>
+                <div class="name-item"><strong>गजकर्ण</strong> — हाथी के कान वाले</div>
+                <div class="name-item"><strong>प्रमोद</strong> — आनंद देने वाले</div>
+                <div class="name-item"><strong>हेरम्ब</strong> — माता के प्रिय पुत्र</div>
+                <div class="name-item"><strong>शूर्पकर्ण</strong> — बड़े कान वाले</div>
+                <div class="name-item"><strong>अव्यय</strong> — अविनाशी</div>
+                <div class="name-item"><strong>सर्वसिद्धिप्रद</strong> — सभी सिद्धियों के दाता</div>
+                <div class="name-item"><strong>अंगारक</strong> — अंगारे जैसे तेज वाले</div>
+                <div class="name-item"><strong>ऋद्धिद</strong> — ऋद्धि के दाता</div>
+                <div class="name-item"><strong>सिद्धिद</strong> — सिद्धि के दाता</div>
+                         <div class="name-item"><strong>लाभदायक</strong> — लाभ देने वाले</div>
+            </div>
+        </div>
+
+        <!-- अष्टविनायक (8 मंदिर) -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🛕</span> अष्टविनायक — 8 पवित्र मंदिर</h2>
+            <p style="font-size:13px;margin-bottom:8px;">
+                <strong>अष्टविनायक</strong> गणेश जी के 8 सबसे पवित्र मंदिर हैं, जो <strong>महाराष्ट्र</strong> में स्थित हैं। इनके दर्शन से सभी विघ्न दूर होते हैं।
+            </p>
+            <div class="ashtavinayak-grid">
+                <div class="ashtavinayak-item">
+                    <div class="av-name">1. मोरेश्वर</div>
+                    <div class="av-loc">📍 मोरगाँव, पुणे</div>
+                    <div class="av-desc">यहाँ गणेश जी ने मोर नामक दैत्य का वध किया था।</div>
+                </div>
+                <div class="ashtavinayak-item">
+                    <div class="av-name">2. सिद्धिविनायक</div>
+                    <div class="av-loc">📍 सिद्धटेक, अहमदनगर</div>
+                    <div class="av-desc">सिद्धि प्राप्ति का स्थल, गणेश जी का सबसे प्रसिद्ध रूप।</div>
+                </div>
+                <div class="ashtavinayak-item">
+                    <div class="av-name">3. बल्लालेश्वर</div>
+                    <div class="av-loc">📍 पाली, रायगढ़</div>
+                    <div class="av-desc">जहाँ गणेश जी ने काली देवी से विवाह किया था।</div>
+                </div>
+                <div class="ashtavinayak-item">
+                    <div class="av-name">4. वरदविनायक</div>
+                    <div class="av-loc">📍 मढ, रायगढ़</div>
+                    <div class="av-desc">वरदान देने वाले गणेश, जो अष्टविनायक के पश्चिम में हैं।</div>
+                </div>
+                <div class="ashtavinayak-item">
+                    <div class="av-name">5. चिंतामणि</div>
+                    <div class="av-loc">📍 थेऊर, पुणे</div>
+                    <div class="av-desc">चिंता दूर करने वाले गणेश, जहाँ मणि की रक्षा हुई थी।</div>
+                </div>
+                <div class="ashtavinayak-item">
+                    <div class="av-name">6. गिरिजात्मज</div>
+                    <div class="av-loc">📍 लेण्याद्री, पुणे</div>
+                    <div class="av-desc">पार्वती की तपस्या से प्रकट गणेश, पहाड़ पर स्थित।</div>
+                </div>
+                <div class="ashtavinayak-item">
+                    <div class="av-name">7. विघ्नेश्वर</div>
+                    <div class="av-loc">📍 ओझर, पुणे</div>
+                    <div class="av-desc">विघ्न नाशक गणेश, जहाँ गणेश जी ने विघ्नासुर का वध किया था।</div>
+                </div>
+                <div class="ashtavinayak-item">
+                    <div class="av-name">8. महागणपति</div>
+                    <div class="av-loc">📍 रांजणगाँव, पुणे</div>
+                    <div class="av-desc">त्रिपुरासुर के वध के समय प्रकट हुए गणेश, महागणपति रूप।</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- जप विधि -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📿</span> जप विधि</h2>
+            <ul>
+                <li><strong>समय:</strong> प्रातः 5-7 बजे, या बुधवार, चतुर्थी</li>
+                <li><strong>स्थान:</strong> पूर्व या उत्तर दिशा में मुख करके, स्वच्छ स्थान पर</li>
+                <li><strong>माला:</strong> लाल चंदन, हल्दी, या तुलसी माला</li>
+                <li><strong>संख्या:</strong> 108 बार (1 माला), या 1008 बार</li>
+                <li><strong>वस्त्र:</strong> पीले या लाल वस्त्र</li>
+                <li><strong>भोग:</strong> मोदक (लड्डू), दूर्वा, केला, गुड़, नारियल</li>
+                <li><strong>धूप/दीप:</strong> धूप, घी का दीपक, कपूर</li>
+                <li><strong>विशेष:</strong> गणेश अथर्वशीर्ष, संकटनाशन गणेश स्तोत्र, गणेश चालीसा</li>
+            </ul>
+        </div>
+
+        <!-- गणेश स्तोत्र (Accordion) -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📜</span> गणेश स्तोत्र / आरती</h2>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 गणेश आरती (जय गणेश जय गणेश)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:15px;text-align:left;line-height:2;">
+                        जय गणेश जय गणेश जय गणेश देवा ।<br>
+                        माता जाकी पार्वती पिता महादेवा ॥<br>
+                        जय गणेश... ॥<br><br>
+                        एकदंत दयावंत चार भुजाधारी ।<br>
+                        माथे सिंदूर सोहे मूषक की सवारी ॥<br>
+                        जय गणेश... ॥<br><br>
+                        पान चढ़े फूल चढ़े और चढ़े मेवा ।<br>
+                        लड्डुअन का भोग लगे संत करें सेवा ॥<br>
+                        जय गणेश... ॥<br><br>
+                        अंधन को आँख देत कोढ़िन को काया ।<br>
+                        बाँझन को बाँच देता निर्धन को माया ॥<br>
+                        जय गणेश... ॥<br><br>
+                        अष्टसिद्धि नौ निधि के दाता ।<br>
+                        सब पाता शरणागत जो जग में आता ॥<br>
+                        जय गणेश... ॥<br><br>
+                        जय गणेश जय गणेश जय गणेश देवा ।<br>
+                        माता जाकी पार्वती पिता महादेवा ॥
+                    </div>
+                </div>
+            </div>
+               <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 वक्रतुण्ड महाकाय (श्लोक)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:16px;text-align:left;line-height:2;">
+                        वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ ।<br>
+                        निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥
+                    </div>
+                    <p style="font-size:13px;line-height:1.8;margin-top:8px;">
+                        <strong>अर्थ:</strong> हे वक्रतुण्ड, महाकाय, करोड़ों सूर्यों के समान तेजस्वी, हे देव, मेरे सभी कार्यों में सदा विघ्न न डालें — निर्विघ्न करें।
+                    </p>
+                    <p style="font-size:13px;line-height:1.8;margin-top:8px;">
+                        <strong>महत्व:</strong> यह श्लोक किसी भी कार्य के आरंभ में पढ़ना चाहिए — विघ्न नाश के लिए।
+                    </p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 गणेश अथर्वशीर्ष (मुख्य मंत्र)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        ॐ नमस्ते गणपतये ।<br>
+                        त्वमेव प्रत्यक्षं तत्वमसि ।<br>
+                        त्वमेव केवलं कर्तासि ।<br>
+                        त्वमेव केवलं धर्तासि ।<br>
+                        त्वमेव केवलं हर्तासि ।<br>
+                        त्वमेव सर्वं खल्विदं ब्रह्मासि ।<br>
+                        त्वं साक्षादात्मासि नित्यम् ॥<br><br>
+                        ऋतं वच्मि । सत्यं वच्मि ॥<br>
+                        अव त्वं माम् । अव वक्तारम् ।<br>
+                        अव श्रोतारम् । अव दातारम् ।<br>
+                        अव धातारम् । अवानूचानमव शिष्यम् ।<br>
+                        अव पश्चात्तात् । अव पुरस्तात् ।<br>
+                        अवोत्तरात्तात् । अव दक्षिणात्तात् ।<br>
+                        अव चोर्ध्वात्तात् । अवाधरात्तात् ।<br>
+                        सर्वतो मां पाहि पाहि समन्तात् ॥
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 संकटनाशन गणेश स्तोत्र</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <p style="margin-bottom:8px;font-size:13px;">
+                        <strong>रचयिता:</strong> नारद मुनि — यह स्तोत्र सभी संकटों का नाश करता है।
+                    </p>
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        प्रणम्य शिरसा देवं गौरीपुत्रं विनायकम् ।<br>
+                        भक्तावासं स्मरेन्नित्यं आयुःकामार्थसिद्धये ॥<br><br>
+                        प्रथमं वक्रतुण्डं च एकदन्तं द्वितीयकम् ।<br>
+                        तृतीयं कृष्णपिङ्गाक्षं गजवक्त्रं चतुर्थकम् ॥<br><br>
+                        लम्बोदरं पञ्चमं च षष्ठं विकटमेव च ।<br>
+                        सप्तमं विघ्नराजेन्द्रं धूम्रवर्णं तथाष्टमम् ॥<br><br>
+                        नवमं भालचन्द्रं च दशमं तु विनायकम् ।<br>
+                        एकादशं गणपतिं द्वादशं तु गजाननम् ॥<br><br>
+                        ... (12 नामों का स्तोत्र — संकट नाश के लिए)
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 गणेश चालीसा (संक्षिप्त)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        जय गणपति सदगुण सदन, कवि वर बदन कृपाल ।<br>
+                        विघ्न हरण मंगल करण, जय जय गिरिजालाल ॥<br><br>
+                        जय जय जय गणपति गणराजू । मंगल भरण करण शुभ काजू ॥<br>
+                        जै गजबदन सदन सुखदाता । विश्व विनायक बुद्धि विधाता ॥<br>
+                        वक्र तुण्ड शुचि शुण्ड सुहावन । तिलक त्रिपुण्ड भाल मन भावन ॥<br>
+                        राजत मणि मुक्तन उर माला । स्वर्ण मुकुट शिर नयन विशाला ॥<br>
+                        ... (40 चौपाइयाँ — पूरा पाठ)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- प्रमुख मंदिर -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🛕</span> प्रमुख मंदिर</h2>
+            <div class="temple-list">
+                <div class="temple-item">
+                    <strong>सिद्धिविनायक मंदिर, मुंबई</strong><br>
+                    मुंबई का सबसे प्रसिद्ध गणेश मंदिर, प्रभादेवी में स्थित।
+                </div>
+                <div class="temple-item">
+                    <strong>दगड़ुशेठ हलवाई गणपति, मुंबई</strong><br>
+                    मुंबई का सबसे प्राचीन और प्रसिद्ध गणेश मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>अष्टविनायक मंदिर (8 मंदिर), महाराष्ट्र</strong><br>
+                    मोरेश्वर, सिद्धिविनायक, बल्लालेश्वर, वरदविनायक, चिंतामणि, गिरिजात्मज, विघ्नेश्वर, महागणपति।
+                </div>
+                <div class="temple-item">
+                    <strong>गणेश मंदिर, मथुरा</strong><br>
+                    मथुरा में स्थित प्राचीन गणेश मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>काशी गणेश मंदिर, वाराणसी</strong><br>
+                    काशी में "दशाश्वमेध" घाट के पास स्थित गणेश मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>गणेश मंदिर, अयोध्या</strong><br>
+                    अयोध्या में स्थित गणेश मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>गणेश टेकड़ी, नागपुर</strong><br>
+                    नागपुर का प्रसिद्ध गणेश मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>महागणपति मंदिर, रांजणगाँव</strong><br>
+                    महाराष्ट्र के अष्टविनायक में से एक, महागणपति रूप।
+                </div>
+            </div>
+        </div>
+
+        <!-- त्योहार और व्रत -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🎉</span> प्रमुख त्योहार और व्रत</h2>
+            <ul>
+                <li><strong>गणेश चतुर्थी:</strong> भाद्रपद शुक्ल चतुर्थी — गणेश जी का जन्मोत्सव। 10 दिनों तक चलता है।</li>
+                <li><strong>अनंत चतुर्दशी:</strong> भाद्रपद शुक्ल चतुर्दशी — गणेश विसर्जन का दिन।</li>
+                <li><strong>बुधवार व्रत:</strong> हर बुधवार — गणेश जी का प्रिय दिन।</li>
+                <li><strong>संकट चतुर्थी:</strong> हर महीने की कृष्ण चतुर्थी — संकट नाश के लिए।</li>
+                <li><strong>विनायक चतुर्थी:</strong> हर महीने की शुक्ल चतुर्थी — विघ्न नाश के लिए।</li>
+                <li><strong>गणेश जयंती:</strong> माघ शुक्ल चतुर्थी — गणेश जी का प्रकटोत्सव।</li>
+                <li><strong>मोदक प्रिय:</strong> गणेश जी को मोदक (लड्डू) का भोग लगाया जाता है।</li>
+                <li><strong>दूर्वा पूजन:</strong> गणेश जी को दूर्वा (दूब) अत्यंत प्रिय है।</li>
+            </ul>
+        </div>
+
+        <!-- भक्ति और लाभ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🙏</span> गणेश जी को क्यों भजें?</h2>
+            <ul>
+                <li><strong>विघ्न नाश:</strong> सभी कार्यों में आने वाली बाधाएँ दूर होती हैं।</li>
+                <li><strong>बुद्धि और विवेक:</strong> गणेश जी विद्या और बुद्धि के दाता हैं।</li>
+                <li><strong>व्यापार में सफलता:</strong> व्यापारियों के लिए गणेश पूजा विशेष लाभदायक है।</li>
+                <li><strong>विवाह:</strong> विवाह में आने वाली बाधाएँ दूर होती हैं।</li>
+                <li><strong>संतान प्राप्ति:</strong> संतानहीन दंपत्ति को गणेश पूजा से संतान मिलती है।</li>
+                <li><strong>धन प्राप्ति:</strong> गणेश जी ऋद्धि-सिद्धि के दाता हैं, धन लाभ होता है।</li>
+                <li><strong>शत्रु नाश:</strong> गणेश मंत्र जप से शत्रु दूर होते हैं।</li>
+                <li><strong>मोक्ष:</strong> गणेश अथर्वशीर्ष पाठ से आत्मज्ञान और मोक्ष मिलता है।</li>
+            </ul>
+        </div>
+
+        <!-- वर्जित कार्य -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🚫</span> क्या न करें?</h2>
+            <ul>
+                <li>❌ गणेश जी की मूर्ति को <strong>अशुद्ध हाथों</strong> से न छुएँ</li>
+                <li>❌ <strong>बिना स्नान</strong> गणेश पूजा न करें</li>
+                <li>❌ <strong>तुलसी</strong> गणेश जी को न चढ़ाएँ</li>
+                <li>❌ <strong>बासी</strong> या <strong>अशुद्ध</strong> भोग न चढ़ाएँ</li>
+                <li>❌ गणेश जी के सामने <strong>झूठ</strong> न बोलें</li>
+                <li>❌ <strong>चतुर्थी</strong> को <strong>चावल</strong> न खाएँ (कुछ परंपराओं में)</li>
+                <li>❌ गणेश जी की मूर्ति को <strong>ज़मीन पर</strong> न रखें</li>
+                <li>❌ <strong>गणेश अथर्वशीर्ष</strong> का अनादर न करें</li>
+            </ul>
+        </div>
+
+        <!-- FAQ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>गणेश जी का सिर हाथी का क्यों है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    शिव जी ने क्रोध में गणेश जी का सिर काट दिया था। माता पार्वती के दुःख को देखकर शिव जी ने उत्तर दिशा में सो रहे प्राणी का सिर लाने को कहा। गण <strong>हाथी का सिर</strong> ले आए, जिसे शिव जी ने गणेश जी के धड़ पर जोड़ दिया। इसलिए गणेश जी <strong>गजानन</strong> (हाथी के मुख वाले) कहलाए।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>गणेश जी की पूजा पहले क्यों की जाती है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    शिव जी ने गणेश जी को <strong>सभी देवताओं का अग्रपूज्य</strong> होने का वरदान दिया। इसलिए किसी भी शुभ कार्य, पूजा, या उत्सव से पहले <strong>गणेश जी की पूजा</strong> की जाती है। इसे <strong>गणेश वंदना</strong> या <strong>अग्रपूजा</strong> कहते हैं।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>गणेश जी को दूर्वा क्यों चढ़ाते हैं?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>दूर्वा (दूब)</strong> गणेश जी को अत्यंत प्रिय है। कथा के अनुसार, <strong>अनलासुर</strong> नामक दैत्य को दूर्वा की जड़ों में छिपे होने के कारण गणेश जी ने दूर्वा से उसका वध किया। इसलिए दूर्वा चढ़ाने से गणेश जी प्रसन्न होते हैं और <strong>आयु, आरोग्य, और समृद्धि</strong> मिलती है।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>गणेश चतुर्थी पर मूर्ति क्यों विसर्जित करते हैं?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>गणेश चतुर्थी</strong> पर गणेश जी की मूर्ति स्थापित की जाती है और <strong>10 दिन</strong> तक पूजा की जाती है। फिर <strong>अनंत चतुर्दशी</strong> को मूर्ति का विसर्जन किया जाता है। यह <strong>नश्वरता</strong> का प्रतीक है — जो आया है, उसे जाना है। विसर्जन का अर्थ है — गणेश जी को विदाई देना और अगले वर्ष फिर आने का निमंत्रण।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>क्या गणेश पूजा से व्यापार में लाभ होता है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    हाँ, <strong>गणेश जी व्यापारियों के देवता</strong> माने जाते हैं। व्यापार में <strong>गणेश पूजा, गणेश चालीसा, और गणेश अथर्वशीर्ष</strong> का पाठ करने से <strong>धन लाभ, बाधा नाश, और सफलता</strong> मिलती है। किसी भी नए व्यापार की शुरुआत से पहले गणेश पूजा की जाती है।
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Links -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🔗</span> संबंधित लिंक</h2>
+            <div class="related-grid">
+                <a href="../mantra/index.html" class="related-link">📿 सभी मंत्र</a>
+                <a href="../stotra/ganesh-atharvashirsha.html" class="related-link">📜 गणेश अथर्वशीर्ष</a>
+                <a href="../stotra/sankatnashan.html" class="related-link">📜 संकटनाशन स्तोत्र</a>
+                <a href="../tyohar/ganesh-chaturthi.html" class="related-link">🎉 गणेश चतुर्थी</a>
+                <a href="../katha/ganesh-katha.html" class="related-link">📖 गणेश कथाएँ</a>
+                <a href="../quiz/index.html" class="related-link">🎯 गणेश क्विज</a>
+            </div>
+        </div>
+
+        <!-- Share -->
+        <button class="btn-primary" onclick="sharePage()" style="margin-top:10px;">
+            <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+        </button>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय गणेश</p>
+        </footer>
+
+    </main>
+
+    <button class="back-top" id="backTop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-calendar-days"></i><p>पंचांग</p></a>
+        <a href="../quiz/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>क्विज</p></a>
+    </nav>
+
+    <script src="../script.js"></script>
+    <script>
+        function toggleAccordion(el) {
+            const item = el.parentElement;
+            item.classList.toggle('open');
+        }
+
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backTop');
+            if (btn) {
+                if (window.scrollY > 400) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>       
+  </body>
+</html>
