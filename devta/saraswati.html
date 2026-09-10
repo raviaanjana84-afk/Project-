@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>सरस्वती माता — संपूर्ण ज्ञान | Sanatan Gyan Kosh</title>
+    <meta name="description" content="सरस्वती माता का संपूर्ण ज्ञान — परिचय, कथा, स्वरूप, मंत्र, स्तोत्र, आरती, मंदिर, त्योहार, व्रत और बहुत कुछ।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .devta-hero {
+            text-align: center;
+            padding: 24px 20px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.4), rgba(212,175,55,0.1));
+            border-radius: var(--radius);
+            margin-bottom: 14px;
+            border: 1px solid var(--border);
+        }
+        .devta-hero .icon { font-size: 72px; display: block; line-height: 1; }
+        .devta-hero .name {
+            font-family: var(--font-display);
+            font-size: 30px;
+            color: var(--maroon);
+            margin-top: 6px;
+        }
+        .devta-hero .subtitle {
+            font-size: 13px;
+            color: var(--ink-soft);
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+
+        .devta-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 18px 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .devta-section h2 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--maroon);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 8px;
+        }
+        .devta-section h2 .sec-icon { font-size: 24px; }
+
+        .devta-section p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+            margin-bottom: 8px;
+        }
+        .devta-section p strong { color: var(--maroon); }
+
+        .mantra-box {
+            background: linear-gradient(135deg, rgba(255,255,255,0.5), rgba(212,175,55,0.08));
+            border-left: 4px solid var(--gold);
+            padding: 14px 16px;
+            border-radius: 12px;
+            font-family: var(--font-display);
+            font-size: 18px;
+            text-align: center;
+            margin: 10px 0;
+            line-height: 1.8;
+            color: var(--maroon);
+            font-weight: 600;
+        }
+        .mantra-box small {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 12px;
+            color: var(--ink-soft);
+            font-weight: 400;
+            margin-top: 6px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .info-item {
+            background: var(--bg);
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 13px;
+        }
+        .info-item .lbl {
+            font-size: 10px;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-item .val {
+            font-weight: 600;
+            color: var(--maroon);
+            margin-top: 2px;
+        }
+
+        .devta-section ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 8px;
+        }
+        .devta-section ul li {
+            padding: 8px 0;
+            font-size: 13.5px;
+            line-height: 1.6;
+            border-bottom: 1px dashed var(--border);
+            color: var(--ink-soft);
+        }
+        .devta-section ul li:last-child { border-bottom: none; }
+        .devta-section ul li strong { color: var(--maroon); }
+
+        .accordion-item {
+            border-bottom: 1px solid var(--border);
+        }
+        .accordion-item:last-child { border-bottom: none; }
+        .accordion-head {
+            padding: 12px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--maroon);
+            font-family: var(--font-display);
+        }
+        .accordion-head i {
+            transition: transform 0.3s;
+            color: var(--gold);
+        }
+        .accordion-item.open .accordion-head i {
+            transform: rotate(180deg);
+        }
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            font-size: 13px;
+            color: var(--ink-soft);
+            line-height: 1.8;
+        }
+        .accordion-item.open .accordion-body {
+            max-height: 4000px;
+            padding-bottom: 12px;
+        }
+
+        .temple-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .temple-item {
+            padding: 10px 14px;
+            background: var(--bg);
+            border-radius: 10px;
+            border-left: 3px solid var(--gold);
+            font-size: 13px;
+        }
+        .temple-item strong { color: var(--maroon); }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .related-link {
+            padding: 10px 12px;
+            background: var(--bg);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--maroon);
+            font-weight: 600;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .related-link:hover {
+            background: var(--card-bg);
+            border-color: var(--gold);
+        }
+
+        .names-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .name-item {
+            background: var(--bg);
+            padding: 8px 12px;
+            border-radius: 8px;
+            border-left: 3px solid var(--gold);
+            font-size: 12px;
+        }
+        .name-item strong {
+            color: var(--maroon);
+            font-family: var(--font-display);
+            font-size: 14px;
+        }
+
+        .back-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--maroon);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 16px rgba(122,46,46,0.4);
+            z-index: 90;
+        }
+        .back-top.show { display: flex; }
+
+        @media (max-width: 420px) {
+            .devta-hero .icon { font-size: 60px; }
+            .devta-hero .name { font-size: 24px; }
+            .devta-section h2 { font-size: 17px; }
+            .mantra-box { font-size: 16px; }
+            .names-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ देवता ज्ञान</span>
+            <h1>सरस्वती माता</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <!-- Hero -->
+        <div class="devta-hero">
+            <span class="icon">📚</span>
+            <div class="name">सरस्वती माता</div>
+            <div class="subtitle">वाग्देवी · शारदा · ब्रह्माणी · वीणावादिनी</div>
+        </div>
+
+        <!-- Quick Info -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📋</span> एक नज़र में</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="lbl">अन्य नाम</div>
+                    <div class="val">वाग्देवी, शारदा, ब्रह्माणी, वीणावादिनी, वागीश्वरी, वाणी की देवी</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">पति</div>
+                    <div class="val">भगवान ब्रह्मा</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">पुत्र</div>
+                    <div class="val">सरस्वत ऋषि, कवि</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">वाहन</div>
+                    <div class="val">हंस (सफेद हंस)</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">आयुध</div>
+                    <div class="val">वीणा, पुस्तक, माला, कमल</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय दिन</div>
+                    <div class="val">वसंत पंचमी, बुधवार, नवरात्रि</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय रंग</div>
+                    <div class="val">सफेद, पीला</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय भोग</div>
+                    <div class="val">खीर, मिश्री, सफेद मिठाई, पीले फूल</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय पुष्प</div>
+                    <div class="val">सफेद कमल, चम्पा, मोगरा</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">निवास</div>
+                    <div class="val">ब्रह्मलोक, सत्यलोक</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रमुख पर्व</div>
+                    <div class="val">वसंत पंचमी, नवरात्रि</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रतीक</div>
+                    <div class="val">विद्या, ज्ञान, कला, संगीत, वाणी</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- परिचय -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📖</span> परिचय</h2>
+            <p>
+                <strong>माँ सरस्वती</strong> हिंदू धर्म की <strong>विद्या, ज्ञान, कला, संगीत, और वाणी</strong> की देवी हैं। वे <strong>वाग्देवी</strong> हैं — वाणी की अधिष्ठात्री देवी। जो भी विद्या, कला, या ज्ञान है — वह सरस्वती माता का ही वरदान है।
+            </p>
+            <p>
+                सरस्वती माता को <strong>शारदा</strong>, <strong>ब्रह्माणी</strong>, <strong>वीणावादिनी</strong>, और <strong>वागीश्वरी</strong> जैसे कई नामों से जाना जाता है। वे <strong>भगवान ब्रह्मा की पत्नी</strong> हैं और उनके साथ <strong>ब्रह्मलोक</strong> में निवास करती हैं।
+            </p>
+            <p>
+                सरस्वती माता <strong>सफेद वस्त्र</strong> धारण करती हैं और <strong>सफेद हंस</strong> पर सवार होती हैं। उनके हाथों में <strong>वीणा, पुस्तक, माला, और कमल</strong> सुशोभित हैं। वीणा <strong>संगीत और कला</strong> का, पुस्तक <strong>ज्ञान</strong> का, और माला <strong>आध्यात्मिक शक्ति</strong> का प्रतीक है।
+            </p>
+            <p>
+                विद्यार्थियों, शिक्षकों, कलाकारों, और संगीतकारों के लिए सरस्वती पूजा विशेष महत्व रखती है। <strong>वसंत पंचमी</strong> को सरस्वती माता का प्रकटोत्सव मनाया जाता है।
+            </p>
+        </div>
+
+        <!-- प्रकट कथा -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📜</span> प्रकट कथा</h2>
+            <p>
+                एक पौराणिक कथा के अनुसार, जब <strong>ब्रह्मा जी</strong> ने सृष्टि की रचना की, तो वे <strong>मौन</strong> थे — क्योंकि कोई वाणी नहीं थी। तब ब्रह्मा जी ने अपने <strong>कमंडलु से जल</strong> को पृथ्वी पर छोड़ा और उससे <strong>सरस्वती देवी</strong> प्रकट हुईं।
+            </p>
+            <p>
+                सरस्वती ने ब्रह्मा जी को <strong>वाणी</strong> प्रदान की। इसके बाद ब्रह्मा जी ने <strong>वेदों, उपनिषदों, और सभी शास्त्रों</strong> की रचना की। इसलिए सरस्वती को <strong>वाग्देवी</strong> कहा जाता है।
+            </p>
+            <p>
+                एक अन्य कथा के अनुसार, <strong>भगवान विष्णु</strong> की जीभ से सरस्वती प्रकट हुईं। एक अन्य कथा में वे <strong>ब्रह्मा जी की मानस पुत्री</strong> हैं।
+            </p>
+            <p>
+                <strong>सरस्वती नदी</strong> भी उन्हीं से संबंधित है — जो प्राचीन काल में बहती थी और वेदों की रचना का स्थल थी। इसलिए सरस्वती माता को <strong>ज्ञान की नदी</strong> भी कहा जाता है।
+            </p>
+        </div>
+
+        <!-- स्वरूप -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🎨</span> स्वरूप</h2>
+            <p>
+                सरस्वती माता का स्वरूप <strong>अत्यंत शांत, तेजस्वी, और सौम्य</strong> है।
+            </p>
+            <ul>
+                <li><strong>रंग:</strong> श्वेत (सफेद) — शुद्धता और शांति का प्रतीक</li>
+                <li><strong>वस्त्र:</strong> सफेद रेशमी वस्त्र</li>
+                <li><strong>आभूषण:</strong> मोती के आभूषण, स्वर्ण मुकुट</li>
+                <li><strong>हाथ:</strong> 4 हाथ (चतुर्भुजा)</li>
+                <li><strong>आयुध:</strong> वीणा, पुस्तक (वेद), माला (अक्षमाला), कमल</li>
+                <li><strong>वाहन:</strong> सफेद हंस</li>
+                <li><strong>नेत्र:</strong> कमल के समान सुंदर, करुणा से भरे</li>
+                <li><strong>मुद्रा:</strong> अभय मुद्रा और वरद मुद्रा</li>
+                <li><strong>आसन:</strong> सफेद कमल</li>
+                <li><strong>विशेष:</strong> वीणा बजाती हुई, ज्ञान की मूर्ति</li>
+                <li><strong>हंस का अर्थ:</strong> हंस नीर-क्षीर विवेक का प्रतीक — जो अच्छे-बुरे में भेद कर सके</li>
+            </ul>
+        </div>
+
+        <!-- मुख्य मंत्र -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📚</span> मुख्य मंत्र</h2>
+
+            <p><strong>1. सरस्वती मूल मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ ऐं सरस्वत्यै नमः
+                <small>अर्थ: हे सरस्वती माता, मैं आपको नमस्कार करता हूँ। 'ऐं' सरस्वती का बीज मंत्र है।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>2. सरस्वती बीज मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ ऐं ह्रीं श्रीं वाग्देव्यै नमः
+                <small>अर्थ: तीन बीज अक्षरों का शक्तिशाली मंत्र — विद्या, ज्ञान, और वाणी के लिए।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>3. सरस्वती गायत्री मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ वाग्देव्यै च विद्महे ।<br>
+                ब्रह्मपत्न्यै च धीमहि ।<br>
+                तन्नो वाणीः प्रचोदयात् ॥
+                <small>अर्थ: हम वाग्देवी का ध्यान करते हैं, ब्रह्मा की पत्नी का ध्यान करते हैं, वाणी हमें प्रेरित करें।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>4. विद्या मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ ऐं सरस्वत्यै ऐं ह्रीं श्रीं नमः
+                <small>अर्थ: विद्या, बुद्धि, और स्मरणशक्ति के लिए — विद्यार्थियों का प्रिय मंत्र।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>5. सरस्वती वंदना (श्लोक):</strong></p>
+            <div class="mantra-box" style="font-size:15px;">
+                या कुन्देन्दुतुषारहारधवला ।<br>
+                या शुभ्रवस्त्रावृता ॥<br>
+                या वीणावरदण्डमण्डितकरा ।<br>
+                या श्वेतपद्मासना ॥
+                <small>अर्थ: जो कुंद फूल, चंद्रमा, और हिम के हार के समान श्वेत हैं, जो श्वेत वस्त्र धारण करती हैं, जिनके हाथों में वीणा है, जो श्वेत कमल पर विराजमान हैं।</small>
+            </div>
+        </div>
+
+        <!-- सरस्वती के 108 नाम (24 प्रमुख) -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🔱</span> सरस्वती माता के 108 नाम (24 प्रमुख)</h2>
+            <p style="font-size:13px;margin-bottom:8px;">
+                सरस्वती माता के 108 नाम हैं — इनका जप करने से बुद्धि, विद्या, और वाणी में वृद्धि होती है।
+            </p>
+            <div class="names-grid">
+                <div class="name-item"><strong>सरस्वती</strong> — ज्ञान की देवी</div>
+                <div class="name-item"><strong>वाग्देवी</strong> — वाणी की देवी</div>
+                <div class="name-item"><strong>शारदा</strong> — ज्ञान देने वाली</div>
+                <div class="name-item"><strong>ब्रह्माणी</strong> — ब्रह्मा की शक्ति</div>
+                <div class="name-item"><strong>वीणावादिनी</strong> — वीणा बजाने वाली</div>
+                <div class="name-item"><strong>वागीश्वरी</strong> — वाणी की ईश्वरी</div>
+                <div class="name-item"><strong>कुमुदी</strong> — कमल के समान</div>
+                <div class="name-item"><strong>ब्रह्मपत्नी</strong> — ब्रह्मा की पत्नी</div>
+                <div class="name-item"><strong>महाविद्या</strong> — सर्वोच्च विद्या</div>
+                <div class="name-item"><strong>विद्यादात्री</strong> — विद्या देने वाली</div>
+                <div class="name-item"><strong>हंसवाहिनी</strong> — हंस पर सवार</div>
+                <div class="name-item"><strong>श्वेतपद्मासना</strong> — श्वेत कमल पर विराजमान</div>
+                <div class="name-item"><strong>श्वेतवस्त्रा</strong> — श्वेत वस्त्र धारण करने वाली</div>
+                <div class="name-item"><strong>वरदा</strong> — वरदान देने वाली</div>
+                <div class="name-item"><strong>कविप्रिया</strong> — कवियों की प्रिय</div>
+                <div class="name-item"><strong>कलावती</strong> — कला की देवी</div>
+                <div class="name-item"><strong>संगीतप्रिया</strong> — संगीत की प्रिय</div>
+                <div class="name-item"><strong>ज्ञानदा</strong> — ज्ञान देने वाली</div>
+                <div class="name-item"><strong>बुद्धिदात्री</strong> — बुद्धि देने वाली</div>
+                <div class="name-item"><strong>स्मृतिप्रदा</strong> — स्मरणशक्ति देने वाली</div>
+                <div class="name-item"><strong>वाणीदा</strong> — वाणी देने वाली</div>
+                <div class="name-item"><strong>शुभदा</strong> — शुभ देने वाली</div>
+                <div class="name-item"><strong>सिद्धिदा</strong> — सिद्धि देने वाली</div>
+                <div class="name-item"><strong>मोक्षदा</strong> — मोक्ष देने वाली</div>
+            </div>
+        </div>
+
+        <!-- जप विधि -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📿</span> जप विधि</h2>
+            <ul>
+                <li><strong>समय:</strong> प्रातः 4-6 बजे (ब्रह्म मुहूर्त), या बुधवार, वसंत पंचमी</li>
+                <li><strong>स्थान:</strong> पूर्व या उत्तर दिशा में मुख करके, स्वच्छ स्थान पर</li>
+                <li><strong>माला:</strong> स्फटिक, मोती, या सफेद चंदन माला</li>
+                <li><strong>संख्या:</strong> 108 बार (1 माला), या 1008 बार</li>
+                <li><strong>वस्त्र:</strong> सफेद या पीले वस्त्र</li>
+                <li><strong>भोग:</strong> खीर, मिश्री, सफेद मिठाई, पीले फूल</li>
+                <li><strong>धूप/दीप:</strong> धूप, घी का दीपक, कपूर</li>
+                <li><strong>विशेष:</strong> सरस्वती वंदना, सरस्वती चालीसा, सरस्वती स्तोत्र</li>
+                <li><strong>अर्घ्य:</strong> सफेद फूल और जल अर्पित करें</li>
+                <li><strong>विद्यार्थी:</strong> पढ़ाई से पहले 11 बार मंत्र जपें</li>
+            </ul>
+        </div>
+
+        <!-- सरस्वती स्तोत्र (Accordion) -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📜</span> सरस्वती स्तोत्र / आरती</h2>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 सरस्वती आरती (जय सरस्वती माता)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:15px;text-align:left;line-height:2;">
+                        जय सरस्वती माता, जय जय सरस्वती माता ।<br>
+                        सद्गुण वैभव शालिनी, त्रिभुवन विख्याता ॥<br>
+                        जय सरस्वती माता... ॥<br><br>
+                        चन्द्रवदनि पद्मासिनि, द्युति मंगलकारी ।<br>
+                        सकल विश्व में व्याप्त तेरा प्रकाश भारी ॥<br>
+                        जय सरस्वती माता... ॥<br><br>
+                        सर्वज्ञे सर्ववरदे, सर्वदुष्टभयङ्करि ।<br>
+                        सर्वदुःखहरे देवि, सर्वसम्पत्करि ॥<br>
+                        जय सरस्वती माता... ॥<br><br>
+                        पुस्तक कर में धारिणी, पुण्य प्रकाशिनी ।<br>
+                        वीणा वादिनी, श्वेत वस्त्र धारिणी ॥<br>
+                        जय सरस्वती माता... ॥<br><br>
+                        हंस वाहिनी, बुद्धिदात्री, विद्या प्रकाशिनी ।<br>
+                        सर्व कला में निपुण, सदा सुख दायिनी ॥<br>
+                        जय सरस्वती माता... ॥<br><br>
+                        जय सरस्वती माता, जय जय सरस्वती माता ।<br>
+                        सद्गुण वैभव शालिनी, त्रिभुवन विख्याता ॥
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 सरस्वती वंदना (या कुन्देन्दुतुषारहारधवला)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <p style="margin-bottom:8px;font-size:13px;">
+                        <strong>रचयिता:</strong> महाकवि कालिदास — यह श्लोक सरस्वती वंदना का सबसे प्रसिद्ध श्लोक है।
+                    </p>
+                    <div class="mantra-box" style="font-size:15px;text-align:left;line-height:2;">
+                        या कुन्देन्दुतुषारहारधवला या शुभ्रवस्त्रावृता ।<br>
+                        या वीणावरदण्डमण्डितकरा या श्वेतपद्मासना ॥<br>
+                        या ब्रह्माच्युतशंकरप्रभृतिभिर्देवैः सदा वन्दिता ।<br>
+                        सा मां पातु सरस्वती भगवती निःशेषजाड्यापहा ॥
+                    </div>
+                    <p style="font-size:13px;line-height:1.8;margin-top:8px;">
+                        <strong>अर्थ:</strong> जो कुंद फूल, चंद्रमा, और हिम के हार के समान श्वेत हैं, जो श्वेत वस्त्र धारण करती हैं, जिनके हाथों में वीणा है, जो श्वेत कमल पर विराजमान हैं, जिनकी ब्रह्मा, विष्णु, और शंकर सदा वंदना करते हैं — वे सरस्वती माता मेरी रक्षा करें, जो सभी जड़ता को दूर करती हैं।
+                    </p>
+                    <p style="font-size:13px;line-height:1.8;margin-top:8px;">
+                        <strong>महत्व:</strong> विद्यार्थियों के लिए यह श्लोक पढ़ना अत्यंत शुभ माना जाता है — स्मरणशक्ति और बुद्धि के लिए।
+                    </p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 सरस्वती स्तोत्र (संपूर्ण)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        ॐ सरस्वति नमस्तुभ्यं वरदे कामरूपिणि ।<br>
+                        विद्यारम्भं करिष्यामि सिद्धिर्भवतु मे सदा ॥<br><br>
+                        सरस्वति नमस्तुभ्यं सर्वदेवैर्नमस्कृते ।<br>
+                        शान्ते प्रसन्नवदने सर्वज्ञे ब्रह्मरूपिणि ॥<br><br>
+                        सरस्वति नमस्तुभ्यं सर्वविद्ये सुरेश्वरि ।<br>
+                        शुभे शुभफले देवि सर्वसिद्धिप्रदायिके ॥<br><br>
+                        पद्मपत्रविशालाक्षि पद्मकिञ्जल्कवर्णिनि ।<br>
+                        वीणावादनसंसक्त हस्तपद्मे सरस्वति ॥<br><br>
+                        ... (सरस्वती स्तोत्र — कई श्लोक)
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 सरस्वती चालीसा</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        जय जय सरस्वती सुखदाता । ज्ञान प्रकाशिनी वरदाता ॥<br>
+                        हंसवाहिनी पद्मासना । सर्वविद्या की जननी भवानी ॥<br><br>
+                        जय सरस्वती माता, जय जय सरस्वती माता ।<br>
+                        सद्गुण वैभव शालिनी, त्रिभुवन विख्याता ॥<br><br>
+                        ... (सरस्वती चालीसा — 40 चौपाइयाँ)
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 सरस्वती अष्टोत्तर शतनाम स्तोत्र (संक्षिप्त)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        ॐ सरस्वत्यै नमः । ॐ वाग्देव्यै नमः ।<br>
+                        ॐ शारदायै नमः । ॐ ब्रह्माण्यै नमः ।<br>
+                        ॐ वीणावादिन्यै नमः । ॐ वागीश्वर्यै नमः ।<br>
+                        ॐ कुमुद्यै नमः । ॐ ब्रह्मपत्न्यै नमः ।<br>
+                        ॐ महाविद्यायै नमः । ॐ विद्यादात्र्यै नमः ।<br>
+                        ... (108 नामों का स्तोत्र)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- प्रमुख मंदिर -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🛕</span> प्रमुख मंदिर</h2>
+            <div class="temple-list">
+                <div class="temple-item">
+                    <strong>शारदा पीठ, कश्मीर</strong><br>
+                    सरस्वती माता का सबसे प्राचीन और प्रसिद्ध मंदिर, जो अब पाकिस्तान-अधिकृत कश्मीर में है। यहाँ 52 शक्तिपीठों में से एक है।
+                </div>
+                <div class="temple-item">
+                    <strong>सरस्वती मंदिर, शृंगेरी (कर्नाटक)</strong><br>
+                    शृंगेरी मठ में स्थित, आदि शंकराचार्य द्वारा स्थापित।
+                </div>
+                <div class="temple-item">
+                    <strong>कूटनाथ मंदिर, बस्ती (उत्तर प्रदेश)</strong><br>
+                    सरस्वती और शिव का प्राचीन मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>सरस्वती मंदिर, पुष्कर (राजस्थान)</strong><br>
+                    पुष्कर में स्थित, ब्रह्मा मंदिर के निकट।
+                </div>
+                <div class="temple-item">
+                    <strong>सरस्वती मंदिर, द्वारका (गुजरात)</strong><br>
+                    द्वारका में स्थित, जहाँ सरस्वती नदी का संगम है।
+                </div>
+                <div class="temple-item">
+                    <strong>शारदा मंदिर, सोरों (उत्तर प्रदेश)</strong><br>
+                    सोरों शूकरक्षेत्र में स्थित प्राचीन सरस्वती मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>सरस्वती मंदिर, कुरुक्षेत्र</strong><br>
+                    कुरुक्षेत्र में स्थित, जहाँ सरस्वती नदी बहती थी।
+                </div>
+                <div class="temple-item">
+                    <strong>बसंत पंचमी पूजा, सभी विद्यालय</strong><br>
+                    वसंत पंचमी के दिन सभी विद्यालयों और शिक्षण संस्थानों में सरस्वती पूजा होती है।
+                </div>
+            </div>
+        </div>
+
+        <!-- त्योहार और व्रत -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🎉</span> प्रमुख त्योहार और व्रत</h2>
+            <ul>
+                <li><strong>वसंत पंचमी:</strong> माघ शुक्ल पंचमी — सरस्वती माता का प्रकटोत्सव। विद्यार्थियों का सबसे बड़ा पर्व।</li>
+                <li><strong>बुधवार व्रत:</strong> हर बुधवार — सरस्वती माता का प्रिय दिन।</li>
+                <li><strong>नवरात्रि:</strong> चैत्र और शारदीय नवरात्रि में सरस्वती पूजा।</li>
+                <li><strong>सरस्वती पूजा (बंगाल):</strong> माघ मास में सरस्वती पूजा का बड़ा पर्व।</li>
+                <li><strong>विद्यारंभ:</strong> बच्चों की पहली पढ़ाई वसंत पंचमी को शुरू होती है।</li>
+                <li><strong>अक्षर आरंभ:</strong> बच्चों को पहला अक्षर लिखवाना — वसंत पंचमी पर।</li>
+                <li><strong>संगीत प्रारंभ:</strong> संगीतकार अपने वाद्य यंत्र की पूजा करते हैं।</li>
+                <li><strong>पुस्तक पूजा:</strong> विद्यार्थी अपनी पुस्तकों की पूजा करते हैं।</li>
+            </ul>
+        </div>
+
+        <!-- भक्ति और लाभ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🙏</span> सरस्वती माता को क्यों भजें?</h2>
+            <ul>
+                <li><strong>विद्या प्राप्ति:</strong> सरस्वती माता की कृपा से विद्या, ज्ञान, और बुद्धि बढ़ती है।</li>
+                <li><strong>स्मरणशक्ति:</strong> पढ़ाई में एकाग्रता और याददाश्त बढ़ती है।</li>
+                <li><strong>वाणी:</strong> वाणी में मधुरता और प्रभावशीलता आती है।</li>
+                <li><strong>कला और संगीत:</strong> कलाकारों और संगीतकारों को विशेष लाभ।</li>
+                <li><strong>परीक्षा में सफलता:</strong> विद्यार्थियों को परीक्षा में सफलता मिलती है।</li>
+                <li><strong>लेखन और कविता:</strong> लेखकों और कवियों को प्रेरणा मिलती है।</li>
+                <li><strong>विवाह:</strong> अविवाहित लड़कियों के लिए अच्छा वर मिलता है।</li>
+                <li><strong>मोक्ष:</strong> ज्ञान और आत्मज्ञान से मोक्ष प्राप्त होता है।</li>
+            </ul>
+        </div>
+
+        <!-- वर्जित कार्य -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🚫</span> क्या न करें?</h2>
+            <ul>
+                <li>❌ सरस्वती माता की मूर्ति को <strong>अशुद्ध हाथों</strong> से न छुएँ</li>
+                <li>❌ <strong>बिना स्नान</strong> सरस्वती पूजा न करें</li>
+                <li>❌ सरस्वती माता को <strong>लाल फूल</strong> न चढ़ाएँ (सफेद/पीले फूल चढ़ाएँ)</li>
+                <li>❌ <strong>बासी</strong> या <strong>अशुद्ध</strong> भोग न चढ़ाएँ</li>
+                <li>❌ सरस्वती माता के सामने <strong>झूठ</strong> न बोलें</li>
+                <li>❌ <strong>पुस्तकों</strong> का अनादर न करें (सरस्वती का स्वरूप हैं)</li>
+                <li>❌ <strong>वीणा</strong> या <strong>वाद्य यंत्रों</strong> का अनादर न करें</li>
+                <li>❌ <strong>वसंत पंचमी</strong> पर <strong>अध्ययन</strong> बंद न रखें (कुछ परंपराओं में)</li>
+                <li>❌ सरस्वती माता के सामने <strong>शोर</strong> न करें</li>
+                <li>❌ <strong>कलम</strong> या <strong>पेन</strong> को पैर से न छुएँ</li>
+            </ul>
+        </div>
+
+        <!-- FAQ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>सरस्वती माता का प्राकट्य कैसे हुआ?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    ब्रह्मा जी ने सृष्टि की रचना के समय अपने कमंडलु से जल पृथ्वी पर छोड़ा, जिससे <strong>सरस्वती देवी प्रकट हुईं</strong>। उन्होंने ब्रह्मा जी को <strong>वाणी</strong> प्रदान की, जिसके बाद वेदों और शास्त्रों की रचना हुई। इसलिए सरस्वती को <strong>वाग्देवी</strong> कहा जाता है।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>वसंत पंचमी पर सरस्वती पूजा क्यों की जाती है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>वसंत पंचमी</strong> (माघ शुक्ल पंचमी) को <strong>सरस्वती माता का प्रकटोत्सव</strong> मनाया जाता है। यह <strong>वसंत ऋतु</strong> की शुरुआत है — ज्ञान और नई शुरुआत का प्रतीक। इस दिन बच्चों की <strong>विद्यारंभ</strong> (पहली पढ़ाई) कराई जाती है और विद्यार्थी अपनी पुस्तकों की पूजा करते हैं।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>सरस्वती माता का वाहन हंस क्यों है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>हंस</strong> को <strong>नीर-क्षीर विवेक</strong> का प्रतीक माना जाता है — हंस पानी और दूध को अलग कर सकता है। यह <strong>ज्ञान और विवेक</strong> का प्रतीक है — जो अच्छे-बुरे, सत्य-असत्य, और ज्ञान-अज्ञान में भेद कर सके। इसलिए सरस्वती माता का वाहन हंस है।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>क्या सरस्वती पूजा से परीक्षा में सफलता मिलती है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    हाँ, <strong>सरस्वती वंदना, सरस्वती मंत्र जप, और सरस्वती चालीसा</strong> से परीक्षा में सफलता मिलती है। विद्यार्थी <strong>पढ़ाई से पहले 11 बार 'ॐ ऐं सरस्वत्यै नमः'</strong> जपें और <strong>वसंत पंचमी</strong> पर विशेष पूजा करें।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>क्या सरस्वती माता की पूजा में तुलसी चढ़ा सकते हैं?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    नहीं, सरस्वती माता को <strong>तुलसी नहीं चढ़ाते</strong>। उन्हें <strong>सफेद या पीले फूल</strong> (सफेद कमल, चम्पा, मोगरा, गुलाब) चढ़ाए जाते हैं। <strong>लाल फूल</strong> भी नहीं चढ़ाते — क्योंकि सरस्वती माता का प्रिय रंग <strong>सफेद और पीला</strong> है।
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Links -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🔗</span> संबंधित लिंक</h2>
+            <div class="related-grid">
+                <a href="../mantra/index.html" class="related-link">📿 सभी मंत्र</a>
+                <a href="../stotra/saraswati-vandana.html" class="related-link">📜 सरस्वती वंदना</a>
+                <a href="../stotra/saraswati-chalisa.html" class="related-link">📜 सरस्वती चालीसा</a>
+                <a href="../tyohar/vasant-panchami.html" class="related-link">🎉 वसंत पंचमी</a>
+                <a href="../katha/saraswati-katha.html" class="related-link">📖 सरस्वती कथाएँ</a>
+                <a href="../quiz/index.html" class="related-link">🎯 सरस्वती क्विज</a>
+            </div>
+        </div>
+
+        <!-- Share -->
+        <button class="btn-primary" onclick="sharePage()" style="margin-top:10px;">
+            <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+        </button>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय माता सरस्वती</p>
+        </footer>
+
+    </main>
+
+    <button class="back-top" id="backTop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-calendar-days"></i><p>पंचांग</p></a>
+        <a href="../quiz/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>क्विज</p></a>
+    </nav>
+
+    <script src="../script.js"></script>
+    <script>
+        function toggleAccordion(el) {
+            const item = el.parentElement;
+            item.classList.toggle('open');
+        }
+
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backTop');
+            if (btn) {
+                if (window.scrollY > 400) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
