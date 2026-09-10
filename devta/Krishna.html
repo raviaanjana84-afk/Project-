@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>श्री कृष्ण जी — संपूर्ण ज्ञान | Sanatan Gyan Kosh</title>
+    <meta name="description" content="श्री कृष्ण जी का संपूर्ण ज्ञान — परिचय, जन्म कथा, स्वरूप, लीलाएँ, भगवद् गीता, मंत्र, स्तोत्र, आरती, मंदिर, त्योहार और बहुत कुछ।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .devta-hero {
+            text-align: center;
+            padding: 24px 20px;
+            background: linear-gradient(135deg, rgba(212,175,55,0.12), rgba(122,46,46,0.08));
+            border-radius: var(--radius);
+            margin-bottom: 14px;
+            border: 1px solid var(--border);
+        }
+        .devta-hero .icon { font-size: 72px; display: block; line-height: 1; }
+        .devta-hero .name {
+            font-family: var(--font-display);
+            font-size: 30px;
+            color: var(--maroon);
+            margin-top: 6px;
+        }
+        .devta-hero .subtitle {
+            font-size: 13px;
+            color: var(--ink-soft);
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+
+        .devta-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 18px 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .devta-section h2 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--maroon);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 8px;
+        }
+        .devta-section h2 .sec-icon { font-size: 24px; }
+
+        .devta-section p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+            margin-bottom: 8px;
+        }
+        .devta-section p strong { color: var(--maroon); }
+
+        .mantra-box {
+            background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(122,46,46,0.05));
+            border-left: 4px solid var(--gold);
+            padding: 14px 16px;
+            border-radius: 12px;
+            font-family: var(--font-display);
+            font-size: 18px;
+            text-align: center;
+            margin: 10px 0;
+            line-height: 1.8;
+            color: var(--maroon);
+            font-weight: 600;
+        }
+        .mantra-box small {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 12px;
+            color: var(--ink-soft);
+            font-weight: 400;
+            margin-top: 6px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .info-item {
+            background: var(--bg);
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 13px;
+        }
+        .info-item .lbl {
+            font-size: 10px;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-item .val {
+            font-weight: 600;
+            color: var(--maroon);
+            margin-top: 2px;
+        }
+
+        .devta-section ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 8px;
+        }
+        .devta-section ul li {
+            padding: 8px 0;
+            font-size: 13.5px;
+            line-height: 1.6;
+            border-bottom: 1px dashed var(--border);
+            color: var(--ink-soft);
+        }
+        .devta-section ul li:last-child { border-bottom: none; }
+        .devta-section ul li strong { color: var(--maroon); }
+
+        .accordion-item {
+            border-bottom: 1px solid var(--border);
+        }
+        .accordion-item:last-child { border-bottom: none; }
+        .accordion-head {
+            padding: 12px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--maroon);
+            font-family: var(--font-display);
+        }
+        .accordion-head i {
+            transition: transform 0.3s;
+            color: var(--gold);
+        }
+        .accordion-item.open .accordion-head i {
+            transform: rotate(180deg);
+        }
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            font-size: 13px;
+            color: var(--ink-soft);
+            line-height: 1.8;
+        }
+        .accordion-item.open .accordion-body {
+            max-height: 3000px;
+            padding-bottom: 12px;
+        }
+
+        .temple-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .temple-item {
+            padding: 10px 14px;
+            background: var(--bg);
+            border-radius: 10px;
+            border-left: 3px solid var(--gold);
+            font-size: 13px;
+        }
+        .temple-item strong { color: var(--maroon); }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .related-link {
+            padding: 10px 12px;
+            background: var(--bg);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--maroon);
+            font-weight: 600;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .related-link:hover {
+            background: var(--card-bg);
+            border-color: var(--gold);
+        }
+
+        .leela-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .leela-item {
+            background: var(--bg);
+            padding: 12px 14px;
+            border-radius: 12px;
+            border-left: 4px solid var(--gold);
+        }
+        .leela-item .leela-name {
+            font-weight: 700;
+            color: var(--maroon);
+            font-size: 14px;
+        }
+        .leela-item .leela-desc {
+            font-size: 12px;
+            color: var(--ink-soft);
+            margin-top: 4px;
+            line-height: 1.6;
+        }
+
+        .back-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--maroon);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 16px rgba(122,46,46,0.4);
+            z-index: 90;
+        }
+        .back-top.show { display: flex; }
+
+        @media (max-width: 420px) {
+            .devta-hero .icon { font-size: 60px; }
+            .devta-hero .name { font-size: 24px; }
+            .devta-section h2 { font-size: 17px; }
+            .mantra-box { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ देवता ज्ञान</span>
+            <h1>श्री कृष्ण जी</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <!-- Hero -->
+        <div class="devta-hero">
+            <span class="icon">🟡</span>
+            <div class="name">श्री कृष्ण जी</div>
+            <div class="subtitle">गोविंद · मुरलीधर · जगद्गुरु · गीताचार्य</div>
+        </div>
+
+        <!-- Quick Info -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📋</span> एक नज़र में</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="lbl">अन्य नाम</div>
+                    <div class="val">गोविंद, मुरलीधर, नंदलाल, माधव, केशव, वासुदेव</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">माता-पिता</div>
+                    <div class="val">देवकी-वासुदेव (जन्म), यशोदा-नंद (पालन)</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">भाई-बहन</div>
+                    <div class="val">बलराम, सुभद्रा</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">पत्नी</div>
+                    <div class="val">रुक्मिणी, सत्यभामा, जाम्बवती, आदि (अष्टभार्या)</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रमुख पुत्र</div>
+                    <div class="val">प्रद्युम्न, साम्ब</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">जन्म तिथि</div>
+                    <div class="val">भाद्रपद कृष्ण अष्टमी (जन्माष्टमी)</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">जन्म स्थान</div>
+                    <div class="val">मथुरा (कारागार), उत्तर प्रदेश</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">लीला स्थल</div>
+                    <div class="val">वृंदावन, गोकुल, मथुरा, द्वारका</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">वंश</div>
+                    <div class="val">यदुवंश</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">राज्य</div>
+                    <div class="val">द्वारका</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय दिन</div>
+                    <div class="val">जन्माष्टमी, राधाष्टमी, एकादशी</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय भोग</div>
+                    <div class="val">माखन-मिश्री, धनिया पंजीरी, खीर, केला</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- परिचय -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📖</span> परिचय</h2>
+            <p>
+                <strong>भगवान श्री कृष्ण</strong> हिंदू धर्म के सबसे पूजनीय देवताओं में से एक हैं। वे <strong>भगवान विष्णु के आठवें अवतार</strong> हैं और <strong>पूर्ण पुरुषोत्तम</strong> माने जाते हैं। वे <strong>लीला पुरुषोत्तम</strong> हैं — जिनकी लीलाएँ अनंत हैं।
+            </p>
+            <p>
+                कृष्ण जी को <strong>मुरलीधर</strong>, <strong>गोविंद</strong>, <strong>नंदलाल</strong>, <strong>माधव</strong>, और <strong>जगद्गुरु</strong> जैसे कई नामों से जाना जाता है। उन्होंने <strong>भगवद् गीता</strong> का उपदेश दिया — जो हिंदू धर्म का सबसे पवित्र ग्रंथ है।
+            </p>
+            <p>
+                वे <strong>द्वापर युग</strong> में मथुरा में जन्मे थे। उनका जीवन <strong>बाल लीलाओं</strong> से लेकर <strong>महाभारत के युद्ध</strong> तक फैला हुआ है। वे <strong>प्रेम, भक्ति, ज्ञान, और कर्म</strong> के संगम हैं।
+            </p>
+        </div>
+
+        <!-- जन्म कथा -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📜</span> जन्म कथा</h2>
+            <p>
+                <strong>मथुरा</strong> के राजा <strong>कंस</strong> ने अपनी बहन <strong>देवकी</strong> और उनके पति <strong>वासुदेव</strong> को कारागार में बंद कर दिया था। आकाशवाणी हुई थी कि देवकी के आठवें पुत्र से कंस का वध होगा।
+            </p>
+            <p>
+                कंस ने देवकी के छह नवजात शिशुओं को मार डाला। सातवें पुत्र <strong>बलराम</strong> को योगमाया से वासुदेव ने <strong>रोहिणी</strong> के गर्भ में स्थापित कर दिया।
+            </p>
+            <p>
+                जब <strong>भाद्रपद कृष्ण अष्टमी</strong> की रात को <strong>कृष्ण</strong> का जन्म हुआ, तब कारागार के द्वार स्वयं खुल गए और सभी पहरेदार सो गए। वासुदेव ने कृष्ण को <strong>यमुना</strong> पार करके <strong>गोकुल</strong> में <strong>नंद बाबा</strong> और <strong>यशोदा माता</strong> के पास पहुँचा दिया।
+            </p>
+            <p>
+                यह दिन आज <strong>जन्माष्टमी</strong> के रूप में मनाया जाता है — कृष्ण जी का जन्मोत्सव।
+            </p>
+        </div>
+
+        <!-- स्वरूप -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🎨</span> स्वरूप</h2>
+            <p>
+                श्री कृष्ण जी का स्वरूप <strong>दिव्य, मनोहर, और आकर्षक</strong> है।
+            </p>
+            <ul>
+                <li><strong>रंग:</strong> श्याम वर्ण (नील-कमल के समान)</li>
+                <li><strong>वस्त्र:</strong> पीले रेशमी वस्त्र (पीताम्बर)</li>
+                <li><strong>मुकुट:</strong> मोरपंख सहित स्वर्ण मुकुट</li>
+                <li><strong>नेत्र:</strong> कमल के समान सुंदर, करुणा से भरे</li>
+                <li><strong>आयुध:</strong> बाँसुरी (मुरली), सुदर्शन चक्र</li>
+                <li><strong>गले:</strong> वैजयंती माला, कौस्तुभ मणि</li>
+                <li><strong>वक्ष:</strong> श्रीवत्स चिह्न</li>
+                <li><strong>मुद्रा:</strong> बाँसुरी बजाते हुए, या अभय मुद्रा</li>
+                <li><strong>साथ:</strong> राधा रानी, गोपियाँ, गौएँ</li>
+                <li><strong>वाहन:</strong> गरुड़</li>
+            </ul>
+        </div>
+
+        <!-- मुख्य मंत्र -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🟡</span> मुख्य मंत्र</h2>
+
+            <p><strong>1. कृष्ण मूल मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ नमो भगवते वासुदेवाय
+                <small>अर्थ: हे भगवान वासुदेव, मैं आपको नमस्कार करता हूँ। यह 12 अक्षरों का मंत्र है।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>2. कृष्ण बीज मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ क्लीं कृष्णाय नमः
+                <small>अर्थ: यह कृष्ण का बीज मंत्र है — प्रेम, आकर्षण, और भक्ति के लिए।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>3. कृष्ण गायत्री मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ देवकीनन्दनाय विद्महे ।<br>
+                वासुदेवाय धीमहि ।<br>
+                तन्नो कृष्णः प्रचोदयात् ॥
+                <small>अर्थ: हम देवकी नंदन का ध्यान करते हैं, वासुदेव का ध्यान करते हैं, कृष्ण हमें प्रेरित करें।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>4. मधुराष्टकम् (संक्षिप्त):</strong></p>
+            <div class="mantra-box" style="font-size:15px;">
+                अधरं मधुरं वदनं मधुरं ।<br>
+                नयनं मधुरं हसितं मधुरम् ॥
+                <small>अर्थ: कृष्ण के अधर मधुर, मुख मधुर, नेत्र मधुर, हास्य मधुर।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>5. कृष्ण नाम (तारक मंत्र):</strong></p>
+            <div class="mantra-box">
+                हरे कृष्ण, हरे कृष्ण, कृष्ण कृष्ण, हरे हरे ।<br>
+                हरे राम, हरे राम, राम राम, हरे हरे ॥
+                <small>अर्थ: यह महामंत्र कलियुग का सबसे सरल तारक मंत्र है।</small>
+            </div>
+        </div>
+
+        <!-- कृष्ण की प्रमुख लीलाएँ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🎭</span> कृष्ण की प्रमुख लीलाएँ</h2>
+            <p style="font-size:13px;margin-bottom:8px;">
+                कृष्ण जी की <strong>16,108 लीलाएँ</strong> हैं। यहाँ कुछ प्रमुख लीलाएँ दी गई हैं।
+            </p>
+            <div class="leela-grid">
+                <div class="leela-item">
+                    <div class="leela-name">🍼 माखन चोरी लीला</div>
+                    <div class="leela-desc">बाल कृष्ण माखन चुराकर गोपियों को परेशान करते थे और यशोदा माता से डाँट खाते थे।</div>
+                </div>
+                <div class="leela-item">
+                    <div class="leela-name">🐍 कालिया नाग मर्दन</div>
+                    <div class="leela-desc">कृष्ण ने यमुना में रहने वाले विषैले कालिया नाग का मर्दन किया और उसे यमुना छोड़ने पर मजबूर किया।</div>
+                </div>
+                <div class="leela-item">
+                    <div class="leela-name">🌳 गोवर्धन धारण</div>
+                    <div class="leela-desc">इंद्र के प्रकोप से ब्रजवासियों की रक्षा के लिए कृष्ण ने सात दिन तक गोवर्धन पर्वत अपनी छोटी उंगली पर उठाए रखा।</div>
+                </div>
+                <div class="leela-item">
+                    <div class="leela-name">👗 चीर हरण</div>
+                    <div class="leela-desc">कृष्ण ने गोपियों के वस्त्र चुराए ताकि उनका अहंकार दूर हो और भक्ति जागे।</div>
+                </div>
+                <div class="leela-item">
+                    <div class="leela-name">💃 रासलीला</div>
+                    <div class="leela-desc">वृंदावन में कृष्ण ने गोपियों के साथ रासलीला की — भक्ति और प्रेम का सर्वोच्च प्रतीक।</div>
+                </div>
+                <div class="leela-item">
+                    <div class="leela-name">⚔️ कंस वध</div>
+                    <div class="leela-desc">मथुरा में कृष्ण ने अपने मामा कंस का वध करके मथुरा को उसके अत्याचार से मुक्त किया।</div>
+                </div>
+                <div class="leela-item">
+                    <div class="leela-name">📖 गीता उपदेश</div>
+                    <div class="leela-desc">कुरुक्षेत्र के मैदान में कृष्ण ने अर्जुन को भगवद् गीता का उपदेश दिया — कर्म, भक्ति, और ज्ञान का मार्ग।</div>
+                </div>
+                <div class="leela-item">
+                    <div class="leela-name">🏹 महाभारत युद्ध</div>
+                    <div class="leela-desc">कृष्ण ने महाभारत युद्ध में पांडवों की ओर से सारथी बनकर धर्म की स्थापना की।</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- भगवद् गीता -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📖</span> भगवद् गीता का सार</h2>
+            <p style="font-size:13px;margin-bottom:8px;">
+                <strong>भगवद् गीता</strong> कृष्ण जी द्वारा अर्जुन को दिया गया उपदेश है — <strong>18 अध्यायों</strong> में विभाजित। यह <strong>700 श्लोकों</strong> का ग्रंथ है।
+            </p>
+            <ul>
+                <li><strong>अध्याय 1-2:</strong> अर्जुन का विषाद और ज्ञान योग</li>
+                <li><strong>अध्याय 3-6:</strong> कर्म योग, ज्ञान योग, ध्यान योग</li>
+                <li><strong>अध्याय 7-12:</strong> भक्ति योग, विभूति योग, विश्वरूप दर्शन</li>
+                <li><strong>अध्याय 13-18:</strong> क्षेत्र-क्षेत्रज्ञ, तीन गुण, पुरुषोत्तम, दैव-असुर संपद, मोक्ष संन्यास योग</li>
+            </ul>
+
+            <p style="margin-top:10px;"><strong>गीता के प्रमुख श्लोक:</strong></p>
+            <div class="mantra-box" style="font-size:15px;">
+                कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।<br>
+                मा कर्मफलहेतुर्भूर्मा ते संगोऽस्त्वकर्मणि ॥
+                <small>अर्थ: तुम्हारा अधिकार केवल कर्म करने में है, फल में नहीं। फल की चिंता न करो, न ही कर्म छोड़ो।</small>
+            </div>
+        </div>
+
+        <!-- जप विधि -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📿</span> जप विधि</h2>
+            <ul>
+                <li><strong>समय:</strong> प्रातः 5-7 बजे, या जन्माष्टमी, एकादशी</li>
+                <li><strong>स्थान:</strong> पूर्व दिशा में मुख करके, स्वच्छ स्थान पर</li>
+                <li><strong>माला:</strong> तुलसी माला (सबसे शुभ)</li>
+                <li><strong>संख्या:</strong> 108 बार (1 माला), या 1008 बार</li>
+                <li><strong>वस्त्र:</strong> पीले वस्त्र (सबसे शुभ)</li>
+                <li><strong>भोग:</strong> माखन-मिश्री, खीर, धनिया पंजीरी, केला</li>
+                <li><strong>धूप/दीप:</strong> धूप, घी का दीपक, कपूर</li>
+                <li><strong>विशेष:</strong> भगवद् गीता पाठ, विष्णु सहस्रनाम, मधुराष्टकम्</li>
+            </ul>
+        </div>
+
+        <!-- कृष्ण स्तोत्र (Accordion) -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📜</span> कृष्ण स्तोत्र / आरती</h2>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 कृष्ण आरती (आरती कीजै श्री वृंदावन)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:15px;text-align:left;line-height:2;">
+                        आरती कीजै श्री वृंदावन ।<br>
+                        श्री राधा-माधव-चरण-सेवन ॥<br><br>
+                        कालिंदी-तट-वन-चारी ।<br>
+                        गिरि-गोवर्धन-धारी ॥<br>
+                        आरती कीजै श्री वृंदावन... ॥<br><br>
+                        मुरली-मनोहर-वन-विहारी ।<br>
+                        गौ-चारण-करुणा-भारी ॥<br>
+                        आरती कीजै श्री वृंदावन... ॥<br><br>
+                        श्री राधा-पद-रज-लुब्धी ।<br>
+                        कृष्ण-कृपा-सुधा-बुद्धी ॥<br>
+                        आरती कीजै श्री वृंदावन... ॥<br><br>
+                        नंद-यशोदा-सुख-दाई ।<br>
+                        गोपी-गोप-सुखदाई ॥<br>
+                        आरती कीजै श्री वृंदावन... ॥
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 मधुराष्टकम् (संपूर्ण)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        अधरं मधुरं वदनं मधुरं नयनं मधुरं हसितं मधुरम् ।<br>
+                        हृदयं मधुरं गमनं मधुरं मधुराधिपतेरखिलं मधुरम् ॥<br><br>
+                        वचनं मधुरं चरितं मधुरं वसनं मधुरं वलितं मधुरम् ।<br>
+                        चलितं मधुरं भ्रमितं मधुरं मधुराधिपतेरखिलं मधुरम् ॥<br><br>
+                        वेणुर्मधुरो रेणुर्मधुरः पाणिर्मधुरः पादौ मधुरौ ।<br>
+                        नृत्यं मधुरं सख्यं मधुरं मधुराधिपतेरखिलं मधुरम् ॥<br><br>
+                        गीतं मधुरं पीतं मधुरं भुक्तं मधुरं सुप्तं मधुरम् ।<br>
+                        रूपं मधुरं तिलकं मधुरं मधुराधिपतेरखिलं मधुरम् ॥<br><br>
+                        करणं मधुरं तरणं मधुरं हरणं मधुरं रमणं मधुरम् ।<br>
+                        वमितं मधुरं शमितं मधुरं मधुराधिपतेरखिलं मधुरम् ॥<br><br>
+                        गुणं मधुरं मृदु-पदं मधुरं मृदु-वचनं मधुरं मृदु-हसितम् ।<br>
+                        चरितं मधुरं मधुरं मधुरं मधुराधिपतेरखिलं मधुरम् ॥<br><br>
+                        भुज-मण्डलं मधुरं मुख-मण्डलं मधुरं हृदयं मधुरम् ।<br>
+                        मधुराधिपतेरखिलं मधुरं मधुराधिपतेरखिलं मधुरम् ॥
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 विष्णु सहस्रनाम (संक्षिप्त)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        ॐ शुक्लाम्बरधरं विष्णुं शशिवर्णं चतुर्भुजम् ।<br>
+                        प्रसन्नवदनं ध्यायेत् सर्वविघ्नोपशान्तये ॥<br><br>
+                        कृष्णाय वासुदेवाय देवकीनन्दनाय च ।<br>
+                        नन्दगोपकुमाराय गोविन्दाय नमो नमः ॥<br><br>
+                        ... (विष्णु सहस्रनाम 1000 नामों का स्तोत्र है)
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 कृष्ण वंदना (दोहा)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:15px;text-align:left;line-height:2;">
+                        जय जय श्री कृष्ण, जय जय गोविंद ।<br>
+                        जय जय मुरलीधर, जय जय मुकुंद ॥<br><br>
+                        राधा-माधव, राधा-माधव, राधा-माधव सेवा ।<br>
+                        वृंदावन के वन में, राधा-माधव मेरा ॥
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- अष्टभार्या (8 पत्नियाँ) -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">👑</span> कृष्ण की अष्टभार्या (8 पत्नियाँ)</h2>
+            <ul>
+                <li><strong>रुक्मिणी:</strong> विदर्भ की राजकुमारी, कृष्ण की पटरानी</li>
+                <li><strong>सत्यभामा:</strong> सत्राजित की पुत्री, स्यमंतक मणि की रक्षक</li>
+                <li><strong>जाम्बवती:</strong> जाम्बवान की पुत्री, जिसने कृष्ण को स्यमंतक मणि दी</li>
+                <li><strong>कालिंदी:</strong> सूर्य देव की पुत्री</li>
+                <li><strong>मित्रविंदा:</strong> राजा जयसेन की बहन</li>
+                <li><strong>सत्य:</strong> नरेश सत्रजित की पुत्री</li>
+                <li><strong>भद्रा:</strong> कैकेय राज्य की राजकुमारी</li>
+                <li><strong>लक्ष्मणा:</strong> मद्र देश की राजकुमारी</li>
+            </ul>
+            <p style="font-size:12px;color:var(--ink-light);margin-top:8px;">
+                इनके अलावा कृष्ण की 16,108 रानियाँ थीं, जो नरकासुर से मुक्त कराई गई थीं।
+            </p>
+        </div>
+
+              <!-- प्रमुख मंदिर -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🛕</span> प्रमुख मंदिर</h2>
+            <div class="temple-list">
+                <div class="temple-item">
+                    <strong>कृष्ण जन्मभूमि, मथुरा</strong><br>
+                    कृष्ण जी का जन्म स्थान, कंस के कारागार की जगह।
+                </div>
+                <div class="temple-item">
+                    <strong>बांके बिहारी मंदिर, वृंदावन</strong><br>
+                    वृंदावन का सबसे प्रसिद्ध कृष्ण मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>द्वारकाधीश मंदिर, द्वारका</strong><br>
+                    गुजरात में स्थित, कृष्ण की राजधानी।
+                </div>
+                <div class="temple-item">
+                    <strong>जगन्नाथ मंदिर, पुरी</strong><br>
+                    चार धाम में से एक, कृष्ण का जगन्नाथ रूप।
+                </div>
+                <div class="temple-item">
+                    <strong>गोविंद देव जी मंदिर, जयपुर</strong><br>
+                    जयपुर का प्रसिद्ध कृष्ण मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>इस्कॉन मंदिर, वृंदावन</strong><br>
+                    इस्कॉन द्वारा स्थापित, भव्य कृष्ण-बलराम मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>नाथद्वारा मंदिर, राजस्थान</strong><br>
+                    श्रीनाथजी का मंदिर, कृष्ण का दिव्य स्वरूप।
+                </div>
+                <div class="temple-item">
+                    <strong>गुरुवायूर मंदिर, केरल</strong><br>
+                    दक्षिण भारत का प्रसिद्ध कृष्ण मंदिर।
+                </div>
+            </div>
+        </div>
+
+        <!-- त्योहार और व्रत -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🎉</span> प्रमुख त्योहार और व्रत</h2>
+            <ul>
+                <li><strong>जन्माष्टमी:</strong> भाद्रपद कृष्ण अष्टमी — कृष्ण जी का जन्मोत्सव। रात्रि जागरण, व्रत, पूजा।</li>
+                <li><strong>राधाष्टमी:</strong> भाद्रपद शुक्ल अष्टमी — राधा रानी का जन्मोत्सव।</li>
+                <li><strong>होली:</strong> फाल्गुन पूर्णिमा — कृष्ण की होली लीला का प्रतीक।</li>
+                <li><strong>दीपावली:</strong> कार्तिक अमावस्या — कृष्ण द्वारा नरकासुर वध की खुशी।</li>
+                <li><strong>एकादशी व्रत:</strong> हर महीने की एकादशी — कृष्ण की कृपा के लिए।</li>
+                <li><strong>गोवर्धन पूजा:</strong> कार्तिक शुक्ल प्रतिपदा — गोवर्धन पर्वत की पूजा।</li>
+                <li><strong>अन्नकूट:</strong> दीपावली के बाद — भगवान को अन्न का भोग।</li>
+                <li><strong>मुरली पूजन:</strong> विशेष दिनों में कृष्ण की बाँसुरी की पूजा।</li>
+            </ul>
+        </div>
+
+        <!-- भक्ति और लाभ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🙏</span> कृष्ण जी को क्यों भजें?</h2>
+            <ul>
+                <li><strong>मोक्ष:</strong> हरे कृष्ण महामंत्र कलियुग का सबसे सरल तारक मंत्र है।</li>
+                <li><strong>प्रेम और भक्ति:</strong> कृष्ण जी की भक्ति से भक्ति भाव जागृत होता है।</li>
+                <li><strong>आत्मज्ञान:</strong> भगवद् गीता का पाठ आत्मज्ञान प्रदान करता है।</li>
+                <li><strong>भय मुक्ति:</strong> कृष्ण नाम जप से सभी भय दूर होते हैं।</li>
+                <li><strong>संतान प्राप्ति:</strong> संतानहीन दंपत्ति को कृष्ण पूजा से संतान सुख मिलता है।</li>
+                <li><strong>पारिवारिक सुख:</strong> कृष्ण की कृपा से पारिवारिक सुख-शांति मिलती है।</li>
+                <li><strong>करियर:</strong> कृष्ण पूजा से करियर में उन्नति होती है।</li>
+                <li><strong>विवाह:</strong> अविवाहित लड़कियों के लिए कृष्ण पूजा से अच्छा वर मिलता है।</li>
+            </ul>
+        </div>
+
+        <!-- वर्जित कार्य -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🚫</span> क्या न करें?</h2>
+            <ul>
+                <li>❌ कृष्ण जी की मूर्ति को <strong>अशुद्ध हाथों</strong> से न छुएँ</li>
+                <li>❌ <strong>बिना स्नान</strong> कृष्ण पूजा न करें</li>
+                <li>❌ <strong>तुलसी</strong> को दाँत से न तोड़ें</li>
+                <li>❌ <strong>बासी</strong> या <strong>अशुद्ध</strong> भोग न चढ़ाएँ</li>
+                <li>❌ कृष्ण के सामने <strong>झूठ</strong> न बोलें</li>
+                <li>❌ <strong>बाँसुरी</strong> को अपवित्र न करें</li>
+                <li>❌ <strong>भगवद् गीता</strong> का अनादर न करें</li>
+                <li>❌ कृष्ण जी के सामने <strong>शोर</strong> न करें</li>
+            </ul>
+        </div>
+
+        <!-- FAQ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>कृष्ण जी का जन्म मथुरा में हुआ, फिर वे वृंदावन क्यों गए?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    कंस से रक्षा के लिए वासुदेव ने कृष्ण को <strong>गोकुल</strong> में नंद बाबा और यशोदा माता के पास पहुँचा दिया। वहीं कृष्ण का बाल्यकाल बीता। बाद में वे <strong>वृंदावन</strong> चले गए, जहाँ उन्होंने राधा और गोपियों के साथ रासलीला की।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>कृष्ण जी ने भगवद् गीता कब दी?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>महाभारत युद्ध</strong> के पहले दिन, जब अर्जुन ने युद्ध से इनकार किया, तब कृष्ण ने उन्हें <strong>कुरुक्षेत्र</strong> में भगवद् गीता का उपदेश दिया। यह <strong>धर्म, कर्म, भक्ति, और ज्ञान</strong> का सार है।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>कृष्ण और राधा का क्या संबंध था?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>राधा और कृष्ण</strong> का संबंध <strong>आत्मा और परमात्मा</strong> का प्रतीक है। राधा कृष्ण की परम भक्त थीं और उनका प्रेम <strong>दिव्य प्रेम</strong> का उदाहरण है। वे दोनों एक-दूसरे के पूरक माने जाते हैं।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>कृष्ण जी की मृत्यु कैसे हुई?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>द्वारका</strong> में यादवों के आपसी संघर्ष के बाद, कृष्ण जी वन में ध्यान करने गए। वहाँ एक व्याध (शिकारी) ने उन्हें हिरण समझकर बाण मारा, जिससे उनका शरीर त्याग हुआ। यह <strong>द्वापर युग</strong> के अंत का प्रतीक था।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>क्या कृष्ण पूजा से धन प्राप्ति होती है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    हाँ, कृष्ण पूजा से <strong>धन, समृद्धि, और सौभाग्य</strong> प्राप्त होता है। कृष्ण जी स्वयं <strong>कुबेर</strong> के मित्र हैं और उनकी पूजा से <strong>लक्ष्मी</strong> भी प्रसन्न होती हैं।
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Links -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🔗</span> संबंधित लिंक</h2>
+            <div class="related-grid">
+                <a href="../mantra/index.html" class="related-link">📿 सभी मंत्र</a>
+                <a href="../stotra/madurashtakam.html" class="related-link">📜 मधुराष्टकम्</a>
+                <a href="../stotra/vishnu-sahasranam.html" class="related-link">📜 विष्णु सहस्रनाम</a>
+                <a href="../tyohar/janmashtami.html" class="related-link">🎉 जन्माष्टमी</a>
+                <a href="../katha/krishna-katha.html" class="related-link">📖 कृष्ण कथाएँ</a>
+                <a href="../quiz/index.html" class="related-link">🎯 कृष्ण क्विज</a>
+            </div>
+        </div>
+
+        <!-- Share -->
+        <button class="btn-primary" onclick="sharePage()" style="margin-top:10px;">
+            <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+        </button>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 हरे कृष्ण</p>
+        </footer>
+
+    </main>
+
+    <button class="back-top" id="backTop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-calendar-days"></i><p>पंचांग</p></a>
+        <a href="../quiz/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>क्विज</p></a>
+    </nav>
+
+    <script src="../script.js"></script>
+    <script>
+        function toggleAccordion(el) {
+            const item = el.parentElement;
+            item.classList.toggle('open');
+        }
+
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backTop');
+            if (btn) {
+                if (window.scrollY > 400) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+  </html>
+  
