@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>नियम कोश — संपूर्ण ज्ञान | Sanatan Gyan Kosh</title>
+    <meta name="description" content="हिंदू धर्म के सभी नियमों का संपूर्ण संग्रह — दिनचर्या, पूजा, भोजन, तिलक, दीपक, जप, ग्रंथ पाठ, और बहुत कुछ।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .search-wrap {
+            background: var(--card-bg);
+            border-radius: var(--radius-sm);
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 12px;
+            border: 1px solid var(--border);
+        }
+        .search-wrap i { color: var(--gold); font-size: 18px; }
+        .search-wrap input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            background: transparent;
+            font-family: var(--font-body);
+            color: var(--ink);
+        }
+        .search-wrap input::placeholder { color: var(--ink-light); }
+
+        .cat-tabs {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 4px 0 14px;
+            scrollbar-width: none;
+        }
+        .cat-tabs::-webkit-scrollbar { display: none; }
+        .cat-tab {
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1.5px solid var(--border);
+            background: var(--card-bg);
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: var(--transition);
+            color: var(--ink-soft);
+            font-family: var(--font-body);
+        }
+        .cat-tab.active {
+            background: var(--maroon);
+            color: white;
+            border-color: var(--maroon);
+        }
+        .cat-tab:hover:not(.active) {
+            border-color: var(--gold);
+            color: var(--maroon);
+        }
+
+        .niyam-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .niyam-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 18px 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--gold);
+            transition: var(--transition);
+        }
+        .niyam-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+            border-left-color: var(--maroon);
+        }
+        .niyam-card .n-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            gap: 10px;
+        }
+        .niyam-card .n-title {
+            font-family: var(--font-display);
+            font-size: 18px;
+            color: var(--maroon);
+            font-weight: 700;
+            flex: 1;
+        }
+        .niyam-card .n-title .n-en {
+            font-family: var(--font-body);
+            font-size: 10px;
+            font-weight: 400;
+            color: var(--ink-light);
+            display: block;
+            margin-top: 2px;
+        }
+        .niyam-card .n-badge {
+            font-size: 9px;
+            background: var(--maroon);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .niyam-card .n-badge.gold { background: var(--gold); color: var(--maroon); }
+        .niyam-card .n-badge.green { background: #27ae60; }
+        .niyam-card .n-badge.blue { background: #2980b9; }
+        .niyam-card .n-badge.purple { background: #8e44ad; }
+
+        .niyam-card .n-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .niyam-card .n-list li {
+            padding: 8px 0;
+            font-size: 13.5px;
+            line-height: 1.7;
+            border-bottom: 1px dashed var(--border);
+            color: var(--ink-soft);
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .niyam-card .n-list li:last-child { border-bottom: none; }
+        .niyam-card .n-list li .tick {
+            color: #27ae60;
+            font-weight: 700;
+            flex-shrink: 0;
+            font-size: 14px;
+        }
+        .niyam-card .n-list li .cross {
+            color: #dc3545;
+            font-weight: 700;
+            flex-shrink: 0;
+            font-size: 14px;
+        }
+        .niyam-card .n-list li strong {
+            color: var(--maroon);
+        }
+
+        .niyam-card .n-warning {
+            background: #fdecea;
+            border-left: 4px solid #dc3545;
+            padding: 10px 14px;
+            border-radius: 10px;
+            margin-top: 10px;
+            font-size: 13px;
+            color: #721c24;
+            line-height: 1.7;
+        }
+        .niyam-card .n-warning strong {
+            color: #dc3545;
+        }
+
+        .no-result {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--ink-light);
+            font-size: 14px;
+        }
+        .no-result i {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--border);
+        }
+
+        @media (max-width: 420px) {
+            .niyam-card { padding: 14px 12px; }
+            .niyam-card .n-title { font-size: 16px; }
+            .niyam-card .n-list li { font-size: 12.5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="../index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ सनातन ज्ञान कोश</span>
+            <h1>नियम कोश</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <div class="hero-banner">
+            <h2>📋 नियम कोश</h2>
+            <p><strong>हिंदू धर्म के सभी नियम</strong> — दिनचर्या, पूजा, भोजन, और बहुत कुछ।</p>
+        </div>
+
+        <div class="search-wrap">
+            <i class="fa-solid fa-search"></i>
+            <input type="text" id="niyamSearch" placeholder="नियम खोजें... (जैसे: भोजन, दीपक, तिलक)" oninput="filterNiyams()" />
+        </div>
+
+        <div class="cat-tabs" id="catTabs">
+            <button class="cat-tab active" data-cat="all">✨ सभी</button>
+            <button class="cat-tab" data-cat="daily">🌅 दिनचर्या</button>
+            <button class="cat-tab" data-cat="puja">🪔 पूजा</button>
+            <button class="cat-tab" data-cat="granth">📖 ग्रंथ पाठ</button>
+            <button class="cat-tab" data-cat="food">🍛 भोजन</button>
+            <button class="cat-tab" data-cat="daily-life">🏠 दैनिक जीवन</button>
+            <button class="cat-tab" data-cat="special">⭐ विशेष</button>
+        </div>
+
+        <div class="niyam-grid" id="niyamGrid"></div>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय श्री राम</p>
+        </footer>
+
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="../devta/index.html" class="nav-link"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-list-check"></i><p>नियम</p></a>
+        <a href="../quiz/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>क्विज</p></a>
+    </nav>
+
+    <script>
+        // ============================================================
+        //  NIYAM DATABASE — All Rules (Deep)
+        // ============================================================
+
+        const niyams = [
+            // ========== दिनचर्या ==========
+            {
+                title: 'सुबह उठने के नियम',
+                en: 'Morning Wake-up Rules',
+                category: 'daily',
+                rules: [
+                    { type: 'do', text: '<strong>ब्रह्म मुहूर्त (4-6 AM):</strong> उठें' },
+                    { type: 'do', text: '<strong>दाहिनी करवट:</strong> से उठें' },
+                    { type: 'do', text: '<strong>पृथ्वी को प्रणाम:</strong> पैर ज़मीन पर रखने से पहले' },
+                    { type: 'do', text: '<strong>हाथ देखें:</strong> "कराग्रे वसते लक्ष्मीः" मंत्र के साथ' },
+                    { type: 'do', text: '<strong>भगवान का स्मरण:</strong> "ॐ कृष्णाय वासुदेवाय"' },
+                    { type: 'dont', text: '<strong>आलस:</strong> न करें' },
+                    { type: 'dont', text: '<strong>मोबाइल:</strong> सुबह उठते ही न देखें' },
+                    { type: 'dont', text: '<strong>बिस्तर पर देर:</strong> न लगाएँ' }
+                ],
+                warning: 'ब्रह्म मुहूर्त में उठना सबसे शुभ माना जाता है — इस समय वातावरण में सकारात्मक ऊर्जा सबसे अधिक होती है।'
+            },
+            {
+                title: 'स्नान के नियम',
+                en: 'Bathing Rules',
+                category: 'daily',
+                rules: [
+                    { type: 'do', text: '<strong>प्रातः स्नान:</strong> रोज़ करें' },
+                    { type: 'do', text: '<strong>ठंडा/गुनगुना पानी:</strong> उपयोग करें' },
+                    { type: 'do', text: '<strong>सिर पर जल:</strong> डालकर संकल्प करें' },
+                    { type: 'do', text: '<strong>"ॐ गंगे च यमुने":</strong> मंत्र पढ़ें' },
+                    { type: 'do', text: '<strong>स्वच्छ वस्त्र:</strong> पहनें' },
+                    { type: 'dont', text: '<strong>भोजन के तुरंत बाद:</strong> स्नान न करें' },
+                    { type: 'dont', text: '<strong>बीमारी में:</strong> ठंडे पानी से न नहाएँ' },
+                    { type: 'dont', text: '<strong>रात्रि में:</strong> सिर पर तेल न लगाएँ' }
+                ],
+                warning: 'स्नान के बाद ही पूजा, भोजन, और अन्य कार्य करें। बिना स्नान पूजा करना अशुद्ध माना जाता है।'
+            },
+            {
+                title: 'सोने के नियम',
+                en: 'Sleeping Rules',
+                category: 'daily',
+                rules: [
+                    { type: 'do', text: '<strong>पूर्व/उत्तर दिशा:</strong> में सिर करके सोएँ' },
+                    { type: 'do', text: '<strong>रात्रि 10 बजे:</strong> तक सो जाएँ' },
+                    { type: 'do', text: '<strong>भगवान का स्मरण:</strong> करके सोएँ' },
+                    { type: 'do', text: '<strong>शांत मन:</strong> से सोएँ' },
+                    { type: 'do', text: '<strong>"ॐ शांतिः शांतिः शांतिः":</strong> पढ़ें' },
+                    { type: 'dont', text: '<strong>दक्षिण दिशा:</strong> में सिर करके न सोएँ' },
+                    { type: 'dont', text: '<strong>रात्रि में देर:</strong> तक न जागें' },
+                    { type: 'dont', text: '<strong>क्रोध/चिंता:</strong> में न सोएँ' }
+                ],
+                warning: 'दक्षिण दिशा में सिर करके सोना अशुभ माना जाता है — इससे स्वास्थ्य पर बुरा असर पड़ता है।'
+            },
+
+            // ========== पूजा के नियम ==========
+            {
+                title: 'तिलक लगाने के नियम',
+                en: 'Tilak Rules',
+                category: 'puja',
+                rules: [
+                    { type: 'do', text: '<strong>स्नान के बाद:</strong> तिलक लगाएँ' },
+                    { type: 'do', text: '<strong>चंदन/कुमकुम:</strong> से लगाएँ' },
+                    { type: 'do', text: '<strong>भ्रूमध्य (दोनों भौंहों के बीच):</strong> पर लगाएँ' },
+                    { type: 'do', text: '<strong>अंगूठे या अनामिका:</strong> से लगाएँ' },
+                    { type: 'do', text: '<strong>"ॐ नमः शिवाय":</strong> मंत्र पढ़ें' },
+                    { type: 'dont', text: '<strong>बिना स्नान:</strong> तिलक न लगाएँ' },
+                    { type: 'dont', text: '<strong>अशुद्ध हाथ:</strong> से न लगाएँ' },
+                    { type: 'dont', text: '<strong>अंगूठे के बजाय तर्जनी:</strong> से न लगाएँ' }
+                ],
+                warning: 'तिलक भगवान का आशीर्वाद और आत्म-सम्मान का प्रतीक है — इसे श्रद्धा से लगाएँ।'
+            },
+            {
+                title: 'दीपक जलाने के नियम',
+                en: 'Diya Rules',
+                category: 'puja',
+                rules: [
+                    { type: 'do', text: '<strong>सूर्योदय/सूर्यास्त:</strong> के समय जलाएँ' },
+                    { type: 'do', text: '<strong>शुद्ध घी/सरसों का तेल:</strong> डालें' },
+                    { type: 'do', text: '<strong>पूर्व/उत्तर दिशा:</strong> में रखें' },
+                    { type: 'do', text: '<strong>"ॐ अग्नये नमः":</strong> मंत्र पढ़ें' },
+                    { type: 'do', text: '<strong>कपूर/तुलसी:</strong> का धुआँ करें' },
+                    { type: 'do', text: '<strong>स्वयं बुझने दें:</strong>' },
+                    { type: 'dont', text: '<strong>फूँक से:</strong> न बुझाएँ' },
+                    { type: 'dont', text: '<strong>पानी से:</strong> न बुझाएँ' },
+                    { type: 'dont', text: '<strong>दक्षिण दिशा:</strong> में न रखें' }
+                ],
+                warning: 'दीपक को फूँक से बुझाना पाप माना जाता है — इसे स्वयं बुझने दें या फूल से बुझाएँ।'
+            },
+            {
+                title: 'आरती के नियम',
+                en: 'Aarti Rules',
+                category: 'puja',
+                rules: [
+                    { type: 'do', text: '<strong>आरती की थाली:</strong> सजाएँ (दीप, धूप, फूल)' },
+                    { type: 'do', text: '<strong>घड़ी की दिशा:</strong> में घुमाएँ' },
+                    { type: 'do', text: '<strong>आरती गाएँ:</strong> भक्ति भाव से' },
+                    { type: 'do', text: '<strong>सभी को आरती:</strong> उतारें' },
+                    { type: 'do', text: '<strong>हाथ जोड़कर:</strong> प्रणाम करें' },
+                    { type: 'dont', text: '<strong>विपरीत दिशा:</strong> में न घुमाएँ' },
+                    { type: 'dont', text: '<strong>अशुद्ध हाथ:</strong> से न करें' },
+                    { type: 'dont', text: '<strong>बात:</strong> न करें' }
+                ],
+                warning: 'आरती भगवान के प्रति भक्ति और समर्पण का प्रतीक है — इसे पूरे मन से करें।'
+            },
+            {
+                title: 'जप और माला के नियम',
+                en: 'Jap & Mala Rules',
+                category: 'puja',
+                rules: [
+                    { type: 'do', text: '<strong>ब्रह्म मुहूर्त (4-6 AM):</strong> में जप करें' },
+                    { type: 'do', text: '<strong>पूर्व दिशा:</strong> में मुख करके' },
+                    { type: 'do', text: '<strong>रुद्राक्ष/तुलसी माला:</strong> उपयोग करें' },
+                    { type: 'do', text: '<strong>माला हाथ में छिपाकर:</strong> रखें' },
+                    { type: 'do', text: '<strong>108 बार:</strong> जप करें' },
+                    { type: 'dont', text: '<strong>बिना स्नान:</strong> जप न करें' },
+                    { type: 'dont', text: '<strong>जूते पहनकर:</strong> जप न करें' },
+                    { type: 'dont', text: '<strong>माला ज़मीन पर:</strong> न रखें' },
+                    { type: 'dont', text: '<strong>सुमेरु मणि:</strong> को पार न करें' }
+                ],
+                warning: 'जप के समय मन एकाग्र रखें — माला को ज़मीन पर रखना अपमान माना जाता है।'
+            },
+            {
+                title: 'पूजा के नियम',
+                en: 'Puja Rules',
+                category: 'puja',
+                rules: [
+                    { type: 'do', text: '<strong>स्नान के बाद:</strong> पूजा करें' },
+                    { type: 'do', text: '<strong>स्वच्छ वस्त्र:</strong> पहनें' },
+                    { type: 'do', text: '<strong>पंचोपचार:</strong> (सुगंध, पुष्प, धूप, दीप, नैवेद्य) अर्पित करें' },
+                    { type: 'do', text: '<strong>मन एकाग्र:</strong> रखें' },
+                    { type: 'do', text: '<strong>पूजा के बाद:</strong> प्रसाद बाँटें' },
+                    { type: 'dont', text: '<strong>पूजा में बात:</strong> न करें' },
+                    { type: 'dont', text: '<strong>अशुद्ध सामग्री:</strong> न चढ़ाएँ' },
+                    { type: 'dont', text: '<strong>जूते पहनकर:</strong> पूजा न करें' }
+                ],
+                warning: 'पूजा में मन की एकाग्रता सबसे महत्वपूर्ण है — बिना मन के पूजा निष्फल होती है।'
+            },
+            {
+                title: 'प्रणाम के नियम',
+                en: 'Pranam Rules',
+                category: 'puja',
+                rules: [
+                    { type: 'do', text: '<strong>हाथ जोड़कर:</strong> प्रणाम करें' },
+                    { type: 'do', text: '<strong>सिर झुकाकर:</strong> प्रणाम करें' },
+                    { type: 'do', text: '<strong>बड़ों के पैर:</strong> छुएँ (दाहिने हाथ से)' },
+                    { type: 'do', text: '<strong>देवता/गुरु:</strong> को प्रणाम करें' },
+                    { type: 'do', text: '<strong>प्रणाम के बाद:</strong> आशीर्वाद लें' },
+                    { type: 'dont', text: '<strong>पैर के पंजे:</strong> को न छुएँ' },
+                    { type: 'dont', text: '<strong>बायें हाथ:</strong> से न छुएँ' },
+                    { type: 'dont', text: '<strong>जूते पहनकर:</strong> प्रणाम न करें' }
+                ],
+                warning: 'प्रणाम में विनम्रता और श्रद्धा सबसे महत्वपूर्ण है।'
+            },
+
+            // ========== भोजन के नियम ==========
+            {
+                title: 'भोजन के नियम',
+                en: 'Food Rules',
+                category: 'food',
+                rules: [
+                    { type: 'do', text: '<strong>बैठकर:</strong> भोजन करें' },
+                    { type: 'do', text: '<strong>हाथ-पैर धोकर:</strong> भोजन करें' },
+                    { type: 'do', text: '<strong>दक्षिण दिशा:</strong> में मुख करके भोजन करें' },
+                    { type: 'do', text: '<strong>5 प्राणों का बलिदान:</strong> करें' },
+                    { type: 'do', text: '<strong>तुलसी दल/गंगाजल:</strong> का सेवन करें' },
+                    { type: 'dont', text: '<strong>चलते-फिरते:</strong> भोजन न करें' },
+                    { type: 'dont', text: '<strong>जूठा:</strong> न छोड़ें' },
+                    { type: 'dont', text: '<strong>बासी/अशुद्ध:</strong> भोजन न करें' },
+                    { type: 'dont', text: '<strong>रात्रि में सूर्यास्त के बाद:</strong> भोजन न करें' },
+                    { type: 'dont', text: '<strong>भोजन के समय बात:</strong> न करें' }
+                ],
+                warning: 'भोजन को भगवान का प्रसाद मानकर ग्रहण करें — इससे अन्न की शुद्धता और पाचन में लाभ होता है।'
+            },
+            {
+                title: 'जल पीने के नियम',
+                en: 'Water Drinking Rules',
+                category: 'food',
+                rules: [
+                    { type: 'do', text: '<strong>ताम्र पात्र:</strong> में जल रखें' },
+                    { type: 'do', text: '<strong>बैठकर:</strong> जल पिएँ' },
+                    { type: 'do', text: '<strong>छोटे घूँट:</strong> में पिएँ' },
+                    { type: 'do', text: '<strong>सुबह उठकर:</strong> ताम्र पात्र का जल पिएँ' },
+                    { type: 'dont', text: '<strong>खड़े होकर:</strong> जल न पिएँ' },
+                    { type: 'dont', text: '<strong>भोजन के तुरंत बाद:</strong> जल न पिएँ' },
+                    { type: 'dont', text: '<strong>ठंडा जल:</strong> भोजन के साथ न पिएँ' },
+                    { type: 'dont', text: '<strong>जूठा जल:</strong> न पिएँ' }
+                ],
+                warning: 'ताम्र पात्र में रखा जल स्वास्थ्य के लिए अत्यंत लाभकारी होता है।'
+            },
+
+            // ========== ग्रंथ पाठ ==========
+            {
+                title: 'भगवद् गीता पाठ के नियम',
+                en: 'Gita Path Rules',
+                category: 'granth',
+                rules: [
+                    { type: 'do', text: '<strong>स्नान करके:</strong> पवित्र होकर पढ़ें' },
+                    { type: 'do', text: '<strong>पूर्व दिशा:</strong> में मुख करके पढ़ें' },
+                    { type: 'do', text: '<strong>गीता को प्रणाम:</strong> करके पढ़ें' },
+                    { type: 'do', text: '<strong>अनुक्रम से:</strong> पढ़ें' },
+                    { type: 'do', text: '<strong>हर अध्याय के बाद:</strong> फल श्रुति पढ़ें' },
+                    { type: 'dont', text: '<strong>बिना स्नान:</strong> न पढ़ें' },
+                    { type: 'dont', text: '<strong>अशुद्ध स्थान:</strong> में न पढ़ें' },
+                    { type: 'dont', text: '<strong>जूते पहनकर:</strong> न पढ़ें' },
+                    { type: 'dont', text: '<strong>बेअदबी:</strong> न करें' }
+                ],
+                warning: 'गीता को भगवान का साक्षात रूप माना जाता है — इसे श्रद्धा और सम्मान से पढ़ें।'
+            },
+            {
+                title: 'रामचरितमानस पाठ के नियम',
+                en: 'Ramcharitmanas Path Rules',
+                category: 'granth',
+                rules: [
+                    { type: 'do', text: '<strong>सुबह स्नान के बाद:</strong> पढ़ें' },
+                    { type: 'do', text: '<strong>तुलसी के पौधे के पास:</strong> बैठकर पढ़ें' },
+                    { type: 'do', text: '<strong>गणेश-शिव-राम:</strong> का स्मरण करके पढ़ें' },
+                    { type: 'do', text: '<strong>सुंदरकांड:</strong> अलग से पढ़ें' },
+                    { type: 'dont', text: '<strong>बिना स्नान:</strong> न पढ़ें' },
+                    { type: 'dont', text: '<strong>अशुद्ध मन:</strong> से न पढ़ें' },
+                    { type: 'dont', text: '<strong>अनादर:</strong> न करें' }
+                ],
+                warning: 'रामचरितमानस को राम जी का साक्षात स्वरूप माना जाता है।'
+            },
+            {
+                title: 'शिव पुराण पाठ के नियम',
+                en: 'Shiv Puran Path Rules',
+                category: 'granth',
+                rules: [
+                    { type: 'do', text: '<strong>सोमवार/प्रदोष:</strong> के दिन पढ़ें' },
+                    { type: 'do', text: '<strong>शिवलिंग के सामने:</strong> बैठकर पढ़ें' },
+                    { type: 'do', text: '<strong>रुद्राक्ष माला:</strong> पहनकर पढ़ें' },
+                    { type: 'do', text: '<strong>"ॐ नमः शिवाय":</strong> जप करें' },
+                    { type: 'dont', text: '<strong>अशुद्ध:</strong> होकर न पढ़ें' },
+                    { type: 'dont', text: '<strong>बिना स्नान:</strong> न पढ़ें' }
+                ],
+                warning: 'शिव पुराण में शिव जी की महिमा और कथाएँ हैं — इसे श्रद्धा से पढ़ें।'
+            },
+            {
+                title: 'दुर्गा सप्तशती पाठ के नियम',
+                en: 'Durga Saptashati Path Rules',
+                category: 'granth',
+                rules: [
+                    { type: 'do', text: '<strong>नवरात्रि में:</strong> विशेष रूप से पढ़ें' },
+                    { type: 'do', text: '<strong>लाल वस्त्र:</strong> पहनकर पढ़ें' },
+                    { type: 'do', text: '<strong>देवी के सामने:</strong> बैठकर पढ़ें' },
+                    { type: 'do', text: '<strong>कीलक स्तोत्र:</strong> पहले पढ़ें' },
+                    { type: 'do', text: '<strong>अर्गला स्तोत्र:</strong> पहले पढ़ें' },
+                    { type: 'dont', text: '<strong>अशुद्ध:</strong> होकर न पढ़ें' },
+                    { type: 'dont', text: '<strong>बिना स्नान:</strong> न पढ़ें' },
+                    { type: 'dont', text: '<strong>बीच में:</strong> न रुकें' }
+                ],
+                warning: 'दुर्गा सप्तशती में माँ दुर्गा की महिमा है — इसे पूरी श्रद्धा से पढ़ें।'
+            },
+
+            // ========== दैनिक जीवन ==========
+            {
+                title: 'घर से बाहर निकलने के नियम',
+                en: 'Leaving Home Rules',
+                category: 'daily-life',
+                rules: [
+                    { type: 'do', text: '<strong>दाहिना पैर:</strong> पहले बाहर रखें' },
+                    { type: 'do', text: '<strong>"ॐ श्री गणेशाय नमः":</strong> पढ़ें' },
+                    { type: 'do', text: '<strong>भगवान का स्मरण:</strong> करें' },
+                    { type: 'do', text: '<strong>दीपक/धूप:</strong> घर में जलाएँ' },
+                    { type: 'dont', text: '<strong>बायां पैर:</strong> पहले न रखें' },
+                    { type: 'dont', text: '<strong>क्रोध:</strong> में न निकलें' },
+                    { type: 'dont', text: '<strong>बिना स्नान:</strong> न निकलें' }
+                ],
+                warning: 'घर से निकलते समय भगवान का स्मरण करना शुभ माना जाता है।'
+            },
+            {
+                title: 'मंदिर जाने के नियम',
+                en: 'Temple Rules',
+                category: 'daily-life',
+                rules: [
+                    { type: 'do', text: '<strong>जूते बाहर:</strong> उतारें' },
+                    { type: 'do', text: '<strong>सिर ढककर:</strong> जाएँ' },
+                    { type: 'do', text: '<strong>घंटी बजाएँ:</strong> प्रवेश पर' },
+                    { type: 'do', text: '<strong>प्रदक्षिणा:</strong> करें' },
+                    { type: 'do', text: '<strong>प्रसाद:</strong> ग्रहण करें' },
+                    { type: 'dont', text: '<strong>शोर:</strong> न करें' },
+                    { type: 'dont', text: '<strong>अशुद्ध:</strong> होकर न जाएँ' },
+                    { type: 'dont', text: '<strong>दक्षिण दिशा:</strong> में मुख करके न बैठें' },
+                    { type: 'dont', text: '<strong>प्रसाद को:</strong> जूठा न छोड़ें' }
+                ],
+                warning: 'मंदिर में श्रद्धा और सम्मान रखें — यह भगवान का घर है।'
+            },
+            {
+                title: 'प्रसाद के नियम',
+                en: 'Prasad Rules',
+                category: 'daily-life',
+                rules: [
+                    { type: 'do', text: '<strong>दाहिने हाथ:</strong> से प्रसाद लें' },
+                    { type: 'do', text: '<strong>सिर पर:</strong> प्रसाद लगाएँ' },
+                    { type: 'do', text: '<strong>तुरंत:</strong> प्रसाद ग्रहण करें' },
+                    { type: 'do', text: '<strong>सभी को:</strong> बाँटें' },
+                    { type: 'dont', text: '<strong>जूठा प्रसाद:</strong> न छोड़ें' },
+                    { type: 'dont', text: '<strong>अशुद्ध हाथ:</strong> से न लें' },
+                    { type: 'dont', text: '<strong>प्रसाद:</strong> को न फेंकें' }
+                ],
+                warning: 'प्रसाद भगवान का आशीर्वाद है — इसे श्रद्धा से ग्रहण करें।'
+            },
+            {
+                title: 'तुलसी सेवा के नियम',
+                en: 'Tulsi Seva Rules',
+                category: 'daily-life',
+                rules: [
+                    { type: 'do', text: '<strong>प्रातः-सायं:</strong> जल दें' },
+                    { type: 'do', text: '<strong>ताम्र पात्र:</strong> से जल दें' },
+                    { type: 'do', text: '<strong>प्रदक्षिणा:</strong> 4/7/11 बार करें' },
+                    { type: 'do', text: '<strong>सायंकाल:</strong> दीपक जलाएँ' },
+                    { type: 'dont', text: '<strong>दाँत से:</strong> पत्ते न तोड़ें' },
+                    { type: 'dont', text: '<strong>रविवार/एकादशी:</strong> को न तोड़ें' },
+                    { type: 'dont', text: '<strong>सूर्यास्त के बाद:</strong> न तोड़ें' },
+                    { type: 'dont', text: '<strong>पैरों से:</strong> न छुएँ' }
+                ],
+                warning: 'तुलसी माता को घर की लक्ष्मी माना जाता है — उनकी सेवा से घर में सुख-समृद्धि आती है।'
+            },
+
+            // ========== विशेष ==========
+            {
+                title: 'व्रत के नियम',
+                en: 'Vrat Rules',
+                category: 'special',
+                rules: [
+                    { type: 'do', text: '<strong>स्नान:</strong> प्रातः करें' },
+                    { type: 'do', text: '<strong>संकल्प:</strong> लें' },
+                    { type: 'do', text: '<strong>फलाहार:</strong> करें' },
+                    { type: 'do', text: '<strong>भगवान का स्मरण:</strong> करें' },
+                    { type: 'do', text: '<strong>रात्रि जागरण:</strong> करें (यदि विधान हो)' },
+                    { type: 'dont', text: '<strong>अन्न:</strong> न खाएँ' },
+                    { type: 'dont', text: '<strong>तामसिक भोजन:</strong> न करें' },
+                    { type: 'dont', text: '<strong>क्रोध:</strong> न करें' },
+                    { type: 'dont', text: '<strong>झूठ:</strong> न बोलें' }
+                ],
+                warning: 'व्रत में मन और वाणी का संयम सबसे महत्वपूर्ण है — केवल भोजन त्यागना व्रत नहीं है।'
+            },
+            {
+                title: 'त्योहार के नियम',
+                en: 'Festival Rules',
+                category: 'special',
+                rules: [
+                    { type: 'do', text: '<strong>स्नान:</strong> प्रातः करें' },
+                    { type: 'do', text: '<strong>स्वच्छ वस्त्र:</strong> पहनें' },
+                    { type: 'do', text: '<strong>पूजा:</strong> करें' },
+                    { type: 'do', text: '<strong>दान:</strong> करें' },
+                    { type: 'do', text: '<strong>प्रसाद:</strong> बाँटें' },
+                    { type: 'dont', text: '<strong>तामसिक भोजन:</strong> न करें' },
+                    { type: 'dont', text: '<strong>कलह:</strong> न करें' },
+                    { type: 'dont', text: '<strong>अशुद्ध:</strong> न रहें' }
+                ],
+                warning: 'त्योहार भक्ति और आनंद का समय है — इसे श्रद्धा से मनाएँ।'
+            },
+            {
+                title: 'कुत्तों को भोजन के नियम',
+                en: 'Feeding Dogs Rules',
+                category: 'special',
+                rules: [
+                    { type: 'do', text: '<strong>भैरव पूजा के बाद:</strong> कुत्तों को भोजन कराएँ' },
+                    { type: 'do', text: '<strong>शनिवार:</strong> को कुत्तों को भोजन दें' },
+                    { type: 'do', text: '<strong>रोटी/दूध:</strong> से भोजन कराएँ' },
+                    { type: 'dont', text: '<strong>कुत्तों को:</strong> न मारें' },
+                    { type: 'dont', text: '<strong>जूठा:</strong> न खिलाएँ' }
+                ],
+                warning: 'कुत्ता भैरव बाबा का वाहन है — इसे भोजन कराना पुण्य माना जाता है।'
+            },
+            {
+                title: 'भूत-प्रेत से रक्षा के नियम',
+                en: 'Protection Rules',
+                category: 'special',
+                rules: [
+                    { type: 'do', text: '<strong>हनुमान चालीसा:</strong> पढ़ें' },
+                    { type: 'do', text: '<strong>भैरव मंत्र:</strong> जपें' },
+                    { type: 'do', text: '<strong>घर में:</strong> तुलसी रखें' },
+                    { type: 'do', text: '<strong>सायं:</strong> दीपक जलाएँ' },
+                    { type: 'do', text: '<strong>गंगाजल:</strong> घर में छिड़कें' },
+                    { type: 'dont', text: '<strong>अंधकार:</strong> न रखें' },
+                    { type: 'dont', text: '<strong>अशुद्ध:</strong> न रहें' },
+                    { type: 'dont', text: '<strong>रात्रि में:</strong> अकेले न निकलें' }
+                ],
+                warning: 'नकारात्मक ऊर्जा से बचने के लिए घर में सकारात्मक ऊर्जा बनाए रखें।'
+            }
+        ];
+
+        // ============================================================
+        //  RENDER FUNCTIONS
+        // ============================================================
+
+        let currentCategory = 'all';
+        let searchQuery = '';
+
+        function renderNiyams() {
+            const grid = document.getElementById('niyamGrid');
+            const filtered = niyams.filter(n => {
+                const matchCat = currentCategory === 'all' || n.category === currentCategory;
+                const matchSearch = n.title.includes(searchQuery) ||
+                                    n.en.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                    n.rules.some(r => r.text.includes(searchQuery));
+                return matchCat && matchSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div class="no-result">
+                    <i class="fa-solid fa-search"></i>
+                    कोई नियम नहीं मिला। कृपया दूसरा शब्द खोजें।
+                </div>`;
+                return;
+            }
+
+            const badgeClass = (cat) => {
+                if (cat === 'daily') return 'gold';
+                if (cat === 'puja') return 'blue';
+                if (cat === 'granth') return 'purple';
+                if (cat === 'food') return 'green';
+                if (cat === 'daily-life') return 'gold';
+                if (cat === 'special') return 'purple';
+                return '';
+            };
+
+            const catName = (cat) => {
+                const names = {
+                    'daily': 'दिनचर्या',
+                    'puja': 'पूजा',
+                    'granth': 'ग्रंथ पाठ',
+                    'food': 'भोजन',
+                    'daily-life': 'दैनिक जीवन',
+                    'special': 'विशेष'
+                };
+                return names[cat] || cat;
+            };
+
+            grid.innerHTML = filtered.map(n => `
+                <div class="niyam-card">
+                    <div class="n-header">
+                        <div class="n-title">
+                            ${n.title}
+                            <span class="n-en">${n.en}</span>
+                        </div>
+                        <span class="n-badge ${badgeClass(n.category)}">${catName(n.category)}</span>
+                    </div>
+                    <ul class="n-list">
+                        ${n.rules.map(r => `
+                            <li>
+                                <span class="${r.type === 'do' ? 'tick' : 'cross'}">
+                                    ${r.type === 'do' ? '✅' : '❌'}
+                                </span>
+                                <span>${r.text}</span>
+                            </li>
+                        `).join('')}
+                    </ul>
+                    ${n.warning ? `<div class="n-warning"><strong>⚠️ ध्यान दें:</strong> ${n.warning}</div>` : ''}
+                </div>
+            `).join('');
+        }
+
+        function filterNiyams() {
+            searchQuery = document.getElementById('niyamSearch').value.trim();
+            renderNiyams();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderNiyams();
+
+            document.querySelectorAll('.cat-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    currentCategory = this.dataset.cat;
+                    renderNiyams();
+                });
+            });
+        });
+
+        // Dark mode
+        const darkToggle = document.getElementById('darkToggle');
+        if (darkToggle) {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+                darkToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            }
+            darkToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                const icon = this.querySelector('i');
+                const isDark = document.body.classList.contains('dark-mode');
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+                localStorage.setItem('darkMode', isDark);
+            });
+        }
+
+        function sharePage() {
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    text: '🕉️ सनातन ज्ञान कोश — नियम कोश',
+                    url: window.location.href
+                }).catch(() => {});
+            } else {
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    alert('लिंक कॉपी हो गया!');
+                });
+            }
+        }
+    </script>
+</body>
+</html>
