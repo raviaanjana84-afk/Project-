@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>शिव जी — संपूर्ण ज्ञान | Sanatan Gyan Kosh</title>
+    <meta name="description" content="शिव जी का संपूर्ण ज्ञान — परिचय, कथा, स्वरूप, 12 ज्योतिर्लिंग, मंत्र, स्तोत्र, आरती, मंदिर, त्योहार, व्रत और बहुत कुछ।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        /* Hero */
+        .devta-hero {
+            text-align: center;
+            padding: 24px 20px;
+            background: linear-gradient(135deg, rgba(212,175,55,0.12), rgba(122,46,46,0.08));
+            border-radius: var(--radius);
+            margin-bottom: 14px;
+            border: 1px solid var(--border);
+        }
+        .devta-hero .icon { font-size: 72px; display: block; line-height: 1; }
+        .devta-hero .name {
+            font-family: var(--font-display);
+            font-size: 30px;
+            color: var(--maroon);
+            margin-top: 6px;
+        }
+        .devta-hero .subtitle {
+            font-size: 13px;
+            color: var(--ink-soft);
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+
+        /* Section */
+        .devta-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 18px 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .devta-section h2 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--maroon);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 8px;
+        }
+        .devta-section h2 .sec-icon { font-size: 24px; }
+
+        .devta-section p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+            margin-bottom: 8px;
+        }
+        .devta-section p strong { color: var(--maroon); }
+
+        /* Mantra Box */
+        .mantra-box {
+            background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(122,46,46,0.05));
+            border-left: 4px solid var(--gold);
+            padding: 14px 16px;
+            border-radius: 12px;
+            font-family: var(--font-display);
+            font-size: 18px;
+            text-align: center;
+            margin: 10px 0;
+            line-height: 1.8;
+            color: var(--maroon);
+            font-weight: 600;
+        }
+        .mantra-box small {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 12px;
+            color: var(--ink-soft);
+            font-weight: 400;
+            margin-top: 6px;
+        }
+
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .info-item {
+            background: var(--bg);
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 13px;
+        }
+        .info-item .lbl {
+            font-size: 10px;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-item .val {
+            font-weight: 600;
+            color: var(--maroon);
+            margin-top: 2px;
+        }
+
+        /* List */
+        .devta-section ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 8px;
+        }
+        .devta-section ul li {
+            padding: 8px 0;
+            font-size: 13.5px;
+            line-height: 1.6;
+            border-bottom: 1px dashed var(--border);
+            color: var(--ink-soft);
+        }
+        .devta-section ul li:last-child { border-bottom: none; }
+        .devta-section ul li strong { color: var(--maroon); }
+
+        /* Accordion */
+        .accordion-item {
+            border-bottom: 1px solid var(--border);
+        }
+        .accordion-item:last-child { border-bottom: none; }
+        .accordion-head {
+            padding: 12px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--maroon);
+            font-family: var(--font-display);
+        }
+        .accordion-head i {
+            transition: transform 0.3s;
+            color: var(--gold);
+        }
+        .accordion-item.open .accordion-head i {
+            transform: rotate(180deg);
+        }
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            font-size: 13px;
+            color: var(--ink-soft);
+            line-height: 1.8;
+        }
+        .accordion-item.open .accordion-body {
+            max-height: 3000px;
+            padding-bottom: 12px;
+        }
+
+        /* Temple List */
+        .temple-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .temple-item {
+            padding: 10px 14px;
+            background: var(--bg);
+            border-radius: 10px;
+            border-left: 3px solid var(--gold);
+            font-size: 13px;
+        }
+        .temple-item strong { color: var(--maroon); }
+
+        /* Related Links */
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .related-link {
+            padding: 10px 12px;
+            background: var(--bg);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--maroon);
+            font-weight: 600;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .related-link:hover {
+            background: var(--card-bg);
+            border-color: var(--gold);
+        }
+
+        /* Back Top */
+        .back-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--maroon);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 16px rgba(122,46,46,0.4);
+            z-index: 90;
+        }
+        .back-top.show { display: flex; }
+
+        /* Jyotirlinga Grid */
+        .jyoti-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .jyoti-item {
+            background: var(--bg);
+            padding: 12px 14px;
+            border-radius: 12px;
+            border-left: 4px solid var(--gold);
+        }
+        .jyoti-item .jyoti-name {
+            font-weight: 700;
+            color: var(--maroon);
+            font-size: 14px;
+        }
+        .jyoti-item .jyoti-loc {
+            font-size: 11px;
+            color: var(--ink-light);
+            margin-top: 2px;
+        }
+        .jyoti-item .jyoti-desc {
+            font-size: 12px;
+            color: var(--ink-soft);
+            margin-top: 4px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 420px) {
+            .devta-hero .icon { font-size: 60px; }
+            .devta-hero .name { font-size: 24px; }
+            .devta-section h2 { font-size: 17px; }
+            .mantra-box { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ देवता ज्ञान</span>
+            <h1>शिव जी</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <!-- Hero -->
+        <div class="devta-hero">
+            <span class="icon">🔱</span>
+            <div class="name">शिव जी</div>
+            <div class="subtitle">महादेव · भोलेनाथ · नीलकंठ · त्रिनेत्र</div>
+        </div>
+
+        <!-- Quick Info -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📋</span> एक नज़र में</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="lbl">अन्य नाम</div>
+                    <div class="val">महादेव, भोलेनाथ, नीलकंठ, त्रिनेत्र, शंकर</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">पत्नी</div>
+                    <div class="val">माता पार्वती</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">पुत्र</div>
+                    <div class="val">गणेश, कार्तिकेय</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">वाहन</div>
+                    <div class="val">नंदी (बैल)</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">आयुध</div>
+                    <div class="val">त्रिशूल, डमरू, पिनाक धनुष</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय दिन</div>
+                    <div class="val">सोमवार, प्रदोष, महाशिवरात्रि</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय भोग</div>
+                    <div class="val">बेलपत्र, धतूरा, भांग, कच्चा दूध</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">निवास</div>
+                    <div class="val">कैलाश पर्वत</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- परिचय -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📖</span> परिचय</h2>
+            <p>
+                <strong>भगवान शिव</strong> हिंदू धर्म के त्रिदेवों में से एक हैं — <strong>ब्रह्मा (सृष्टिकर्ता), विष्णु (पालनकर्ता), और महेश (संहारक)</strong>। वे संहार के देवता हैं, लेकिन उनका संहार भी कल्याणकारी है — वे पुराने का नाश करके नए का मार्ग प्रशस्त करते हैं।
+            </p>
+            <p>
+                शिव जी को <strong>महादेव</strong> कहा जाता है क्योंकि वे देवताओं के भी देवता हैं। वे <strong>भोलेनाथ</strong> हैं — भोले और करुणामय, जो भक्त की सच्ची भक्ति से जल्दी प्रसन्न हो जाते हैं। वे <strong>नीलकंठ</strong> हैं — जिन्होंने समुद्र मंथन के समय विष पीकर संसार की रक्षा की।
+            </p>
+            <p>
+                शिव जी <strong>ध्यान, त्याग, और तपस्या</strong> के प्रतीक हैं। वे कैलाश पर्वत पर ध्यान में लीन रहते हैं और उनका जीवन सादगी और वैराग्य का उदाहरण है।
+            </p>
+        </div>
+
+        <!-- जन्म और स्वरूप -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🎨</span> स्वरूप</h2>
+            <p>
+                शिव जी का स्वरूप अत्यंत विलक्षण है — वे <strong>सादगी और दिव्यता</strong> का संगम हैं।
+            </p>
+            <ul>
+                <li><strong>जटाएँ:</strong> उनकी जटाओं में माँ गंगा विराजमान हैं</li>
+                <li><strong>चंद्रमा:</strong> उनके मस्तक पर चंद्रमा शोभा पाता है</li>
+                <li><strong>तीसरा नेत्र:</strong> भ्रूमध्य में तीसरा नेत्र — ज्ञान और शक्ति का प्रतीक</li>
+                <li><strong>नीलकंठ:</strong> विष पीने के कारण गला नीला हो गया</li>
+                <li><strong>डमरू:</strong> हाथ में डमरू — सृष्टि की लय का प्रतीक</li>
+                <li><strong>त्रिशूल:</strong> हाथ में त्रिशूल — तीन गुणों का प्रतीक</li>
+                <li><strong>वस्त्र:</strong> बाघ की खाल (व्याघ्र चर्म) धारण करते हैं</li>
+                <li><strong>सर्प:</strong> गले में सर्प — मृत्यु पर विजय का प्रतीक</li>
+                <li><strong>नंदी:</strong> उनके वाहन — धर्म और शक्ति के प्रतीक</li>
+                <li><strong>त्रिपुंड:</strong> मस्तक पर तीन रेखाएँ — त्रिदेव और त्रिगुण</li>
+                <li><strong>रुद्राक्ष:</strong> गले में रुद्राक्ष की माला</li>
+                <li><strong>भस्म:</strong> शरीर पर भस्म — नश्वरता का प्रतीक</li>
+            </ul>
+        </div>
+
+        <!-- मुख्य मंत्र -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🔱</span> मुख्य मंत्र</h2>
+
+            <p><strong>1. पंचाक्षर मंत्र (सर्वश्रेष्ठ):</strong></p>
+            <div class="mantra-box">
+                ॐ नमः शिवाय
+                <small>अर्थ: मैं शिव को नमस्कार करता हूँ। यह पाँच अक्षरों का सबसे शक्तिशाली मंत्र है।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>2. महामृत्युंजय मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ त्र्यम्बकं यजामहे ।<br>
+                सुगन्धिं पुष्टिवर्धनम् ।<br>
+                उर्वारुकमिव बन्धनान् ।<br>
+                मृत्योर्मुक्षीय माऽमृतात् ॥
+                <small>अर्थ: हम त्रिनेत्र शिव की पूजा करते हैं, जो सुगंधित और पोषक हैं। जैसे खीरा बेल से अलग हो जाता है, वैसे ही हमें मृत्यु के बंधन से मुक्त करें।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>3. रुद्र गायत्री मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ तत्पुरुषाय विद्महे महादेवाय धीमहि ।<br>
+                तन्नो रुद्रः प्रचोदयात् ॥
+                <small>अर्थ: हम उस पुरुष का ध्यान करते हैं, महादेव का ध्यान करते हैं, रुद्र हमें प्रेरित करें।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>4. शिव बीज मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ हौं जूं सः
+                <small>अर्थ: यह शिव का बीज मंत्र है — ध्यान और आत्मज्ञान के लिए।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>5. रुद्राष्टकम् (संक्षिप्त):</strong></p>
+            <div class="mantra-box" style="font-size:15px;">
+                ॐ नमामीशमीशान निर्वाणरूपं ।<br>
+                विभुं व्यापकं ब्रह्मवेदस्वरूपम् ॥
+                <small>अर्थ: मैं उस ईश्वर को नमस्कार करता हूँ जो निर्वाण स्वरूप हैं, सर्वव्यापी हैं और ब्रह्म का स्वरूप हैं।</small>
+            </div>
+        </div>
+
+        <!-- 12 ज्योतिर्लिंग -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🛕</span> 12 ज्योतिर्लिंग</h2>
+            <p style="font-size:13px;margin-bottom:8px;">
+                <strong>ज्योतिर्लिंग</strong> शिव जी के 12 सबसे पवित्र स्थल हैं, जहाँ वे स्वयं प्रकट हुए थे।
+            </p>
+            <div class="jyoti-grid">
+                <div class="jyoti-item">
+                    <div class="jyoti-name">1. सोमनाथ</div>
+                    <div class="jyoti-loc">📍 सौराष्ट्र, गुजरात</div>
+                    <div class="jyoti-desc">चंद्र देव द्वारा स्थापित, सोमनाथ — "चंद्रमा के स्वामी"</div>
+                </div>
+                <div class="jyoti-item">
+                    <div class="jyoti-name">2. मल्लिकार्जुन</div>
+                    <div class="jyoti-loc">📍 श्रीशैलम, आंध्र प्रदेश</div>
+                    <div class="jyoti-desc">शिव और पार्वती का संयुक्त रूप</div>
+                </div>
+                <div class="jyoti-item">
+                    <div class="jyoti-name">3. महाकालेश्वर</div>
+                    <div class="jyoti-loc">📍 उज्जैन, मध्य प्रदेश</div>
+                    <div class="jyoti-desc">एकमात्र दक्षिणमुखी ज्योतिर्लिंग, काल के स्वामी</div>
+                </div>
+                <div class="jyoti-item">
+                    <div class="jyoti-name">4. ओंकारेश्वर</div>
+                    <div class="jyoti-loc">📍 खंडवा, मध्य प्रदेश</div>
+                    <div class="jyoti-desc">नर्मदा नदी के द्वीप पर स्थित, ॐ का प्रतीक</div>
+                </div>
+                <div class="jyoti-item">
+                    <div class="jyoti-name">5. केदारनाथ</div>
+                    <div class="jyoti-loc">📍 रुद्रप्रयाग, उत्तराखंड</div>
+                    <div class="jyoti-desc">हिमालय में स्थित, चार धाम में से एक</div>
+                </div>
+                <div class="jyoti-item">
+                    <div class="jyoti-name">6. भीमाशंकर</div>
+                    <div class="jyoti-loc">📍 पुणे, महाराष्ट्र</div>
+                    <div class="jyoti-desc">भीम नामक राक्षस के वध से संबंधित</div>
+                </div>
+                <div class="jyoti-item">
+                    <div class="jyoti-name">7. काशी विश्वनाथ</div>
+                    <div class="jyoti-loc">📍 वाराणसी, उत्तर प्रदेश</div>
+                    <div class="jyoti-desc">बारह ज्योतिर्लिंगों में सबसे प्रसिद्ध</div>
+                </div>
+                <div class="jyoti-item">
+                    <div class="jyoti-name">8. त्र्यंबकेश्वर</div>
+                    <div class="jyoti-loc">📍 नासिक, महाराष्ट्र</div>
+                    <div class="jyoti-desc">गोदावरी नदी का उद्गम स्थल</div>
+                </div>
+                <div class="jyoti-item">
+                    <div class="jyoti-name">9. वैद्यनाथ</div>
+                    <div class="jyoti-loc">📍 देवघर, झारखंड</div>
+                    <div class="jyoti-desc">रावण द्वारा स्थापित, कामना लिंग</div>
+                </div>
+                <div class="jyoti-item">
+                    <div class="jyoti-name">10. नागेश्वर</div>
+                    <div class="jyoti-loc">📍 द्वारका, गुजरात</div>
+                    <div class="jyoti-desc">नागों के देवता, दारुक वन में स्थित</div>
+                </div>
+                <div class="jyoti-item">
+                    <div class="jyoti-name">11. रामेश्वरम</div>
+                    <div class="jyoti-loc">📍 रामेश्वरम, तमिलनाडु</div>
+                    <div class="jyoti-desc">राम द्वारा स्थापित, चार धाम में से एक</div>
+                </div>
+                <div class="jyoti-item">
+                    <div class="jyoti-name">12. घृष्णेश्वर</div>
+                    <div class="jyoti-loc">📍 औरंगाबाद, महाराष्ट्र</div>
+                    <div class="jyoti-desc">शिव और पार्वती का विवाह स्थल</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- जप विधि -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📿</span> जप विधि</h2>
+            <ul>
+                <li><strong>समय:</strong> सोमवार, प्रदोष, महाशिवरात्रि, या ब्रह्म मुहूर्त (4-6 AM)</li>
+                <li><strong>स्थान:</strong> पूर्व दिशा में मुख करके, शिवलिंग के सामने</li>
+                <li><strong>माला:</strong> रुद्राक्ष माला (सबसे शुभ)</li>
+                <li><strong>संख्या:</strong> 108 बार (1 माला), या 1008 बार (9 माला)</li>
+                <li><strong>वस्त्र:</strong> सफेद या केसरिया वस्त्र</li>
+                <li><strong>भोग:</strong> बेलपत्र, धतूरा, भांग, कच्चा दूध, पंचामृत</li>
+                <li><strong>धूप/दीप:</strong> धूप, घी का दीपक, कपूर</li>
+                <li><strong>विशेष:</strong> शिवलिंग पर जल, दूध, गंगाजल चढ़ाएँ</li>
+            </ul>
+        </div>
+
+        <!-- शिव स्तोत्र (Accordion) -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📜</span> शिव स्तोत्र / आरती</h2>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 शिव आरती (ॐ जय शिव ओंकारा)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                   <div class="mantra-box" style="font-size:15px;text-align:left;line-height:2;">
+                        ॐ जय शिव ओंकारा, स्वामी जय शिव ओंकारा ।<br>
+                        ब्रह्मा विष्णु सदाशिव, अर्द्धांगी धारा ॥<br>
+                        ॐ जय शिव ओंकारा... ॥<br><br>
+                        एकानन चतुरानन पंचानन राजे ।<br>
+                        हंसानन गरुड़ासन वृषवाहन साजे ॥<br>
+                        ॐ जय शिव ओंकारा... ॥<br><br>
+                        दो भुज चार चतुर्भुज दस भुज अति सोहे ।<br>
+                        त्रिगुण रूप निरखते त्रिभुवन जन मोहे ॥<br>
+                        ॐ जय शिव ओंकारा... ॥<br><br>
+                        अक्षमाला वनमाला मुंडमाला धारी ।<br>
+                        त्रिपुंड ब्रह्मचारी शशि भूषण भारी ॥<br>
+                        ॐ जय शिव ओंकारा... ॥<br><br>
+                        श्वेताम्बर पीताम्बर बाघम्बर अंगे ।<br>
+                        सनकादिक गरुड़ादिक भूतादिक संगे ॥<br>
+                        ॐ जय शिव ओंकारा... ॥<br><br>
+                        कर के मध्य कमंडलु चक्र त्रिशूल धर्ता ।<br>
+                        जगकर्ता जगभर्ता जगसंहारकर्ता ॥<br>
+                        ॐ जय शिव ओंकारा... ॥<br><br>
+                        ब्रह्मा विष्णु सदाशिव जानत अविवेका ।<br>
+                        प्रणवाक्षर के मध्ये ये तीनों एका ॥<br>
+                        ॐ जय शिव ओंकारा... ॥<br><br>
+                        फल चार अरु पुष्प चार अरु धूप चार प्यारे ।<br>
+                        त्रिशूल चंद्र कपाल को देवा सुखकारे ॥<br>
+                        ॐ जय शिव ओंकारा... ॥<br><br>
+                        शिव शक्ति के मिलन से जो जगत उत्पन्ना ।<br>
+                        शिव शक्ति के मिलन से जो जीवन संपन्ना ॥<br>
+                        ॐ जय शिव ओंकारा... ॥<br><br>
+                        ॐ जय शिव ओंकारा, स्वामी जय शिव ओंकारा ।<br>
+                        ब्रह्मा विष्णु सदाशिव, अर्द्धांगी धारा ॥
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 रुद्राष्टकम् (शिव स्तोत्र)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        ॐ नमामीशमीशान निर्वाणरूपं ।<br>
+                        विभुं व्यापकं ब्रह्मवेदस्वरूपम् ।<br>
+                        निजं निर्गुणं निर्विकल्पं निरीहं ।<br>
+                        चिदाकाशमाकाशवासं भजेऽहम् ॥<br><br>
+                        निराकारमोंकारमूलं तुरीयं ।<br>
+                        गिरा ज्ञान गोतीतमीशं गिरीशम् ।<br>
+                        करालं महाकाल कालं कृपालुं ।<br>
+                        गुणागार संसारपारं नतोऽहम् ॥<br><br>
+                        तुषाराद्रि संकाश गौरं गभीरं ।<br>
+                        मनोभूत कोटि प्रभा श्री शरीरम् ।<br>
+                        स्फुरन्मौलि कल्लोलिनी चारु गंगा ।<br>
+                        लसद्भालबालेन्दु कण्ठे भुजंगा ॥<br><br>
+                        चलत्कुण्डलं भ्रू सुनेत्रं विशालं ।<br>
+                        प्रसन्नाननं नीलकण्ठं दयालम् ।<br>
+                        मृगाधीशचर्माम्बरं मुण्डमालं ।<br>
+                        प्रियं शंकरं सर्वनाथं भजामि ॥<br><br>
+                        प्रचण्डं प्रकृष्टं प्रगल्भं परेशं ।<br>
+                        अखण्डं अजं भानुकोटिप्रकाशम् ।<br>
+                        त्रयः शूल निर्मूलनं शूलपाणिं ।<br>
+                        भजेऽहं भवानीपतिं भावगम्यम् ॥<br><br>
+                        कलातीत कल्याण कल्पान्तकारी ।<br>
+                        सदा सज्जनानन्ददाता पुरारी ।<br>
+                        चिदानन्द संदोह मोहापहारी ।<br>
+                        प्रसीद प्रसीद प्रभो मन्मथारी ॥<br><br>
+                        न यावद् उमानाथ पादारविन्दं ।<br>
+                        भजन्तीह लोके परे वा नराणाम् ।<br>
+                        न तावत्सुखं शान्ति सन्तापनाशं ।<br>
+                        प्रसीद प्रभो सर्वभूताधिवासम् ॥<br><br>
+                        न जानामि योगं जपं नैव पूजां ।<br>
+                        नतोऽहं सदा सर्वदा शम्भु तुभ्यम् ।<br>
+                        जराजन्म दुःखौघ तातप्यमानं ।<br>
+                        प्रभो पाहि आपन्नमामीश शम्भो ॥
+                    </div>
+                </div>
+            </div>
+
+           <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 शिव तांडव स्तोत्र</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <p style="margin-bottom:8px;font-size:13px;">
+                        <strong>रचयिता:</strong> रावण (लंकेश) — जो शिव जी का परम भक्त था। यह स्तोत्र शिव जी के तांडव नृत्य का वर्णन करता है।
+                    </p>
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        जटाटवीगलज्जलप्रवाहपावितस्थले ।<br>
+                        गलेऽवलम्ब्य लम्बितां भुजंगतुंगमालिकाम् ।<br>
+                        डमड्डमड्डमड्डमन्निनादवड्डमर्वयं ।<br>
+                        चकार चण्डताण्डवं तनोतु नः शिवः शिवम् ॥<br><br>
+                        जटाकटाहसम्भ्रमभ्रमन्निलिम्पनिर्झरी ।<br>
+                        विलोलवीचिवल्लरीविराजमानमूर्धनि ।<br>
+                        धगद्धगद्धगज्ज्वलल्ललाटपट्टपावके ।<br>
+                        किशोरचन्द्रशेखरे रतिः प्रतिक्षणं मम ॥<br><br>
+                        धराधरेन्द्रनन्दिनीविलासबन्धुबन्धुर ।<br>
+                        स्फुरद्दिगन्तसन्ततिप्रमोदमानमानसे ।<br>
+                        कृपाकटाक्षधोरणीनिरुद्धदुर्धरापदि ।<br>
+                        क्वचिद्दिगम्बरे मनो विनोदमेतु वस्तुनि ॥<br><br>
+                        जटाभुजंगपिंगलस्फुरत्फणामणिप्रभा ।<br>
+                        कदम्बकुंकुमद्रवप्रलिप्तदिग्वधूमुखे ।<br>
+                        मदान्धसिन्धुरस्फुरत्त्वगुत्तरीयमेदुरे ।<br>
+                        मनो विनोदमद्भुतं बिभर्तु भूतभर्तरि ॥<br><br>
+                        सहस्रलोचनप्रभृत्यशेषलेखशेखर ।<br>
+                        प्रसूनधूलिधोरणी विधूसरांघ्रिपीठभूः ।<br>
+                        भुजंगराजमालया निबद्धजाटजूटकः ।<br>
+                        श्रियै चिराय जायतां चकोरबन्धुशेखरः ॥
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 महामृत्युंजय मंत्र (संपूर्ण)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:16px;text-align:left;line-height:2;">
+                        ॐ त्र्यम्बकं यजामहे ।<br>
+                        सुगन्धिं पुष्टिवर्धनम् ।<br>
+                        उर्वारुकमिव बन्धनान् ।<br>
+                        मृत्योर्मुक्षीय माऽमृतात् ॥
+                    </div>
+                    <p style="font-size:13px;line-height:1.8;">
+                        <strong>अर्थ:</strong> हम त्रिनेत्र शिव की पूजा करते हैं, जो सुगंधित और पोषक हैं। जैसे खीरा बेल से अलग हो जाता है, वैसे ही हमें मृत्यु के बंधन से मुक्त करें, न कि अमरता से।
+                    </p>
+                    <p style="font-size:13px;line-height:1.8;margin-top:8px;">
+                        <strong>लाभ:</strong> आयु वृद्धि, रोग नाश, मृत्यु भय से मुक्ति, शांति, आरोग्य, संकट नाश।
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- प्रमुख मंदिर -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🛕</span> प्रमुख मंदिर</h2>
+            <div class="temple-list">
+                <div class="temple-item">
+                    <strong>काशी विश्वनाथ, वाराणसी</strong><br>
+                    12 ज्योतिर्लिंगों में सबसे प्रसिद्ध, गंगा तट पर स्थित।
+                </div>
+                <div class="temple-item">
+                    <strong>सोमनाथ, गुजरात</strong><br>
+                    चंद्र देव द्वारा स्थापित, प्रथम ज्योतिर्लिंग।
+                </div>
+                <div class="temple-item">
+                    <strong>महाकालेश्वर, उज्जैन</strong><br>
+                    एकमात्र दक्षिणमुखी ज्योतिर्लिंग, काल के स्वामी।
+                </div>
+                <div class="temple-item">
+                    <strong>केदारनाथ, उत्तराखंड</strong><br>
+                    हिमालय में स्थित, चार धाम में से एक।
+                </div>
+                <div class="temple-item">
+                    <strong>त्र्यंबकेश्वर, नासिक</strong><br>
+                    गोदावरी नदी का उद्गम स्थल।
+                </div>
+                <div class="temple-item">
+                    <strong>रामेश्वरम, तमिलनाडु</strong><br>
+                    राम द्वारा स्थापित, चार धाम में से एक।
+                </div>
+                <div class="temple-item">
+                    <strong>पशुपतिनाथ, काठमांडू</strong><br>
+                    नेपाल का सबसे पवित्र शिव मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>अमरनाथ, कश्मीर</strong><br>
+                    हिमलिंग के दर्शन, अमरनाथ गुफा।
+                </div>
+            </div>
+        </div>
+         <!-- त्योहार और व्रत -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🎉</span> प्रमुख त्योहार और व्रत</h2>
+            <ul>
+                <li><strong>महाशिवरात्रि:</strong> फाल्गुन कृष्ण चतुर्दशी (फरवरी-मार्च) — शिव जी का सबसे बड़ा पर्व। रात्रि जागरण, व्रत, शिवलिंग पर जल-दूध चढ़ाना।</li>
+                <li><strong>प्रदोष व्रत:</strong> हर माह की त्रयोदशी को — संध्या काल में शिव पूजा।</li>
+                <li><strong>सोमवार व्रत:</strong> हर सोमवार — शिव जी का प्रिय दिन।</li>
+                <li><strong>सावन मास:</strong> श्रावण (जुलाई-अगस्त) का पूरा महीना शिव जी को समर्पित।</li>
+                <li><strong>शिवरात्रि:</strong> हर माह की कृष्ण चतुर्दशी को।</li>
+                <li><strong>पंचक:</strong> शिव जी से संबंधित विशेष दिन।</li>
+                <li><strong>हर हर महादेव:</strong> शिव जी का नारा — भक्ति का प्रतीक।</li>
+            </ul>
+        </div>
+
+        <!-- भक्ति और लाभ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🙏</span> शिव जी को क्यों भजें?</h2>
+            <ul>
+                <li><strong>मोक्ष:</strong> शिव जी की भक्ति से मोक्ष प्राप्त होता है — जन्म-मृत्यु के चक्र से मुक्ति।</li>
+                <li><strong>रोग नाश:</strong> महामृत्युंजय मंत्र से आरोग्य और दीर्घायु।</li>
+                <li><strong>मन की शांति:</strong> शिव जी ध्यान के देवता हैं — उनकी भक्ति से मन शांत होता है।</li>
+                <li><strong>भय मुक्ति:</strong> शिव जी की कृपा से सभी भय दूर होते हैं।</li>
+                <li><strong>कालसर्प दोष:</strong> शिव पूजा से कालसर्प दोष, शनि दोष, और मंगल दोष दूर होते हैं।</li>
+                <li><strong>पारिवारिक सुख:</strong> शिव जी की कृपा से पारिवारिक सुख-शांति प्राप्त होती है।</li>
+                <li><strong>आत्मज्ञान:</strong> शिव जी आत्मज्ञान और आध्यात्मिक उन्नति के दाता हैं।</li>
+                <li><strong>विवाह:</strong> अविवाहित लड़कियों के लिए शिव पूजा से अच्छा वर प्राप्त होता है।</li>
+            </ul>
+        </div>
+
+        <!-- वर्जित कार्य -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🚫</span> क्या न करें?</h2>
+            <ul>
+                <li>❌ शिवलिंग पर <strong>हल्दी</strong> न चढ़ाएँ (हल्दी शिव जी को प्रिय नहीं है)</li>
+                <li>❌ शिवलिंग पर <strong>तुलसी</strong> न चढ़ाएँ (तुलसी विष्णु को प्रिय है)</li>
+                <li>❌ शिवलिंग पर <strong>केतकी</strong> फूल न चढ़ाएँ</li>
+                <li>❌ <strong>बिना स्नान</strong> शिवलिंग को स्पर्श न करें</li>
+                <li>❌ शिव जी को <strong>शंख</strong> से जल न चढ़ाएँ</li>
+                <li>❌ <strong>सोमवार</strong> को शिवलिंग पर बेलपत्र <strong>बिना जल</strong> न चढ़ाएँ</li>
+                <li>❌ शिवलिंग को <strong>अशुद्ध हाथों</strong> से न छुएँ</li>
+                <li>❌ <strong>रात्रि</strong> में शिवलिंग पर जल न चढ़ाएँ (प्रदोष काल के अलावा)</li>
+            </ul>
+        </div>
+
+        <!-- FAQ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>शिव जी ने विष क्यों पिया?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    समुद्र मंथन के समय <strong>हलाहल विष</strong> निकला, जो पूरी सृष्टि को नष्ट कर सकता था। तब शिव जी ने उस विष को पी लिया। माता पार्वती ने उनका गला दबाया, जिससे विष गले में ही रुक गया और उनका गला नीला हो गया। इसलिए उन्हें <strong>नीलकंठ</strong> कहा जाता है।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>शिवलिंग क्या है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    शिवलिंग शिव जी का <strong>निराकार स्वरूप</strong> है। "लिंग" का अर्थ है — <strong>चिह्न या प्रतीक</strong>। यह ब्रह्मांड की उत्पत्ति और विनाश का प्रतीक है। शिवलिंग के तीन भाग होते हैं — ब्रह्मा (नीचे), विष्णु (मध्य), और शिव (ऊपर)।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>शिव जी को बेलपत्र क्यों चढ़ाते हैं?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    बेलपत्र <strong>त्रिदोष (वात, पित्त, कफ)</strong> का नाश करता है। यह शिव जी को अत्यंत प्रिय है। कहा जाता है कि बेलपत्र चढ़ाने से <strong>1000 यज्ञों का फल</strong> मिलता है। बेलपत्र को जल के साथ चढ़ाना चाहिए।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>क्या शिव जी की पूजा से विवाह में देरी दूर होती है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    हाँ, <strong>सोमवार व्रत, महामृत्युंजय मंत्र जप, रुद्राभिषेक, और शिव चालीसा पाठ</strong> से विवाह में आने वाली बाधाएँ दूर होती हैं। अविवाहित लड़कियों के लिए यह विशेष रूप से लाभदायक है।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>क्या शिव जी की पूजा से धन प्राप्ति होती है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    शिव जी <strong>धन के देवता</strong> नहीं हैं, लेकिन उनकी कृपा से <strong>धन की बर्बादी रुकती है, धन-धान्य में वृद्धि होती है, और कर्ज से मुक्ति</strong> मिलती है। कुबेर (धन के देवता) शिव जी के मित्र हैं, इसलिए शिव पूजा से अप्रत्यक्ष रूप से धन लाभ होता है।
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Links -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🔗</span> संबंधित लिंक</h2>
+            <div class="related-grid">
+                <a href="../mantra/index.html" class="related-link">📿 सभी मंत्र</a>
+                <a href="../stotra/shiv-tandav.html" class="related-link">📜 शिव तांडव</a>
+                <a href="../stotra/rudrashtakam.html" class="related-link">📜 रुद्राष्टकम्</a>
+                <a href="../tyohar/mahashivratri.html" class="related-link">🎉 महाशिवरात्रि</a>
+                <a href="../katha/shiv-katha.html" class="related-link">📖 शिव कथाएँ</a>
+                <a href="../quiz/index.html" class="related-link">🎯 शिव क्विज</a>
+            </div>
+        </div>
+
+        <!-- Share -->
+        <button class="btn-primary" onclick="sharePage()" style="margin-top:10px;">
+            <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+        </button>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 हर हर महादेव</p>
+        </footer>
+
+    </main>
+
+    <!-- Back to Top -->
+    <button class="back-top" id="backTop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-calendar-days"></i><p>पंचांग</p></a>
+        <a href="../quiz/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>क्विज</p></a>
+    </nav>
+
+    <script src="../script.js"></script>
+    <script>
+        function toggleAccordion(el) {
+            const item = el.parentElement;
+            item.classList.toggle('open');
+        }
+
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backTop');
+            if (btn) {
+                if (window.scrollY > 400) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
