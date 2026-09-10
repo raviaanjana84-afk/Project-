@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>त्योहार कोश — संपूर्ण ज्ञान | Sanatan Gyan Kosh</title>
-    <meta name="description" content="सभी हिंदू त्योहारों की संपूर्ण जानकारी — कथा, विधि, पूजा, मंत्र, क्या करें, क्या न करें। दीपावली, होली, नवरात्रि, जन्माष्टमी और बहुत कुछ।" />
+    <title>त्योहार कोश — सभी हिंदू त्योहार | Sanatan Gyan Kosh</title>
+    <meta name="description" content="सभी हिंदू त्योहारों की सूची — दीपावली, होली, नवरात्रि, जन्माष्टमी और बहुत कुछ। हर त्योहार की पूरी जानकारी के लिए click करें।" />
     <meta name="theme-color" content="#7A2E2E" />
     <link rel="stylesheet" href="../style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -65,371 +65,129 @@
             color: var(--maroon);
         }
 
-        /* Main Card */
-        .tyohar-card {
+        /* Festival Card Grid */
+        .festival-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 8px;
+        }
+        .festival-card {
             background: var(--card-bg);
             border-radius: var(--radius);
-            box-shadow: var(--shadow);
             border: 1px solid var(--border);
-            border-left: 5px solid var(--gold);
-            transition: var(--transition);
-            margin-bottom: 14px;
+            box-shadow: var(--shadow);
+            text-decoration: none;
+            color: var(--ink);
             overflow: hidden;
-        }
-        .tyohar-card:hover {
-            box-shadow: var(--shadow-hover);
-            border-left-color: var(--maroon);
-        }
-        .tyohar-card.open {
-            border-left-color: var(--maroon);
-        }
-
-        /* Card Header (Clickable) */
-        .tyohar-header {
-            padding: 18px 16px;
-            cursor: pointer;
+            transition: var(--transition);
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 12px;
+            flex-direction: column;
+            position: relative;
+        }
+        .festival-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--maroon), var(--gold));
+            opacity: 0;
             transition: var(--transition);
         }
-        .tyohar-header:hover {
-            background: var(--bg);
+        .festival-card:hover::before {
+            opacity: 1;
         }
-        .tyohar-card.open .tyohar-header {
-            background: linear-gradient(135deg, rgba(212,175,55,0.12), rgba(122,46,46,0.06));
-            border-bottom: 1px solid var(--border);
+        .festival-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--gold);
         }
-        .tyohar-header-left {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex: 1;
+        .festival-card .fc-hero {
+            background: linear-gradient(135deg, rgba(212,175,55,0.15), rgba(122,46,46,0.08));
+            padding: 20px 12px 14px;
+            text-align: center;
+            position: relative;
         }
-        .tyohar-icon {
-            font-size: 32px;
+        .festival-card .fc-icon {
+            font-size: 44px;
+            display: block;
             line-height: 1;
-            flex-shrink: 0;
         }
-        .tyohar-info {
-            flex: 1;
-        }
-        .tyohar-name {
+        .festival-card .fc-name {
             font-family: var(--font-display);
-            font-size: 18px;
+            font-size: 16px;
             color: var(--maroon);
             font-weight: 700;
+            margin-top: 6px;
             line-height: 1.2;
         }
-        .tyohar-name .tyohar-en {
-            font-family: var(--font-body);
+        .festival-card .fc-en {
             font-size: 10px;
-            font-weight: 400;
             color: var(--ink-light);
             display: block;
             margin-top: 2px;
         }
-        .tyohar-meta-line {
-            font-size: 11px;
-            color: var(--ink-soft);
-            margin-top: 4px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-        .tyohar-meta-line .badge {
-            background: var(--maroon);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 9px;
-        }
-        .tyohar-meta-line .badge.gold {
-            background: var(--gold);
-            color: var(--maroon);
-        }
-        .tyohar-arrow {
-            color: var(--gold);
-            font-size: 18px;
-            transition: transform 0.3s;
-            flex-shrink: 0;
-        }
-        .tyohar-card.open .tyohar-arrow {
-            transform: rotate(180deg);
-        }
-
-        /* Card Body (Details) */
-        .tyohar-body {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.6s ease;
-        }
-        .tyohar-card.open .tyohar-body {
-            max-height: 15000px;
-        }
-        .tyohar-body-inner {
-            padding: 18px 16px;
-        }
-
-        .detail-section {
-            margin-bottom: 18px;
-        }
-        .detail-section:last-child {
-            margin-bottom: 0;
-        }
-        .detail-section h3 {
-            font-family: var(--font-display);
-            font-size: 16px;
-            color: var(--maroon);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border-bottom: 2px solid var(--gold);
-            padding-bottom: 6px;
-        }
-        .detail-section h3 .sec-icon {
-            font-size: 20px;
-        }
-        .detail-section p {
-            font-size: 13.5px;
-            line-height: 1.9;
-            color: var(--ink-soft);
-            margin-bottom: 8px;
-        }
-        .detail-section p strong {
-            color: var(--maroon);
-        }
-
-        /* Timeline / Days */
-        .day-timeline {
+        .festival-card .fc-info {
+            padding: 12px;
+            flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            margin-top: 10px;
+            gap: 6px;
         }
-        .day-item {
-            background: var(--bg);
-            border-radius: 12px;
-            padding: 12px 14px;
-            border-left: 4px solid var(--gold);
-            transition: var(--transition);
+        .festival-card .fc-when {
+            font-size: 10.5px;
+            color: var(--ink-soft);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            line-height: 1.4;
         }
-        .day-item:hover {
-            border-left-color: var(--maroon);
-            transform: translateX(3px);
+        .festival-card .fc-when i {
+            color: var(--gold);
+            font-size: 10px;
         }
-        .day-item .day-label {
-            display: inline-block;
+        .festival-card .fc-btn {
+            margin-top: auto;
+            padding: 8px;
             background: var(--maroon);
             color: white;
-            padding: 2px 10px;
             border-radius: 10px;
-            font-size: 9px;
+            font-size: 11px;
             font-weight: 700;
-            margin-bottom: 6px;
-        }
-        .day-item .day-label.gold {
-            background: var(--gold);
-            color: var(--maroon);
-        }
-        .day-item .day-title {
-            font-family: var(--font-display);
-            font-size: 15px;
-            color: var(--maroon);
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-        .day-item .day-text {
-            font-size: 12.5px;
-            line-height: 1.7;
-            color: var(--ink-soft);
-        }
-        .day-item .day-text strong {
-            color: var(--maroon);
-        }
-
-        /* Steps List */
-        .steps-list {
-            list-style: none;
-            padding: 0;
-            counter-reset: step-counter;
-            margin: 8px 0;
-        }
-        .steps-list li {
-            counter-increment: step-counter;
-            padding: 8px 10px 8px 40px;
-            font-size: 13px;
-            line-height: 1.8;
-            color: var(--ink-soft);
-            border-bottom: 1px dashed var(--border);
-            position: relative;
-        }
-        .steps-list li:last-child { border-bottom: none; }
-        .steps-list li::before {
-            content: counter(step-counter);
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--maroon), var(--gold));
-            color: white;
+            text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 4px;
+            transition: var(--transition);
+        }
+        .festival-card:hover .fc-btn {
+            background: var(--gold);
+            color: var(--maroon);
+        }
+
+        /* Badge */
+        .fc-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            font-size: 9px;
+            padding: 3px 10px;
+            border-radius: 12px;
             font-weight: 700;
-            font-size: 12px;
+            color: white;
         }
-        .steps-list li strong { color: var(--maroon); }
+        .fc-badge.major { background: var(--maroon); }
+        .fc-badge.regional { background: #27ae60; }
+        .fc-badge.seasonal { background: #2980b9; }
+        .fc-badge.monthly { background: #8e44ad; }
 
-        /* Mantra Box */
-        .mantra-box {
-            background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(122,46,46,0.05));
-            border-left: 4px solid var(--gold);
-            padding: 12px 14px;
-            border-radius: 10px;
-            font-family: var(--font-display);
-            font-size: 15px;
-            text-align: center;
-            margin: 8px 0;
-            line-height: 1.8;
-            color: var(--maroon);
-            font-weight: 600;
-        }
-        .mantra-box small {
-            display: block;
-            font-family: var(--font-body);
-            font-size: 11px;
-            color: var(--ink-soft);
-            font-weight: 400;
-            margin-top: 4px;
-        }
-
-        /* Do / Don't */
-        .do-dont-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 8px;
-        }
-        .do-box, .dont-box {
-            padding: 12px;
-            border-radius: 10px;
-            font-size: 12px;
-            line-height: 1.7;
-        }
-        .do-box {
-            background: #eef7ee;
-            border-left: 3px solid #27ae60;
-        }
-        .do-box h4 {
-            color: #27ae60;
-            font-size: 12px;
-            margin-bottom: 6px;
-            font-family: var(--font-display);
-        }
-        .dont-box {
-            background: #fdecea;
-            border-left: 3px solid #dc3545;
-        }
-        .dont-box h4 {
-            color: #dc3545;
-            font-size: 12px;
-            margin-bottom: 6px;
-            font-family: var(--font-display);
-        }
-        .do-box ul, .dont-box ul {
-            list-style: none;
-            padding: 0;
-        }
-        .do-box ul li, .dont-box ul li {
-            padding: 2px 0;
-            display: flex;
-            align-items: flex-start;
-            gap: 5px;
-        }
-        .do-box ul li::before { content: '✅'; flex-shrink: 0; font-size: 11px; }
-        .dont-box ul li::before { content: '❌'; flex-shrink: 0; font-size: 11px; }
-
-        /* Highlight */
-        .highlight-box {
-            background: linear-gradient(135deg, rgba(212,175,55,0.12), rgba(122,46,46,0.06));
-            border-left: 4px solid var(--gold);
-            padding: 12px 14px;
-            border-radius: 10px;
-            margin: 8px 0;
-            font-size: 12.5px;
-            line-height: 1.8;
-            color: var(--ink-soft);
-        }
-        .highlight-box strong { color: var(--maroon); }
-
-        /* FAQ */
-        .faq-item {
-            background: var(--bg);
-            border-radius: 10px;
-            margin-bottom: 8px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-        }
-        .faq-q {
-            padding: 10px 12px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 13px;
-            color: var(--maroon);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 8px;
-        }
-        .faq-q i {
-            color: var(--gold);
-            font-size: 12px;
-            transition: transform 0.3s;
-            flex-shrink: 0;
-        }
-        .faq-item.open .faq-q i {
-            transform: rotate(180deg);
-        }
-        .faq-a {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease;
-            padding: 0 12px;
-            font-size: 12.5px;
-            line-height: 1.8;
-            color: var(--ink-soft);
-        }
-        .faq-item.open .faq-a {
-            max-height: 500px;
-            padding: 0 12px 12px;
-        }
-
-        .no-result {
-            text-align: center;
-            padding: 40px 20px;
-            color: var(--ink-light);
-            font-size: 14px;
-        }
-        .no-result i {
-            font-size: 40px;
-            display: block;
-            margin-bottom: 10px;
-            color: var(--border);
-        }
-
-        @media (max-width: 420px) {
-            .tyohar-icon { font-size: 26px; }
-            .tyohar-name { font-size: 15px; }
-            .do-dont-grid { grid-template-columns: 1fr; }
-            .detail-section h3 { font-size: 14px; }
+        @media (max-width: 380px) {
+            .festival-grid { gap: 10px; }
+            .festival-card .fc-icon { font-size: 36px; }
+            .festival-card .fc-name { font-size: 14px; }
         }
     </style>
 </head>
@@ -452,23 +210,22 @@
 
         <div class="hero-banner">
             <h2>🎉 त्योहार कोश</h2>
-            <p>कार्ड पर <strong>क्लिक करें</strong> और पूरी जानकारी पढ़ें — कथा, विधि, मंत्र, और बहुत कुछ!</p>
+            <p>किसी भी त्योहार पर <strong>click करें</strong> और उसकी <strong>पूरी जानकारी</strong> पढ़ें!</p>
         </div>
 
         <div class="search-wrap">
             <i class="fa-solid fa-search"></i>
-            <input type="text" id="searchInput" placeholder="त्योहार खोजें... (जैसे: दीपावली, होली, नवरात्रि)" oninput="filterTyohars()" />
+            <input type="text" id="searchInput" placeholder="त्योहार खोजें..." oninput="filterFestivals()" />
         </div>
 
         <div class="cat-tabs" id="catTabs">
             <button class="cat-tab active" data-cat="all">✨ सभी</button>
             <button class="cat-tab" data-cat="major">🌟 प्रमुख</button>
-            <button class="cat-tab" data-cat="monthly">📅 मासिक</button>
-            <button class="cat-tab" data-cat="seasonal">🌦️ ऋतु</button>
             <button class="cat-tab" data-cat="regional">🗺️ क्षेत्रीय</button>
+            <button class="cat-tab" data-cat="seasonal">🌦️ ऋतु</button>
         </div>
 
-        <div id="tyoharList"></div>
+        <div class="festival-grid" id="festivalGrid"></div>
 
         <footer class="footer">
             <p>🕉️ सनातन ज्ञान कोश</p>
@@ -488,843 +245,92 @@
 
     <script>
         // ============================================================
-        //  TYOHAR DATABASE — Deep Details
+        //  FESTIVAL LIST
         // ============================================================
 
-        const tyohars = [
-            // ==================== दीपावली ====================
-            {
-                id: 'diwali',
-                name: 'दीपावली',
-                en: 'Diwali',
-                icon: '🪔',
-                category: 'major',
-                when: 'कार्तिक अमावस्या (अक्टूबर-नवंबर)',
-                days: '5 दिन',
-                intro: 'दीपावली "दीपों का उत्सव" है — जो राम जी के अयोध्या वापसी और माँ लक्ष्मी के प्राकट्य की खुशी में मनाई जाती है। यह हिंदू धर्म का सबसे बड़ा त्योहार है।',
-                katha: 'जब भगवान राम ने 14 वर्ष का वनवास पूरा किया और रावण का वध करके अयोध्या वापस लौटे, तो अयोध्या के निवासियों ने उनके स्वागत में पूरी नगरी को दीपों से सजा दिया। यही परंपरा आज दीपावली के रूप में जारी है। एक अन्य कथा के अनुसार, समुद्र मंथन के समय कार्तिक अमावस्या को माँ लक्ष्मी प्रकट हुईं।',
-                daysDetail: [
-                    { day: 'दिन 1', name: 'धनतेरस', desc: 'धन्वंतरि प्रकट हुए। सोना, चांदी, बर्तन, झाड़ू खरीदें। धन और स्वास्थ्य के लिए।' },
-                    { day: 'दिन 2', name: 'नरक चतुर्दशी', desc: 'कृष्ण जी ने नरकासुर का वध किया। अभ्यंग स्नान करें, यम के लिए दीपक जलाएँ।' },
-                    { day: 'दिन 3 ⭐', name: 'लक्ष्मी पूजन (दीपावली)', desc: 'माँ लक्ष्मी और गणेश जी की पूजा करें। मुख्य दिन।' },
-                    { day: 'दिन 4', name: 'गोवर्धन पूजा / अन्नकूट', desc: 'गोवर्धन पर्वत की पूजा, 56 प्रकार के व्यंजन बनाएँ।' },
-                    { day: 'दिन 5', name: 'भाई दूज', desc: 'बहन भाई को तिलक करे। भाई-बहन के प्रेम का पर्व।' }
-                ],
-                vidhi: [
-                    'प्रातः स्नान करके स्वच्छ वस्त्र धारण करें',
-                    'घर की पूरी सफाई करें',
-                    'मुख्य द्वार पर रंगोली बनाएँ',
-                    'पूजा स्थान को फूलों से सजाएँ',
-                    'तांबे के कलश में जल, सुपारी, सिक्का डालें',
-                    'लक्ष्मी-गणेश की प्रतिमा स्थापित करें',
-                    'संकल्प लें और गणेश पूजा करें',
-                    'लक्ष्मी पूजा — षोडशोपचार से करें',
-                    'खीर, मिठाई, फल का भोग लगाएँ',
-                    'आरती गाएँ — "ॐ जय लक्ष्मी माता"',
-                    'घर के हर कोने में दीपक जलाएँ',
-                    'प्रसाद बाँटें'
-                ],
-                mantra: 'ॐ श्रीं ह्रीं क्लीं महालक्ष्म्यै नमः',
-                mantraMeaning: 'माँ लक्ष्मी का मुख्य मंत्र — 108 बार जपें',
-                dos: [
-                    'घर की सफाई करें',
-                    'रंगोली बनाएँ',
-                    'दीप जलाएँ',
-                    'लक्ष्मी-गणेश पूजा करें',
-                    'मिठाइयाँ बाँटें',
-                    'परिवार के साथ समय बिताएँ',
-                    'गरीबों को दान करें',
-                    'बच्चों को कथा सुनाएँ'
-                ],
-                donts: [
-                    'घर में अंधकार न रखें',
-                    'झाड़ू को पैर से न छुएँ',
-                    'दीपक फूँक से न बुझाएँ',
-                    'क्रोध न करें',
-                    'झूठ न बोलें',
-                    'तामसिक भोजन न करें',
-                    'किसी से कलह न करें',
-                    'उधार न लें'
-                ],
-                faqs: [
-                    { q: 'दीपावली पर लक्ष्मी पूजा क्यों?', a: 'इस दिन समुद्र मंथन से माँ लक्ष्मी प्रकट हुईं। वे साफ-सुथरे घर में निवास करती हैं।' },
-                    { q: 'कितने दीपक जलाएँ?', a: 'कम से कम 11 — मंदिर, मुख्य द्वार, आँगन, रसोई, तुलसी के पौधे, और घर के हर कोने में।' },
-                    { q: 'क्या झाड़ू खरीदनी चाहिए?', a: 'हाँ! दीपावली पर झाड़ू खरीदना शुभ है, लेकिन पैर से न छुएँ।' }
-                ]
-            },
-
-            // ==================== होली ====================
-            {
-                id: 'holi',
-                name: 'होली',
-                en: 'Holi',
-                icon: '🎨',
-                category: 'major',
-                when: 'फाल्गुन पूर्णिमा (मार्च)',
-                days: '2 दिन',
-                intro: 'होली "रंगों का त्योहार" है — जो बुराई पर अच्छाई की जीत का प्रतीक है। यह प्रह्लाद और होलिका की कथा से जुड़ी है।',
-                katha: 'हिरण्यकश्यप नामक राक्षस ने अपने पुत्र प्रह्लाद को मारने के लिए बहन होलिका की गोद में बिठाया। होलिका को अग्नि से बचने का वरदान था, लेकिन भक्त प्रह्लाद की रक्षा के लिए होलिका जल गई और प्रह्लाद बच गए। इसलिए होलिका दहन और रंग खेलना — यह परंपरा बनी।',
-                daysDetail: [
-                    { day: 'दिन 1', name: 'होलिका दहन', desc: 'पूर्णिमा की रात — होलिका दहन करें, बुराई का नाश।' },
-                    { day: 'दिन 2', name: 'धुलंडी (रंग खेलना)', desc: 'अगले दिन रंग खेलें, गुजिया बनाएँ।' }
-                ],
-                vidhi: [
-                    'होलिका दहन से पहले पूजा करें',
-                    'होलिका की परिक्रमा करें',
-                    'अग्नि में नारियल, गुड़, चने की बालियाँ चढ़ाएँ',
-                    'अगले दिन रंग खेलें',
-                    'गुजिया, पकवान बनाएँ',
-                    'आपसी प्रेम बाँटें'
-                ],
-                mantra: 'ॐ नृसिंहाय नमः',
-                mantraMeaning: 'भगवान नृसिंह का मंत्र — बुराई पर विजय के लिए',
-                dos: [
-                    'होलिका दहन करें',
-                    'रंग खेलें',
-                    'गुजिया बनाएँ',
-                    'आपसी प्रेम बाँटें',
-                    'बच्चों को कथा सुनाएँ'
-                ],
-                donts: [
-                    'किसी को जबरदस्ती रंग न लगाएँ',
-                    'मदिरा न पिएँ',
-                    'अश्लीलता न करें',
-                    'पशुओं को न परेशान करें',
-                    'पानी की बर्बादी न करें'
-                ],
-                faqs: [
-                    { q: 'होली क्यों मनाई जाती है?', a: 'यह प्रह्लाद और होलिका की कथा से जुड़ी है — बुराई पर अच्छाई की जीत का प्रतीक।' },
-                    { q: 'होलिका दहन कब होता है?', a: 'फाल्गुन पूर्णिमा की रात।' }
-                ]
-            },
-
-            // ==================== नवरात्रि ====================
-            {
-                id: 'navratri',
-                name: 'नवरात्रि',
-                en: 'Navratri',
-                icon: '🌺',
-                category: 'major',
-                when: 'चैत्र और आश्विन (मार्च-अप्रैल, सितंबर-अक्टूबर)',
-                days: '9 दिन',
-                intro: 'नवरात्रि "9 रातों" का पर्व है — जिसमें माँ दुर्गा के 9 रूपों की पूजा की जाती है।',
-                katha: 'महिषासुर नामक राक्षस ने देवताओं को पराजित किया। तब ब्रह्मा, विष्णु और महेश के तेज से माँ दुर्गा प्रकट हुईं और उन्होंने 9 दिन तक युद्ध करके महिषासुर का वध किया।',
-                daysDetail: [
-                    { day: 'दिन 1', name: 'शैलपुत्री', desc: 'हिमालय की पुत्री — बैल पर सवार।' },
-                    { day: 'दिन 2', name: 'ब्रह्मचारिणी', desc: 'तपस्विनी — जप और तप की देवी।' },
-                    { day: 'दिन 3', name: 'चंद्रघंटा', desc: 'शेर पर सवार — तीन हाथों में अस्त्र।' },
-                    { day: 'दिन 4', name: 'कूष्मांडा', desc: 'ब्रह्मांड की रचयिता — 8 हाथ।' },
-                    { day: 'दिन 5', name: 'स्कंदमाता', desc: 'कार्तिकेय की माता।' },
-                    { day: 'दिन 6', name: 'कात्यायनी', desc: 'महिषासुर मर्दिनी स्वरूप।' },
-                    { day: 'दिन 7', name: 'कालरात्रि', desc: 'रात्रि की देवी — गधे पर सवार।' },
-                    { day: 'दिन 8', name: 'महागौरी', desc: 'गौर वर्ण की देवी — बैल पर सवार।' },
-                    { day: 'दिन 9', name: 'सिद्धिदात्री', desc: 'सभी सिद्धियों की दाता — कमल पर विराजमान।' }
-                ],
-                vidhi: [
-                    '9 दिन व्रत रखें',
-                    'कलश स्थापना करें',
-                    'दुर्गा सप्तशती पाठ करें',
-                    'कन्या पूजन करें',
-                    'हवन कराएँ',
-                    'देवी चालीसा पढ़ें'
-                ],
-                mantra: 'ॐ दुं दुर्गायै नमः',
-                mantraMeaning: 'दुर्गा माता का मूल मंत्र',
-                dos: [
-                    '9 दिन व्रत रखें',
-                    'कलश स्थापना करें',
-                    'दुर्गा सप्तशती पाठ करें',
-                    'कन्या पूजन करें',
-                    'लाल वस्त्र धारण करें'
-                ],
-                donts: [
-                    'तामसिक भोजन न करें',
-                    'क्रोध न करें',
-                    'झूठ न बोलें',
-                    'देवी का अनादर न करें',
-                    'अशुद्ध न रहें'
-                ],
-                faqs: [
-                    { q: 'नवरात्रि कितनी बार आती है?', a: 'साल में 2 बार — चैत्र और शारदीय नवरात्रि।' },
-                    { q: 'नवरात्रि में क्या खाएँ?', a: 'फलाहार — साबूदाना, मखाना, कुट्टू, आलू, दूध।' }
-                ]
-            },
-
-            // ==================== महाशिवरात्रि ====================
-            {
-                id: 'mahashivratri',
-                name: 'महाशिवरात्रि',
-                en: 'Mahashivratri',
-                icon: '🔱',
-                category: 'major',
-                when: 'फाल्गुन कृष्ण चतुर्दशी (फरवरी-मार्च)',
-                days: '1 रात',
-                intro: 'महाशिवरात्रि भगवान शिव का सबसे बड़ा पर्व है — जो शिव-पार्वती के विवाह और शिवलिंग प्रकट होने से जुड़ा है।',
-                katha: 'इस दिन शिव जी ने माता पार्वती से विवाह किया था। एक अन्य कथा के अनुसार, इसी दिन शिवलिंग प्रकट हुआ था। इसलिए यह दिन शिव जी का सबसे बड़ा पर्व माना जाता है।',
-                daysDetail: [
-                    { day: 'प्रहर 1', name: 'शिवलिंग स्नान', desc: 'जल, दूध, दही, घी, शहद से अभिषेक।' },
-                    { day: 'प्रहर 2', name: 'बेलपत्र अर्पण', desc: 'बेलपत्र, धतूरा, भांग चढ़ाएँ।' },
-                    { day: 'प्रहर 3', name: 'महामृत्युंजय जप', desc: '108 बार मंत्र जप करें।' },
-                    { day: 'प्रहर 4', name: 'रात्रि जागरण', desc: 'पूरी रात जागरण करें।' }
-                ],
-                vidhi: [
-                    'पूरे दिन और रात व्रत रखें',
-                    '4 प्रहर पूजा करें',
-                    'शिवलिंग पर जल, दूध, बेलपत्र चढ़ाएँ',
-                    'महामृत्युंजय मंत्र जपें',
-                    'रात्रि जागरण करें'
-                ],
-                mantra: 'ॐ नमः शिवाय',
-                mantraMeaning: 'शिव जी का पंचाक्षर मंत्र',
-                dos: [
-                    'व्रत रखें',
-                    '4 प्रहर पूजा करें',
-                    'रात्रि जागरण करें',
-                    'महामृत्युंजय जपें',
-                    'बेलपत्र चढ़ाएँ'
-                ],
-                donts: [
-                    'अन्न न खाएँ',
-                    'तामसिक भोजन न करें',
-                    'क्रोध न करें',
-                    'शिवलिंग पर तुलसी न चढ़ाएँ'
-                ],
-                faqs: [
-                    { q: 'महाशिवरात्रि पर क्या करें?', a: 'व्रत, 4 प्रहर पूजा, रात्रि जागरण, महामृत्युंजय जप।' },
-                    { q: 'शिवलिंग पर क्या चढ़ाएँ?', a: 'जल, दूध, बेलपत्र, धतूरा, भांग, कनेर के फूल।' }
-                ]
-            },
-
-            // ==================== जन्माष्टमी ====================
-            {
-                id: 'janmashtami',
-                name: 'जन्माष्टमी',
-                en: 'Janmashtami',
-                icon: '🟡',
-                category: 'major',
-                when: 'भाद्रपद कृष्ण अष्टमी (अगस्त-सितंबर)',
-                days: '1 दिन',
-                intro: 'जन्माष्टमी भगवान श्री कृष्ण का जन्मोत्सव है — जो उनके मथुरा में जन्म की खुशी में मनाया जाता है।',
-                katha: 'मथुरा के राजा कंस ने देवकी और वासुदेव को कारागार में बंद किया। आधी रात को भाद्रपद कृष्ण अष्टमी को कृष्ण जी का जन्म हुआ। वासुदेव ने यमुना पार करके कृष्ण को गोकुल में यशोदा माता के पास पहुँचाया।',
-                daysDetail: [
-                    { day: 'दिन', name: 'व्रत', desc: 'पूरे दिन व्रत रखें।' },
-                    { day: 'रात्रि 12', name: 'कृष्ण जन्म', desc: 'कृष्ण जन्म की पूजा, झूला सजाएँ।' },
-                    { day: 'प्रसाद', name: 'माखन-मिश्री', desc: 'माखन-मिश्री का भोग लगाएँ।' }
-                ],
-                vidhi: [
-                    'पूरे दिन व्रत रखें',
-                    'रात्रि 12 बजे कृष्ण जन्म की पूजा करें',
-                    'माखन-मिश्री का भोग लगाएँ',
-                    'झूला सजाएँ',
-                    'कृष्ण की झाँकी सजाएँ'
-                ],
-                mantra: 'ॐ नमो भगवते वासुदेवाय',
-                mantraMeaning: 'भगवान कृष्ण का मुख्य मंत्र',
-                dos: [
-                    'व्रत रखें',
-                    'रात्रि जागरण करें',
-                    'माखन-मिश्री का भोग लगाएँ',
-                    'भजन-कीर्तन करें'
-                ],
-                donts: [
-                    'अन्न न खाएँ',
-                    'तामसिक भोजन न करें',
-                    'क्रोध न करें',
-                    'अशुद्ध न रहें'
-                ],
-                faqs: [
-                    { q: 'कृष्ण जन्म कब हुआ?', a: 'भाद्रपद कृष्ण अष्टमी को आधी रात।' },
-                    { q: 'जन्माष्टमी पर क्या खाएँ?', a: 'फलाहार, माखन-मिश्री, पंजीरी।' }
-                ]
-            },
-
-            // ==================== राम नवमी ====================
-            {
-                id: 'ram-navami',
-                name: 'राम नवमी',
-                en: 'Ram Navami',
-                icon: '🏹',
-                category: 'major',
-                when: 'चैत्र शुक्ल नवमी (मार्च-अप्रैल)',
-                days: '1 दिन',
-                intro: 'राम नवमी भगवान श्री राम का जन्मोत्सव है — जो उनके अयोध्या में जन्म की खुशी में मनाया जाता है।',
-                katha: 'अयोध्या के राजा दशरथ ने पुत्रकामेष्टि यज्ञ किया। चैत्र शुक्ल नवमी को कौशल्या ने राम को जन्म दिया। राम जी विष्णु के सातवें अवतार हैं — मर्यादा पुरुषोत्तम।',
-                daysDetail: [
-                    { day: 'प्रातः', name: 'व्रत आरंभ', desc: 'स्नान करके व्रत शुरू करें।' },
-                    { day: 'दोपहर 12', name: 'राम जन्म पूजा', desc: 'राम दरबार की पूजा करें।' },
-                    { day: 'सायं', name: 'हवन', desc: 'हवन कराएँ, प्रसाद बाँटें।' }
-                ],
-                vidhi: [
-                    'व्रत रखें',
-                    'रामचरितमानस पाठ करें',
-                    'राम दरबार की पूजा करें',
-                    'सुंदरकांड पाठ करें',
-                    'हवन कराएँ'
-                ],
-                mantra: 'ॐ श्री रामाय नमः',
-                mantraMeaning: 'भगवान राम का मूल मंत्र',
-                dos: [
-                    'व्रत रखें',
-                    'रामचरितमानस पाठ करें',
-                    'सुंदरकांड पाठ करें',
-                    'हवन कराएँ'
-                ],
-                donts: [
-                    'अन्न न खाएँ',
-                    'क्रोध न करें',
-                    'झूठ न बोलें',
-                    'अनादर न करें'
-                ],
-                faqs: [
-                    { q: 'राम जन्म कब हुआ?', a: 'चैत्र शुक्ल नवमी को दोपहर 12 बजे।' },
-                    { q: 'राम नवमी पर क्या करें?', a: 'व्रत, रामायण पाठ, सुंदरकांड, हवन।' }
-                ]
-            },
-
-            // ==================== दशहरा ====================
-            {
-                id: 'dussehra',
-                name: 'दशहरा (विजयादशमी)',
-                en: 'Dussehra',
-                icon: '⚔️',
-                category: 'major',
-                when: 'आश्विन शुक्ल दशमी (अक्टूबर)',
-                days: '1 दिन',
-                intro: 'दशहरा बुराई पर अच्छाई की जीत का प्रतीक है — जब राम जी ने रावण का वध किया था।',
-                katha: '10 दिन के युद्ध के बाद राम जी ने रावण का वध किया और सीता माता को मुक्त कराया। यह दिन विजयादशमी के रूप में मनाया जाता है।',
-                daysDetail: [
-                    { day: 'प्रातः', name: 'शस्त्र पूजा', desc: 'शस्त्रों की पूजा करें।' },
-                    { day: 'सायं', name: 'रावण दहन', desc: 'रावण, कुंभकर्ण, मेघनाद का पुतला जलाएँ।' }
-                ],
-                vidhi: [
-                    'प्रातः स्नान करें',
-                    'राम दरबार की पूजा करें',
-                    'शस्त्र पूजा करें',
-                    'रावण दहन देखें',
-                    'प्रसाद बाँटें'
-                ],
-                mantra: 'ॐ श्री रामाय नमः',
-                mantraMeaning: 'राम जी का मूल मंत्र',
-                dos: [
-                    'शस्त्र पूजा करें',
-                    'रामलीला देखें',
-                    'रावण दहन देखें',
-                    'प्रसाद बाँटें'
-                ],
-                donts: [
-                    'अहंकार न करें',
-                    'क्रोध न करें',
-                    'किसी का अपमान न करें'
-                ],
-                faqs: [
-                    { q: 'दशहरा क्यों मनाते हैं?', a: 'राम जी ने रावण का वध किया — बुराई पर अच्छाई की जीत।' },
-                    { q: 'रावण के कितने सिर थे?', a: '10 सिर — इसलिए दशहरा (दश = 10)।' }
-                ]
-            },
-
-            // ==================== गणेश चतुर्थी ====================
-            {
-                id: 'ganesh-chaturthi',
-                name: 'गणेश चतुर्थी',
-                en: 'Ganesh Chaturthi',
-                icon: '🐘',
-                category: 'major',
-                when: 'भाद्रपद शुक्ल चतुर्थी (अगस्त-सितंबर)',
-                days: '10 दिन',
-                intro: 'गणेश चतुर्थी भगवान गणेश का जन्मोत्सव है — जो 10 दिनों तक मनाया जाता है।',
-                katha: 'माता पार्वती ने उबटन से गणेश को बनाया। शिव जी ने सिर काट दिया, फिर हाथी का सिर जोड़ा। गणेश जी सभी देवताओं के अग्रपूज्य बने।',
-                daysDetail: [
-                    { day: 'दिन 1', name: 'मूर्ति स्थापना', desc: 'गणेश मूर्ति स्थापित करें।' },
-                    { day: 'दिन 1-10', name: 'पूजा', desc: 'रोज़ पूजा, मोदक का भोग।' },
-                    { day: 'दिन 10', name: 'विसर्जन', desc: 'अनंत चतुर्दशी पर विसर्जन।' }
-                ],
-                vidhi: [
-                    'मूर्ति स्थापना करें',
-                    'रोज़ पूजा करें',
-                    'मोदक, दूर्वा चढ़ाएँ',
-                    '10 दिन बाद विसर्जन करें'
-                ],
-                mantra: 'ॐ गं गणपतये नमः',
-                mantraMeaning: 'गणेश जी का मूल मंत्र',
-                dos: [
-                    'मूर्ति स्थापित करें',
-                    'रोज़ पूजा करें',
-                    'मोदक और दूर्वा चढ़ाएँ',
-                    'आरती गाएँ'
-                ],
-                donts: [
-                    'अशुद्ध न रहें',
-                    'मूर्ति को ज़मीन पर न रखें',
-                    'तुलसी न चढ़ाएँ'
-                ],
-                faqs: [
-                    { q: 'गणेश चतुर्थी कितने दिन?', a: '10 दिन — अनंत चतुर्दशी तक।' },
-                    { q: 'गणेश जी को क्या चढ़ाएँ?', a: 'मोदक, दूर्वा, केला, गुड़।' }
-                ]
-            },
-
-            // ==================== रक्षाबंधन ====================
-            {
-                id: 'rakhi',
-                name: 'रक्षाबंधन',
-                en: 'Raksha Bandhan',
-                icon: '🎀',
-                category: 'major',
-                when: 'श्रावण पूर्णिमा (अगस्त)',
-                days: '1 दिन',
-                intro: 'रक्षाबंधन भाई-बहन के पवित्र प्रेम का पर्व है — जब बहन भाई की कलाई पर राखी बाँधती है।',
-                katha: 'द्रौपदी ने कृष्ण की कलाई पर राखी बाँधी थी और कृष्ण ने द्रौपदी की रक्षा का वचन दिया था।',
-                daysDetail: [
-                    { day: 'प्रातः', name: 'तैयारी', desc: 'राखी, मिठाई, तिलक की तैयारी।' },
-                    { day: 'दोपहर', name: 'राखी बाँधना', desc: 'बहन भाई की कलाई पर राखी बाँधे।' },
-                    { day: 'सायं', name: 'भोजन', desc: 'भाई-बहन साथ भोजन करें।' }
-                ],
-                vidhi: [
-                    'बहन भाई की कलाई पर राखी बाँधे',
-                    'तिलक करे',
-                    'मिठाई खिलाए',
-                    'भाई बहन की रक्षा का वचन दे'
-                ],
-                mantra: 'ॐ येन बद्धो बली राजा दानवेन्द्रो महाबलः । तेन त्वाम् अभिबध्नामि रक्षे मा चल मा चल ॥',
-                mantraMeaning: 'रक्षा सूत्र मंत्र',
-                dos: [
-                    'राखी बाँधें',
-                    'तिलक करें',
-                    'मिठाई खिलाएँ',
-                    'आशीर्वाद लें'
-                ],
-                donts: [
-                    'झूठा वचन न दें',
-                    'बहन का अपमान न करें',
-                    'राखी का अनादर न करें'
-                ],
-                faqs: [
-                    { q: 'रक्षाबंधन कब मनाया जाता है?', a: 'श्रावण पूर्णिमा को।' },
-                    { q: 'राखी क्यों बाँधते हैं?', a: 'भाई-बहन के प्रेम और रक्षा का प्रतीक।' }
-                ]
-            },
-
-            // ==================== मकर संक्रांति ====================
-            {
-                id: 'makar-sankranti',
-                name: 'मकर संक्रांति',
-                en: 'Makar Sankranti',
-                icon: '🌞',
-                category: 'major',
-                when: 'माघ मास की शुरुआत (14-15 जनवरी)',
-                days: '1 दिन',
-                intro: 'मकर संक्रांति सूर्य के मकर राशि में प्रवेश का पर्व है — जो नई फसल की खुशी में मनाया जाता है।',
-                katha: 'इस दिन सूर्य उत्तरायण होता है — दिन बड़े होने लगते हैं। यह शुभ कार्यों के लिए सर्वोत्तम समय माना जाता है।',
-                daysDetail: [
-                    { day: 'प्रातः', name: 'स्नान', desc: 'गंगा स्नान करें।' },
-                    { day: 'सूर्योदय', name: 'सूर्य अर्घ्य', desc: 'सूर्य को जल अर्पित करें।' },
-                    { day: 'दिन', name: 'दान', desc: 'तिल, गुड़, खिचड़ी का दान करें।' }
-                ],
-                vidhi: [
-                    'गंगा स्नान करें',
-                    'सूर्य को जल अर्पित करें',
-                    'तिल, गुड़, खिचड़ी का दान करें',
-                    'पतंग उड़ाएँ'
-                ],
-                mantra: 'ॐ सूर्याय नमः',
-                mantraMeaning: 'सूर्य देव का मूल मंत्र',
-                dos: [
-                    'स्नान करें',
-                    'सूर्य को जल दें',
-                    'तिल-गुड़ का दान करें',
-                    'खिचड़ी खाएँ'
-                ],
-                donts: [
-                    'अशुद्ध न रहें',
-                    'तामसिक भोजन न करें'
-                ],
-                faqs: [
-                    { q: 'मकर संक्रांति कब है?', a: '14-15 जनवरी को।' },
-                    { q: 'क्या खाएँ?', a: 'तिल, गुड़, खिचड़ी, पतंग।' }
-                ]
-            },
-
-            // ==================== वसंत पंचमी ====================
-            {
-                id: 'vasant-panchami',
-                name: 'वसंत पंचमी',
-                en: 'Vasant Panchami',
-                icon: '📚',
-                category: 'major',
-                when: 'माघ शुक्ल पंचमी (जनवरी-फरवरी)',
-                days: '1 दिन',
-                intro: 'वसंत पंचमी माँ सरस्वती का प्रकटोत्सव है — जो ज्ञान और कला की देवी हैं।',
-                katha: 'ब्रह्मा जी ने कमंडलु से जल छोड़ा, जिससे सरस्वती प्रकट हुईं। उन्होंने ब्रह्मा को वाणी दी।',
-                daysDetail: [
-                    { day: 'प्रातः', name: 'स्नान', desc: 'पीले वस्त्र धारण करें।' },
-                    { day: 'पूजा', name: 'सरस्वती पूजा', desc: 'सरस्वती पूजा करें।' },
-                    { day: 'विद्यारंभ', name: 'बच्चों की पढ़ाई', desc: 'बच्चों को पहला अक्षर लिखवाएँ।' }
-                ],
-                vidhi: [
-                    'स्नान करके पीले वस्त्र पहनें',
-                    'सरस्वती पूजा करें',
-                    'बच्चों का विद्यारंभ करें',
-                    'खीर, पीले चावल का भोग लगाएँ'
-                ],
-                mantra: 'ॐ ऐं सरस्वत्यै नमः',
-                mantraMeaning: 'सरस्वती माता का मूल मंत्र',
-                dos: [
-                    'पीले वस्त्र पहनें',
-                    'सरस्वती पूजा करें',
-                    'विद्यारंभ करें',
-                    'खीर का भोग लगाएँ'
-                ],
-                donts: [
-                    'क्रोध न करें',
-                    'पुस्तकों का अनादर न करें'
-                ],
-                faqs: [
-                    { q: 'वसंत पंचमी कब है?', a: 'माघ शुक्ल पंचमी को।' },
-                    { q: 'क्या करें?', a: 'सरस्वती पूजा, विद्यारंभ, पीले वस्त्र।' }
-                ]
-            },
-
-            // ==================== करवा चौथ ====================
-            {
-                id: 'karwa-chauth',
-                name: 'करवा चौथ',
-                en: 'Karwa Chauth',
-                icon: '🌙',
-                category: 'major',
-                when: 'कार्तिक कृष्ण चतुर्थी (अक्टूबर-नवंबर)',
-                days: '1 दिन',
-                intro: 'करवा चौथ विवाहित स्त्रियों का व्रत है — जो अपने पति की लंबी आयु के लिए रखती हैं।',
-                katha: 'वीरवती नामक स्त्री ने अपने पति की लंबी आयु के लिए व्रत रखा और यमराज से उनका जीवन वापस लिया।',
-                daysDetail: [
-                    { day: 'प्रातः', name: 'सरगी', desc: 'सास बहू को सरगी खिलाए।' },
-                    { day: 'दिन', name: 'निर्जला व्रत', desc: 'पूरे दिन निर्जला व्रत रखें।' },
-                    { day: 'सायं', name: 'कथा श्रवण', desc: 'करवा चौथ कथा सुनें।' },
-                    { day: 'रात्रि', name: 'चंद्र दर्शन', desc: 'चंद्र दर्शन करके पति के हाथ से जल पिएँ।' }
-                ],
-                vidhi: [
-                    'प्रातः सरगी खाएँ',
-                    'निर्जला व्रत रखें',
-                    'सायं कथा सुनें',
-                    'चंद्र दर्शन करें',
-                    'पति के हाथ से जल पिएँ'
-                ],
-                mantra: 'ॐ शिवाय नमः',
-                mantraMeaning: 'शिव जी का मंत्र',
-                dos: [
-                    'निर्जला व्रत रखें',
-                    'कथा सुनें',
-                    'चंद्र दर्शन करें',
-                    'पति के हाथ से जल पिएँ'
-                ],
-                donts: [
-                    'क्रोध न करें',
-                    'झूठ न बोलें',
-                    'पति का अपमान न करें'
-                ],
-                faqs: [
-                    { q: 'करवा चौथ कब है?', a: 'कार्तिक कृष्ण चतुर्थी को।' },
-                    { q: 'क्यों करते हैं?', a: 'पति की लंबी आयु के लिए।' }
-                ]
-            },
-
-            // ==================== छठ पूजा ====================
-            {
-                id: 'chhath',
-                name: 'छठ पूजा',
-                en: 'Chhath Puja',
-                icon: '🌅',
-                category: 'regional',
-                when: 'कार्तिक शुक्ल षष्ठी (अक्टूबर-नवंबर)',
-                days: '4 दिन',
-                intro: 'छठ पूजा सूर्य देव और छठी मैया की पूजा का पर्व है — जो बिहार, झारखंड, उत्तर प्रदेश में मनाया जाता है।',
-                katha: 'राम जी ने सूर्य देव की पूजा की थी। द्रौपदी ने भी सूर्य देव की पूजा से अपने पति के खोए राज्य को वापस पाया था।',
-                daysDetail: [
-                    { day: 'दिन 1', name: 'नहाय-खाय', desc: 'स्नान करके सात्विक भोजन बनाएँ।' },
-                    { day: 'दिन 2', name: 'खरना', desc: 'पूरे दिन व्रत, रात्रि में प्रसाद।' },
-                    { day: 'दिन 3', name: 'संध्या अर्घ्य', desc: 'डूबते सूर्य को अर्घ्य।' },
-                    { day: 'दिन 4', name: 'उषा अर्घ्य', desc: 'उगते सूर्य को अर्घ्य, व्रत तोड़ें।' }
-                ],
-                vidhi: [
-                    'नदी-तालाब के किनारे जाएँ',
-                    'डूबते और उगते सूर्य को अर्घ्य दें',
-                    '36 घंटे का व्रत रखें',
-                    'ठेकुआ, कसार का प्रसाद बनाएँ'
-                ],
-                mantra: 'ॐ सूर्याय नमः',
-                mantraMeaning: 'सूर्य देव का मूल मंत्र',
-                dos: [
-                    'डूबते और उगते सूर्य को अर्घ्य दें',
-                    '36 घंटे व्रत रखें',
-                    'ठेकुआ का प्रसाद बनाएँ',
-                    'सफाई रखें'
-                ],
-                donts: [
-                    'अशुद्ध न रहें',
-                    'तामसिक भोजन न करें',
-                    'क्रोध न करें'
-                ],
-                faqs: [
-                    { q: 'छठ पूजा कितने दिन?', a: '4 दिन — नहाय-खाय, खरना, संध्या अर्घ्य, उषा अर्घ्य।' },
-                    { q: 'किसको पूजते हैं?', a: 'सूर्य देव और छठी मैया को।' }
-                ]
-            },
-
-            // ==================== ओणम ====================
-            {
-                id: 'onam',
-                name: 'ओणम',
-                en: 'Onam',
-                icon: '🌺',
-                category: 'regional',
-                when: 'चिंगम मास (अगस्त-सितंबर)',
-                days: '10 दिन',
-                intro: 'ओणम केरल का सबसे बड़ा त्योहार है — जो राजा महाबली की वापसी की खुशी में मनाया जाता है।',
-                katha: 'राजा महाबली को वामन अवतार ने पाताल लोक भेजा, लेकिन वर्ष में एक बार पृथ्वी पर आने का वरदान दिया। ओणम उनके स्वागत का पर्व है।',
-                daysDetail: [
-                    { day: 'दिन 1-9', name: 'पूक्कलम', desc: 'फूलों की रंगोली बनाएँ।' },
-                    { day: 'दिन 10', name: 'ओणम सद्या', desc: 'भव्य भोजन, नाव दौड़।' }
-                ],
-                vidhi: [
-                    'पूक्कलम (फूलों की रंगोली) बनाएँ',
-                    'ओणम सद्या (भोज) बनाएँ',
-                    'नाव दौड़ देखें',
-                    'कथकली नृत्य देखें'
-                ],
-                mantra: 'ॐ नमो नारायणाय',
-                mantraMeaning: 'भगवान विष्णु का मंत्र',
-                dos: [
-                    'पूक्कलम बनाएँ',
-                    'ओणम सद्या बनाएँ',
-                    'नाव दौड़ देखें',
-                    'पारंपरिक वस्त्र पहनें'
-                ],
-                donts: [
-                    'क्रोध न करें',
-                    'तामसिक भोजन न करें'
-                ],
-                faqs: [
-                    { q: 'ओणम कितने दिन?', a: '10 दिन।' },
-                    { q: 'किस राज्य का त्योहार है?', a: 'केरल का।' }
-                ]
-            },
-
-            // ==================== पोंगल ====================
-            {
-                id: 'pongal',
-                name: 'पोंगल',
-                en: 'Pongal',
-                icon: '🌾',
-                category: 'regional',
-                when: 'तमिल मास (14-17 जनवरी)',
-                days: '4 दिन',
-                intro: 'पोंगल तमिलनाडु का फसल त्योहार है — जो सूर्य देव को समर्पित है।',
-                katha: 'यह फसल कटाई का पर्व है — जब किसान सूर्य देव को धन्यवाद देते हैं।',
-                daysDetail: [
-                    { day: 'दिन 1', name: 'भोगी पोंगल', desc: 'इंद्र देव की पूजा।' },
-                    { day: 'दिन 2', name: 'सूर्य पोंगल', desc: 'सूर्य देव की पूजा।' },
-                    { day: 'दिन 3', name: 'मट्टू पोंगल', desc: 'गाय-बैल की पूजा।' },
-                    { day: 'दिन 4', name: 'कानुम पोंगल', desc: 'पारिवारिक मिलन।' }
-                ],
-                vidhi: [
-                    'पोंगल (चावल-दाल) पकाएँ',
-                    'सूर्य पूजा करें',
-                    'गाय-बैल की पूजा करें',
-                    'पारिवारिक मिलन करें'
-                ],
-                mantra: 'ॐ सूर्याय नमः',
-                mantraMeaning: 'सूर्य देव का मूल मंत्र',
-                dos: [
-                    'पोंगल बनाएँ',
-                    'सूर्य पूजा करें',
-                    'गाय-बैल की पूजा करें'
-                ],
-                donts: [
-                    'अशुद्ध न रहें',
-                    'तामसिक भोजन न करें'
-                ],
-                faqs: [
-                    { q: 'पोंगल कितने दिन?', a: '4 दिन।' },
-                    { q: 'किस राज्य का त्योहार?', a: 'तमिलनाडु का।' }
-                ]
-            }
+        const festivals = [
+            { id: 'diwali', name: 'दीपावली', en: 'Diwali', icon: '🪔', category: 'major', when: 'कार्तिक अमावस्या · अक्टूबर-नवंबर', page: 'diwali.html' },
+            { id: 'navratri', name: 'नवरात्रि', en: 'Navratri', icon: '🌺', category: 'major', when: 'चैत्र & आश्विन · 9 दिन', page: 'navratri.html' },
+            { id: 'holi', name: 'होली', en: 'Holi', icon: '🎨', category: 'major', when: 'फाल्गुन पूर्णिमा · मार्च', page: 'holi.html' },
+            { id: 'janmashtami', name: 'जन्माष्टमी', en: 'Janmashtami', icon: '🟡', category: 'major', when: 'भाद्रपद अष्टमी · अगस्त-सितंबर', page: 'janmashtami.html' },
+            { id: 'mahashivratri', name: 'महाशिवरात्रि', en: 'Mahashivratri', icon: '🔱', category: 'major', when: 'फाल्गुन चतुर्दशी · फरवरी-मार्च', page: 'mahashivratri.html' },
+            { id: 'ram-navami', name: 'राम नवमी', en: 'Ram Navami', icon: '🏹', category: 'major', when: 'चैत्र शुक्ल नवमी · मार्च-अप्रैल', page: 'ram-navami.html' },
+            { id: 'dussehra', name: 'दशहरा', en: 'Dussehra', icon: '⚔️', category: 'major', when: 'आश्विन दशमी · अक्टूबर', page: 'dussehra.html' },
+            { id: 'ganesh-chaturthi', name: 'गणेश चतुर्थी', en: 'Ganesh Chaturthi', icon: '🐘', category: 'major', when: 'भाद्रपद चतुर्थी · अगस्त-सितंबर', page: 'ganesh-chaturthi.html' },
+            { id: 'rakhi', name: 'रक्षाबंधन', en: 'Raksha Bandhan', icon: '🎀', category: 'major', when: 'श्रावण पूर्णिमा · अगस्त', page: 'rakhi.html' },
+            { id: 'karwa-chauth', name: 'करवा चौथ', en: 'Karwa Chauth', icon: '🌙', category: 'major', when: 'कार्तिक चतुर्थी · अक्टूबर-नवंबर', page: 'karwa-chauth.html' },
+            { id: 'makar-sankranti', name: 'मकर संक्रांति', en: 'Makar Sankranti', icon: '🌞', category: 'major', when: '14-15 जनवरी', page: 'makar-sankranti.html' },
+            { id: 'vasant-panchami', name: 'वसंत पंचमी', en: 'Vasant Panchami', icon: '📚', category: 'major', when: 'माघ पंचमी · जनवरी-फरवरी', page: 'vasant-panchami.html' },
+            { id: 'chhath', name: 'छठ पूजा', en: 'Chhath Puja', icon: '🌅', category: 'regional', when: 'कार्तिक षष्ठी · अक्टूबर-नवंबर', page: 'chhath.html' },
+            { id: 'onam', name: 'ओणम', en: 'Onam', icon: '🌾', category: 'regional', when: 'चिंगम मास · अगस्त-सितंबर', page: 'onam.html' },
+            { id: 'pongal', name: 'पोंगल', en: 'Pongal', icon: '🌾', category: 'regional', when: 'तमिल मास · जनवरी', page: 'pongal.html' },
+            { id: 'gudi-padwa', name: 'गुड़ी पड़वा', en: 'Gudi Padwa', icon: '🎊', category: 'regional', when: 'चैत्र प्रतिपदा · मार्च-अप्रैल', page: 'gudi-padwa.html' },
+            { id: 'lohri', name: 'लोहड़ी', en: 'Lohri', icon: '🔥', category: 'regional', when: '13 जनवरी', page: 'lohri.html' },
+            { id: 'bihu', name: 'बिहू', en: 'Bihu', icon: '🌸', category: 'regional', when: 'अप्रैल · अक्टूबर · जनवरी', page: 'bihu.html' }
         ];
-
-        // ============================================================
-        //  RENDER FUNCTIONS
-        // ============================================================
 
         let currentCategory = 'all';
         let searchQuery = '';
 
-        function renderTyohars() {
-            const list = document.getElementById('tyoharList');
-            const filtered = tyohars.filter(t => {
-                const matchCat = currentCategory === 'all' || t.category === currentCategory;
-                const matchSearch = t.name.includes(searchQuery) ||
-                                    t.en.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                                    t.intro.includes(searchQuery);
+        function renderFestivals() {
+            const grid = document.getElementById('festivalGrid');
+            const filtered = festivals.filter(f => {
+                const matchCat = currentCategory === 'all' || f.category === currentCategory;
+                const matchSearch = f.name.includes(searchQuery) ||
+                                    f.en.toLowerCase().includes(searchQuery.toLowerCase());
                 return matchCat && matchSearch;
             });
 
             if (filtered.length === 0) {
-                list.innerHTML = `<div class="no-result">
-                    <i class="fa-solid fa-search"></i>
-                    कोई त्योहार नहीं मिला। कृपया दूसरा शब्द खोजें।
+                grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 40px 20px; color: var(--ink-light);">
+                    <i class="fa-solid fa-search" style="font-size: 40px; display: block; margin-bottom: 10px; color: var(--border);"></i>
+                    कोई त्योहार नहीं मिला।
                 </div>`;
                 return;
             }
 
-            const catBadge = (cat) => {
-                const map = {
-                    'major': 'प्रमुख',
-                    'monthly': 'मासिक',
-                    'seasonal': 'ऋतु',
-                    'regional': 'क्षेत्रीय'
-                };
-                return map[cat] || cat;
+            const badgeMap = {
+                'major': 'प्रमुख',
+                'regional': 'क्षेत्रीय',
+                'seasonal': 'ऋतु',
+                'monthly': 'मासिक'
             };
 
-            list.innerHTML = filtered.map(t => `
-                <div class="tyohar-card" id="card-${t.id}">
-                    <div class="tyohar-header" onclick="toggleTyohar('${t.id}')">
-                        <div class="tyohar-header-left">
-                            <div class="tyohar-icon">${t.icon}</div>
-                            <div class="tyohar-info">
-                                <div class="tyohar-name">
-                                    ${t.name}
-                                    <span class="tyohar-en">${t.en}</span>
-                                </div>
-                                <div class="tyohar-meta-line">
-                                    <span class="badge">${catBadge(t.category)}</span>
-                                    <span><i class="fa-solid fa-calendar"></i> ${t.when}</span>
-                                    <span><i class="fa-solid fa-clock"></i> ${t.days}</span>
-                                </div>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-chevron-down tyohar-arrow"></i>
+            grid.innerHTML = filtered.map(f => `
+                <a href="${f.page}" class="festival-card">
+                    <span class="fc-badge ${f.category}">${badgeMap[f.category]}</span>
+                    <div class="fc-hero">
+                        <span class="fc-icon">${f.icon}</span>
+                        <div class="fc-name">${f.name}</div>
+                        <span class="fc-en">${f.en}</span>
                     </div>
-                    <div class="tyohar-body">
-                        <div class="tyohar-body-inner">
-
-                            <!-- परिचय -->
-                            <div class="detail-section">
-                                <h3><span class="sec-icon">📖</span> परिचय</h3>
-                                <p>${t.intro}</p>
-                            </div>
-
-                            <!-- कथा -->
-                            <div class="detail-section">
-                                <h3><span class="sec-icon">📜</span> कथा</h3>
-                                <p>${t.katha}</p>
-                            </div>
-
-                            <!-- दिन-वार विवरण -->
-                            ${t.daysDetail ? `
-                                <div class="detail-section">
-                                    <h3><span class="sec-icon">📅</span> दिन-वार विवरण</h3>
-                                    <div class="day-timeline">
-                                        ${t.daysDetail.map(d => `
-                                            <div class="day-item">
-                                                <span class="day-label ${d.day.includes('⭐') ? '' : 'gold'}">${d.day}</span>
-                                                <div class="day-title">${d.name}</div>
-                                                <div class="day-text">${d.desc}</div>
-                                            </div>
-                                        `).join('')}
-                                    </div>
-                                </div>
-                            ` : ''}
-
-                            <!-- पूजा विधि -->
-                            ${t.vidhi ? `
-                                <div class="detail-section">
-                                    <h3><span class="sec-icon">🙏</span> पूजा विधि</h3>
-                                    <ol class="steps-list">
-                                        ${t.vidhi.map(v => `<li>${v}</li>`).join('')}
-                                    </ol>
-                                </div>
-                            ` : ''}
-
-                            <!-- मंत्र -->
-                            ${t.mantra ? `
-                                <div class="detail-section">
-                                    <h3><span class="sec-icon">📿</span> मुख्य मंत्र</h3>
-                                    <div class="mantra-box">
-                                        ${t.mantra}
-                                        <small>${t.mantraMeaning}</small>
-                                    </div>
-                                </div>
-                            ` : ''}
-
-                            <!-- क्या करें / क्या न करें -->
-                            <div class="detail-section">
-                                <h3><span class="sec-icon">✅</span> क्या करें और क्या न करें</h3>
-                                <div class="do-dont-grid">
-                                    <div class="do-box">
-                                        <h4>✅ क्या करें</h4>
-                                        <ul>
-                                            ${t.dos.map(d => `<li>${d}</li>`).join('')}
-                                        </ul>
-                                    </div>
-                                    <div class="dont-box">
-                                        <h4>❌ क्या न करें</h4>
-                                        <ul>
-                                            ${t.donts.map(d => `<li>${d}</li>`).join('')}
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- FAQs -->
-                            ${t.faqs ? `
-                                <div class="detail-section">
-                                    <h3><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h3>
-                                    ${t.faqs.map((f, i) => `
-                                        <div class="faq-item">
-                                            <div class="faq-q" onclick="toggleFaq(this)">
-                                                <span>${f.q}</span>
-                                                <i class="fa-solid fa-chevron-down"></i>
-                                            </div>
-                                            <div class="faq-a">${f.a}</div>
-                                        </div>
-                                    `).join('')}
-                                </div>
-                            ` : ''}
-
+                    <div class="fc-info">
+                        <div class="fc-when">
+                            <i class="fa-solid fa-calendar"></i>
+                            <span>${f.when}</span>
+                        </div>
+                        <div class="fc-btn">
+                            <i class="fa-solid fa-book-open"></i> पूरी जानकारी
                         </div>
                     </div>
-                </div>
+                </a>
             `).join('');
         }
 
-        function toggleTyohar(id) {
-            const card = document.getElementById(`card-${id}`);
-            card.classList.toggle('open');
-
-            if (card.classList.contains('open')) {
-                setTimeout(() => {
-                    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 300);
-            }
-        }
-
-        function toggleFaq(el) {
-            el.parentElement.classList.toggle('open');
-        }
-
-        function filterTyohars() {
+        function filterFestivals() {
             searchQuery = document.getElementById('searchInput').value.trim();
-            renderTyohars();
+            renderFestivals();
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            renderTyohars();
+            renderFestivals();
 
             document.querySelectorAll('.cat-tab').forEach(tab => {
                 tab.addEventListener('click', function() {
                     document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
                     this.classList.add('active');
                     currentCategory = this.dataset.cat;
-                    renderTyohars();
+                    renderFestivals();
                 });
             });
         });
@@ -1344,20 +350,6 @@
                 icon.classList.toggle('fa-sun');
                 localStorage.setItem('darkMode', isDark);
             });
-        }
-
-        function sharePage() {
-            if (navigator.share) {
-                navigator.share({
-                    title: document.title,
-                    text: '🕉️ सनातन ज्ञान कोश — त्योहार कोश',
-                    url: window.location.href
-                }).catch(() => {});
-            } else {
-                navigator.clipboard.writeText(window.location.href).then(() => {
-                    alert('लिंक कॉपी हो गया!');
-                });
-            }
         }
     </script>
 </body>
