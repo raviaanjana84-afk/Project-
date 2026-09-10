@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>FAQ — संपूर्ण ज्ञान | Sanatan Gyan Kosh</title>
+    <meta name="description" content="हिंदू धर्म से जुड़े 100+ सवाल-जवाब — मंत्र, देवता, पूजा, व्रत, त्योहार, ज्योतिष, संस्कार और बहुत कुछ।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .search-wrap {
+            background: var(--card-bg);
+            border-radius: var(--radius-sm);
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 12px;
+            border: 1px solid var(--border);
+        }
+        .search-wrap i { color: var(--gold); font-size: 18px; }
+        .search-wrap input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            background: transparent;
+            font-family: var(--font-body);
+            color: var(--ink);
+        }
+        .search-wrap input::placeholder { color: var(--ink-light); }
+
+        .cat-tabs {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 4px 0 14px;
+            scrollbar-width: none;
+        }
+        .cat-tabs::-webkit-scrollbar { display: none; }
+        .cat-tab {
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1.5px solid var(--border);
+            background: var(--card-bg);
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: var(--transition);
+            color: var(--ink-soft);
+            font-family: var(--font-body);
+        }
+        .cat-tab.active {
+            background: var(--maroon);
+            color: white;
+            border-color: var(--maroon);
+        }
+        .cat-tab:hover:not(.active) {
+            border-color: var(--gold);
+            color: var(--maroon);
+        }
+
+        .faq-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .faq-item:hover {
+            border-color: var(--gold);
+        }
+        .faq-question {
+            padding: 16px 18px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--maroon);
+            line-height: 1.5;
+            transition: var(--transition);
+        }
+        .faq-question:hover {
+            background: var(--bg);
+        }
+        .faq-question .q-icon {
+            flex-shrink: 0;
+            font-size: 18px;
+            color: var(--gold);
+            transition: transform 0.3s;
+            margin-top: 2px;
+        }
+        .faq-item.open .faq-question .q-icon {
+            transform: rotate(180deg);
+        }
+        .faq-item.open .faq-question {
+            background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(122,46,46,0.05));
+            border-bottom: 1px solid var(--border);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            padding: 0 18px;
+            font-size: 13.5px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+        }
+        .faq-item.open .faq-answer {
+            max-height: 2000px;
+            padding: 16px 18px;
+        }
+        .faq-answer strong { color: var(--maroon); }
+        .faq-answer ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 8px;
+        }
+        .faq-answer ul li {
+            padding: 4px 0 4px 24px;
+            position: relative;
+        }
+        .faq-answer ul li::before {
+            content: '🕉️';
+            position: absolute;
+            left: 0;
+            font-size: 12px;
+        }
+        .faq-answer a {
+            color: var(--maroon);
+            text-decoration: underline;
+            font-weight: 600;
+        }
+        .faq-category-tag {
+            display: inline-block;
+            font-size: 9px;
+            background: var(--gold);
+            color: var(--maroon);
+            padding: 2px 8px;
+            border-radius: 8px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            font-family: var(--font-body);
+        }
+
+        .no-result {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--ink-light);
+            font-size: 14px;
+        }
+        .no-result i {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--border);
+        }
+
+        /* Stats */
+        .faq-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+        .faq-stat {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+        .faq-stat .fs-num {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--maroon);
+        }
+        .faq-stat .fs-label {
+            font-size: 10px;
+            color: var(--ink-soft);
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        @media (max-width: 420px) {
+            .faq-question { font-size: 13.5px; padding: 14px 14px; }
+            .faq-answer { font-size: 12.5px; }
+            .faq-item.open .faq-answer { padding: 14px 14px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="../index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ सनातन ज्ञान कोश</span>
+            <h1>FAQ कोश</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <div class="hero-banner">
+            <h2>❓ FAQ — सवाल-जवाब</h2>
+            <p><strong>100+ सवाल-जवाब</strong> — हिंदू धर्म, पूजा, मंत्र, ज्योतिष, और बहुत कुछ।</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="faq-stats">
+            <div class="faq-stat">
+                <div class="fs-num" id="statTotal">--</div>
+                <div class="fs-label">कुल सवाल</div>
+            </div>
+            <div class="faq-stat">
+                <div class="fs-num" id="statCategory">--</div>
+                <div class="fs-label">श्रेणियाँ</div>
+            </div>
+            <div class="faq-stat">
+                <div class="fs-num">100%</div>
+                <div class="fs-label">मुफ्त</div>
+            </div>
+        </div>
+
+        <div class="search-wrap">
+            <i class="fa-solid fa-search"></i>
+            <input type="text" id="faqSearch" placeholder="सवाल खोजें... (जैसे: दीपक, मंत्र, शनि)" oninput="filterFAQs()" />
+        </div>
+
+        <div class="cat-tabs" id="catTabs">
+            <button class="cat-tab active" data-cat="all">✨ सभी</button>
+            <button class="cat-tab" data-cat="puja">🪔 पूजा</button>
+            <button class="cat-tab" data-cat="mantra">📿 मंत्र</button>
+            <button class="cat-tab" data-cat="devta">🕉️ देवता</button>
+            <button class="cat-tab" data-cat="vrat">🛕 व्रत</button>
+            <button class="cat-tab" data-cat="tyohar">🎉 त्योहार</button>
+            <button class="cat-tab" data-cat="jyotish">🔮 ज्योतिष</button>
+            <button class="cat-tab" data-cat="sanskar">🎊 संस्कार</button>
+            <button class="cat-tab" data-cat="daily">🌅 दिनचर्या</button>
+            <button class="cat-tab" data-cat="general">💡 सामान्य</button>
+        </div>
+
+        <div class="faq-grid" id="faqGrid"></div>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी उत्तर पौराणिक स्रोतों पर आधारित हैं · 🙏 जय श्री राम</p>
+        </footer>
+
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="../devta/index.html" class="nav-link"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+        <a href="../quiz/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>क्विज</p></a>
+    </nav>
+
+    <script>
+        // ============================================================
+        //  FAQ DATABASE — 100+ Questions & Answers
+        // ============================================================
+
+        const faqData = [
+            // ========== पूजा ==========
+            {
+                cat: 'puja',
+                q: 'दीपक को फूँक से क्यों नहीं बुझाना चाहिए?',
+                a: '<strong>दीपक को फूँक से बुझाना पाप माना जाता है।</strong> इसका कारण है कि जब हम दीपक जलाते हैं, तो उसमें अग्नि देवता का वास होता है। फूँक मारने से हमारी अशुद्ध श्वास अग्नि देवता को लगती है, जो अशुभ होता है। <br><br><strong>सही तरीका:</strong> दीपक को स्वयं बुझने दें, या फूल से बुझाएँ। अगर जल्दी बुझाना हो तो ताम्र पात्र या थाली से ढक दें।'
+            },
+            {
+                cat: 'puja',
+                q: 'तिलक किस उंगली से लगाना चाहिए?',
+                a: '<strong>तिलक अंगूठे या अनामिका से लगाना चाहिए।</strong> <br><br><strong>अंगूठा</strong> — पितृ दोष और शिव कृपा के लिए<br><strong>अनामिका</strong> — सूर्य और विष्णु कृपा के लिए<br><br>तर्जनी (index finger) से तिलक नहीं लगाना चाहिए, क्योंकि यह अशुभ माना जाता है। तिलक स्नान के बाद, भ्रूमध्य पर, चंदन या कुमकुम से लगाएँ।'
+            },
+            {
+                cat: 'puja',
+                q: 'दीपक किस दिशा में रखना चाहिए?',
+                a: '<strong>दीपक पूर्व या उत्तर दिशा में रखना चाहिए।</strong><br><br><strong>पूर्व दिशा</strong> — सूर्य और इंद्र का वास<br><strong>उत्तर दिशा</strong> — कुबेर (धन) का वास<br><br><strong>दक्षिण दिशा में दीपक नहीं रखना चाहिए</strong> — यह यम और मृत्यु की दिशा मानी जाती है। घर के मंदिर में दीपक ईशान कोण (उत्तर-पूर्व) में रखें।'
+            },
+            {
+                cat: 'puja',
+                q: 'माला की सुमेरु मणि को पार क्यों नहीं करना चाहिए?',
+                a: '<strong>सुमेरु मणि</strong> माला की सबसे बड़ी मणि होती है — जो माला का केंद्र होती है। इसे <strong>गुरु मणि</strong> भी कहा जाता है।<br><br>जप करते समय सुमेरु मणि को पार नहीं करना चाहिए क्योंकि यह माला का शीर्ष है — जो ब्रह्मा, विष्णु, और महेश का प्रतीक है। जब सुमेरु तक पहुँचें, तो माला को उलट दें और वापस जप शुरू करें।'
+            },
+            {
+                cat: 'puja',
+                q: 'पूजा में क्या-क्या चढ़ाना चाहिए (पंचोपचार)?',
+                a: '<strong>पंचोपचार</strong> — पूजा के पाँच उपचार:<br><br><ul><li><strong>सुगंध</strong> — चंदन, इत्र, अगरबत्ती</li><li><strong>पुष्प</strong> — ताजे फूल, पत्ते</li><li><strong>धूप</strong> — धूप, अगरबत्ती</li><li><strong>दीप</strong> — घी का दीपक, कपूर</li><li><strong>नैवेद्य</strong> — भोग, फल, मिठाई</li></ul><br>इनके अलावा <strong>जल, ताम्बूल, दक्षिणा</strong> भी चढ़ाएँ।'
+            },
+            {
+                cat: 'puja',
+                q: 'शिवलिंग पर तुलसी क्यों नहीं चढ़ाते?',
+                a: '<strong>शिवलिंग पर तुलसी नहीं चढ़ाते</strong> क्योंकि तुलसी विष्णु को अत्यंत प्रिय है। पौराणिक कथा के अनुसार, तुलसी ने विष्णु से विवाह की इच्छा की थी, जिससे शिव जी को तुलसी से दूर रखा गया।<br><br>शिवलिंग पर <strong>बेलपत्र, धतूरा, भांग, कनेर, लाल फूल</strong> चढ़ाएँ। तुलसी केवल विष्णु पूजा में उपयोग होती है।'
+            },
+            {
+                cat: 'puja',
+                q: 'आरती कैसे उतारनी चाहिए?',
+                a: '<strong>आरती उतारने की विधि:</strong><br><br><ul><li>आरती की थाली में दीप, धूप, फूल, कपूर रखें</li><li>घड़ी की दिशा में (clockwise) थाली घुमाएँ</li><li>आरती गाएँ — भक्ति भाव से</li><li>सभी को आरती उतारें</li><li>हाथ जोड़कर प्रणाम करें</li></ul><br>आरती में <strong>धन, आरोग्य, और शांति</strong> की प्रार्थना करें।'
+            },
+            {
+                cat: 'puja',
+                q: 'प्रसाद कैसे ग्रहण करें?',
+                a: '<strong>प्रसाद ग्रहण करने के नियम:</strong><br><br><ul><li>दाहिने हाथ से प्रसाद लें</li><li>सिर पर प्रसाद लगाएँ</li><li>तुरंत प्रसाद ग्रहण करें</li><li>सभी को प्रसाद बाँटें</li><li>जूठा प्रसाद न छोड़ें</li></ul><br>प्रसाद भगवान का आशीर्वाद है — इसे श्रद्धा से ग्रहण करें।'
+            },
+            {
+                cat: 'puja',
+                q: 'बिना स्नान पूजा क्यों नहीं करनी चाहिए?',
+                a: '<strong>बिना स्नान पूजा करना अशुद्ध माना जाता है।</strong> स्नान से शरीर और मन दोनों शुद्ध होते हैं।<br><br>हिंदू धर्म में <strong>शरीर शुद्धि</strong> के बिना <strong>मन शुद्धि</strong> संभव नहीं मानी जाती। इसलिए पूजा से पहले स्नान करना अनिवार्य है। यदि किसी कारण स्नान न कर सकें, तो कम से कम हाथ-पैर-मुँह धोकर पूजा करें।'
+            },
+
+            // ========== मंत्र ==========
+            {
+                cat: 'mantra',
+                q: 'गायत्री मंत्र का अर्थ क्या है?',
+                a: '<strong>गायत्री मंत्र:</strong> "ॐ भूर्भुवः स्वः । तत्सवितुर्वरेण्यम् । भर्गो देवस्य धीमहि । धियो यो नः प्रचोदयात् ॥"<br><br><strong>अर्थ:</strong> हम उस परम तेजस्वी सविता (सूर्य) का ध्यान करते हैं, जो हमारी बुद्धि को प्रेरित करे।<br><br><strong>लाभ:</strong> बुद्धि, एकाग्रता, आत्मविश्वास, नकारात्मकता का नाश, मोक्ष का मार्ग।<br><br><strong>जप:</strong> प्रातः सूर्योदय से पहले, 108 बार, पूर्व दिशा में बैठकर।'
+            },
+            {
+                cat: 'mantra',
+                q: 'महामृत्युंजय मंत्र का अर्थ क्या है?',
+                a: '<strong>महामृत्युंजय मंत्र:</strong> "ॐ त्र्यम्बकं यजामहे । सुगन्धिं पुष्टिवर्धनम् । उर्वारुकमिव बन्धनान् । मृत्योर्मुक्षीय माऽमृतात् ॥"<br><br><strong>अर्थ:</strong> हम त्रिनेत्र शिव की पूजा करते हैं, जो सुगंधित और पोषक हैं। जैसे खीरा बेल से अलग हो जाता है, वैसे ही हमें मृत्यु के बंधन से मुक्त करें।<br><br><strong>लाभ:</strong> आयु वृद्धि, रोग नाश, मृत्यु भय से मुक्ति, शांति, आरोग्य।'
+            },
+            {
+                cat: 'mantra',
+                q: 'हनुमान चालीसा कितनी बार पढ़नी चाहिए?',
+                a: '<strong>हनुमान चालीसा</strong> की संख्या व्यक्ति की श्रद्धा और आवश्यकता पर निर्भर करती है।<br><br><strong>शास्त्रों के अनुसार:</strong><br><ul><li><strong>7 बार</strong> — सामान्य</li><li><strong>21 बार</strong> — विशेष लाभ</li><li><strong>108 बार</strong> — महा-अनुष्ठान</li></ul><br><strong>मंगलवार और शनिवार</strong> को पढ़ना सर्वोत्तम है। <strong>सुंदरकांड</strong> के साथ पढ़ने से विशेष लाभ मिलता है।'
+            },
+            {
+                cat: 'mantra',
+                q: 'ॐ का क्या अर्थ है?',
+                a: '<strong>ॐ</strong> ब्रह्म का मूल ध्वनि रूप है। यह सृष्टि की प्रथम ध्वनि है।<br><br><strong>तीन अक्षर:</strong><br><ul><li><strong>अ</strong> — सृष्टि (ब्रह्मा)</li><li><strong>उ</strong> — स्थिति (विष्णु)</li><li><strong>म</strong> — संहार (शिव)</li></ul><br><strong>लाभ:</strong> मन की शांति, एकाग्रता, आध्यात्मिक ऊर्जा, ध्यान में सहायक, मोक्ष।<br><br><strong>जप:</strong> किसी भी समय, 3, 11, 21, या 108 बार।'
+            },
+            {
+                cat: 'mantra',
+                q: 'ॐ नमः शिवाय का अर्थ क्या है?',
+                a: '<strong>ॐ नमः शिवाय</strong> — पंचाक्षर मंत्र<br><br><strong>अर्थ:</strong> मैं शिव को नमस्कार करता हूँ।<br><br><strong>पाँच अक्षर:</strong> न, म, शि, वा, य — जो पाँच तत्वों (पृथ्वी, जल, अग्नि, वायु, आकाश) के प्रतीक हैं।<br><br><strong>लाभ:</strong> सभी पापों का नाश, शिव कृपा, मोक्ष, आत्मज्ञान, शांति।<br><br><strong>जप:</strong> प्रातः/सायं, 108 बार, रुद्राक्ष माला से।'
+            },
+            {
+                cat: 'mantra',
+                q: 'जप में 108 की संख्या क्यों महत्वपूर्ण है?',
+                a: '<strong>108 का महत्व:</strong><br><ul><li>108 उपनिषद हैं</li><li>108 बीज मंत्र हैं</li><li>सूर्य की व्यास = 108 पृथ्वी व्यास</li><li>चंद्रमा की व्यास = 108 चंद्र व्यास</li><li>पृथ्वी-सूर्य दूरी = 108 सूर्य व्यास</li><li>108 = 1+0+8 = 9 (पूर्ण संख्या)</li></ul><br>इसलिए माला में <strong>108 मनके</strong> होते हैं और 108 बार जप करने से मन एकाग्र होता है।'
+            },
+            {
+                cat: 'mantra',
+                q: 'माला ज़मीन पर क्यों नहीं रखनी चाहिए?',
+                a: '<strong>माला ज़मीन पर नहीं रखनी चाहिए</strong> क्योंकि यह अपमान माना जाता है।<br><br>माला में देवताओं का वास होता है और यह पवित्र होती है। ज़मीन पर रखने से उसकी शुद्धता और ऊर्जा कम होती है।<br><br><strong>सही तरीका:</strong> माला को <strong>गोमुखी या कपड़े</strong> में लपेटकर रखें। जप के समय माला को हाथ में छिपाकर रखें।'
+            },
+
+            // ========== देवता ==========
+            {
+                cat: 'devta',
+                q: 'हनुमान जी को सिंदूर क्यों चढ़ाते हैं?',
+                a: '<strong>सिंदूर चढ़ाने की कथा:</strong> माता सीता ने अपनी सुहाग की रक्षा के लिए सिंदूर लगाया था। जब हनुमान जी ने पूछा, तो सीता माता ने बताया कि यह सुहाग का प्रतीक है।<br><br>तब हनुमान जी ने अपने पूरे शरीर पर सिंदूर लगा लिया — राम भक्ति के प्रतीक के रूप में। इसलिए हनुमान जी को <strong>सिंदूर और चमेली का तेल</strong> चढ़ाया जाता है।'
+            },
+            {
+                cat: 'devta',
+                q: 'शिव जी ने विष क्यों पिया?',
+                a: '<strong>समुद्र मंथन</strong> के समय <strong>हलाहल विष</strong> निकला, जो पूरी सृष्टि को नष्ट कर सकता था।<br><br>तब शिव जी ने उस विष को पी लिया। माता पार्वती ने उनका गला दबाया, जिससे विष गले में ही रुक गया और उनका गला नीला हो गया।<br><br>इसलिए उन्हें <strong>नीलकंठ</strong> कहा जाता है — जिन्होंने संसार की रक्षा के लिए विष पिया।'
+            },
+            {
+                cat: 'devta',
+                q: 'गणेश जी का सिर हाथी का क्यों है?',
+                a: '<strong>कथा:</strong> शिव जी ने क्रोध में गणेश जी का सिर काट दिया था। माता पार्वती के दुःख को देखकर शिव जी ने उत्तर दिशा में सो रहे प्राणी का सिर लाने को कहा।<br><br>गण <strong>हाथी का सिर</strong> ले आए, जिसे शिव जी ने गणेश जी के धड़ पर जोड़ दिया। इसलिए गणेश जी <strong>गजानन</strong> (हाथी के मुख वाले) कहलाए।'
+            },
+            {
+                cat: 'devta',
+                q: 'शिवलिंग क्या है?',
+                a: '<strong>शिवलिंग</strong> शिव जी का <strong>निराकार स्वरूप</strong> है। "लिंग" का अर्थ है — <strong>चिह्न या प्रतीक</strong>।<br><br>यह ब्रह्मांड की उत्पत्ति और विनाश का प्रतीक है। शिवलिंग के तीन भाग होते हैं — <strong>ब्रह्मा (नीचे), विष्णु (मध्य), और शिव (ऊपर)</strong>।<br><br>शिवलिंग पर जल, दूध, बेलपत्र, धतूरा चढ़ाना शुभ माना जाता है।'
+            },
+            {
+                cat: 'devta',
+                q: 'दुर्गा माता का वाहन सिंह क्यों है?',
+                a: '<strong>सिंह</strong> शक्ति, साहस, और वीरता का प्रतीक है। माँ दुर्गा शक्ति की देवी हैं — और सिंह उनकी शक्ति का प्रतीक है।<br><br>सिंह पर सवार होकर माँ दुर्गा यह दर्शाती हैं कि <strong>शक्ति पर नियंत्रण</strong> और <strong>अधर्म का नाश</strong> उनका कार्य है। इसलिए उन्हें <strong>शेरावाली</strong> भी कहा जाता है।'
+            },
+            {
+                cat: 'devta',
+                q: 'हनुमान जी के पिता कौन हैं?',
+                a: '<strong>हनुमान जी के पिता:</strong><br><br><ul><li><strong>आध्यात्मिक पिता:</strong> वायु देव (पवनपुत्र)</li><li><strong>जैविक पिता:</strong> केसरी (वानर राजा)</li><li><strong>माता:</strong> अंजना देवी</li></ul><br>हनुमान जी को <strong>पवनपुत्र</strong> और <strong>अंजनीसुत</strong> दोनों कहा जाता है। वायु देव ने उन्हें दिव्य शक्तियाँ दीं और केसरी ने उनका पालन-पोषण किया।'
+            },
+            {
+                cat: 'devta',
+                q: 'कृष्ण और राधा का क्या संबंध था?',
+                a: '<strong>राधा और कृष्ण</strong> का संबंध <strong>आत्मा और परमात्मा</strong> का प्रतीक है।<br><br>राधा कृष्ण की परम भक्त थीं और उनका प्रेम <strong>दिव्य प्रेम</strong> का उदाहरण है। वे दोनों एक-दूसरे के पूरक माने जाते हैं।<br><br>दर्शनशास्त्र में राधा <strong>जीवात्मा</strong> हैं और कृष्ण <strong>परमात्मा</strong> — और उनका मिलन <strong>मोक्ष</strong> का प्रतीक है।'
+            },
+            {
+                cat: 'devta',
+                q: 'सूर्य देव को अर्घ्य कैसे दें?',
+                a: '<strong>सूर्य अर्घ्य विधि:</strong><br><br><ul><li><strong>ताम्र पात्र</strong> में जल, लाल फूल, अक्षत, गुड़ डालें</li><li>सूर्योदय के समय <strong>पूर्व दिशा</strong> में मुख करें</li><li>दोनों हाथों से पात्र उठाकर धीरे-धीरे जल अर्पित करें</li><li><strong>"ॐ सूर्याय नमः"</strong> मंत्र जपें</li><li>सूर्य की ओर देखकर जल अर्पित करें</li></ul><br>सूर्य को अर्घ्य देने से <strong>नेत्र ज्योति, आरोग्य, और पितृ दोष नाश</strong> होता है।'
+            },
+
+            // ========== व्रत ==========
+            {
+                cat: 'vrat',
+                q: 'करवा चौथ का व्रत कैसे करें?',
+                a: '<strong>करवा चौथ व्रत विधि:</strong><br><br><ul><li>प्रातः स्नान करें</li><li><strong>निर्जला व्रत</strong> रखें (जल भी न पिएँ)</li><li>सायं करवा कथा सुनें</li><li>चंद्र दर्शन करें</li><li>पति के हाथ से जल ग्रहण करें</li><li>पति की लंबी आयु की प्रार्थना करें</li></ul><br><strong>लाभ:</strong> सुहाग, पति की लंबी आयु, पारिवारिक सुख।'
+            },
+            {
+                cat: 'vrat',
+                q: 'एकादशी व्रत में क्या खा सकते हैं?',
+                a: '<strong>एकादशी व्रत में फलाहार</strong> किया जाता है।<br><br><strong>खा सकते हैं:</strong> फल, दूध, दही, साबूदाना, मखाना, आलू, कुट्टू का आटा, राजगिरा, सिंघाड़ा।<br><br><strong>नहीं खा सकते:</strong> अन्न, चावल, गेहूं, दाल, प्याज, लहसुन, मांस, मदिरा।<br><br><strong>विशेष:</strong> चावल का सेवन एकादशी को पूरी तरह वर्जित है।'
+            },
+            {
+                cat: 'vrat',
+                q: 'सोमवार व्रत की कथा क्या है?',
+                a: '<strong>सोमवार व्रत कथा:</strong> एक साहूकार की पत्नी ने सोमवार व्रत रखा, लेकिन भोजन में घी-नमक की अधिकता के कारण व्रत भंग हो गया।<br><br>परिणामस्वरूप उसका धन नष्ट हो गया। बाद में उसने शुद्ध मन से व्रत किया और शिव जी की कृपा से उसे धन-धान्य और सुख-समृद्धि प्राप्त हुई।<br><br><strong>शिक्षा:</strong> व्रत नियमों का पालन अत्यंत आवश्यक है।'
+            },
+            {
+                cat: 'vrat',
+                q: 'नवरात्रि में क्या-क्या करें?',
+                a: '<strong>नवरात्रि में करें:</strong><br><br><ul><li>9 दिन व्रत रखें</li><li>कलश स्थापना करें</li><li>दुर्गा सप्तशती पाठ करें</li><li>कन्या पूजन करें</li><li>हवन कराएँ</li><li>देवी चालीसा पढ़ें</li><li>सिंदूर, चूड़ी, लाल चुनरी चढ़ाएँ</li></ul><br><strong>नहीं करें:</strong> तामसिक भोजन, क्रोध, झूठ, अनादर।'
+            },
+            {
+                cat: 'vrat',
+                q: 'शनिवार व्रत क्यों रखा जाता है?',
+                a: '<strong>शनिवार व्रत शनि देव को समर्पित है।</strong><br><br>शनि देव कर्म और न्याय के देवता हैं। उनकी कृपा से साढ़े साती और ढैया में लाभ होता है।<br><br><strong>उपाय:</strong><br><ul><li>शनि पूजा करें</li><li>तेल, उड़द, लोहे का दान करें</li><li>शनि चालीसा पढ़ें</li><li>काले वस्त्र धारण करें</li><li>काली चीज़ें (उड़द, तेल) दान करें</li></ul>'
+            },
+            {
+                cat: 'vrat',
+                q: 'व्रत में मन का संयम क्यों आवश्यक है?',
+                a: '<strong>व्रत में मन का संयम</strong> केवल भोजन त्यागने से नहीं, बल्कि <strong>मन और वाणी के संयम</strong> से होता है।<br><br><strong>कारण:</strong> व्रत का उद्देश्य आत्म-शुद्धि है — और यह तभी संभव है जब मन, वाणी, और कर्म तीनों शुद्ध हों।<br><br><strong>इसलिए:</strong> व्रत में क्रोध, झूठ, कलह, और तामसिक भोजन से दूर रहें।'
+            },
+
+            // ========== त्योहार ==========
+            {
+                cat: 'tyohar',
+                q: 'दीपावली पर लक्ष्मी पूजा क्यों की जाती है?',
+                a: '<strong>दीपावली</strong> के दिन <strong>माँ लक्ष्मी</strong> की पूजा की जाती है क्योंकि यह <strong>कार्तिक अमावस्या</strong> की रात है — जब माँ लक्ष्मी पृथ्वी पर आती हैं।<br><br>जो घर <strong>साफ-सुथरा, रोशन, और भक्ति भाव</strong> से भरा होता है — वहाँ वे निवास करती हैं।<br><br><strong>पूजा:</strong> लक्ष्मी-गणेश की पूजा, दीपदान, रंगोली, और मिठाइयाँ बाँटना।'
+            },
+            {
+                cat: 'tyohar',
+                q: 'होली क्यों मनाई जाती है?',
+                a: '<strong>होली</strong> बुराई पर अच्छाई की जीत का प्रतीक है।<br><br><strong>कथा:</strong> हिरण्यकश्यप ने अपने पुत्र प्रह्लाद को मारने के लिए बहन होलिका की गोद में बिठाया। होलिका को अग्नि से बचने का वरदान था, लेकिन भक्त प्रह्लाद की रक्षा के लिए होलिका जल गई और प्रह्लाद बच गए।<br><br>इसलिए <strong>होलिका दहन</strong> और <strong>रंग खेलना</strong> — यह परंपरा बनी।'
+            },
+            {
+                cat: 'tyohar',
+                q: 'महाशिवरात्रि क्यों मनाई जाती है?',
+                a: '<strong>महाशिवरात्रि</strong> — शिव जी का सबसे बड़ा पर्व।<br><br><strong>कारण:</strong><br><ul><li>इस दिन शिव जी ने पार्वती से विवाह किया</li><li>इस दिन शिवलिंग प्रकट हुआ</li><li>इस दिन शिव जी ने समुद्र मंथन का विष पिया</li></ul><br><strong>विधि:</strong> पूरे दिन और रात व्रत, 4 प्रहर पूजा, रात्रि जागरण, महामृत्युंजय मंत्र जप।'
+            },
+            {
+                cat: 'tyohar',
+                q: 'जन्माष्टमी पर कृष्ण जन्म कैसे मनाया जाता है?',
+                a: '<strong>जन्माष्टमी पर कृष्ण जन्म:</strong><br><br><ul><li>पूरे दिन व्रत रखें</li><li>रात्रि 12 बजे कृष्ण जन्म की पूजा करें</li><li>माखन-मिश्री का भोग लगाएँ</li><li>झूला सजाएँ</li><li>कृष्ण की झाँकी सजाएँ</li><li>भजन-कीर्तन करें</li></ul><br><strong>क्यों रात्रि 12 बजे?</strong> क्योंकि कृष्ण जी का जन्म आधी रात को हुआ था।'
+            },
+            {
+                cat: 'tyohar',
+                q: 'राम नवमी पर क्या करें?',
+                a: '<strong>राम नवमी विधि:</strong><br><br><ul><li>व्रत रखें</li><li>रामचरितमानस पाठ करें</li><li>राम दरबार की पूजा करें</li><li>सुंदरकांड पाठ करें</li><li>हवन कराएँ</li><li>राम नाम का जप करें</li><li>प्रसाद बाँटें</li></ul><br><strong>लाभ:</strong> राम कृपा, धर्म, पारिवारिक सुख।'
+            },
+            {
+                cat: 'tyohar',
+                q: 'करवा चौथ पर चंद्र दर्शन क्यों करते हैं?',
+                a: '<strong>करवा चौथ</strong> पर चंद्र दर्शन का विशेष महत्व है।<br><br><strong>कारण:</strong> चंद्र देव को सुहाग का प्रतीक माना जाता है। व्रत रखने वाली स्त्रियाँ चंद्र दर्शन के बाद ही व्रत तोड़ती हैं।<br><br><strong>विधि:</strong> छलनी से चंद्र दर्शन करें, फिर पति के दर्शन करें, और पति के हाथ से जल ग्रहण करके व्रत तोड़ें।'
+            },
+
+            // ========== ज्योतिष ==========
+            {
+                cat: 'jyotish',
+                q: 'कौन सा रत्न धारण करें?',
+                a: '<strong>रत्न धारण</strong> जन्म कुंडली के आधार पर करें — ज्योतिषी की सलाह से।<br><br><strong>सामान्यतः:</strong><br><ul><li>सूर्य — माणिक्य</li><li>चंद्र — मोती</li><li>मंगल — मूंगा</li><li>बुध — पन्ना</li><li>गुरु — पुखराज</li><li>शुक्र — हीरा</li><li>शनि — नीलम</li><li>राहु — गोमेद</li><li>केतु — लहसुनिया</li></ul><br><strong>ध्यान:</strong> रत्न धारण से पहले ज्योतिषी से परामर्श अवश्य करें।'
+            },
+            {
+                cat: 'jyotish',
+                q: 'कालसर्प दोष क्या है?',
+                a: '<strong>कालसर्प दोष</strong> तब होता है जब <strong>राहु और केतु</strong> कुंडली में सभी ग्रहों को एक तरफ घेर लेते हैं।<br><br><strong>प्रभाव:</strong><br><ul><li>जीवन में बार-बार बाधाएँ</li><li>विवाह में देरी</li><li>संतान कष्ट</li><li>आर्थिक कठिनाई</li></ul><br><strong>उपाय:</strong> राहु-केतु मंत्र, त्र्यंबकेश्वर यात्रा, नाग पंचमी पूजा, उड़द-काला तिल का दान।'
+            },
+            {
+                cat: 'jyotish',
+                q: 'शनि की साढ़े साती क्या है?',
+                a: '<strong>साढ़े साती</strong> वह अवधि है जब शनि ग्रह <strong>साढ़े सात वर्ष</strong> तक किसी व्यक्ति की राशि से गुज़रता है — उससे पहले, दौरान, और बाद में।<br><br><strong>प्रभाव:</strong> कार्यों में बाधा, आर्थिक कठिनाई, और मानसिक तनाव।<br><br><strong>उपाय:</strong> शनि पूजा, तेल-उड़द का दान, हनुमान चालीसा पाठ, नीलम धारण।<br><br>यह <strong>कर्म शुद्धि</strong> का समय भी है।'
+            },
+            {
+                cat: 'jyotish',
+                q: 'मंगल दोष के उपाय क्या हैं?',
+                a: '<strong>मंगल दोष</strong> — जब कुंडली में मंगल अशुभ स्थान में हो, विशेषकर विवाह में।<br><br><strong>उपाय:</strong><br><ul><li>हनुमान पूजा (मंगलवार)</li><li>"ॐ क्रां क्रीं क्रौं सः भौमाय नमः" जप</li><li>मसूर, ताम्र का दान</li><li>मूंगा धारण</li><li>कुंभ विवाह</li><li>मंगल भात पूजा</li></ul><br>मंगल दोष के लिए हनुमान पूजा विशेष लाभकारी है।'
+            },
+
+            // ========== संस्कार ==========
+            {
+                cat: 'sanskar',
+                q: 'हिंदू धर्म में 16 संस्कार कौन से हैं?',
+                a: '<strong>16 संस्कार:</strong><br><ul><li>1. गर्भाधान</li><li>2. पुंसवन</li><li>3. सीमंतोन्नयन</li><li>4. जातकर्म</li><li>5. नामकरण</li><li>6. अन्नप्राशन</li><li>7. चूड़ाकरण (मुंडन)</li><li>8. कर्णवेध</li><li>9. विद्यारंभ</li><li>10. उपनयन (जनेऊ)</li><li>11. केशांत</li><li>12. समावर्तन</li><li>13. विवाह</li><li>14. विवाहाग्नि</li><li>15. अंत्येष्टि</li><li>16. श्राद्ध</li></ul>'
+            },
+            {
+                cat: 'sanskar',
+                q: 'नामकरण संस्कार कब होता है?',
+                a: '<strong>नामकरण संस्कार</strong> शिशु के जन्म के <strong>11वें या 12वें दिन</strong> किया जाता है।<br><br><strong>विधि:</strong> पंडित जी जन्म कुंडली के अनुसार नाम का पहला अक्षर बताते हैं। शिशु का नामकरण मंत्रों के साथ किया जाता है।<br><br><strong>लाभ:</strong> शिशु का पहचान, अच्छा भाग्य, और व्यक्तित्व।'
+            },
+            {
+                cat: 'sanskar',
+                q: 'मुंडन संस्कार क्यों किया जाता है?',
+                a: '<strong>मुंडन संस्कार</strong> शिशु के पहले या तीसरे साल में किया जाता है।<br><br><strong>कारण:</strong><br><ul><li>शिशु के पाप और रोग दूर होते हैं</li><li>बुद्धि और आरोग्य में वृद्धि</li><li>पहला बाल तीर्थ स्थान पर रखा जाता है</li><li>माता-पिता के ऋण से मुक्ति</li></ul><br><strong>विधि:</strong> शिशु के बाल काटे जाते हैं और मंत्रों से रक्षा की जाती है।'
+            },
+            {
+                cat: 'sanskar',
+                q: 'विवाह में सात फेरे क्यों होते हैं?',
+                a: '<strong>सात फेरे</strong> सात वचनों के प्रतीक हैं — जो पति-पत्नी एक-दूसरे से करते हैं:<br><br><ul><li>1. पोषण और गृहस्थी</li><li>2. बल और वीर्य</li><li>3. धन और समृद्धि</li><li>4. सुख और सौभाग्य</li><li>5. संतान</li><li>6. ऋतु और आरोग्य</li><li>7. मित्रता और निष्ठा</li></ul><br>हर फेरे के साथ एक वचन लिया जाता है — जो आजीवन निभाया जाता है।'
+            },
+
+            // ========== दिनचर्या ==========
+            {
+                cat: 'daily',
+                q: 'ब्रह्म मुहूर्त में उठने के लाभ क्या हैं?',
+                a: '<strong>ब्रह्म मुहूर्त (4-6 AM)</strong> में उठने के लाभ:<br><br><ul><li>वातावरण में सकारात्मक ऊर्जा</li><li>मन शांत और एकाग्र</li><li>जप, ध्यान में विशेष लाभ</li><li>पढ़ाई में एकाग्रता</li><li>स्वास्थ्य में सुधार</li><li>दिन की शुरुआत शुभ</li></ul><br><strong>शास्त्र:</strong> ब्रह्म मुहूर्त में उठना सबसे शुभ माना जाता है।'
+            },
+            {
+                cat: 'daily',
+                q: 'सोते समय सिर किस दिशा में होना चाहिए?',
+                a: '<strong>सोते समय सिर पूर्व या उत्तर दिशा में करना चाहिए।</strong><br><br><strong>पूर्व दिशा</strong> — ज्ञान और शांति<br><strong>उत्तर दिशा</strong> — धन और समृद्धि<br><br><strong>दक्षिण दिशा में सिर करके नहीं सोना चाहिए</strong> — यह यम और मृत्यु की दिशा है। इससे स्वास्थ्य पर बुरा असर पड़ता है।'
+            },
+            {
+                cat: 'daily',
+                q: 'भोजन किस दिशा में मुख करके करना चाहिए?',
+                a: '<strong>भोजन दक्षिण दिशा में मुख करके करना चाहिए।</strong><br><br><strong>कारण:</strong> दक्षिण दिशा <strong>अग्नि</strong> और <strong>पितृ</strong> की दिशा मानी जाती है, जो पाचन में सहायक होती है।<br><br><strong>अन्य नियम:</strong><br><ul><li>बैठकर भोजन करें</li><li>हाथ-पैर धोकर भोजन करें</li><li>जूठा न छोड़ें</li><li>भोजन के समय बात न करें</li></ul>'
+            },
+            {
+                cat: 'daily',
+                q: 'घर से निकलते समय कौन सा मंत्र पढ़ें?',
+                a: '<strong>घर से निकलते समय मंत्र:</strong><br><br><ul><li>"ॐ श्री गणेशाय नमः"</li><li>"ॐ नमो भगवते वासुदेवाय"</li><li>"ॐ दुर्गायै नमः"</li></ul><br><strong>विधि:</strong> दाहिना पैर पहले बाहर रखें, भगवान का स्मरण करें, और शुभ यात्रा की प्रार्थना करें।<br><br>घर से निकलते समय भगवान का स्मरण करना शुभ माना जाता है।'
+            },
+            {
+                cat: 'daily',
+                q: 'तुलसी के पत्ते कब नहीं तोड़ने चाहिए?',
+                a: '<strong>तुलसी के पत्ते न तोड़ें:</strong><br><br><ul><li>रविवार</li><li>एकादशी</li><li>पूर्णिमा</li><li>अमावस्या</li><li>द्वादशी</li><li>चतुर्दशी</li><li>सूर्यास्त के बाद</li><li>स्नान से पहले</li></ul><br><strong>सही समय:</strong> प्रातः स्नान के बाद, या सायं दीपदान के बाद।<br><br><strong>ध्यान:</strong> तुलसी को दाँत से न तोड़ें, हाथ या नाखून से तोड़ें।'
+            },
+
+            // ========== सामान्य ==========
+            {
+                cat: 'general',
+                q: 'हिंदू धर्म में कितने वेद हैं?',
+                a: '<strong>हिंदू धर्म में 4 वेद हैं:</strong><br><br><ul><li><strong>ऋग्वेद</strong> — सबसे प्राचीन, 1028 सूक्त, 10552 मंत्र</li><li><strong>यजुर्वेद</strong> — यज्ञ विधि, शुक्ल और कृष्ण</li><li><strong>सामवेद</strong> — संगीत और राग</li><li><strong>अथर्ववेद</strong> — औषधि और तंत्र</li></ul><br>वेदों को <strong>अपौरुषेय</strong> (ईश्वर द्वारा रचित) माना जाता है।'
+            },
+            {
+                cat: 'general',
+                q: 'हिंदू धर्म में कितने पुराण हैं?',
+                a: '<strong>हिंदू धर्म में 18 पुराण हैं:</strong><br><br><strong>विष्णु पुराण:</strong> विष्णु, भागवत, नारद, गरुड़, पद्म, वराह<br><strong>ब्रह्म पुराण:</strong> ब्रह्म, ब्रह्मांड, ब्रह्मवैवर्त, मार्कण्डेय, भविष्य, वामन<br><strong>शिव पुराण:</strong> शिव, लिंग, स्कंद, कूर्म, मत्स्य, अग्नि<br><br><strong>सबसे बड़ा:</strong> स्कंद पुराण<br><strong>सबसे प्रसिद्ध:</strong> श्रीमद् भागवत पुराण'
+            },
+            {
+                cat: 'general',
+                q: 'हिंदू धर्म में कितने उपनिषद हैं?',
+                a: '<strong>हिंदू धर्म में 108 उपनिषद</strong> माने जाते हैं।<br><br><strong>प्रमुख 10 उपनिषद:</strong><br><ul><li>ईशोपनिषद</li><li>केनोपनिषद</li><li>कठोपनिषद</li><li>प्रश्नोपनिषद</li><li>मुंडकोपनिषद</li><li>मांडूक्योपनिषद</li><li>तैत्तिरीयोपनिषद</li><li>ऐतरेयोपनिषद</li><li>छांदोग्योपनिषद</li><li>बृहदारण्यकोपनिषद</li></ul><br>उपनिषद <strong>वेदांत</strong> का मूल हैं — जो आत्मज्ञान और ब्रह्मज्ञान का मार्ग बताते हैं।'
+            },
+            {
+                cat: 'general',
+                q: 'कुंभ मेला कितने वर्ष बाद लगता है?',
+                a: '<strong>कुंभ मेला</strong> — 4 प्रकार:<br><br><ul><li><strong>कुंभ मेला</strong> — 12 वर्ष बाद (प्रयागराज, हरिद्वार, नासिक, उज्जैन)</li><li><strong>अर्ध कुंभ</strong> — 6 वर्ष बाद (प्रयागराज, हरिद्वार)</li><li><strong>महाकुंभ</strong> — 144 वर्ष बाद (प्रयागराज)</li><li><strong>सिंहस्थ</strong> — उज्जैन में (12 वर्ष)</li></ul><br><strong>महत्व:</strong> कुंभ स्नान से सभी पापों का नाश और मोक्ष की प्राप्ति।'
+            },
+            {
+                cat: 'general',
+                q: 'ज्योतिर्लिंग कितने हैं?',
+                a: '<strong>12 ज्योतिर्लिंग:</strong><br><ol style="padding-left:20px;"><li>सोमनाथ (गुजरात)</li><li>मल्लिकार्जुन (आंध्र)</li><li>महाकालेश्वर (उज्जैन)</li><li>ओंकारेश्वर (मध्य प्रदेश)</li><li>केदारनाथ (उत्तराखंड)</li><li>भीमाशंकर (महाराष्ट्र)</li><li>काशी विश्वनाथ (वाराणसी)</li><li>त्र्यंबकेश्वर (नासिक)</li><li>वैद्यनाथ (झारखंड)</li><li>नागेश्वर (गुजरात)</li><li>रामेश्वरम (तमिलनाडु)</li><li>घृष्णेश्वर (महाराष्ट्र)</li></ol><br>इनके दर्शन से शिव कृपा और मोक्ष प्राप्त होता है।'
+            },
+            {
+                cat: 'general',
+                q: 'चार धाम कौन से हैं?',
+                a: '<strong>चार धाम:</strong><br><ul><li><strong>बद्रीनाथ</strong> (उत्तराखंड) — विष्णु</li><li><strong>द्वारका</strong> (गुजरात) — कृष्ण</li><li><strong>जगन्नाथ पुरी</strong> (ओडिशा) — जगन्नाथ</li><li><strong>रामेश्वरम</strong> (तमिलनाडु) — शिव</li></ul><br><strong>महत्व:</strong> आदि शंकराचार्य ने इनकी स्थापना की। इनके दर्शन से मोक्ष की प्राप्ति होती है।'
+            },
+            {
+                cat: 'general',
+                q: 'नवग्रह कौन-कौन हैं?',
+                a: '<strong>नवग्रह (9 ग्रह):</strong><br><ol style="padding-left:20px;"><li>सूर्य</li><li>चंद्र</li><li>मंगल</li><li>बुध</li><li>गुरु</li><li>शुक्र</li><li>शनि</li><li>राहु (छाया ग्रह)</li><li>केतु (छाया ग्रह)</li></ol><br>ये सभी ग्रह मनुष्य के जीवन, भाग्य, और कर्म को प्रभावित करते हैं।'
+            },
+            {
+                cat: 'general',
+                q: 'हिंदू धर्म में मोक्ष क्या है?',
+                a: '<strong>मोक्ष</strong> का अर्थ है — <strong>जन्म-मृत्यु के चक्र से मुक्ति</strong>।<br><br><strong>साधन:</strong><br><ul><li>ज्ञान योग — आत्मज्ञान</li><li>कर्म योग — निष्काम कर्म</li><li>भक्ति योग — ईश्वर भक्ति</li><li>ध्यान योग — ध्यान साधना</li></ul><br><strong>लक्ष्य:</strong> ब्रह्म से मिलन — जहाँ जीवात्मा परमात्मा में विलीन हो जाता है।'
+            },
+            {
+                cat: 'general',
+                q: 'ॐ नमो नारायणाय का अर्थ क्या है?',
+                a: '<strong>ॐ नमो नारायणाय</strong><br><br><strong>अर्थ:</strong> मैं भगवान नारायण (विष्णु) को नमस्कार करता हूँ।<br><br><strong>महत्व:</strong> यह <strong>8 अक्षरों का मंत्र</strong> है — अष्टाक्षर मंत्र।<br><br><strong>लाभ:</strong> मोक्ष, शांति, विष्णु कृपा, भवसागर से पार।<br><br><strong>जप:</strong> सुबह/शाम, 108 बार, तुलसी माला से।'
+            },
+            {
+                cat: 'general',
+                q: 'आरती का अर्थ क्या है?',
+                a: '<strong>आरती</strong> का अर्थ है — <strong>भगवान के प्रति पूर्ण समर्पण</strong>।<br><br><strong>आरती = आ + रात्रि + इ</strong> — जो रात्रि (अंधकार) को दूर करे।<br><br><strong>महत्व:</strong><br><ul><li>भक्ति का प्रतीक</li><li>नकारात्मक ऊर्जा का नाश</li><li>मन की शांति</li><li>भगवान से जुड़ाव</li></ul><br>आरती की थाली में दीप, धूप, फूल, और कपूर होते हैं।'
+            },
+            {
+                cat: 'general',
+                q: 'हिंदू धर्म में दान का महत्व क्या है?',
+                a: '<strong>दान</strong> हिंदू धर्म में सबसे बड़ा पुण्य माना जाता है।<br><br><strong>प्रकार:</strong><br><ul><li>अन्न दान — सबसे बड़ा</li><li>विद्या दान</li><li>भूमि दान</li><li>गौ दान</li><li>वस्त्र दान</li><li>धन दान</li></ul><br><strong>लाभ:</strong> पाप नाश, पुण्य, मोक्ष, संतान, धन।<br><br><strong>श्रेष्ठ दान:</strong> जो गुप्त रूप से, श्रद्धा से, योग्य व्यक्ति को दिया जाए।'
+            },
+            {
+                cat: 'general',
+                q: 'गंगा जल क्यों पवित्र माना जाता है?',
+                a: '<strong>गंगा जल पवित्र है</strong> — धार्मिक और वैज्ञानिक दोनों कारणों से:<br><br><strong>धार्मिक:</strong><br><ul><li>विष्णु के चरणों से प्रकट</li><li>शिव की जटाओं में विराजमान</li><li>मोक्ष का द्वार</li></ul><br><strong>वैज्ञानिक:</strong><br><ul><li>बैक्टीरियोफेज — जो हानिकारक बैक्टीरिया नष्ट करते हैं</li><li>ऑक्सीजन की अधिकता</li><li>कभी खराब नहीं होता</li></ul>'
+            },
+            {
+                cat: 'general',
+                q: 'हिंदू धर्म में तुलसी का महत्व क्या है?',
+                a: '<strong>तुलसी माता</strong> हिंदू धर्म की सबसे पवित्र देवी हैं।<br><br><strong>महत्व:</strong><br><ul><li>हर घर के आँगन में विराजमान</li><li>विष्णु की प्रिया</li><li>स्वास्थ्य, भक्ति, समृद्धि की प्रतीक</li><li>औषधीय गुणों से भरपूर</li><li>घर में सकारात्मक ऊर्जा</li></ul><br><strong>वैज्ञानिक लाभ:</strong> सर्दी-खांसी, रोग प्रतिरोधक क्षमता, तनाव, और रक्तचाप में लाभ।'
+            },
+            {
+                cat: 'general',
+                q: 'सनातन धर्म और हिंदू धर्म में क्या अंतर है?',
+                a: '<strong>सनातन धर्म</strong> और <strong>हिंदू धर्म</strong> एक ही हैं — बस नाम अलग है।<br><br><strong>सनातन धर्म:</strong> शाश्वत, अनादि, कालातीत<br><strong>हिंदू धर्म:</strong> सिंधु नदी से उत्पन्न, भौगोलिक नाम<br><br><strong>मूल:</strong> वेद, उपनिषद, पुराण, गीता, रामायण, महाभारत।<br><br>सनातन धर्म <strong>विश्व का सबसे प्राचीन धर्म</strong> माना जाता है — 5000+ वर्ष पुराना।'
+            },
+            {
+                cat: 'general',
+                q: 'हिंदू धर्म में कितने देवता हैं?',
+                a: '<strong>हिंदू धर्म में 33 करोड़ देवता</strong> माने जाते हैं।<br><br><strong>परन्तु:</strong> ये सभी <strong>एक ईश्वर</strong> के ही रूप हैं।<br><br><strong>मुख्य:</strong><br><ul><li>त्रिदेव — ब्रह्मा, विष्णु, महेश</li><li>त्रिदेवी — लक्ष्मी, सरस्वती, पार्वती</li><li>नवदुर्गा, नवग्रह, अष्टविनायक</li></ul><br><strong>वेद:</strong> "एकं सद्विप्रा बहुधा वदन्ति" — सत्य एक है, विद्वान उसे अनेक नामों से बुलाते हैं।'
+            }
+        ];
+
+        // ============================================================
+        //  RENDER FUNCTIONS
+        // ============================================================
+
+        let currentCategory = 'all';
+        let searchQuery = '';
+
+        function renderFAQs() {
+            const grid = document.getElementById('faqGrid');
+            const filtered = faqData.filter(f => {
+                const matchCat = currentCategory === 'all' || f.cat === currentCategory;
+                const matchSearch = f.q.includes(searchQuery) ||
+                                    f.a.includes(searchQuery);
+                return matchCat && matchSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div class="no-result">
+                    <i class="fa-solid fa-search"></i>
+                    कोई सवाल नहीं मिला। कृपया दूसरा शब्द खोजें।
+                </div>`;
+                return;
+            }
+
+            const catName = (cat) => {
+                const names = {
+                    'puja': '🪔 पूजा',
+                    'mantra': '📿 मंत्र',
+                    'devta': '🕉️ देवता',
+                    'vrat': '🛕 व्रत',
+                    'tyohar': '🎉 त्योहार',
+                    'jyotish': '🔮 ज्योतिष',
+                    'sanskar': '🎊 संस्कार',
+                    'daily': '🌅 दिनचर्या',
+                    'general': '💡 सामान्य'
+                };
+                return names[cat] || cat;
+            };
+
+            grid.innerHTML = filtered.map((f, i) => `
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>${f.q}</span>
+                        <i class="fa-solid fa-chevron-down q-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <span class="faq-category-tag">${catName(f.cat)}</span>
+                        ${f.a}
+                    </div>
+                </div>
+            `).join('');
+
+            // Update stats
+            document.getElementById('statTotal').textContent = faqData.length;
+            document.getElementById('statCategory').textContent = 9;
+        }
+
+        function toggleFAQ(el) {
+            el.classList.toggle('open');
+        }
+
+        function filterFAQs() {
+            searchQuery = document.getElementById('faqSearch').value.trim();
+            renderFAQs();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderFAQs();
+
+            document.querySelectorAll('.cat-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    currentCategory = this.dataset.cat;
+                    renderFAQs();
+                });
+            });
+        });
+
+        // Dark mode
+        const darkToggle = document.getElementById('darkToggle');
+        if (darkToggle) {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+                darkToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            }
+            darkToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                const icon = this.querySelector('i');
+                const isDark = document.body.classList.contains('dark-mode');
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+                localStorage.setItem('darkMode', isDark);
+            });
+        }
+
+        function sharePage() {
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    text: '🕉️ सनातन ज्ञान कोश — FAQ',
+                    url: window.location.href
+                }).catch(() => {});
+            } else {
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    alert('लिंक कॉपी हो गया!');
+                });
+            }
+        }
+    </script>
+</body>
+</html>
