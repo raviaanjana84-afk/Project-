@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>गंगा माता — संपूर्ण ज्ञान | Sanatan Gyan Kosh</title>
+    <meta name="description" content="गंगा माता का संपूर्ण ज्ञान — परिचय, कथा, स्वरूप, मंत्र, स्तोत्र, आरती, मंदिर, त्योहार, व्रत और बहुत कुछ।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .devta-hero {
+            text-align: center;
+            padding: 24px 20px;
+            background: linear-gradient(135deg, rgba(173,216,230,0.2), rgba(212,175,55,0.08));
+            border-radius: var(--radius);
+            margin-bottom: 14px;
+            border: 1px solid var(--border);
+        }
+        .devta-hero .icon { font-size: 72px; display: block; line-height: 1; }
+        .devta-hero .name {
+            font-family: var(--font-display);
+            font-size: 30px;
+            color: var(--maroon);
+            margin-top: 6px;
+        }
+        .devta-hero .subtitle {
+            font-size: 13px;
+            color: var(--ink-soft);
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+
+        .devta-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 18px 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .devta-section h2 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--maroon);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 8px;
+        }
+        .devta-section h2 .sec-icon { font-size: 24px; }
+
+        .devta-section p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+            margin-bottom: 8px;
+        }
+        .devta-section p strong { color: var(--maroon); }
+
+        .mantra-box {
+            background: linear-gradient(135deg, rgba(173,216,230,0.15), rgba(212,175,55,0.05));
+            border-left: 4px solid var(--gold);
+            padding: 14px 16px;
+            border-radius: 12px;
+            font-family: var(--font-display);
+            font-size: 18px;
+            text-align: center;
+            margin: 10px 0;
+            line-height: 1.8;
+            color: var(--maroon);
+            font-weight: 600;
+        }
+        .mantra-box small {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 12px;
+            color: var(--ink-soft);
+            font-weight: 400;
+            margin-top: 6px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .info-item {
+            background: var(--bg);
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 13px;
+        }
+        .info-item .lbl {
+            font-size: 10px;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-item .val {
+            font-weight: 600;
+            color: var(--maroon);
+            margin-top: 2px;
+        }
+
+        .devta-section ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 8px;
+        }
+        .devta-section ul li {
+            padding: 8px 0;
+            font-size: 13.5px;
+            line-height: 1.6;
+            border-bottom: 1px dashed var(--border);
+            color: var(--ink-soft);
+        }
+        .devta-section ul li:last-child { border-bottom: none; }
+        .devta-section ul li strong { color: var(--maroon); }
+
+        .accordion-item {
+            border-bottom: 1px solid var(--border);
+        }
+        .accordion-item:last-child { border-bottom: none; }
+        .accordion-head {
+            padding: 12px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--maroon);
+            font-family: var(--font-display);
+        }
+        .accordion-head i {
+            transition: transform 0.3s;
+            color: var(--gold);
+        }
+        .accordion-item.open .accordion-head i {
+            transform: rotate(180deg);
+        }
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            font-size: 13px;
+            color: var(--ink-soft);
+            line-height: 1.8;
+        }
+        .accordion-item.open .accordion-body {
+            max-height: 4000px;
+            padding-bottom: 12px;
+        }
+
+        .temple-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .temple-item {
+            padding: 10px 14px;
+            background: var(--bg);
+            border-radius: 10px;
+            border-left: 3px solid var(--gold);
+            font-size: 13px;
+        }
+        .temple-item strong { color: var(--maroon); }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .related-link {
+            padding: 10px 12px;
+            background: var(--bg);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--maroon);
+            font-weight: 600;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .related-link:hover {
+            background: var(--card-bg);
+            border-color: var(--gold);
+        }
+
+        .names-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .name-item {
+            background: var(--bg);
+            padding: 8px 12px;
+            border-radius: 8px;
+            border-left: 3px solid var(--gold);
+            font-size: 12px;
+        }
+        .name-item strong {
+            color: var(--maroon);
+            font-family: var(--font-display);
+            font-size: 14px;
+        }
+
+        .ghat-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .ghat-item {
+            background: var(--bg);
+            padding: 12px 14px;
+            border-radius: 12px;
+            border-left: 4px solid var(--gold);
+        }
+        .ghat-item .ghat-name {
+            font-weight: 700;
+            color: var(--maroon);
+            font-size: 14px;
+        }
+        .ghat-item .ghat-loc {
+            font-size: 11px;
+            color: var(--ink-light);
+            margin-top: 2px;
+        }
+        .ghat-item .ghat-desc {
+            font-size: 12px;
+            color: var(--ink-soft);
+            margin-top: 4px;
+            line-height: 1.6;
+        }
+
+        .back-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--maroon);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 16px rgba(122,46,46,0.4);
+            z-index: 90;
+        }
+        .back-top.show { display: flex; }
+
+        @media (max-width: 420px) {
+            .devta-hero .icon { font-size: 60px; }
+            .devta-hero .name { font-size: 24px; }
+            .devta-section h2 { font-size: 17px; }
+            .mantra-box { font-size: 16px; }
+            .names-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ देवता ज्ञान</span>
+            <h1>गंगा माता</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <!-- Hero -->
+        <div class="devta-hero">
+            <span class="icon">🌊</span>
+            <div class="name">गंगा माता</div>
+            <div class="subtitle">गंगा · भागीरथी · जाह्नवी · देवनदी · मोक्षदायिनी</div>
+        </div>
+
+        <!-- Quick Info -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📋</span> एक नज़र में</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="lbl">अन्य नाम</div>
+                    <div class="val">भागीरथी, जाह्नवी, देवनदी, मोक्षदायिनी, सुरसरिता, विष्णुपदी</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">पिता</div>
+                    <div class="val">हिमालय पर्वत</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">माता</div>
+                    <div class="val">मेना देवी</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">पति</div>
+                    <div class="val">शांतनु (महाभारत में)</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रमुख पुत्र</div>
+                    <div class="val">भीष्म पितामह (देवव्रत)</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">उद्गम</div>
+                    <div class="val">गंगोत्री (हिमालय)</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">संगम</div>
+                    <div class="val">गंगा-यमुना-सरस्वती (प्रयागराज)</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रमुख पर्व</div>
+                    <div class="val">गंगा दशहरा, गंगा सप्तमी, मकर संक्रांति</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय दिन</div>
+                    <div class="val">गंगा दशहरा (ज्येष्ठ शुक्ल दशमी)</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय भोग</div>
+                    <div class="val">दूध, केला, नारियल, सफेद फूल</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय रंग</div>
+                    <div class="val">सफेद, हल्का नीला</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">महत्व</div>
+                    <div class="val">पाप नाश, मोक्ष, शुद्धि</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- परिचय -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📖</span> परिचय</h2>
+            <p>
+                <strong>माँ गंगा</strong> हिंदू धर्म की सबसे पवित्र नदी हैं। वे केवल एक नदी नहीं, बल्कि <strong>जीवित देवी</strong> हैं — जो पापों का नाश करती हैं और <strong>मोक्ष</strong> प्रदान करती हैं। गंगा को <strong>मोक्षदायिनी</strong> कहा जाता है।
+            </p>
+            <p>
+                गंगा माता को <strong>भागीरथी</strong>, <strong>जाह्नवी</strong>, <strong>देवनदी</strong>, <strong>सुरसरिता</strong>, और <strong>विष्णुपदी</strong> जैसे कई नामों से जाना जाता है। वे <strong>हिमालय पर्वत और मेना देवी की पुत्री</strong> हैं और <strong>महाभारत में शांतनु की पत्नी</strong> तथा <strong>भीष्म पितामह की माता</strong> थीं।
+            </p>
+            <p>
+                गंगा का जल <strong>अमृत के समान पवित्र</strong> माना जाता है। हिंदू धर्म में गंगा स्नान, गंगा जल से पूजा, और गंगा में अस्थि विसर्जन — ये सब <strong>मोक्ष के साधन</strong> माने जाते हैं।
+            </p>
+            <p>
+                <strong>गंगा दशहरा</strong> (ज्येष्ठ शुक्ल दशमी) को गंगा माता का पृथ्वी पर अवतरण हुआ था। इस दिन गंगा स्नान और पूजा का विशेष महत्व है।
+            </p>
+        </div>
+
+        <!-- अवतरण कथा -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📜</span> अवतरण कथा</h2>
+            <p>
+                पौराणिक कथा के अनुसार, <strong>राजा सगर</strong> ने <strong>अश्वमेध यज्ञ</strong> किया। यज्ञ का घोड़ा <strong>इंद्र</strong> ने चुराकर <strong>कपिल मुनि</strong> के आश्रम में छिपा दिया। राजा सगर के <strong>60,000 पुत्रों</strong> ने घोड़ा खोजा और कपिल मुनि को चोर समझकर अपमानित किया।
+            </p>
+            <p>
+                कपिल मुनि के श्राप से <strong>60,000 पुत्र भस्म</strong> हो गए। उनकी मुक्ति के लिए <strong>गंगा का जल</strong> आवश्यक था। राजा सगर के वंशज <strong>राजा भगीरथ</strong> ने घोर तपस्या की और <strong>ब्रह्मा जी</strong> से गंगा को पृथ्वी पर भेजने का वरदान माँगा।
+            </p>
+            <p>
+                लेकिन गंगा के वेग को सहन करने की शक्ति पृथ्वी में नहीं थी। तब <strong>भगवान शिव</strong> ने गंगा को अपनी <strong>जटाओं</strong> में धारण करने का वरदान दिया। शिव जी की जटाओं से गंगा <strong>सात धाराओं</strong> में बहीं — जिनमें <strong>भागीरथी</strong> प्रमुख थीं।
+            </p>
+            <p>
+                भागीरथी गंगा <strong>कपिल मुनि के आश्रम</strong> से गुज़रीं और सगर के 60,000 पुत्रों को मोक्ष मिला। इसलिए गंगा को <strong>भागीरथी</strong> कहा जाता है। यह दिन <strong>गंगा दशहरा</strong> के रूप में मनाया जाता है।
+            </p>
+            <p>
+                एक अन्य कथा के अनुसार, गंगा <strong>विष्णु के चरणों</strong> से प्रकट हुईं — इसलिए <strong>विष्णुपदी</strong> कहलाती हैं। <strong>झाह्नु ऋषि</strong> ने गंगा को पी लिया था — इसलिए <strong>जाह्नवी</strong> नाम पड़ा।
+            </p>
+        </div>
+
+        <!-- स्वरूप -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🎨</span> स्वरूप</h2>
+            <p>
+                गंगा माता का स्वरूप <strong>अत्यंत सौम्य, तेजस्वी, और करुणामयी</strong> है।
+            </p>
+            <ul>
+                <li><strong>रंग:</strong> श्वेत, हल्का नीला, दूधिया</li>
+                <li><strong>वस्त्र:</strong> सफेद रेशमी वस्त्र</li>
+                <li><strong>आभूषण:</strong> मोती के आभूषण, स्वर्ण मुकुट</li>
+                <li><strong>हाथ:</strong> 2 या 4 हाथ</li>
+                <li><strong>आयुध/प्रतीक:</strong> कमल, कलश, जल पात्र</li>
+                <li><strong>वाहन:</strong> मकर (मगरमच्छ) — जो जल का प्रतीक है</li>
+                <li><strong>नेत्र:</strong> कमल के समान सुंदर, करुणा से भरे</li>
+                <li><strong>मुद्रा:</strong> अभय मुद्रा और वरद मुद्रा</li>
+                <li><strong>आसन:</strong> कमल या मकर</li>
+                <li><strong>साथ:</strong> शिव जी (जटाओं में), भागीरथ, कपिल मुनि</li>
+                <li><strong>विशेष:</strong> जल धारा के रूप में प्रवाहित</li>
+                <li><strong>निवास:</strong> हिमालय, कैलाश, गंगोत्री, वैकुंठ</li>
+            </ul>
+        </div>
+
+        <!-- मुख्य मंत्र -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🌊</span> मुख्य मंत्र</h2>
+
+            <p><strong>1. गंगा मूल मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ गंगायै नमः
+                <small>अर्थ: हे गंगा माता, मैं आपको नमस्कार करता हूँ।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>2. गंगा गायत्री मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ भगवत्यै च विद्महे ।<br>
+                गंगादेव्यै च धीमहि ।<br>
+                तन्नो गंगा प्रचोदयात् ॥
+                <small>अर्थ: हम भगवती का ध्यान करते हैं, गंगा देवी का ध्यान करते हैं, गंगा हमें प्रेरित करें।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>3. गंगा स्तोत्र (संक्षिप्त):</strong></p>
+            <div class="mantra-box">
+                ॐ नमो गंगे त्वं पापं मे हर हर ।<br>
+                ॐ नमो गंगे त्वं मोक्षं मे देहि देहि ॥
+                <small>अर्थ: हे गंगा, मेरे पापों का नाश करो, मुझे मोक्ष दो।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>4. गंगा अष्टकम् (संक्षिप्त):</strong></p>
+            <div class="mantra-box" style="font-size:15px;">
+                नमो नमामि गंगे त्वं पापं मे हर हर ।<br>
+                सर्वतीर्थमयि पुण्ये सर्वपापप्रणाशिनि ॥
+                <small>अर्थ: हे गंगा, जो सभी तीर्थों की सार हैं, पुण्यमयी हैं, सभी पापों का नाश करने वाली हैं — आपको नमस्कार।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>5. गंगा स्नान मंत्र:</strong></p>
+            <div class="mantra-box" style="font-size:15px;">
+                ॐ गंगे च यमुने चैव गोदावरि सरस्वति ।<br>
+                नर्मदे सिन्धु कावेरि जलेऽस्मिन् सन्निधिं कुरु ॥
+                <small>अर्थ: हे गंगा, यमुना, गोदावरी, सरस्वती, नर्मदा, सिंधु, कावेरी — इस जल में आप सब निवास करें।</small>
+            </div>
+        </div>
+
+        <!-- गंगा के 108 नाम (24 प्रमुख) -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🔱</span> गंगा माता के 108 नाम (24 प्रमुख)</h2>
+            <p style="font-size:13px;margin-bottom:8px;">
+                गंगा माता के 108 नाम हैं — इनका जप करने से पाप नाश और मोक्ष प्राप्त होता है।
+            </p>
+            <div class="names-grid">
+                <div class="name-item"><strong>गंगा</strong> — पवित्र नदी</div>
+                <div class="name-item"><strong>भागीरथी</strong> — भगीरथ द्वारा लाई गई</div>
+                <div class="name-item"><strong>जाह्नवी</strong> — जह्नु ऋषि की पुत्री</div>
+                <div class="name-item"><strong>देवनदी</strong> — देवताओं की नदी</div>
+                <div class="name-item"><strong>सुरसरिता</strong> — देवताओं की सरिता</div>
+                <div class="name-item"><strong>विष्णुपदी</strong> — विष्णु के चरणों से प्रकट</div>
+                <div class="name-item"><strong>मोक्षदायिनी</strong> — मोक्ष देने वाली</div>
+                <div class="name-item"><strong>पापनाशिनी</strong> — पाप नाश करने वाली</div>
+                <div class="name-item"><strong>शिवजटा</strong> — शिव की जटाओं में</div>
+                <div class="name-item"><strong>हिमालयजा</strong> — हिमालय से उत्पन्न</div>
+                <div class="name-item"><strong>पुण्यसलिला</strong> — पुण्य जल वाली</div>
+                <div class="name-item"><strong>शुभावहा</strong> — शुभ लाने वाली</div>
+                <div class="name-item"><strong>सर्वपापप्रणाशिनी</strong> — सभी पापों का नाश करने वाली</div>
+                <div class="name-item"><strong>सर्वरोगहरा</strong> — सभी रोगों को हरने वाली</div>
+                <div class="name-item"><strong>सर्वसिद्धिप्रदा</strong> — सभी सिद्धियाँ देने वाली</div>
+                <div class="name-item"><strong>सर्वमंगलदायिनी</strong> — सभी मंगल देने वाली</div>
+                <div class="name-item"><strong>तीर्थराजी</strong> — तीर्थों की राजा</div>
+                <div class="name-item"><strong>गंगेश्वरी</strong> — गंगा की ईश्वरी</div>
+                <div class="name-item"><strong>सत्यवती</strong> — सत्य वाली</div>
+                <div class="name-item"><strong>कलुषहारिणी</strong> — कलुष (पाप) हरने वाली</div>
+                <div class="name-item"><strong>कामदा</strong> — इच्छाएँ पूर्ण करने वाली</div>
+                <div class="name-item"><strong>कीर्तिदा</strong> — कीर्ति देने वाली</div>
+                <div class="name-item"><strong>विजयादायिनी</strong> — विजय देने वाली</div>
+                <div class="name-item"><strong>मोक्षदा</strong> — मोक्ष देने वाली</div>
+            </div>
+        </div>
+
+        <!-- गंगा के प्रमुख घाट -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🛕</span> गंगा के प्रमुख घाट</h2>
+            <p style="font-size:13px;margin-bottom:8px;">
+                गंगा नदी के प्रमुख घाट — जहाँ स्नान, पूजा, और आरती होती है।
+            </p>
+            <div class="ghat-grid">
+                <div class="ghat-item">
+                    <div class="ghat-name">दशाश्वमेध घाट, वाराणसी</div>
+                    <div class="ghat-loc">📍 उत्तर प्रदेश</div>
+                    <div class="ghat-desc">काशी का सबसे प्रमुख घाट, जहाँ ब्रह्मा जी ने यज्ञ किया था।</div>
+                </div>
+                <div class="ghat-item">
+                    <div class="ghat-name">मणिकर्णिका घाट, वाराणसी</div>
+                    <div class="ghat-loc">📍 उत्तर प्रदेश</div>
+                    <div class="ghat-desc">श्मशान घाट, जहाँ मोक्ष की प्राप्ति मानी जाती है।</div>
+                </div>
+                <div class="ghat-item">
+                    <div class="ghat-name">हर की पौड़ी, हरिद्वार</div>
+                    <div class="ghat-loc">📍 उत्तराखंड</div>
+                    <div class="ghat-desc">हरिद्वार का सबसे पवित्र घाट, जहाँ गंगा पर्वत छोड़कर मैदान में आती हैं।</div>
+                </div>
+                <div class="ghat-item">
+                    <div class="ghat-name">त्रिवेणी घाट, प्रयागराज</div>
+                    <div class="ghat-loc">📍 उत्तर प्रदेश</div>
+                    <div class="ghat-desc">गंगा-यमुना-सरस्वती का संगम, कुंभ मेला का स्थल।</div>
+                </div>
+                <div class="ghat-item">
+                    <div class="ghat-name">गंगोत्री, उत्तराखंड</div>
+                    <div class="ghat-loc">📍 उत्तराखंड</div>
+                    <div class="ghat-desc">गंगा का उद्गम स्थल, चार धाम में से एक।</div>
+                </div>
+                <div class="ghat-item">
+                    <div class="ghat-name">गंगा सागर, पश्चिम बंगाल</div>
+                    <div class="ghat-loc">📍 पश्चिम बंगाल</div>
+                    <div class="ghat-desc">जहाँ गंगा बंगाल की खाड़ी में मिलती है।</div>
+                </div>
+                <div class="ghat-item">
+                    <div class="ghat-name">अस्सी घाट, वाराणसी</div>
+                    <div class="ghat-loc">📍 उत्तर प्रदेश</div>
+                    <div class="ghat-desc">गंगा आरती का प्रमुख स्थल।</div>
+                </div>
+                <div class="ghat-item">
+                    <div class="ghat-name">केशी घाट, वाराणसी</div>
+                    <div class="ghat-loc">📍 उत्तर प्रदेश</div>
+                    <div class="ghat-desc">प्राचीन घाट, जहाँ कई मंदिर हैं।</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- जप विधि -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📿</span> जप विधि</h2>
+            <ul>
+                <li><strong>समय:</strong> प्रातः 5-7 बजे, या गंगा दशहरा, गंगा सप्तमी</li>
+                <li><strong>स्थान:</strong> गंगा तट पर, या पूर्व दिशा में मुख करके</li>
+                <li><strong>माला:</strong> स्फटिक, मोती, या कमल गट्टा माला</li>
+                <li><strong>संख्या:</strong> 108 बार (1 माला), या 1008 बार</li>
+                <li><strong>वस्त्र:</strong> सफेद या हल्के नीले वस्त्र</li>
+                <li><strong>भोग:</strong> दूध, केला, नारियल, सफेद फूल</li>
+                <li><strong>धूप/दीप:</strong> धूप, घी का दीपक, कपूर</li>
+                <li><strong>विशेष:</strong> गंगा स्तोत्र, गंगा अष्टकम्, गंगा आरती</li>
+                <li><strong>अर्घ्य:</strong> गंगा जल से अर्घ्य दें</li>
+                <li><strong>स्नान:</strong> गंगा स्नान से पाप नाश होता है</li>
+            </ul>
+        </div>
+
+        <!-- गंगा स्तोत्र (Accordion) -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📜</span> गंगा स्तोत्र / आरती</h2>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 गंगा आरती (ॐ जय गंगे माता)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:15px;text-align:left;line-height:2;">
+                        ॐ जय गंगे माता, मैया जय गंगे माता ।<br>
+                        जो नर तुमको ध्याता, मनवांछित फल पाता ॥<br>
+                        ॐ जय गंगे माता... ॥<br><br>
+                        चंद्र सी ज्योति तुम्हारी, जल में है उजियारी ।<br>
+                        सुर नर मुनि सब पूजें, शरणागत तुम्हारी ॥<br>
+                        ॐ जय गंगे माता... ॥<br><br>
+                        हिमगिरि से निकली, मैया जी की सुरसरि ।<br>
+                        भागीरथ के तप से, आई धरती पर ॥<br>
+                        ॐ जय गंगे माता... ॥<br><br>
+                        शिव की जटा में बसी, मैया तुम हो जाह्नवी ।<br>
+                        पापी जन तारती, तुम हो मोक्षदायिनी ॥<br>
+                        ॐ जय गंगे माता... ॥<br><br>
+                        स्नान करे जो तेरा, मैया सब पाप हरे ।<br>
+                        तेरे चरणों में आकर, भवसागर तर जाए ॥<br>
+                        ॐ जय गंगे माता... ॥<br><br>
+                        ॐ जय गंगे माता, मैया जय गंगे माता ।<br>
+                        जो नर तुमको ध्याता, मनवांछित फल पाता ॥
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 गंगा स्तोत्र (संपूर्ण)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        देवि सुरेश्वरि भगवति गंगे त्रिभुवनतारिणि तरलतरंगे ।<br>
+                        शंकरमौलिविहारिणि विमले मम मनसि वस गंगे ॥<br><br>
+                        भागीरथी सुखदायिनि मातस्त्वं पापं मे हर हर ।<br>
+                        कल्याणि कमलालये मम मनसि वस गंगे ॥<br><br>
+                        स्नानं करोमि त्वयि गंगे सर्वपापं मे हर हर ।<br>
+                        सर्वतीर्थमयि पुण्ये सर्वपापप्रणाशिनि ॥<br><br>
+                        जय जय गंगे जय जय गंगे, जय जय गंगे माता ।<br>
+                        जय जय गंगे जय जय गंगे, मम पापं हर हर ॥<br><br>
+                        ... (गंगा स्तोत्र — कई श्लोक)
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 गंगा लहरी (संक्षिप्त)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <p style="margin-bottom:8px;font-size:13px;">
+                        <strong>रचयिता:</strong> आदि शंकराचार्य — यह स्तोत्र गंगा की स्तुति में लिखा गया है।
+                    </p>
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        भजे गंगे त्वां भुवनतरिणीं देवि सुरसरितं ।<br>
+                        शरण्ये शर्वाणी शिवमुकुटरत्नोज्ज्वलकराम् ॥<br><br>
+                        सुराराध्यां शुद्धां श्रुतिगणविनिर्धूतकलुषां ।<br>
+                        निराकारां नित्यां निखिलनुतपादाम्बुजयुगाम् ॥<br><br>
+                        ... (गंगा लहरी — 8 श्लोक)
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 गंगा अष्टकम् (संपूर्ण)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        नमो नमामि गंगे त्वं पापं मे हर हर ।<br>
+                        सर्वतीर्थमयि पुण्ये सर्वपापप्रणाशिनि ॥<br><br>
+                        भागीरथ्यसि भगवति भवभयहारिणि ।<br>
+                        मम मनसि वस गंगे मोक्षं देहि सदा ॥<br><br>
+                        शिवजटाजूटस्थिते शुभकरि शुभफलदे ।<br>
+                        मम मनसि वस गंगे मोक्षं देहि सदा ॥<br><br>
+                        हिमगिरिसुते शुभे सुरसरिते जाह्नवि ।<br>
+                        मम मनसि वस गंगे मोक्षं देहि सदा ॥<br><br>
+                        विष्णुपदी देवनदि सुरसरिते शुभदे ।<br>
+                        मम मनसि वस गंगे मोक्षं देहि सदा ॥<br><br>
+                        ... (गंगा अष्टकम् — 8 श्लोक)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- प्रमुख तीर्थ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🛕</span> गंगा तट के प्रमुख तीर्थ</h2>
+            <div class="temple-list">
+                <div class="temple-item">
+                    <strong>गंगोत्री (उत्तराखंड)</strong><br>
+                    गंगा का उद्गम स्थल, चार धाम में से एक। यहाँ गंगा माता का मंदिर है।
+                </div>
+                <div class="temple-item">
+                    <strong>हरिद्वार (उत्तराखंड)</strong><br>
+                    हर की पौड़ी घाट, कुंभ मेला का स्थल, गंगा आरती का प्रमुख स्थान।
+                </div>
+                <div class="temple-item">
+                    <strong>ऋषिकेश (उत्तराखंड)</strong><br>
+                    गंगा तट पर स्थित, योग और तीर्थ का स्थल।
+                </div>
+                <div class="temple-item">
+                    <strong>प्रयागराज (उत्तर प्रदेश)</strong><br>
+                    गंगा-यमुना-सरस्वती का संगम, कुंभ मेला का सबसे बड़ा स्थल।
+                </div>
+                <div class="temple-item">
+                    <strong>वाराणसी (उत्तर प्रदेश)</strong><br>
+                    काशी, गंगा के प्रमुख घाट, गंगा आरती, मोक्ष की नगरी।
+                </div>
+                <div class="temple-item">
+                    <strong>गंगा सागर (पश्चिम बंगाल)</strong><br>
+                    जहाँ गंगा बंगाल की खाड़ी में मिलती है, मकर संक्रांति का स्नान।
+                </div>
+                <div class="temple-item">
+                    <strong>पटना (बिहार)</strong><br>
+                    गंगा तट पर स्थित, सिखों का पटना साहिब।
+                </div>
+                <div class="temple-item">
+                    <strong>कानपुर (उत्तर प्रदेश)</strong><br>
+                    गंगा तट पर स्थित, बिठूर में ब्रह्मवर्त घाट।
+                </div>
+            </div>
+        </div>
+
+        <!-- त्योहार और व्रत -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🎉</span> प्रमुख त्योहार और व्रत</h2>
+            <ul>
+                <li><strong>गंगा दशहरा:</strong> ज्येष्ठ शुक्ल दशमी — गंगा माता का पृथ्वी पर अवतरण। स्नान, पूजा, दान।</li>
+                <li><strong>गंगा सप्तमी:</strong> वैशाख शुक्ल सप्तमी — गंगा माता की पूजा।</li>
+                <li><strong>मकर संक्रांति:</strong> गंगा सागर में स्नान का विशेष महत्व।</li>
+                <li><strong>कार्तिक पूर्णिमा:</strong> गंगा स्नान और दीपदान।</li>
+                <li><strong>सोमवती अमावस्या:</strong> गंगा स्नान का विशेष दिन।</li>
+                <li><strong>कुंभ मेला:</strong> हरिद्वार, प्रयागराज, उज्जैन, नासिक में।</li>
+                <li><strong>अर्ध कुंभ:</strong> हर 6 साल में।</li>
+                <li><strong>गंगा जयंती:</strong> गंगा दशहरा पर ही मनाई जाती है।</li>
+            </ul>
+        </div>
+
+        <!-- भक्ति और लाभ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🙏</span> गंगा माता को क्यों भजें?</h2>
+            <ul>
+                <li><strong>पाप नाश:</strong> गंगा स्नान से सभी पाप दूर होते हैं।</li>
+                <li><strong>मोक्ष:</strong> गंगा में अस्थि विसर्जन से मोक्ष मिलता है।</li>
+                <li><strong>आरोग्य:</strong> गंगा जल से रोग नाश होता है।</li>
+                <li><strong>शुद्धि:</strong> गंगा जल से मन और शरीर शुद्ध होता है।</li>
+                <li><strong>पितृ दोष:</strong> गंगा तट पर पितृ कर्म से पितृ दोष दूर होता है।</li>
+                <li><strong>संतान प्राप्ति:</strong> गंगा पूजा से संतान मिलती है।</li>
+                <li><strong>विवाह:</strong> गंगा पूजा से अच्छा वर मिलता है।</li>
+                <li><strong>कर्ज मुक्ति:</strong> गंगा स्नान से कर्ज मुक्ति होती है।</li>
+            </ul>
+        </div>
+
+        <!-- वर्जित कार्य -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🚫</span> क्या न करें?</h2>
+            <ul>
+                <li>❌ गंगा में <strong>अशुद्ध</strong> वस्तु न डालें</li>
+                <li>❌ गंगा में <strong>कचरा</strong> न फेंकें</li>
+                <li>❌ <strong>बिना स्नान</strong> गंगा पूजा न करें</li>
+                <li>❌ गंगा के जल का <strong>अपमान</strong> न करें</li>
+                <li>❌ गंगा में <strong>शोर</strong> न करें</li>
+                <li>❌ गंगा तट पर <strong>अशुद्ध</strong> कार्य न करें</li>
+                <li>❌ गंगा में <strong>मछली मारना</strong> वर्जित है</li>
+                <li>❌ गंगा जल को <strong>पैरों</strong> से न छुएँ</li>
+            </ul>
+        </div>
+
+        <!-- FAQ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>गंगा माता पृथ्वी पर कैसे आईं?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    राजा सगर के 60,000 पुत्रों को मोक्ष दिलाने के लिए <strong>राजा भगीरथ</strong> ने घोर तपस्या की। ब्रह्मा जी ने गंगा को पृथ्वी पर भेजने का वरदान दिया। लेकिन गंगा का वेग सहन करने के लिए <strong>शिव जी</strong> ने उन्हें अपनी <strong>जटाओं</strong> में धारण किया और सात धाराओं में पृथ्वी पर छोड़ा।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>गंगा दशहरा क्यों मनाया जाता है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>गंगा दशहरा</strong> (ज्येष्ठ शुक्ल दशमी) को गंगा माता पृथ्वी पर अवतरित हुईं। इस दिन <strong>गंगा स्नान, दान, और पूजा</strong> का विशेष महत्व है। कहा जाता है कि इस दिन गंगा स्नान करने से <strong>दस प्रकार के पाप</strong> (दशहरा) नष्ट होते हैं।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>गंगा जल क्यों पवित्र माना जाता है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>गंगा जल</strong> में वैज्ञानिक रूप से <strong>बैक्टीरियोफेज</strong> पाए जाते हैं, जो हानिकारक बैक्टीरिया को नष्ट करते हैं। धार्मिक रूप से गंगा <strong>विष्णु के चरणों से प्रकट</strong> हुई हैं — इसलिए पवित्र हैं। गंगा जल को <strong>अमृत के समान</strong> माना जाता है।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>क्या गंगा स्नान से रोग दूर होते हैं?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    हाँ, <strong>गंगा स्नान</strong> से त्वचा रोग, पाचन रोग, और मानसिक रोग दूर होते हैं। <strong>गंगा जल पीने</strong> से पेट के रोगों में लाभ होता है। <strong>गंगा में डुबकी</strong> लगाने से मन और शरीर दोनों शुद्ध होते हैं।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>गंगा में अस्थि विसर्जन क्यों किया जाता है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>गंगा में अस्थि विसर्जन</strong> से मृत आत्मा को <strong>मोक्ष</strong> मिलता है। कहा जाता है कि गंगा का जल <strong>शिव जी की जटाओं</strong> से निकला है — जो मोक्ष का द्वार है। इसलिए हिंदू परंपरा में गंगा में अस्थि विसर्जन अत्यंत पुण्यकारी माना जाता है।
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Links -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🔗</span> संबंधित लिंक</h2>
+            <div class="related-grid">
+                <a href="../mantra/index.html" class="related-link">📿 सभी मंत्र</a>
+                <a href="../stotra/ganga-stotram.html" class="related-link">📜 गंगा स्तोत्र</a>
+                <a href="../stotra/ganga-lahiri.html" class="related-link">📜 गंगा लहरी</a>
+                <a href="../tyohar/ganga-dashahara.html" class="related-link">🎉 गंगा दशहरा</a>
+                <a href="../katha/ganga-katha.html" class="related-link">📖 गंगा कथाएँ</a>
+                <a href="../quiz/index.html" class="related-link">🎯 गंगा क्विज</a>
+            </div>
+        </div>
+
+        <!-- Share -->
+        <button class="btn-primary" onclick="sharePage()" style="margin-top:10px;">
+            <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+        </button>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय माँ गंगे</p>
+        </footer>
+
+    </main>
+
+    <button class="back-top" id="backTop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-calendar-days"></i><p>पंचांग</p></a>
+        <a href="../quiz/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>क्विज</p></a>
+    </nav>
+
+    <script src="../script.js"></script>
+    <script>
+        function toggleAccordion(el) {
+            const item = el.parentElement;
+            item.classList.toggle('open');
+        }
+
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backTop');
+            if (btn) {
+                if (window.scrollY > 400) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
