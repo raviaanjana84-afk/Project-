@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>कार्तिकेय — संपूर्ण ज्ञान | Sanatan Gyan Kosh</title>
+    <meta name="description" content="कार्तिकेय (मुरुगन, स्कंद) का संपूर्ण ज्ञान — परिचय, कथा, स्वरूप, मंत्र, स्तोत्र, आरती, मंदिर, त्योहार, व्रत और बहुत कुछ।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .devta-hero {
+            text-align: center;
+            padding: 24px 20px;
+            background: linear-gradient(135deg, rgba(255,99,71,0.12), rgba(212,175,55,0.1));
+            border-radius: var(--radius);
+            margin-bottom: 14px;
+            border: 1px solid var(--border);
+        }
+        .devta-hero .icon { font-size: 72px; display: block; line-height: 1; }
+        .devta-hero .name {
+            font-family: var(--font-display);
+            font-size: 30px;
+            color: var(--maroon);
+            margin-top: 6px;
+        }
+        .devta-hero .subtitle {
+            font-size: 13px;
+            color: var(--ink-soft);
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+
+        .devta-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 18px 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .devta-section h2 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--maroon);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 8px;
+        }
+        .devta-section h2 .sec-icon { font-size: 24px; }
+
+        .devta-section p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+            margin-bottom: 8px;
+        }
+        .devta-section p strong { color: var(--maroon); }
+
+        .mantra-box {
+            background: linear-gradient(135deg, rgba(255,99,71,0.08), rgba(212,175,55,0.05));
+            border-left: 4px solid var(--gold);
+            padding: 14px 16px;
+            border-radius: 12px;
+            font-family: var(--font-display);
+            font-size: 18px;
+            text-align: center;
+            margin: 10px 0;
+            line-height: 1.8;
+            color: var(--maroon);
+            font-weight: 600;
+        }
+        .mantra-box small {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 12px;
+            color: var(--ink-soft);
+            font-weight: 400;
+            margin-top: 6px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .info-item {
+            background: var(--bg);
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 13px;
+        }
+        .info-item .lbl {
+            font-size: 10px;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-item .val {
+            font-weight: 600;
+            color: var(--maroon);
+            margin-top: 2px;
+        }
+
+        .devta-section ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 8px;
+        }
+        .devta-section ul li {
+            padding: 8px 0;
+            font-size: 13.5px;
+            line-height: 1.6;
+            border-bottom: 1px dashed var(--border);
+            color: var(--ink-soft);
+        }
+        .devta-section ul li:last-child { border-bottom: none; }
+        .devta-section ul li strong { color: var(--maroon); }
+
+        .accordion-item {
+            border-bottom: 1px solid var(--border);
+        }
+        .accordion-item:last-child { border-bottom: none; }
+        .accordion-head {
+            padding: 12px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--maroon);
+            font-family: var(--font-display);
+        }
+        .accordion-head i {
+            transition: transform 0.3s;
+            color: var(--gold);
+        }
+        .accordion-item.open .accordion-head i {
+            transform: rotate(180deg);
+        }
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            font-size: 13px;
+            color: var(--ink-soft);
+            line-height: 1.8;
+        }
+        .accordion-item.open .accordion-body {
+            max-height: 4000px;
+            padding-bottom: 12px;
+        }
+
+        .temple-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .temple-item {
+            padding: 10px 14px;
+            background: var(--bg);
+            border-radius: 10px;
+            border-left: 3px solid var(--gold);
+            font-size: 13px;
+        }
+        .temple-item strong { color: var(--maroon); }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .related-link {
+            padding: 10px 12px;
+            background: var(--bg);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--maroon);
+            font-weight: 600;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .related-link:hover {
+            background: var(--card-bg);
+            border-color: var(--gold);
+        }
+
+        .names-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .name-item {
+            background: var(--bg);
+            padding: 8px 12px;
+            border-radius: 8px;
+            border-left: 3px solid var(--gold);
+            font-size: 12px;
+        }
+        .name-item strong {
+            color: var(--maroon);
+            font-family: var(--font-display);
+            font-size: 14px;
+        }
+
+        .shakti-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .shakti-item {
+            background: var(--bg);
+            padding: 12px 14px;
+            border-radius: 12px;
+            border-left: 4px solid var(--gold);
+        }
+        .shakti-item .shakti-name {
+            font-weight: 700;
+            color: var(--maroon);
+            font-size: 14px;
+        }
+        .shakti-item .shakti-loc {
+            font-size: 11px;
+            color: var(--ink-light);
+            margin-top: 2px;
+        }
+        .shakti-item .shakti-desc {
+            font-size: 12px;
+            color: var(--ink-soft);
+            margin-top: 4px;
+            line-height: 1.6;
+        }
+
+        .back-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--maroon);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 16px rgba(122,46,46,0.4);
+            z-index: 90;
+        }
+        .back-top.show { display: flex; }
+
+        @media (max-width: 420px) {
+            .devta-hero .icon { font-size: 60px; }
+            .devta-hero .name { font-size: 24px; }
+            .devta-section h2 { font-size: 17px; }
+            .mantra-box { font-size: 16px; }
+            .names-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ देवता ज्ञान</span>
+            <h1>कार्तिकेय</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <!-- Hero -->
+        <div class="devta-hero">
+            <span class="icon">🦚</span>
+            <div class="name">कार्तिकेय</div>
+            <div class="subtitle">स्कंद · मुरुगन · षण्मुख · कुमार · वेल्लन</div>
+        </div>
+
+        <!-- Quick Info -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📋</span> एक नज़र में</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="lbl">अन्य नाम</div>
+                    <div class="val">स्कंद, मुरुगन, षण्मुख, कुमार, वेल्लन, गुह, तारकजित्, स्वामिनाथ</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">माता-पिता</div>
+                    <div class="val">शिव और पार्वती</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">भाई</div>
+                    <div class="val">गणेश</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">पत्नी</div>
+                    <div class="val">देवसेना, वल्ली</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">वाहन</div>
+                    <div class="val">मोर (मयूर)</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">आयुध</div>
+                    <div class="val">वेल (भाला), धनुष-बाण</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय दिन</div>
+                    <div class="val">षष्ठी, मंगलवार, स्कंद षष्ठी</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय भोग</div>
+                    <div class="val">खीर, मिठाई, नारियल, केला</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय रंग</div>
+                    <div class="val">लाल, पीला, हरा</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">निवास</div>
+                    <div class="val">स्कंदलोक, कैलाश, पलानी</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रमुख पर्व</div>
+                    <div class="val">स्कंद षष्ठी, कार्तिक पूर्णिमा, थाईपूसम</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रतीक</div>
+                    <div class="val">वीरता, विजय, सेनापति, युवा शक्ति</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- परिचय -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📖</span> परिचय</h2>
+            <p>
+                <strong>कार्तिकेय</strong> हिंदू धर्म के प्रमुख देवताओं में से एक हैं। वे <strong>शिव और पार्वती के ज्येष्ठ पुत्र</strong> हैं और <strong>गणेश के बड़े भाई</strong> हैं। वे <strong>देवताओं के सेनापति</strong> हैं — जिन्होंने तारकासुर का वध किया था।
+            </p>
+            <p>
+                कार्तिकेय को <strong>स्कंद</strong>, <strong>मुरुगन</strong>, <strong>षण्मुख</strong>, <strong>कुमार</strong>, और <strong>वेल्लन</strong> जैसे कई नामों से जाना जाता है। <strong>दक्षिण भारत</strong> में वे <strong>मुरुगन</strong> के रूप में अत्यंत पूजनीय हैं — विशेषकर तमिलनाडु में।
+            </p>
+            <p>
+                वे <strong>वीरता, विजय, युवा शक्ति, और ज्ञान</strong> के प्रतीक हैं। उनका वाहन <strong>मोर</strong> है और हाथ में <strong>वेल (भाला)</strong> है — जो ज्ञान और शक्ति का प्रतीक है।
+            </p>
+            <p>
+                कार्तिकेय को <strong>युद्ध के देवता</strong> माना जाता है। उन्होंने <strong>तारकासुर</strong> का वध किया, जिसके कारण देवताओं को मुक्ति मिली। इसलिए उन्हें <strong>तारकजित्</strong> (तारकासुर को जीतने वाले) भी कहा जाता है।
+            </p>
+        </div>
+
+        <!-- जन्म कथा -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📜</span> जन्म कथा</h2>
+            <p>
+                पौराणिक कथा के अनुसार, <strong>तारकासुर</strong> नामक राक्षस ने ब्रह्मा जी की घोर तपस्या की और वरदान माँगा कि उसकी मृत्यु <strong>शिव के पुत्र</strong> से ही हो। तब सभी देवताओं ने शिव जी से विवाह की प्रार्थना की।
+            </p>
+            <p>
+                <strong>शिव और पार्वती</strong> का विवाह हुआ। लेकिन शिव जी तपस्या में लीन थे, और उनका तेज अत्यंत प्रचंड था। <strong>अग्नि देव</strong> ने उस तेज को लेकर <strong>गंगा नदी</strong> में डाल दिया।
+            </p>
+            <p>
+                गंगा ने उस तेज को <strong>सरोवर</strong> में छोड़ दिया, जहाँ <strong>छह कृतिकाएँ</strong> (कृत्तिका नक्षत्र की देवियाँ) स्नान कर रही थीं। उन्होंने उस तेज को ग्रहण किया और <strong>छह बालकों</strong> को जन्म दिया।
+            </p>
+            <p>
+                <strong>माता पार्वती</strong> ने उन छह बालकों को गले लगाया और वे <strong>एक हो गए</strong> — छह मुखों वाले बालक के रूप में। इसलिए उन्हें <strong>षण्मुख</strong> (छह मुखों वाले) कहा जाता है।
+            </p>
+            <p>
+                इस प्रकार <strong>कार्तिकेय</strong> का जन्म हुआ। उनका नाम <strong>कार्तिकेय</strong> पड़ा — क्योंकि उनका पालन <strong>कृत्तिकाओं</strong> ने किया। शिव जी ने उन्हें <strong>देवताओं का सेनापति</strong> बनाया और उन्होंने तारकासुर का वध किया।
+            </p>
+        </div>
+
+        <!-- स्वरूप -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🎨</span> स्वरूप</h2>
+            <p>
+                कार्तिकेय का स्वरूप <strong>तेजस्वी, युवा, और वीर</strong> है।
+            </p>
+            <ul>
+                <li><strong>रंग:</strong> स्वर्ण, लाल, तेजस्वी</li>
+                <li><strong>वस्त्र:</strong> लाल या पीले रेशमी वस्त्र</li>
+                <li><strong>मुख:</strong> छह मुख (षण्मुख) — पाँच इंद्रियाँ + मन</li>
+                <li><strong>हाथ:</strong> 6 या 12 हाथ</li>
+                <li><strong>आयुध:</strong> वेल (भाला), धनुष-बाण, तलवार, कमल</li>
+                <li><strong>वाहन:</strong> मोर (मयूर) — जो सर्पों का शत्रु है</li>
+                <li><strong>शक्ति:</strong> वेल (भाला) — ज्ञान की शक्ति का प्रतीक</li>
+                <li><strong>नेत्र:</strong> तेजस्वी, कमल के समान</li>
+                <li><strong>मुद्रा:</strong> अभय मुद्रा और वरद मुद्रा</li>
+                <li><strong>पत्नियाँ:</strong> देवसेना (देवताओं की सेना) और वल्ली</li>
+                <li><strong>मस्तक:</strong> तेजस्वी मुकुट</li>
+                <li><strong>विशेष:</strong> युवा, वीर, और दिव्य</li>
+            </ul>
+        </div>
+
+        <!-- मुख्य मंत्र -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🦚</span> मुख्य मंत्र</h2>
+
+            <p><strong>1. कार्तिकेय मूल मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ सरवणभवाय नमः
+                <small>अर्थ: हे कार्तिकेय, मैं आपको नमस्कार करता हूँ। 'सरवणभव' का अर्थ है — सरोवर से उत्पन्न।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>2. मुरुगन मंत्र (तमिल):</strong></p>
+            <div class="mantra-box">
+                ॐ शरवण भव
+                <small>अर्थ: यह मुरुगन का सबसे प्रसिद्ध मंत्र है — जो सभी संकटों को हरता है।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>3. कार्तिकेय गायत्री मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ तत्पुरुषाय विद्महे ।<br>
+                महासेनाय धीमहि ।<br>
+                तन्नः षण्मुखः प्रचोदयात् ॥
+                <small>अर्थ: हम उस पुरुष का ध्यान करते हैं, महासेन का ध्यान करते हैं, षण्मुख हमें प्रेरित करें।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>4. षण्मुख मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ षण्मुखाय नमः
+                <small>अर्थ: हे छह मुखों वाले कार्तिकेय, मैं आपको नमस्कार करता हूँ।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>5. स्कंद षष्ठी मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ शक्तिहस्ताय नमः
+                <small>अर्थ: हे शक्ति (वेल) धारण करने वाले कार्तिकेय, मैं आपको नमस्कार करता हूँ।</small>
+            </div>
+        </div>
+
+        <!-- कार्तिकेय के 108 नाम (24 प्रमुख) -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🔱</span> कार्तिकेय के 108 नाम (24 प्रमुख)</h2>
+            <p style="font-size:13px;margin-bottom:8px;">
+                कार्तिकेय के 108 नाम हैं — इनका जप करने से वीरता, विजय, और बल बढ़ता है।
+            </p>
+            <div class="names-grid">
+                <div class="name-item"><strong>कार्तिकेय</strong> — कृत्तिकाओं के पुत्र</div>
+                <div class="name-item"><strong>स्कंद</strong> — जो स्कंदित हुआ</div>
+                <div class="name-item"><strong>मुरुगन</strong> — सुंदर मुख वाले</div>
+                <div class="name-item"><strong>षण्मुख</strong> — छह मुखों वाले</div>
+                <div class="name-item"><strong>कुमार</strong> — युवा कुमार</div>
+                <div class="name-item"><strong>गुह</strong> — गुफा में रहने वाले</div>
+                <div class="name-item"><strong>तारकजित्</strong> — तारकासुर को जीतने वाले</div>
+                <div class="name-item"><strong>स्वामिनाथ</strong> — स्वामी</div>
+                <div class="name-item"><strong>वेल्लन</strong> — वेल (भाला) धारण करने वाले</div>
+                <div class="name-item"><strong>शरवणभव</strong> — सरोवर से उत्पन्न</div>
+                <div class="name-item"><strong>महासेन</strong> — बड़ी सेना के स्वामी</div>
+                <div class="name-item"><strong>सेनापति</strong> — सेना के स्वामी</div>
+                <div class="name-item"><strong>अग्निभू</strong> — अग्नि से उत्पन्न</div>
+                <div class="name-item"><strong>गांगेय</strong> — गंगा से संबंधित</div>
+                <div class="name-item"><strong>पार्वतीनंदन</strong> — पार्वती के पुत्र</div>
+                <div class="name-item"><strong>शिवात्मज</strong> — शिव के पुत्र</div>
+                <div class="name-item"><strong>द्वादशभुज</strong> — 12 भुजाओं वाले</div>
+                <div class="name-item"><strong>द्विषड्भुज</strong> — 12 भुजाओं वाले</div>
+                <div class="name-item"><strong>शक्तिधर</strong> — शक्ति धारण करने वाले</div>
+                <div class="name-item"><strong>क्रौंचदारण</strong> — क्रौंच पर्वत को विदीर्ण करने वाले</div>
+                <div class="name-item"><strong>सिद्धसेन</strong> — सिद्ध सेना के स्वामी</div>
+                <div class="name-item"><strong>सर्वविद्याविशारद</strong> — सभी विद्याओं में निपुण</div>
+                <div class="name-item"><strong>मयूरवाहन</strong> — मोर पर सवार</div>
+                <div class="name-item"><strong>वल्लीप्रिय</strong> — वल्ली के प्रिय</div>
+            </div>
+        </div>
+
+        <!-- प्रमुख मंदिर (अरुपडै वीडु) -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🛕</span> प्रमुख मंदिर (अरुपडै वीडु)</h2>
+            <p style="font-size:13px;margin-bottom:8px;">
+                कार्तिकेय के <strong>6 प्रमुख मंदिर</strong> (अरुपडै वीडु) तमिलनाडु में हैं — जो उनके जीवन की घटनाओं से जुड़े हैं।
+            </p>
+            <div class="shakti-grid">
+                <div class="shakti-item">
+                    <div class="shakti-name">1. तिरुपरमकुनरम</div>
+                    <div class="shakti-loc">📍 तिरुपरमकुनरम, मदुरै</div>
+                    <div class="shakti-desc">जहाँ कार्तिकेय ने अपने पिता शिव से ओम का उपदेश प्राप्त किया।</div>
+                </div>
+                <div class="shakti-item">
+                    <div class="shakti-name">2. तिरुचेंदूर</div>
+                    <div class="shakti-loc">📍 तिरुचेंदूर, तमिलनाडु</div>
+                    <div class="shakti-desc">जहाँ कार्तिकेय ने सूर्य देव को पराजित किया और इंद्र ने उन्हें मुकुट दिया।</div>
+                </div>
+                <div class="shakti-item">
+                    <div class="shakti-name">3. पलानी</div>
+                    <div class="shakti-loc">📍 पलानी, दिंडीगुल जिला</div>
+                    <div class="shakti-desc">जहाँ कार्तिकेय ने तपस्या की और मुरुगन रूप में प्रकट हुए। यह उनका सबसे प्रसिद्ध मंदिर है।</div>
+                </div>
+                <div class="shakti-item">
+                    <div class="shakti-name">4. स्वामिमलै</div>
+                    <div class="shakti-loc">📍 स्वामिमलै, कुंभकोणम</div>
+                    <div class="shakti-desc">जहाँ कार्तिकेय अपने माता-पिता से मिले और ओम का उपदेश दिया।</div>
+                </div>
+                <div class="shakti-item">
+                    <div class="shakti-name">5. सोलामलै</div>
+                    <div class="shakti-loc">📍 सोलामलै, मदुरै</div>
+                    <div class="shakti-desc">जहाँ कार्तिकेय ने पार्वती का क्रोध शांत किया।</div>
+                </div>
+                <div class="shakti-item">
+                    <div class="shakti-name">6. तिरुताणी</div>
+                    <div class="shakti-loc">📍 तिरुताणी, चेंगलपट्टू</div>
+                    <div class="shakti-desc">जहाँ कार्तिकेय ने अपने मामा शिव के साथ विवाह किया (वल्ली से)।</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- अन्य प्रमुख मंदिर -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🏛️</span> अन्य प्रमुख मंदिर</h2>
+            <div class="temple-list">
+                <div class="temple-item">
+                    <strong>मुरुगन मंदिर, पलानी (तमिलनाडु)</strong><br>
+                    कार्तिकेय का सबसे प्रसिद्ध मंदिर, पहाड़ी पर स्थित। 700 सीढ़ियाँ चढ़कर दर्शन होते हैं।
+                </div>
+                <div class="temple-item">
+                    <strong>तिरुचेंदूर मंदिर (तमिलनाडु)</strong><br>
+                    समुद्र तट पर स्थित, कार्तिकेय का प्रसिद्ध मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>मलै मंदिर, स्वामिमलै (तमिलनाडु)</strong><br>
+                    कावेरी नदी के पास स्थित प्राचीन मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>कुमारकोट्टम मंदिर (तमिलनाडु)</strong><br>
+                    कन्याकुमारी के पास स्थित प्राचीन मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>बट्टिकोट्टई मंदिर (श्रीलंका)</strong><br>
+                    श्रीलंका में स्थित कार्तिकेय मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>पज़्हमुदिर्चोलै मंदिर (तमिलनाडु)</strong><br>
+                    प्राचीन मुरुगन मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>कंदस्वामी मंदिर (मलेशिया)</strong><br>
+                    मलेशिया में स्थित कार्तिकेय मंदिर, बटू गुफाओं में।
+                </div>
+                <div class="temple-item">
+                    <strong>कार्तिकेय मंदिर, पुष्कर (राजस्थान)</strong><br>
+                    पुष्कर में स्थित कार्तिकेय मंदिर।
+                </div>
+            </div>
+        </div>
+
+        <!-- त्योहार और व्रत -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🎉</span> प्रमुख त्योहार और व्रत</h2>
+            <ul>
+                <li><strong>स्कंद षष्ठी:</strong> कार्तिक शुक्ल षष्ठी — कार्तिकेय का जन्मोत्सव, व्रत और पूजा।</li>
+                <li><strong>थाईपूसम:</strong> तमिल मास (जनवरी-फरवरी) — मुरुगन का सबसे बड़ा पर्व, तमिलनाडु में।</li>
+                <li><strong>कार्तिक पूर्णिमा:</strong> कार्तिक मास की पूर्णिमा — कार्तिकेय और शिव की पूजा।</li>
+                <li><strong>षष्ठी व्रत:</strong> हर माह की षष्ठी — कार्तिकेय की पूजा।</li>
+                <li><strong>मंगलवार व्रत:</strong> हर मंगलवार — कार्तिकेय का प्रिय दिन।</li>
+                <li><strong>वैकासी विशाकम:</strong> वैशाख मास — मुरुगन का विशेष पर्व।</li>
+                <li><strong>कंद षष्ठी:</strong> ऐप्पसी (तमिल मास) — सूर्य और मुरुगन की पूजा।</li>
+                <li><strong>क्रौंच वध:</strong> कार्तिकेय द्वारा क्रौंच पर्वत विदीर्ण करने का पर्व।</li>
+            </ul>
+        </div>
+
+        <!-- भक्ति और लाभ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🙏</span> कार्तिकेय को क्यों भजें?</h2>
+            <ul>
+                <li><strong>वीरता और साहस:</strong> कार्तिकेय की कृपा से आत्मविश्वास और साहस बढ़ता है।</li>
+                <li><strong>विजय:</strong> शत्रुओं और बाधाओं पर विजय मिलती है।</li>
+                <li><strong>रोग नाश:</strong> कार्तिकेय पूजा से स्वास्थ्य लाभ होता है।</li>
+                <li><strong>संतान प्राप्ति:</strong> संतानहीन दंपत्ति को कार्तिकेय की कृपा से संतान मिलती है।</li>
+                <li><strong>विवाह:</strong> अविवाहित लड़कियों के लिए अच्छा वर मिलता है।</li>
+                <li><strong>करियर:</strong> नेतृत्व क्षमता और करियर में उन्नति होती है।</li>
+                <li><strong>भय मुक्ति:</strong> सभी प्रकार के भय दूर होते हैं।</li>
+                <li><strong>मोक्ष:</strong> कार्तिकेय की भक्ति से आत्मज्ञान और मोक्ष मिलता है।</li>
+            </ul>
+        </div>
+
+        <!-- वर्जित कार्य -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🚫</span> क्या न करें?</h2>
+            <ul>
+                <li>❌ कार्तिकेय की मूर्ति को <strong>अशुद्ध हाथों</strong> से न छुएँ</li>
+                <li>❌ <strong>बिना स्नान</strong> कार्तिकेय पूजा न करें</li>
+                <li>❌ कार्तिकेय को <strong>तुलसी</strong> न चढ़ाएँ (मोरपंख, लाल फूल चढ़ाएँ)</li>
+                <li>❌ <strong>बासी</strong> या <strong>अशुद्ध</strong> भोग न चढ़ाएँ</li>
+                <li>❌ कार्तिकेय के सामने <strong>झूठ</strong> न बोलें</li>
+                <li>❌ <strong>षष्ठी</strong> को <strong>चावल</strong> न खाएँ (कुछ परंपराओं में)</li>
+                <li>❌ <strong>मोरपंख</strong> का अनादर न करें</li>
+                <li>❌ कार्तिकेय के सामने <strong>शोर</strong> न करें</li>
+            </ul>
+        </div>
+
+        <!-- FAQ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>कार्तिकेय के छह मुख क्यों हैं?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>छह कृतिकाओं</strong> (कृत्तिका नक्षत्र की देवियों) ने शिव जी के तेज से छह बालकों को जन्म दिया। माता पार्वती ने उन सभी को गले लगाया और वे <strong>एक हो गए</strong> — छह मुखों वाले बालक के रूप में। छह मुख <strong>पाँच इंद्रियों और मन</strong> के प्रतीक हैं — जो पूर्ण ज्ञान और नियंत्रण को दर्शाते हैं।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>कार्तिकेय का वाहन मोर क्यों है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>मोर</strong> को <strong>सर्पों का शत्रु</strong> माना जाता है और <strong>अहंकार का प्रतीक</strong> भी। कार्तिकेय ने तारकासुर का वध किया था, जो <strong>सर्प रूप</strong> में था। मोर उस पर विजय का प्रतीक है। इसके अलावा, मोर <strong>सुंदरता, वीरता, और राजसी</strong> गुणों का प्रतीक है — जो कार्तिकेय के गुण हैं।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>स्कंद षष्ठी का क्या महत्व है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>स्कंद षष्ठी</strong> कार्तिकेय का जन्मोत्सव है — जो <strong>कार्तिक शुक्ल षष्ठी</strong> को मनाया जाता है। इस दिन <strong>व्रत, पूजा, और कथा श्रवण</strong> का विधान है। यह <strong>संतान प्राप्ति, आरोग्य, और विजय</strong> के लिए विशेष रूप से पूजा जाता है।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>कार्तिकेय और मुरुगन में क्या अंतर है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>कार्तिकेय और मुरुगन एक ही देवता हैं</strong> — बस नाम अलग-अलग क्षेत्रों में हैं। <strong>उत्तर भारत</strong> में उन्हें <strong>कार्तिकेय, स्कंद, कुमार</strong> कहा जाता है। <strong>दक्षिण भारत</strong> (विशेषकर तमिलनाडु) में उन्हें <strong>मुरुगन</strong> कहा जाता है। तमिल में उन्हें <strong>वेल्लन</strong> और <strong>तमिल कडवुल</strong> (तमिल देवता) भी कहा जाता है।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>कार्तिकेय की पूजा में मोरपंख का क्या महत्व है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>मोरपंख</strong> कार्तिकेय का प्रिय है — क्योंकि उनका वाहन मोर है। मोरपंख चढ़ाने से <strong>शत्रु नाश, रोग नाश, और बाधा नाश</strong> होता है। मोरपंख को <strong>शुभ और मंगल</strong> का प्रतीक माना जाता है। घर में मोरपंख रखने से सकारात्मक ऊर्जा आती है।
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Links -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🔗</span> संबंधित लिंक</h2>
+            <div class="related-grid">
+                <a href="../mantra/index.html" class="related-link">📿 सभी मंत्र</a>
+                <a href="../stotra/skanda-shashti.html" class="related-link">📜 स्कंद षष्ठी कथा</a>
+                <a href="../stotra/kartikeya-stotram.html" class="related-link">📜 कार्तिकेय स्तोत्र</a>
+                <a href="../tyohar/skanda-shashti.html" class="related-link">🎉 स्कंद षष्ठी</a>
+                <a href="../katha/kartikeya-katha.html" class="related-link">📖 कार्तिकेय कथाएँ</a>
+                <a href="../quiz/index.html" class="related-link">🎯 कार्तिकेय क्विज</a>
+            </div>
+        </div>
+
+        <!-- Share -->
+        <button class="btn-primary" onclick="sharePage()" style="margin-top:10px;">
+            <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+        </button>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय कार्तिकेय</p>
+        </footer>
+
+    </main>
+
+    <button class="back-top" id="backTop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-calendar-days"></i><p>पंचांग</p></a>
+        <a href="../quiz/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>क्विज</p></a>
+    </nav>
+
+    <script src="../script.js"></script>
+    <script>
+        function toggleAccordion(el) {
+            const item = el.parentElement;
+            item.classList.toggle('open');
+        }
+
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backTop');
+            if (btn) {
+                if (window.scrollY > 400) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
