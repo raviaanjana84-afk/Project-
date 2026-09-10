@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>कथा कोश — संपूर्ण ज्ञान | Sanatan Gyan Kosh</title>
+    <meta name="description" content="50+ हिंदू धार्मिक कथाओं का संपूर्ण संग्रह — रामायण, महाभारत, शिव पुराण, विष्णु पुराण, भागवत, देवी कथाएँ और बहुत कुछ।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .search-wrap {
+            background: var(--card-bg);
+            border-radius: var(--radius-sm);
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 12px;
+            border: 1px solid var(--border);
+        }
+        .search-wrap i { color: var(--gold); font-size: 18px; }
+        .search-wrap input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            background: transparent;
+            font-family: var(--font-body);
+            color: var(--ink);
+        }
+        .search-wrap input::placeholder { color: var(--ink-light); }
+
+        .cat-tabs {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 4px 0 14px;
+            scrollbar-width: none;
+        }
+        .cat-tabs::-webkit-scrollbar { display: none; }
+        .cat-tab {
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1.5px solid var(--border);
+            background: var(--card-bg);
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: var(--transition);
+            color: var(--ink-soft);
+            font-family: var(--font-body);
+        }
+        .cat-tab.active {
+            background: var(--maroon);
+            color: white;
+            border-color: var(--maroon);
+        }
+        .cat-tab:hover:not(.active) {
+            border-color: var(--gold);
+            color: var(--maroon);
+        }
+
+        .katha-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .katha-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 18px 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--gold);
+            transition: var(--transition);
+        }
+        .katha-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+            border-left-color: var(--maroon);
+        }
+        .katha-card .k-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            gap: 10px;
+        }
+        .katha-card .k-title {
+            font-family: var(--font-display);
+            font-size: 18px;
+            color: var(--maroon);
+            font-weight: 700;
+            flex: 1;
+        }
+        .katha-card .k-title .k-en {
+            font-family: var(--font-body);
+            font-size: 10px;
+            font-weight: 400;
+            color: var(--ink-light);
+            display: block;
+            margin-top: 2px;
+        }
+        .katha-card .k-badge {
+            font-size: 9px;
+            background: var(--maroon);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .katha-card .k-badge.gold { background: var(--gold); color: var(--maroon); }
+        .katha-card .k-badge.green { background: #27ae60; }
+        .katha-card .k-badge.blue { background: #2980b9; }
+        .katha-card .k-badge.purple { background: #8e44ad; }
+
+        .katha-card .k-desc {
+            background: #f8f4f0;
+            border-radius: 10px;
+            padding: 10px 12px;
+            font-size: 13px;
+            color: var(--ink-soft);
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+        .katha-card .k-desc strong { color: var(--maroon); }
+
+        .katha-card .k-shiksha {
+            background: #eef7ee;
+            border-radius: 10px;
+            padding: 10px 12px;
+            font-size: 13px;
+            color: var(--ink-soft);
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+        .katha-card .k-shiksha strong { color: #27ae60; }
+
+        .katha-card .k-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed var(--border);
+        }
+        .katha-card .k-meta span {
+            font-size: 10px;
+            background: var(--bg);
+            padding: 4px 10px;
+            border-radius: 10px;
+            color: var(--ink-soft);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .katha-card .k-meta span i {
+            color: var(--gold);
+            font-size: 10px;
+        }
+
+        .katha-details {
+            margin-top: 8px;
+        }
+        .katha-details summary {
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--maroon);
+            padding: 6px 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .katha-details summary::-webkit-details-marker { display: none; }
+        .katha-details summary::before {
+            content: '➕';
+            font-size: 11px;
+            transition: transform 0.3s;
+        }
+        .katha-details[open] summary::before {
+            content: '➖';
+        }
+        .katha-details .d-body {
+            padding: 10px 0;
+            font-size: 12.5px;
+            color: var(--ink-soft);
+            line-height: 1.8;
+            background: var(--bg);
+            padding: 12px;
+            border-radius: 10px;
+            margin-top: 6px;
+        }
+
+        .no-result {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--ink-light);
+            font-size: 14px;
+        }
+        .no-result i {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--border);
+        }
+
+        @media (max-width: 420px) {
+            .katha-card { padding: 14px 12px; }
+            .katha-card .k-title { font-size: 16px; }
+            .katha-card .k-desc,
+            .katha-card .k-shiksha { font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="../index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ सनातन ज्ञान कोश</span>
+            <h1>कथा कोश</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <div class="hero-banner">
+            <h2>📖 कथा कोश</h2>
+            <p><strong>50+ हिंदू धार्मिक कथाएँ</strong> — रामायण, महाभारत, पुराण, और लोक कथाएँ।</p>
+        </div>
+
+        <div class="search-wrap">
+            <i class="fa-solid fa-search"></i>
+            <input type="text" id="kathaSearch" placeholder="कथा खोजें... (जैसे: राम, शिव, हनुमान)" oninput="filterKathas()" />
+        </div>
+
+        <div class="cat-tabs" id="catTabs">
+            <button class="cat-tab active" data-cat="all">✨ सभी</button>
+            <button class="cat-tab" data-cat="ramayan">🏹 रामायण</button>
+            <button class="cat-tab" data-cat="mahabharat">⚔️ महाभारत</button>
+            <button class="cat-tab" data-cat="shiv">🔱 शिव</button>
+            <button class="cat-tab" data-cat="vishnu">🕉️ विष्णु</button>
+            <button class="cat-tab" data-cat="devi">🌺 देवी</button>
+            <button class="cat-tab" data-cat="ganesh">🐘 गणेश</button>
+            <button class="cat-tab" data-cat="hanuman">🐒 हनुमान</button>
+            <button class="cat-tab" data-cat="sant">💫 संत</button>
+            <button class="cat-tab" data-cat="lok">📚 लोक</button>
+        </div>
+
+        <div class="katha-grid" id="kathaGrid"></div>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय श्री राम</p>
+        </footer>
+
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="../devta/index.html" class="nav-link"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-book"></i><p>कथा</p></a>
+        <a href="../quiz/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>क्विज</p></a>
+    </nav>
+
+    <script>
+        // ============================================================
+        //  KATHA DATABASE — 50+ Stories (Deep)
+        // ============================================================
+
+        const kathas = [
+            // ========== रामायण ==========
+            {
+                title: 'राम जन्म कथा',
+                en: 'Ram Janm Katha',
+                desc: 'अयोध्या के राजा दशरथ ने पुत्रकामेष्टि यज्ञ किया। चैत्र शुक्ल नवमी को कौशल्या ने राम को जन्म दिया।',
+                shiksha: 'धर्म, सत्य, और मर्यादा का पालन।',
+                category: 'ramayan',
+                god: 'राम',
+                source: 'रामायण (बाल कांड)',
+                extra: 'राम जी विष्णु के सातवें अवतार हैं — मर्यादा पुरुषोत्तम।'
+            },
+            {
+                title: 'सीता स्वयंवर कथा',
+                en: 'Sita Swayamvar',
+                desc: 'जनक जी ने सीता के स्वयंवर में शिव धनुष तोड़ने की शर्त रखी। राम जी ने धनुष तोड़कर सीता से विवाह किया।',
+                shiksha: 'शक्ति और भक्ति का संगम।',
+                category: 'ramayan',
+                god: 'राम-सीता',
+                source: 'रामायण (बाल कांड)',
+                extra: 'यह विवाह विवाह पंचमी के रूप में मनाया जाता है।'
+            },
+            {
+                title: 'कैकेयी के वरदान',
+                en: 'Kaikeyi ke Vardaan',
+                desc: 'कैकेयी ने दशरथ से भरत को राज्य और राम को 14 वर्ष का वनवास माँगा। राम ने पिता के वचन का पालन किया।',
+                shiksha: 'पिता के वचन का पालन, मर्यादा की रक्षा।',
+                category: 'ramayan',
+                god: 'राम',
+                source: 'रामायण (अयोध्या कांड)',
+                extra: 'राम जी ने वनवास स्वीकार करके मर्यादा की रक्षा की।'
+            },
+            {
+                title: 'शबरी के बेर',
+                en: 'Shabri ke Ber',
+                desc: 'शबरी ने राम को जूठे बेर खिलाए। राम ने प्रेम से स्वीकार किए।',
+                shiksha: 'भक्ति में जाति-पाति नहीं, प्रेम मायने रखता है।',
+                category: 'ramayan',
+                god: 'राम',
+                source: 'रामायण (अरण्य कांड)',
+                extra: 'शबरी की भक्ति राम जी को अत्यंत प्रिय थी।'
+            },
+            {
+                title: 'सुग्रीव मित्रता',
+                en: 'Sugriva Mitrata',
+                desc: 'हनुमान जी ने राम और सुग्रीव की मित्रता कराई। राम ने बाली का वध किया और सुग्रीव को राज्य दिया।',
+                shiksha: 'मित्रता और धर्म का महत्व।',
+                category: 'ramayan',
+                god: 'राम-हनुमान',
+                source: 'रामायण (किष्किंधा कांड)',
+                extra: 'यह मित्रता रामायण की सबसे महत्वपूर्ण घटनाओं में से एक है।'
+            },
+            {
+                title: 'लंका दहन कथा',
+                en: 'Lanka Dahan',
+                desc: 'हनुमान जी ने अशोक वाटिका उजाड़ी। रावण ने उनकी पूँछ में आग लगाई। हनुमान जी ने पूरी लंका जला दी।',
+                shiksha: 'बल, बुद्धि, और भक्ति।',
+                category: 'ramayan',
+                god: 'हनुमान',
+                source: 'रामायण (सुंदरकांड)',
+                extra: 'यह सुंदरकांड की सबसे प्रसिद्ध कथा है।'
+            },
+            {
+                title: 'संजीवनी बूटी',
+                en: 'Sanjivani Booti',
+                desc: 'लक्ष्मण मूर्छित हुए। हनुमान जी संजीवनी बूटी लाने के लिए पूरा द्रोणागिरि पर्वत उठा लाए।',
+                shiksha: 'भक्ति और सेवा का सर्वोच्च उदाहरण।',
+                category: 'ramayan',
+                god: 'हनुमान',
+                source: 'रामायण (लंका कांड)',
+                extra: 'हनुमान जी की भक्ति और समर्पण का प्रतीक।'
+            },
+            {
+                title: 'रावण वध कथा',
+                en: 'Ravan Vadh',
+                desc: 'राम जी ने ब्रह्मास्त्र से रावण का वध किया। विभीषण को लंका का राजा बनाया।',
+                shiksha: 'बुराई पर अच्छाई की जीत।',
+                category: 'ramayan',
+                god: 'राम',
+                source: 'रामायण (लंका कांड)',
+                extra: 'यह दशहरा के रूप में मनाया जाता है।'
+            },
+            {
+                title: 'राम राज्याभिषेक',
+                en: 'Ram Rajyabhishek',
+                desc: '14 वर्ष वनवास के बाद राम अयोध्या लौटे। उनका राज्याभिषेक हुआ।',
+                shiksha: 'धर्म और न्याय का राज्य।',
+                category: 'ramayan',
+                god: 'राम',
+                source: 'रामायण (उत्तर कांड)',
+                extra: 'यह दीपावली के रूप में मनाया जाता है।'
+            },
+            {
+                title: 'लव-कुश कथा',
+                en: 'Lav-Kush Katha',
+                desc: 'सीता माता ने वन में लव और कुश को जन्म दिया। उन्होंने राम जी के अश्वमेध यज्ञ का घोड़ा पकड़ा।',
+                shiksha: 'वीरता और धर्म।',
+                category: 'ramayan',
+                god: 'राम-सीता',
+                source: 'रामायण (उत्तर कांड)',
+                extra: 'लव-कुश ने रामायण का गान किया था।'
+            },
+
+            // ========== महाभारत ==========
+            {
+                title: 'पांडवों का जन्म',
+                en: 'Pandavon ka Janm',
+                desc: 'कुंती ने देवताओं का आह्वान करके युधिष्ठिर, भीम, और अर्जुन को जन्म दिया। माद्री ने नकुल-सहदेव को।',
+                shiksha: 'देवताओं की कृपा और भाग्य।',
+                category: 'mahabharat',
+                god: 'पांडव',
+                source: 'महाभारत (आदि पर्व)',
+                extra: 'पांडव धर्म, वायु, इंद्र, और अश्विनी कुमारों के अंश थे।'
+            },
+            {
+                title: 'लाक्षागृह कथा',
+                en: 'Lakshagriha',
+                desc: 'दुर्योधन ने पांडवों को जलाने के लिए लाक्षागृह बनवाया। विदुर ने पांडवों को बचाया।',
+                shiksha: 'बुद्धि और सतर्कता।',
+                category: 'mahabharat',
+                god: 'पांडव',
+                source: 'महाभारत (आदि पर्व)',
+                extra: 'यह दुर्योधन की पहली चाल थी।'
+            },
+            {
+                title: 'द्रौपदी स्वयंवर',
+                en: 'Draupadi Swayamvar',
+                desc: 'द्रौपदी के स्वयंवर में अर्जुन ने मछली की आँख पर बाण मारा। द्रौपदी ने अर्जुन को वरमाला पहनाई।',
+                shiksha: 'कौशल और धैर्य।',
+                category: 'mahabharat',
+                god: 'अर्जुन-द्रौपदी',
+                source: 'महाभारत (आदि पर्व)',
+                extra: 'द्रौपदी पाँचों पांडवों की पत्नी बनी।'
+            },
+            {
+                title: 'द्रौपदी चीर हरण',
+                en: 'Draupadi Cheer Haran',
+                desc: 'दुर्योधन के दरबार में दुःशासन ने द्रौपदी का चीर हरण किया। कृष्ण ने द्रौपदी की रक्षा की।',
+                shiksha: 'अधर्म का विरोध, भक्ति की शक्ति।',
+                category: 'mahabharat',
+                god: 'कृष्ण-द्रौपदी',
+                source: 'महाभारत (सभा पर्व)',
+                extra: 'यह महाभारत युद्ध का मुख्य कारण बना।'
+            },
+            {
+                title: 'कृष्ण-अर्जुन संवाद',
+                en: 'Krishna-Arjun Samvad',
+                desc: 'कुरुक्षेत्र में कृष्ण ने अर्जुन को भगवद् गीता का उपदेश दिया।',
+                shiksha: 'कर्म, भक्ति, ज्ञान का मार्ग।',
+                category: 'mahabharat',
+                god: 'कृष्ण-अर्जुन',
+                source: 'महाभारत (भीष्म पर्व)',
+                extra: 'यह भगवद् गीता के रूप में प्रसिद्ध है।'
+            },
+            {
+                title: 'भीष्म पितामह की प्रतिज्ञा',
+                en: 'Bhishma Pratigya',
+                desc: 'भीष्म ने अपने पिता शांतनु की खुशी के लिए आजीवन ब्रह्मचर्य और राज्य त्याग की प्रतिज्ञा की।',
+                shiksha: 'त्याग और कर्तव्य।',
+                category: 'mahabharat',
+                god: 'भीष्म',
+                source: 'महाभारत (आदि पर्व)',
+                extra: 'भीष्म को इच्छा-मृत्यु का वरदान था।'
+            },
+            {
+                title: 'कर्ण की कथा',
+                en: 'Karna Ki Katha',
+                desc: 'कर्ण कुंती के पुत्र थे, लेकिन सूत पुत्र के रूप में पले। वे दानवीर और महान योद्धा थे।',
+                shiksha: 'दान, वीरता, और दुखद भाग्य।',
+                category: 'mahabharat',
+                god: 'कर्ण',
+                source: 'महाभारत (आदि पर्व)',
+                extra: 'कर्ण को सूर्य देव का पुत्र माना जाता है।'
+            },
+            {
+                title: 'अभिमन्यु चक्रव्यूह',
+                en: 'Abhimanyu Chakravyuh',
+                desc: 'अभिमन्यु ने 16 वर्ष की आयु में चक्रव्यूह तोड़ा, लेकिन अंदर फँस गए और वीरगति प्राप्त की।',
+                shiksha: 'वीरता और बलिदान।',
+                category: 'mahabharat',
+                god: 'अभिमन्यु',
+                source: 'महाभारत (द्रोण पर्व)',
+                extra: 'अभिमन्यु अर्जुन-सुभद्रा के पुत्र थे।'
+            },
+            {
+                title: 'युधिष्ठिर का यक्ष प्रश्न',
+                en: 'Yaksha Prashna',
+                desc: 'अज्ञातवास में युधिष्ठिर ने यक्ष के प्रश्नों का सही उत्तर दिया और अपने भाइयों को जीवित किया।',
+                shiksha: 'ज्ञान, धर्म, और बुद्धि।',
+                category: 'mahabharat',
+                god: 'युधिष्ठिर',
+                source: 'महाभारत (आरण्यक पर्व)',
+                extra: 'यक्ष धर्मराज यम थे।'
+            },
+            {
+                title: 'गांधारी का श्राप',
+                en: 'Gandhari ka Shraap',
+                desc: 'पुत्रों की मृत्यु से दुखी गांधारी ने कृष्ण को 36 वर्ष बाद यादव वंश के नाश का श्राप दिया।',
+                shiksha: 'कर्म का फल और श्राप की शक्ति।',
+                category: 'mahabharat',
+                god: 'कृष्ण-गांधारी',
+                source: 'महाभारत (स्त्री पर्व)',
+                extra: 'यह श्राप द्वारका के नाश का कारण बना।'
+            },
+
+            // ========== शिव पुराण ==========
+            {
+                title: 'समुद्र मंथन कथा',
+                en: 'Samudra Manthan',
+                desc: 'देवताओं और असुरों ने मिलकर समुद्र मंथन किया। 14 रत्न निकले — लक्ष्मी, अमृत, कालकूट विष आदि।',
+                shiksha: 'सहयोग, धैर्य, और भाग्य।',
+                category: 'shiv',
+                god: 'शिव-विष्णु',
+                source: 'शिव पुराण',
+                extra: 'शिव जी ने विष पीकर संसार की रक्षा की — नीलकंठ।'
+            },
+            {
+                title: 'शिव-पार्वती विवाह',
+                en: 'Shiv-Parvati Vivah',
+                desc: 'पार्वती ने घोर तपस्या की और शिव जी से विवाह किया। यह विवाह महाशिवरात्रि पर हुआ।',
+                shiksha: 'तपस्या, भक्ति, और प्रेम।',
+                category: 'shiv',
+                god: 'शिव-पार्वती',
+                source: 'शिव पुराण',
+                extra: 'पार्वती ने कठोर तपस्या से शिव को प्रसन्न किया।'
+            },
+            {
+                title: 'कालकूट विष',
+                en: 'Kalakut Vish',
+                desc: 'समुद्र मंथन से हलाहल विष निकला। शिव जी ने उसे पी लिया और गले में रोक लिया।',
+                shiksha: 'त्याग और रक्षा।',
+                category: 'shiv',
+                god: 'शिव',
+                source: 'शिव पुराण',
+                extra: 'इसलिए शिव जी को नीलकंठ कहा जाता है।'
+            },
+            {
+                title: 'दक्ष यज्ञ विनाश',
+                en: 'Daksh Yagya Vinash',
+                desc: 'दक्ष ने शिव का अपमान किया। सती ने यज्ञ कुंड में आत्मदाह किया। शिव ने वीरभद्र से यज्ञ नष्ट कराया।',
+                shiksha: 'अपमान का फल, प्रेम की शक्ति।',
+                category: 'shiv',
+                god: 'शिव-सती',
+                source: 'शिव पुराण',
+                extra: 'यह 51 शक्तिपीठों का कारण बना।'
+            },
+            {
+                title: 'गणेश जन्म कथा',
+                en: 'Ganesh Janm Katha',
+                desc: 'पार्वती ने उबटन से गणेश को बनाया। शिव ने सिर काट दिया, फिर हाथी का सिर जोड़ा।',
+                shiksha: 'माता-पिता की सेवा, विघ्नहर्ता।',
+                category: 'ganesh',
+                god: 'गणेश',
+                source: 'शिव पुराण',
+                extra: 'गणेश जी सभी देवताओं के अग्रपूज्य बने।'
+            },
+            {
+                title: 'कार्तिकेय जन्म कथा',
+                en: 'Kartikeya Janm Katha',
+                desc: 'शिव के तेज से छह बालक जन्मे। पार्वती ने उन्हें गले लगाया और वे षण्मुख हो गए।',
+                shiksha: 'शक्ति और वीरता।',
+                category: 'shiv',
+                god: 'कार्तिकेय',
+                source: 'शिव पुराण',
+                extra: 'कार्तिकेय ने तारकासुर का वध किया।'
+            },
+            {
+                title: 'शिव तांडव स्तोत्र',
+                en: 'Shiv Tandav Stotram',
+                desc: 'रावण ने शिव जी की स्तुति में तांडव स्तोत्र की रचना की।',
+                shiksha: 'भक्ति और स्तुति की शक्ति।',
+                category: 'shiv',
+                god: 'शिव',
+                source: 'शिव पुराण',
+                extra: 'रावण शिव जी का परम भक्त था।'
+            },
+            {
+                title: 'भैरव प्राकट्य',
+                en: 'Bhairav Prakaty',
+                desc: 'ब्रह्मा के झूठ से क्रोधित शिव ने भैरव को प्रकट किया। भैरव ने ब्रह्मा का पाँचवाँ सिर काटा।',
+                shiksha: 'सत्य और झूठ का फल।',
+                category: 'shiv',
+                god: 'भैरव',
+                source: 'शिव पुराण',
+                extra: 'भैरव काशी के कोतवाल बने।'
+            },
+
+            // ========== विष्णु पुराण ==========
+            {
+                title: 'वामन अवतार',
+                en: 'Vaman Avatar',
+                desc: 'विष्णु ने वामन रूप में राजा बलि से तीन पग भूमि माँगी और तीनों लोक नाप लिए।',
+                shiksha: 'अहंकार का नाश, दान की महिमा।',
+                category: 'vishnu',
+                god: 'वामन',
+                source: 'विष्णु पुराण',
+                extra: 'बलि को राजा बनाया गया — सुतल लोक।'
+            },
+            {
+                title: 'नृसिंह अवतार',
+                en: 'Narasimha Avatar',
+                desc: 'हिरण्यकश्यप का वध करने के लिए विष्णु ने नृसिंह रूप धारण किया।',
+                shiksha: 'भक्त प्रह्लाद की रक्षा, अधर्म का नाश।',
+                category: 'vishnu',
+                god: 'नृसिंह',
+                source: 'विष्णु पुराण',
+                extra: 'नृसिंह न आदमी थे न जानवर — न दिन न रात।'
+            },
+            {
+                title: 'राम अवतार',
+                en: 'Ram Avatar',
+                desc: 'विष्णु ने राम रूप में अवतार लिया — रावण के अत्याचार का नाश करने के लिए।',
+                shiksha: 'धर्म, सत्य, मर्यादा।',
+                category: 'vishnu',
+                god: 'राम',
+                source: 'विष्णु पुराण',
+                extra: 'राम विष्णु के सातवें अवतार हैं।'
+            },
+            {
+                title: 'कृष्ण अवतार',
+                en: 'Krishna Avatar',
+                desc: 'विष्णु ने कृष्ण रूप में अवतार लिया — कंस के अत्याचार का नाश करने के लिए।',
+                shiksha: 'प्रेम, भक्ति, और धर्म।',
+                category: 'vishnu',
+                god: 'कृष्ण',
+                source: 'विष्णु पुराण',
+                extra: 'कृष्ण विष्णु के आठवें अवतार हैं।'
+            },
+
+            // ========== देवी कथाएँ ==========
+            {
+                title: 'दुर्गा प्रकट कथा',
+                en: 'Durga Prakat Katha',
+                desc: 'महिषासुर के अत्याचार से देवताओं ने ब्रह्मा-विष्णु-महेश से प्रार्थना की। उनके तेज से दुर्गा प्रकट हुईं।',
+                shiksha: 'शक्ति, रक्षा, विजय।',
+                category: 'devi',
+                god: 'दुर्गा',
+                source: 'दुर्गा सप्तशती',
+                extra: 'दुर्गा ने महिषासुर का वध किया।'
+            },
+            {
+                title: 'महिषासुर वध',
+                en: 'Mahishasur Vadh',
+                desc: 'माँ दुर्गा ने 9 दिन तक युद्ध करके महिषासुर का वध किया।',
+                shiksha: 'बुराई पर अच्छाई की जीत।',
+                category: 'devi',
+                god: 'दुर्गा',
+                source: 'दुर्गा सप्तशती',
+                extra: 'यह नवरात्रि के रूप में मनाया जाता है।'
+            },
+            {
+                title: 'काली प्रकट कथा',
+                en: 'Kali Prakat Katha',
+                desc: 'रक्तबीज का वध करने के लिए दुर्गा के क्रोध से काली प्रकट हुईं।',
+                shiksha: 'शत्रु नाश, शक्ति।',
+                category: 'devi',
+                god: 'काली',
+                source: 'दुर्गा सप्तशती',
+                extra: 'काली ने रक्तबीज का रक्त पी लिया।'
+            },
+            {
+                title: 'लक्ष्मी प्रकट कथा',
+                en: 'Lakshmi Prakat Katha',
+                desc: 'समुद्र मंथन से लक्ष्मी प्रकट हुईं और विष्णु ने उन्हें स्वीकार किया।',
+                shiksha: 'धन, समृद्धि, सौभाग्य।',
+                category: 'devi',
+                god: 'लक्ष्मी',
+                source: 'विष्णु पुराण',
+                extra: 'लक्ष्मी को चंचला कहा जाता है।'
+            },
+            {
+                title: 'सरस्वती प्रकट कथा',
+                en: 'Saraswati Prakat Katha',
+                desc: 'ब्रह्मा ने कमंडलु से जल छोड़ा, जिससे सरस्वती प्रकट हुईं। उन्होंने ब्रह्मा को वाणी दी।',
+                shiksha: 'विद्या, ज्ञान, वाणी।',
+                category: 'devi',
+                god: 'सरस्वती',
+                source: 'ब्रह्म पुराण',
+                extra: 'सरस्वती को वाग्देवी कहा जाता है।'
+            },
+            {
+                title: 'तुलसी प्रकट कथा',
+                en: 'Tulsi Prakat Katha',
+                desc: 'वृंदा ने अपने शरीर का त्याग किया। उनके शरीर से तुलसी का पौधा प्रकट हुआ।',
+                shiksha: 'भक्ति, पतिव्रता, समर्पण।',
+                category: 'devi',
+                god: 'तुलसी',
+                source: 'देवी भागवत',
+                extra: 'तुलसी विष्णु की प्रिया हैं।'
+            },
+            {
+                title: 'गंगा अवतरण कथा',
+                en: 'Ganga Avtaran Katha',
+                desc: 'भगीरथ ने घोर तपस्या की। शिव ने गंगा को जटाओं में धारण किया।',
+                shiksha: 'तपस्या, भक्ति, मोक्ष।',
+                category: 'devi',
+                god: 'गंगा',
+                source: 'रामायण (बाल कांड)',
+                extra: 'गंगा दशहरा पर गंगा पृथ्वी पर आईं।'
+            },
+
+            // ========== गणेश कथाएँ ==========
+            {
+                title: 'गणेश-कार्तिकेय विवाद',
+                en: 'Ganesh-Kartikeya Vivad',
+                desc: 'गणेश और कार्तिकेय में पृथ्वी की परिक्रमा का विवाद हुआ। गणेश ने माता-पिता की परिक्रमा की और जीत गए।',
+                shiksha: 'माता-पिता का महत्व।',
+                category: 'ganesh',
+                god: 'गणेश',
+                source: 'शिव पुराण',
+                extra: 'गणेश जी विघ्नहर्ता और बुद्धि के दाता बने।'
+            },
+            {
+                title: 'गणेश और चंद्रमा',
+                en: 'Ganesh aur Chandra',
+                desc: 'चंद्रमा ने गणेश का मज़ाक बनाया। गणेश ने श्राप दिया कि चंद्रमा को कोई नहीं देखेगा।',
+                shiksha: 'मज़ाक न करें, सम्मान करें।',
+                category: 'ganesh',
+                god: 'गणेश',
+                source: 'शिव पुराण',
+                extra: 'बाद में श्राप हल्का किया गया।'
+            },
+            {
+                title: 'गणेश और कुबेर',
+                en: 'Ganesh aur Kuber',
+                desc: 'कुबेर ने गणेश को भोजन पर बुलाया। गणेश ने सब खा लिया। कुबेर ने अपना अहंकार त्यागा।',
+                shiksha: 'अहंकार का नाश।',
+                category: 'ganesh',
+                god: 'गणेश',
+                source: 'शिव पुराण',
+                extra: 'गणेश जी की कृपा से कुबेर धन्य हुए।'
+            },
+
+            // ========== हनुमान कथाएँ ==========
+            {
+                title: 'हनुमान बाल लीला',
+                en: 'Hanuman Bal Leela',
+                desc: 'हनुमान ने सूर्य को फल समझकर निगलने की कोशिश की। इंद्र ने वज्र मारा।',
+                shiksha: 'बालकों की नटखटता और शक्ति।',
+                category: 'hanuman',
+                god: 'हनुमान',
+                source: 'रामायण',
+                extra: 'इससे हनुमान का नाम पड़ा।'
+            },
+            {
+                title: 'हनुमान और कालिया नाग',
+                en: 'Hanuman aur Kaliya',
+                desc: 'हनुमान ने कालिया नाग का मर्दन किया।',
+                shiksha: 'शक्ति और साहस।',
+                category: 'hanuman',
+                god: 'हनुमान',
+                source: 'रामायण',
+                extra: 'यह कथा हनुमान के बल का प्रतीक है।'
+            },
+            {
+                title: 'हनुमान और सीता मिलन',
+                en: 'Hanuman aur Sita Milan',
+                desc: 'हनुमान ने अशोक वाटिका में सीता माता को राम की अंगूठी दी।',
+                shiksha: 'भक्ति, समर्पण, और विश्वास।',
+                category: 'hanuman',
+                god: 'हनुमान',
+                source: 'रामायण (सुंदरकांड)',
+                extra: 'यह सुंदरकांड की सबसे प्रसिद्ध कथा है।'
+            },
+            {
+                title: 'हनुमान और भरत मिलन',
+                en: 'Hanuman aur Bharat Milan',
+                desc: 'हनुमान ने भरत को राम का संदेश दिया। भरत ने हनुमान को गले लगाया।',
+                shiksha: 'भाई-भक्ति और सेवा।',
+                category: 'hanuman',
+                god: 'हनुमान',
+                source: 'रामायण',
+                extra: 'भरत ने हनुमान को अपने हृदय से लगाया।'
+            },
+
+            // ========== संत कथाएँ ==========
+            {
+                title: 'तुलसीदास कथा',
+                en: 'Tulsidas Katha',
+                desc: 'तुलसीदास ने रामचरितमानस की रचना की। उन्हें राम जी के दर्शन हुए।',
+                shiksha: 'भक्ति, साहित्य, और समर्पण।',
+                category: 'sant',
+                god: 'तुलसीदास',
+                source: 'भक्तमाल',
+                extra: 'तुलसीदास को राम जी ने हनुमान के रूप में दर्शन दिए।'
+            },
+            {
+                title: 'मीराबाई कथा',
+                en: 'Mirabai Katha',
+                desc: 'मीराबाई ने कृष्ण की भक्ति में अपना जीवन समर्पित किया। उन्होंने विष पीया, लेकिन अमृत हो गया।',
+                shiksha: 'भक्ति, प्रेम, और समर्पण।',
+                category: 'sant',
+                god: 'मीराबाई',
+                source: 'भक्तमाल',
+                extra: 'मीराबाई की भक्ति अमर है।'
+            },
+            {
+                title: 'कबीर कथा',
+                en: 'Kabir Katha',
+                desc: 'कबीर ने निर्गुण भक्ति का प्रचार किया। उनके दोहे आज भी प्रसिद्ध हैं।',
+                shiksha: 'निर्गुण भक्ति, सत्य, और सरलता।',
+                category: 'sant',
+                god: 'कबीर',
+                source: 'कबीर ग्रंथावली',
+                extra: 'कबीर ने जाति-पाति का विरोध किया।'
+            },
+            {
+                title: 'गुरु नानक कथा',
+                en: 'Guru Nanak Katha',
+                desc: 'गुरु नानक ने सिख धर्म की स्थापना की। उन्होंने एक ईश्वर का संदेश दिया।',
+                shiksha: 'एक ईश्वर, सेवा, और भक्ति।',
+                category: 'sant',
+                god: 'गुरु नानक',
+                source: 'जनमसाखी',
+                extra: 'गुरु नानक ने सभी धर्मों का सम्मान किया।'
+            },
+            {
+                title: 'सूरदास कथा',
+                en: 'Surdas Katha',
+                desc: 'सूरदास जन्म से अंधे थे, लेकिन कृष्ण भक्ति में अमर हुए।',
+                shiksha: 'भक्ति, कविता, और समर्पण।',
+                category: 'sant',
+                god: 'सूरदास',
+                source: 'भक्तमाल',
+                extra: 'सूरदास कृष्ण के परम भक्त थे।'
+            },
+
+            // ========== लोक कथाएँ ==========
+            {
+                title: 'सत्यवान-सावित्री',
+                en: 'Satyavan-Savitri',
+                desc: 'सावित्री ने यमराज से अपने पति सत्यवान का जीवन वापस लिया।',
+                shiksha: 'पतिव्रता, बुद्धि, और प्रेम।',
+                category: 'lok',
+                god: 'सावित्री',
+                source: 'महाभारत (वन पर्व)',
+                extra: 'यह वट सावित्री व्रत के रूप में मनाया जाता है।'
+            },
+            {
+                title: 'हरिश्चंद्र कथा',
+                en: 'Harishchandra Katha',
+                desc: 'राजा हरिश्चंद्र ने सत्य की रक्षा के लिए अपना राज्य, परिवार, और खुद को बेच दिया।',
+                shiksha: 'सत्य, धर्म, और त्याग।',
+                category: 'lok',
+                god: 'हरिश्चंद्र',
+                source: 'मार्कण्डेय पुराण',
+                extra: 'हरिश्चंद्र को सत्यवादी राजा कहा जाता है।'
+            },
+            {
+                title: 'श्रवण कुमार कथा',
+                en: 'Shravan Kumar Katha',
+                desc: 'श्रवण कुमार ने अपने अंधे माता-पिता को कंधे पर बिठाकर तीर्थ यात्रा कराई।',
+                shiksha: 'माता-पिता की सेवा।',
+                category: 'lok',
+                god: 'श्रवण कुमार',
+                source: 'रामायण',
+                extra: 'श्रवण कुमार माता-पिता की सेवा का प्रतीक हैं।'
+            },
+            {
+                title: 'प्रह्लाद कथा',
+                en: 'Prahlad Katha',
+                desc: 'प्रह्लाद ने हिरण्यकश्यप के अत्याचार के बावजूद विष्णु की भक्ति नहीं छोड़ी।',
+                shiksha: 'भक्ति, विश्वास, और साहस।',
+                category: 'lok',
+                god: 'प्रह्लाद',
+                source: 'विष्णु पुराण',
+                extra: 'विष्णु ने नृसिंह रूप में प्रह्लाद की रक्षा की।'
+            },
+            {
+                title: 'ध्रुव कथा',
+                en: 'Dhruv Katha',
+                desc: 'ध्रुव ने 5 वर्ष की आयु में घोर तपस्या की और विष्णु से अचल स्थान प्राप्त किया।',
+                shiksha: 'दृढ़ संकल्प, भक्ति, और तपस्या।',
+                category: 'lok',
+                god: 'ध्रुव',
+                source: 'विष्णु पुराण',
+                extra: 'ध्रुव तारा आकाश में अचल है।'
+            },
+            {
+                title: 'एकलव्य कथा',
+                en: 'Ekalavya Katha',
+                desc: 'एकलव्य ने द्रोणाचार्य की मूर्ति बनाकर धनुर्विद्या सीखी। गुरुदक्षिणा में अंगूठा दिया।',
+                shiksha: 'गुरु भक्ति, समर्पण, और त्याग।',
+                category: 'lok',
+                god: 'एकलव्य',
+                source: 'महाभारत',
+                extra: 'एकलव्य की भक्ति अमर है।'
+            },
+            {
+                title: 'नचिकेता कथा',
+                en: 'Nachiketa Katha',
+                desc: 'नचिकेता ने यमराज से आत्मा और मृत्यु का ज्ञान प्राप्त किया।',
+                shiksha: 'आत्मज्ञान, ब्रह्मज्ञान।',
+                category: 'lok',
+                god: 'नचिकेता',
+                source: 'कठोपनिषद',
+                extra: 'यह कठोपनिषद की मुख्य कथा है।'
+            },
+            {
+                title: 'गजेंद्र मोक्ष',
+                en: 'Gajendra Moksha',
+                desc: 'गजेंद्र (हाथी) ने मगरमच्छ से बचने के लिए विष्णु को पुकारा। विष्णु ने उसकी रक्षा की।',
+                shiksha: 'भक्ति, विश्वास, और भगवान की कृपा।',
+                category: 'lok',
+                god: 'विष्णु-गजेंद्र',
+                source: 'भागवत पुराण',
+                extra: 'गजेंद्र मोक्ष भक्ति का सर्वोच्च उदाहरण है।'
+            },
+            {
+                title: 'अजामिल कथा',
+                en: 'Ajamil Katha',
+                desc: 'पापी अजामिल ने मृत्यु के समय नारायण का नाम लिया और मोक्ष प्राप्त किया।',
+                shiksha: 'नाम जप की शक्ति, भगवान की कृपा।',
+                category: 'lok',
+                god: 'विष्णु',
+                source: 'भागवत पुराण',
+                extra: 'नारायण नाम की महिमा।'
+            },
+            {
+                title: 'सुदामा कथा',
+                en: 'Sudama Katha',
+                desc: 'सुदामा ने कृष्ण को चावल का टोकरा भेंट किया। कृष्ण ने उन्हें धन-समृद्धि दी।',
+                shiksha: 'मित्रता, प्रेम, और भक्ति।',
+                category: 'lok',
+                god: 'कृष्ण-सुदामा',
+                source: 'भागवत पुराण',
+                extra: 'सुदामा की मित्रता अमर है।'
+            }
+        ];
+
+        // ============================================================
+        //  RENDER FUNCTIONS
+        // ============================================================
+
+        let currentCategory = 'all';
+        let searchQuery = '';
+
+        function renderKathas() {
+            const grid = document.getElementById('kathaGrid');
+            const filtered = kathas.filter(k => {
+                const matchCat = currentCategory === 'all' || k.category === currentCategory;
+                const matchSearch = k.title.includes(searchQuery) ||
+                                    k.en.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                    k.god.includes(searchQuery) ||
+                                    k.desc.includes(searchQuery);
+                return matchCat && matchSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div class="no-result">
+                    <i class="fa-solid fa-search"></i>
+                    कोई कथा नहीं मिली। कृपया दूसरा शब्द खोजें।
+                </div>`;
+                return;
+            }
+
+            const badgeClass = (cat) => {
+                if (cat === 'ramayan') return 'gold';
+                if (cat === 'mahabharat') return 'red';
+                if (cat === 'shiv') return 'blue';
+                if (cat === 'vishnu') return 'blue';
+                if (cat === 'devi') return 'green';
+                if (cat === 'ganesh') return 'gold';
+                if (cat === 'hanuman') return 'gold';
+                if (cat === 'sant') return 'purple';
+                return '';
+            };
+
+            const catName = (cat) => {
+                const names = {
+                    'ramayan': 'रामायण',
+                    'mahabharat': 'महाभारत',
+                    'shiv': 'शिव',
+                    'vishnu': 'विष्णु',
+                    'devi': 'देवी',
+                    'ganesh': 'गणेश',
+                    'hanuman': 'हनुमान',
+                    'sant': 'संत',
+                    'lok': 'लोक'
+                };
+                return names[cat] || cat;
+            };
+
+            grid.innerHTML = filtered.map(k => `
+                <div class="katha-card">
+                    <div class="k-header">
+                        <div class="k-title">
+                            ${k.title}
+                            <span class="k-en">${k.en}</span>
+                        </div>
+                        <span class="k-badge ${badgeClass(k.category)}">${catName(k.category)}</span>
+                    </div>
+                    <div class="k-desc">
+                        <strong>📖 कथा:</strong> ${k.desc}
+                    </div>
+                    <div class="k-shiksha">
+                        <strong>🎓 शिक्षा:</strong> ${k.shiksha}
+                    </div>
+                    <div class="k-meta">
+                        <span><i class="fa-solid fa-om"></i> ${k.god}</span>
+                        <span><i class="fa-solid fa-book"></i> ${k.source}</span>
+                    </div>
+                    <details class="katha-details">
+                        <summary>अधिक जानकारी</summary>
+                        <div class="d-body">${k.extra || ''}</div>
+                    </details>
+                </div>
+            `).join('');
+        }
+
+        function filterKathas() {
+            searchQuery = document.getElementById('kathaSearch').value.trim();
+            renderKathas();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderKathas();
+
+            document.querySelectorAll('.cat-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    currentCategory = this.dataset.cat;
+                    renderKathas();
+                });
+            });
+        });
+
+        // Dark mode
+        const darkToggle = document.getElementById('darkToggle');
+        if (darkToggle) {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+                darkToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            }
+            darkToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                const icon = this.querySelector('i');
+                const isDark = document.body.classList.contains('dark-mode');
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+                localStorage.setItem('darkMode', isDark);
+            });
+        }
+
+        function sharePage() {
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    text: '🕉️ सनातन ज्ञान कोश — कथा कोश',
+                    url: window.location.href
+                }).catch(() => {});
+            } else {
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    alert('लिंक कॉपी हो गया!');
+                });
+            }
+        }
+    </script>
+</body>
+</html>
