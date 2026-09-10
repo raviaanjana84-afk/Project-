@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Sanatan Gyan Kosh — सनातन ज्ञान कोश</title>
-    <meta name="description" content="हिंदू धर्म का संपूर्ण ज्ञान — देवता, मंत्र, पूजन विधि, त्योहार, कथाएँ और बहुत कुछ।" />
+    <meta name="description" content="हिंदू धर्म का संपूर्ण ज्ञान — देवता, मंत्र, स्तोत्र, त्योहार, कथाएँ, व्रत, संस्कार, नियम, तीर्थ, ज्योतिष, योग और बहुत कुछ।" />
+    <meta name="keywords" content="हिंदू धर्म, सनातन, देवता, मंत्र, चालीसा, आरती, त्योहार, व्रत, कथा, ज्योतिष, पंचांग, राशिफल" />
+    <meta name="theme-color" content="#7A2E2E" />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -26,60 +28,149 @@
         <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
     </div>
 
+    <!-- ================= SIDEBAR ================= -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-head">
+            <div class="sidebar-avatar">🕉️</div>
+            <div>
+                <p class="sidebar-name">सनातन ज्ञान कोश</p>
+                <p class="sidebar-sub">हर हिंदू के लिए मुफ्त ज्ञान</p>
+            </div>
+        </div>
+        <a href="index.html"><i class="fa-solid fa-house"></i> होम</a>
+        <a href="devta/hanuman.html"><i class="fa-solid fa-om"></i> देवता ज्ञान</a>
+        <a href="mantra/index.html"><i class="fa-solid fa-book-open"></i> मंत्र कोश</a>
+        <a href="stotra/index.html"><i class="fa-solid fa-scroll"></i> स्तोत्र / आरती</a>
+        <a href="tyohar/index.html"><i class="fa-solid fa-calendar-days"></i> त्योहार</a>
+        <a href="katha/index.html"><i class="fa-solid fa-book"></i> कथाएँ</a>
+        <a href="vrat/index.html"><i class="fa-solid fa-star"></i> व्रत</a>
+        <a href="sanskar/index.html"><i class="fa-solid fa-hands-praying"></i> संस्कार</a>
+        <a href="niyam/index.html"><i class="fa-solid fa-list-check"></i> नियम</a>
+        <a href="tirth/index.html"><i class="fa-solid fa-temple"></i> तीर्थ स्थल</a>
+        <a href="jyotish/index.html"><i class="fa-solid fa-star-and-crescent"></i> ज्योतिष</a>
+        <a href="yoga/index.html"><i class="fa-solid fa-spa"></i> योग / ध्यान</a>
+        <a href="panchang/index.html"><i class="fa-solid fa-calendar-check"></i> पंचांग</a>
+        <a href="quiz/index.html"><i class="fa-solid fa-puzzle-piece"></i> धर्म क्विज</a>
+        <a href="bhakti-ai/index.html"><i class="fa-solid fa-sparkles"></i> भक्ति AI</a>
+        <a href="faq/index.html"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+    </nav>
+
     <!-- ================= MAIN ================= -->
     <main>
 
-        <!-- Search Bar -->
+        <!-- Hero Banner -->
+        <section class="hero-banner">
+            <h2>🕉️ नमस्ते, धर्म जिज्ञासु!</h2>
+            <p>यहाँ आपको मिलेगा — हर देवता, हर मंत्र, हर कथा, हर त्योहार का <strong>संपूर्ण ज्ञान</strong>। एक ही जगह, बिल्कुल मुफ्त।</p>
+        </section>
+
+        <!-- Search -->
         <div class="search-wrap">
             <i class="fa-solid fa-search"></i>
-            <input type="text" id="searchInput" placeholder="देवता, मंत्र, कथा खोजें..." oninput="searchSite()" />
+            <input type="text" id="searchInput" placeholder="देवता, मंत्र, कथा, त्योहार खोजें..." oninput="searchSite()" />
         </div>
 
-        <!-- Quick Access -->
-        <p class="section-title"><i class="fa-solid fa-bolt"></i> मुख्य सेवाएँ</p>
+        <!-- Quick Access (Main Categories) -->
+        <p class="section-title"><i class="fa-solid fa-bolt"></i> मुख्य श्रेणियाँ</p>
         <div class="services-grid">
-            <a href="hawan.html" class="service-card"><i class="fa-solid fa-fire"></i><span>हवन</span></a>
-            <a href="pujan.html" class="service-card"><i class="fa-solid fa-hands-praying"></i><span>पूजन</span></a>
-            <a href="kundli.html" class="service-card"><i class="fa-solid fa-star-and-crescent"></i><span>कुंडली</span></a>
-            <a href="panchang.html" class="service-card"><i class="fa-solid fa-calendar-days"></i><span>पंचांग</span></a>
-            <a href="rashifal.html" class="service-card"><i class="fa-solid fa-star"></i><span>राशिफल</span></a>
-            <a href="bhakti-ai.html" class="service-card"><i class="fa-solid fa-sparkles"></i><span>भक्ति AI</span></a>
-            <a href="quiz.html" class="service-card"><i class="fa-solid fa-scroll"></i><span>क्विज</span></a>
-            <a href="mantras.html" class="service-card"><i class="fa-solid fa-om"></i><span>मंत्र</span></a>
+            <a href="devta/hanuman.html" class="service-card">
+                <i class="fa-solid fa-om"></i>
+                <span>देवता</span>
+            </a>
+            <a href="mantra/index.html" class="service-card">
+                <i class="fa-solid fa-book-open"></i>
+                <span>मंत्र</span>
+            </a>
+            <a href="stotra/index.html" class="service-card">
+                <i class="fa-solid fa-scroll"></i>
+                <span>स्तोत्र</span>
+            </a>
+            <a href="tyohar/index.html" class="service-card">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>त्योहार</span>
+            </a>
+            <a href="katha/index.html" class="service-card">
+                <i class="fa-solid fa-book"></i>
+                <span>कथाएँ</span>
+            </a>
+            <a href="vrat/index.html" class="service-card">
+                <i class="fa-solid fa-star"></i>
+                <span>व्रत</span>
+            </a>
+            <a href="niyam/index.html" class="service-card">
+                <i class="fa-solid fa-list-check"></i>
+                <span>नियम</span>
+            </a>
+            <a href="panchang/index.html" class="service-card">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>पंचांग</span>
+            </a>
+            <a href="jyotish/index.html" class="service-card">
+                <i class="fa-solid fa-star-and-crescent"></i>
+                <span>ज्योतिष</span>
+            </a>
+            <a href="yoga/index.html" class="service-card">
+                <i class="fa-solid fa-spa"></i>
+                <span>योग</span>
+            </a>
+            <a href="quiz/index.html" class="service-card">
+                <i class="fa-solid fa-puzzle-piece"></i>
+                <span>क्विज</span>
+            </a>
+            <a href="bhakti-ai/index.html" class="service-card">
+                <i class="fa-solid fa-sparkles"></i>
+                <span>भक्ति AI</span>
+            </a>
         </div>
 
         <!-- Devta Grid -->
         <p class="section-title"><i class="fa-solid fa-temple"></i> देवता ज्ञान</p>
         <div class="devta-grid">
-            <a href="devta-hanuman.html" class="devta-card">
+            <a href="devta/hanuman.html" class="devta-card">
                 <span class="devta-icon">🐒</span>
                 <span class="devta-name">हनुमान</span>
                 <span class="devta-sub">बल · बुद्धि · भक्ति</span>
             </a>
-            <a href="devta-shiva.html" class="devta-card">
+            <a href="devta/shiva.html" class="devta-card">
                 <span class="devta-icon">🔱</span>
                 <span class="devta-name">शिव</span>
                 <span class="devta-sub">ध्यान · त्याग · तांडव</span>
             </a>
-            <a href="devta-ram.html" class="devta-card">
+            <a href="devta/ram.html" class="devta-card">
                 <span class="devta-icon">🏹</span>
                 <span class="devta-name">राम</span>
                 <span class="devta-sub">मर्यादा · धर्म · आदर्श</span>
             </a>
-            <a href="devta-krishna.html" class="devta-card">
+            <a href="devta/krishna.html" class="devta-card">
                 <span class="devta-icon">🟡</span>
                 <span class="devta-name">कृष्ण</span>
                 <span class="devta-sub">लीला · प्रेम · गीता</span>
             </a>
-            <a href="devta-durga.html" class="devta-card">
+            <a href="devta/durga.html" class="devta-card">
                 <span class="devta-icon">🌺</span>
                 <span class="devta-name">दुर्गा</span>
                 <span class="devta-sub">शक्ति · रक्षा · विजय</span>
             </a>
-            <a href="devta-ganesh.html" class="devta-card">
+            <a href="devta/ganesh.html" class="devta-card">
                 <span class="devta-icon">🐘</span>
                 <span class="devta-name">गणेश</span>
                 <span class="devta-sub">सिद्धि · बुद्धि · विघ्नहर्ता</span>
+            </a>
+            <a href="devta/surya.html" class="devta-card">
+                <span class="devta-icon">🌞</span>
+                <span class="devta-name">सूर्य</span>
+                <span class="devta-sub">ऊर्जा · तेज · आरोग्य</span>
+            </a>
+            <a href="devta/lakshmi.html" class="devta-card">
+                <span class="devta-icon">🌺</span>
+                <span class="devta-name">लक्ष्मी</span>
+                <span class="devta-sub">धन · समृद्धि · सौभाग्य</span>
+            </a>
+            <a href="devta/saraswati.html" class="devta-card">
+                <span class="devta-icon">📚</span>
+                <span class="devta-name">सरस्वती</span>
+                <span class="devta-sub">विद्या · कला · ज्ञान</span>
             </a>
         </div>
 
@@ -87,6 +178,13 @@
         <p class="section-title"><i class="fa-solid fa-quote-left"></i> आज का सुविचार</p>
         <section class="card quote-card">
             <p id="dailyQuote" class="quote-text">⏳ लोड हो रहा है...</p>
+        </section>
+
+        <!-- Mantra of the Day -->
+        <p class="section-title"><i class="fa-solid fa-om"></i> आज का मंत्र</p>
+        <section class="card mantra-day-card">
+            <p class="mantra-day-text" id="mantraOfDay">ॐ नमः शिवाय</p>
+            <p class="mantra-day-meaning" id="mantraOfDayMeaning">भगवान शिव को नमस्कार — यह पंचाक्षर मंत्र है।</p>
         </section>
 
         <!-- Digital Mala -->
@@ -98,6 +196,7 @@
                 <option value="ॐ गं गणपतये नमः">ॐ गं गणपतये नमः</option>
                 <option value="गायत्री मंत्र">गायत्री मंत्र</option>
                 <option value="महामृत्युंजय">महामृत्युंजय</option>
+                <option value="ॐ श्री हनुमते नमः">ॐ श्री हनुमते नमः</option>
             </select>
             <p class="mantra-preview" id="mText">ॐ नमः शिवाय</p>
             <div class="mala-stats">
@@ -108,24 +207,35 @@
             <button class="btn-text" id="resetJapBtn">काउंटर रीसेट करें</button>
         </section>
 
+        <!-- Panchang Preview -->
+        <p class="section-title"><i class="fa-solid fa-calendar-days"></i> आज का पंचांग</p>
+        <section class="card">
+            <div class="panchang-grid">
+                <div class="panchang-item"><p class="panchang-label">वार</p><p class="panchang-value" id="previewVaar">--</p></div>
+                <div class="panchang-item"><p class="panchang-label">तिथि</p><p class="panchang-value" id="previewTithi">--</p></div>
+                <div class="panchang-item"><p class="panchang-label">नक्षत्र</p><p class="panchang-value" id="previewNakshatra">--</p></div>
+            </div>
+            <a href="panchang/index.html" class="btn-text" style="display:block;text-align:center;margin-top:8px;text-decoration:none;">पूरा पंचांग देखें →</a>
+        </section>
+
         <!-- Footer -->
-        <div class="footer">
-            🕉️ सनातन ज्ञान कोश — हर हिंदू के लिए मुफ्त ज्ञान
-            <br />
-            <small>सभी कंटेंट पौराणिक स्रोतों पर आधारित है</small>
-        </div>
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय श्री राम</p>
+        </footer>
 
     </main>
 
     <!-- ================= BOTTOM NAV ================= -->
     <nav class="bottom-nav">
         <a href="index.html" class="nav-link active"><i class="fa-solid fa-house"></i><p>होम</p></a>
-        <a href="quiz.html" class="nav-link"><i class="fa-solid fa-scroll"></i><p>क्विज</p></a>
-        <a href="mantras.html" class="nav-link"><i class="fa-solid fa-om"></i><p>मंत्र</p></a>
-        <a href="panchang.html" class="nav-link"><i class="fa-solid fa-calendar-days"></i><p>पंचांग</p></a>
+        <a href="devta/hanuman.html" class="nav-link"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="panchang/index.html" class="nav-link"><i class="fa-solid fa-calendar-days"></i><p>पंचांग</p></a>
+        <a href="quiz/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>क्विज</p></a>
     </nav>
 
-    <!-- ================= SCRIPTS ================= -->
     <script src="script.js"></script>
 </body>
-</html>
+                    </html>
