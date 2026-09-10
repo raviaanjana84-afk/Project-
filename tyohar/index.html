@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>त्योहार कोश — संपूर्ण ज्ञान | Sanatan Gyan Kosh</title>
+    <meta name="description" content="30+ हिंदू त्योहारों का संपूर्ण संग्रह — महत्व, कथा, पूजा विधि, और लाभ के साथ। दीपावली, होली, नवरात्रि, महाशिवरात्रि, जन्माष्टमी, आदि।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .search-wrap {
+            background: var(--card-bg);
+            border-radius: var(--radius-sm);
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 12px;
+            border: 1px solid var(--border);
+        }
+        .search-wrap i { color: var(--gold); font-size: 18px; }
+        .search-wrap input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            background: transparent;
+            font-family: var(--font-body);
+            color: var(--ink);
+        }
+        .search-wrap input::placeholder { color: var(--ink-light); }
+
+        .cat-tabs {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 4px 0 14px;
+            scrollbar-width: none;
+        }
+        .cat-tabs::-webkit-scrollbar { display: none; }
+        .cat-tab {
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1.5px solid var(--border);
+            background: var(--card-bg);
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: var(--transition);
+            color: var(--ink-soft);
+            font-family: var(--font-body);
+        }
+        .cat-tab.active {
+            background: var(--maroon);
+            color: white;
+            border-color: var(--maroon);
+        }
+        .cat-tab:hover:not(.active) {
+            border-color: var(--gold);
+            color: var(--maroon);
+        }
+
+        .tyohar-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .tyohar-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 18px 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--gold);
+            transition: var(--transition);
+        }
+        .tyohar-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+            border-left-color: var(--maroon);
+        }
+        .tyohar-card .t-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            gap: 10px;
+        }
+        .tyohar-card .t-title {
+            font-family: var(--font-display);
+            font-size: 18px;
+            color: var(--maroon);
+            font-weight: 700;
+            flex: 1;
+        }
+        .tyohar-card .t-title .t-en {
+            font-family: var(--font-body);
+            font-size: 10px;
+            font-weight: 400;
+            color: var(--ink-light);
+            display: block;
+            margin-top: 2px;
+        }
+        .tyohar-card .t-badge {
+            font-size: 9px;
+            background: var(--maroon);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .tyohar-card .t-badge.gold { background: var(--gold); color: var(--maroon); }
+        .tyohar-card .t-badge.green { background: #27ae60; }
+        .tyohar-card .t-badge.blue { background: #2980b9; }
+        .tyohar-card .t-badge.red { background: #e74c3c; }
+
+        .tyohar-card .t-desc {
+            background: #f8f4f0;
+            border-radius: 10px;
+            padding: 10px 12px;
+            font-size: 13px;
+            color: var(--ink-soft);
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+        .tyohar-card .t-desc strong { color: var(--maroon); }
+
+        .tyohar-card .t-vidhi {
+            background: #eef7ee;
+            border-radius: 10px;
+            padding: 10px 12px;
+            font-size: 13px;
+            color: var(--ink-soft);
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+        .tyohar-card .t-vidhi strong { color: #27ae60; }
+
+        .tyohar-card .t-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed var(--border);
+        }
+        .tyohar-card .t-meta span {
+            font-size: 10px;
+            background: var(--bg);
+            padding: 4px 10px;
+            border-radius: 10px;
+            color: var(--ink-soft);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .tyohar-card .t-meta span i {
+            color: var(--gold);
+            font-size: 10px;
+        }
+
+        .tyohar-details {
+            margin-top: 8px;
+        }
+        .tyohar-details summary {
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--maroon);
+            padding: 6px 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .tyohar-details summary::-webkit-details-marker { display: none; }
+        .tyohar-details summary::before {
+            content: '➕';
+            font-size: 11px;
+            transition: transform 0.3s;
+        }
+        .tyohar-details[open] summary::before {
+            content: '➖';
+        }
+        .tyohar-details .d-body {
+            padding: 10px 0;
+            font-size: 12.5px;
+            color: var(--ink-soft);
+            line-height: 1.8;
+            background: var(--bg);
+            padding: 12px;
+            border-radius: 10px;
+            margin-top: 6px;
+        }
+
+        .no-result {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--ink-light);
+            font-size: 14px;
+        }
+        .no-result i {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--border);
+        }
+
+        @media (max-width: 420px) {
+            .tyohar-card { padding: 14px 12px; }
+            .tyohar-card .t-title { font-size: 16px; }
+            .tyohar-card .t-desc,
+            .tyohar-card .t-vidhi { font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="../index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ सनातन ज्ञान कोश</span>
+            <h1>त्योहार कोश</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <div class="hero-banner">
+            <h2>🎉 त्योहार कोश</h2>
+            <p><strong>30+ हिंदू त्योहारों</strong> का संपूर्ण संग्रह — महत्व, कथा, पूजा विधि, और लाभ।</p>
+        </div>
+
+        <div class="search-wrap">
+            <i class="fa-solid fa-search"></i>
+            <input type="text" id="tyoharSearch" placeholder="त्योहार खोजें... (जैसे: दीपावली, होली, नवरात्रि)" oninput="filterTyohars()" />
+        </div>
+
+        <div class="cat-tabs" id="catTabs">
+            <button class="cat-tab active" data-cat="all">✨ सभी</button>
+            <button class="cat-tab" data-cat="major">🌟 प्रमुख</button>
+            <button class="cat-tab" data-cat="monthly">📅 मासिक</button>
+            <button class="cat-tab" data-cat="seasonal">🌦️ ऋतु</button>
+            <button class="cat-tab" data-cat="regional">🗺️ क्षेत्रीय</button>
+        </div>
+
+        <div class="tyohar-grid" id="tyoharGrid"></div>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय श्री राम</p>
+        </footer>
+
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="../devta/index.html" class="nav-link"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-calendar-days"></i><p>त्योहार</p></a>
+        <a href="../quiz/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>क्विज</p></a>
+    </nav>
+
+    <script>
+        // ============================================================
+        //  TYOHAR DATABASE — 30+ Festivals (Deep)
+        // ============================================================
+
+        const tyohars = [
+            // ========== प्रमुख त्योहार ==========
+            {
+                title: 'दीपावली',
+                en: 'Diwali / Deepavali',
+                desc: 'दीपावली "दीपों का उत्सव" है — जो राम जी के अयोध्या वापसी की खुशी में मनाई जाती है। यह हिंदू धर्म का सबसे बड़ा त्योहार है।',
+                vidhi: 'घर-आँगन दीपों से सजाएँ। लक्ष्मी-गणेश की पूजा करें। रंगोली बनाएँ। मिठाइयाँ बाँटें।',
+                benefits: 'धन, समृद्धि, सौभाग्य, पारिवारिक सुख।',
+                category: 'major',
+                when: 'कार्तिक अमावस्या (अक्टूबर-नवंबर)',
+                days: '5 दिन (धनतेरस, नरक चतुर्दशी, दीपावली, गोवर्धन, भाई दूज)',
+                extra: 'दीपावली पर माँ लक्ष्मी पृथ्वी पर आती हैं और जिस घर में सफाई, रोशनी, और भक्ति होती है — वहाँ निवास करती हैं।'
+            },
+            {
+                title: 'होली',
+                en: 'Holi',
+                desc: 'होली "रंगों का त्योहार" है — जो बुराई पर अच्छाई की जीत का प्रतीक है। यह प्रह्लाद और होलिका की कथा से जुड़ी है।',
+                vidhi: 'होलिका दहन (पूर्णिमा की रात), अगले दिन रंग खेलें। गुजिया, पकवान बनाएँ।',
+                benefits: 'पुराने दुःख दूर, नई ऊर्जा, आपसी प्रेम।',
+                category: 'major',
+                when: 'फाल्गुन पूर्णिमा (मार्च)',
+                days: '2 दिन (होलिका दहन, धुलंडी)',
+                extra: 'होली कृष्ण जी की रासलीला से भी जुड़ी है — ब्रज की होली विश्व प्रसिद्ध है।'
+            },
+            {
+                title: 'नवरात्रि',
+                en: 'Navratri',
+                desc: 'नवरात्रि "9 रातों" का पर्व है — जिसमें माँ दुर्गा के 9 रूपों की पूजा की जाती है।',
+                vidhi: '9 दिन व्रत, कलश स्थापना, दुर्गा सप्तशती पाठ, कन्या पूजन, हवन।',
+                benefits: 'शक्ति, रक्षा, शत्रु नाश, विवाह, संतान।',
+                category: 'major',
+                when: 'चैत्र और आश्विन (मार्च-अप्रैल, सितंबर-अक्टूबर)',
+                days: '9 दिन',
+                extra: 'चैत्र नवरात्रि राम नवमी पर समाप्त होती है, और शारदीय नवरात्रि दशहरा पर।'
+            },
+            {
+                title: 'महाशिवरात्रि',
+                en: 'Mahashivratri',
+                desc: 'महाशिवरात्रि भगवान शिव का सबसे बड़ा पर्व है — जो शिव-पार्वती के विवाह और शिव के लिंगोद्भव से जुड़ा है।',
+                vidhi: 'रात्रि जागरण, शिवलिंग पर जल-दूध-बेलपत्र चढ़ाएँ, 4 प्रहर पूजा, महामृत्युंजय मंत्र जप।',
+                benefits: 'मोक्ष, आरोग्य, भय नाश, शिव कृपा।',
+                category: 'major',
+                when: 'फाल्गुन कृष्ण चतुर्दशी (फरवरी-मार्च)',
+                days: '1 रात',
+                extra: 'इस दिन शिव जी ने पार्वती से विवाह किया था और इसी दिन शिवलिंग प्रकट हुआ था।'
+            },
+            {
+                title: 'जन्माष्टमी',
+                en: 'Janmashtami',
+                desc: 'जन्माष्टमी भगवान श्री कृष्ण का जन्मोत्सव है — जो उनके मथुरा में जन्म की खुशी में मनाया जाता है।',
+                vidhi: 'रात्रि जागरण, कृष्ण जन्म की झाँकी, झूला सजाएँ, माखन-मिश्री का भोग।',
+                benefits: 'कृष्ण कृपा, संतान, प्रेम, भक्ति।',
+                category: 'major',
+                when: 'भाद्रपद कृष्ण अष्टमी (अगस्त-सितंबर)',
+                days: '1 दिन',
+                extra: 'कृष्ण जी का जन्म आधी रात को हुआ था — इसलिए मध्यरात्रि में पूजा की जाती है।'
+            },
+            {
+                title: 'राम नवमी',
+                en: 'Ram Navami',
+                desc: 'राम नवमी भगवान श्री राम का जन्मोत्सव है — जो अयोध्या में उनके जन्म की खुशी में मनाया जाता है।',
+                vidhi: 'व्रत, रामचरितमानस पाठ, राम दरबार की पूजा, सुंदरकांड, हवन।',
+                benefits: 'राम कृपा, धर्म, सत्य, पारिवारिक सुख।',
+                category: 'major',
+                when: 'चैत्र शुक्ल नवमी (मार्च-अप्रैल)',
+                days: '1 दिन',
+                extra: 'राम नवमी चैत्र नवरात्रि के अंतिम दिन मनाई जाती है।'
+            },
+            {
+                title: 'दशहरा (विजयादशमी)',
+                en: 'Dussehra / Vijayadashami',
+                desc: 'दशहरा बुराई पर अच्छाई की जीत का प्रतीक है — जब राम जी ने रावण का वध किया था।',
+                vidhi: 'रावण दहन, रामलीला, विजय पूजा, शस्त्र पूजा।',
+                benefits: 'विजय, शत्रु नाश, धर्म की स्थापना।',
+                category: 'major',
+                when: 'आश्विन शुक्ल दशमी (अक्टूबर)',
+                days: '1 दिन',
+                extra: 'दशहरा शारदीय नवरात्रि के बाद मनाया जाता है।'
+            },
+            {
+                title: 'गणेश चतुर्थी',
+                en: 'Ganesh Chaturthi',
+                desc: 'गणेश चतुर्थी भगवान गणेश का जन्मोत्सव है — जो 10 दिनों तक मनाया जाता है।',
+                vidhi: 'गणेश मूर्ति स्थापना, 10 दिन पूजा, मोदक-लड्डू का भोग, अनंत चतुर्दशी पर विसर्जन।',
+                benefits: 'विघ्न नाश, बुद्धि, सफलता, धन।',
+                category: 'major',
+                when: 'भाद्रपद शुक्ल चतुर्थी (अगस्त-सितंबर)',
+                days: '10 दिन',
+                extra: 'महाराष्ट्र में गणेश चतुर्थी सबसे बड़ा पर्व है।'
+            },
+            {
+                title: 'रक्षाबंधन',
+                en: 'Raksha Bandhan',
+                desc: 'रक्षाबंधन भाई-बहन के पवित्र प्रेम का पर्व है — जब बहन भाई की कलाई पर राखी बाँधती है।',
+                vidhi: 'बहन भाई की कलाई पर राखी बाँधे, तिलक करे, मिठाई खिलाए। भाई बहन की रक्षा का वचन दे।',
+                benefits: 'भाई-बहन का प्रेम, रक्षा, पारिवारिक सुख।',
+                category: 'major',
+                when: 'श्रावण पूर्णिमा (अगस्त)',
+                days: '1 दिन',
+                extra: 'रक्षाबंधन की कथा में द्रौपदी ने कृष्ण की कलाई पर राखी बाँधी थी।'
+            },
+            {
+                title: 'करवा चौथ',
+                en: 'Karwa Chauth',
+                desc: 'करवा चौथ विवाहित स्त्रियों का व्रत है — जो अपने पति की लंबी आयु के लिए रखती हैं।',
+                vidhi: 'निर्जला व्रत, चंद्र दर्शन, पति के हाथ से जल ग्रहण, कथा श्रवण।',
+                benefits: 'सुहाग, पति की लंबी आयु, पारिवारिक सुख।',
+                category: 'major',
+                when: 'कार्तिक कृष्ण चतुर्थी (अक्टूबर-नवंबर)',
+                days: '1 दिन',
+                extra: 'यह व्रत उत्तर भारत में विशेष रूप से प्रचलित है।'
+            },
+            {
+                title: 'मकर संक्रांति',
+                en: 'Makar Sankranti',
+                desc: 'मकर संक्रांति सूर्य के मकर राशि में प्रवेश का पर्व है — जो नई फसल की खुशी में मनाया जाता है।',
+                vidhi: 'सूर्य को जल अर्पित करें, गंगा स्नान, तिल-गुड़ का दान, पतंग उड़ाएँ।',
+                benefits: 'आरोग्य, समृद्धि, सूर्य कृपा।',
+                category: 'major',
+                when: 'माघ मास की शुरुआत (14-15 जनवरी)',
+                days: '1 दिन',
+                extra: 'इस दिन सूर्य उत्तरायण होता है — दिन बड़े होने लगते हैं।'
+            },
+            {
+                title: 'वसंत पंचमी',
+                en: 'Vasant Panchami',
+                desc: 'वसंत पंचमी माँ सरस्वती का प्रकटोत्सव है — जो ज्ञान और कला की देवी हैं।',
+                vidhi: 'सरस्वती पूजा, विद्यारंभ, पीले वस्त्र धारण, खीर-मिष्ठान।',
+                benefits: 'विद्या, बुद्धि, ज्ञान, कला।',
+                category: 'major',
+                when: 'माघ शुक्ल पंचमी (जनवरी-फरवरी)',
+                days: '1 दिन',
+                extra: 'बच्चों की पहली पढ़ाई वसंत पंचमी को शुरू होती है।'
+            },
+            {
+                title: 'हनुमान जयंती',
+                en: 'Hanuman Jayanti',
+                desc: 'हनुमान जयंती भगवान हनुमान का जन्मोत्सव है — जो चैत्र पूर्णिमा को मनाया जाता है।',
+                vidhi: 'व्रत, हनुमान चालीसा पाठ, सिंदूर-चमेली तेल चढ़ाएँ, बेसन के लड्डू का भोग।',
+                benefits: 'बल, बुद्धि, भय मुक्ति, शत्रु नाश।',
+                category: 'major',
+                when: 'चैत्र पूर्णिमा (मार्च-अप्रैल)',
+                days: '1 दिन',
+                extra: 'इस दिन हनुमान जी का जन्म अंजना माता की कोख से हुआ था।'
+            },
+            {
+                title: 'गुरु पूर्णिमा',
+                en: 'Guru Purnima',
+                desc: 'गुरु पूर्णिमा गुरु की महिमा का पर्व है — जो वेदव्यास जी के जन्मदिन पर मनाया जाता है।',
+                vidhi: 'गुरु पूजा, गुरु को दक्षिणा, आशीर्वाद प्राप्त करें।',
+                benefits: 'गुरु कृपा, ज्ञान, आत्मज्ञान।',
+                category: 'major',
+                when: 'आषाढ़ पूर्णिमा (जुलाई)',
+                days: '1 दिन',
+                extra: 'इस दिन महाभारत के रचयिता वेदव्यास जी का जन्म हुआ था।'
+            },
+            {
+                title: 'अक्षय तृतीया',
+                en: 'Akshaya Tritiya',
+                desc: 'अक्षय तृतीया "अक्षय" (कभी न खत्म होने वाला) का पर्व है — जो सोना खरीदने और दान का शुभ दिन है।',
+                vidhi: 'सोना खरीदें, दान करें, विष्णु पूजा, गंगा स्नान।',
+                benefits: 'धन, समृद्धि, सौभाग्य, अक्षय फल।',
+                category: 'major',
+                when: 'वैशाख शुक्ल तृतीया (अप्रैल-मई)',
+                days: '1 दिन',
+                extra: 'इस दिन कोई भी शुभ कार्य बिना मुहूर्त के किया जा सकता है।'
+            },
+
+            // ========== मासिक व्रत ==========
+            {
+                title: 'एकादशी व्रत',
+                en: 'Ekadashi Vrat',
+                desc: 'एकादशी भगवान विष्णु को समर्पित व्रत है — जो हर महीने की 11वीं तिथि को रखा जाता है।',
+                vidhi: 'फलाहार, विष्णु पूजा, विष्णु सहस्रनाम पाठ, रात्रि जागरण।',
+                benefits: 'पाप नाश, विष्णु कृपा, मोक्ष।',
+                category: 'monthly',
+                when: 'हर महीने की शुक्ल और कृष्ण एकादशी',
+                days: '2 दिन (महीने में)',
+                extra: '24 एकादशी व्रत एक वर्ष में — हर एकादशी का अलग नाम और महत्व।'
+            },
+            {
+                title: 'प्रदोष व्रत',
+                en: 'Pradosh Vrat',
+                desc: 'प्रदोष व्रत भगवान शिव को समर्पित है — जो हर महीने की त्रयोदशी को रखा जाता है।',
+                vidhi: 'संध्या काल में शिव पूजा, दीपदान, प्रदोष स्तोत्र पाठ।',
+                benefits: 'शिव कृपा, पाप नाश, मोक्ष।',
+                category: 'monthly',
+                when: 'हर महीने की शुक्ल और कृष्ण त्रयोदशी',
+                days: '2 दिन (महीने में)',
+                extra: 'प्रदोष काल (संध्या) में शिव पूजा सर्वोत्तम है।'
+            },
+            {
+                title: 'संकट चतुर्थी',
+                en: 'Sankat Chaturthi',
+                desc: 'संकट चतुर्थी गणेश जी को समर्पित है — जो संकट दूर करने के लिए रखी जाती है।',
+                vidhi: 'गणेश पूजा, चंद्र दर्शन, व्रत कथा, मोदक का भोग।',
+                benefits: 'संकट नाश, विघ्न नाश, सफलता।',
+                category: 'monthly',
+                when: 'हर महीने की कृष्ण चतुर्थी',
+                days: '1 दिन (महीने में)',
+                extra: 'इसे "मासिक विनायक चतुर्थी" भी कहा जाता है।'
+            },
+            {
+                title: 'सोमवार व्रत',
+                en: 'Somvar Vrat',
+                desc: 'सोमवार व्रत भगवान शिव को समर्पित है — जो सोमवार को रखा जाता है।',
+                vidhi: 'शिवलिंग पर जल-दूध चढ़ाएँ, रुद्राभिषेक, व्रत कथा।',
+                benefits: 'शिव कृपा, पारिवारिक सुख, विवाह में लाभ।',
+                category: 'monthly',
+                when: 'हर सोमवार',
+                days: 'हर सप्ताह',
+                extra: 'सावन मास के सोमवार विशेष महत्व रखते हैं।'
+            },
+            {
+                title: 'मंगलवार व्रत',
+                en: 'Mangalvar Vrat',
+                desc: 'मंगलवार व्रत हनुमान जी को समर्पित है — जो मंगलवार को रखा जाता है।',
+                vidhi: 'हनुमान चालीसा पाठ, सिंदूर-चमेली तेल, बेसन के लड्डू का भोग।',
+                benefits: 'बल, बुद्धि, शत्रु नाश, मंगल दोष शांति।',
+                category: 'monthly',
+                when: 'हर मंगलवार',
+                days: 'हर सप्ताह',
+                extra: 'मंगलवार को हनुमान जी की पूजा विशेष रूप से फलदायी है।'
+            },
+            {
+                title: 'शुक्रवार व्रत',
+                en: 'Shukravar Vrat',
+                desc: 'शुक्रवार व्रत माँ लक्ष्मी को समर्पित है — जो शुक्रवार को रखा जाता है।',
+                vidhi: 'लक्ष्मी पूजा, कन्या पूजन, खीर-मिष्ठान का भोग।',
+                benefits: 'धन, समृद्धि, सौभाग्य।',
+                category: 'monthly',
+                when: 'हर शुक्रवार',
+                days: 'हर सप्ताह',
+                extra: 'शुक्रवार को लक्ष्मी पूजा से घर में धन-धान्य की वृद्धि होती है।'
+            },
+            {
+                title: 'शनिवार व्रत',
+                en: 'Shanivar Vrat',
+                desc: 'शनिवार व्रत शनि देव को समर्पित है — जो शनिवार को रखा जाता है।',
+                vidhi: 'शनि पूजा, तेल-उड़द का दान, शनि चालीसा पाठ।',
+                benefits: 'शनि दोष शांति, साढ़े साती में लाभ, कर्ज मुक्ति।',
+                category: 'monthly',
+                when: 'हर शनिवार',
+                days: 'हर सप्ताह',
+                extra: 'शनिवार को काली चीज़ें (तेल, उड़द) का दान करें।'
+            },
+            {
+                title: 'संक्रांति',
+                en: 'Sankranti',
+                desc: 'संक्रांति सूर्य के एक राशि से दूसरी राशि में प्रवेश का पर्व है — हर महीने मनाया जाता है।',
+                vidhi: 'सूर्य को जल अर्पित करें, गंगा स्नान, दान।',
+                benefits: 'आरोग्य, सूर्य कृपा, समृद्धि।',
+                category: 'monthly',
+                when: 'हर महीने की संक्रांति तिथि',
+                days: '12 दिन (एक वर्ष में)',
+                extra: 'मकर संक्रांति सबसे बड़ी संक्रांति है।'
+            },
+
+            // ========== ऋतु त्योहार ==========
+            {
+                title: 'सावन मास',
+                en: 'Sawan Month',
+                desc: 'सावन मास भगवान शिव को समर्पित पूरा महीना है — जिसमें शिव पूजा की जाती है।',
+                vidhi: 'शिवलिंग पर जल-दूध चढ़ाएँ, रुद्राभिषेक, व्रत, कांवड़ यात्रा।',
+                benefits: 'शिव कृपा, मोक्ष, पाप नाश।',
+                category: 'seasonal',
+                when: 'श्रावण मास (जुलाई-अगस्त)',
+                days: 'पूरा महीना',
+                extra: 'सावन का पूरा महीना शिव जी को अत्यंत प्रिय है।'
+            },
+            {
+                title: 'कार्तिक मास',
+                en: 'Kartik Month',
+                desc: 'कार्तिक मास भगवान विष्णु और तुलसी को समर्पित है — जिसमें तुलसी विवाह होता है।',
+                vidhi: 'तुलसी पूजन, विष्णु पूजा, दीपदान, कार्तिक स्नान।',
+                benefits: 'विष्णु कृपा, मोक्ष, पाप नाश।',
+                category: 'seasonal',
+                when: 'कार्तिक मास (अक्टूबर-नवंबर)',
+                days: 'पूरा महीना',
+                extra: 'कार्तिक स्नान और दीपदान का विशेष महत्व है।'
+            },
+            {
+                title: 'नवान्न',
+                en: 'Navanna',
+                desc: 'नवान्न नई फसल के आने का पर्व है — जिसमें नए अन्न का भोग भगवान को लगाया जाता है।',
+                vidhi: 'नए अन्न से भगवान को भोग, कुल देवता की पूजा, नए अन्न का सेवन।',
+                benefits: 'समृद्धि, धन-धान्य, कृषि कल्याण।',
+                category: 'seasonal',
+                when: 'अग्रहायण मास (नवंबर-दिसंबर)',
+                days: '1 दिन',
+                extra: 'यह त्योहार विशेषकर किसान समुदाय में मनाया जाता है।'
+            },
+
+            // ========== क्षेत्रीय त्योहार ==========
+            {
+                title: 'छठ पूजा',
+                en: 'Chhath Puja',
+                desc: 'छठ पूजा सूर्य देव और छठी मैया की पूजा का पर्व है — जो बिहार, झारखंड, उत्तर प्रदेश में मनाया जाता है।',
+                vidhi: 'नदी-तालाब के किनारे डूबते और उगते सूर्य को अर्घ्य, 36 घंटे का व्रत, ठेकुआ-कसार का प्रसाद।',
+                benefits: 'संतान, आरोग्य, समृद्धि, मनोकामना पूर्ति।',
+                category: 'regional',
+                when: 'कार्तिक शुक्ल षष्ठी (अक्टूबर-नवंबर)',
+                days: '4 दिन',
+                extra: 'छठ पूजा में सूर्य देव और छठी मैया दोनों की पूजा होती है।'
+            },
+            {
+                title: 'ओणम',
+                en: 'Onam',
+                desc: 'ओणम केरल का सबसे बड़ा त्योहार है — जो राजा महाबली की वापसी की खुशी में मनाया जाता है।',
+                vidhi: 'पूक्कलम (फूलों की रंगोली), ओणम सद्या (भोज), नाव दौड़, कथकली।',
+                benefits: 'समृद्धि, खुशहाली, राजा महाबली का आशीर्वाद।',
+                category: 'regional',
+                when: 'चिंगम मास (अगस्त-सितंबर)',
+                days: '10 दिन',
+                extra: 'यह त्योहार राजा महाबली के स्वागत में मनाया जाता है।'
+            },
+            {
+                title: 'पोंगल',
+                en: 'Pongal',
+                desc: 'पोंगल तमिलनाडु का फसल त्योहार है — जो सूर्य देव को समर्पित है।',
+                vidhi: 'पोंगल (चावल-दाल) पकाएँ, सूर्य पूजा, गाय-बैल की पूजा।',
+                benefits: 'फसल, समृद्धि, सूर्य कृपा।',
+                category: 'regional',
+                when: 'तमिल मास (14-17 जनवरी)',
+                days: '4 दिन',
+                extra: 'पोंगल का अर्थ है — "उबलना" — जो समृद्धि का प्रतीक है।'
+            },
+            {
+                title: 'बिहू',
+                en: 'Bihu',
+                desc: 'बिहू असम का सबसे बड़ा त्योहार है — जो तीन बार मनाया जाता है।',
+                vidhi: 'बिहू नृत्य, बिहू गीत, पिठा (मिठाई), नए वस्त्र।',
+                benefits: 'खुशहाली, फसल, आपसी प्रेम।',
+                category: 'regional',
+                when: 'अप्रैल, अक्टूबर, जनवरी',
+                days: '3 बार (महीने में)',
+                extra: 'बिहू असम की संस्कृति का प्रतीक है।'
+            },
+            {
+                title: 'गुड़ी पड़वा',
+                en: 'Gudi Padwa',
+                desc: 'गुड़ी पड़वा महाराष्ट्र का नववर्ष है — जो चैत्र शुक्ल प्रतिपदा को मनाया जाता है।',
+                vidhi: 'गुड़ी (ध्वज) स्थापना, प्रसाद, नए वस्त्र, रंगोली।',
+                benefits: 'नववर्ष, समृद्धि, शुभ आरंभ।',
+                category: 'regional',
+                when: 'चैत्र शुक्ल प्रतिपदा (मार्च-अप्रैल)',
+                days: '1 दिन',
+                extra: 'यह हिंदू नववर्ष का पहला दिन है।'
+            },
+            {
+                title: 'उगादी',
+                en: 'Ugadi',
+                desc: 'उगादी आंध्र प्रदेश और कर्नाटक का नववर्ष है — जो चैत्र शुक्ल प्रतिपदा को मनाया जाता है।',
+                vidhi: 'नववर्ष पूजा, उगादी पचड़ी (कड़वी-मीठी), नए वस्त्र।',
+                benefits: 'नववर्ष, समृद्धि, शुभ आरंभ।',
+                category: 'regional',
+                when: 'चैत्र शुक्ल प्रतिपदा (मार्च-अप्रैल)',
+                days: '1 दिन',
+                extra: 'उगादी पचड़ी जीवन के सभी रसों का प्रतीक है।'
+            },
+            {
+                title: 'पोंगल (तमिल)',
+                en: 'Pongal (Tamil)',
+                desc: 'पोंगल तमिलनाडु का फसल त्योहार — जो सूर्य देव को समर्पित है।',
+                vidhi: 'पोंगल पकाएँ, सूर्य पूजा, गाय-बैल की पूजा।',
+                benefits: 'फसल, समृद्धि, सूर्य कृपा।',
+                category: 'regional',
+                when: 'तमिल मास (जनवरी)',
+                days: '4 दिन',
+                extra: 'यह तमिलनाडु का सबसे बड़ा त्योहार है।'
+            },
+            {
+                title: 'लोहड़ी',
+                en: 'Lohri',
+                desc: 'लोहड़ी पंजाब का फसल त्योहार है — जो मकर संक्रांति से पहले मनाया जाता है।',
+                vidhi: 'अग्नि जलाएँ, रेवड़ी-मूंगफली चढ़ाएँ, भांगड़ा-गिद्दा नृत्य।',
+                benefits: 'फसल, समृद्धि, पारिवारिक सुख।',
+                category: 'regional',
+                when: 'पौष मास (13 जनवरी)',
+                days: '1 दिन',
+                extra: 'यह पंजाब का सबसे बड़ा त्योहार है।'
+            }
+        ];
+
+        // ============================================================
+        //  RENDER FUNCTIONS
+        // ============================================================
+
+        let currentCategory = 'all';
+        let searchQuery = '';
+
+        function renderTyohars() {
+            const grid = document.getElementById('tyoharGrid');
+            const filtered = tyohars.filter(t => {
+                const matchCat = currentCategory === 'all' || t.category === currentCategory;
+                const matchSearch = t.title.includes(searchQuery) ||
+                                    t.en.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                    t.desc.includes(searchQuery);
+                return matchCat && matchSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div class="no-result">
+                    <i class="fa-solid fa-search"></i>
+                    कोई त्योहार नहीं मिला। कृपया दूसरा शब्द खोजें।
+                </div>`;
+                return;
+            }
+
+            const badgeClass = (cat) => {
+                if (cat === 'major') return 'gold';
+                if (cat === 'monthly') return 'green';
+                if (cat === 'seasonal') return 'blue';
+                if (cat === 'regional') return 'red';
+                return '';
+            };
+
+            const catName = (cat) => {
+                const names = {
+                    'major': 'प्रमुख',
+                    'monthly': 'मासिक',
+                    'seasonal': 'ऋतु',
+                    'regional': 'क्षेत्रीय'
+                };
+                return names[cat] || cat;
+            };
+
+            grid.innerHTML = filtered.map(t => `
+                <div class="tyohar-card">
+                    <div class="t-header">
+                        <div class="t-title">
+                            ${t.title}
+                            <span class="t-en">${t.en}</span>
+                        </div>
+                        <span class="t-badge ${badgeClass(t.category)}">${catName(t.category)}</span>
+                    </div>
+                    <div class="t-desc">
+                        <strong>📖 परिचय:</strong> ${t.desc}
+                    </div>
+                    <div class="t-vidhi">
+                        <strong>🙏 पूजा विधि:</strong> ${t.vidhi}
+                    </div>
+                    <div class="t-desc" style="background:#fef8e8;">
+                        <strong>✨ लाभ:</strong> ${t.benefits}
+                    </div>
+                    <div class="t-meta">
+                        <span><i class="fa-solid fa-calendar"></i> ${t.when}</span>
+                        <span><i class="fa-solid fa-clock"></i> ${t.days}</span>
+                    </div>
+                    <details class="tyohar-details">
+                        <summary>अधिक जानकारी</summary>
+                        <div class="d-body">${t.extra || ''}</div>
+                    </details>
+                </div>
+            `).join('');
+        }
+
+        function filterTyohars() {
+            searchQuery = document.getElementById('tyoharSearch').value.trim();
+            renderTyohars();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderTyohars();
+
+            document.querySelectorAll('.cat-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    currentCategory = this.dataset.cat;
+                    renderTyohars();
+                });
+            });
+        });
+
+        // Dark mode
+        const darkToggle = document.getElementById('darkToggle');
+        if (darkToggle) {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+                darkToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            }
+            darkToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                const icon = this.querySelector('i');
+                const isDark = document.body.classList.contains('dark-mode');
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+                localStorage.setItem('darkMode', isDark);
+            });
+        }
+
+        function sharePage() {
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    text: '🕉️ सनातन ज्ञान कोश — त्योहार कोश',
+                    url: window.location.href
+                }).catch(() => {});
+            } else {
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    alert('लिंक कॉपी हो गया!');
+                });
+            }
+        }
+    </script>
+</body>
+</html>
