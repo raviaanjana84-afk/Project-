@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>श्री राम जी — संपूर्ण ज्ञान | Sanatan Gyan Kosh</title>
+    <meta name="description" content="श्री राम जी का संपूर्ण ज्ञान — परिचय, जन्म कथा, स्वरूप, रामायण, मंत्र, स्तोत्र, आरती, मंदिर, त्योहार, व्रत और बहुत कुछ।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .devta-hero {
+            text-align: center;
+            padding: 24px 20px;
+            background: linear-gradient(135deg, rgba(212,175,55,0.12), rgba(122,46,46,0.08));
+            border-radius: var(--radius);
+            margin-bottom: 14px;
+            border: 1px solid var(--border);
+        }
+        .devta-hero .icon { font-size: 72px; display: block; line-height: 1; }
+        .devta-hero .name {
+            font-family: var(--font-display);
+            font-size: 30px;
+            color: var(--maroon);
+            margin-top: 6px;
+        }
+        .devta-hero .subtitle {
+            font-size: 13px;
+            color: var(--ink-soft);
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+
+        .devta-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 18px 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .devta-section h2 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--maroon);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 8px;
+        }
+        .devta-section h2 .sec-icon { font-size: 24px; }
+
+        .devta-section p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+            margin-bottom: 8px;
+        }
+        .devta-section p strong { color: var(--maroon); }
+
+        .mantra-box {
+            background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(122,46,46,0.05));
+            border-left: 4px solid var(--gold);
+            padding: 14px 16px;
+            border-radius: 12px;
+            font-family: var(--font-display);
+            font-size: 18px;
+            text-align: center;
+            margin: 10px 0;
+            line-height: 1.8;
+            color: var(--maroon);
+            font-weight: 600;
+        }
+        .mantra-box small {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 12px;
+            color: var(--ink-soft);
+            font-weight: 400;
+            margin-top: 6px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .info-item {
+            background: var(--bg);
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 13px;
+        }
+        .info-item .lbl {
+            font-size: 10px;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-item .val {
+            font-weight: 600;
+            color: var(--maroon);
+            margin-top: 2px;
+        }
+
+        .devta-section ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 8px;
+        }
+        .devta-section ul li {
+            padding: 8px 0;
+            font-size: 13.5px;
+            line-height: 1.6;
+            border-bottom: 1px dashed var(--border);
+            color: var(--ink-soft);
+        }
+        .devta-section ul li:last-child { border-bottom: none; }
+        .devta-section ul li strong { color: var(--maroon); }
+
+        .accordion-item {
+            border-bottom: 1px solid var(--border);
+        }
+        .accordion-item:last-child { border-bottom: none; }
+        .accordion-head {
+            padding: 12px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--maroon);
+            font-family: var(--font-display);
+        }
+        .accordion-head i {
+            transition: transform 0.3s;
+            color: var(--gold);
+        }
+        .accordion-item.open .accordion-head i {
+            transform: rotate(180deg);
+        }
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            font-size: 13px;
+            color: var(--ink-soft);
+            line-height: 1.8;
+        }
+        .accordion-item.open .accordion-body {
+            max-height: 3000px;
+            padding-bottom: 12px;
+        }
+
+        .temple-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .temple-item {
+            padding: 10px 14px;
+            background: var(--bg);
+            border-radius: 10px;
+            border-left: 3px solid var(--gold);
+            font-size: 13px;
+        }
+        .temple-item strong { color: var(--maroon); }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .related-link {
+            padding: 10px 12px;
+            background: var(--bg);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--maroon);
+            font-weight: 600;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .related-link:hover {
+            background: var(--card-bg);
+            border-color: var(--gold);
+        }
+
+        .kand-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .kand-item {
+            background: var(--bg);
+            padding: 12px 14px;
+            border-radius: 12px;
+            border-left: 4px solid var(--gold);
+        }
+        .kand-item .kand-name {
+            font-weight: 700;
+            color: var(--maroon);
+            font-size: 14px;
+        }
+        .kand-item .kand-desc {
+            font-size: 12px;
+            color: var(--ink-soft);
+            margin-top: 4px;
+            line-height: 1.6;
+        }
+
+        .back-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--maroon);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 16px rgba(122,46,46,0.4);
+            z-index: 90;
+        }
+        .back-top.show { display: flex; }
+
+        @media (max-width: 420px) {
+            .devta-hero .icon { font-size: 60px; }
+            .devta-hero .name { font-size: 24px; }
+            .devta-section h2 { font-size: 17px; }
+            .mantra-box { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ देवता ज्ञान</span>
+            <h1>श्री राम जी</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <!-- Hero -->
+        <div class="devta-hero">
+            <span class="icon">🏹</span>
+            <div class="name">श्री राम जी</div>
+            <div class="subtitle">मर्यादा पुरुषोत्तम · रघुनाथ · सियावर</div>
+        </div>
+
+        <!-- Quick Info -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📋</span> एक नज़र में</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="lbl">अन्य नाम</div>
+                    <div class="val">रघुनाथ, सियावर, मर्यादा पुरुषोत्तम, दशरथ नंदन</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">माता</div>
+                    <div class="val">कौशल्या देवी</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">पिता</div>
+                    <div class="val">राजा दशरथ</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">पत्नी</div>
+                    <div class="val">माता सीता</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">पुत्र</div>
+                    <div class="val">लव और कुश</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">भाई</div>
+                    <div class="val">लक्ष्मण, भरत, शत्रुघ्न</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">जन्म तिथि</div>
+                    <div class="val">चैत्र शुक्ल नवमी</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">जन्म स्थान</div>
+                    <div class="val">अयोध्या, उत्तर प्रदेश</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">वंश</div>
+                    <div class="val">इक्ष्वाकु (सूर्यवंश)</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">राज्य</div>
+                    <div class="val">कोसल (अयोध्या)</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय दिन</div>
+                    <div class="val">राम नवमी, विवाह पंचमी</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय भोग</div>
+                    <div class="val">खीर, पूरी, हलवा, फल</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- परिचय -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📖</span> परिचय</h2>
+            <p>
+                <strong>भगवान श्री राम</strong> हिंदू धर्म के सबसे पूजनीय देवताओं में से एक हैं। वे <strong>भगवान विष्णु के सातवें अवतार</strong> हैं और <strong>मर्यादा पुरुषोत्तम</strong> कहलाते हैं — अर्थात् मर्यादा के सर्वोच्च पालनकर्ता।
+            </p>
+            <p>
+                राम जी को <strong>धर्म, सत्य, न्याय, और आदर्श जीवन</strong> का प्रतीक माना जाता है। उनका जीवन हर मनुष्य के लिए एक आदर्श है — पुत्र, भाई, पति, राजा, और मित्र के रूप में।
+            </p>
+            <p>
+                वे <strong>त्रेता युग</strong> में अयोध्या में जन्मे थे। उनकी कथा <strong>रामायण</strong> में वर्णित है, जिसे <strong>वाल्मीकि</strong> ने संस्कृत में और <strong>तुलसीदास</strong> ने अवधी में <strong>रामचरितमानस</strong> के रूप में लिखा।
+            </p>
+        </div>
+
+        <!-- जन्म कथा -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📜</span> जन्म कथा</h2>
+            <p>
+                अयोध्या के राजा <strong>दशरथ</strong> की तीन पत्नियाँ थीं — <strong>कौशल्या, कैकेयी, और सुमित्रा</strong>। संतान न होने के कारण राजा दशरथ ने <strong>पुत्रकामेष्टि यज्ञ</strong> कराया।
+            </p>
+            <p>
+                यज्ञ के प्रसाद से तीनों रानियों ने ग्रहण किया। <strong>चैत्र मास की शुक्ल नवमी</strong> को <strong>कौशल्या</strong> ने राम को जन्म दिया, <strong>कैकेयी</strong> ने भरत को, और <strong>सुमित्रा</strong> ने लक्ष्मण और शत्रुघ्न को जन्म दिया।
+            </p>
+            <p>
+                राम जी का जन्म <strong>अयोध्या</strong> में हुआ था, जो <strong>सरयू नदी</strong> के किनारे बसी है। यह दिन आज <strong>राम नवमी</strong> के रूप में मनाया जाता है।
+            </p>
+        </div>
+
+        <!-- स्वरूप -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🎨</span> स्वरूप</h2>
+            <p>
+                श्री राम जी का स्वरूप <strong>दिव्य, तेजस्वी, और आदर्श</strong> है।
+            </p>
+            <ul>
+                <li><strong>रंग:</strong> श्याम वर्ण (नील-कमल के समान)</li>
+                <li><strong>वस्त्र:</strong> पीले या हरे रंग के वस्त्र</li>
+                <li><strong>आयुध:</strong> धनुष (कोदंड) और बाण</li>
+                <li><strong>मस्तक:</strong> तेजस्वी मुकुट</li>
+                <li><strong>नेत्र:</strong> कमल के समान सुंदर, करुणा से भरे</li>
+                <li><strong>वक्ष:</strong> श्रीवत्स चिह्न</li>
+                <li><strong>मुद्रा:</strong> अभय मुद्रा या धनुष बाण</li>
+                <li><strong>साथ:</strong> माता सीता, लक्ष्मण, और हनुमान</li>
+                <li><strong>वाहन:</strong> रथ (पुष्पक विमान)</li>
+                <li><strong>ध्वजा:</strong> गरुड़ चिह्न</li>
+            </ul>
+        </div>
+
+        <!-- मुख्य मंत्र -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🏹</span> मुख्य मंत्र</h2>
+
+            <p><strong>1. राम मूल मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ श्री रामाय नमः
+                <small>अर्थ: हे श्री राम, मैं आपको नमस्कार करता हूँ।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>2. राम बीज मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ रां रामाय नमः
+                <small>अर्थ: यह राम का बीज मंत्र है — धर्म, सत्य, और मर्यादा के लिए।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>3. राम गायत्री मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ दाशरथये विद्महे ।<br>
+                सीतावल्लभाय धीमहि ।<br>
+                तन्नो रामः प्रचोदयात् ॥
+                <small>अर्थ: हम दशरथ पुत्र का ध्यान करते हैं, सीता के स्वामी का ध्यान करते हैं, राम हमें प्रेरित करें।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>4. राम नाम (तारक मंत्र):</strong></p>
+            <div class="mantra-box">
+                श्री राम, जय राम, जय जय राम
+                <small>अर्थ: राम नाम का जप — कलियुग का सबसे सरल तारक मंत्र।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>5. राम रक्षा स्तोत्र (संक्षिप्त):</strong></p>
+            <div class="mantra-box" style="font-size:15px;">
+                श्री राम रक्षा स्तोत्रम् —<br>
+                चरितं रघुनाथस्य शतकोटि प्रविस्तरम् ।
+                <small>अर्थ: रघुनाथ के चरित्र का वर्णन करोड़ों श्लोकों में है।</small>
+            </div>
+        </div>
+
+        <!-- रामायण के 7 कांड -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📚</span> रामायण के 7 कांड</h2>
+            <p style="font-size:13px;margin-bottom:8px;">
+                <strong>रामायण</strong> को <strong>7 कांडों</strong> में विभाजित किया गया है। हर कांड में राम जी के जीवन की एक महत्वपूर्ण घटना है।
+            </p>
+            <div class="kand-grid">
+                <div class="kand-item">
+                    <div class="kand-name">1. बाल कांड</div>
+                    <div class="kand-desc">राम का जन्म, बाल लीला, विश्वामित्र के साथ जाना, सीता स्वयंवर, विवाह।</div>
+                </div>
+                <div class="kand-item">
+                    <div class="kand-name">2. अयोध्या कांड</div>
+                    <div class="kand-desc">वनवास की तैयारी, कैकेयी के वरदान, राम का 14 वर्ष का वनवास, भरत मिलाप।</div>
+                </div>
+                <div class="kand-item">
+                    <div class="kand-name">3. अरण्य कांड</div>
+                    <div class="kand-desc">वन में जीवन, पंचवटी, शूर्पणखा, खर-दूषण वध, सीता हरण, जटायु मोक्ष।</div>
+                </div>
+                <div class="kand-item">
+                    <div class="kand-name">4. किष्किंधा कांड</div>
+                    <div class="kand-desc">हनुमान मिलन, सुग्रीव मित्रता, बाली वध, सीता की खोज की तैयारी।</div>
+                </div>
+                <div class="kand-item">
+                    <div class="kand-name">5. सुंदर कांड</div>
+                    <div class="kand-desc">हनुमान का लंका जाना, सीता माता से मिलन, अशोक वाटिका, लंका दहन।</div>
+                </div>
+                <div class="kand-item">
+                    <div class="kand-name">6. लंका कांड</div>
+                    <div class="kand-desc">सेतु निर्माण, लंका युद्ध, रावण वध, विभीषण राज्याभिषेक, सीता माता की अग्नि परीक्षा।</div>
+                </div>
+                <div class="kand-item">
+                    <div class="kand-name">7. उत्तर कांड</div>
+                    <div class="kand-desc">अयोध्या वापसी, राम राज्याभिषेक, राम राज्य, लव-कुश का जन्म, राम का वन गमन।</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- जप विधि -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📿</span> जप विधि</h2>
+            <ul>
+                <li><strong>समय:</strong> प्रातः 5-7 बजे, या राम नवमी, विवाह पंचमी</li>
+                <li><strong>स्थान:</strong> पूर्व दिशा में मुख करके, स्वच्छ स्थान पर</li>
+                <li><strong>माला:</strong> तुलसी माला (सबसे शुभ)</li>
+                <li><strong>संख्या:</strong> 108 बार (1 माला), या 1008 बार</li>
+                <li><strong>वस्त्र:</strong> पीले या सफेद वस्त्र</li>
+                <li><strong>भोग:</strong> खीर, पूरी, हलवा, केला, पान, सुपारी</li>
+                <li><strong>धूप/दीप:</strong> धूप, घी का दीपक, कपूर</li>
+                <li><strong>विशेष:</strong> रामचरितमानस पाठ, सुंदरकांड, राम रक्षा स्तोत्र</li>
+            </ul>
+        </div>
+
+        <!-- राम स्तोत्र (Accordion) -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📜</span> राम स्तोत्र / आरती</h2>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 राम आरती (श्री रामचंद्र कृपालु भजमन)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:15px;text-align:left;line-height:2;">
+                        श्री रामचंद्र कृपालु भजमन हरण भवभय दारुणम् ।<br>
+                        नवकंज लोचन कंज मुख कर कंज पद कंजारुणम् ॥<br><br>
+                        कंदर्प अगणित अमित छवि नव नील नीरज सुन्दरम् ।<br>
+                        पट पीत मानहु तड़ित रुचि शुचि नौमि जनक सुतावरम् ॥<br><br>
+                        भजु दीनबंधु दिनेश दानव दैत्य वंश निकंदनम् ।<br>
+                        रघुनंद आनंदकंद कौशलचंद दशरथनंदनम् ॥<br><br>
+                        सिर मुकुट कुंडल तिलक चारु उदार अंग विभूषणम् ।<br>
+                        आजानु भुज शर चाप धर संग्राम जित खरदूषणम् ॥<br><br>
+                        इति वदति तुलसीदास शंकर शेष मुनि मन रंजनम् ।<br>
+                        मम हृदय कंज निवास कुरु कामादि खलदल गंजनम् ॥<br><br>
+                        मन जाहि राच्यो मिलहि सो वर सहज सुंदर साँवरो ।<br>
+                        करुणा निधान सुजान शील सनेह जानत रावरो ॥<br><br>
+                        एहि भाँति गौरी असीस सुन सिय सहित हिय हरषित अली ।<br>
+                        तुलसी भवानिहि पूजि पुनि पुनि मुदित मन मंदिर चली ॥
+                    </div>
+                </div>
+            </div>
+
+                     <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 राम रक्षा स्तोत्र (संपूर्ण)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <p style="margin-bottom:8px;font-size:13px;">
+                        <strong>रचयिता:</strong> बुध कौशिक ऋषि — यह स्तोत्र राम जी की रक्षा के लिए पढ़ा जाता है।
+                    </p>
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        चरितं रघुनाथस्य शतकोटि प्रविस्तरम् ।<br>
+                        एकैकमक्षरं पुंसां महापातकनाशनम् ॥<br><br>
+                        ध्यात्वा नीलोत्पलश्यामं रामं राजीवलोचनम् ।<br>
+                        जानकीलक्ष्मणोपेतं जटामुकुटमण्डितम् ॥<br><br>
+                        सासितूणधनुर्बाणपाणिं नक्तंचरान्तकम् ।<br>
+                        स्वलीलया जगत्त्रातुं आविर्भूतमजं विभुम् ॥<br><br>
+                        रामरक्षां पठेत्प्राज्ञः पापघ्नीं सर्वकामदाम् ।<br>
+                        शिरो मे राघवः पातु भालं दशरथात्मजः ॥<br><br>
+                        कौसल्येयो दृशौ पातु विश्वामित्रप्रियः श्रुती ।<br>
+                        घ्राणं पातु मखत्राता मुखं सौमित्रिवत्सलः ॥<br><br>
+                        जिह्वां विद्यानिधिः पातु कण्ठं भरतवंदितः ।<br>
+                        स्कन्धौ दिव्यायुधः पातु भुजौ भग्नेशकार्मुकः ॥<br><br>
+                        करौ सीतापतिः पातु हृदयं जामदग्न्यजित् ।<br>
+                        मध्यं पातु खरध्वंसी नाभिं दशरथात्मजः ॥<br><br>
+                        सुग्रीवेशः कटी पातु सक्थिनी हनुमत्प्रभुः ।<br>
+                        ऊरू रघूत्तमः पातु रक्षःकुलनिषूदनः ॥<br><br>
+                        जानुनी सेतुकृत्पातु जंघे दशमुखान्तकः ।<br>
+                        पादौ विभीषणश्रीदः पातु रामोऽखिलं वपुः ॥
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 हनुमान चालीसा (राम भक्ति)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <p style="margin-bottom:8px;font-size:13px;">
+                        हनुमान चालीसा का पाठ राम जी की भक्ति के लिए किया जाता है।
+                    </p>
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        श्रीगुरु चरन सरोज रज, निज मनु मुकुरु सुधारि ।<br>
+                        बरनउँ रघुबर बिमल जसु, जो दायकु फल चारि ॥<br><br>
+                        बुद्धिहीन तनु जानिके, सुमिरौं पवन-कुमार ।<br>
+                        बल बुधि बिद्या देहु मोहिं, हरहु कलेस बिकार ॥<br><br>
+                        जय हनुमान ज्ञान गुन सागर । जय कपीस तिहुँ लोक उजागर ॥<br>
+                        राम दूत अतुलित बल धामा । अंजनि-पुत्र पवनसुत नामा ॥<br>
+                        ... (पूरा पाठ हनुमान जी के पेज पर)
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 सुंदरकांड (मुख्य दोहे)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        शान्तं शाश्वतमप्रमेयमनघं निर्वाणशान्तिप्रदं ।<br>
+                        ब्रह्माशम्भुतनुं सुरार्चितपदं सर्वज्ञमीशं विभुम् ॥<br><br>
+                        रामाख्यं जगदीश्वरं सुरगुरुं मायामनुष्यं हरिम् ।<br>
+                        वन्देऽहं करुणाकरं रघुवरं भूपालचूडामणिम् ॥<br><br>
+                        नान्यस्पृहा रघुपते हृदयेऽस्मदीये ।<br>
+                        सत्यं वदामि च भवानखिलान्तरात्मा ॥<br>
+                        भक्तिं प्रयच्छ रघुपुङ्गव निर्भरां मे ।<br>
+                        कामादिदोषरहितं कुरु मानसं च ॥
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- प्रमुख मंदिर -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🛕</span> प्रमुख मंदिर</h2>
+            <div class="temple-list">
+                <div class="temple-item">
+                    <strong>राम जन्मभूमि मंदिर, अयोध्या</strong><br>
+                    भगवान राम का जन्म स्थान, सरयू नदी के किनारे।
+                </div>
+                <div class="temple-item">
+                    <strong>हनुमानगढ़ी, अयोध्या</strong><br>
+                    हनुमान जी का प्रसिद्ध मंदिर, राम जन्मभूमि के निकट।
+                </div>
+                <div class="temple-item">
+                    <strong>रामेश्वरम, तमिलनाडु</strong><br>
+                    राम द्वारा स्थापित शिवलिंग, चार धाम में से एक।
+                </div>
+                <div class="temple-item">
+                    <strong>राम मंदिर, भद्राचलम</strong><br>
+                    तेलंगाना में गोदावरी नदी के किनारे, "दक्षिण अयोध्या"।
+                </div>
+                <div class="temple-item">
+                    <strong>राम राजा मंदिर, हरिद्वार</strong><br>
+                    हरिद्वार में स्थित प्राचीन राम मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>राम मंदिर, श्रीरंगपटना</strong><br>
+                    कर्नाटक में स्थित, भगवान राम का भव्य मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>काला राम मंदिर, अयोध्या</strong><br>
+                    अयोध्या में स्थित, काले पत्थर से बनी राम प्रतिमा।
+                </div>
+            </div>
+        </div>
+              <!-- त्योहार और व्रत -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🎉</span> प्रमुख त्योहार और व्रत</h2>
+            <ul>
+                <li><strong>राम नवमी:</strong> चैत्र शुक्ल नवमी — राम जी का जन्मोत्सव। व्रत, पूजा, रामायण पाठ।</li>
+                <li><strong>विवाह पंचमी:</strong> मार्गशीर्ष शुक्ल पंचमी — राम-सीता विवाह की वर्षगांठ।</li>
+                <li><strong>दशहरा (विजयादशमी):</strong> आश्विन शुक्ल दशमी — रावण वध की विजय।</li>
+                <li><strong>दीपावली:</strong> कार्तिक अमावस्या — राम जी के अयोध्या वापसी की खुशी।</li>
+                <li><strong>सुंदरकांड पाठ:</strong> हर मंगलवार और शनिवार को।</li>
+                <li><strong>राम रक्षा स्तोत्र:</strong> रोज़ सुबह पढ़ने से रक्षा होती है।</li>
+                <li><strong>रामचरितमानस पाठ:</strong> सप्ताह में एक बार।</li>
+            </ul>
+        </div>
+
+        <!-- भक्ति और लाभ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🙏</span> राम जी को क्यों भजें?</h2>
+            <ul>
+                <li><strong>मोक्ष:</strong> राम नाम का जप कलियुग का सबसे सरल तारक मंत्र है।</li>
+                <li><strong>धर्म और सत्य:</strong> राम जी की भक्ति से धर्म और सत्य का मार्ग मिलता है।</li>
+                <li><strong>पारिवारिक सुख:</strong> राम जी के आदर्श जीवन से पारिवारिक सुख-शांति मिलती है।</li>
+                <li><strong>भय मुक्ति:</strong> राम रक्षा स्तोत्र और सुंदरकांड से सभी भय दूर होते हैं।</li>
+                <li><strong>शत्रु नाश:</strong> राम जी की कृपा से शत्रु और बाधाएँ दूर होती हैं।</li>
+                <li><strong>रोग नाश:</strong> राम नाम जप से स्वास्थ्य लाभ होता है।</li>
+                <li><strong>विवाह:</strong> अविवाहित लड़कियों के लिए राम पूजा से अच्छा वर मिलता है।</li>
+                <li><strong>संतान:</strong> संतान प्राप्ति के लिए राम पूजा और रामायण पाठ लाभदायक है।</li>
+            </ul>
+        </div>
+
+        <!-- वर्जित कार्य -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🚫</span> क्या न करें?</h2>
+            <ul>
+                <li>❌ राम जी की मूर्ति को <strong>अशुद्ध हाथों</strong> से न छुएँ</li>
+                <li>❌ <strong>बिना स्नान</strong> राम दरबार में न जाएँ</li>
+                <li>❌ राम जी के सामने <strong>झूठ</strong> न बोलें</li>
+                <li>❌ <strong>तुलसी</strong> को दाँत से न तोड़ें</li>
+                <li>❌ <strong>अशुद्ध</strong> या <strong>बासी</strong> भोग न चढ़ाएँ</li>
+                <li>❌ <strong>रामचरितमानस</strong> का अनादर न करें</li>
+                <li>❌ राम नाम का <strong>अपमान</strong> न करें</li>
+                <li>❌ राम जी के सामने <strong>शोर</strong> न करें</li>
+            </ul>
+        </div>
+
+        <!-- FAQ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>राम जी ने 14 वर्ष का वनवास क्यों किया?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    राम जी के पिता राजा दशरथ ने कैकेयी को दो वरदान दिए थे। जब राम जी का राज्याभिषेक होने वाला था, तब कैकेयी ने वरदान माँगा — <strong>भरत को राज्य और राम को 14 वर्ष का वनवास</strong>। राम जी ने पिता के वचन का पालन करते हुए वनवास स्वीकार किया।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>राम जी को 'मर्यादा पुरुषोत्तम' क्यों कहते हैं?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    राम जी ने अपने जीवन में <strong>मर्यादा (धर्म, सत्य, और कर्तव्य)</strong> का सर्वोच्च पालन किया — पुत्र, भाई, पति, राजा, और मित्र के रूप में। इसलिए उन्हें <strong>मर्यादा पुरुषोत्तम</strong> कहा जाता है।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>राम नाम का जप कैसे करें?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>तुलसी माला</strong> से <strong>'श्री राम, जय राम, जय जय राम'</strong> — 108 बार जप करें। सुबह या संध्या काल में, पूर्व दिशा में मुख करके। यह कलियुग का सबसे सरल तारक मंत्र है।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>क्या राम जी की पूजा से धन प्राप्ति होती है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    राम जी की पूजा से <strong>धन की बर्बादी रुकती है, धन-धान्य में वृद्धि होती है, और कर्ज से मुक्ति</strong> मिलती है। कुबेर (धन के देवता) ने राम जी की पूजा की थी, इसलिए राम पूजा से धन लाभ होता है।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>सुंदरकांड क्यों पढ़ा जाता है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>सुंदरकांड</strong> में हनुमान जी की वीरता और भक्ति का वर्णन है। इसे पढ़ने से <strong>भय, संकट, रोग, और शत्रु</strong> दूर होते हैं। हर मंगलवार और शनिवार को सुंदरकांड पाठ का विशेष महत्व है।
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Links -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🔗</span> संबंधित लिंक</h2>
+            <div class="related-grid">
+                <a href="../mantra/index.html" class="related-link">📿 सभी मंत्र</a>
+                <a href="../stotra/ram-raksha.html" class="related-link">📜 राम रक्षा स्तोत्र</a>
+                <a href="../stotra/sundarkand.html" class="related-link">📜 सुंदरकांड</a>
+                <a href="../tyohar/ram-navami.html" class="related-link">🎉 राम नवमी</a>
+                <a href="../katha/ramayan-katha.html" class="related-link">📖 रामायण कथाएँ</a>
+                <a href="../quiz/index.html" class="related-link">🎯 राम क्विज</a>
+            </div>
+        </div>
+
+        <!-- Share -->
+        <button class="btn-primary" onclick="sharePage()" style="margin-top:10px;">
+            <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+        </button>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय श्री राम</p>
+        </footer>
+
+    </main>
+
+    <button class="back-top" id="backTop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-calendar-days"></i><p>पंचांग</p></a>
+        <a href="../quiz/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>क्विज</p></a>
+    </nav>
+
+    <script src="../script.js"></script>
+    <script>
+        function toggleAccordion(el) {
+            const item = el.parentElement;
+            item.classList.toggle('open');
+        }
+
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backTop');
+            if (btn) {
+                if (window.scrollY > 400) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+                      </html>
+                                                          
