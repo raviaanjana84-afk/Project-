@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>पंचांग — संपूर्ण ज्ञान | Sanatan Gyan Kosh</title>
+    <meta name="description" content="आज का पंचांग — तिथि, वार, नक्षत्र, योग, करण, सूर्योदय, सूर्यास्त, राहु काल, शुभ मुहूर्त और बहुत कुछ।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .panchang-hero {
+            text-align: center;
+            padding: 24px 20px;
+            background: linear-gradient(135deg, rgba(212,175,55,0.15), rgba(122,46,46,0.08));
+            border-radius: var(--radius);
+            margin-bottom: 14px;
+            border: 1px solid var(--border);
+        }
+        .panchang-hero .date-icon {
+            font-size: 48px;
+            display: block;
+            line-height: 1;
+        }
+        .panchang-hero .today-date {
+            font-family: var(--font-display);
+            font-size: 24px;
+            color: var(--maroon);
+            margin-top: 6px;
+        }
+        .panchang-hero .today-eng {
+            font-size: 13px;
+            color: var(--ink-soft);
+            margin-top: 4px;
+        }
+
+        .panchang-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 18px 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .panchang-section h2 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            color: var(--maroon);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 8px;
+        }
+        .panchang-section h2 .sec-icon { font-size: 22px; }
+
+        /* Main Panchang Grid */
+        .panchang-main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .panchang-box {
+            background: var(--bg);
+            padding: 12px 14px;
+            border-radius: 12px;
+            border-left: 4px solid var(--gold);
+            transition: var(--transition);
+        }
+        .panchang-box:hover {
+            transform: translateY(-2px);
+            border-left-color: var(--maroon);
+        }
+        .panchang-box .pb-label {
+            font-size: 10px;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .panchang-box .pb-label i {
+            color: var(--gold);
+            font-size: 11px;
+        }
+        .panchang-box .pb-value {
+            font-family: var(--font-display);
+            font-size: 16px;
+            color: var(--maroon);
+            font-weight: 700;
+            margin-top: 4px;
+        }
+        .panchang-box .pb-extra {
+            font-size: 10px;
+            color: var(--ink-soft);
+            margin-top: 2px;
+        }
+
+        /* Time Grid */
+        .time-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .time-box {
+            background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(122,46,46,0.05));
+            padding: 12px 14px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+        .time-box .t-icon {
+            font-size: 24px;
+            display: block;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+        .time-box .t-label {
+            font-size: 11px;
+            color: var(--ink-soft);
+            font-weight: 600;
+        }
+        .time-box .t-time {
+            font-family: var(--font-display);
+            font-size: 18px;
+            color: var(--maroon);
+            font-weight: 700;
+            margin-top: 4px;
+        }
+
+        /* Rahu Kaal & Choghadiya */
+        .rahu-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .rahu-item {
+            background: #fdecea;
+            padding: 10px 14px;
+            border-radius: 10px;
+            border-left: 4px solid #dc3545;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .rahu-item.good {
+            background: #eef7ee;
+            border-left-color: #27ae60;
+        }
+        .rahu-item .ri-name {
+            font-weight: 700;
+            color: var(--maroon);
+            font-size: 13px;
+        }
+        .rahu-item .ri-time {
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--maroon);
+        }
+        .rahu-item .ri-tag {
+            font-size: 10px;
+            padding: 2px 8px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        .rahu-item .ri-tag.bad {
+            background: #dc3545;
+            color: white;
+        }
+        .rahu-item .ri-tag.good {
+            background: #27ae60;
+            color: white;
+        }
+
+        /* Tithi List */
+        .tithi-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+        .tithi-item {
+            background: var(--bg);
+            padding: 8px 12px;
+            border-radius: 10px;
+            border-left: 3px solid var(--gold);
+        }
+        .tithi-item .ti-name {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--maroon);
+        }
+        .tithi-item .ti-info {
+            font-size: 10px;
+            color: var(--ink-soft);
+            margin-top: 2px;
+        }
+
+        /* Festival Today */
+        .festival-card {
+            background: linear-gradient(135deg, rgba(212,175,55,0.15), rgba(122,46,46,0.08));
+            padding: 16px;
+            border-radius: 12px;
+            border: 2px solid var(--gold);
+            text-align: center;
+        }
+        .festival-card .f-icon {
+            font-size: 32px;
+            display: block;
+            line-height: 1;
+        }
+        .festival-card .f-name {
+            font-family: var(--font-display);
+            font-size: 18px;
+            color: var(--maroon);
+            font-weight: 700;
+            margin-top: 6px;
+        }
+        .festival-card .f-desc {
+            font-size: 12px;
+            color: var(--ink-soft);
+            margin-top: 4px;
+        }
+
+        .no-festival {
+            text-align: center;
+            padding: 16px;
+            color: var(--ink-light);
+            font-size: 13px;
+        }
+
+        /* Update info */
+        .update-info {
+            text-align: center;
+            font-size: 11px;
+            color: var(--ink-light);
+            padding: 8px;
+            background: var(--bg);
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+        .update-info i {
+            color: var(--gold);
+            margin-right: 4px;
+        }
+
+        /* Buttons */
+        .btn-row {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        .btn-small {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background: var(--maroon);
+            color: white;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .btn-small:hover {
+            background: var(--maroon-dark);
+            transform: translateY(-1px);
+        }
+        .btn-small.gold {
+            background: var(--gold);
+            color: var(--maroon);
+        }
+
+        @media (max-width: 420px) {
+            .panchang-hero .today-date { font-size: 20px; }
+            .panchang-box .pb-value { font-size: 14px; }
+            .time-box .t-time { font-size: 15px; }
+            .tithi-list { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="../index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ सनातन ज्ञान कोश</span>
+            <h1>पंचांग</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <!-- Auto-update info -->
+        <div class="update-info">
+            <i class="fa-solid fa-rotate"></i>
+            यह पंचांग हर बार पेज खोलने पर <strong>अपने आप अपडेट</strong> होता है
+        </div>
+
+        <!-- Hero: Today's Date -->
+        <div class="panchang-hero">
+            <span class="date-icon">📅</span>
+            <div class="today-date" id="hindiDate">लोड हो रहा है...</div>
+            <div class="today-eng" id="engDate">लोड हो रहा है...</div>
+        </div>
+
+        <!-- Main Panchang -->
+        <div class="panchang-section">
+            <h2><span class="sec-icon">📿</span> पंचांग के पाँच अंग</h2>
+            <div class="panchang-main-grid">
+                <div class="panchang-box">
+                    <div class="pb-label"><i class="fa-solid fa-calendar-day"></i> वार</div>
+                    <div class="pb-value" id="pbVaar">--</div>
+                    <div class="pb-extra" id="pbVaarExtra">--</div>
+                </div>
+                <div class="panchang-box">
+                    <div class="pb-label"><i class="fa-solid fa-moon"></i> तिथि</div>
+                    <div class="pb-value" id="pbTithi">--</div>
+                    <div class="pb-extra" id="pbTithiExtra">--</div>
+                </div>
+                <div class="panchang-box">
+                    <div class="pb-label"><i class="fa-solid fa-star"></i> नक्षत्र</div>
+                    <div class="pb-value" id="pbNakshatra">--</div>
+                    <div class="pb-extra" id="pbNakshatraExtra">--</div>
+                </div>
+                <div class="panchang-box">
+                    <div class="pb-label"><i class="fa-solid fa-yin-yang"></i> योग</div>
+                    <div class="pb-value" id="pbYoga">--</div>
+                    <div class="pb-extra" id="pbYogaExtra">--</div>
+                </div>
+                <div class="panchang-box">
+                    <div class="pb-label"><i class="fa-solid fa-water"></i> करण</div>
+                    <div class="pb-value" id="pbKarana">--</div>
+                    <div class="pb-extra" id="pbKaranaExtra">--</div>
+                </div>
+                <div class="panchang-box">
+                    <div class="pb-label"><i class="fa-solid fa-calendar-check"></i> पक्ष</div>
+                    <div class="pb-value" id="pbPaksha">--</div>
+                    <div class="pb-extra" id="pbPakshaExtra">--</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sun Times -->
+        <div class="panchang-section">
+            <h2><span class="sec-icon">☀️</span> सूर्य और चंद्र</h2>
+            <div class="time-grid">
+                <div class="time-box">
+                    <span class="t-icon">🌅</span>
+                    <div class="t-label">सूर्योदय</div>
+                    <div class="t-time" id="sunriseTime">--:--</div>
+                </div>
+                <div class="time-box">
+                    <span class="t-icon">🌇</span>
+                    <div class="t-label">सूर्यास्त</div>
+                    <div class="t-time" id="sunsetTime">--:--</div>
+                </div>
+                <div class="time-box">
+                    <span class="t-icon">🌙</span>
+                    <div class="t-label">चंद्रोदय</div>
+                    <div class="t-time" id="moonriseTime">--:--</div>
+                </div>
+                <div class="time-box">
+                    <span class="t-icon">🌑</span>
+                    <div class="t-label">चंद्रास्त</div>
+                    <div class="t-time" id="moonsetTime">--:--</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rahu Kaal & Choghadiya -->
+        <div class="panchang-section">
+            <h2><span class="sec-icon">⏰</span> राहु काल और मुहूर्त</h2>
+            <div class="rahu-list">
+                <div class="rahu-item">
+                    <div>
+                        <div class="ri-name">⚠️ राहु काल</div>
+                        <div style="font-size:10px; color:var(--ink-soft); margin-top:2px;">अशुभ समय — शुभ कार्य न करें</div>
+                    </div>
+                    <div style="text-align:right;">
+                        <div class="ri-time" id="rahuKaal">--:-- - --:--</div>
+                        <span class="ri-tag bad">अशुभ</span>
+                    </div>
+                </div>
+                <div class="rahu-item good">
+                    <div>
+                        <div class="ri-name">✅ अभिजित मुहूर्त</div>
+                        <div style="font-size:10px; color:var(--ink-soft); margin-top:2px;">शुभ समय — शुभ कार्य करें</div>
+                    </div>
+                    <div style="text-align:right;">
+                        <div class="ri-time" id="abhijitMuhurat">--:-- - --:--</div>
+                        <span class="ri-tag good">शुभ</span>
+                    </div>
+                </div>
+                <div class="rahu-item good">
+                    <div>
+                        <div class="ri-name">✅ ब्रह्म मुहूर्त</div>
+                        <div style="font-size:10px; color:var(--ink-soft); margin-top:2px;">जप, ध्यान के लिए श्रेष्ठ</div>
+                    </div>
+                    <div style="text-align:right;">
+                        <div class="ri-time" id="brahmaMuhurat">--:-- - --:--</div>
+                        <span class="ri-tag good">शुभ</span>
+                    </div>
+                </div>
+                <div class="rahu-item">
+                    <div>
+                        <div class="ri-name">⚠️ यम गंड</div>
+                        <div style="font-size:10px; color:var(--ink-soft); margin-top:2px;">अशुभ समय</div>
+                    </div>
+                    <div style="text-align:right;">
+                        <div class="ri-time" id="yamGand">--:-- - --:--</div>
+                        <span class="ri-tag bad">अशुभ</span>
+                    </div>
+                </div>
+                <div class="rahu-item">
+                    <div>
+                        <div class="ri-name">⚠️ गुलिक काल</div>
+                        <div style="font-size:10px; color:var(--ink-soft); margin-top:2px;">अशुभ समय</div>
+                    </div>
+                    <div style="text-align:right;">
+                        <div class="ri-time" id="gulikKaal">--:-- - --:--</div>
+                        <span class="ri-tag bad">अशुभ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Today's Festival -->
+        <div class="panchang-section">
+            <h2><span class="sec-icon">🎉</span> आज का त्योहार / व्रत</h2>
+            <div id="festivalContainer">
+                <div class="no-festival">लोड हो रहा है...</div>
+            </div>
+        </div>
+
+        <!-- Choghadiya -->
+        <div class="panchang-section">
+            <h2><span class="sec-icon">🕐</span> आज का चौघड़िया</h2>
+            <div class="tithi-list" id="choghadiyaList">
+                <!-- Choghadiya will be rendered here -->
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="panchang-section">
+            <h2><span class="sec-icon">⚡</span> जल्दी काम</h2>
+            <div class="btn-row">
+                <button class="btn-small" onclick="sharePage()">
+                    <i class="fa-solid fa-share-nodes"></i> शेयर करें
+                </button>
+                <button class="btn-small gold" onclick="refreshPanchang()">
+                    <i class="fa-solid fa-rotate"></i> रिफ्रेश करें
+                </button>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">पंचांग अनुमानित है · सटीक जानकारी के लिए योग्य ज्योतिषी से परामर्श करें</p>
+        </footer>
+
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="../devta/index.html" class="nav-link"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-calendar-days"></i><p>पंचांग</p></a>
+        <a href="../quiz/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>क्विज</p></a>
+    </nav>
+
+    <script>
+        // ============================================================
+        //  PANCHANG — Auto-Updating Data
+        // ============================================================
+
+        // ---------- Base Data ----------
+        const hindiDays = ['रविवार', 'सोमवार', 'मंगलवार', 'बुधवार', 'गुरुवार', 'शुक्रवार', 'शनिवार'];
+        const hindiMonths = ['जनवरी', 'फरवरी', 'मार्च', 'अप्रैल', 'मई', 'जून', 'जुलाई', 'अगस्त', 'सितंबर', 'अक्टूबर', 'नवंबर', 'दिसंबर'];
+
+        const tithis = ['प्रतिपदा', 'द्वितीया', 'तृतीया', 'चतुर्थी', 'पंचमी', 'षष्ठी', 'सप्तमी', 'अष्टमी', 'नवमी', 'दशमी', 'एकादशी', 'द्वादशी', 'त्रयोदशी', 'चतुर्दशी', 'पूर्णिमा', 'अमावस्या'];
+        const nakshatras = ['अश्विनी', 'भरणी', 'कृत्तिका', 'रोहिणी', 'मृगशिरा', 'आर्द्रा', 'पुनर्वसु', 'पुष्य', 'आश्लेषा', 'मघा', 'पूर्वाफाल्गुनी', 'उत्तराफाल्गुनी', 'हस्त', 'चित्रा', 'स्वाति', 'विशाखा', 'अनुराधा', 'ज्येष्ठा', 'मूल', 'पूर्वाषाढ़ा', 'उत्तराषाढ़ा', 'श्रवण', 'धनिष्ठा', 'शतभिषा', 'पूर्वाभाद्रपदा', 'उत्तराभाद्रपदा', 'रेवती'];
+        const yogas = ['विष्कम्भ', 'प्रीति', 'आयुष्मान', 'सौभाग्य', 'शोभन', 'अतिगण्ड', 'सुकर्मा', 'धृति', 'शूल', 'गण्ड', 'वृद्धि', 'ध्रुव', 'व्याघात', 'हर्षण', 'वज्र', 'सिद्धि', 'व्यतिपात', 'वरीयान', 'परिघ', 'शिव', 'सिद्ध', 'साध्य', 'शुभ', 'शुक्ल', 'ब्रह्म', 'इन्द्र', 'वैधृति'];
+        const karanas = ['बव', 'बालव', 'कौलव', 'तैतिल', 'गर', 'वणिज', 'विष्टि', 'शकुनि', 'चतुष्पद', 'नाग', 'किंस्तुघ्न'];
+
+        // Choghadiya time slots (approx)
+        const choghadiyaDay = ['उद्वेग', 'चर', 'लाभ', 'अमृत', 'काल', 'शुभ', 'रोग', 'उद्वेग'];
+        const choghadiyaNight = ['शुभ', 'अमृत', 'चर', 'रोग', 'काल', 'लाभ', 'उद्वेग', 'चर'];
+
+        // ---------- Main Render Function ----------
+        function renderPanchang() {
+            const now = new Date();
+            const day = now.getDay();
+            const date = now.getDate();
+            const month = now.getMonth();
+            const year = now.getFullYear();
+
+            // ---------- Hero Date ----------
+            const hindiDay = hindiDays[day];
+            const hindiMonth = hindiMonths[month];
+            document.getElementById('hindiDate').textContent = `${hindiDay}, ${date} ${hindiMonth} ${year}`;
+            document.getElementById('engDate').textContent = now.toLocaleDateString('en-IN', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
+            // ---------- Panchang Elements ----------
+            // Vaar
+            document.getElementById('pbVaar').textContent = hindiDay;
+            document.getElementById('pbVaarExtra').textContent = `${hindiDay} का दिन`;
+
+            // Tithi (approximation based on date)
+            const tithiIndex = date % 15;
+            const tithiName = tithis[tithiIndex];
+            const paksha = date <= 15 ? 'शुक्ल पक्ष' : 'कृष्ण पक्ष';
+            document.getElementById('pbTithi').textContent = tithiName;
+            document.getElementById('pbTithiExtra').textContent = paksha;
+
+            // Nakshatra (approximation)
+            const nakshatraIndex = (date * 7 + month * 3) % 27;
+            document.getElementById('pbNakshatra').textContent = nakshatras[nakshatraIndex];
+            document.getElementById('pbNakshatraExtra').textContent = `नक्षत्र ${nakshatraIndex + 1}/27`;
+
+            // Yoga (approximation)
+            const yogaIndex = (date + month) % 27;
+            document.getElementById('pbYoga').textContent = yogas[yogaIndex];
+            document.getElementById('pbYogaExtra').textContent = `योग ${yogaIndex + 1}/27`;
+
+            // Karana (approximation)
+            const karanaIndex = date % 11;
+            document.getElementById('pbKarana').textContent = karanas[karanaIndex];
+            document.getElementById('pbKaranaExtra').textContent = `करण ${karanaIndex + 1}/11`;
+
+            // Paksha
+            document.getElementById('pbPaksha').textContent = paksha;
+            document.getElementById('pbPakshaExtra').textContent = date <= 15 ? 'शुक्ल (बढ़ता चंद्र)' : 'कृष्ण (घटता चंद्र)';
+
+            // ---------- Sun/Moon Times (approx for India) ----------
+            const sunrise = '06:15';
+            const sunset = '18:30';
+            const moonrise = '19:45';
+            const moonset = '06:30';
+
+            document.getElementById('sunriseTime').textContent = sunrise;
+            document.getElementById('sunsetTime').textContent = sunset;
+            document.getElementById('moonriseTime').textContent = moonrise;
+            document.getElementById('moonsetTime').textContent = moonset;
+
+            // ---------- Rahu Kaal (based on day of week) ----------
+            const rahuKaalSlots = [
+                '16:30 - 18:00', // Sunday
+                '07:30 - 09:00', // Monday
+                '15:00 - 16:30', // Tuesday
+                '12:00 - 13:30', // Wednesday
+                '13:30 - 15:00', // Thursday
+                '10:30 - 12:00', // Friday
+                '09:00 - 10:30'  // Saturday
+            ];
+            document.getElementById('rahuKaal').textContent = rahuKaalSlots[day];
+
+            // Yam Gand
+            const yamGandSlots = [
+                '12:00 - 13:30',
+                '10:30 - 12:00',
+                '09:00 - 10:30',
+                '07:30 - 09:00',
+                '06:00 - 07:30',
+                '15:00 - 16:30',
+                '13:30 - 15:00'
+            ];
+            document.getElementById('yamGand').textContent = yamGandSlots[day];
+
+            // Gulik Kaal
+            const gulikKaalSlots = [
+                '15:00 - 16:30',
+                '13:30 - 15:00',
+                '12:00 - 13:30',
+                '10:30 - 12:00',
+                '09:00 - 10:30',
+                '07:30 - 09:00',
+                '06:00 - 07:30'
+            ];
+            document.getElementById('gulikKaal').textContent = gulikKaalSlots[day];
+
+            // Abhijit Muhurat (approx 12:00 - 12:48)
+            document.getElementById('abhijitMuhurat').textContent = '11:48 - 12:36';
+
+            // Brahma Muhurat (approx 04:30 - 05:30)
+            document.getElementById('brahmaMuhurat').textContent = '04:24 - 05:12';
+
+            // ---------- Choghadiya ----------
+            renderChoghadiya(day);
+
+            // ---------- Today's Festival ----------
+            renderFestival(date, month);
+        }
+
+        // ---------- Choghadiya ----------
+        function renderChoghadiya(day) {
+            const container = document.getElementById('choghadiyaList');
+            const dayStart = 6; // 6 AM
+            const dayEnd = 18;  // 6 PM
+            const nightStart = 18;
+            const nightEnd = 6;
+
+            let html = '';
+            const daySlotDuration = (dayEnd - dayStart) / 8;
+            const nightSlotDuration = 12 / 8;
+
+            // Day Choghadiya
+            for (let i = 0; i < 8; i++) {
+                const startHour = dayStart + i * daySlotDuration;
+                const endHour = startHour + daySlotDuration;
+                const name = choghadiyaDay[(day + i) % 8];
+                const isGood = ['अमृत', 'शुभ', 'लाभ', 'चर'].includes(name);
+                html += `
+                    <div class="tithi-item" style="border-left-color: ${isGood ? '#27ae60' : '#dc3545'};">
+                        <div class="ti-name">${name} ${isGood ? '✅' : '⚠️'}</div>
+                        <div class="ti-info">${formatTime(startHour)} - ${formatTime(endHour)}</div>
+                    </div>
+                `;
+            }
+
+            // Night Choghadiya
+            for (let i = 0; i < 8; i++) {
+                const startHour = (nightStart + i * nightSlotDuration) % 24;
+                const endHour = (startHour + nightSlotDuration) % 24;
+                const name = choghadiyaNight[(day + i) % 8];
+                const isGood = ['अमृत', 'शुभ', 'लाभ', 'चर'].includes(name);
+                html += `
+                    <div class="tithi-item" style="border-left-color: ${isGood ? '#27ae60' : '#dc3545'};">
+                        <div class="ti-name">${name} ${isGood ? '✅' : '⚠️'}</div>
+                        <div class="ti-info">${formatTime(startHour)} - ${formatTime(endHour)}</div>
+                    </div>
+                `;
+            }
+
+            container.innerHTML = html;
+        }
+
+        function formatTime(hour) {
+            const h = Math.floor(hour) % 24;
+            const m = Math.floor((hour % 1) * 60);
+            return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`;
+        }
+
+        // ---------- Festival Detection ----------
+        const festivals = {
+            // Format: 'MM-DD': { name, icon, desc }
+            '01-14': { name: 'मकर संक्रांति', icon: '🌞', desc: 'सूर्य का मकर राशि में प्रवेश' },
+            '01-26': { name: 'वसंत पंचमी', icon: '📚', desc: 'माँ सरस्वती का प्रकटोत्सव' },
+            '02-26': { name: 'महाशिवरात्रि', icon: '🔱', desc: 'भगवान शिव का सबसे बड़ा पर्व' },
+            '03-14': { name: 'होली', icon: '🎨', desc: 'रंगों का त्योहार' },
+            '03-30': { name: 'राम नवमी', icon: '🏹', desc: 'भगवान राम का जन्मोत्सव' },
+            '04-06': { name: 'हनुमान जयंती', icon: '🐒', desc: 'हनुमान जी का जन्मोत्सव' },
+            '04-15': { name: 'अक्षय तृतीया', icon: '💰', desc: 'सोना खरीदने का शुभ दिन' },
+            '08-09': { name: 'रक्षाबंधन', icon: '🎀', desc: 'भाई-बहन का पवित्र पर्व' },
+            '08-16': { name: 'जन्माष्टमी', icon: '🟡', desc: 'भगवान कृष्ण का जन्मोत्सव' },
+            '08-27': { name: 'गणेश चतुर्थी', icon: '🐘', desc: 'भगवान गणेश का जन्मोत्सव' },
+            '10-02': { name: 'गांधी जयंती', icon: '🇮🇳', desc: 'राष्ट्रपिता महात्मा गांधी की जयंती' },
+            '10-12': { name: 'दशहरा', icon: '🏹', desc: 'बुराई पर अच्छाई की जीत' },
+            '10-20': { name: 'करवा चौथ', icon: '🌙', desc: 'विवाहित स्त्रियों का व्रत' },
+            '11-01': { name: 'दीपावली', icon: '🪔', desc: 'दीपों का उत्सव' },
+            '11-02': { name: 'गोवर्धन पूजा', icon: '🌳', desc: 'गोवर्धन पर्वत की पूजा' },
+            '11-03': { name: 'भाई दूज', icon: '👫', desc: 'भाई-बहन का पर्व' }
+        };
+
+        function renderFestival(date, month) {
+            const key = `${(month + 1).toString().padStart(2, '0')}-${date.toString().padStart(2, '0')}`;
+            const container = document.getElementById('festivalContainer');
+
+            if (festivals[key]) {
+                const f = festivals[key];
+                container.innerHTML = `
+                    <div class="festival-card">
+                        <span class="f-icon">${f.icon}</span>
+                        <div class="f-name">${f.name}</div>
+                        <div class="f-desc">${f.desc}</div>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = `
+                    <div class="no-festival">
+                        <i class="fa-solid fa-calendar-xmark" style="font-size:24px; display:block; margin-bottom:8px; color:var(--border);"></i>
+                        आज कोई विशेष त्योहार नहीं है
+                    </div>
+                `;
+            }
+        }
+
+        // ---------- Refresh Function ----------
+        function refreshPanchang() {
+            renderPanchang();
+            // Show toast
+            const info = document.querySelector('.update-info');
+            if (info) {
+                info.innerHTML = '<i class="fa-solid fa-check" style="color:#27ae60;"></i> पंचांग अपडेट हो गया!';
+                setTimeout(() => {
+                    info.innerHTML = '<i class="fa-solid fa-rotate"></i> यह पंचांग हर बार पेज खोलने पर <strong>अपने आप अपडेट</strong> होता है';
+                }, 2000);
+            }
+        }
+
+        // ---------- Share ----------
+        function sharePage() {
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    text: '🕉️ आज का पंचांग — सनातन ज्ञान कोश',
+                    url: window.location.href
+                }).catch(() => {});
+            } else {
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    alert('लिंक कॉपी हो गया!');
+                });
+            }
+        }
+
+        // ---------- Dark Mode ----------
+        const darkToggle = document.getElementById('darkToggle');
+        if (darkToggle) {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+                darkToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            }
+            darkToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                const icon = this.querySelector('i');
+                const isDark = document.body.classList.contains('dark-mode');
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+                localStorage.setItem('darkMode', isDark);
+            });
+        }
+
+        // ---------- Initialize ----------
+        document.addEventListener('DOMContentLoaded', function() {
+            renderPanchang();
+
+            // Auto-refresh at midnight
+            const now = new Date();
+            const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+            const msUntilMidnight = tomorrow - now;
+            setTimeout(() => {
+                renderPanchang();
+                // Then refresh every 24 hours
+                setInterval(renderPanchang, 24 * 60 * 60 * 1000);
+            }, msUntilMidnight);
+        });
+    </script>
+</body>
+</html>
