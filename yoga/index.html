@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>योग कोश — संपूर्ण ज्ञान | Sanatan Gyan Kosh</title>
+    <meta name="description" content="योग का संपूर्ण ज्ञान — आसन, प्राणायाम, ध्यान, मुद्रा, बंध, चक्र, कुंडलिनी और बहुत कुछ।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .search-wrap {
+            background: var(--card-bg);
+            border-radius: var(--radius-sm);
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 12px;
+            border: 1px solid var(--border);
+        }
+        .search-wrap i { color: var(--gold); font-size: 18px; }
+        .search-wrap input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            background: transparent;
+            font-family: var(--font-body);
+            color: var(--ink);
+        }
+        .search-wrap input::placeholder { color: var(--ink-light); }
+
+        .cat-tabs {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 4px 0 14px;
+            scrollbar-width: none;
+        }
+        .cat-tabs::-webkit-scrollbar { display: none; }
+        .cat-tab {
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1.5px solid var(--border);
+            background: var(--card-bg);
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: var(--transition);
+            color: var(--ink-soft);
+            font-family: var(--font-body);
+        }
+        .cat-tab.active {
+            background: var(--maroon);
+            color: white;
+            border-color: var(--maroon);
+        }
+        .cat-tab:hover:not(.active) {
+            border-color: var(--gold);
+            color: var(--maroon);
+        }
+
+        .yoga-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .yoga-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 18px 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--gold);
+            transition: var(--transition);
+        }
+        .yoga-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+            border-left-color: var(--maroon);
+        }
+        .yoga-card .y-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            gap: 10px;
+        }
+        .yoga-card .y-title {
+            font-family: var(--font-display);
+            font-size: 18px;
+            color: var(--maroon);
+            font-weight: 700;
+            flex: 1;
+        }
+        .yoga-card .y-title .y-en {
+            font-family: var(--font-body);
+            font-size: 10px;
+            font-weight: 400;
+            color: var(--ink-light);
+            display: block;
+            margin-top: 2px;
+        }
+        .yoga-card .y-badge {
+            font-size: 9px;
+            background: var(--maroon);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .yoga-card .y-badge.gold { background: var(--gold); color: var(--maroon); }
+        .yoga-card .y-badge.green { background: #27ae60; }
+        .yoga-card .y-badge.blue { background: #2980b9; }
+        .yoga-card .y-badge.purple { background: #8e44ad; }
+
+        .yoga-card .y-desc {
+            background: #f8f4f0;
+            border-radius: 10px;
+            padding: 10px 12px;
+            font-size: 13px;
+            color: var(--ink-soft);
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+        .yoga-card .y-desc strong { color: var(--maroon); }
+
+        .yoga-card .y-benefits {
+            background: #eef7ee;
+            border-radius: 10px;
+            padding: 10px 12px;
+            font-size: 13px;
+            color: var(--ink-soft);
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+        .yoga-card .y-benefits strong { color: #27ae60; }
+
+        .yoga-card .y-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed var(--border);
+        }
+        .yoga-card .y-meta span {
+            font-size: 10px;
+            background: var(--bg);
+            padding: 4px 10px;
+            border-radius: 10px;
+            color: var(--ink-soft);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .yoga-card .y-meta span i {
+            color: var(--gold);
+            font-size: 10px;
+        }
+
+        .yoga-details {
+            margin-top: 8px;
+        }
+        .yoga-details summary {
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--maroon);
+            padding: 6px 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .yoga-details summary::-webkit-details-marker { display: none; }
+        .yoga-details summary::before {
+            content: '➕';
+            font-size: 11px;
+            transition: transform 0.3s;
+        }
+        .yoga-details[open] summary::before {
+            content: '➖';
+        }
+        .yoga-details .d-body {
+            padding: 10px 0;
+            font-size: 12.5px;
+            color: var(--ink-soft);
+            line-height: 1.8;
+            background: var(--bg);
+            padding: 12px;
+            border-radius: 10px;
+            margin-top: 6px;
+        }
+
+        .chakra-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .chakra-item {
+            background: var(--bg);
+            padding: 12px;
+            border-radius: 10px;
+            border-left: 3px solid var(--gold);
+        }
+        .chakra-item .c-name {
+            font-family: var(--font-display);
+            font-weight: 700;
+            color: var(--maroon);
+            font-size: 13px;
+        }
+        .chakra-item .c-info {
+            font-size: 10px;
+            color: var(--ink-soft);
+            margin-top: 2px;
+        }
+
+        .no-result {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--ink-light);
+            font-size: 14px;
+        }
+        .no-result i {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--border);
+        }
+
+        @media (max-width: 420px) {
+            .yoga-card { padding: 14px 12px; }
+            .yoga-card .y-title { font-size: 16px; }
+            .yoga-card .y-desc,
+            .yoga-card .y-benefits { font-size: 12px; }
+            .chakra-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="../index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ सनातन ज्ञान कोश</span>
+            <h1>योग कोश</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <div class="hero-banner">
+            <h2>🧘 योग कोश</h2>
+            <p><strong>संपूर्ण योग ज्ञान</strong> — आसन, प्राणायाम, ध्यान, मुद्रा, चक्र।</p>
+        </div>
+
+        <div class="search-wrap">
+            <i class="fa-solid fa-search"></i>
+            <input type="text" id="yogaSearch" placeholder="योग खोजें... (जैसे: सूर्य नमस्कार, कपालभाति)" oninput="filterYoga()" />
+        </div>
+
+        <div class="cat-tabs" id="catTabs">
+            <button class="cat-tab active" data-cat="all">✨ सभी</button>
+            <button class="cat-tab" data-cat="asan">🧘 आसन</button>
+            <button class="cat-tab" data-cat="pranayam">🌬️ प्राणायाम</button>
+            <button class="cat-tab" data-cat="dhyan">🧠 ध्यान</button>
+            <button class="cat-tab" data-cat="mudra">🤲 मुद्रा-बंध</button>
+            <button class="cat-tab" data-cat="chakra">🌈 चक्र</button>
+            <button class="cat-tab" data-cat="shatkarma">💧 षट्कर्म</button>
+        </div>
+
+        <div class="yoga-grid" id="yogaGrid"></div>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय श्री राम</p>
+        </footer>
+
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="../devta/index.html" class="nav-link"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-spa"></i><p>योग</p></a>
+        <a href="../quiz/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>क्विज</p></a>
+    </nav>
+
+    <script>
+        // ============================================================
+        //  YOGA DATABASE — Complete Yoga Knowledge
+        // ============================================================
+
+        const yogaItems = [
+            // ========== योग का परिचय ==========
+            {
+                title: 'योग का परिचय',
+                en: 'Introduction to Yoga',
+                category: 'asan',
+                desc: 'योग एक प्राचीन भारतीय विद्या है — जो शरीर, मन, और आत्मा को जोड़ती है। "योग" का अर्थ है — जोड़ना।',
+                benefits: 'शारीरिक स्वास्थ्य, मानसिक शांति, आत्मज्ञान, मोक्ष।',
+                meta: {
+                    'प्रणेता': 'महर्षि पतंजलि',
+                    'ग्रंथ': 'योग सूत्र',
+                    'अंग': 'अष्टांग योग',
+                    'लक्ष्य': 'चित्त वृत्ति निरोध',
+                    'काल': '5000+ वर्ष पुराना'
+                },
+                extra: 'योग के 8 अंग हैं — यम, नियम, आसन, प्राणायाम, प्रत्याहार, धारणा, ध्यान, समाधि।'
+            },
+            {
+                title: 'अष्टांग योग',
+                en: 'Ashtanga Yoga',
+                category: 'asan',
+                desc: 'महर्षि पतंजलि द्वारा प्रतिपादित 8 अंगों का योग — जो मोक्ष का मार्ग है।',
+                benefits: 'आत्म-नियंत्रण, शारीरिक स्वास्थ्य, मानसिक शांति, समाधि।',
+                meta: {
+                    '1. यम': 'अहिंसा, सत्य, अस्तेय, ब्रह्मचर्य, अपरिग्रह',
+                    '2. नियम': 'शौच, संतोष, तप, स्वाध्याय, ईश्वर प्रणिधान',
+                    '3. आसन': 'शारीरिक मुद्राएँ',
+                    '4. प्राणायाम': 'श्वास नियंत्रण',
+                    '5. प्रत्याहार': 'इंद्रिय संयम',
+                    '6. धारणा': 'एकाग्रता',
+                    '7. ध्यान': 'ध्यान',
+                    '8. समाधि': 'सर्वोच्च अवस्था'
+                },
+                extra: 'अष्टांग योग मोक्ष का मार्ग है — जो आत्म-नियंत्रण से शुरू होकर समाधि पर समाप्त होता है।'
+            },
+
+            // ========== प्रमुख आसन ==========
+            {
+                title: 'सूर्य नमस्कार',
+                en: 'Surya Namaskar',
+                category: 'asan',
+                desc: 'सूर्य नमस्कार 12 आसनों का एक क्रम है — जो सूर्य देव को समर्पित है।',
+                benefits: 'पूरे शरीर का व्यायाम, आरोग्य, ऊर्जा, नेत्र ज्योति, आत्मविश्वास।',
+                meta: {
+                    'आसन': '12 आसन',
+                    'समय': 'सूर्योदय के समय',
+                    'संख्या': '3-12 चक्र',
+                    'मंत्र': '12 सूर्य नाम',
+                    'लाभ': 'संपूर्ण स्वास्थ्य'
+                },
+                extra: 'सूर्य नमस्कार से पूरे शरीर का व्यायाम होता है। यह सुबह खाली पेट करना चाहिए।'
+            },
+            {
+                title: 'ताड़ासन',
+                en: 'Tadasana',
+                category: 'asan',
+                desc: 'खड़े होकर हाथ ऊपर उठाने का आसन — जो शरीर को सीधा करता है।',
+                benefits: 'लंबाई, रीढ़, संतुलन, एकाग्रता।',
+                meta: {
+                    'समय': 'प्रातः',
+                    'अवधि': '10-30 सेकंड',
+                    'स्तर': 'शुरुआती',
+                    'लाभ': 'रीढ़, संतुलन'
+                },
+                extra: 'ताड़ासन से रीढ़ की हड्डी सीधी होती है और शरीर का संतुलन बढ़ता है।'
+            },
+            {
+                title: 'वज्रासन',
+                en: 'Vajrasana',
+                category: 'asan',
+                desc: 'घुटनों के बल बैठने का आसन — जो पाचन के लिए उत्तम है।',
+                benefits: 'पाचन, कब्ज, गैस, मन की शांति।',
+                meta: {
+                    'समय': 'भोजन के बाद',
+                    'अवधि': '5-10 मिनट',
+                    'स्तर': 'शुरुआती',
+                    'लाभ': 'पाचन तंत्र'
+                },
+                extra: 'वज्रासन भोजन के तुरंत बाद किया जा सकता है — यह पाचन के लिए अत्यंत लाभकारी है।'
+            },
+            {
+                title: 'पद्मासन',
+                en: 'Padmasana',
+                category: 'asan',
+                desc: 'कमल की मुद्रा में बैठने का आसन — जो ध्यान के लिए सर्वोत्तम है।',
+                benefits: 'ध्यान, एकाग्रता, मन की शांति, आत्मज्ञान।',
+                meta: {
+                    'समय': 'प्रातः',
+                    'अवधि': '10-30 मिनट',
+                    'स्तर': 'मध्यम',
+                    'लाभ': 'ध्यान'
+                },
+                extra: 'पद्मासन ध्यान के लिए सर्वोत्तम आसन है — इसमें बैठकर ध्यान करने से मन एकाग्र होता है।'
+            },
+            {
+                title: 'भुजंगासन',
+                en: 'Bhujangasana',
+                category: 'asan',
+                desc: 'साँप की मुद्रा — पेट के बल लेटकर छाती उठाने का आसन।',
+                benefits: 'रीढ़, कमर दर्द, फेफड़े, छाती।',
+                meta: {
+                    'समय': 'प्रातः',
+                    'अवधि': '15-30 सेकंड',
+                    'स्तर': 'मध्यम',
+                    'लाभ': 'रीढ़, कमर'
+                },
+                extra: 'भुजंगासन से रीढ़ की हड्डी लचीली होती है और कमर दर्द में लाभ होता है।'
+            },
+            {
+                title: 'शवासन',
+                en: 'Shavasana',
+                category: 'asan',
+                desc: 'शव की मुद्रा — पूरी तरह लेटकर विश्राम करने का आसन।',
+                benefits: 'तनाव, थकान, उच्च रक्तचाप, मानसिक शांति।',
+                meta: {
+                    'समय': 'अंत में',
+                    'अवधि': '5-10 मिनट',
+                    'स्तर': 'शुरुआती',
+                    'लाभ': 'विश्राम'
+                },
+                extra: 'शवासन योग के अंत में किया जाता है — यह पूरे शरीर को आराम देता है।'
+            },
+            {
+                title: 'त्रिकोणासन',
+                en: 'Trikonasana',
+                category: 'asan',
+                desc: 'त्रिभुज की मुद्रा — खड़े होकर एक हाथ से पैर छूने का आसन।',
+                benefits: 'कमर, पेट, पैर, लचीलापन।',
+                meta: {
+                    'समय': 'प्रातः',
+                    'अवधि': '15-30 सेकंड',
+                    'स्तर': 'शुरुआती',
+                    'लाभ': 'कमर, पैर'
+                },
+                extra: 'त्रिकोणासन से कमर की चर्बी कम होती है और पैर मजबूत होते हैं।'
+            },
+            {
+                title: 'वृक्षासन',
+                en: 'Vrikshasana',
+                category: 'asan',
+                desc: 'पेड़ की मुद्रा — एक पैर पर खड़े होकर संतुलन बनाने का आसन।',
+                benefits: 'संतुलन, एकाग्रता, पैर, मन।',
+                meta: {
+                    'समय': 'प्रातः',
+                    'अवधि': '15-30 सेकंड',
+                    'स्तर': 'मध्यम',
+                    'लाभ': 'संतुलन'
+                },
+                extra: 'वृक्षासन से संतुलन और एकाग्रता बढ़ती है। यह ध्यान के लिए भी अच्छा है।'
+            },
+            {
+                title: 'हलासन',
+                en: 'Halasana',
+                category: 'asan',
+                desc: 'हल की मुद्रा — पीठ के बल लेटकर पैर सिर के पीछे ले जाने का आसन।',
+                benefits: 'रीढ़, थायरॉइड, पाचन, मधुमेह।',
+                meta: {
+                    'समय': 'प्रातः',
+                    'अवधि': '15-30 सेकंड',
+                    'स्तर': 'कठिन',
+                    'लाभ': 'रीढ़, थायरॉइड'
+                },
+                extra: 'हलासन से रीढ़ लचीली होती है और थायरॉइड में लाभ होता है।'
+            },
+            {
+                title: 'धनुरासन',
+                en: 'Dhanurasana',
+                category: 'asan',
+                desc: 'धनुष की मुद्रा — पेट के बल लेटकर पैर पीछे से पकड़ने का आसन।',
+                benefits: 'रीढ़, पेट, कमर, फेफड़े।',
+                meta: {
+                    'समय': 'प्रातः',
+                    'अवधि': '15-30 सेकंड',
+                    'स्तर': 'कठिन',
+                    'लाभ': 'रीढ़, कमर'
+                },
+                extra: 'धनुरासन से रीढ़ लचीली होती है और पेट की चर्बी कम होती है।'
+            },
+            {
+                title: 'बालासन',
+                en: 'Balasana',
+                category: 'asan',
+                desc: 'बच्चे की मुद्रा — घुटनों के बल बैठकर आगे झुकने का आसन।',
+                benefits: 'तनाव, थकान, कमर दर्द, मानसिक शांति।',
+                meta: {
+                    'समय': 'प्रातः',
+                    'अवधि': '1-3 मिनट',
+                    'स्तर': 'शुरुआती',
+                    'लाभ': 'विश्राम'
+                },
+                extra: 'बालासन से मन शांत होता है और तनाव दूर होता है।'
+            },
+
+            // ========== प्राणायाम ==========
+            {
+                title: 'अनुलोम-विलोम',
+                en: 'Anulom-Vilom',
+                category: 'pranayam',
+                desc: 'एक नासिका से श्वास लेकर दूसरी से छोड़ने का प्राणायाम।',
+                benefits: 'मन की शांति, एकाग्रता, रक्तचाप, श्वसन तंत्र।',
+                meta: {
+                    'समय': 'प्रातः',
+                    'अवधि': '5-10 मिनट',
+                    'स्तर': 'शुरुआती',
+                    'लाभ': 'मन, श्वास'
+                },
+                extra: 'अनुलोम-विलोम से मन शांत होता है और एकाग्रता बढ़ती है। यह नाड़ी शुद्धि का प्राणायाम है।'
+            },
+            {
+                title: 'कपालभाति',
+                en: 'Kapalbhati',
+                category: 'pranayam',
+                desc: 'तेज़ श्वास छोड़ने का प्राणायाम — जो शरीर को शुद्ध करता है।',
+                benefits: 'पेट, पाचन, फेफड़े, मस्तिष्क, ऊर्जा।',
+                meta: {
+                    'समय': 'प्रातः',
+                    'अवधि': '5-10 मिनट',
+                    'स्तर': 'मध्यम',
+                    'लाभ': 'शुद्धि'
+                },
+                extra: 'कपालभाति से पेट की चर्बी कम होती है और मस्तिष्क को ऑक्सीजन मिलती है।'
+            },
+            {
+                title: 'भस्त्रिका',
+                en: 'Bhastrika',
+                category: 'pranayam',
+                desc: 'भट्ठी की तरह तेज़ श्वास लेने-छोड़ने का प्राणायाम।',
+                benefits: 'फेफड़े, ऊर्जा, मन, शरीर की गर्मी।',
+                meta: {
+                    'समय': 'प्रातः',
+                    'अवधि': '3-5 मिनट',
+                    'स्तर': 'मध्यम',
+                    'लाभ': 'ऊर्जा'
+                },
+                extra: 'भस्त्रिका से शरीर में गर्मी आती है और ऊर्जा बढ़ती है।'
+            },
+            {
+                title: 'भ्रामरी',
+                en: 'Bhramari',
+                category: 'pranayam',
+                desc: 'भौंरे की गुंजन के साथ श्वास छोड़ने का प्राणायाम।',
+                benefits: 'मन की शांति, तनाव, अनिद्रा, क्रोध।',
+                meta: {
+                    'समय': 'सायं',
+                    'अवधि': '5-10 मिनट',
+                    'स्तर': 'शुरुआती',
+                    'लाभ': 'शांति'
+                },
+                extra: 'भ्रामरी से मन शांत होता है और अनिद्रा में लाभ होता है।'
+            },
+            {
+                title: 'उज्जayi',
+                en: 'Ujjayi',
+                category: 'pranayam',
+                desc: 'गले में हल्की आवाज़ के साथ श्वास लेने का प्राणायाम।',
+                benefits: 'गला, थायरॉइड, मन, श्वसन।',
+                meta: {
+                    'समय': 'प्रातः',
+                    'अवधि': '5-10 मिनट',
+                    'स्तर': 'मध्यम',
+                    'लाभ': 'गला, थायरॉइड'
+                },
+                extra: 'उज्जayi से गले की समस्याओं में लाभ होता है और मन शांत होता है।'
+            },
+            {
+                title: 'शीतली',
+                en: 'Sheetali',
+                category: 'pranayam',
+                desc: 'जीभ को मोड़कर मुँह से श्वास लेने का शीतल प्राणायाम।',
+                benefits: 'गर्मी, प्यास, क्रोध, रक्तचाप।',
+                meta: {
+                    'समय': 'गर्मी में',
+                    'अवधि': '5-10 मिनट',
+                    'स्तर': 'मध्यम',
+                    'लाभ': 'शीतलता'
+                },
+                extra: 'शीतली से शरीर ठंडा होता है और गर्मी में लाभ होता है।'
+            },
+            {
+                title: 'भ्रामरी (विस्तार)',
+                en: 'Bhramari (Detail)',
+                category: 'pranayam',
+                desc: 'भ्रामरी प्राणायाम में कान बंद करके "ॐ" की ध्वनि की तरह गुंजन करते हैं।',
+                benefits: 'मानसिक तनाव, अनिद्रा, क्रोध, चिंता।',
+                meta: {
+                    'समय': 'सायं',
+                    'अवधि': '5-10 मिनट',
+                    'स्तर': 'शुरुआती',
+                    'लाभ': 'मानसिक शांति'
+                },
+                extra: 'भ्रामरी से मन की शांति और नींद में लाभ होता है।'
+            },
+
+            // ========== ध्यान ==========
+            {
+                title: 'ध्यान (Meditation)',
+                en: 'Dhyan',
+                category: 'dhyan',
+                desc: 'ध्यान मन को एकाग्र करने की क्रिया है — जो आत्मज्ञान की ओर ले जाती है।',
+                benefits: 'मानसिक शांति, एकाग्रता, आत्मज्ञान, तनाव मुक्ति।',
+                meta: {
+                    'समय': 'प्रातः/सायं',
+                    'अवधि': '10-30 मिनट',
+                    'आसन': 'पद्मासन/सुखासन',
+                    'मंत्र': 'ॐ',
+                    'लाभ': 'आत्मज्ञान'
+                },
+                extra: 'ध्यान के लिए शांत स्थान, एकाग्र मन, और नियमित अभ्यास आवश्यक है।'
+            },
+            {
+                title: 'त्राटक',
+                en: 'Trataka',
+                category: 'dhyan',
+                desc: 'एक बिंदु पर टकटकी लगाकर देखने का ध्यान — जो एकाग्रता बढ़ाता है।',
+                benefits: 'एकाग्रता, नेत्र ज्योति, मानसिक शांति।',
+                meta: {
+                    'समय': 'प्रातः',
+                    'अवधि': '5-10 मिनट',
+                    'वस्तु': 'दीपक/बिंदु',
+                    'लाभ': 'एकाग्रता'
+                },
+                extra: 'त्राटक से एकाग्रता और नेत्र ज्योति बढ़ती है।'
+            },
+            {
+                title: 'योग निद्रा',
+                en: 'Yoga Nidra',
+                category: 'dhyan',
+                desc: 'सचेत विश्राम की अवस्था — जिसमें शरीर सोता है, लेकिन मन जागता है।',
+                benefits: 'तनाव, थकान, अनिद्रा, मानसिक शांति।',
+                meta: {
+                    'समय': 'दोपहर/सायं',
+                    'अवधि': '20-30 मिनट',
+                    'आसन': 'शवासन',
+                    'लाभ': 'गहरा विश्राम'
+                },
+                extra: 'योग निद्रा से गहरा विश्राम मिलता है और तनाव दूर होता है।'
+            },
+
+            // ========== मुद्रा और बंध ==========
+            {
+                title: 'मुद्राएँ',
+                en: 'Mudras',
+                category: 'mudra',
+                desc: 'मुद्राएँ हाथों और शरीर की विशेष मुद्राएँ हैं — जो ऊर्जा को नियंत्रित करती हैं।',
+                benefits: 'शारीरिक स्वास्थ्य, मानसिक शांति, ऊर्जा संतुलन।',
+                meta: {
+                    'ज्ञान मुद्रा': 'ज्ञान, एकाग्रता',
+                    'ध्यान मुद्रा': 'ध्यान, शांति',
+                    'वायु मुद्रा': 'गैस, कब्ज',
+                    'पृथ्वी मुद्रा': 'शक्ति, स्थिरता',
+                    'शून्य मुद्रा': 'कान, तनाव'
+                },
+                extra: 'मुद्राओं से शरीर की ऊर्जा संतुलित होती है और मन शांत होता है।'
+            },
+            {
+                title: 'बंध',
+                en: 'Bandhas',
+                category: 'mudra',
+                desc: 'बंध शरीर के विशेष अंगों को सिकोड़ने की क्रिया है — जो ऊर्जा को नियंत्रित करती है।',
+                benefits: 'ऊर्जा, पाचन, मानसिक शांति।',
+                meta: {
+                    'मूल बंध': 'मूलाधार चक्र',
+                    'उड्डियान बंध': 'पेट, पाचन',
+                    'जालंधर बंध': 'गला, थायरॉइड',
+                    'महाबंध': 'तीनों बंध एक साथ'
+                },
+                extra: 'बंधों से ऊर्जा ऊर्ध्वगामी होती है और कुंडलिनी जागरण में सहायता मिलती है।'
+            },
+
+            // ========== चक्र ==========
+            {
+                title: 'सप्त चक्र',
+                en: 'Seven Chakras',
+                category: 'chakra',
+                desc: 'शरीर में 7 प्रमुख चक्र हैं — जो ऊर्जा के केंद्र हैं।',
+                benefits: 'ऊर्जा संतुलन, आत्मज्ञान, मानसिक शांति, कुंडलिनी जागरण।',
+                meta: {
+                    '1. मूलाधार': 'रीढ़ के नीचे',
+                    '2. स्वाधिष्ठान': 'नाभि के नीचे',
+                    '3. मणिपुर': 'नाभि',
+                    '4. अनाहत': 'हृदय',
+                    '5. विशुद्धि': 'गला',
+                    '6. आज्ञा': 'भ्रूमध्य',
+                    '7. सहस्रार': 'सिर के शीर्ष'
+                },
+                extra: 'हर चक्र का अपना रंग, बीज मंत्र, और देवता होता है। चक्रों के जागरण से आत्मज्ञान मिलता है।'
+            },
+            {
+                title: 'कुंडलिनी',
+                en: 'Kundalini',
+                category: 'chakra',
+                desc: 'कुंडलिनी शक्ति — जो मूलाधार चक्र में सुप्त अवस्था में रहती है।',
+                benefits: 'आत्मज्ञान, सिद्धि, मोक्ष, आध्यात्मिक ऊर्जा।',
+                meta: {
+                    'स्थान': 'मूलाधार चक्र',
+                    'स्वरूप': 'सर्पिणी',
+                    'जागरण': 'योग साधना',
+                    'मार्ग': 'सुषुम्ना नाड़ी',
+                    'लक्ष्य': 'सहस्रार चक्र'
+                },
+                extra: 'कुंडलिनी जागरण से आत्मज्ञान और सिद्धि प्राप्त होती है। यह योग साधना का सर्वोच्च लक्ष्य है।'
+            },
+
+            // ========== षट्कर्म ==========
+            {
+                title: 'षट्कर्म',
+                en: 'Shatkarma',
+                category: 'shatkarma',
+                desc: 'षट्कर्म योग के 6 शुद्धि कर्म हैं — जो शरीर को शुद्ध करते हैं।',
+                benefits: 'शरीर शुद्धि, रोग नाश, योग साधना में सहायता।',
+                meta: {
+                    '1. धौति': 'पेट शुद्धि',
+                    '2. बस्ति': 'आंत शुद्धि',
+                    '3. नेति': 'नासिका शुद्धि',
+                    '4. त्राटक': 'नेत्र शुद्धि',
+                    '5. नौलि': 'पेट मालिश',
+                    '6. कपालभाति': 'मस्तिष्क शुद्धि'
+                },
+                extra: 'षट्कर्म योग साधना की तैयारी है — इससे शरीर शुद्ध होता है और साधना में सहायता मिलती है।'
+            }
+        ];
+
+        // ============================================================
+        //  RENDER FUNCTIONS
+        // ============================================================
+
+        let currentCategory = 'all';
+        let searchQuery = '';
+
+        function renderYoga() {
+            const grid = document.getElementById('yogaGrid');
+            const filtered = yogaItems.filter(y => {
+                const matchCat = currentCategory === 'all' || y.category === currentCategory;
+                const matchSearch = y.title.includes(searchQuery) ||
+                                    y.en.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                    y.desc.includes(searchQuery);
+                return matchCat && matchSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div class="no-result">
+                    <i class="fa-solid fa-search"></i>
+                    कोई जानकारी नहीं मिली। कृपया दूसरा शब्द खोजें।
+                </div>`;
+                return;
+            }
+
+            const badgeClass = (cat) => {
+                if (cat === 'asan') return 'gold';
+                if (cat === 'pranayam') return 'blue';
+                if (cat === 'dhyan') return 'purple';
+                if (cat === 'mudra') return 'green';
+                if (cat === 'chakra') return 'gold';
+                if (cat === 'shatkarma') return 'blue';
+                return '';
+            };
+
+            const catName = (cat) => {
+                const names = {
+                    'asan': 'आसन',
+                    'pranayam': 'प्राणायाम',
+                    'dhyan': 'ध्यान',
+                    'mudra': 'मुद्रा',
+                    'chakra': 'चक्र',
+                    'shatkarma': 'षट्कर्म'
+                };
+                return names[cat] || cat;
+            };
+
+            grid.innerHTML = filtered.map(y => {
+                let metaHtml = '';
+                if (y.meta) {
+                    metaHtml = Object.entries(y.meta).map(([k, v]) => 
+                        `<span><i class="fa-solid fa-circle-dot"></i> <strong>${k}:</strong> ${v}</span>`
+                    ).join('');
+                }
+
+                return `
+                    <div class="yoga-card">
+                        <div class="y-header">
+                            <div class="y-title">
+                                ${y.title}
+                                <span class="y-en">${y.en}</span>
+                            </div>
+                            <span class="y-badge ${badgeClass(y.category)}">${catName(y.category)}</span>
+                        </div>
+                        <div class="y-desc">
+                            <strong>📖 परिचय:</strong> ${y.desc}
+                        </div>
+                        <div class="y-benefits">
+                            <strong>✨ लाभ:</strong> ${y.benefits}
+                        </div>
+                        <div class="y-meta">
+                            ${metaHtml}
+                        </div>
+                        <details class="yoga-details">
+                            <summary>अधिक जानकारी</summary>
+                            <div class="d-body">${y.extra || ''}</div>
+                        </details>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function filterYoga() {
+            searchQuery = document.getElementById('yogaSearch').value.trim();
+            renderYoga();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderYoga();
+
+            document.querySelectorAll('.cat-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    currentCategory = this.dataset.cat;
+                    renderYoga();
+                });
+            });
+        });
+
+        // Dark mode
+        const darkToggle = document.getElementById('darkToggle');
+        if (darkToggle) {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+                darkToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            }
+            darkToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                const icon = this.querySelector('i');
+                const isDark = document.body.classList.contains('dark-mode');
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+                localStorage.setItem('darkMode', isDark);
+            });
+        }
+
+        function sharePage() {
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    text: '🕉️ सनातन ज्ञान कोश — योग कोश',
+                    url: window.location.href
+                }).catch(() => {});
+            } else {
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    alert('लिंक कॉपी हो गया!');
+                });
+            }
+        }
+    </script>
+</body>
+</html>
