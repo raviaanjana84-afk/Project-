@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>देवता ज्ञान — Sanatan Gyan Kosh</title>
+    <meta name="description" content="हिंदू धर्म के सभी देवी-देवताओं का संपूर्ण ज्ञान — परिचय, कथा, मंत्र, स्तोत्र, मंदिर, त्योहार और बहुत कुछ।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .devta-full-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 8px;
+        }
+        .devta-full-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 18px 14px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            text-decoration: none;
+            color: var(--ink);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            position: relative;
+            overflow: hidden;
+        }
+        .devta-full-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--maroon), var(--gold));
+            opacity: 0;
+            transition: var(--transition);
+        }
+        .devta-full-card:hover::before,
+        .devta-full-card:active::before {
+            opacity: 1;
+        }
+        .devta-full-card:hover,
+        .devta-full-card:active {
+            transform: translateY(-4px);
+            border-color: var(--gold);
+            box-shadow: var(--shadow-hover);
+        }
+        .devta-full-card .icon {
+            font-size: 40px;
+            line-height: 1;
+        }
+        .devta-full-card .name {
+            font-family: var(--font-display);
+            font-size: 18px;
+            color: var(--maroon);
+            font-weight: 700;
+        }
+        .devta-full-card .sub {
+            font-size: 11px;
+            color: var(--ink-light);
+            line-height: 1.4;
+        }
+        .devta-full-card .badge {
+            font-size: 9px;
+            background: var(--gold);
+            color: var(--maroon);
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-weight: 700;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="../index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ सनातन ज्ञान कोश</span>
+            <h1>देवता ज्ञान</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <div class="hero-banner">
+            <h2>🕉️ देवता ज्ञान</h2>
+            <p>हर देवी-देवता का <strong>संपूर्ण ज्ञान</strong> — परिचय, कथा, मंत्र, स्तोत्र, मंदिर, त्योहार और बहुत कुछ।</p>
+        </div>
+
+        <!-- Search -->
+        <div class="search-wrap">
+            <i class="fa-solid fa-search"></i>
+            <input type="text" id="devtaSearch" placeholder="देवता खोजें..." oninput="filterDevta()" />
+        </div>
+
+        <!-- देवता Grid -->
+        <p class="section-title"><i class="fa-solid fa-om"></i> सभी देवता</p>
+        <div class="devta-full-grid" id="devtaGrid">
+
+            <a href="hanuman.html" class="devta-full-card" data-name="हनुमान hanuman">
+                <span class="icon">🐒</span>
+                <span class="name">हनुमान जी</span>
+                <span class="sub">बल · बुद्धि · भक्ति</span>
+                <span class="badge">🔥 संपूर्ण</span>
+            </a>
+
+            <a href="shiva.html" class="devta-full-card" data-name="शिव shiva mahadev">
+                <span class="icon">🔱</span>
+                <span class="name">शिव जी</span>
+                <span class="sub">ध्यान · त्याग · तांडव</span>
+                <span class="badge">🔥 संपूर्ण</span>
+            </a>
+
+            <a href="ram.html" class="devta-full-card" data-name="राम ram">
+                <span class="icon">🏹</span>
+                <span class="name">राम जी</span>
+                <span class="sub">मर्यादा · धर्म · आदर्श</span>
+                <span class="badge">🔥 संपूर्ण</span>
+            </a>
+
+            <a href="krishna.html" class="devta-full-card" data-name="कृष्ण krishna">
+                <span class="icon">🟡</span>
+                <span class="name">कृष्ण जी</span>
+                <span class="sub">लीला · प्रेम · गीता</span>
+                <span class="badge">🔥 संपूर्ण</span>
+            </a>
+
+            <a href="durga.html" class="devta-full-card" data-name="दुर्गा durga devi">
+                <span class="icon">🌺</span>
+                <span class="name">दुर्गा माता</span>
+                <span class="sub">शक्ति · रक्षा · विजय</span>
+                <span class="badge">🔥 संपूर्ण</span>
+            </a>
+
+            <a href="ganesh.html" class="devta-full-card" data-name="गणेश ganesh ganpati">
+                <span class="icon">🐘</span>
+                <span class="name">गणेश जी</span>
+                <span class="sub">सिद्धि · बुद्धि · विघ्नहर्ता</span>
+                <span class="badge">🔥 संपूर्ण</span>
+            </a>
+
+            <a href="surya.html" class="devta-full-card" data-name="सूर्य surya sun">
+                <span class="icon">🌞</span>
+                <span class="name">सूर्य देव</span>
+                <span class="sub">ऊर्जा · तेज · आरोग्य</span>
+            </a>
+
+            <a href="chandra.html" class="devta-full-card" data-name="चंद्र chandra moon">
+                <span class="icon">🌙</span>
+                <span class="name">चंद्र देव</span>
+                <span class="sub">मन · शांति · सौम्यता</span>
+            </a>
+
+            <a href="lakshmi.html" class="devta-full-card" data-name="लक्ष्मी lakshmi">
+                <span class="icon">🌺</span>
+                <span class="name">लक्ष्मी माता</span>
+                <span class="sub">धन · समृद्धि · सौभाग्य</span>
+            </a>
+
+            <a href="saraswati.html" class="devta-full-card" data-name="सरस्वती saraswati">
+                <span class="icon">📚</span>
+                <span class="name">सरस्वती माता</span>
+                <span class="sub">विद्या · कला · ज्ञान</span>
+            </a>
+
+            <a href="kartikeya.html" class="devta-full-card" data-name="कार्तिकेय kartikeya murugan">
+                <span class="icon">🦚</span>
+                <span class="name">कार्तिकेय</span>
+                <span class="sub">वीरता · विजय · युद्ध</span>
+            </a>
+
+            <a href="ganga.html" class="devta-full-card" data-name="गंगा ganga ganges">
+                <span class="icon">🌊</span>
+                <span class="name">गंगा माता</span>
+                <span class="sub">पवित्रता · मोक्ष · शुद्धि</span>
+            </a>
+
+            <a href="tulsi.html" class="devta-full-card" data-name="तुलसी tulsi">
+                <span class="icon">🌿</span>
+                <span class="name">तुलसी माता</span>
+                <span class="sub">भक्ति · स्वास्थ्य · समृद्धि</span>
+            </a>
+
+            <a href="bhairav.html" class="devta-full-card" data-name="भैरव bhairav kaal">
+                <span class="icon">🐕</span>
+                <span class="name">भैरव बाबा</span>
+                <span class="sub">रक्षा · न्याय · शक्ति</span>
+            </a>
+
+            <a href="navgrah.html" class="devta-full-card" data-name="नवग्रह navgrah">
+                <span class="icon">🪐</span>
+                <span class="name">नवग्रह</span>
+                <span class="sub">9 ग्रह · ज्योतिष · फल</span>
+            </a>
+
+            <a href="radha.html" class="devta-full-card" data-name="राधा radha">
+                <span class="icon">🌸</span>
+                <span class="name">राधा रानी</span>
+                <span class="sub">प्रेम · भक्ति · समर्पण</span>
+            </a>
+
+        </div>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय श्री राम</p>
+        </footer>
+
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-calendar-days"></i><p>पंचांग</p></a>
+        <a href="../quiz/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>क्विज</p></a>
+    </nav>
+
+    <script src="../script.js"></script>
+    <script>
+        function filterDevta() {
+            const query = document.getElementById('devtaSearch').value.toLowerCase().trim();
+            document.querySelectorAll('#devtaGrid .devta-full-card').forEach(card => {
+                const name = (card.dataset.name || '').toLowerCase();
+                card.style.display = name.includes(query) ? 'flex' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
