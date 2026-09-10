@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>सूर्य देव — संपूर्ण ज्ञान | Sanatan Gyan Kosh</title>
+    <meta name="description" content="सूर्य देव का संपूर्ण ज्ञान — परिचय, कथा, स्वरूप, सूर्य नमस्कार, मंत्र, आदित्य हृदय स्तोत्र, आरती, मंदिर, त्योहार, व्रत और बहुत कुछ।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .devta-hero {
+            text-align: center;
+            padding: 24px 20px;
+            background: linear-gradient(135deg, rgba(255,165,0,0.15), rgba(212,175,55,0.1));
+            border-radius: var(--radius);
+            margin-bottom: 14px;
+            border: 1px solid var(--border);
+        }
+        .devta-hero .icon { font-size: 72px; display: block; line-height: 1; }
+        .devta-hero .name {
+            font-family: var(--font-display);
+            font-size: 30px;
+            color: var(--maroon);
+            margin-top: 6px;
+        }
+        .devta-hero .subtitle {
+            font-size: 13px;
+            color: var(--ink-soft);
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+
+        .devta-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 18px 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .devta-section h2 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--maroon);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 8px;
+        }
+        .devta-section h2 .sec-icon { font-size: 24px; }
+
+        .devta-section p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+            margin-bottom: 8px;
+        }
+        .devta-section p strong { color: var(--maroon); }
+
+        .mantra-box {
+            background: linear-gradient(135deg, rgba(255,165,0,0.1), rgba(212,175,55,0.05));
+            border-left: 4px solid var(--gold);
+            padding: 14px 16px;
+            border-radius: 12px;
+            font-family: var(--font-display);
+            font-size: 18px;
+            text-align: center;
+            margin: 10px 0;
+            line-height: 1.8;
+            color: var(--maroon);
+            font-weight: 600;
+        }
+        .mantra-box small {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 12px;
+            color: var(--ink-soft);
+            font-weight: 400;
+            margin-top: 6px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .info-item {
+            background: var(--bg);
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 13px;
+        }
+        .info-item .lbl {
+            font-size: 10px;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-item .val {
+            font-weight: 600;
+            color: var(--maroon);
+            margin-top: 2px;
+        }
+
+        .devta-section ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 8px;
+        }
+        .devta-section ul li {
+            padding: 8px 0;
+            font-size: 13.5px;
+            line-height: 1.6;
+            border-bottom: 1px dashed var(--border);
+            color: var(--ink-soft);
+        }
+        .devta-section ul li:last-child { border-bottom: none; }
+        .devta-section ul li strong { color: var(--maroon); }
+
+        .accordion-item {
+            border-bottom: 1px solid var(--border);
+        }
+        .accordion-item:last-child { border-bottom: none; }
+        .accordion-head {
+            padding: 12px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--maroon);
+            font-family: var(--font-display);
+        }
+        .accordion-head i {
+            transition: transform 0.3s;
+            color: var(--gold);
+        }
+        .accordion-item.open .accordion-head i {
+            transform: rotate(180deg);
+        }
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            font-size: 13px;
+            color: var(--ink-soft);
+            line-height: 1.8;
+        }
+        .accordion-item.open .accordion-body {
+            max-height: 4000px;
+            padding-bottom: 12px;
+        }
+
+        .temple-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .temple-item {
+            padding: 10px 14px;
+            background: var(--bg);
+            border-radius: 10px;
+            border-left: 3px solid var(--gold);
+            font-size: 13px;
+        }
+        .temple-item strong { color: var(--maroon); }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .related-link {
+            padding: 10px 12px;
+            background: var(--bg);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--maroon);
+            font-weight: 600;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .related-link:hover {
+            background: var(--card-bg);
+            border-color: var(--gold);
+        }
+
+        .surya-namaskar-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .sn-item {
+            background: var(--bg);
+            padding: 12px 14px;
+            border-radius: 12px;
+            border-left: 4px solid var(--gold);
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .sn-item .sn-num {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--maroon);
+            flex-shrink: 0;
+            width: 30px;
+        }
+        .sn-item .sn-name {
+            font-weight: 700;
+            color: var(--maroon);
+            font-size: 14px;
+        }
+        .sn-item .sn-desc {
+            font-size: 12px;
+            color: var(--ink-soft);
+            margin-top: 2px;
+            line-height: 1.6;
+        }
+
+        .names-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .name-item {
+            background: var(--bg);
+            padding: 8px 12px;
+            border-radius: 8px;
+            border-left: 3px solid var(--gold);
+            font-size: 12px;
+        }
+        .name-item strong {
+            color: var(--maroon);
+            font-family: var(--font-display);
+            font-size: 14px;
+        }
+
+        .back-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--maroon);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 16px rgba(122,46,46,0.4);
+            z-index: 90;
+        }
+        .back-top.show { display: flex; }
+
+        @media (max-width: 420px) {
+            .devta-hero .icon { font-size: 60px; }
+            .devta-hero .name { font-size: 24px; }
+            .devta-section h2 { font-size: 17px; }
+            .mantra-box { font-size: 16px; }
+            .names-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ देवता ज्ञान</span>
+            <h1>सूर्य देव</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <!-- Hero -->
+        <div class="devta-hero">
+            <span class="icon">🌞</span>
+            <div class="name">सूर्य देव</div>
+            <div class="subtitle">सविता · आदित्य · भास्कर · दिवाकर · रवि</div>
+        </div>
+
+        <!-- Quick Info -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📋</span> एक नज़र में</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="lbl">अन्य नाम</div>
+                    <div class="val">सविता, आदित्य, भास्कर, दिवाकर, रवि, मार्तंड, विवस्वान, भानु</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">पिता</div>
+                    <div class="val">कश्यप ऋषि</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">माता</div>
+                    <div class="val">अदिति देवी</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">पत्नी</div>
+                    <div class="val">संज्ञा, छाया, राज्ञी</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रमुख पुत्र</div>
+                    <div class="val">वैवस्वत मनु, यम, शनि, अश्विनी कुमार</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रमुख पुत्री</div>
+                    <div class="val">यमुना, तपती</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">वाहन</div>
+                    <div class="val">सात घोड़ों का रथ</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">सारथी</div>
+                    <div class="val">अरुण (अनुज)</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय दिन</div>
+                    <div class="val">रविवार, संक्रांति, छठ पूजा</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय भोग</div>
+                    <div class="val">गुड़, खीर, लाल फूल, जल</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रिय रंग</div>
+                    <div class="val">लाल, केसरिया, स्वर्ण</div>
+                </div>
+                <div class="info-item">
+                    <div class="lbl">प्रमुख पर्व</div>
+                    <div class="val">छठ पूजा, मकर संक्रांति, सूर्य षष्ठी</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- परिचय -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📖</span> परिचय</h2>
+            <p>
+                <strong>सूर्य देव</strong> हिंदू धर्म के सबसे महत्वपूर्ण देवताओं में से एक हैं। वे <strong>ऊर्जा, तेज, और जीवन</strong> के स्रोत हैं। सूर्य के बिना पृथ्वी पर जीवन संभव नहीं है — इसलिए वे <strong>प्रत्यक्ष देवता</strong> माने जाते हैं।
+            </p>
+            <p>
+                सूर्य देव को <strong>सविता</strong>, <strong>आदित्य</strong>, <strong>भास्कर</strong>, <strong>दिवाकर</strong>, <strong>रवि</strong>, <strong>मार्तंड</strong>, और <strong>भानु</strong> जैसे कई नामों से जाना जाता है। वे <strong>कश्यप ऋषि और अदिति देवी</strong> के पुत्र हैं।
+            </p>
+            <p>
+                वे <strong>नवग्रहों में प्रथम ग्रह</strong> हैं और <strong>सूर्यवंश</strong> के मूल पुरुष हैं — जिसमें <strong>श्री राम</strong> का जन्म हुआ था। सूर्य देव <strong>आरोग्य, आत्मविश्वास, नेतृत्व, और यश</strong> के दाता हैं।
+            </p>
+            <p>
+                <strong>सूर्य नमस्कार</strong> और <strong>आदित्य हृदय स्तोत्र</strong> सूर्य देव की उपासना के प्रमुख साधन हैं। रामायण में <strong>अगस्त्य मुनि</strong> ने राम जी को युद्ध से पहले <strong>आदित्य हृदय स्तोत्र</strong> सिखाया था।
+            </p>
+        </div>
+
+        <!-- जन्म कथा -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📜</span> जन्म कथा</h2>
+            <p>
+                पौराणिक कथा के अनुसार, <strong>कश्यप ऋषि</strong> और <strong>अदिति देवी</strong> के पुत्रों को <strong>आदित्य</strong> कहा जाता है। सूर्य देव इनमें सबसे प्रमुख हैं।
+            </p>
+            <p>
+                एक अन्य कथा के अनुसार, <strong>ब्रह्मा जी</strong> ने सृष्टि की रचना के समय <strong>सूर्य</strong> को प्रकट किया — जो ब्रह्मांड की ऊर्जा और प्रकाश के स्रोत हैं।
+            </p>
+            <p>
+                सूर्य देव की पत्नी <strong>संज्ञा</strong> (विश्वकर्मा की पुत्री) थीं। उनके पुत्र <strong>वैवस्वत मनु</strong>, <strong>यम</strong>, और पुत्री <strong>यमुना</strong> हुए। संज्ञा की छाया से <strong>शनि</strong> और <strong>तपती</strong> का जन्म हुआ।
+            </p>
+            <p>
+                सूर्य देव <strong>सात घोड़ों के रथ</strong> पर सवार होकर आकाश में विचरण करते हैं। उनके सारथी <strong>अरुण</strong> हैं — जो गरुड़ के बड़े भाई हैं।
+            </p>
+        </div>
+
+        <!-- स्वरूप -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🎨</span> स्वरूप</h2>
+            <p>
+                सूर्य देव का स्वरूप <strong>तेजस्वी, दिव्य, और ऊर्जावान</strong> है।
+            </p>
+            <ul>
+                <li><strong>रंग:</strong> स्वर्ण (सुनहरा), लाल, केसरिया</li>
+                <li><strong>वस्त्र:</strong> लाल या केसरिया वस्त्र</li>
+                <li><strong>मुकुट:</strong> स्वर्ण मुकुट, रत्नों से जड़ित</li>
+                <li><strong>हाथ:</strong> दो हाथ — कमल और चक्र</li>
+                <li><strong>वाहन:</strong> सात घोड़ों का रथ</li>
+                <li><strong>घोड़े:</strong> सात रंगों के घोड़े (इंद्र, वरुण, अग्नि, यम, कुबेर, वायु, ईशान)</li>
+                <li><strong>सारथी:</strong> अरुण</li>
+                <li><strong>मुद्रा:</strong> अभय मुद्रा, करुणामय</li>
+                <li><strong>नेत्र:</strong> तेजस्वी, कमल के समान</li>
+                <li><strong>रश्मियाँ:</strong> 7 रंगों की रश्मियाँ (सप्त अश्व)</li>
+            </ul>
+        </div>
+
+        <!-- मुख्य मंत्र -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🌞</span> मुख्य मंत्र</h2>
+
+            <p><strong>1. सूर्य मूल मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ सूर्याय नमः
+                <small>अर्थ: हे सूर्य देव, मैं आपको नमस्कार करता हूँ।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>2. सूर्य गायत्री मंत्र:</strong></p>
+            <div class="mantra-box">
+                ॐ आदित्याय विद्महे ।<br>
+                दिवाकराय धीमहि ।<br>
+                तन्नः सूर्यः प्रचोदयात् ॥
+                <small>अर्थ: हम आदित्य का ध्यान करते हैं, दिवाकर का ध्यान करते हैं, सूर्य हमें प्रेरित करें।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>3. गायत्री मंत्र (सूर्य से संबंधित):</strong></p>
+            <div class="mantra-box">
+                ॐ भूर्भुवः स्वः ।<br>
+                तत्सवितुर्वरेण्यम् ।<br>
+                भर्गो देवस्य धीमहि ।<br>
+                धियो यो नः प्रचोदयात् ॥
+                <small>अर्थ: हम उस परम तेजस्वी सविता (सूर्य) का ध्यान करते हैं, जो हमारी बुद्धि को प्रेरित करे।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>4. सूर्य अष्टकम् (संक्षिप्त):</strong></p>
+            <div class="mantra-box" style="font-size:15px;">
+                आदित्यस्य नमस्कारान् ये कुर्वन्ति दिने दिने ।<br>
+                जन्मान्तरसहस्रेषु दारिद्र्यं नोपजायते ॥
+                <small>अर्थ: जो प्रतिदिन सूर्य को नमस्कार करते हैं, उन्हें हज़ारों जन्मों तक दरिद्रता नहीं आती।</small>
+            </div>
+
+            <p style="margin-top:12px;"><strong>5. नमस्कार मंत्र (सूर्य नमस्कार के समय):</strong></p>
+            <div class="mantra-box" style="font-size:15px;">
+                ॐ मित्राय नमः । ॐ रवये नमः ।<br>
+                ॐ सूर्याय नमः । ॐ भानवे नमः ।<br>
+                ॐ खगाय नमः । ॐ पूष्णे नमः ।<br>
+                ॐ हिरण्यगर्भाय नमः । ॐ मरीचये नमः ।<br>
+                ॐ आदित्याय नमः । ॐ सवित्रे नमः ।<br>
+                ॐ अर्काय नमः । ॐ भास्कराय नमः ॥
+                <small>अर्थ: सूर्य के 12 नामों से नमस्कार।</small>
+            </div>
+        </div>
+
+        <!-- सूर्य नमस्कार -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🧘</span> सूर्य नमस्कार (12 आसन)</h2>
+            <p style="font-size:13px;margin-bottom:8px;">
+                <strong>सूर्य नमस्कार</strong> 12 आसनों का एक क्रम है, जो सूर्य देव को समर्पित है। इसे सुबह सूर्योदय के समय करना चाहिए।
+            </p>
+            <div class="surya-namaskar-grid">
+                <div class="sn-item">
+                    <div class="sn-num">1</div>
+                    <div>
+                        <div class="sn-name">प्रणामासन</div>
+                        <div class="sn-desc">हाथ जोड़कर खड़े हों, सूर्य को नमस्कार करें। मंत्र: ॐ मित्राय नमः</div>
+                    </div>
+                </div>
+                <div class="sn-item">
+                    <div class="sn-num">2</div>
+                    <div>
+                        <div class="sn-name">हस्त उत्तानासन</div>
+                        <div class="sn-desc">हाथ ऊपर उठाकर पीछे झुकें। मंत्र: ॐ रवये नमः</div>
+                    </div>
+                </div>
+                <div class="sn-item">
+                    <div class="sn-num">3</div>
+                    <div>
+                        <div class="sn-name">पादहस्तासन</div>
+                        <div class="sn-desc">आगे झुककर पैरों को स्पर्श करें। मंत्र: ॐ सूर्याय नमः</div>
+                    </div>
+                </div>
+                <div class="sn-item">
+                    <div class="sn-num">4</div>
+                    <div>
+                        <div class="sn-name">अश्व संचालनासन</div>
+                        <div class="sn-desc">एक पैर पीछे, दूसरा आगे। मंत्र: ॐ भानवे नमः</div>
+                    </div>
+                </div>
+                <div class="sn-item">
+                    <div class="sn-num">5</div>
+                    <div>
+                        <div class="sn-name">दंडासन (पर्वतासन)</div>
+                        <div class="sn-desc">शरीर को सीधा रखें, प्लैंक पोज़। मंत्र: ॐ खगाय नमः</div>
+                    </div>
+                </div>
+                <div class="sn-item">
+                    <div class="sn-num">6</div>
+                    <div>
+                        <div class="sn-name">अष्टांग नमस्कार</div>
+                        <div class="sn-desc">8 अंग ज़मीन पर। मंत्र: ॐ पूष्णे नमः</div>
+                    </div>
+                </div>
+                <div class="sn-item">
+                    <div class="sn-num">7</div>
+                    <div>
+                        <div class="sn-name">भुजंगासन</div>
+                        <div class="sn-desc">साँप की मुद्रा, छाती उठाएँ। मंत्र: ॐ हिरण्यगर्भाय नमः
+</div>
+                        <div class="sn-desc">साँप की मुद्रा, छाती उठाएँ। मंत्र: ॐ हिरण्यगर्भाय नमः</div>
+                    </div>
+                </div>
+                <div class="sn-item">
+                    <div class="sn-num">8</div>
+                    <div>
+                        <div class="sn-name">पर्वतासन</div>
+                        <div class="sn-desc">उल्टा V आकार। मंत्र: ॐ मरीचये नमः</div>
+                    </div>
+                </div>
+                <div class="sn-item">
+                    <div class="sn-num">9</div>
+                    <div>
+                        <div class="sn-name">अश्व संचालनासन</div>
+                        <div class="sn-desc">दूसरा पैर आगे। मंत्र: ॐ आदित्याय नमः</div>
+                    </div>
+                </div>
+                <div class="sn-item">
+                    <div class="sn-num">10</div>
+                    <div>
+                        <div class="sn-name">पादहस्तासन</div>
+                        <div class="sn-desc">फिर आगे झुकें। मंत्र: ॐ सवित्रे नमः</div>
+                    </div>
+                </div>
+                <div class="sn-item">
+                    <div class="sn-num">11</div>
+                    <div>
+                        <div class="sn-name">हस्त उत्तानासन</div>
+                        <div class="sn-desc">हाथ ऊपर, पीछे झुकें। मंत्र: ॐ अर्काय नमः</div>
+                    </div>
+                </div>
+                <div class="sn-item">
+                    <div class="sn-num">12</div>
+                    <div>
+                        <div class="sn-name">प्रणामासन</div>
+                        <div class="sn-desc">हाथ जोड़कर खड़े हों। मंत्र: ॐ भास्कराय नमः</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- सूर्य के 12 नाम -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🔱</span> सूर्य देव के 12 नाम</h2>
+            <p style="font-size:13px;margin-bottom:8px;">
+                सूर्य देव के 12 नाम हैं — इनका जप करने से सभी रोग, दोष, और बाधाएँ दूर होती हैं।
+            </p>
+            <div class="names-grid">
+                <div class="name-item"><strong>1. मित्र</strong> — मित्र रूप</div>
+                <div class="name-item"><strong>2. रवि</strong> — प्रकाश देने वाले</div>
+                <div class="name-item"><strong>3. सूर्य</strong> — सर्वोच्च प्रकाश</div>
+                <div class="name-item"><strong>4. भानु</strong> — तेजस्वी</div>
+                <div class="name-item"><strong>5. खग</strong> — आकाश में विचरण करने वाले</div>
+                <div class="name-item"><strong>6. पूषा</strong> — पोषण करने वाले</div>
+                <div class="name-item"><strong>7. हिरण्यगर्भ</strong> — स्वर्ण गर्भ से जन्मे</div>
+                <div class="name-item"><strong>8. मरीची</strong> — किरणों वाले</div>
+                <div class="name-item"><strong>9. आदित्य</strong> — अदिति के पुत्र</div>
+                <div class="name-item"><strong>10. सविता</strong> — सृष्टि के प्रेरक</div>
+                <div class="name-item"><strong>11. अर्क</strong> — पूजनीय</div>
+                <div class="name-item"><strong>12. भास्कर</strong> — प्रकाश के स्रोत</div>
+            </div>
+        </div>
+
+        <!-- जप विधि -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📿</span> जप विधि</h2>
+            <ul>
+                <li><strong>समय:</strong> सूर्योदय के समय (प्रातः 5-7 बजे), या संक्रांति</li>
+                <li><strong>स्थान:</strong> पूर्व दिशा में मुख करके, खुले आकाश के नीचे</li>
+                <li><strong>माला:</strong> लाल चंदन, मूंगा, या स्फटिक माला</li>
+                <li><strong>संख्या:</strong> 108 बार (1 माला), या 1008 बार</li>
+                <li><strong>वस्त्र:</strong> लाल या केसरिया वस्त्र</li>
+                <li><strong>भोग:</strong> गुड़, खीर, लाल फूल, जल</li>
+                <li><strong>धूप/दीप:</strong> धूप, घी का दीपक, कपूर</li>
+                <li><strong>विशेष:</strong> सूर्य नमस्कार, आदित्य हृदय स्तोत्र, सूर्य अष्टकम्</li>
+                <li><strong>अर्घ्य:</strong> ताम्र पात्र से जल अर्पित करें</li>
+            </ul>
+        </div>
+
+        <!-- सूर्य स्तोत्र (Accordion) -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">📜</span> सूर्य स्तोत्र / आरती</h2>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 सूर्य आरती (जय सूर्य भगवान)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:15px;text-align:left;line-height:2;">
+                        जय सूर्य भगवान, जय हो प्रभु दयालु ।<br>
+                        अनुकंपा करो दीनों पर, सब जग के प्रतिपालु ॥<br><br>
+                        जय सूर्य भगवान... ॥<br><br>
+                        तुम हो जग के दाता, तुम हो जग के त्राता ।<br>
+                        तुम हो सबके स्वामी, तुम हो सबके भ्राता ॥<br><br>
+                        जय सूर्य भगवान... ॥<br><br>
+                        रोग दोष हरते हो, भक्तों के दुख हरते हो ।<br>
+                        संताप हरते हो, जीवन के सुख भरते हो ॥<br><br>
+                        जय सूर्य भगवान... ॥<br><br>
+                        सात अश्वों का रथ, चलता है जिसमें तुम हो ।<br>
+                        अरुण सारथी तेरा, अमृत किरणों में तुम हो ॥<br><br>
+                        जय सूर्य भगवान... ॥<br><br>
+                        वेद पुराण बखानें, तेरी महिमा अपरंपार ।<br>
+                        भक्तजन तेरे गावें, तेरी जय जयकार ॥<br><br>
+                        जय सूर्य भगवान... ॥
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 आदित्य हृदय स्तोत्र (संपूर्ण)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <p style="margin-bottom:8px;font-size:13px;">
+                        <strong>महत्व:</strong> यह स्तोत्र <strong>अगस्त्य मुनि</strong> द्वारा राम जी को सिखाया गया था, रावण से युद्ध से पहले। यह <strong>विजय और आरोग्य</strong> का स्तोत्र है।
+                    </p>
+                    <div class="mantra-box" style="font-size:13.5px;text-align:left;line-height:2;">
+                        ततो युद्धपरिश्रान्तं समरे चिन्तया स्थितम् ।<br>
+                        रावणं चाग्रतो दृष्ट्वा युद्धाय समुपस्थितम् ॥<br><br>
+                        दैवतैश्च समागम्य द्रष्टुमभ्यागतो रणम् ।<br>
+                        उपागम्याब्रवीद्राममगस्त्यो भगवानृषिः ॥<br><br>
+                        राम राम महाबाहो शृणु गुह्यं सनातनम् ।<br>
+                        येन सर्वानरीन्वत्स समरे विजयिष्यसि ॥<br><br>
+                        आदित्यहृदयं पुण्यं सर्वशत्रुविनाशनम् ।<br>
+                        जयावहं जपेन्नित्यं अक्षयं परमं शिवम् ॥<br><br>
+                        ... (आदित्य हृदय स्तोत्र — 31 श्लोक)
+                    </div>
+                    <p style="font-size:13px;line-height:1.8;margin-top:8px;">
+                        <strong>लाभ:</strong> शत्रु नाश, नेत्र रोग, हृदय रोग, आत्मविश्वास, राजयोग, और विजय।
+                    </p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 सूर्य अष्टकम् (संपूर्ण)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:14px;text-align:left;line-height:2;">
+                        आदित्यस्य नमस्कारान् ये कुर्वन्ति दिने दिने ।<br>
+                        जन्मान्तरसहस्रेषु दारिद्र्यं नोपजायते ॥<br><br>
+                        उदयं यस्य पश्यन्ति सर्वे देवा दिवाकरम् ।<br>
+                        तं सूर्यं प्रणमाम्यहं सर्वरोगहरं शिवम् ॥<br><br>
+                        सप्ताश्वरथमारूढं प्रचण्डं कश्यपात्मजम् ।<br>
+                        तं सूर्यं प्रणमाम्यहं सर्वरोगहरं शिवम् ॥<br><br>
+                        लोहितं रथमारूढं सर्वलोकपितामहम् ।<br>
+                        तं सूर्यं प्रणमाम्यहं सर्वरोगहरं शिवम् ॥<br><br>
+                        त्रैलोक्यं यस्य रश्मिभिः प्रकाशितमिदं जगत् ।<br>
+                        तं सूर्यं प्रणमाम्यहं सर्वरोगहरं शिवम् ॥<br><br>
+                        अष्टमं च तथा मर्त्यं सूर्यलोकं प्रयान्ति ये ।<br>
+                        तं सूर्यं प्रणमाम्यहं सर्वरोगहरं शिवम् ॥
+                    </div>
+                </div>
+  </div>
+   <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>🔸 सूर्य वंदना (प्रातः)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="mantra-box" style="font-size:15px;text-align:left;line-height:2;">
+                        ॐ ह्रां ह्रीं ह्रूं ह्रैं ह्रौं ह्रः सूर्याय नमः ।
+                    </div>
+                    <p style="font-size:13px;line-height:1.8;margin-top:8px;">
+                        यह सूर्य बीज मंत्र है — शत्रु नाश, आरोग्य, और ऊर्जा के लिए।
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- प्रमुख मंदिर -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🛕</span> प्रमुख मंदिर</h2>
+            <div class="temple-list">
+                <div class="temple-item">
+                    <strong>कोणार्क सूर्य मंदिर, ओडिशा</strong><br>
+                    विश्व धरोहर, 13वीं सदी का भव्य सूर्य मंदिर। रथ के आकार में बना।
+                </div>
+                <div class="temple-item">
+                    <strong>सूर्य मंदिर, मोढेरा (गुजरात)</strong><br>
+                    11वीं सदी का सूर्य मंदिर, सोलंकी राजवंश द्वारा बनवाया गया।
+                </div>
+                <div class="temple-item">
+                    <strong>देव सूर्य मंदिर, औरंगाबाद (बिहार)</strong><br>
+                    बिहार का प्रसिद्ध सूर्य मंदिर, छठ पूजा का प्रमुख स्थल।
+                </div>
+                <div class="temple-item">
+                    <strong>सूर्य मंदिर, अर्सवल्ली (आंध्र प्रदेश)</strong><br>
+                    7वीं सदी का सूर्य मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>सूर्यनारायण मंदिर, नेपाल</strong><br>
+                    काठमांडू के पास स्थित प्राचीन सूर्य मंदिर।
+                </div>
+                <div class="temple-item">
+                    <strong>मार्तंड सूर्य मंदिर, कश्मीर</strong><br>
+                    8वीं सदी का सूर्य मंदिर (अब खंडित)।
+                </div>
+                <div class="temple-item">
+                    <strong>सूर्य मंदिर, रणकपुर (राजस्थान)</strong><br>
+                    जैन मंदिर में सूर्य देव की प्रतिमा।
+                </div>
+                <div class="temple-item">
+                    <strong>सूर्य मंदिर, जयपुर</strong><br>
+                    जयपुर में स्थित प्राचीन सूर्य मंदिर।
+                </div>
+            </div>
+        </div>
+
+        <!-- त्योहार और व्रत -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🎉</span> प्रमुख त्योहार और व्रत</h2>
+            <ul>
+                <li><strong>छठ पूजा:</strong> कार्तिक शुक्ल षष्ठी — बिहार, झारखंड, उत्तर प्रदेश में सबसे बड़ा सूर्य पर्व।</li>
+                <li><strong>मकर संक्रांति:</strong> माघ मास की शुरुआत — सूर्य का मकर राशि में प्रवेश।</li>
+                <li><strong>सूर्य षष्ठी:</strong> माघ शुक्ल षष्ठी — सूर्य की विशेष पूजा।</li>
+                <li><strong>रविवार व्रत:</strong> हर रविवार — सूर्य देव का प्रिय दिन।</li>
+                <li><strong>रथ सप्तमी:</strong> माघ शुक्ल सप्तमी — सूर्य के रथ की पूजा।</li>
+                <li><strong>अक्षय तृतीया:</strong> वैशाख शुक्ल तृतीया — सूर्य की विशेष कृपा।</li>
+                <li><strong>विश्वकर्मा पूजा:</strong> कार्तिक शुक्ल सप्तमी — सूर्य के सारथी अरुण की पूजा।</li>
+                <li><strong>अर्ध कुंभ, कुंभ:</strong> सूर्य के ग्रहों के संयोग पर मेला।</li>
+            </ul>
+        </div>
+
+        <!-- भक्ति और लाभ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🙏</span> सूर्य देव को क्यों भजें?</h2>
+            <ul>
+                <li><strong>आरोग्य:</strong> सूर्य उपासना से सभी रोग दूर होते हैं, विशेषकर नेत्र रोग, त्वचा रोग, और हृदय रोग।</li>
+                <li><strong>आत्मविश्वास:</strong> सूर्य देव की कृपा से आत्मविश्वास और नेतृत्व क्षमता बढ़ती है।</li>
+                <li><strong>शत्रु नाश:</strong> आदित्य हृदय स्तोत्र से शत्रु और बाधाएँ दूर होती हैं।</li>
+                <li><strong>धन प्राप्ति:</strong> सूर्य देव धन और समृद्धि के दाता हैं।</li>
+                <li><strong>यश और प्रतिष्ठा:</strong> सूर्य पूजा से समाज में मान-सम्मान मिलता है।</li>
+                <li><strong>पितृ दोष:</strong> सूर्य पूजा से पितृ दोष दूर होता है।</li>
+                <li><strong>कुंडली दोष:</strong> सूर्य की महादशा, अंतर्दशा में लाभ होता है।</li>
+                <li><strong>मोक्ष:</strong> सूर्य उपासना से आत्मज्ञान और मोक्ष मिलता है।</li>
+            </ul>
+        </div>
+
+        <!-- वर्जित कार्य -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🚫</span> क्या न करें?</h2>
+            <ul>
+                <li>❌ सूर्य देव को <strong>अशुद्ध हाथों</strong> से जल न चढ़ाएँ</li>
+                <li>❌ <strong>बिना स्नान</strong> सूर्य पूजा न करें</li>
+                <li>❌ सूर्य देव को <strong>नमक</strong> न चढ़ाएँ</li>
+                <li>❌ <strong>ताम्र पात्र</strong> के बिना अर्घ्य न दें (ताम्र सर्वोत्तम)</li>
+                <li>❌ सूर्य देव को <strong>पीठ</strong> दिखाकर न बैठें</li>
+                <li>❌ <strong>सूर्य ग्रहण</strong> के समय पूजा न करें</li>
+                <li>❌ सूर्य देव के सामने <strong>झूठ</strong> न बोलें</li>
+                <li>❌ <strong>रविवार</strong> को <strong>नमक</strong> न खाएँ (व्रत में)</li>
+            </ul>
+        </div>
+
+        <!-- FAQ -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>सूर्य नमस्कार कब और कैसे करें?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>सूर्य नमस्कार</strong> सुबह <strong>सूर्योदय के समय</strong> (5-7 बजे) खुले आकाश के नीचे, पूर्व दिशा में मुख करके करें। 12 आसनों का एक चक्र होता है। शुरुआत में <strong>3-6 चक्र</strong> करें, फिर बढ़ाकर <strong>12-24 चक्र</strong> करें। खाली पेट करें।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>सूर्य को अर्घ्य कैसे दें?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>ताम्र पात्र</strong> में जल, लाल फूल, अक्षत, और गुड़ डालें। सूर्योदय के समय <strong>पूर्व दिशा</strong> में मुख करके, दोनों हाथों से पात्र उठाकर, धीरे-धीरे जल अर्पित करें। <strong>'ॐ सूर्याय नमः'</strong> मंत्र का जप करें। सूर्य की ओर देखकर जल अर्पित करने से <strong>नेत्र ज्योति</strong> बढ़ती है।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>क्या सूर्य पूजा से नेत्र रोग दूर होते हैं?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    हाँ, <strong>सूर्य को जल अर्पित करना, सूर्य नमस्कार, आदित्य हृदय स्तोत्र, और सूर्य अष्टकम्</strong> से नेत्र रोग दूर होते हैं। सूर्य की किरणों में <strong>विटामिन D</strong> होता है, जो आँखों के लिए लाभदायक है।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>छठ पूजा क्यों की जाती है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>छठ पूजा</strong> सूर्य देव और छठी मैया (षष्ठी देवी) की पूजा है। यह <strong>संतान, सुख, समृद्धि, और आरोग्य</strong> के लिए की जाती है। यह <strong>कार्तिक शुक्ल षष्ठी</strong> को मनाई जाती है। इसमें <strong>डूबते और उगते सूर्य</strong> दोनों को अर्घ्य दिया जाता है।
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-head" onclick="toggleAccordion(this)">
+                    <span>आदित्य हृदय स्तोत्र का क्या महत्व है?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    <strong>आदित्य हृदय स्तोत्र</strong> अगस्त्य मुनि द्वारा राम जी को सिखाया गया था, रावण से युद्ध से पहले। यह <strong>विजय, आरोग्य, नेत्र रोग नाश, हृदय रोग नाश, और आत्मविश्वास</strong> का स्तोत्र है। किसी भी संकट या युद्ध से पहले इसका पाठ करना चाहिए।
+                </div>
+            </div>
+        </div>
+        <!-- Related Links -->
+        <div class="devta-section">
+            <h2><span class="sec-icon">🔗</span> संबंधित लिंक</h2>
+            <div class="related-grid">
+                <a href="../mantra/index.html" class="related-link">📿 सभी मंत्र</a>
+                <a href="../stotra/aditya-hridayam.html" class="related-link">📜 आदित्य हृदय स्तोत्र</a>
+                <a href="../stotra/surya-ashtakam.html" class="related-link">📜 सूर्य अष्टकम्</a>
+                <a href="../tyohar/chhath-puja.html" class="related-link">🎉 छठ पूजा</a>
+                <a href="../tyohar/makar-sankranti.html" class="related-link">🎉 मकर संक्रांति</a>
+                <a href="../quiz/index.html" class="related-link">🎯 सूर्य क्विज</a>
+            </div>
+        </div>
+
+        <!-- Share -->
+        <button class="btn-primary" onclick="sharePage()" style="margin-top:10px;">
+            <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+        </button>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय सूर्य देव</p>
+        </footer>
+
+    </main>
+
+    <button class="back-top" id="backTop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-calendar-days"></i><p>पंचांग</p></a>
+        <a href="../quiz/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>क्विज</p></a>
+    </nav>
+
+    <script src="../script.js"></script>
+    <script>
+        function toggleAccordion(el) {
+            const item = el.parentElement;
+            item.classList.toggle('open');
+        }
+
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backTop');
+            if (btn) {
+                if (window.scrollY > 400) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
