@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>स्तोत्र कोश — संपूर्ण ज्ञान | Sanatan Gyan Kosh</title>
+    <meta name="description" content="30+ स्तोत्र, चालीसा, और आरती का संपूर्ण संग्रह — अर्थ, महत्व, और पाठ विधि के साथ। हनुमान चालीसा, दुर्गा सप्तशती, विष्णु सहस्रनाम, आदि।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .search-wrap {
+            background: var(--card-bg);
+            border-radius: var(--radius-sm);
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 12px;
+            border: 1px solid var(--border);
+        }
+        .search-wrap i { color: var(--gold); font-size: 18px; }
+        .search-wrap input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            background: transparent;
+            font-family: var(--font-body);
+            color: var(--ink);
+        }
+        .search-wrap input::placeholder { color: var(--ink-light); }
+
+        .cat-tabs {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 4px 0 14px;
+            scrollbar-width: none;
+        }
+        .cat-tabs::-webkit-scrollbar { display: none; }
+        .cat-tab {
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1.5px solid var(--border);
+            background: var(--card-bg);
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: var(--transition);
+            color: var(--ink-soft);
+            font-family: var(--font-body);
+        }
+        .cat-tab.active {
+            background: var(--maroon);
+            color: white;
+            border-color: var(--maroon);
+        }
+        .cat-tab:hover:not(.active) {
+            border-color: var(--gold);
+            color: var(--maroon);
+        }
+
+        .stotra-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .stotra-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 18px 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--gold);
+            transition: var(--transition);
+        }
+        .stotra-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+            border-left-color: var(--maroon);
+        }
+        .stotra-card .s-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            gap: 10px;
+        }
+        .stotra-card .s-title {
+            font-family: var(--font-display);
+            font-size: 18px;
+            color: var(--maroon);
+            font-weight: 700;
+            flex: 1;
+        }
+        .stotra-card .s-title .s-en {
+            font-family: var(--font-body);
+            font-size: 10px;
+            font-weight: 400;
+            color: var(--ink-light);
+            display: block;
+            margin-top: 2px;
+        }
+        .stotra-card .s-badge {
+            font-size: 9px;
+            background: var(--maroon);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .stotra-card .s-badge.gold { background: var(--gold); color: var(--maroon); }
+        .stotra-card .s-badge.green { background: #27ae60; }
+        .stotra-card .s-badge.blue { background: #2980b9; }
+
+        .stotra-card .s-preview {
+            background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(122,46,46,0.05));
+            border-left: 3px solid var(--gold);
+            padding: 12px 14px;
+            border-radius: 10px;
+            font-family: var(--font-display);
+            font-size: 14px;
+            color: var(--maroon);
+            text-align: center;
+            line-height: 1.8;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .stotra-card .s-desc {
+            background: #f8f4f0;
+            border-radius: 10px;
+            padding: 10px 12px;
+            font-size: 13px;
+            color: var(--ink-soft);
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+        .stotra-card .s-desc strong { color: var(--maroon); }
+
+        .stotra-card .s-benefits {
+            background: #eef7ee;
+            border-radius: 10px;
+            padding: 10px 12px;
+            font-size: 13px;
+            color: var(--ink-soft);
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+        .stotra-card .s-benefits strong { color: #27ae60; }
+
+        .stotra-card .s-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed var(--border);
+        }
+        .stotra-card .s-meta span {
+            font-size: 10px;
+            background: var(--bg);
+            padding: 4px 10px;
+            border-radius: 10px;
+            color: var(--ink-soft);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .stotra-card .s-meta span i {
+            color: var(--gold);
+            font-size: 10px;
+        }
+
+        .stotra-details {
+            margin-top: 8px;
+        }
+        .stotra-details summary {
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--maroon);
+            padding: 6px 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .stotra-details summary::-webkit-details-marker { display: none; }
+        .stotra-details summary::before {
+            content: '➕';
+            font-size: 11px;
+            transition: transform 0.3s;
+        }
+        .stotra-details[open] summary::before {
+            content: '➖';
+        }
+        .stotra-details .d-body {
+            padding: 10px 0;
+            font-size: 12.5px;
+            color: var(--ink-soft);
+            line-height: 1.8;
+            font-family: var(--font-display);
+            background: var(--bg);
+            padding: 12px;
+            border-radius: 10px;
+            margin-top: 6px;
+            text-align: center;
+        }
+
+        .no-result {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--ink-light);
+            font-size: 14px;
+        }
+        .no-result i {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--border);
+        }
+
+        @media (max-width: 420px) {
+            .stotra-card { padding: 14px 12px; }
+            .stotra-card .s-title { font-size: 16px; }
+            .stotra-card .s-preview { font-size: 13px; }
+            .stotra-card .s-desc,
+            .stotra-card .s-benefits { font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="../index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ सनातन ज्ञान कोश</span>
+            <h1>स्तोत्र कोश</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <div class="hero-banner">
+            <h2>📜 स्तोत्र कोश</h2>
+            <p><strong>30+ स्तोत्र, चालीसा, और आरती</strong> — हर एक का महत्व, अर्थ, और पाठ विधि।</p>
+        </div>
+
+        <div class="search-wrap">
+            <i class="fa-solid fa-search"></i>
+            <input type="text" id="stotraSearch" placeholder="स्तोत्र खोजें... (जैसे: हनुमान, दुर्गा, विष्णु)" oninput="filterStotras()" />
+        </div>
+
+        <div class="cat-tabs" id="catTabs">
+            <button class="cat-tab active" data-cat="all">✨ सभी</button>
+            <button class="cat-tab" data-cat="chalisa">📿 चालीसा</button>
+            <button class="cat-tab" data-cat="aarti">🪔 आरती</button>
+            <button class="cat-tab" data-cat="stotra">📜 स्तोत्र</button>
+            <button class="cat-tab" data-cat="sahasranama">🔱 सहस्रनाम</button>
+            <button class="cat-tab" data-cat="kavach">🛡️ कवच</button>
+        </div>
+
+        <div class="stotra-grid" id="stotraGrid"></div>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय श्री राम</p>
+        </footer>
+
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="../devta/index.html" class="nav-link"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-scroll"></i><p>स्तोत्र</p></a>
+        <a href="../quiz/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>क्विज</p></a>
+    </nav>
+
+    <script>
+        // ============================================================
+        //  STOTRA DATABASE — 30+ Stotras, Chalisas, Aartis
+        // ============================================================
+
+        const stotras = [
+            // ========== हनुमान ==========
+            {
+                title: 'हनुमान चालीसा',
+                en: 'Hanuman Chalisa',
+                preview: 'श्रीगुरु चरन सरोज रज, निज मनु मुकुरु सुधारि ।<br>बरनउँ रघुबर बिमल जसु, जो दायकु फल चारि ॥',
+                desc: 'तुलसीदास जी द्वारा रचित 40 चौपाइयों का स्तोत्र। हनुमान जी की महिमा और भक्ति का वर्णन।',
+                benefits: 'भय मुक्ति, बल, बुद्धि, रोग नाश, शत्रु नाश, संकट मोचन।',
+                category: 'chalisa',
+                god: 'हनुमान',
+                howTo: 'मंगलवार/शनिवार, 7 या 21 बार।',
+                extra: 'बजरंगबली की कृपा पाने का सबसे सरल उपाय।'
+            },
+            {
+                title: 'बजरंग बाण',
+                en: 'Bajrang Baan',
+                preview: 'निश्चय प्रेम प्रतीति ते, बिनय करैं सनमान ।<br>तेहि के कारज सकल, सिद्ध करैं हनुमान ॥',
+                desc: 'तुलसीदास जी रचित, हनुमान जी का शक्तिशाली स्तोत्र। विशेषकर रात्रि में पढ़ा जाता है।',
+                benefits: 'शत्रु नाश, भय मुक्ति, तंत्र बाधा नाश, अदालती विजय।',
+                category: 'stotra',
+                god: 'हनुमान',
+                howTo: 'मंगलवार/शनिवार, रात्रि में, 1 या 11 बार।',
+                extra: 'यह स्तोत्र शत्रु नाश और रक्षा के लिए विशेष रूप से प्रभावी है।'
+            },
+            {
+                title: 'हनुमान आरती',
+                en: 'Hanuman Aarti',
+                preview: 'आरती कीजै हनुमान लला की ।<br>दुष्ट दलन रघुनाथ कला की ॥',
+                desc: 'हनुमान जी की आरती — भक्ति और समर्पण का प्रतीक।',
+                benefits: 'भय मुक्ति, बल, बुद्धि, संकट मोचन।',
+                category: 'aarti',
+                god: 'हनुमान',
+                howTo: 'मंगलवार/शनिवार, आरती के समय।',
+                extra: 'हनुमान जी की आरती से घर में सकारात्मक ऊर्जा आती है।'
+            },
+            {
+                title: 'हनुमान अष्टक',
+                en: 'Hanuman Ashtak',
+                preview: 'बाल समय रबि बिंब लियो, तब मुख महँ धरि ताहि ।<br>पाहन सो प्रहार करि, तब तव मूरति काहि ॥',
+                desc: 'हनुमान जी के बाल्यकाल की लीलाओं का वर्णन — 8 श्लोकों में।',
+                benefits: 'बालकों की रक्षा, बुद्धि, बल।',
+                category: 'stotra',
+                god: 'हनुमान',
+                howTo: 'मंगलवार/शनिवार, 1 या 11 बार।',
+                extra: 'यह हनुमान जी की बाल लीलाओं का स्तोत्र है।'
+            },
+
+            // ========== दुर्गा ==========
+            {
+                title: 'दुर्गा चालीसा',
+                en: 'Durga Chalisa',
+                preview: 'नमो नमो दुर्गे सुख करनी ।<br>नमो नमो अम्बे दुःख हरनी ॥',
+                desc: 'माँ दुर्गा की 40 चौपाइयों की चालीसा — शक्ति और रक्षा का स्तोत्र।',
+                benefits: 'शत्रु नाश, भय मुक्ति, रोग नाश, विवाह में लाभ।',
+                category: 'chalisa',
+                god: 'दुर्गा',
+                howTo: 'नवरात्रि, 7 या 21 बार।',
+                extra: 'नवरात्रि में दुर्गा चालीसा पढ़ना अत्यंत शुभ माना जाता है।'
+            },
+            {
+                title: 'दुर्गा आरती',
+                en: 'Durga Aarti',
+                preview: 'जय अम्बे गौरी, मैया जय श्यामा गौरी ।<br>तुमको निशिदिन ध्यावत, हरि ब्रह्मा शिवरी ॥',
+                desc: 'माँ दुर्गा की सबसे प्रसिद्ध आरती — जो हर घर में गाई जाती है।',
+                benefits: 'माँ की कृपा, शक्ति, रक्षा, सुख-समृद्धि।',
+                category: 'aarti',
+                god: 'दुर्गा',
+                howTo: 'प्रातः/सायं, आरती के समय।',
+                extra: 'यह हिंदू घरों की सबसे प्रसिद्ध आरती है।'
+            },
+            {
+                title: 'दुर्गा सप्तशती',
+                en: 'Durga Saptashati',
+                preview: 'ॐ नमो देव्यै महादेव्यै शिवायै सततं नमः ।<br>नमः प्रकृत्यै भद्रायै नियताः प्रणताः स्म ताम् ॥',
+                desc: '700 श्लोकों का ग्रंथ — 13 अध्यायों में। माँ दुर्गा की महिमा और महिषासुर वध की कथा।',
+                benefits: 'शत्रु नाश, रोग नाश, सभी संकट दूर, मोक्ष।',
+                category: 'stotra',
+                god: 'दुर्गा',
+                howTo: 'नवरात्रि में, पूरा पाठ या अध्याय।',
+                extra: 'यह सबसे शक्तिशाली देवी स्तोत्र है — सभी संकटों का नाश।'
+            },
+            {
+                title: 'अर्गला स्तोत्र',
+                en: 'Argala Stotram',
+                preview: 'जय त्वं देवि चामुण्डे जय भूतार्तिहारिणि ।<br>जय सर्वगते देवि कालरात्रि नमोऽस्तु ते ॥',
+                desc: 'दुर्गा सप्तशती का प्रथम स्तोत्र — शत्रु नाश और विजय के लिए।',
+                benefits: 'शत्रु नाश, विजय, रक्षा।',
+                category: 'stotra',
+                god: 'दुर्गा',
+                howTo: 'नवरात्रि, 1 या 11 बार।',
+                extra: 'यह दुर्गा सप्तशती का सबसे पहला स्तोत्र है।'
+            },
+            {
+                title: 'कीलक स्तोत्र',
+                en: 'Kilk Stotram',
+                preview: 'ॐ विशुद्धज्ञानदेहाय त्रिवेदी दिव्यचक्षुषे ।<br>श्रेयः प्राप्ति निमित्ताय नमः सोमार्धधारिणे ॥',
+                desc: 'दुर्गा सप्तशती का दूसरा स्तोत्र — पाठ में आने वाली बाधाओं को दूर करता है।',
+                benefits: 'पाठ में बाधा नाश, शत्रु नाश।',
+                category: 'stotra',
+                god: 'दुर्गा',
+                howTo: 'नवरात्रि, दुर्गा सप्तशती से पहले।',
+                extra: 'कीलक का अर्थ है — ताला। यह स्तोत्र बाधाओं का ताला खोलता है।'
+            },
+
+            // ========== विष्णु ==========
+            {
+                title: 'विष्णु सहस्रनाम',
+                en: 'Vishnu Sahasranama',
+                preview: 'ॐ शुक्लाम्बरधरं विष्णुं शशिवर्णं चतुर्भुजम् ।<br>प्रसन्नवदनं ध्यायेत् सर्वविघ्नोपशान्तये ॥',
+                desc: 'भगवान विष्णु के 1000 नामों का स्तोत्र — महाभारत के अनुशासन पर्व से।',
+                benefits: 'सभी पापों का नाश, विष्णु कृपा, मोक्ष।',
+                category: 'sahasranama',
+                god: 'विष्णु',
+                howTo: 'प्रातः, गुरुवार, पूरा पाठ।',
+                extra: 'यह सबसे शक्तिशाली विष्णु स्तोत्र है — 1000 नाम।'
+            },
+            {
+                title: 'विष्णु आरती',
+                en: 'Vishnu Aarti',
+                preview: 'ॐ जय जगदीश हरे, स्वामी जय जगदीश हरे ।<br>भक्त जनों के संकट, दास जनों के संकट, क्षण में दूर करे ॥',
+                desc: 'भगवान विष्णु की सबसे प्रसिद्ध आरती — हर आरती का मूल।',
+                benefits: 'विष्णु कृपा, संकट नाश, शांति।',
+                category: 'aarti',
+                god: 'विष्णु',
+                howTo: 'सायंकाल, आरती के समय।',
+                extra: 'यह हर आरती की शुरुआत में गाई जाती है।'
+            },
+            {
+                title: 'नारायण स्तोत्र',
+                en: 'Narayana Stotram',
+                preview: 'ॐ नमो नारायणाय, नमो नारायणाय ।<br>नमो नारायणाय, नमो नारायणाय ॥',
+                desc: 'भगवान नारायण (विष्णु) का स्तोत्र — शांति और मोक्ष के लिए।',
+                benefits: 'शांति, मोक्ष, विष्णु कृपा।',
+                category: 'stotra',
+                god: 'विष्णु',
+                howTo: 'प्रातः/सायं, 108 बार।',
+                extra: 'यह विष्णु का सरल स्तोत्र है — सबके लिए।'
+            },
+
+            // ========== शिव ==========
+            {
+                title: 'शिव चालीसा',
+                en: 'Shiv Chalisa',
+                preview: 'श्री शिवचंद्र कृपालु भजमन, हरण भवभय दारुणम् ।<br>नव कंज लोचन कंज मुख, कर कंज पद कंजारुणम् ॥',
+                desc: 'भगवान शिव की 40 चौपाइयों की चालीसा — शिव कृपा के लिए।',
+                benefits: 'शिव कृपा, भय नाश, रोग नाश, मोक्ष।',
+                category: 'chalisa',
+                god: 'शिव',
+                howTo: 'सोमवार, 7 या 21 बार।',
+                extra: 'शिव चालीसा शिव जी की कृपा पाने का सरल उपाय है।'
+            },
+            {
+                title: 'शिव तांडव स्तोत्र',
+                en: 'Shiv Tandav Stotram',
+                preview: 'जटाटवीगलज्जलप्रवाहपावितस्थले ।<br>गलेऽवलम्ब्य लम्बितां भुजंगतुंगमालिकाम् ॥',
+                desc: 'रावण द्वारा रचित शिव स्तोत्र — शिव जी के तांडव नृत्य का वर्णन।',
+                benefits: 'शिव कृपा, रोग नाश, शत्रु नाश, मोक्ष।',
+                category: 'stotra',
+                god: 'शिव',
+                howTo: 'सोमवार, प्रदोष, 1 या 11 बार।',
+                extra: 'रावण ने इस स्तोत्र से शिव को प्रसन्न किया था।'
+            },
+            {
+                title: 'रुद्राष्टकम्',
+                en: 'Rudrashtakam',
+                preview: 'ॐ नमामीशमीशान निर्वाणरूपं ।<br>विभुं व्यापकं ब्रह्मवेदस्वरूपम् ॥',
+                desc: 'शिव जी की स्तुति — 8 श्लोकों में। निर्वाण रूप शिव का वर्णन।',
+                benefits: 'शिव कृपा, मोक्ष, आत्मज्ञान, शांति।',
+                category: 'stotra',
+                god: 'शिव',
+                howTo: 'सोमवार, 1 या 11 बार।',
+                extra: 'यह शिव जी का सबसे प्रसिद्ध स्तोत्र है — शांति और मोक्ष के लिए।'
+            },
+            {
+                title: 'शिव आरती',
+                en: 'Shiv Aarti',
+                preview: 'ॐ जय शिव ओंकारा, स्वामी जय शिव ओंकारा ।<br>ब्रह्मा विष्णु सदाशिव, अर्द्धांगी धारा ॥',
+                desc: 'शिव जी की आरती — सबसे प्रसिद्ध आरती में से एक।',
+                benefits: 'शिव कृपा, भय नाश, शांति।',
+                category: 'aarti',
+                god: 'शिव',
+                howTo: 'सोमवार, आरती के समय।',
+                extra: 'यह शिव जी की सबसे प्रसिद्ध आरती है।'
+            },
+            {
+                title: 'महामृत्युंजय मंत्र',
+                en: 'Maha Mrityunjaya Mantra',
+                preview: 'ॐ त्र्यम्बकं यजामहे ।<br>सुगन्धिं पुष्टिवर्धनम् ॥',
+                desc: 'मृत्युंजय मंत्र — आयु, स्वास्थ्य, और मृत्यु भय से मुक्ति के लिए।',
+                benefits: 'आयु वृद्धि, रोग नाश, मृत्यु भय नाश।',
+                category: 'stotra',
+                god: 'शिव',
+                howTo: 'प्रातः/सायं, 108 बार।',
+                extra: 'यह सबसे शक्तिशाली आरोग्य मंत्र है।'
+            },
+
+            // ========== गणेश ==========
+            {
+                title: 'गणेश चालीसा',
+                en: 'Ganesh Chalisa',
+                preview: 'जय गणपति सदगुण सदन, कवि वर बदन कृपाल ।<br>विघ्न हरण मंगल करण, जय जय गिरिजालाल ॥',
+                desc: 'गणेश जी की 40 चौपाइयों की चालीसा — विघ्न नाश के लिए।',
+                benefits: 'विघ्न नाश, बुद्धि, सफलता, बाधा नाश।',
+                category: 'chalisa',
+                god: 'गणेश',
+                howTo: 'बुधवार, 7 या 21 बार।',
+                extra: 'गणेश चालीसा विघ्न नाश का सबसे सरल उपाय है।'
+            },
+            {
+                title: 'गणेश आरती',
+                en: 'Ganesh Aarti',
+                preview: 'जय गणेश जय गणेश जय गणेश देवा ।<br>माता जाकी पार्वती पिता महादेवा ॥',
+                desc: 'गणेश जी की आरती — हर शुभ कार्य से पहले गाई जाती है।',
+                benefits: 'विघ्न नाश, बुद्धि, सफलता।',
+                category: 'aarti',
+                god: 'गणेश',
+                howTo: 'बुधवार, आरती के समय।',
+                extra: 'यह हर पूजा की शुरुआत में गाई जाती है।'
+            },
+            {
+                title: 'गणेश अथर्वशीर्ष',
+                en: 'Ganesh Atharvashirsha',
+                preview: 'ॐ नमस्ते गणपतये ।<br>त्वमेव प्रत्यक्षं तत्वमसि ॥',
+                desc: 'गणेश जी का शक्तिशाली स्तोत्र — अथर्ववेद से।',
+                benefits: 'विघ्न नाश, आत्मज्ञान, सिद्धि, बुद्धि।',
+                category: 'stotra',
+                god: 'गणेश',
+                howTo: 'प्रातः, 11 बार।',
+                extra: 'यह गणेश जी का सबसे शक्तिशाली स्तोत्र है।'
+            },
+
+            // ========== लक्ष्मी ==========
+            {
+                title: 'लक्ष्मी चालीसा',
+                en: 'Lakshmi Chalisa',
+                preview: 'नमोऽस्तु महालक्ष्म्यै, नमोऽस्तु कमलालये ।<br>नमोऽस्तु वसुधे देवि, नमोऽस्तु हरिवल्लभे ॥',
+                desc: 'लक्ष्मी माता की 40 चौपाइयों की चालीसा — धन और समृद्धि के लिए।',
+                benefits: 'धन, समृद्धि, सौभाग्य, कर्ज मुक्ति।',
+                category: 'chalisa',
+                god: 'लक्ष्मी',
+                howTo: 'शुक्रवार, 7 या 21 बार।',
+                extra: 'लक्ष्मी चालीसा धन प्राप्ति का सरल उपाय है।'
+            },
+            {
+                title: 'लक्ष्मी आरती',
+                en: 'Lakshmi Aarti',
+                preview: 'ॐ जय लक्ष्मी माता, मैया जय लक्ष्मी माता ।<br>तुमको निशिदिन सेवत, हर विष्णु विधाता ॥',
+                desc: 'लक्ष्मी माता की आरती — धन और समृद्धि के लिए।',
+                benefits: 'धन, समृद्धि, सौभाग्य।',
+                category: 'aarti',
+                god: 'लक्ष्मी',
+                howTo: 'शुक्रवार, दीपावली, आरती के समय।',
+                extra: 'दीपावली पर लक्ष्मी आरती का विशेष महत्व है।'
+            },
+            {
+                title: 'श्री सूक्तम्',
+                en: 'Shri Suktam',
+                preview: 'ॐ हिरण्यवर्णां हरिणीं सुवर्णरजतस्रजाम् ।<br>चन्द्रां हिरण्मयीं लक्ष्मीं जातवेदो म आवह ॥',
+                desc: 'ऋग्वेद से लिया गया लक्ष्मी स्तोत्र — 15 श्लोक।',
+                benefits: 'धन, समृद्धि, सौभाग्य, कर्ज मुक्ति।',
+                category: 'stotra',
+                god: 'लक्ष्मी',
+                howTo: 'शुक्रवार, दीपावली, पूरा पाठ।',
+                extra: 'यह लक्ष्मी पूजा का सबसे शक्तिशाली स्तोत्र है।'
+            },
+            {
+                title: 'कनकधारा स्तोत्र',
+                en: 'Kanakadhara Stotram',
+                preview: 'अङ्गं हरेः पुलकभूषणमाश्रयन्ती ।<br>भृङ्गाङ्गनेव मुकुलाभरणं तमालम् ॥',
+                desc: 'आदि शंकराचार्य रचित — धन प्राप्ति और दरिद्रता नाश के लिए।',
+                benefits: 'धन प्राप्ति, दरिद्रता नाश, कर्ज मुक्ति।',
+                category: 'stotra',
+                god: 'लक्ष्मी',
+                howTo: 'शुक्रवार, 1 या 11 बार।',
+                extra: 'यह स्तोत्र दरिद्रता नाश का सबसे शक्तिशाली उपाय है।'
+            },
+            {
+                title: 'महालक्ष्मी अष्टकम्',
+                en: 'Mahalakshmi Ashtakam',
+                preview: 'नमस्तेऽस्तु महामाये श्रीपीठे सुरपूजिते ।<br>शङ्खचक्रगदाहस्ते महालक्ष्मि नमोऽस्तु ते ॥',
+                desc: 'महालक्ष्मी की स्तुति — 8 श्लोकों में।',
+                benefits: 'धन, समृद्धि, सौभाग्य।',
+                category: 'stotra',
+                god: 'लक्ष्मी',
+                howTo: 'शुक्रवार, 1 या 11 बार।',
+                extra: 'यह लक्ष्मी माता का संक्षिप्त स्तोत्र है।'
+            },
+
+            // ========== सरस्वती ==========
+            {
+                title: 'सरस्वती चालीसा',
+                en: 'Saraswati Chalisa',
+                preview: 'जय जय सरस्वती सुखदाता ।<br>ज्ञान प्रकाशिनी वरदाता ॥',
+                desc: 'सरस्वती माता की 40 चौपाइयों की चालीसा — विद्या और बुद्धि के लिए।',
+                benefits: 'विद्या, बुद्धि, ज्ञान, वाणी, कला।',
+                category: 'chalisa',
+                god: 'सरस्वती',
+                howTo: 'वसंत पंचमी, 7 या 21 बार।',
+                extra: 'विद्यार्थियों के लिए सरस्वती चालीसा अत्यंत लाभकारी है।'
+            },
+            {
+                title: 'सरस्वती आरती',
+                en: 'Saraswati Aarti',
+                preview: 'जय सरस्वती माता, जय जय सरस्वती माता ।<br>सद्गुण वैभव शालिनी, त्रिभुवन विख्याता ॥',
+                desc: 'सरस्वती माता की आरती — विद्या और ज्ञान के लिए।',
+                benefits: 'विद्या, बुद्धि, ज्ञान।',
+                category: 'aarti',
+                god: 'सरस्वती',
+                howTo: 'वसंत पंचमी, आरती के समय।',
+                extra: 'विद्यालयों में वसंत पंचमी पर सरस्वती आरती गाई जाती है।'
+            },
+            {
+                title: 'सरस्वती वंदना',
+                en: 'Saraswati Vandana',
+                preview: 'या कुन्देन्दुतुषारहारधवला ।<br>या शुभ्रवस्त्रावृता ॥',
+                desc: 'महाकवि कालिदास रचित — सरस्वती वंदना का सबसे प्रसिद्ध श्लोक।',
+                benefits: 'विद्या, बुद्धि, वाणी, कला।',
+                category: 'stotra',
+                god: 'सरस्वती',
+                howTo: 'प्रातः, 11 बार, विद्यार्थियों के लिए।',
+                extra: 'यह कालिदास द्वारा रचित सरस्वती वंदना है।'
+            },
+
+            // ========== कृष्ण ==========
+            {
+                title: 'कृष्ण आरती',
+                en: 'Krishna Aarti',
+                preview: 'आरती कीजै श्री वृंदावन ।<br>श्री राधा-माधव-चरण-सेवन ॥',
+                desc: 'कृष्ण जी की आरती — वृंदावन की भक्ति का प्रतीक।',
+                benefits: 'कृष्ण कृपा, भक्ति, प्रेम।',
+                category: 'aarti',
+                god: 'कृष्ण',
+                howTo: 'जन्माष्टमी, आरती के समय।',
+                extra: 'यह कृष्ण जी की आरती है — वृंदावन की परंपरा से।'
+            },
+            {
+                title: 'मधुराष्टकम्',
+                en: 'Madhurashtakam',
+                preview: 'अधरं मधुरं वदनं मधुरं ।<br>नयनं मधुरं हसितं मधुरम् ॥',
+                desc: 'श्री वल्लभाचार्य रचित — कृष्ण की माधुरी का वर्णन।',
+                benefits: 'कृष्ण कृपा, प्रेम, भक्ति।',
+                category: 'stotra',
+                god: 'कृष्ण',
+                howTo: 'प्रातः, 1 या 11 बार।',
+                extra: 'यह कृष्ण जी की माधुरी का सबसे सुंदर स्तोत्र है।'
+            },
+            {
+                title: 'भगवद् गीता (स्तोत्र)',
+                en: 'Bhagavad Gita',
+                preview: 'कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।<br>मा कर्मफलहेतुर्भूर्मा ते संगोऽस्त्वकर्मणि ॥',
+                desc: 'भगवान कृष्ण द्वारा अर्जुन को दिया गया उपदेश — 18 अध्याय, 700 श्लोक।',
+                benefits: 'आत्मज्ञान, धर्म, कर्म, मोक्ष।',
+                category: 'stotra',
+                god: 'कृष्ण',
+                howTo: 'प्रातः, 1 अध्याय या पूरा।',
+                extra: 'यह हिंदू धर्म का सबसे पवित्र ग्रंथ है।'
+            },
+
+            // ========== राम ==========
+            {
+                title: 'राम रक्षा स्तोत्र',
+                en: 'Ram Raksha Stotram',
+                preview: 'चरितं रघुनाथस्य शतकोटि प्रविस्तरम् ।<br>एकैकमक्षरं पुंसां महापातकनाशनम् ॥',
+                desc: 'बुध कौशिक ऋषि रचित — राम जी की रक्षा के लिए।',
+                benefits: 'रक्षा, भय नाश, रोग नाश, राम कृपा।',
+                category: 'stotra',
+                god: 'राम',
+                howTo: 'प्रातः, 1 या 11 बार।',
+                extra: 'यह राम जी की रक्षा का सबसे शक्तिशाली स्तोत्र है।'
+            },
+            {
+                title: 'राम आरती',
+                en: 'Ram Aarti',
+                preview: 'श्री रामचंद्र कृपालु भजमन, हरण भवभय दारुणम् ।<br>नवकंज लोचन कंज मुख, कर कंज पद कंजारुणम् ॥',
+                desc: 'राम जी की आरती — भक्ति और समर्पण का प्रतीक।',
+                benefits: 'राम कृपा, भय नाश, पारिवारिक सुख।',
+                category: 'aarti',
+                god: 'राम',
+                howTo: 'राम नवमी, आरती के समय।',
+                extra: 'यह राम जी की सबसे प्रसिद्ध आरती है।'
+            },
+            {
+                title: 'सुंदरकांड',
+                en: 'Sundarkand',
+                preview: 'शान्तं शाश्वतमप्रमेयमनघं निर्वाणशान्तिप्रदं ।<br>ब्रह्माशम्भुतनुं सुरार्चितपदं सर्वज्ञमीशं विभुम् ॥',
+                desc: 'रामचरितमानस का सुंदरकांड — हनुमान जी की लंका यात्रा और सीता मिलन।',
+                benefits: 'भय नाश, संकट मोचन, राम कृपा।',
+                category: 'stotra',
+                god: 'राम / हनुमान',
+                howTo: 'मंगलवार/शनिवार, पूरा पाठ।',
+                extra: 'यह रामायण का सबसे शक्तिशाली कांड है।'
+            },
+
+            // ========== अन्य महत्वपूर्ण स्तोत्र ==========
+            {
+                title: 'आदित्य हृदय स्तोत्र',
+                en: 'Aditya Hridayam Stotram',
+                preview: 'ततो युद्धपरिश्रान्तं समरे चिन्तया स्थितम् ।<br>रावणं चाग्रतो दृष्ट्वा युद्धाय समुपस्थितम् ॥',
+                desc: 'अगस्त्य मुनि द्वारा राम जी को सिखाया गया सूर्य स्तोत्र — युद्ध से पहले।',
+                benefits: 'विजय, आरोग्य, नेत्र रोग नाश, शत्रु नाश।',
+                category: 'stotra',
+                god: 'सूर्य',
+                howTo: 'प्रातः, 3 या 11 बार।',
+                extra: 'राम जी ने रावण से युद्ध से पहले यह स्तोत्र पढ़ा था।'
+            },
+            {
+                title: 'नवग्रह स्तोत्र',
+                en: 'Navgrah Stotram',
+                preview: 'ॐ ब्रह्मा मुरारिस्त्रिपुरान्तकारी ।<br>भानुः शशी भूमिसुतो बुधश्च ॥',
+                desc: 'नवग्रहों की स्तुति — ग्रह दोष शांति के लिए।',
+                benefits: 'ग्रह दोष शांति, कल्याण, शांति।',
+                category: 'stotra',
+                god: 'नवग्रह',
+                howTo: 'प्रातः, 1 या 11 बार।',
+                extra: 'यह स्तोत्र सभी ग्रहों की शांति के लिए है।'
+            },
+            {
+                title: 'काल भैरव अष्टकम्',
+                en: 'Kaal Bhairav Ashtakam',
+                preview: 'देवराजसेव्यमानपावनांघ्रिपङ्कजं ।<br>व्यालयज्ञसूत्रमिन्दुशेखरं कृपाकरम् ॥',
+                desc: 'आदि शंकराचार्य रचित — काल भैरव की स्तुति।',
+                benefits: 'भय नाश, शत्रु नाश, रक्षा।',
+                category: 'stotra',
+                god: 'भैरव',
+                howTo: 'शनिवार/मंगलवार, 1 या 11 बार।',
+                extra: 'यह काल भैरव का सबसे प्रसिद्ध स्तोत्र है।'
+            },
+            {
+                title: 'बटुक भैरव कवच',
+                en: 'Batuk Bhairav Kavach',
+                preview: 'ॐ शिरो मे बटुकः पातु भालं पातु त्रिलोचनः ।<br>नेत्रे पातु महाशूरः श्रोत्रे पातु शुभप्रदः ॥',
+                desc: 'बटुक भैरव का कवच — रक्षा के लिए।',
+                benefits: 'सर्व रक्षा, भय नाश, शत्रु नाश।',
+                category: 'kavach',
+                god: 'भैरव',
+                howTo: 'प्रातः, 1 या 11 बार।',
+                extra: 'यह कवच सभी प्रकार की रक्षा करता है।'
+            },
+            {
+                title: 'गायत्री चालीसा',
+                en: 'Gayatri Chalisa',
+                preview: 'ॐ भूर्भुवः स्वः तत्सवितुर्वरेण्यम् ।<br>भर्गो देवस्य धीमहि धियो यो नः प्रचोदयात् ॥',
+                desc: 'गायत्री मंत्र की चालीसा — बुद्धि और ज्ञान के लिए।',
+                benefits: 'बुद्धि, ज्ञान, आत्मज्ञान, मोक्ष।',
+                category: 'chalisa',
+                god: 'गायत्री',
+                howTo: 'प्रातः, 7 या 21 बार।',
+                extra: 'यह गायत्री मंत्र की महिमा का वर्णन करती है।'
+            },
+            {
+                title: 'शनि चालीसा',
+                en: 'Shani Chalisa',
+                preview: 'जय जय शनि देव, प्रभु जय जय शनि देव ।<br>कष्ट निवारण देव, भक्तों के सुख देव ॥',
+                desc: 'शनि देव की चालीसा — शनि दोष शांति के लिए।',
+                benefits: 'शनि दोष शांति, साढ़े साती में लाभ, कर्ज मुक्ति।',
+                category: 'chalisa',
+                god: 'शनि',
+                howTo: 'शनिवार, 7 या 21 बार।',
+                extra: 'शनि चालीसा साढ़े साती में विशेष लाभकारी है।'
+            },
+            {
+                title: 'शनि आरती',
+                en: 'Shani Aarti',
+                preview: 'जय शनि देव, जय शनि देव ।<br>भक्तों के दुःख हरने वाले, शनि देव ॥',
+                desc: 'शनि देव की आरती — शनि दोष शांति के लिए।',
+                benefits: 'शनि दोष शांति, भय नाश।',
+                category: 'aarti',
+                god: 'शनि',
+                howTo: 'शनिवार, आरती के समय।',
+                extra: 'शनि आरती शनिवार को विशेष रूप से की जाती है।'
+            }
+        ];
+
+        // ============================================================
+        //  RENDER FUNCTIONS
+        // ============================================================
+
+        let currentCategory = 'all';
+        let searchQuery = '';
+
+        function renderStotras() {
+            const grid = document.getElementById('stotraGrid');
+            const filtered = stotras.filter(s => {
+                const matchCat = currentCategory === 'all' || s.category === currentCategory;
+                const matchSearch = s.title.includes(searchQuery) ||
+                                    s.en.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                    s.god.includes(searchQuery);
+                return matchCat && matchSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div class="no-result">
+                    <i class="fa-solid fa-search"></i>
+                    कोई स्तोत्र नहीं मिला। कृपया दूसरा शब्द खोजें।
+                </div>`;
+                return;
+            }
+
+            const badgeClass = (cat) => {
+                if (cat === 'chalisa') return 'gold';
+                if (cat === 'aarti') return 'green';
+                if (cat === 'sahasranama') return 'blue';
+                if (cat === 'kavach') return 'blue';
+                return '';
+            };
+
+            const catName = (cat) => {
+                const names = {
+                    'chalisa': 'चालीसा',
+                    'aarti': 'आरती',
+                    'stotra': 'स्तोत्र',
+                    'sahasranama': 'सहस्रनाम',
+                    'kavach': 'कवच'
+                };
+                return names[cat] || cat;
+            };
+
+            grid.innerHTML = filtered.map(s => `
+                <div class="stotra-card">
+                    <div class="s-header">
+                        <div class="s-title">
+                            ${s.title}
+                            <span class="s-en">${s.en}</span>
+                        </div>
+                        <span class="s-badge ${badgeClass(s.category)}">${catName(s.category)}</span>
+                    </div>
+                    <div class="s-preview">${s.preview}</div>
+                    <div class="s-desc">
+                        <strong>📖 विवरण:</strong> ${s.desc}
+                    </div>
+                    <div class="s-benefits">
+                        <strong>✨ लाभ:</strong> ${s.benefits}
+                    </div>
+                    <div class="s-meta">
+                        <span><i class="fa-solid fa-clock"></i> ${s.howTo}</span>
+                        <span><i class="fa-solid fa-om"></i> ${s.god}</span>
+                    </div>
+                    <details class="stotra-details">
+                        <summary>अधिक जानकारी</summary>
+                        <div class="d-body">${s.extra || ''}</div>
+                    </details>
+                </div>
+            `).join('');
+        }
+
+        function filterStotras() {
+            searchQuery = document.getElementById('stotraSearch').value.trim();
+            renderStotras();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderStotras();
+
+            document.querySelectorAll('.cat-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    currentCategory = this.dataset.cat;
+                    renderStotras();
+                });
+            });
+        });
+
+        // Dark mode
+        const darkToggle = document.getElementById('darkToggle');
+        if (darkToggle) {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+                darkToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            }
+            darkToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                const icon = this.querySelector('i');
+                const isDark = document.body.classList.contains('dark-mode');
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+                localStorage.setItem('darkMode', isDark);
+            });
+        }
+
+        function sharePage() {
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    text: '🕉️ सनातन ज्ञान कोश — स्तोत्र कोश',
+                    url: window.location.href
+                }).catch(() => {});
+            } else {
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    alert('लिंक कॉपी हो गया!');
+                });
+            }
+        }
+    </script>
+</body>
+</html>
