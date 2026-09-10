@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>नवरात्रि — 9 रूपों की संपूर्ण जानकारी | Sanatan Gyan Kosh</title>
+    <meta name="description" content="नवरात्रि का संपूर्ण ज्ञान — 9 दिन, 9 रूप, हर रूप की कथा, मंत्र, पूजा विधि, प्रसाद, और बहुत कुछ।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        /* Hero */
+        .festival-hero {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, rgba(212,175,55,0.2), rgba(122,46,46,0.12));
+            border-radius: var(--radius);
+            margin-bottom: 16px;
+            border: 2px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+        .festival-hero::before {
+            content: '🌺';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            font-size: 140px;
+            opacity: 0.06;
+        }
+        .festival-hero .hero-icon {
+            font-size: 80px;
+            display: block;
+            line-height: 1;
+            animation: glow 2s ease-in-out infinite;
+        }
+        @keyframes glow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(212,175,55,0.5)); }
+            50% { transform: scale(1.05); filter: drop-shadow(0 0 25px rgba(212,175,55,0.8)); }
+        }
+        .festival-hero .hero-name {
+            font-family: var(--font-display);
+            font-size: 34px;
+            color: var(--maroon);
+            margin-top: 8px;
+            font-weight: 700;
+        }
+        .festival-hero .hero-subtitle {
+            font-size: 14px;
+            color: var(--ink-soft);
+            margin-top: 6px;
+            letter-spacing: 1px;
+        }
+        .festival-hero .hero-date {
+            display: inline-block;
+            background: var(--maroon);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        /* Section */
+        .festival-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 20px 18px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .festival-section h2 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--maroon);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+        }
+        .festival-section h2 .sec-icon { font-size: 26px; }
+        .festival-section h3 {
+            font-family: var(--font-display);
+            font-size: 16px;
+            color: var(--maroon);
+            margin: 16px 0 8px;
+        }
+        .festival-section p {
+            font-size: 14px;
+            line-height: 1.9;
+            color: var(--ink-soft);
+            margin-bottom: 10px;
+        }
+        .festival-section p strong { color: var(--maroon); }
+
+        /* 9 Roop Cards */
+        .roop-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 12px;
+        }
+        .roop-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--border);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .roop-card:hover {
+            border-color: var(--gold);
+            box-shadow: var(--shadow-hover);
+        }
+        .roop-card.open {
+            border-color: var(--maroon);
+        }
+        .roop-header {
+            padding: 16px 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: var(--transition);
+        }
+        .roop-header:hover {
+            background: var(--bg);
+        }
+        .roop-card.open .roop-header {
+            background: linear-gradient(135deg, rgba(212,175,55,0.12), rgba(122,46,46,0.06));
+            border-bottom: 1px solid var(--border);
+        }
+        .roop-day-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--maroon), var(--gold));
+            color: white;
+            flex-shrink: 0;
+        }
+        .roop-day-badge .day-num {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1;
+        }
+        .roop-day-badge .day-text {
+            font-size: 8px;
+            opacity: 0.85;
+            margin-top: 2px;
+        }
+        .roop-info {
+            flex: 1;
+        }
+        .roop-name {
+            font-family: var(--font-display);
+            font-size: 18px;
+            color: var(--maroon);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .roop-sub {
+            font-size: 11px;
+            color: var(--ink-soft);
+            margin-top: 3px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .roop-sub span {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+        .roop-sub i {
+            color: var(--gold);
+            font-size: 10px;
+        }
+        .roop-arrow {
+            color: var(--gold);
+            font-size: 18px;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+        .roop-card.open .roop-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Roop Body */
+        .roop-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        .roop-card.open .roop-body {
+            max-height: 4000px;
+        }
+        .roop-body-inner {
+            padding: 18px;
+        }
+
+        .roop-section {
+            margin-bottom: 14px;
+        }
+        .roop-section:last-child { margin-bottom: 0; }
+        .roop-section-title {
+            font-family: var(--font-display);
+            font-size: 14px;
+            color: var(--maroon);
+            font-weight: 700;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .roop-section-title .ri { font-size: 16px; }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 6px;
+        }
+        .info-item {
+            background: var(--bg);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+        }
+        .info-item .lbl {
+            font-size: 9px;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-item .val {
+            font-weight: 600;
+            color: var(--maroon);
+            margin-top: 2px;
+            font-size: 12.5px;
+        }
+
+        .mantra-box {
+            background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(122,46,46,0.05));
+            border-left: 4px solid var(--gold);
+            padding: 12px 14px;
+            border-radius: 10px;
+            font-family: var(--font-display);
+            font-size: 15px;
+            text-align: center;
+            margin: 8px 0;
+            line-height: 1.8;
+            color: var(--maroon);
+            font-weight: 600;
+        }
+        .mantra-box small {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 11px;
+            color: var(--ink-soft);
+            font-weight: 400;
+            margin-top: 4px;
+        }
+
+        .roop-body p {
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+        }
+        .roop-body p strong { color: var(--maroon); }
+
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 6px;
+        }
+        .benefit-list li {
+            padding: 5px 0 5px 22px;
+            font-size: 12.5px;
+            line-height: 1.6;
+            color: var(--ink-soft);
+            position: relative;
+        }
+        .benefit-list li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            font-size: 12px;
+        }
+
+        /* Highlight */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(212,175,55,0.12), rgba(122,46,46,0.06));
+            border-left: 4px solid var(--gold);
+            padding: 12px 14px;
+            border-radius: 10px;
+            margin: 8px 0;
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+        }
+        .highlight-box strong { color: var(--maroon); }
+
+        /* Steps List */
+        .steps-list {
+            list-style: none;
+            padding: 0;
+            counter-reset: step-counter;
+            margin: 8px 0;
+        }
+        .steps-list li {
+            counter-increment: step-counter;
+            padding: 8px 10px 8px 40px;
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+            border-bottom: 1px dashed var(--border);
+            position: relative;
+        }
+        .steps-list li:last-child { border-bottom: none; }
+        .steps-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--maroon), var(--gold));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        /* Colors */
+        .color-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 6px;
+        }
+        .color-chip {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            color: white;
+        }
+
+        /* Back Button */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg);
+            color: var(--maroon);
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+        .back-btn:hover {
+            background: var(--maroon);
+            color: white;
+        }
+
+        /* Back Top */
+        .back-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--maroon);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 16px rgba(122,46,46,0.4);
+            z-index: 90;
+        }
+        .back-top.show { display: flex; }
+
+        /* Do-Dont */
+        .do-dont-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .do-box, .dont-box {
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+        .do-box {
+            background: #eef7ee;
+            border-left: 3px solid #27ae60;
+        }
+        .do-box h4 {
+            color: #27ae60;
+            font-size: 12px;
+            margin-bottom: 6px;
+        }
+        .dont-box {
+            background: #fdecea;
+            border-left: 3px solid #dc3545;
+        }
+        .dont-box h4 {
+            color: #dc3545;
+            font-size: 12px;
+            margin-bottom: 6px;
+        }
+        .do-box ul, .dont-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        .do-box ul li, .dont-box ul li {
+            padding: 2px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 5px;
+        }
+        .do-box ul li::before { content: '✅'; flex-shrink: 0; font-size: 11px; }
+        .dont-box ul li::before { content: '❌'; flex-shrink: 0; font-size: 11px; }
+
+        /* Related Links */
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .related-link {
+            padding: 12px;
+            background: var(--bg);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--maroon);
+            font-weight: 600;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .related-link:hover {
+            background: var(--card-bg);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 420px) {
+            .festival-hero .hero-icon { font-size: 60px; }
+            .festival-hero .hero-name { font-size: 26px; }
+            .festival-section h2 { font-size: 17px; }
+            .roop-name { font-size: 15px; }
+            .roop-day-badge { width: 46px; height: 46px; }
+            .do-dont-grid { grid-template-columns: 1fr; }
+            .info-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ त्योहार</span>
+            <h1>नवरात्रि</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <a href="index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i> सभी त्योहार
+        </a>
+
+        <!-- Hero -->
+        <div class="festival-hero">
+            <span class="hero-icon">🌺</span>
+            <div class="hero-name">नवरात्रि</div>
+            <div class="hero-subtitle">9 रातें · 9 रूप · माँ दुर्गा की महिमा</div>
+            <div class="hero-date">📅 चैत्र & आश्विन · 9 दिन</div>
+        </div>
+
+        <!-- 1. परिचय -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">📖</span> नवरात्रि क्या है?</h2>
+            <p>
+                <strong>नवरात्रि</strong> (नव = नौ + रात्रि = रातें) हिंदू धर्म का सबसे बड़ा और सबसे पवित्र त्योहार है — जिसमें <strong>9 दिनों तक माँ दुर्गा के 9 रूपों की पूजा</strong> की जाती है। 
+            </p>
+            <p>
+                यह पर्व साल में <strong>दो बार</strong> आता है — <strong>चैत्र नवरात्रि</strong> (मार्च-अप्रैल) और <strong>शारदीय नवरात्रि</strong> (सितंबर-अक्टूबर)। शारदीय नवरात्रि सबसे प्रमुख मानी जाती है — जिसका समापन <strong>दशहरा (विजयादशमी)</strong> पर होता है।
+            </p>
+            <div class="highlight-box">
+                <strong>🌺 मुख्य बात:</strong> नवरात्रि में माँ दुर्गा के <strong>9 स्वरूपों (नवदुर्गा)</strong> की पूजा होती है — शैलपुत्री, ब्रह्मचारिणी, चंद्रघंटा, कूष्मांडा, स्कंदमाता, कात्यायनी, कालरात्रि, महागौरी, और सिद्धिदात्री।
+            </div>
+        </div>
+
+        <!-- 2. कथा -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">📜</span> नवरात्रि की कथा</h2>
+            <p>
+                पौराणिक कथा के अनुसार, <strong>महिषासुर</strong> नामक राक्षस ने घोर तपस्या करके ब्रह्मा जी से वरदान प्राप्त किया कि उसकी मृत्यु <strong>न पुरुष से हो, न पशु से, न देवता से, और न असुर से</strong>। इस वरदान के कारण वह अजेय हो गया और उसने तीनों लोकों पर अत्याचार शुरू कर दिया।
+            </p>
+            <p>
+                तब सभी देवता <strong>ब्रह्मा, विष्णु, और महेश</strong> के पास गए। तीनों देवों के <strong>तेज (ऊर्जा)</strong> से एक दिव्य स्त्री प्रकट हुई — <strong>माँ दुर्गा</strong>। उनका मुख शिव से, बाहें विष्णु से, और कमर इंद्र से बनी। सभी देवताओं ने अपने-अपने अस्त्र-शस्त्र उन्हें दिए।
+            </p>
+            <p>
+                <strong>माँ दुर्गा ने 9 दिनों तक युद्ध किया</strong> और 10वें दिन महिषासुर का वध किया। यही 9 दिन <strong>नवरात्रि</strong> के रूप में मनाए जाते हैं, और 10वां दिन <strong>दशहरा (विजयादशमी)</strong>।
+            </p>
+            <div class="highlight-box">
+                <strong>🚩 महत्व:</strong> यह कथा बुराई पर अच्छाई की जीत का प्रतीक है — जो हर साल नवरात्रि में दोहराई जाती है।
+            </div>
+        </div>
+
+        <!-- 3. 9 रूप -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🌺</span> नवदुर्गा के 9 रूप — विस्तृत जानकारी</h2>
+            <p style="font-size:13px; color: var(--ink-soft);">
+                कार्ड पर <strong>click करें</strong> और हर रूप की पूरी जानकारी पढ़ें — कथा, स्वरूप, मंत्र, प्रसाद, और लाभ।
+            </p>
+
+            <div class="roop-grid" id="roopGrid">
+                <!-- JS renders here -->
+            </div>
+        </div>
+
+        <!-- 4. पूजा विधि -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🙏</span> नवरात्रि पूजा विधि</h2>
+            <ol class="steps-list">
+                <li><strong>घर की सफाई:</strong> पूरे घर को साफ करें और गंगाजल छिड़कें।</li>
+                <li><strong>कलश स्थापना:</strong> मिट्टी के बर्तन में जौ बोएँ, उस पर तांबे का कलश रखें।</li>
+                <li><strong>कलश सजावट:</strong> कलश में आम के पत्ते, नारियल, और रोली लगाएँ।</li>
+                <li><strong>माँ दुर्गा की प्रतिमा:</strong> देवी की प्रतिमा या चित्र स्थापित करें।</li>
+                <li><strong>दीपक और धूप:</strong> घी का दीपक और धूप जलाएँ।</li>
+                <li><strong>दुर्गा सप्तशती पाठ:</strong> रोज़ दुर्गा सप्तशती या चालीसा पढ़ें।</li>
+                <li><strong>मंत्र जप:</strong> "ॐ दुं दुर्गायै नमः" 108 बार जपें।</li>
+                <li><strong>प्रसाद चढ़ाएँ:</strong> फल, मिठाई, और माँ को पसंदीदा भोग अर्पित करें।</li>
+                <li><strong>आरती:</strong> "जय अम्बे गौरी" आरती गाएँ।</li>
+                <li><strong>कन्या पूजन:</strong> अष्टमी या नवमी को कन्या पूजन करें।</li>
+                <li><strong>हवन:</strong> नवमी को हवन कराएँ और प्रसाद बाँटें।</li>
+            </ol>
+
+            <h3>📿 मुख्य मंत्र</h3>
+            <div class="mantra-box">
+                ॐ दुं दुर्गायै नमः
+                <small>माँ दुर्गा का मूल मंत्र — 108 बार जपें</small>
+            </div>
+            <div class="mantra-box">
+                ॐ ऐं ह्रीं क्लीं चामुण्डायै विच्चे
+                <small>महिषासुरमर्दिनी मंत्र — शत्रु नाश और विजय के लिए</small>
+            </div>
+        </div>
+
+        <!-- 5. सामग्री -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🛒</span> पूजा सामग्री</h2>
+            <ul style="list-style: none; padding: 0; font-size: 13.5px; line-height: 2;">
+                <li>✅ माँ दुर्गा की प्रतिमा या चित्र</li>
+                <li>✅ कलश (तांबा या मिट्टी)</li>
+                <li>✅ जौ के बीज</li>
+                <li>✅ आम के पत्ते (5 या 7)</li>
+                <li>✅ नारियल</li>
+                <li>✅ लाल चुनरी</li>
+                <li>✅ चूड़ी और सिंदूर</li>
+                <li>✅ दीपक (घी का)</li>
+                <li>✅ धूप, कपूर, अगरबत्ती</li>
+                <li>✅ रोली, हल्दी, अक्षत</li>
+                <li>✅ फूल (लाल — गुलाब, गेंदा)</li>
+                <li>✅ फल (केला, सेब, नारियल)</li>
+                <li>✅ मिठाई और प्रसाद</li>
+                <li>✅ दुर्गा सप्तशती या चालीसा</li>
+            </ul>
+        </div>
+
+        <!-- 6. क्या करें / क्या न करें -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">✅</span> क्या करें और क्या न करें</h2>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <h4>✅ क्या करें</h4>
+                    <ul>
+                        <li>9 दिन व्रत रखें</li>
+                        <li>कलश स्थापना करें</li>
+                        <li>दुर्गा सप्तशती पाठ करें</li>
+                        <li>कन्या पूजन करें</li>
+                        <li>लाल वस्त्र धारण करें</li>
+                        <li>माँ दुर्गा का ध्यान करें</li>
+                        <li>हवन कराएँ</li>
+                        <li>प्रसाद बाँटें</li>
+                    </ul>
+                </div>
+                <div class="dont-box">
+                    <h4>❌ क्या न करें</h4>
+                    <ul>
+                        <li>तामसिक भोजन न करें</li>
+                        <li>क्रोध न करें</li>
+                        <li>झूठ न बोलें</li>
+                        <li>देवी का अनादर न करें</li>
+                        <li>अशुद्ध न रहें</li>
+                        <li>प्याज-लहसुन न खाएँ</li>
+                        <li>शराब/मांस न लें</li>
+                        <li>किसी से कलह न करें</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. Related Links -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🔗</span> संबंधित लिंक</h2>
+            <div class="related-grid">
+                <a href="../devta/durga.html" class="related-link">🌺 दुर्गा माता</a>
+                <a href="../stotra/durga-saptashati.html" class="related-link">📜 दुर्गा सप्तशती</a>
+                <a href="../stotra/durga-chalisa.html" class="related-link">📜 दुर्गा चालीसा</a>
+                <a href="../mantra/index.html" class="related-link">📿 दुर्गा मंत्र</a>
+                <a href="dussehra.html" class="related-link">⚔️ दशहरा</a>
+                <a href="index.html" class="related-link">🎉 अन्य त्योहार</a>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय माता दी</p>
+        </footer>
+
+    </main>
+
+    <button class="back-top" id="backTop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="../devta/index.html" class="nav-link"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-calendar-days"></i><p>त्योहार</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>पंचांग</p></a>
+    </nav>
+
+    <script>
+        // ============================================================
+        //  NAVDURGA — 9 Forms (Deep Detail)
+        // ============================================================
+
+        const navdurga = [
+            {
+                day: 1,
+                name: 'शैलपुत्री',
+                en: 'Shailputri',
+                meaning: 'हिमालय की पुत्री',
+                vehicle: 'बैल (नंदी)',
+                hands: '2',
+                weapon: 'त्रिशूल, कमल',
+                color: 'सफेद / पीला',
+                colorCode: '#f0f0f0',
+                mantra: 'ॐ देवी शैलपुत्र्यै नमः',
+                katha: 'पिछले जन्म में माँ सती थीं। जब उन्होंने दक्ष यज्ञ में आत्मदाह किया, तो उन्होंने अगले जन्म में हिमालय की पुत्री के रूप में जन्म लिया। यही शैलपुत्री हैं।',
+                form: 'दाहिने हाथ में त्रिशूल और बाएँ हाथ में कमल धारण करती हैं। मस्तक पर चंद्रमा शोभा पाता है।',
+                prasad: 'गाय का शुद्ध घी',
+                benefits: [
+                    'शक्ति और साहस में वृद्धि',
+                    'ग्रह दोष शांति',
+                    'मूलाधार चक्र जागरण',
+                    'भय मुक्ति',
+                    'अच्छी शुरुआत'
+                ],
+                significance: 'नवरात्रि का पहला दिन माँ शैलपुत्री को समर्पित है। इस दिन कलश स्थापना होती है।'
+            },
+            {
+                day: 2,
+                name: 'ब्रह्मचारिणी',
+                en: 'Brahmacharini',
+                meaning: 'तपस्विनी (ब्रह्मचर्य का पालन करने वाली)',
+                vehicle: 'कोई नहीं (पैदल)',
+                hands: '2',
+                weapon: 'जप माला, कमंडलु',
+                color: 'सफेद',
+                colorCode: '#ffffff',
+                mantra: 'ॐ देवी ब्रह्मचारिण्यै नमः',
+                katha: 'माँ ब्रह्मचारिणी ने शिव जी को पति रूप में पाने के लिए हजारों वर्ष तक घोर तपस्या की। उन्होंने कठोर व्रत किए और अंत में शिव जी को प्रसन्न किया।',
+                form: 'दाहिने हाथ में जप माला और बाएँ हाथ में कमंडलु धारण करती हैं। ये सफेद वस्त्र धारण करती हैं।',
+                prasad: 'शक्कर और मिश्री',
+                benefits: [
+                    'आत्म-संयम और तपस्या',
+                    'विद्या में वृद्धि',
+                    'संतान प्राप्ति',
+                    'विवाह में शीघ्रता',
+                    'स्वाधिष्ठान चक्र जागरण'
+                ],
+                significance: 'दूसरे दिन माँ ब्रह्मचारिणी की पूजा होती है — जो तपस्या और संयम की देवी हैं।'
+            },
+            {
+                day: 3,
+                name: 'चंद्रघंटा',
+                en: 'Chandraghanta',
+                meaning: 'चंद्रमा के आकार का घंटा',
+                vehicle: 'सिंह (शेर)',
+                hands: '10',
+                weapon: 'त्रिशूल, गदा, धनुष, बाण, खड्ग, कमल',
+                color: 'सुनहरा',
+                colorCode: '#f0a500',
+                mantra: 'ॐ देवी चंद्रघंटायै नमः',
+                katha: 'जब माँ दुर्गा के मस्तक पर चंद्रमा और घंटे के आकार का आभूषण शोभा पाता है — तभी वे चंद्रघंटा कहलाती हैं। उनके गले में सर्प विराजमान रहता है।',
+                form: 'माँ चंद्रघंटा के 10 हाथ हैं — जिनमें त्रिशूल, गदा, धनुष, बाण, तलवार, कमल और अन्य शस्त्र हैं। वे सिंह पर सवार हैं।',
+                prasad: 'दूध और मिठाई',
+                benefits: [
+                    'शत्रु नाश',
+                    'भय मुक्ति',
+                    'साहस और वीरता',
+                    'रोग नाश',
+                    'मणिपुर चक्र जागरण'
+                ],
+                significance: 'तीसरे दिन माँ चंद्रघंटा की पूजा होती है। घंटे की ध्वनि से नकारात्मक ऊर्जा दूर होती है।'
+            },
+            {
+                day: 4,
+                name: 'कूष्मांडा',
+                en: 'Kushmanda',
+                meaning: 'ब्रह्मांड की रचयिता',
+                vehicle: 'सिंह (शेर)',
+                hands: '8',
+                weapon: 'कमंडलु, धनुष, बाण, कमल, चक्र, गदा',
+                color: 'हरा',
+                colorCode: '#27ae60',
+                mantra: 'ॐ देवी कूष्मांडायै नमः',
+                katha: 'जब सृष्टि नहीं थी, तब माँ कूष्मांडा ने अपनी मंद मुस्कान से ब्रह्मांड की रचना की। "कूष्मांड" का अर्थ है — ब्रह्मांड।',
+                form: 'माँ कूष्मांडा के 8 हाथ हैं — जिनमें कमंडलु, धनुष, बाण, कमल, चक्र, गदा, और अक्षमाला हैं। वे सिंह पर सवार हैं।',
+                prasad: 'मालपुआ',
+                benefits: [
+                    'रोग नाश',
+                    'आरोग्य',
+                    'धन प्राप्ति',
+                    'सुख-समृद्धि',
+                    'अनाहत चक्र जागरण'
+                ],
+                significance: 'चौथे दिन माँ कूष्मांडा की पूजा होती है — जो ब्रह्मांड की रचयिता हैं।'
+            },
+            {
+                day: 5,
+                name: 'स्कंदमाता',
+                en: 'Skandamata',
+                meaning: 'कार्तिकेय (स्कंद) की माता',
+                vehicle: 'सिंह (शेर)',
+                hands: '4',
+                weapon: 'कमल (2), स्कंद (गोद में)',
+                color: 'सफेद',
+                colorCode: '#f5f5f5',
+                mantra: 'ॐ देवी स्कंदमातायै नमः',
+                katha: 'स्कंद (कार्तिकेय) के जन्म के बाद माँ पार्वती स्कंदमाता कहलाईं। उन्होंने अपने पुत्र स्कंद को युद्ध कला सिखाई और तारकासुर का वध कराया।',
+                form: 'माँ स्कंदमाता के 4 हाथ हैं — दो में कमल और दो में स्कंद (कार्तिकेय) गोद में। वे सिंह पर सवार हैं।',
+                prasad: 'केला',
+                benefits: [
+                    'संतान प्राप्ति',
+                    'संतान की रक्षा',
+                    'माता-पुत्र का प्रेम',
+                    'बुद्धि वृद्धि',
+                    'विशुद्धि चक्र जागरण'
+                ],
+                significance: 'पाँचवें दिन माँ स्कंदमाता की पूजा होती है — जो संतान की रक्षक हैं।'
+            },
+            {
+                day: 6,
+                name: 'कात्यायनी',
+                en: 'Katyayani',
+                meaning: 'कात्यायन ऋषि की पुत्री',
+                vehicle: 'सिंह (शेर)',
+                hands: '4',
+                weapon: 'तलवार, कमल, अभय मुद्रा, वरद मुद्रा',
+                color: 'पीला',
+                colorCode: '#f0d060',
+                mantra: 'ॐ देवी कात्यायन्यै नमः',
+                katha: 'कात्यायन ऋषि ने माँ दुर्गा की घोर तपस्या की और उन्हें पुत्री रूप में प्राप्त किया। उन्होंने महिषासुर का वध किया।',
+                form: 'माँ कात्यायनी के 4 हाथ हैं — तलवार, कमल, अभय मुद्रा, और वरद मुद्रा। वे सिंह पर सवार हैं।',
+                prasad: 'शहद',
+                benefits: [
+                    'शत्रु नाश',
+                    'विवाह में शीघ्रता',
+                    'सौभाग्य',
+                    'धन प्राप्ति',
+                    'आज्ञा चक्र जागरण'
+                ],
+                significance: 'छठे दिन माँ कात्यायनी की पूजा होती है — जो महिषासुरमर्दिनी हैं।'
+            },
+            {
+                day: 7,
+                name: 'कालरात्रि',
+                en: 'Kalratri',
+                meaning: 'रात्रि की देवी (काली)',
+                vehicle: 'गधा',
+                hands: '4',
+                weapon: 'तलवार, लौह काँटा, अभय मुद्रा, वरद मुद्रा',
+                color: 'काला',
+                colorCode: '#1a1a2e',
+                mantra: 'ॐ देवी कालरात्र्यै नमः',
+                katha: 'माँ कालरात्रि का रूप भयंकर है, लेकिन वे शुभ फलदायी हैं। उन्होंने रक्तबीज का वध किया — जिसकी हर बूंद से नया राक्षस पैदा होता था।',
+                form: 'माँ कालरात्रि काले रंग की हैं, उनके बाल बिखरे हुए हैं, गले में मुंडमाला है। उनके 4 हाथों में तलवार, लौह काँटा, अभय मुद्रा, और वरद मुद्रा है। वे गधे पर सवार हैं।',
+                prasad: 'गुड़',
+                benefits: [
+                    'भय मुक्ति',
+                    'शत्रु नाश',
+                    'तंत्र बाधा नाश',
+                    'कालसर्प दोष नाश',
+                    'सहस्रार चक्र जागरण'
+                ],
+                significance: 'सातवें दिन माँ कालरात्रि की पूजा होती है — जो रात्रि की देवी हैं।'
+            },
+            {
+                day: 8,
+                name: 'महागौरी',
+                en: 'Mahagauri',
+                meaning: 'अत्यंत गौर वर्ण वाली',
+                vehicle: 'बैल (नंदी)',
+                hands: '4',
+                weapon: 'त्रिशूल, डमरू, अभय मुद्रा, वरद मुद्रा',
+                color: 'सफेद',
+                colorCode: '#fefefe',
+                mantra: 'ॐ देवी महागौर्यै नमः',
+                katha: 'माँ महागौरी ने घोर तपस्या की, जिससे उनका रंग काला हो गया। जब शिव जी ने गंगा जल से उनका स्नान कराया, तो वे अत्यंत गौर वर्ण की हो गईं — महागौरी।',
+                form: 'माँ महागौरी का रंग अत्यंत गौर (चमकीला सफेद) है। उनके 4 हाथों में त्रिशूल, डमरू, अभय मुद्रा, और वरद मुद्रा है। वे बैल पर सवार हैं।',
+                prasad: 'नारियल',
+                benefits: [
+                    'विवाह में शीघ्रता',
+                    'सौभाग्य',
+                    'पति-पत्नी में प्रेम',
+                    'संतान प्राप्ति',
+                    'सभी पापों का नाश'
+                ],
+                significance: 'आठवें दिन (महाष्टमी) माँ महागौरी की पूजा होती है। यह दिन कन्या पूजन के लिए भी प्रसिद्ध है।'
+            },
+            {
+                day: 9,
+                name: 'सिद्धिदात्री',
+                en: 'Siddhidatri',
+                meaning: 'सभी सिद्धियों की दाता',
+                vehicle: 'कमल',
+                hands: '4',
+                weapon: 'चक्र, शंख, गदा, कमल',
+                color: 'बैंगनी',
+                colorCode: '#8e44ad',
+                mantra: 'ॐ देवी सिद्धिदात्र्यै नमः',
+                katha: 'माँ सिद्धिदात्री ने शिव जी को भी सिद्धियाँ प्रदान कीं। उनके आधे शरीर से शिव जी प्रकट हुए — इसलिए उन्हें अर्धनारीश्वर कहा जाता है।',
+                form: 'माँ सिद्धिदात्री कमल पर विराजमान हैं। उनके 4 हाथों में चक्र, शंख, गदा, और कमल है। उनके आधे शरीर से शिव जी प्रकट हुए हैं।',
+                prasad: 'चने और हलवा',
+                benefits: [
+                    'सभी सिद्धियाँ',
+                    'मोक्ष',
+                    'आत्मज्ञान',
+                    'धन-समृद्धि',
+                    'सभी मनोकामनाएँ'
+                ],
+                significance: 'नवें दिन (नवमी) माँ सिद्धिदात्री की पूजा होती है। यह नवरात्रि का अंतिम दिन है।'
+            }
+        ];
+
+        function renderRoopGrid() {
+            const grid = document.getElementById('roopGrid');
+            grid.innerHTML = navdurga.map((r, i) => `
+                <div class="roop-card" id="roop-${r.day}">
+                    <div class="roop-header" onclick="toggleRoop(${r.day})">
+                        <div class="roop-day-badge">
+                            <span class="day-num">${r.day}</span>
+                            <span class="day-text">दिन</span>
+                        </div>
+                        <div class="roop-info">
+                            <div class="roop-name">${r.name}</div>
+                            <div class="roop-sub">
+                                <span><i class="fa-solid fa-om"></i> ${r.en}</span>
+                                <span><i class="fa-solid fa-book"></i> ${r.meaning}</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-down roop-arrow"></i>
+                    </div>
+                    <div class="roop-body">
+                        <div class="roop-body-inner">
+
+                            <!-- Quick Info Grid -->
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <div class="lbl">वाहन</div>
+                                    <div class="val">${r.vehicle}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="lbl">हाथ</div>
+                                    <div class="val">${r.hands}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="lbl">आयुध</div>
+                                    <div class="val" style="font-size:11px;">${r.weapon}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="lbl">प्रिय रंग</div>
+                                    <div class="val">${r.color}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="lbl">प्रसाद</div>
+                                    <div class="val">${r.prasad}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="lbl">मंत्र</div>
+                                    <div class="val" style="font-size:10px;">${r.mantra}</div>
+                                </div>
+                            </div>
+
+                            <!-- कथा -->
+                            <div class="roop-section">
+                                <div class="roop-section-title">
+                                    <span class="ri">📜</span> कथा
+                                </div>
+                                <p>${r.katha}</p>
+                            </div>
+
+                            <!-- स्वरूप -->
+                            <div class="roop-section">
+                                <div class="roop-section-title">
+                                    <span class="ri">🎨</span> स्वरूप
+                                </div>
+                                <p>${r.form}</p>
+                            </div>
+
+                            <!-- मंत्र -->
+                            <div class="roop-section">
+                                <div class="roop-section-title">
+                                    <span class="ri">📿</span> मंत्र
+                                </div>
+                                <div class="mantra-box">
+                                    ${r.mantra}
+                                    <small>इस मंत्र का 108 बार जप करें</small>
+                                </div>
+                            </div>
+
+                            <!-- लाभ -->
+                            <div class="roop-section">
+                                <div class="roop-section-title">
+                                    <span class="ri">✨</span> लाभ
+                                </div>
+                                <ul class="benefit-list">
+                                    ${r.benefits.map(b => `<li>${b}</li>`).join('')}
+                                </ul>
+                            </div>
+
+                            <!-- महत्व -->
+                            <div class="roop-section">
+                                <div class="roop-section-title">
+                                    <span class="ri">🌟</span> महत्व
+                                </div>
+                                <div class="highlight-box">${r.significance}</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleRoop(day) {
+            const card = document.getElementById(`roop-${day}`);
+            card.classList.toggle('open');
+            if (card.classList.contains('open')) {
+                setTimeout(() => {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 300);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderRoopGrid();
+        });
+
+        // Back to Top
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backTop');
+            if (btn) {
+                if (window.scrollY > 400) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Dark mode
+        const darkToggle = document.getElementById('darkToggle');
+        if (darkToggle) {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+                darkToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            }
+            darkToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                const icon = this.querySelector('i');
+                const isDark = document.body.classList.contains('dark-mode');
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+                localStorage.setItem('darkMode', isDark);
+            });
+        }
+    </script>
+</body>
+</html>
