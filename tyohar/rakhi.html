@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>रक्षाबंधन — संपूर्ण जानकारी | Sanatan Gyan Kosh</title>
+    <meta name="description" content="रक्षाबंधन का संपूर्ण ज्ञान — कथा, राखी बाँधने की विधि, रक्षा सूत्र मंत्र, भाई-बहन के कर्तव्य, और हर छोटी से छोटी बात।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .festival-hero {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, rgba(255,105,180,0.18), rgba(255,215,0,0.18), rgba(200,50,100,0.12));
+            border-radius: var(--radius);
+            margin-bottom: 16px;
+            border: 2px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+        .festival-hero::before {
+            content: '🎀';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            font-size: 140px;
+            opacity: 0.08;
+        }
+        .festival-hero .hero-icon {
+            font-size: 80px;
+            display: block;
+            line-height: 1;
+            animation: rakhiGlow 2.5s ease-in-out infinite;
+        }
+        @keyframes rakhiGlow {
+            0%, 100% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 12px rgba(255,105,180,0.5)); }
+            50% { transform: scale(1.06) rotate(-3deg); filter: drop-shadow(0 0 28px rgba(255,215,0,0.9)); }
+        }
+        .festival-hero .hero-name {
+            font-family: var(--font-display);
+            font-size: 34px;
+            color: var(--maroon);
+            margin-top: 8px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #c2185b, #ff8c00, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .festival-hero .hero-subtitle {
+            font-size: 14px;
+            color: var(--ink-soft);
+            margin-top: 6px;
+            letter-spacing: 1px;
+        }
+        .festival-hero .hero-date {
+            display: inline-block;
+            background: var(--maroon);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        .festival-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 20px 18px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .festival-section h2 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--maroon);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+        }
+        .festival-section h2 .sec-icon { font-size: 26px; }
+        .festival-section h3 {
+            font-family: var(--font-display);
+            font-size: 16px;
+            color: var(--maroon);
+            margin: 16px 0 8px;
+        }
+        .festival-section p {
+            font-size: 14px;
+            line-height: 1.9;
+            color: var(--ink-soft);
+            margin-bottom: 10px;
+        }
+        .festival-section p strong { color: var(--maroon); }
+
+        .mantra-box {
+            background: linear-gradient(135deg, rgba(255,105,180,0.1), rgba(255,215,0,0.08));
+            border-left: 4px solid #c2185b;
+            padding: 12px 14px;
+            border-radius: 10px;
+            font-family: var(--font-display);
+            font-size: 15px;
+            text-align: center;
+            margin: 8px 0;
+            line-height: 1.8;
+            color: var(--maroon);
+            font-weight: 600;
+        }
+        .mantra-box small {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 11px;
+            color: var(--ink-soft);
+            font-weight: 400;
+            margin-top: 4px;
+        }
+
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 6px;
+        }
+        .benefit-list li {
+            padding: 5px 0 5px 22px;
+            font-size: 12.5px;
+            line-height: 1.6;
+            color: var(--ink-soft);
+            position: relative;
+        }
+        .benefit-list li::before {
+            content: '🎀';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            font-size: 12px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255,105,180,0.1), rgba(255,215,0,0.08));
+            border-left: 4px solid #c2185b;
+            padding: 12px 14px;
+            border-radius: 10px;
+            margin: 8px 0;
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+        }
+        .highlight-box strong { color: var(--maroon); }
+
+        .steps-list {
+            list-style: none;
+            padding: 0;
+            counter-reset: step-counter;
+            margin: 8px 0;
+        }
+        .steps-list li {
+            counter-increment: step-counter;
+            padding: 8px 10px 8px 40px;
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+            border-bottom: 1px dashed var(--border);
+            position: relative;
+        }
+        .steps-list li:last-child { border-bottom: none; }
+        .steps-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #c2185b, #ff8c00);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        /* Rights Grid */
+        .rights-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .rights-item {
+            background: var(--bg);
+            border-radius: 12px;
+            padding: 12px 14px;
+            border-left: 4px solid #c2185b;
+            transition: var(--transition);
+        }
+        .rights-item:hover {
+            transform: translateX(4px);
+            border-left-color: var(--gold);
+        }
+        .rights-item .r-title {
+            font-family: var(--font-display);
+            font-size: 14px;
+            color: var(--maroon);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .rights-item .r-desc {
+            font-size: 12.5px;
+            line-height: 1.7;
+            color: var(--ink-soft);
+        }
+        .rights-item .r-desc strong { color: var(--maroon); }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg);
+            color: var(--maroon);
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+        .back-btn:hover { background: var(--maroon); color: white; }
+
+        .back-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--maroon);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 16px rgba(122,46,46,0.4);
+            z-index: 90;
+        }
+        .back-top.show { display: flex; }
+
+        .do-dont-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .do-box, .dont-box {
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+        .do-box {
+            background: #eef7ee;
+            border-left: 3px solid #27ae60;
+        }
+        .do-box h4 { color: #27ae60; font-size: 12px; margin-bottom: 6px; }
+        .dont-box {
+            background: #fdecea;
+            border-left: 3px solid #dc3545;
+        }
+        .dont-box h4 { color: #dc3545; font-size: 12px; margin-bottom: 6px; }
+        .do-box ul, .dont-box ul { list-style: none; padding: 0; }
+        .do-box ul li, .dont-box ul li {
+            padding: 2px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 5px;
+        }
+        .do-box ul li::before { content: '✅'; flex-shrink: 0; font-size: 11px; }
+        .dont-box ul li::before { content: '❌'; flex-shrink: 0; font-size: 11px; }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .related-link {
+            padding: 12px;
+            background: var(--bg);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--maroon);
+            font-weight: 600;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .related-link:hover {
+            background: var(--card-bg);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 420px) {
+            .festival-hero .hero-icon { font-size: 60px; }
+            .festival-hero .hero-name { font-size: 26px; }
+            .festival-section h2 { font-size: 17px; }
+            .do-dont-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ त्योहार</span>
+            <h1>रक्षाबंधन</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <a href="index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i> सभी त्योहार
+        </a>
+
+        <!-- Hero -->
+        <div class="festival-hero">
+            <span class="hero-icon">🎀</span>
+            <div class="hero-name">रक्षाबंधन</div>
+            <div class="hero-subtitle">भाई-बहन के पवित्र प्रेम का पर्व</div>
+            <div class="hero-date">📅 श्रावण पूर्णिमा · अगस्त</div>
+        </div>
+
+        <!-- 1. परिचय -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">📖</span> रक्षाबंधन क्या है?</h2>
+            <p>
+                <strong>रक्षाबंधन</strong> (रक्षा + बंधन = रक्षा का बंधन) हिंदू धर्म का सबसे पवित्र और प्रिय त्योहार है — जो <strong>भाई-बहन के पवित्र प्रेम</strong> का प्रतीक है। इस दिन बहन अपने भाई की कलाई पर <strong>राखी बाँधती है</strong> और भाई अपनी बहन की <strong>रक्षा का वचन</strong> देता है।
+            </p>
+            <p>
+                यह <strong>श्रावण पूर्णिमा</strong> को मनाया जाता है — जो आमतौर पर <strong>अगस्त</strong> महीने में आती है। यह <strong>भाई-बहन के अटूट प्रेम</strong> का प्रतीक है।
+            </p>
+            <div class="highlight-box">
+                <strong>🎀 मुख्य बात:</strong> रक्षाबंधन <strong>रक्षा सूत्र</strong> का पर्व है — जिसमें बहन भाई को राखी बाँधकर उसकी लंबी आयु और रक्षा की प्रार्थना करती है।
+            </div>
+        </div>
+
+        <!-- 2. कथाएँ -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">📜</span> रक्षाबंधन की कथाएँ</h2>
+
+            <h3>👑 1. द्रौपदी और कृष्ण</h3>
+            <p>
+                <strong>सबसे प्रसिद्ध कथा:</strong> जब <strong>दुर्योधन</strong> ने द्रौपदी का चीर हरण कराया, तब <strong>कृष्ण जी</strong> ने द्रौपदी की रक्षा की। द्रौपदी ने कृष्ण की कलाई पर <strong>राखी बाँधी</strong> और कृष्ण ने द्रौपदी की रक्षा का वचन दिया। महाभारत युद्ध में कृष्ण ने अपनी उंगली पर लगी चोट से द्रौपदी के वस्त्र बढ़ाए — यह उनके प्रेम का प्रतीक है।
+            </p>
+
+            <h3>🏹 2. राम और सीता</h3>
+            <p>
+                कथा के अनुसार, जब राम जी वनवास के लिए जा रहे थे, तब <strong>सीता माता</strong> ने उनकी कलाई पर राखी बाँधी और उनकी रक्षा की प्रार्थना की। राम ने लंका जाने से पहले सीता को रक्षा का वचन दिया था।
+            </p>
+
+            <h3>🛡️ 3. इंद्र और इंद्राणी</h3>
+            <p>
+                कथा के अनुसार, <strong>देवासुर संग्राम</strong> में जब इंद्र देव हार रहे थे, तब <strong>इंद्राणी</strong> ने इंद्र की कलाई पर रक्षा सूत्र बाँधा। इससे इंद्र को विजय मिली और देवताओं की रक्षा हुई।
+            </p>
+
+            <h3>👸 4. रानी कर्णावती</h3>
+            <p>
+                कथा के अनुसार, जब <strong>रानी कर्णावती</strong> का राज्य खतरे में था, तब उन्होंने <strong>सम्राट हुमायूँ</strong> को राखी भेजी। हुमायूँ ने राखी की रक्षा की और रानी की मदद के लिए सेना भेजी।
+            </p>
+
+            <h3>🌊 5. यम और यमुना</h3>
+            <p>
+                कथा के अनुसार, <strong>यमुना ने अपने भाई यमराज को राखी बाँधी</strong> और उनकी लंबी आयु की प्रार्थना की। यमराज ने यमुना को वरदान दिया कि <strong>जो बहन भाई को राखी बाँधेगी, उसका भाई दीर्घायु होगा</strong>।
+            </p>
+
+            <h3>🔥 6. श्रवण कुमार</h3>
+            <p>
+                कथा के अनुसार, जब <strong>श्रवण कुमार</strong> अपने अंधे माता-पिता को तीर्थ यात्रा करा रहे थे, तब <strong>राजा दशरथ</strong> ने उन्हें बाण मारा। मरने से पहले श्रवण ने अपने माता-पिता की रक्षा की प्रार्थना की। यह कथा <strong>रक्षा और सेवा</strong> का प्रतीक है।
+            </p>
+        </div>
+
+        <!-- 3. राखी बाँधने की विधि -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🎀</span> राखी बाँधने की विधि (Step by Step)</h2>
+            <ol class="steps-list">
+                <li><strong>तैयारी:</strong> बहन स्नान करके स्वच्छ वस्त्र पहने और पूजा की थाली सजाएँ।</li>
+                <li><strong>थाली सजावट:</strong> थाली में राखी, रोली, अक्षत, दीपक, मिठाई, और फूल रखें।</li>
+                <li><strong>भाई को बिठाएँ:</strong> भाई को पूर्व दिशा में मुख करके बिठाएँ।</li>
+                <li><strong>तिलक करें:</strong> भाई के मस्तक पर रोली, अक्षत, और चंदन से तिलक करें।</li>
+                <li><strong>आरती उतारें:</strong> भाई की आरती उतारें (दीपक से)।</li>
+                <li><strong>रक्षा सूत्र मंत्र:</strong> "येन बद्धो बली राजा..." मंत्र पढ़ें।</li>
+                <li><strong>राखी बाँधें:</strong> भाई की दाहिनी कलाई पर राखी बाँधें।</li>
+                <li><strong>मिठाई खिलाएँ:</strong> भाई को मिठाई खिलाएँ।</li>
+                <li><strong>आशीर्वाद:</strong> भाई से लंबी आयु और रक्षा का आशीर्वाद लें।</li>
+                <li><strong>उपहार:</strong> भाई बहन को उपहार दे।</li>
+                <li><strong>भोजन:</strong> भाई-बहन साथ भोजन करें।</li>
+                <li><strong>प्रसाद:</strong> सभी को प्रसाद बाँटें।</li>
+            </ol>
+
+            <h3>📿 रक्षा सूत्र मंत्र</h3>
+            <div class="mantra-box">
+                येन बद्धो बली राजा दानवेन्द्रो महाबलः ।<br>तेन त्वाम् अभिबध्नामि रक्षे मा चल मा चल ॥
+                <small>अर्थ: जिस रक्षा सूत्र से बलि राजा को बाँधा गया था, उसी से मैं तुम्हें बाँधता हूँ — हे रक्षा, तुम न डिगो, न डिगो।</small>
+            </div>
+            <div class="mantra-box">
+                ॐ यमाय नमः · ॐ यमुनायै नमः
+                <small>यम और यमुना का मंत्र — भाई की लंबी आयु के लिए</small>
+            </div>
+        </div>
+
+        <!-- 4. सामग्री -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🛒</span> राखी पूजा सामग्री</h2>
+            <ul style="list-style: none; padding: 0; font-size: 13.5px; line-height: 2;">
+                <li>✅ राखी (रक्षा सूत्र)</li>
+                <li>✅ रोली और कुमकुम</li>
+                <li>✅ अक्षत (चावल)</li>
+                <li>✅ चंदन</li>
+                <li>✅ दीपक और घी</li>
+                <li>✅ धूप, अगरबत्ती</li>
+                <li>✅ मिठाई (लड्डू, बर्फी)</li>
+                <li>✅ फूल और माला</li>
+                <li>✅ पान, सुपारी</li>
+                <li>✅ नारियल</li>
+                <li>✅ घंटी, शंख</li>
+                <li>✅ आरती की थाली</li>
+                <li>✅ उपहार (भाई के लिए)</li>
+                <li>✅ नए वस्त्र</li>
+            </ul>
+        </div>
+
+        <!-- 5. क्या करें / क्या न करें -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">✅</span> क्या करें और क्या न करें</h2>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <h4>✅ क्या करें</h4>
+                    <ul>
+                        <li>राखी बाँधें</li>
+                        <li>तिलक करें</li>
+                        <li>आरती उतारें</li>
+                        <li>मिठाई खिलाएँ</li>
+                        <li>उपहार दें</li>
+                        <li>आशीर्वाद लें</li>
+                        <li>रक्षा का वचन दें</li>
+                        <li>प्रसाद बाँटें</li>
+                    </ul>
+                </div>
+                <div class="dont-box">
+                    <h4>❌ क्या न करें</h4>
+                    <ul>
+                        <li>झूठा वचन न दें</li>
+                        <li>बहन का अपमान न करें</li>
+                        <li>कलह न करें</li>
+                        <li>राखी का अनादर न करें</li>
+                        <li>नशा न करें</li>
+                        <li>शराब/मांस न लें</li>
+                        <li>तामसिक भोजन न करें</li>
+                        <li>बहन को निराश न करें</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. भाई-बहन के कर्तव्य -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">💑</span> भाई-बहन के कर्तव्य</h2>
+            <div class="rights-grid">
+                <div class="rights-item">
+                    <div class="r-title">🎀 बहन के कर्तव्य</div>
+                    <div class="r-desc">
+                        <strong>1.</strong> भाई की कलाई पर राखी बाँधना<br>
+                        <strong>2.</strong> भाई की लंबी आयु की प्रार्थना करना<br>
+                        <strong>3.</strong> भाई का तिलक करना<br>
+                        <strong>4.</strong> भाई को मिठाई खिलाना<br>
+                        <strong>5.</strong> भाई के सुख-दुःख में साथ देना<br>
+                        <strong>6.</strong> भाई का सम्मान करना
+                    </div>
+                </div>
+                <div class="rights-item">
+                    <div class="r-title">🛡️ भाई के कर्तव्य</div>
+                    <div class="r-desc">
+                        <strong>1.</strong> बहन की रक्षा का वचन देना<br>
+                        <strong>2.</strong> बहन को उपहार देना<br>
+                        <strong>3.</strong> बहन के सुख-दुःख में साथ देना<br>
+                        <strong>4.</strong> बहन का सम्मान करना<br>
+                        <strong>5.</strong> बहन की ज़रूरतों का ध्यान रखना<br>
+                        <strong>6.</strong> बहन को कभी निराश न करना
+                    </div>
+                </div>
+                <div class="rights-item">
+                    <div class="r-title">🌟 भाई-बहन दोनों के</div>
+                    <div class="r-desc">
+                        <strong>1.</strong> एक-दूसरे का सम्मान करना<br>
+                        <strong>2.</strong> एक-दूसरे के सुख-दुःख में साथ रहना<br>
+                        <strong>3.</strong> एक-दूसरे की रक्षा करना<br>
+                        <strong>4.</strong> एक-दूसरे से प्रेम करना<br>
+                        <strong>5.</strong> रिश्ते को निभाना<br>
+                        <strong>6.</strong> परिवार को जोड़े रखना
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. व्रत के नियम -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🛕</span> रक्षाबंधन व्रत के नियम</h2>
+            <ul class="benefit-list">
+                <li><strong>प्रातः स्नान:</strong> स्नान करके स्वच्छ वस्त्र पहनें</li>
+                <li><strong>व्रत:</strong> पूरे दिन या एक समय का व्रत रखें</li>
+                <li><strong>फलाहार:</strong> फल, दूध, दही, मिठाई</li>
+                <li><strong>न खाएँ:</strong> अन्न, प्याज, लहसुन (यदि व्रत रखें)</li>
+                <li><strong>राखी बाँधें:</strong> दोपहर तक राखी बाँध लें</li>
+                <li><strong>मंत्र जप:</strong> रक्षा सूत्र मंत्र पढ़ें</li>
+                <li><strong>प्रसाद:</strong> सभी को प्रसाद बाँटें</li>
+                <li><strong>भोजन:</strong> शाम को भाई-बहन साथ भोजन करें</li>
+            </ul>
+            <div class="highlight-box">
+                <strong>💡 ध्यान:</strong> रक्षाबंधन पर <strong>दोपहर 12 बजे से पहले</strong> राखी बाँधना शुभ माना जाता है। कुछ क्षेत्रों में <strong>अभिजित मुहूर्त</strong> में राखी बाँधने की परंपरा है।
+            </div>
+        </div>
+
+        <!-- 8. प्रसाद -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🍬</span> रक्षाबंधन का प्रसाद</h2>
+            <div class="highlight-box">
+                <strong>रक्षाबंधन की पारंपरिक मिठाइयाँ:</strong>
+            </div>
+            <ul style="list-style: none; padding: 0; font-size: 13.5px; line-height: 2;">
+                <li>🍡 <strong>लड्डू</strong> — बेसन या बूंदी के</li>
+                <li>🍮 <strong>बर्फी</strong> — खोया और मेवे की</li>
+                <li>🍥 <strong>जलेबी</strong> — मीठी और स्वादिष्ट</li>
+                <li>🍬 <strong>रसगुल्ला</strong> — बंगाल की शान</li>
+                <li>🥘 <strong>पूरी और सब्जी</strong></li>
+                <li>🍚 <strong>खीर</strong> — चावल और दूध की</li>
+                <li>🍎 <strong>फल</strong> — केला, सेब, नारियल</li>
+                <li>🥜 <strong>मेवे</strong> — बादाम, काजू</li>
+            </ul>
+        </div>
+
+        <!-- 9. Related Links -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🔗</span> संबंधित लिंक</h2>
+            <div class="related-grid">
+                <a href="../devta/krishna.html" class="related-link">🟡 कृष्ण जी</a>
+                <a href="../devta/ram.html" class="related-link">🏹 राम जी</a>
+                <a href="../katha/draupadi-katha.html" class="related-link">📖 द्रौपदी कथा</a>
+                <a href="../katha/yam-yamuna.html" class="related-link">📖 यम-यमुना कथा</a>
+                <a href="../stotra/rakhi-mantra.html" class="related-link">📜 रक्षा सूत्र मंत्र</a>
+                <a href="index.html" class="related-link">🎉 अन्य त्योहार</a>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय श्री राम</p>
+        </footer>
+
+    </main>
+
+    <button class="back-top" id="backTop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="../devta/index.html" class="nav-link"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-calendar-days"></i><p>त्योहार</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>पंचांग</p></a>
+    </nav>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backTop');
+            if (btn) {
+                if (window.scrollY > 400) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        const darkToggle = document.getElementById('darkToggle');
+        if (darkToggle) {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+                darkToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            }
+            darkToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                const icon = this.querySelector('i');
+                const isDark = document.body.classList.contains('dark-mode');
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+                localStorage.setItem('darkMode', isDark);
+            });
+        }
+    </script>
+</body>
+</html>
