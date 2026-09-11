@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>ओणम — संपूर्ण जानकारी | Sanatan Gyan Kosh</title>
+    <meta name="description" content="ओणम का संपूर्ण ज्ञान — राजा महाबली की कथा, 10 दिनों का उत्सव, पूक्कलम, ओणम सद्या, नाव दौड़, और हर छोटी से छोटी बात।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .festival-hero {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, rgba(46,125,50,0.2), rgba(255,193,7,0.18), rgba(255,140,0,0.15));
+            border-radius: var(--radius);
+            margin-bottom: 16px;
+            border: 2px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+        .festival-hero::before {
+            content: '🌺';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            font-size: 140px;
+            opacity: 0.08;
+        }
+        .festival-hero .hero-icon {
+            font-size: 80px;
+            display: block;
+            line-height: 1;
+            animation: flowerSway 3s ease-in-out infinite;
+        }
+        @keyframes flowerSway {
+            0%, 100% { transform: scale(1) rotate(-3deg); filter: drop-shadow(0 0 15px rgba(46,125,50,0.6)); }
+            50% { transform: scale(1.08) rotate(3deg); filter: drop-shadow(0 0 35px rgba(255,193,7,1)); }
+        }
+        .festival-hero .hero-name {
+            font-family: var(--font-display);
+            font-size: 34px;
+            color: var(--maroon);
+            margin-top: 8px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2e7d32, #f39c12, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .festival-hero .hero-subtitle {
+            font-size: 14px;
+            color: var(--ink-soft);
+            margin-top: 6px;
+            letter-spacing: 1px;
+        }
+        .festival-hero .hero-date {
+            display: inline-block;
+            background: var(--maroon);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        .festival-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 20px 18px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .festival-section h2 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--maroon);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+        }
+        .festival-section h2 .sec-icon { font-size: 26px; }
+        .festival-section h3 {
+            font-family: var(--font-display);
+            font-size: 16px;
+            color: var(--maroon);
+            margin: 16px 0 8px;
+        }
+        .festival-section p {
+            font-size: 14px;
+            line-height: 1.9;
+            color: var(--ink-soft);
+            margin-bottom: 10px;
+        }
+        .festival-section p strong { color: var(--maroon); }
+
+        .mantra-box {
+            background: linear-gradient(135deg, rgba(46,125,50,0.1), rgba(255,193,7,0.08));
+            border-left: 4px solid #2e7d32;
+            padding: 12px 14px;
+            border-radius: 10px;
+            font-family: var(--font-display);
+            font-size: 15px;
+            text-align: center;
+            margin: 8px 0;
+            line-height: 1.8;
+            color: var(--maroon);
+            font-weight: 600;
+        }
+        .mantra-box small {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 11px;
+            color: var(--ink-soft);
+            font-weight: 400;
+            margin-top: 4px;
+        }
+
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 6px;
+        }
+        .benefit-list li {
+            padding: 5px 0 5px 22px;
+            font-size: 12.5px;
+            line-height: 1.6;
+            color: var(--ink-soft);
+            position: relative;
+        }
+        .benefit-list li::before {
+            content: '🌺';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            font-size: 12px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(46,125,50,0.1), rgba(255,193,7,0.08));
+            border-left: 4px solid #2e7d32;
+            padding: 12px 14px;
+            border-radius: 10px;
+            margin: 8px 0;
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+        }
+        .highlight-box strong { color: var(--maroon); }
+
+        .steps-list {
+            list-style: none;
+            padding: 0;
+            counter-reset: step-counter;
+            margin: 8px 0;
+        }
+        .steps-list li {
+            counter-increment: step-counter;
+            padding: 8px 10px 8px 40px;
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+            border-bottom: 1px dashed var(--border);
+            position: relative;
+        }
+        .steps-list li:last-child { border-bottom: none; }
+        .steps-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2e7d32, #f39c12);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        /* 10 Days Timeline */
+        .day-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .day-timeline-item {
+            background: var(--bg);
+            border-radius: 12px;
+            padding: 12px 14px;
+            border-left: 4px solid #2e7d32;
+            transition: var(--transition);
+        }
+        .day-timeline-item:hover {
+            transform: translateX(4px);
+            border-left-color: var(--gold);
+        }
+        .day-timeline-item .dt-day {
+            display: inline-block;
+            background: #2e7d32;
+            color: white;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-size: 9px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .day-timeline-item .dt-name {
+            font-family: var(--font-display);
+            font-size: 14px;
+            color: var(--maroon);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .day-timeline-item .dt-desc {
+            font-size: 12.5px;
+            line-height: 1.7;
+            color: var(--ink-soft);
+        }
+        .day-timeline-item .dt-desc strong { color: var(--maroon); }
+
+        /* Sadya Grid */
+        .sadya-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .sadya-card {
+            background: linear-gradient(135deg, #fff9c4, #fff59d);
+            border-radius: 12px;
+            padding: 14px 12px;
+            text-align: center;
+            border: 2px solid #2e7d32;
+            transition: var(--transition);
+        }
+        .sadya-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(46,125,50,0.3);
+        }
+        .sadya-card .s-icon {
+            font-size: 32px;
+            display: block;
+            line-height: 1;
+        }
+        .sadya-card .s-name {
+            font-family: var(--font-display);
+            font-size: 14px;
+            color: var(--maroon);
+            font-weight: 700;
+            margin-top: 6px;
+        }
+        .sadya-card .s-desc {
+            font-size: 11px;
+            color: var(--ink-soft);
+            margin-top: 2px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg);
+            color: var(--maroon);
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+        .back-btn:hover { background: var(--maroon); color: white; }
+
+        .back-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--maroon);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 16px rgba(122,46,46,0.4);
+            z-index: 90;
+        }
+        .back-top.show { display: flex; }
+
+        .do-dont-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .do-box, .dont-box {
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+        .do-box {
+            background: #eef7ee;
+            border-left: 3px solid #27ae60;
+        }
+        .do-box h4 { color: #27ae60; font-size: 12px; margin-bottom: 6px; }
+        .dont-box {
+            background: #fdecea;
+            border-left: 3px solid #dc3545;
+        }
+        .dont-box h4 { color: #dc3545; font-size: 12px; margin-bottom: 6px; }
+        .do-box ul, .dont-box ul { list-style: none; padding: 0; }
+        .do-box ul li, .dont-box ul li {
+            padding: 2px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 5px;
+        }
+        .do-box ul li::before { content: '✅'; flex-shrink: 0; font-size: 11px; }
+        .dont-box ul li::before { content: '❌'; flex-shrink: 0; font-size: 11px; }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .related-link {
+            padding: 12px;
+            background: var(--bg);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--maroon);
+            font-weight: 600;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .related-link:hover {
+            background: var(--card-bg);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 420px) {
+            .festival-hero .hero-icon { font-size: 60px; }
+            .festival-hero .hero-name { font-size: 26px; }
+            .festival-section h2 { font-size: 17px; }
+            .do-dont-grid { grid-template-columns: 1fr; }
+            .sadya-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ त्योहार</span>
+            <h1>ओणम</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <a href="index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i> सभी त्योहार
+        </a>
+
+        <!-- Hero -->
+        <div class="festival-hero">
+            <span class="hero-icon">🌺</span>
+            <div class="hero-name">ओणम</div>
+            <div class="hero-subtitle">राजा महाबली की वापसी · केरल का महापर्व</div>
+            <div class="hero-date">📅 चिंगम मास · अगस्त-सितंबर</div>
+        </div>
+
+        <!-- 1. परिचय -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">📖</span> ओणम क्या है?</h2>
+            <p>
+                <strong>ओणम</strong> केरल का सबसे बड़ा और सबसे पवित्र त्योहार है — जो <strong>राजा महाबली</strong> की वापसी की खुशी में मनाया जाता है। यह <strong>चिंगम मास</strong> (अगस्त-सितंबर) में आता है और <strong>10 दिनों</strong> तक चलता है।
+            </p>
+            <p>
+                ओणम को <strong>"केरल का राष्ट्रीय पर्व"</strong> भी कहा जाता है। यह <strong>फसल उत्सव</strong> भी है — जो <strong>समृद्धि, खुशहाली, और राजा महाबली के आशीर्वाद</strong> का प्रतीक है।
+            </p>
+            <div class="highlight-box">
+                <strong>🌺 मुख्य बात:</strong> ओणम <strong>10 दिनों</strong> तक मनाया जाता है — <strong>अथम</strong> से <strong>थिरुवोणम</strong> तक। इसमें <strong>पूक्कलम</strong> (फूलों की रंगोली), <strong>ओणम सद्या</strong> (भोज), और <strong>वल्लम कली</strong> (नाव दौड़) का आयोजन होता है।
+            </div>
+        </div>
+
+        <!-- 2. कथा -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">📜</span> ओणम की कथा</h2>
+
+            <h3>👑 1. राजा महाबली की कथा</h3>
+            <p>
+                <strong>सबसे प्रसिद्ध कथा:</strong> <strong>राजा महाबली</strong> असुरों के राजा थे — लेकिन अत्यंत धर्मात्मा और प्रजा के प्रेमी थे। उनके राज्य में <strong>सुख, शांति, और समृद्धि</strong> थी। प्रजा उन्हें भगवान की तरह पूजती थी।
+            </p>
+            <p>
+                महाबली की बढ़ती शक्ति से <strong>देवताओं</strong> को भय हुआ। उन्होंने भगवान विष्णु से प्रार्थना की। विष्णु जी ने <strong>वामन अवतार</strong> (बौने ब्राह्मण) लिया और राजा महाबली से <strong>तीन पग भूमि</strong> माँगी।
+            </p>
+            <p>
+                महाबली ने कहा — "प्रभु, माँग लीजिए।" वामन ने <strong>दो पगों में पृथ्वी और आकाश</strong> नाप लिए। तीसरे पग के लिए महाबली ने अपना सिर झुका दिया। विष्णु जी ने उन्हें <strong>सुतल लोक</strong> का राजा बनाया और वरदान दिया कि वे <strong>वर्ष में एक बार पृथ्वी पर आ सकेंगे</strong> — यही दिन <strong>ओणम</strong> है।
+            </p>
+
+            <h3>🌾 2. फसल उत्सव</h3>
+            <p>
+                ओणम <strong>फसल उत्सव</strong> भी है — जो <strong>चिंगम मास</strong> में नई फसल के आने की खुशी में मनाया जाता है। किसान अपनी नई फसल को भगवान को अर्पित करते हैं।
+            </p>
+
+            <h3>🦋 3. परशुराम की कथा</h3>
+            <p>
+                कथा के अनुसार, <strong>परशुराम</strong> ने अपनी तपस्या से केरल की भूमि <strong>समुद्र से</strong> निकाली थी। ओणम पर केरलवासी उनकी पूजा करते हैं।
+            </p>
+
+            <h3>🌊 4. वामन और महाबली संवाद</h3>
+            <p>
+                कथा के अनुसार, महाबली ने वामन से <strong>मोक्ष</strong> का वरदान माँगा। वामन ने कहा — "जो तुम्हें भक्ति से याद करेगा, उसे मोक्ष मिलेगा।" इसलिए ओणम पर <strong>राजा महाबली का स्मरण</strong> किया जाता है।
+            </p>
+        </div>
+
+        <!-- 3. 10 दिन Timeline -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🌺</span> ओणम के 10 दिन (Timeline)</h2>
+            <p>ओणम के हर दिन का अपना अलग महत्व है:</p>
+
+            <div class="day-timeline">
+                <div class="day-timeline-item">
+                    <span class="dt-day">दिन 1</span>
+                    <div class="dt-name">🌺 अथम</div>
+                    <div class="dt-desc">राजा महाबली के आगमन का पहला दिन। लोग <strong>पूक्कलम</strong> बनाना शुरू करते हैं और घरों की सफाई करते हैं।</div>
+                </div>
+                <div class="day-timeline-item">
+                    <span class="dt-day">दिन 2</span>
+                    <div class="dt-name">🌿 चिथिरा</div>
+                    <div class="dt-desc">घरों की सफाई, सजावट, और पूक्कलम बनाने का काम जारी रहता है।</div>
+                </div>
+                <div class="day-timeline-item">
+                    <span class="dt-day">दिन 3</span>
+                    <div class="dt-name">🌾 चोडी</div>
+                    <div class="dt-desc">नए वस्त्र खरीदने, उपहार लेने-देने, और पकवान बनाने की तैयारी।</div>
+                </div>
+                <div class="day-timeline-item">
+                    <span class="dt-day">दिन 4</span>
+                    <div class="dt-name">🛍️ विशाकम</div>
+                    <div class="dt-desc">बाज़ार जाना, नए वस्त्र और सामान खरीदना, और मिठाई बनाना।</div>
+                </div>
+                <div class="day-timeline-item">
+                    <span class="dt-day">दिन 5</span>
+                    <div class="dt-name">🎨 अनिज़म</div>
+                    <div class="dt-desc">पूक्कलम के लिए फूल इकट्ठा करना और सजावट की तैयारी।</div>
+                </div>
+                <div class="day-timeline-item">
+                    <span class="dt-day">दिन 6</span>
+                    <div class="dt-name">🏠 थ्रिकेट्टा</div>
+                    <div class="dt-desc">बड़े पूक्कलम और घर की सजावट की शुरुआत।</div>
+                </div>
+                <div class="day-timeline-item" style="border-left-color: #f39c12; background: linear-gradient(135deg, #fff8e7, #fffbf0);">
+                    <span class="dt-day">दिन 7</span>
+                    <div class="dt-name">🌾 मूलम</div>
+                    <div class="dt-desc">कुछ क्षेत्रों में छोटी ओणम मनाई जाती है। प्रसाद और भोज की तैयारी।</div>
+                </div>
+                <div class="day-timeline-item">
+                    <span class="dt-day">दिन 8</span>
+                    <div class="dt-name">🛕 पूरादम</div>
+                    <div class="dt-desc">मंदिरों में विशेष पूजा और राजा महाबली की स्तुति।</div>
+                </div>
+                <div class="day-timeline-item" style="border-left-color: #f39c12; background: linear-gradient(135deg, #fff8e7, #fffbf0);">
+                    <span class="dt-day">दिन 9</span>
+                    <div class="dt-name">🎉 उथिरादम</div>
+                    <div class="dt-desc">यह दिन <strong>नाव दौड़ (वल्लम कली)</strong> का है। राजा महाबली के स्वागत की तैयारी।</div>
+                </div>
+                <div class="day-timeline-item" style="border-left-color: #c0392b; background: linear-gradient(135deg, #fff5f5, #fef8e8);">
+                    <span class="dt-day">दिन 10 ⭐</span>
+                    <div class="dt-name">🌺 थिरुवोणम</div>
+                    <div class="dt-desc">ओणम का <strong>मुख्य दिन</strong>। राजा महाबली का स्वागत, <strong>पूक्कलम</strong>, <strong>ओणम सद्या</strong>, और <strong>उपहार वितरण</strong>।</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. पूजा विधि -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🙏</span> ओणम पूजा विधि</h2>
+            <ol class="steps-list">
+                <li><strong>स्नान:</strong> प्रातः स्नान करके स्वच्छ, नए वस्त्र धारण करें।</li>
+                <li><strong>घर की सफाई:</strong> पूरे घर को साफ करें और गंगाजल छिड़कें।</li>
+                <li><strong>पूक्कलम बनाएँ:</strong> आँगन में फूलों की रंगोली (पूक्कलम) बनाएँ।</li>
+                <li><strong>दीपक जलाएँ:</strong> पूक्कलम के बीच में दीपक रखें।</li>
+                <li><strong>महाबली की मूर्ति:</strong> राजा महाबली और वामन भगवान की मूर्ति स्थापित करें।</li>
+                <li><strong>गणेश पूजा:</strong> सबसे पहले गणेश जी की पूजा करें।</li>
+                <li><strong>महाबली पूजा:</strong> राजा महाबली की विधिवत पूजा करें।</li>
+                <li><strong>फूल चढ़ाएँ:</strong> राजा महाबली को पीले और लाल फूल चढ़ाएँ।</li>
+                <li><strong>नारियल अर्पण:</strong> नारियल और केला अर्पित करें।</li>
+                <li><strong>दीपदान:</strong> दीपक जलाकर आरती करें।</li>
+                <li><strong>प्रसाद:</strong> ओणम सद्या (भोज) बनाएँ।</li>
+                <li><strong>प्रसाद बाँटें:</strong> सभी को प्रसाद बाँटें और उपहार दें।</li>
+            </ol>
+
+            <h3>📿 मुख्य मंत्र</h3>
+            <div class="mantra-box">
+                ॐ नमो नारायणाय
+                <small>भगवान विष्णु (वामन) का मूल मंत्र</small>
+            </div>
+            <div class="mantra-box">
+                ॐ महाबलये नमः
+                <small>राजा महाबली का मंत्र — समृद्धि के लिए</small>
+            </div>
+        </div>
+
+        <!-- 5. पूक्कलम -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🌸</span> पूक्कलम — फूलों की रंगोली</h2>
+            <p>
+                <strong>पूक्कलम</strong> ओणम की सबसे खास परंपरा है — जिसमें <strong>फूलों की रंगोली</strong> बनाई जाती है। यह <strong>राजा महाबली के स्वागत</strong> का प्रतीक है।
+            </p>
+            <h3>🌸 पूक्कलम कैसे बनाएँ?</h3>
+            <ul class="benefit-list">
+                <li><strong>स्थान:</strong> घर के आँगन में या मुख्य द्वार पर</li>
+                <li><strong>फूल:</strong> अलग-अलग रंगों के ताज़े फूल</li>
+                <li><strong>आकार:</strong> गोलाकार या राजा महाबली का चेहरा</li>
+                <li><strong>बीच में:</strong> दीपक या राजा महाबली की मूर्ति</li>
+                <li><strong>10 दिन:</strong> हर दिन नई पूक्कलम बनाई जाती है</li>
+                <li><strong>थिरुवोणम:</strong> सबसे बड़ी पूक्कलम बनाई जाती है</li>
+            </ul>
+            <div class="highlight-box">
+                <strong>💡 महत्व:</strong> पूक्कलम राजा महाबली के स्वागत का प्रतीक है — जो <strong>समृद्धि, खुशहाली, और प्रकृति के प्रेम</strong> को दर्शाता है।
+            </div>
+        </div>
+
+        <!-- 6. ओणम सद्या -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🍛</span> ओणम सद्या — पारंपरिक भोज</h2>
+            <p>
+                <strong>ओणम सद्या</strong> ओणम का सबसे खास भोज है — जिसमें <strong>26 प्रकार के व्यंजन</strong> परोसे जाते हैं। यह भोज केले के पत्ते पर खाया जाता है।
+            </p>
+
+            <div class="sadya-grid">
+                <div class="sadya-card">
+                    <span class="s-icon">🍚</span>
+                    <div class="s-name">अवियल</div>
+                    <div class="s-desc">मिक्स वेजिटेबल</div>
+                </div>
+                <div class="sadya-card">
+                    <span class="s-icon">🥥</span>
+                    <div class="s-name">थोरन</div>
+                    <div class="s-desc">नारियल और सब्जी</div>
+                </div>
+                <div class="sadya-card">
+                    <span class="s-icon">🍛</span>
+                    <div class="s-name">ओलन</div>
+                    <div class="s-desc">कद्दू और दाल</div>
+                </div>
+                <div class="sadya-card">
+                    <span class="s-icon">🍯</span>
+                    <div class="s-name">पचड़ी</div>
+                    <div class="s-desc">इमली और गुड़</div>
+                </div>
+                <div class="sadya-card">
+                    <span class="s-icon">🥗</span>
+                    <div class="s-name">कालन</div>
+                    <div class="s-desc">केले और दही</div>
+                </div>
+                <div class="sadya-card">
+                    <span class="s-icon">🍮</span>
+                    <div class="s-name">पायसम</div>
+                    <div class="s-desc">खीर (मीठा)</div>
+                </div>
+                <div class="sadya-card">
+                    <span class="s-icon">🍌</span>
+                    <div class="s-name">केला चिप्स</div>
+                    <div class="s-desc">तली हुई केला</div>
+                </div>
+                <div class="sadya-card">
+                    <span class="s-icon">🥒</span>
+                    <div class="s-name">अचार</div>
+                    <div class="s-desc">नमकीन अचार</div>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top:12px;">
+                <strong>💡 महत्व:</strong> ओणम सद्या में <strong>26 व्यंजन</strong> होते हैं — जो <strong>समृद्धि और खुशहाली</strong> का प्रतीक है। पूरा परिवार एक साथ केले के पत्ते पर भोजन करता है।
+            </div>
+        </div>
+
+        <!-- 7. सामग्री -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🛒</span> पूजा सामग्री</h2>
+            <ul style="list-style: none; padding: 0; font-size: 13.5px; line-height: 2;">
+                <li>✅ राजा महाबली और वामन की मूर्ति</li>
+                <li>✅ पीले और लाल फूल</li>
+                <li>✅ नारियल और केला</li>
+                <li>✅ पीले वस्त्र</li>
+                <li>✅ दीपक और घी</li>
+                <li>✅ धूप, अगरबत्ती</li>
+                <li>✅ पूक्कलम के लिए फूल</li>
+                <li>✅ अक्षत (चावल)</li>
+                <li>✅ हल्दी और कुमकुम</li>
+                <li>✅ पान, सुपारी</li>
+                <li>✅ केले का पत्ता (सद्या के लिए)</li>
+                <li>✅ 26 व्यंजन की सामग्री</li>
+                <li>✅ मिठाई (पायसम)</li>
+                <li>✅ नए वस्त्र</li>
+                <li>✅ उपहार</li>
+                <li>✅ घंटी और शंख</li>
+            </ul>
+        </div>
+
+        <!-- 8. क्या करें / क्या न करें -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">✅</span> क्या करें और क्या न करें</h2>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <h4>✅ क्या करें</h4>
+                    <ul>
+                        <li>पूक्कलम बनाएँ</li>
+                        <li>ओणम सद्या बनाएँ</li>
+                        <li>नए वस्त्र पहनें</li>
+                        <li>महाबली पूजा करें</li>
+                        <li>उपहार दें</li>
+                        <li>नाव दौड़ देखें</li>
+                        <li>पारंपरिक नृत्य करें</li>
+                        <li>सभी को भोजन कराएँ</li>
+                    </ul>
+                </div>
+                <div class="dont-box">
+                    <h4>❌ क्या न करें</h4>
+                    <ul>
+                        <li>क्रोध न करें</li>
+                        <li>झूठ न बोलें</li>
+                        <li>किसी का अपमान न करें</li>
+                        <li>तामसिक भोजन न करें</li>
+                        <li>शराब/मांस न लें</li>
+                        <li>फूल नष्ट न करें</li>
+                        <li>प्रकृति को नुकसान न पहुँचाएँ</li>
+                        <li>कलह न करें</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 9. व्रत के नियम -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🛕</span> ओणम व्रत के नियम</h2>
+            <ul class="benefit-list">
+                <li><strong>प्रातः स्नान:</strong> रोज़ स्नान करके स्वच्छ वस्त्र पहनें</li>
+                <li><strong>व्रत:</strong> थिरुवोणम के दिन व्रत रखें</li>
+                <li><strong>फलाहार:</strong> फल, दूध, और पारंपरिक व्यंजन</li>
+                <li><strong>न खाएँ:</strong> प्याज, लहसुन, और मांस (10 दिन)</li>
+                <li><strong>पूक्कलम:</strong> रोज़ नई पूक्कलम बनाएँ</li>
+                <li><strong>महाबली पूजा:</strong> रोज़ पूजा करें</li>
+                <li><strong>दान:</strong> ज़रूरतमंदों को दान करें</li>
+                <li><strong>व्रत तोड़ें:</strong> थिरुवोणम के दिन प्रसाद ग्रहण करके</li>
+            </ul>
+        </div>
+
+        <!-- 10. Related Links -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🔗</span> संबंधित लिंक</h2>
+            <div class="related-grid">
+                <a href="../devta/vishnu.html" class="related-link">🕉️ विष्णु जी</a>
+                <a href="../devta/vaman.html" class="related-link">🌺 वामन अवतार</a>
+                <a href="../katha/mahabali-katha.html" class="related-link">📖 महाबली कथा</a>
+                <a href="../katha/vaman-katha.html" class="related-link">📖 वामन कथा</a>
+                <a href="../stotra/vishnu-sahasranam.html" class="related-link">📜 विष्णु सहस्रनाम</a>
+                <a href="index.html" class="related-link">🎉 अन्य त्योहार</a>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय श्री राम</p>
+        </footer>
+
+    </main>
+
+    <button class="back-top" id="backTop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="../devta/index.html" class="nav-link"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-calendar-days"></i><p>त्योहार</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>पंचांग</p></a>
+    </nav>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backTop');
+            if (btn) {
+                if (window.scrollY > 400) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        const darkToggle = document.getElementById('darkToggle');
+        if (darkToggle) {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+                darkToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            }
+            darkToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                const icon = this.querySelector('i');
+                const isDark = document.body.classList.contains('dark-mode');
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+                localStorage.setItem('darkMode', isDark);
+            });
+        }
+    </script>
+</body>
+</html>
