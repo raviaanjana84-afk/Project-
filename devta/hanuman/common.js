@@ -49,7 +49,7 @@ function chantJaiRam() {
   if (jaiEl) jaiEl.textContent = jaiRamCount + ' बार';
   if (navigator.vibrate) navigator.vibrate(20);
   if (jaiRamCount % 108 === 0) {
-    showToast('🎉 ' + jaiRamCount + ' बार जय श्री राम 🙏');
+    showToast('🎉 बधाई! ' + jaiRamCount + ' बार जय श्री राम 🙏');
   }
 }
 
@@ -149,58 +149,19 @@ if (quoteEl) {
   quoteEl.innerHTML = QUOTES[dayIndex];
 }
 
-/* ===== MALA COUNTER (used in mala.html) ===== */
-const MALA_KEY = 'malaCount';
-const MALA_TARGET_KEY = 'malaTarget';
-let malaCount = parseInt(localStorage.getItem(MALA_KEY) || '0', 10);
-let malaTarget = parseInt(localStorage.getItem(MALA_TARGET_KEY) || '108', 10);
-
-function malaTap() {
-  const el = document.getElementById('malaCount');
-  const circle = document.getElementById('malaCircle');
-  if (!el) return;
-  malaCount++;
-  if (malaCount > malaTarget) malaCount = 1;
-  localStorage.setItem(MALA_KEY, malaCount);
-  el.textContent = malaCount;
-  const progress = (malaCount / malaTarget) * 100;
-  circle.style.background = `conic-gradient(var(--maroon) ${progress}%, var(--border) 0%)`;
-  if (navigator.vibrate) navigator.vibrate(25);
-  if (malaCount === malaTarget) {
-    showToast('🎉 ' + malaTarget + ' जप पूर्ण! 🙏');
-  }
-}
-
-function malaReset() {
-  malaCount = 0;
-  localStorage.setItem(MALA_KEY, 0);
-  document.getElementById('malaCount').textContent = 0;
-  document.getElementById('malaCircle').style.background = 'var(--border)';
-  showToast('माला रीसेट 🔄');
-}
-
-function malaChangeTarget() {
-  const t = prompt('नया लक्ष्य:', malaTarget);
-  if (t && !isNaN(t) && t > 0) {
-    malaTarget = parseInt(t, 10);
-    malaCount = 0;
-    localStorage.setItem(MALA_TARGET_KEY, malaTarget);
-    localStorage.setItem(MALA_KEY, 0);
-    document.getElementById('malaTarget').textContent = '/ ' + malaTarget;
-    document.getElementById('malaCount').textContent = 0;
-    document.getElementById('malaCircle').style.background = 'var(--border)';
-  }
-}
-
-/* ===== INIT MALA ON LOAD ===== */
-window.addEventListener('DOMContentLoaded', () => {
-  const c = document.getElementById('malaCount');
-  const t = document.getElementById('malaTarget');
-  const circle = document.getElementById('malaCircle');
-  if (c) c.textContent = malaCount;
-  if (t) t.textContent = '/ ' + malaTarget;
-  if (circle) {
-    const progress = (malaCount / malaTarget) * 100;
-    circle.style.background = `conic-gradient(var(--maroon) ${progress}%, var(--border) 0%)`;
-  }
+/* ===== SMOOTH SCROLL FOR CAT-CHIPS ===== */
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({behavior:'smooth', block:'start'});
+        document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('active'));
+        this.classList.add('active');
+      }
+    });
+  });
 });
