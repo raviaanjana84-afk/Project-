@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>गुरु पूर्णिमा — संपूर्ण जानकारी | Sanatan Gyan Kosh</title>
+    <meta name="description" content="गुरु पूर्णिमा का संपूर्ण ज्ञान — वेदव्यास जी की कथा, गुरु पूजा विधि, गुरु मंत्र, प्रसाद, और हर छोटी से छोटी बात।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .festival-hero {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, rgba(255,193,7,0.25), rgba(255,140,0,0.2), rgba(192,57,43,0.18));
+            border-radius: var(--radius);
+            margin-bottom: 16px;
+            border: 2px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+        .festival-hero::before {
+            content: '🌟';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            font-size: 140px;
+            opacity: 0.08;
+        }
+        .festival-hero .hero-icon {
+            font-size: 80px;
+            display: block;
+            line-height: 1;
+            animation: guruGlow 3s ease-in-out infinite;
+        }
+        @keyframes guruGlow {
+            0%, 100% { transform: scale(1) rotate(-3deg); filter: drop-shadow(0 0 15px rgba(255,193,7,0.7)); }
+            50% { transform: scale(1.08) rotate(3deg); filter: drop-shadow(0 0 35px rgba(255,140,0,1)); }
+        }
+        .festival-hero .hero-name {
+            font-family: var(--font-display);
+            font-size: 34px;
+            color: var(--maroon);
+            margin-top: 8px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #c0392b, #f39c12, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .festival-hero .hero-subtitle {
+            font-size: 14px;
+            color: var(--ink-soft);
+            margin-top: 6px;
+            letter-spacing: 1px;
+        }
+        .festival-hero .hero-date {
+            display: inline-block;
+            background: var(--maroon);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+        .festival-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 20px 18px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .festival-section h2 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--maroon);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+        }
+        .festival-section h2 .sec-icon { font-size: 26px; }
+        .festival-section h3 {
+            font-family: var(--font-display);
+            font-size: 16px;
+            color: var(--maroon);
+            margin: 16px 0 8px;
+        }
+        .festival-section p {
+            font-size: 14px;
+            line-height: 1.9;
+            color: var(--ink-soft);
+            margin-bottom: 10px;
+        }
+        .festival-section p strong { color: var(--maroon); }
+        .mantra-box {
+            background: linear-gradient(135deg, rgba(255,193,7,0.12), rgba(192,57,43,0.08));
+            border-left: 4px solid #f39c12;
+            padding: 12px 14px;
+            border-radius: 10px;
+            font-family: var(--font-display);
+            font-size: 15px;
+            text-align: center;
+            margin: 8px 0;
+            line-height: 1.8;
+            color: var(--maroon);
+            font-weight: 600;
+        }
+        .mantra-box small {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 11px;
+            color: var(--ink-soft);
+            font-weight: 400;
+            margin-top: 4px;
+        }
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 6px;
+        }
+        .benefit-list li {
+            padding: 5px 0 5px 22px;
+            font-size: 12.5px;
+            line-height: 1.6;
+            color: var(--ink-soft);
+            position: relative;
+        }
+        .benefit-list li::before {
+            content: '🌟';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            font-size: 12px;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255,193,7,0.12), rgba(192,57,43,0.08));
+            border-left: 4px solid #f39c12;
+            padding: 12px 14px;
+            border-radius: 10px;
+            margin: 8px 0;
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+        }
+        .highlight-box strong { color: var(--maroon); }
+        .steps-list {
+            list-style: none;
+            padding: 0;
+            counter-reset: step-counter;
+            margin: 8px 0;
+        }
+        .steps-list li {
+            counter-increment: step-counter;
+            padding: 8px 10px 8px 40px;
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+            border-bottom: 1px dashed var(--border);
+            position: relative;
+        }
+        .steps-list li:last-child { border-bottom: none; }
+        .steps-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f39c12, #c0392b);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 12px;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg);
+            color: var(--maroon);
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+        .back-btn:hover { background: var(--maroon); color: white; }
+        .back-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--maroon);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 16px rgba(122,46,46,0.4);
+            z-index: 90;
+        }
+        .back-top.show { display: flex; }
+        .do-dont-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .do-box, .dont-box {
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+        .do-box {
+            background: #eef7ee;
+            border-left: 3px solid #27ae60;
+        }
+        .do-box h4 { color: #27ae60; font-size: 12px; margin-bottom: 6px; }
+        .dont-box {
+            background: #fdecea;
+            border-left: 3px solid #dc3545;
+        }
+        .dont-box h4 { color: #dc3545; font-size: 12px; margin-bottom: 6px; }
+        .do-box ul, .dont-box ul { list-style: none; padding: 0; }
+        .do-box ul li, .dont-box ul li {
+            padding: 2px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 5px;
+        }
+        .do-box ul li::before { content: '✅'; flex-shrink: 0; font-size: 11px; }
+        .dont-box ul li::before { content: '❌'; flex-shrink: 0; font-size: 11px; }
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .related-link {
+            padding: 12px;
+            background: var(--bg);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--maroon);
+            font-weight: 600;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .related-link:hover {
+            background: var(--card-bg);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+        @media (max-width: 420px) {
+            .festival-hero .hero-icon { font-size: 60px; }
+            .festival-hero .hero-name { font-size: 26px; }
+            .festival-section h2 { font-size: 17px; }
+            .do-dont-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ त्योहार</span>
+            <h1>गुरु पूर्णिमा</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <a href="index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i> सभी त्योहार
+        </a>
+
+        <div class="festival-hero">
+            <span class="hero-icon">🌟</span>
+            <div class="hero-name">गुरु पूर्णिमा</div>
+            <div class="hero-subtitle">गुरु की महिमा · वेदव्यास जयंती</div>
+            <div class="hero-date">📅 आषाढ़ पूर्णिमा · जुलाई</div>
+        </div>
+
+        <div class="festival-section">
+            <h2><span class="sec-icon">📖</span> गुरु पूर्णिमा क्या है?</h2>
+            <p>
+                <strong>गुरु पूर्णिमा</strong> (व्यास पूर्णिमा) गुरु की महिमा का पर्व है — जो <strong>आषाढ़ मास की पूर्णिमा</strong> को मनाया जाता है। यह <strong>महर्षि वेदव्यास</strong> के जन्मदिन के रूप में भी मनाया जाता है।
+            </p>
+            <p>
+                इस दिन शिष्य अपने <strong>गुरु की पूजा</strong> करते हैं, उन्हें <strong>दक्षिणा</strong> देते हैं, और <strong>आशीर्वाद</strong> लेते हैं। यह <strong>गुरु-शिष्य परंपरा</strong> का प्रतीक है।
+            </p>
+            <div class="highlight-box">
+                <strong>🌟 मुख्य बात:</strong> गुरु पूर्णिमा <strong>चातुर्मास</strong> की शुरुआत भी है — जब संन्यासी एक स्थान पर रुककर साधना करते हैं।
+            </div>
+        </div>
+
+        <div class="festival-section">
+            <h2><span class="sec-icon">📜</span> गुरु पूर्णिमा की कथाएँ</h2>
+            <h3>📖 1. वेदव्यास जयंती</h3>
+            <p>
+                <strong>सबसे प्रसिद्ध कथा:</strong> कथा के अनुसार, इस दिन <strong>महर्षि वेदव्यास</strong> का जन्म हुआ था। उन्होंने <strong>वेदों का विभाजन</strong> किया, <strong>महाभारत</strong> लिखा, और <strong>18 पुराणों</strong> की रचना की।
+            </p>
+            <h3>🕉️ 2. शिव-सप्तर्षि</h3>
+            <p>
+                कथा के अनुसार, इस दिन <strong>शिव जी</strong> ने <strong>सप्तर्षियों</strong> को योग की दीक्षा दी थी।
+            </p>
+            <h3>🏹 3. दत्तात्रेय</h3>
+            <p>
+                कथा के अनुसार, इस दिन <strong>दत्तात्रेय</strong> ने <strong>24 गुरुओं</strong> से ज्ञान प्राप्त किया था।
+            </p>
+            <h3>👑 4. राजा प्रह्लाद</h3>
+            <p>
+                कथा के अनुसार, इस दिन <strong>प्रह्लाद</strong> ने अपने गुरु से दीक्षा ली थी।
+            </p>
+            <h3>🌟 5. आदि शंकराचार्य</h3>
+            <p>
+                कथा के अनुसार, <strong>आदि शंकराचार्य</strong> ने गुरु पूर्णिमा पर <strong>व्यास स्तोत्र</strong> की रचना की थी।
+            </p>
+        </div>
+
+        <div class="festival-section">
+            <h2><span class="sec-icon">🙏</span> पूजा विधि (Step by Step)</h2>
+            <ol class="steps-list">
+                <li><strong>स्नान:</strong> प्रातः स्नान करके स्वच्छ वस्त्र धारण करें।</li>
+                <li><strong>पूजा स्थान सजावट:</strong> पूजा स्थान को फूलों से सजाएँ।</li>
+                <li><strong>गुरु की प्रतिमा:</strong> वेदव्यास जी या अपने गुरु की प्रतिमा स्थापित करें।</li>
+                <li><strong>गणेश पूजा:</strong> सबसे पहले गणेश जी की पूजा करें।</li>
+                <li><strong>वेदव्यास पूजा:</strong> वेदव्यास जी की पूजा करें।</li>
+                <li><strong>गुरु पादुका पूजन:</strong> गुरु के चरणों की पूजा करें।</li>
+                <li><strong>दक्षिणा:</strong> गुरु को दक्षिणा अर्पित करें।</li>
+                <li><strong>मंत्र जप:</strong> "ॐ गुरवे नमः" 108 बार जपें।</li>
+                <li><strong>गुरु स्तोत्र:</strong> गुरु स्तोत्र या गुरु गीता पढ़ें।</li>
+                <li><strong>आरती:</strong> गुरु की आरती करें।</li>
+                <li><strong>प्रसाद:</strong> प्रसाद बाँटें और आशीर्वाद लें।</li>
+            </ol>
+            <h3>📿 मुख्य मंत्र</h3>
+            <div class="mantra-box">
+                ॐ गुरवे नमः
+                <small>गुरु का मूल मंत्र — गुरु कृपा के लिए</small>
+            </div>
+            <div class="mantra-box">
+                ॐ गुरुदेवाय विद्महे ।<br>परब्रह्मणे धीमहि ।<br>तन्नो गुरुः प्रचोदयात् ॥
+                <small>गुरु गायत्री मंत्र — ज्ञान और आत्मज्ञान के लिए</small>
+            </div>
+        </div>
+
+        <div class="festival-section">
+            <h2><span class="sec-icon">🛒</span> पूजा सामग्री</h2>
+            <ul style="list-style: none; padding: 0; font-size: 13.5px; line-height: 2;">
+                <li>✅ वेदव्यास जी की प्रतिमा</li>
+                <li>✅ अपने गुरु की तस्वीर</li>
+                <li>✅ पीले वस्त्र</li>
+                <li>✅ पीले फूल (गेंदा, चंपा)</li>
+                <li>✅ चंदन, रोली, अक्षत</li>
+                <li>✅ दीपक, धूप, कपूर</li>
+                <li>✅ घंटी, शंख</li>
+                <li>✅ खीर और मिठाई</li>
+                <li>✅ फल (केला, सेब, नारियल)</li>
+                <li>✅ पान, सुपारी</li>
+                <li>✅ दक्षिणा (धन)</li>
+                <li>✅ पुस्तक और कलम</li>
+                <li>✅ कलश और जल</li>
+                <li>✅ नए वस्त्र</li>
+            </ul>
+        </div>
+
+        <div class="festival-section">
+            <h2><span class="sec-icon">✅</span> क्या करें और क्या न करें</h2>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <h4>✅ क्या करें</h4>
+                    <ul>
+                        <li>गुरु पूजा करें</li>
+                        <li>दक्षिणा दें</li>
+                        <li>आशीर्वाद लें</li>
+                        <li>गुरु स्तोत्र पढ़ें</li>
+                        <li>पुस्तक पूजन करें</li>
+                        <li>प्रसाद बाँटें</li>
+                        <li>गुरु का सम्मान करें</li>
+                        <li>नई शिक्षा लें</li>
+                    </ul>
+                </div>
+                <div class="dont-box">
+                    <h4>❌ क्या न करें</h4>
+                    <ul>
+                        <li>गुरु का अपमान न करें</li>
+                        <li>क्रोध न करें</li>
+                        <li>झूठ न बोलें</li>
+                        <li>तामसिक भोजन न करें</li>
+                        <li>शराब/मांस न लें</li>
+                        <li>कलह न करें</li>
+                        <li>आलस न करें</li>
+                        <li>गुरु दक्षिणा में कंजूसी न करें</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="festival-section">
+            <h2><span class="sec-icon">🍯</span> प्रसाद</h2>
+            <ul style="list-style: none; padding: 0; font-size: 13.5px; line-height: 2;">
+                <li>🍚 <strong>खीर</strong> — चावल और दूध की</li>
+                <li>🍯 <strong>मिठाई</strong> — लड्डू, बर्फी</li>
+                <li>🍌 <strong>केला और नारियल</strong></li>
+                <li>🥛 <strong>दूध और मिश्री</strong></li>
+                <li>🍬 <strong>गुड़ और चीनी</strong></li>
+                <li>🥜 <strong>मेवे</strong> — काजू, बादाम</li>
+                <li>🍎 <strong>फल</strong> — केला, सेब</li>
+                <li>🌿 <strong>तुलसी दल</strong></li>
+            </ul>
+        </div>
+
+        <div class="festival-section">
+            <h2><span class="sec-icon">🔗</span> संबंधित लिंक</h2>
+            <div class="related-grid">
+                <a href="../devta/vishnu.html" class="related-link">🕉️ विष्णु जी</a>
+                <a href="../stotra/guru-stotram.html" class="related-link">📜 गुरु स्तोत्र</a>
+                <a href="../mantra/index.html" class="related-link">📿 गुरु मंत्र</a>
+                <a href="../katha/vedvyas-katha.html" class="related-link">📖 वेदव्यास कथा</a>
+                <a href="../yoga/index.html" class="related-link">🧘 योग</a>
+                <a href="index.html" class="related-link">🎉 अन्य त्योहार</a>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय गुरु देव</p>
+        </footer>
+
+    </main>
+
+    <button class="back-top" id="backTop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="../devta/index.html" class="nav-link"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-calendar-days"></i><p>त्योहार</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>पंचांग</p></a>
+    </nav>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backTop');
+            if (btn) {
+                if (window.scrollY > 400) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
+        });
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        const darkToggle = document.getElementById('darkToggle');
+        if (darkToggle) {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+                darkToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            }
+            darkToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                const icon = this.querySelector('i');
+                const isDark = document.body.classList.contains('dark-mode');
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+                localStorage.setItem('darkMode', isDark);
+            });
+        }
+    </script>
+</body>
+</html>
