@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>महाशिवरात्रि — संपूर्ण जानकारी | Sanatan Gyan Kosh</title>
+    <meta name="description" content="महाशिवरात्रि का संपूर्ण ज्ञान — कथा, 4 प्रहर पूजा, रात्रि जागरण, महामृत्युंजय मंत्र, व्रत, और हर छोटी से छोटी बात।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .festival-hero {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, rgba(75,0,130,0.15), rgba(212,175,55,0.15), rgba(0,100,200,0.12));
+            border-radius: var(--radius);
+            margin-bottom: 16px;
+            border: 2px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+        .festival-hero::before {
+            content: '🔱';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            font-size: 140px;
+            opacity: 0.08;
+        }
+        .festival-hero .hero-icon {
+            font-size: 80px;
+            display: block;
+            line-height: 1;
+            animation: pulse 2.5s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 12px rgba(75,0,130,0.5)); }
+            50% { transform: scale(1.05); filter: drop-shadow(0 0 28px rgba(212,175,55,0.9)); }
+        }
+        .festival-hero .hero-name {
+            font-family: var(--font-display);
+            font-size: 34px;
+            color: var(--maroon);
+            margin-top: 8px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #4a148c, #1a237e, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .festival-hero .hero-subtitle {
+            font-size: 14px;
+            color: var(--ink-soft);
+            margin-top: 6px;
+            letter-spacing: 1px;
+        }
+        .festival-hero .hero-date {
+            display: inline-block;
+            background: var(--maroon);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        .festival-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 20px 18px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .festival-section h2 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--maroon);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+        }
+        .festival-section h2 .sec-icon { font-size: 26px; }
+        .festival-section h3 {
+            font-family: var(--font-display);
+            font-size: 16px;
+            color: var(--maroon);
+            margin: 16px 0 8px;
+        }
+        .festival-section p {
+            font-size: 14px;
+            line-height: 1.9;
+            color: var(--ink-soft);
+            margin-bottom: 10px;
+        }
+        .festival-section p strong { color: var(--maroon); }
+
+        /* Prahar Grid */
+        .prahar-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 12px;
+        }
+        .prahar-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--border);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .prahar-card:hover {
+            border-color: var(--gold);
+            box-shadow: var(--shadow-hover);
+        }
+        .prahar-card.open { border-color: var(--maroon); }
+        .prahar-header {
+            padding: 16px 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: var(--transition);
+        }
+        .prahar-header:hover { background: var(--bg); }
+        .prahar-card.open .prahar-header {
+            background: linear-gradient(135deg, rgba(75,0,130,0.1), rgba(212,175,55,0.1));
+            border-bottom: 1px solid var(--border);
+        }
+        .prahar-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4a148c, #d4af37);
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(74,20,140,0.3);
+        }
+        .prahar-badge .p-num {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1;
+        }
+        .prahar-badge .p-text {
+            font-size: 8px;
+            opacity: 0.9;
+            margin-top: 2px;
+            letter-spacing: 0.5px;
+        }
+        .prahar-info { flex: 1; }
+        .prahar-name {
+            font-family: var(--font-display);
+            font-size: 18px;
+            color: var(--maroon);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .prahar-sub {
+            font-size: 11px;
+            color: var(--ink-soft);
+            margin-top: 3px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .prahar-sub span {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+        .prahar-sub i { color: var(--gold); font-size: 10px; }
+        .prahar-arrow {
+            color: var(--gold);
+            font-size: 18px;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+        .prahar-card.open .prahar-arrow { transform: rotate(180deg); }
+
+        .prahar-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        .prahar-card.open .prahar-body { max-height: 5000px; }
+        .prahar-body-inner { padding: 18px; }
+
+        .prahar-section { margin-bottom: 14px; }
+        .prahar-section:last-child { margin-bottom: 0; }
+        .prahar-section-title {
+            font-family: var(--font-display);
+            font-size: 14px;
+            color: var(--maroon);
+            font-weight: 700;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .prahar-section-title .ri { font-size: 16px; }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 6px;
+        }
+        .info-item {
+            background: var(--bg);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+        }
+        .info-item .lbl {
+            font-size: 9px;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-item .val {
+            font-weight: 600;
+            color: var(--maroon);
+            margin-top: 2px;
+            font-size: 12.5px;
+        }
+
+        .mantra-box {
+            background: linear-gradient(135deg, rgba(75,0,130,0.1), rgba(212,175,55,0.08));
+            border-left: 4px solid #4a148c;
+            padding: 12px 14px;
+            border-radius: 10px;
+            font-family: var(--font-display);
+            font-size: 15px;
+            text-align: center;
+            margin: 8px 0;
+            line-height: 1.8;
+            color: var(--maroon);
+            font-weight: 600;
+        }
+        .mantra-box small {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 11px;
+            color: var(--ink-soft);
+            font-weight: 400;
+            margin-top: 4px;
+        }
+
+        .prahar-body p {
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+        }
+        .prahar-body p strong { color: var(--maroon); }
+
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 6px;
+        }
+        .benefit-list li {
+            padding: 5px 0 5px 22px;
+            font-size: 12.5px;
+            line-height: 1.6;
+            color: var(--ink-soft);
+            position: relative;
+        }
+        .benefit-list li::before {
+            content: '🔱';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            font-size: 12px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(75,0,130,0.1), rgba(212,175,55,0.08));
+            border-left: 4px solid #4a148c;
+            padding: 12px 14px;
+            border-radius: 10px;
+            margin: 8px 0;
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+        }
+        .highlight-box strong { color: var(--maroon); }
+
+        .steps-list {
+            list-style: none;
+            padding: 0;
+            counter-reset: step-counter;
+            margin: 8px 0;
+        }
+        .steps-list li {
+            counter-increment: step-counter;
+            padding: 8px 10px 8px 40px;
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+            border-bottom: 1px dashed var(--border);
+            position: relative;
+        }
+        .steps-list li:last-child { border-bottom: none; }
+        .steps-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4a148c, #d4af37);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg);
+            color: var(--maroon);
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+        .back-btn:hover { background: var(--maroon); color: white; }
+
+        .back-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--maroon);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 16px rgba(122,46,46,0.4);
+            z-index: 90;
+        }
+        .back-top.show { display: flex; }
+
+        .do-dont-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .do-box, .dont-box {
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+        .do-box {
+            background: #eef7ee;
+            border-left: 3px solid #27ae60;
+        }
+        .do-box h4 { color: #27ae60; font-size: 12px; margin-bottom: 6px; }
+        .dont-box {
+            background: #fdecea;
+            border-left: 3px solid #dc3545;
+        }
+        .dont-box h4 { color: #dc3545; font-size: 12px; margin-bottom: 6px; }
+        .do-box ul, .dont-box ul { list-style: none; padding: 0; }
+        .do-box ul li, .dont-box ul li {
+            padding: 2px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 5px;
+        }
+        .do-box ul li::before { content: '✅'; flex-shrink: 0; font-size: 11px; }
+        .dont-box ul li::before { content: '❌'; flex-shrink: 0; font-size: 11px; }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .related-link {
+            padding: 12px;
+            background: var(--bg);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--maroon);
+            font-weight: 600;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .related-link:hover {
+            background: var(--card-bg);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 420px) {
+            .festival-hero .hero-icon { font-size: 60px; }
+            .festival-hero .hero-name { font-size: 26px; }
+            .festival-section h2 { font-size: 17px; }
+            .prahar-name { font-size: 15px; }
+            .prahar-badge { width: 48px; height: 48px; }
+            .prahar-badge .p-num { font-size: 17px; }
+            .do-dont-grid { grid-template-columns: 1fr; }
+            .info-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ त्योहार</span>
+            <h1>महाशिवरात्रि</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <a href="index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i> सभी त्योहार
+        </a>
+
+        <!-- Hero -->
+        <div class="festival-hero">
+            <span class="hero-icon">🔱</span>
+            <div class="hero-name">महाशिवरात्रि</div>
+            <div class="hero-subtitle">शिव जी का सबसे बड़ा पर्व · 4 प्रहर पूजा · रात्रि जागरण</div>
+            <div class="hero-date">📅 फाल्गुन कृष्ण चतुर्दशी · फरवरी-मार्च</div>
+        </div>
+
+        <!-- 1. परिचय -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">📖</span> महाशिवरात्रि क्या है?</h2>
+            <p>
+                <strong>महाशिवरात्रि</strong> भगवान <strong>शिव</strong> का सबसे बड़ा और सबसे पवित्र पर्व है — जो <strong>फाल्गुन कृष्ण चतुर्दशी</strong> को मनाया जाता है। इस दिन <strong>शिव जी और माता पार्वती का विवाह</strong> हुआ था और इसी दिन <strong>शिवलिंग प्रकट</strong> हुआ था।
+            </p>
+            <p>
+                "महाशिवरात्रि" का अर्थ है — <strong>शिव की महान रात्रि</strong>। यह वह रात है जब शिव जी <strong>तांडव नृत्य</strong> करते हैं और ब्रह्मांड की ऊर्जा को संतुलित करते हैं।
+            </p>
+            <div class="highlight-box">
+                <strong>🔱 मुख्य बात:</strong> महाशिवरात्रि पर <strong>4 प्रहर पूजा</strong> होती है — पूरी रात जागरण करके शिवलिंग पर <strong>जल, दूध, दही, घी, शहद, बेलपत्र</strong> चढ़ाए जाते हैं।
+            </div>
+        </div>
+
+        <!-- 2. कथाएँ -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">📜</span> महाशिवरात्रि की कथाएँ</h2>
+
+            <h3>💍 1. शिव-पार्वती विवाह</h3>
+            <p>
+                <strong>सबसे प्रसिद्ध कथा:</strong> माता <strong>पार्वती</strong> ने शिव जी को पति रूप में पाने के लिए <strong>घोर तपस्या</strong> की। उन्होंने हजारों वर्ष तक कठोर व्रत किए। अंत में <strong>फाल्गुन कृष्ण चतुर्दशी</strong> को शिव जी ने उन्हें अपनी पत्नी के रूप में स्वीकार किया। इसलिए यह दिन <strong>शिव-पार्वती विवाह</strong> के रूप में मनाया जाता है।
+            </p>
+
+            <h3>🔱 2. शिवलिंग प्रकट होना</h3>
+            <p>
+                कथा के अनुसार, एक बार ब्रह्मा और विष्णु में <strong>श्रेष्ठता का विवाद</strong> हुआ। तब शिव जी एक <strong>अग्नि स्तंभ</strong> के रूप में प्रकट हुए। ब्रह्मा और विष्णु दोनों उस स्तंभ के आदि-अंत का पता नहीं लगा सके। यह स्तंभ ही <strong>शिवलिंग</strong> कहलाया और यह <strong>फाल्गुन कृष्ण चतुर्दशी</strong> को हुआ।
+            </p>
+
+            <h3>🌊 3. समुद्र मंथन और हलाहल</h3>
+            <p>
+                <strong>समुद्र मंथन</strong> के समय <strong>हलाहल विष</strong> निकला, जो पूरी सृष्टि को नष्ट कर सकता था। तब शिव जी ने उस विष को पी लिया। माता पार्वती ने उनका गला दबाया, जिससे विष गले में ही रुक गया और उनका गला नीला हो गया। इसलिए उन्हें <strong>नीलकंठ</strong> कहा जाता है। कुछ मान्यताओं के अनुसार यह घटना महाशिवरात्रि पर हुई।
+            </p>
+
+            <h3>🦌 4. शिकारी और शिवलिंग</h3>
+            <p>
+                एक शिकारी रात में शिकार की खोज में जंगल गया। शिवरात्रि की रात थी। वह एक <strong>बेल के पेड़</strong> पर चढ़ गया। नीचे <strong>शिवलिंग</strong> था। रात भर वह बेलपत्र तोड़कर नीचे फेंकता रहा — जो अनजाने में शिवलिंग पर गिरे। सुबह उसे पता चला। शिव जी ने उसकी अनजानी भक्ति से प्रसन्न होकर उसे मोक्ष दिया।
+            </p>
+
+            <h3>🌙 5. चंद्रमा और शिव</h3>
+            <p>
+                कथा के अनुसार, <strong>दक्ष प्रजापति</strong> ने अपनी 27 पुत्रियों का विवाह चंद्र देव से किया। लेकिन चंद्र देव <strong>रोहिणी</strong> से अधिक प्रेम करते थे। अन्य पुत्रियों ने दक्ष से शिकायत की। दक्ष ने चंद्र को <strong>क्षय रोग</strong> का श्राप दिया। चंद्र ने शिव जी की आराधना की और शिव जी ने उन्हें श्राप से मुक्त किया। इसलिए शिव जी के मस्तक पर <strong>चंद्रमा</strong> विराजमान हैं।
+            </p>
+        </div>
+
+        <!-- 3. 4 प्रहर पूजा -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🔱</span> 4 प्रहर पूजा — विस्तृत जानकारी</h2>
+            <p style="font-size:13px; color: var(--ink-soft);">
+                कार्ड पर <strong>click करें</strong> और हर प्रहर की पूरी विधि पढ़ें।
+            </p>
+
+            <div class="prahar-grid" id="praharGrid"></div>
+        </div>
+
+        <!-- 4. पूजा विधि -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🙏</span> महाशिवरात्रि पूजा विधि (Step by Step)</h2>
+            <ol class="steps-list">
+                <li><strong>स्नान और तैयारी:</strong> प्रातः स्नान करके स्वच्छ वस्त्र धारण करें।</li>
+                <li><strong>व्रत का संकल्प:</strong> पूरे दिन और रात व्रत रखने का संकल्प लें।</li>
+                <li><strong>शिवलिंग स्थापना:</strong> शिवलिंग को स्थापित करें और गंगाजल से स्नान कराएँ।</li>
+                <li><strong>पंचामृत अभिषेक:</strong> दूध, दही, घी, शहद, गुड़ से अभिषेक करें।</li>
+                <li><strong>जल अभिषेक:</strong> गंगाजल या शुद्ध जल से अभिषेक करें।</li>
+                <li><strong>बेलपत्र अर्पण:</strong> बेलपत्र, धतूरा, भांग, कनेर के फूल चढ़ाएँ।</li>
+                <li><strong>चंदन और अक्षत:</strong> चंदन, रोली, अक्षत अर्पित करें।</li>
+                <li><strong>4 प्रहर पूजा:</strong> रात्रि में 4 प्रहर पूजा करें।</li>
+                <li><strong>महामृत्युंजय जप:</strong> "ॐ त्र्यम्बकं यजामहे..." 108 बार जपें।</li>
+                <li><strong>रात्रि जागरण:</strong> पूरी रात जागरण करें और भजन-कीर्तन करें।</li>
+                <li><strong>शिव चालीसा:</strong> शिव चालीसा और रुद्राष्टकम् पढ़ें।</li>
+                <li><strong>आरती:</strong> "ॐ जय शिव ओंकारा" आरती गाएँ।</li>
+                <li><strong>प्रसाद:</strong> बेलपत्र, फल, मिठाई का प्रसाद बाँटें।</li>
+                <li><strong>व्रत तोड़ें:</strong> अगले दिन स्नान के बाद व्रत तोड़ें।</li>
+            </ol>
+
+            <h3>📿 मुख्य मंत्र</h3>
+            <div class="mantra-box">
+                ॐ नमः शिवाय
+                <small>शिव जी का पंचाक्षर मंत्र — 108 बार जपें</small>
+            </div>
+            <div class="mantra-box">
+                ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम् ।<br>उर्वारुकमिव बन्धनान् मृत्योर्मुक्षीय माऽमृतात् ॥
+                <small>महामृत्युंजय मंत्र — आरोग्य और मृत्युंजय के लिए</small>
+            </div>
+        </div>
+
+        <!-- 5. सामग्री -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🛒</span> पूजा सामग्री</h2>
+            <ul style="list-style: none; padding: 0; font-size: 13.5px; line-height: 2;">
+                <li>✅ शिवलिंग या शिव जी की प्रतिमा</li>
+                <li>✅ रुद्राक्ष माला</li>
+                <li>✅ बेलपत्र (सबसे ज़रूरी)</li>
+                <li>✅ धतूरा और भांग</li>
+                <li>✅ कनेर के फूल</li>
+                <li>✅ गंगाजल</li>
+                <li>✅ पंचामृत (दूध, दही, घी, शहद, गुड़)</li>
+                <li>✅ शहद और गुड़</li>
+                <li>✅ चंदन, रोली, अक्षत</li>
+                <li>✅ दीपक, धूप, कपूर</li>
+                <li>✅ घंटी, शंख</li>
+                <li>✅ फल (केला, सेब, नारियल)</li>
+                <li>✅ पान, सुपारी</li>
+                <li>✅ कच्चा दूध</li>
+                <li>✅ भस्म</li>
+                <li>✅ त्रिशूल और डमरू (चित्र)</li>
+            </ul>
+        </div>
+
+        <!-- 6. क्या करें / क्या न करें -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">✅</span> क्या करें और क्या न करें</h2>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <h4>✅ क्या करें</h4>
+                    <ul>
+                        <li>पूरे दिन और रात व्रत रखें</li>
+                        <li>4 प्रहर पूजा करें</li>
+                        <li>रात्रि जागरण करें</li>
+                        <li>महामृत्युंजय जपें</li>
+                        <li>शिवलिंग पर बेलपत्र चढ़ाएँ</li>
+                        <li>गंगाजल से अभिषेक करें</li>
+                        <li>शिव चालीसा पढ़ें</li>
+                        <li>"ॐ नमः शिवाय" जपें</li>
+                    </ul>
+                </div>
+                <div class="dont-box">
+                    <h4>❌ क्या न करें</h4>
+                    <ul>
+                        <li>अन्न न खाएँ</li>
+                        <li>तामसिक भोजन न करें</li>
+                        <li>क्रोध न करें</li>
+                        <li>झूठ न बोलें</li>
+                        <li>शिवलिंग पर तुलसी न चढ़ाएँ</li>
+                        <li>शिवलिंग पर हल्दी न चढ़ाएँ</li>
+                        <li>शराब/मांस न लें</li>
+                        <li>किसी से कलह न करें</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. व्रत के नियम -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🛕</span> महाशिवरात्रि व्रत के नियम</h2>
+            <ul class="benefit-list">
+                <li><strong>पूरे दिन और रात व्रत:</strong> सूर्योदय से अगले दिन सूर्योदय तक</li>
+                <li><strong>फलाहार:</strong> फल, दूध, दही, मखाना, साबूदाना, आलू, कुट्टू</li>
+                <li><strong>न खाएँ:</strong> अन्न, चावल, गेहूं, दाल, प्याज, लहसुन, नमक</li>
+                <li><strong>रात्रि जागरण:</strong> पूरी रात जागरण करें</li>
+                <li><strong>4 प्रहर पूजा:</strong> रात्रि के 4 प्रहर में पूजा करें</li>
+                <li><strong>महामृत्युंजय जप:</strong> 108 बार जपें</li>
+                <li><strong>व्रत तोड़ें:</strong> अगले दिन स्नान के बाद प्रसाद ग्रहण करके</li>
+            </ul>
+            <div class="highlight-box">
+                <strong>💡 ध्यान:</strong> महाशिवरात्रि व्रत में <strong>रात्रि जागरण</strong> सबसे महत्वपूर्ण है — क्योंकि शिव जी रात्रि में ही तांडव करते हैं और पार्वती से विवाह किया था।
+            </div>
+        </div>
+
+        <!-- 8. प्रसाद -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🍯</span> महाशिवरात्रि का प्रसाद</h2>
+            <div class="highlight-box">
+                <strong>शिव जी को प्रिय भोग:</strong>
+            </div>
+            <ul style="list-style: none; padding: 0; font-size: 13.5px; line-height: 2;">
+                <li>🌿 <strong>बेलपत्र</strong> — शिव जी का सबसे प्रिय</li>
+                <li>🌰 <strong>धतूरा</strong> — शिव जी को अत्यंत प्रिय</li>
+                <li>🍃 <strong>भांग</strong> — शिव जी का प्रसाद</li>
+                <li>🥛 <strong>कच्चा दूध</strong> — अभिषेक के लिए</li>
+                <li>🍯 <strong>शहद और गुड़</strong></li>
+                <li>🍎 <strong>फल</strong> — केला, सेब, नारियल</li>
+                <li>🥜 <strong>मेवे</strong> — बादाम, काजू</li>
+                <li>🍬 <strong>मिठाई</strong> — लड्डू, बर्फी</li>
+            </ul>
+        </div>
+
+        <!-- 9. Related Links -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🔗</span> संबंधित लिंक</h2>
+            <div class="related-grid">
+                <a href="../devta/shiva.html" class="related-link">🔱 शिव जी</a>
+                <a href="../stotra/shiv-chalisa.html" class="related-link">📜 शिव चालीसा</a>
+                <a href="../stotra/rudrashtakam.html" class="related-link">📜 रुद्राष्टकम्</a>
+                <a href="../stotra/shiv-tandav.html" class="related-link">📜 शिव तांडव</a>
+                <a href="../mantra/index.html" class="related-link">📿 शिव मंत्र</a>
+                <a href="index.html" class="related-link">🎉 अन्य त्योहार</a>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 हर हर महादेव</p>
+        </footer>
+
+    </main>
+
+    <button class="back-top" id="backTop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="../devta/index.html" class="nav-link"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-calendar-days"></i><p>त्योहार</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>पंचांग</p></a>
+    </nav>
+
+    <script>
+        // ============================================================
+        //  MAHASHIVRATRI — 4 Prahar Puja
+        // ============================================================
+
+        const prahars = [
+            {
+                num: 1,
+                name: 'प्रथम प्रहर',
+                en: 'First Prahar',
+                time: 'संध्या 6:00 - 9:00',
+                color: 'सफेद',
+                naivedya: 'दूध और मिश्री',
+                mantra: 'ॐ नमः शिवाय',
+                vidhi: [
+                    'शिवलिंग का जल से अभिषेक करें',
+                    'दूध से स्नान कराएँ',
+                    'सफेद फूल चढ़ाएँ',
+                    'बेलपत्र अर्पित करें',
+                    'शहद का भोग लगाएँ',
+                    'धूप-दीप जलाएँ',
+                    '"ॐ नमः शिवाय" 108 बार जपें',
+                    'शिव चालीसा पढ़ें'
+                ],
+                katha: 'पहले प्रहर में <strong>शिवलिंग का दूध से अभिषेक</strong> किया जाता है। यह प्रहर <strong>शिव जी के रूप</strong> — जो शांत और सौम्य हैं — को समर्पित है।',
+                benefits: [
+                    'मन की शांति',
+                    'रोग नाश',
+                    'शिव कृपा',
+                    'पाप नाश'
+                ]
+            },
+            {
+                num: 2,
+                name: 'द्वितीय प्रहर',
+                en: 'Second Prahar',
+                time: 'रात्रि 9:00 - 12:00',
+                color: 'लाल',
+                naivedya: 'दही और मिष्ठान',
+                mantra: 'ॐ महेश्वराय नमः',
+                vidhi: [
+                    'शिवलिंग का दही से अभिषेक करें',
+                    'गंगाजल से स्नान कराएँ',
+                    'लाल फूल चढ़ाएँ',
+                    'धतूरा और भांग चढ़ाएँ',
+                    'मिष्ठान का भोग लगाएँ',
+                    'धूप-दीप जलाएँ',
+                    '"ॐ महेश्वराय नमः" 108 बार जपें',
+                    'रुद्राष्टकम् पढ़ें'
+                ],
+                katha: 'दूसरे प्रहर में <strong>शिवलिंग का दही से अभिषेक</strong> किया जाता है। यह प्रहर <strong>शिव जी के रुद्र रूप</strong> — जो शक्तिशाली और तेजस्वी हैं — को समर्पित है।',
+                benefits: [
+                    'शत्रु नाश',
+                    'भय मुक्ति',
+                    'साहस',
+                    'आत्मविश्वास'
+                ]
+            },
+            {
+                num: 3,
+                name: 'तृतीय प्रहर',
+                en: 'Third Prahar',
+                time: 'रात्रि 12:00 - 3:00',
+                color: 'पीला',
+                naivedya: 'घी और खीर',
+                mantra: 'ॐ त्र्यम्बकं यजामहे',
+                vidhi: [
+                    'शिवलिंग का घी से अभिषेक करें',
+                    'शहद से स्नान कराएँ',
+                    'पीले फूल चढ़ाएँ',
+                    'कनेर के फूल चढ़ाएँ',
+                    'खीर का भोग लगाएँ',
+                    'धूप-दीप जलाएँ',
+                    'महामृत्युंजय मंत्र 108 बार जपें',
+                    'शिव तांडव स्तोत्र पढ़ें'
+                ],
+                katha: 'तीसरे प्रहर में <strong>शिवलिंग का घी से अभिषेक</strong> किया जाता है। यह प्रहर <strong>महामृत्युंजय रूप</strong> — जो मृत्युंजय हैं — को समर्पित है। यह प्रहर <strong>मध्यरात्रि</strong> का है — जो शिव जी का सबसे प्रिय समय है।',
+                benefits: [
+                    'मृत्यु भय नाश',
+                    'आयु वृद्धि',
+                    'आरोग्य',
+                    'मोक्ष'
+                ]
+            },
+            {
+                num: 4,
+                name: 'चतुर्थ प्रहर',
+                en: 'Fourth Prahar',
+                time: 'प्रातः 3:00 - 6:00',
+                color: 'सुनहरा',
+                naivedya: 'शहद और फल',
+                mantra: 'ॐ नमः शिवाय',
+                vidhi: [
+                    'शिवलिंग का शहद से अभिषेक करें',
+                    'गंगाजल से स्नान कराएँ',
+                    'सुनहरे पीले फूल चढ़ाएँ',
+                    'बेलपत्र अर्पित करें',
+                    'फल का भोग लगाएँ',
+                    'धूप-दीप जलाएँ',
+                    '"ॐ नमः शिवाय" 108 बार जपें',
+                    'शिव आरती गाएँ'
+                ],
+                katha: 'चौथे प्रहर में <strong>शिवलिंग का शहद से अभिषेक</strong> किया जाता है। यह प्रहर <strong>शिव जी के कल्याणकारी रूप</strong> — जो भक्तों की रक्षा करते हैं — को समर्पित है। यह <strong>ब्रह्म मुहूर्त</strong> का समय है — जो जप और ध्यान के लिए सर्वोत्तम है।',
+                benefits: [
+                    'सभी मनोकामनाएँ',
+                    'कल्याण',
+                    'सुख-समृद्धि',
+                    'मोक्ष'
+                ]
+            }
+        ];
+
+        function renderPrahars() {
+            const grid = document.getElementById('praharGrid');
+            grid.innerHTML = prahars.map(p => `
+                <div class="prahar-card" id="prahar-${p.num}">
+                    <div class="prahar-header" onclick="togglePrahar(${p.num})">
+                        <div class="prahar-badge">
+                            <span class="p-num">${p.num}</span>
+                            <span class="p-text">प्रहर</span>
+                        </div>
+                        <div class="prahar-info">
+                            <div class="prahar-name">${p.name}</div>
+                            <div class="prahar-sub">
+                                <span><i class="fa-solid fa-clock"></i> ${p.time}</span>
+                                <span><i class="fa-solid fa-palette"></i> ${p.color}</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-down prahar-arrow"></i>
+                    </div>
+                    <div class="prahar-body">
+                        <div class="prahar-body-inner">
+
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <div class="lbl">समय</div>
+                                    <div class="val" style="font-size:11px;">${p.time}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="lbl">रंग</div>
+                                    <div class="val">${p.color}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="lbl">नैवेद्य</div>
+                                    <div class="val" style="font-size:11px;">${p.naivedya}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="lbl">मंत्र</div>
+                                    <div class="val" style="font-size:10px;">${p.mantra}</div>
+                                </div>
+                            </div>
+
+                            <div class="prahar-section">
+                                <div class="prahar-section-title"><span class="ri">📜</span> महत्व</div>
+                                <p>${p.katha}</p>
+                            </div>
+
+                            <div class="prahar-section">
+                                <div class="prahar-section-title"><span class="ri">🙏</span> पूजा विधि</div>
+                                <ol class="steps-list">
+                                    ${p.vidhi.map(v => `<li>${v}</li>`).join('')}
+                                </ol>
+                            </div>
+
+                            <div class="prahar-section">
+                                <div class="prahar-section-title"><span class="ri">📿</span> मंत्र</div>
+                                <div class="mantra-box">
+                                    ${p.mantra}
+                                    <small>इस मंत्र का 108 बार जप करें</small>
+                                </div>
+                            </div>
+
+                            <div class="prahar-section">
+                                <div class="prahar-section-title"><span class="ri">✨</span> लाभ</div>
+                                <ul class="benefit-list">
+                                    ${p.benefits.map(b => `<li>${b}</li>`).join('')}
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function togglePrahar(num) {
+            const card = document.getElementById(`prahar-${num}`);
+            card.classList.toggle('open');
+            if (card.classList.contains('open')) {
+                setTimeout(() => {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 300);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderPrahars();
+        });
+
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backTop');
+            if (btn) {
+                if (window.scrollY > 400) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        const darkToggle = document.getElementById('darkToggle');
+        if (darkToggle) {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+                darkToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            }
+            darkToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                const icon = this.querySelector('i');
+                const isDark = document.body.classList.contains('dark-mode');
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+                localStorage.setItem('darkMode', isDark);
+            });
+        }
+    </script>
+</body>
+</html>
