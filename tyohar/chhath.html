@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>छठ पूजा — संपूर्ण जानकारी | Sanatan Gyan Kosh</title>
+    <meta name="description" content="छठ पूजा का संपूर्ण ज्ञान — 4 दिन की विधि, सूर्य देव और छठी मैया की पूजा, अर्घ्य देने की विधि, प्रसाद, और हर छोटी से छोटी बात।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .festival-hero {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, rgba(255,140,0,0.25), rgba(255,215,0,0.2), rgba(255,87,34,0.18));
+            border-radius: var(--radius);
+            margin-bottom: 16px;
+            border: 2px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+        .festival-hero::before {
+            content: '🌅';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            font-size: 140px;
+            opacity: 0.08;
+        }
+        .festival-hero .hero-icon {
+            font-size: 80px;
+            display: block;
+            line-height: 1;
+            animation: sunRise 3s ease-in-out infinite;
+        }
+        @keyframes sunRise {
+            0%, 100% { transform: translateY(0) scale(1); filter: drop-shadow(0 0 15px rgba(255,140,0,0.7)); }
+            50% { transform: translateY(-8px) scale(1.06); filter: drop-shadow(0 0 35px rgba(255,215,0,1)); }
+        }
+        .festival-hero .hero-name {
+            font-family: var(--font-display);
+            font-size: 34px;
+            color: var(--maroon);
+            margin-top: 8px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #c0392b, #ff8c00, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .festival-hero .hero-subtitle {
+            font-size: 14px;
+            color: var(--ink-soft);
+            margin-top: 6px;
+            letter-spacing: 1px;
+        }
+        .festival-hero .hero-date {
+            display: inline-block;
+            background: var(--maroon);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        .festival-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 20px 18px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .festival-section h2 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--maroon);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+        }
+        .festival-section h2 .sec-icon { font-size: 26px; }
+        .festival-section h3 {
+            font-family: var(--font-display);
+            font-size: 16px;
+            color: var(--maroon);
+            margin: 16px 0 8px;
+        }
+        .festival-section p {
+            font-size: 14px;
+            line-height: 1.9;
+            color: var(--ink-soft);
+            margin-bottom: 10px;
+        }
+        .festival-section p strong { color: var(--maroon); }
+
+        .mantra-box {
+            background: linear-gradient(135deg, rgba(255,140,0,0.1), rgba(255,215,0,0.08));
+            border-left: 4px solid #ff8c00;
+            padding: 12px 14px;
+            border-radius: 10px;
+            font-family: var(--font-display);
+            font-size: 15px;
+            text-align: center;
+            margin: 8px 0;
+            line-height: 1.8;
+            color: var(--maroon);
+            font-weight: 600;
+        }
+        .mantra-box small {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 11px;
+            color: var(--ink-soft);
+            font-weight: 400;
+            margin-top: 4px;
+        }
+
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 6px;
+        }
+        .benefit-list li {
+            padding: 5px 0 5px 22px;
+            font-size: 12.5px;
+            line-height: 1.6;
+            color: var(--ink-soft);
+            position: relative;
+        }
+        .benefit-list li::before {
+            content: '🌅';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            font-size: 12px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255,140,0,0.1), rgba(255,215,0,0.08));
+            border-left: 4px solid #ff8c00;
+            padding: 12px 14px;
+            border-radius: 10px;
+            margin: 8px 0;
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+        }
+        .highlight-box strong { color: var(--maroon); }
+
+        .steps-list {
+            list-style: none;
+            padding: 0;
+            counter-reset: step-counter;
+            margin: 8px 0;
+        }
+        .steps-list li {
+            counter-increment: step-counter;
+            padding: 8px 10px 8px 40px;
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+            border-bottom: 1px dashed var(--border);
+            position: relative;
+        }
+        .steps-list li:last-child { border-bottom: none; }
+        .steps-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff8c00, #c0392b);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        /* 4 Days Grid */
+        .day-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 12px;
+        }
+        .day-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--border);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .day-card:hover {
+            border-color: var(--gold);
+            box-shadow: var(--shadow-hover);
+        }
+        .day-card.open { border-color: var(--maroon); }
+        .day-card.main-day {
+            border: 2px solid #ff8c00;
+            background: linear-gradient(135deg, #fff8e7, #fffbf0);
+        }
+        .day-card.main-day.open { border-color: var(--maroon); }
+        .day-header {
+            padding: 16px 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: var(--transition);
+        }
+        .day-header:hover { background: var(--bg); }
+        .day-card.open .day-header {
+            background: linear-gradient(135deg, rgba(255,140,0,0.12), rgba(192,57,43,0.08));
+            border-bottom: 1px solid var(--border);
+        }
+        .day-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff8c00, #c0392b);
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(255,140,0,0.3);
+        }
+        .day-badge .day-num {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1;
+        }
+        .day-badge .day-text {
+            font-size: 8px;
+            opacity: 0.9;
+            margin-top: 2px;
+            letter-spacing: 0.5px;
+        }
+        .day-info { flex: 1; }
+        .day-name {
+            font-family: var(--font-display);
+            font-size: 17px;
+            color: var(--maroon);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .day-name .main-tag {
+            display: inline-block;
+            background: #ff8c00;
+            color: white;
+            font-size: 9px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-family: var(--font-body);
+            font-weight: 700;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+        .day-sub {
+            font-size: 11px;
+            color: var(--ink-soft);
+            margin-top: 3px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .day-sub span {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+        .day-sub i { color: var(--gold); font-size: 10px; }
+        .day-arrow {
+            color: var(--gold);
+            font-size: 18px;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+        .day-card.open .day-arrow { transform: rotate(180deg); }
+
+        .day-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        .day-card.open .day-body { max-height: 5000px; }
+        .day-body-inner { padding: 18px; }
+
+        .day-section { margin-bottom: 14px; }
+        .day-section:last-child { margin-bottom: 0; }
+        .day-section-title {
+            font-family: var(--font-display);
+            font-size: 14px;
+            color: var(--maroon);
+            font-weight: 700;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .day-section-title .ri { font-size: 16px; }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 6px;
+        }
+        .info-item {
+            background: var(--bg);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+        }
+        .info-item .lbl {
+            font-size: 9px;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-item .val {
+            font-weight: 600;
+            color: var(--maroon);
+            margin-top: 2px;
+            font-size: 12.5px;
+        }
+
+        .day-body p {
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+        }
+        .day-body p strong { color: var(--maroon); }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg);
+            color: var(--maroon);
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+        .back-btn:hover { background: var(--maroon); color: white; }
+
+        .back-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--maroon);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 16px rgba(122,46,46,0.4);
+            z-index: 90;
+        }
+        .back-top.show { display: flex; }
+
+        .do-dont-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .do-box, .dont-box {
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+        .do-box {
+            background: #eef7ee;
+            border-left: 3px solid #27ae60;
+        }
+        .do-box h4 { color: #27ae60; font-size: 12px; margin-bottom: 6px; }
+        .dont-box {
+            background: #fdecea;
+            border-left: 3px solid #dc3545;
+        }
+        .dont-box h4 { color: #dc3545; font-size: 12px; margin-bottom: 6px; }
+        .do-box ul, .dont-box ul { list-style: none; padding: 0; }
+        .do-box ul li, .dont-box ul li {
+            padding: 2px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 5px;
+        }
+        .do-box ul li::before { content: '✅'; flex-shrink: 0; font-size: 11px; }
+        .dont-box ul li::before { content: '❌'; flex-shrink: 0; font-size: 11px; }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .related-link {
+            padding: 12px;
+            background: var(--bg);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--maroon);
+            font-weight: 600;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .related-link:hover {
+            background: var(--card-bg);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 420px) {
+            .festival-hero .hero-icon { font-size: 60px; }
+            .festival-hero .hero-name { font-size: 26px; }
+            .festival-section h2 { font-size: 17px; }
+            .day-name { font-size: 15px; }
+            .day-badge { width: 48px; height: 48px; }
+            .day-badge .day-num { font-size: 17px; }
+            .do-dont-grid { grid-template-columns: 1fr; }
+            .info-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ त्योहार</span>
+            <h1>छठ पूजा</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <a href="index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i> सभी त्योहार
+        </a>
+
+        <!-- Hero -->
+        <div class="festival-hero">
+            <span class="hero-icon">🌅</span>
+            <div class="hero-name">छठ पूजा</div>
+            <div class="hero-subtitle">सूर्य देव और छठी मैया की पूजा · 4 दिन का महापर्व</div>
+            <div class="hero-date">📅 कार्तिक शुक्ल षष्ठी · अक्टूबर-नवंबर</div>
+        </div>
+
+        <!-- 1. परिचय -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">📖</span> छठ पूजा क्या है?</h2>
+            <p>
+                <strong>छठ पूजा</strong> (छठ पर्व / डाला छठ) हिंदू धर्म का सबसे कठिन और सबसे पवित्र पर्व है — जो <strong>सूर्य देव</strong> और <strong>छठी मैया</strong> को समर्पित है। यह मुख्यतः <strong>बिहार, झारखंड, पूर्वी उत्तर प्रदेश, और नेपाल</strong> में मनाया जाता है।
+            </p>
+            <p>
+                छठ पूजा <strong>कार्तिक शुक्ल षष्ठी</strong> को मनाई जाती है और <strong>4 दिनों</strong> तक चलती है। इसका सबसे बड़ा महत्व यह है कि इसमें <strong>डूबते सूर्य</strong> और <strong>उगते सूर्य</strong> — दोनों को अर्घ्य दिया जाता है।
+            </p>
+            <div class="highlight-box">
+                <strong>🌅 मुख्य बात:</strong> छठ पूजा में <strong>36 घंटे का निर्जला व्रत</strong> रखा जाता है — जो सबसे कठिन व्रतों में से एक है। यह <strong>संतान, आरोग्य, और समृद्धि</strong> के लिए किया जाता है।
+            </div>
+        </div>
+
+        <!-- 2. कथाएँ -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">📜</span> छठ पूजा की कथाएँ</h2>
+
+            <h3>👑 1. राजा प्रियव्रत की कथा</h3>
+            <p>
+                <strong>सबसे प्रसिद्ध कथा:</strong> राजा <strong>प्रियव्रत</strong> को संतान नहीं थी। महर्षि कश्यप ने पुत्रेष्टि यज्ञ कराया। लेकिन राजा को पुत्र मृत पैदा हुआ। राजा पुत्र की चिता पर बैठकर विलाप कर रहे थे, तभी <strong>देवी षष्ठी</strong> (छठी मैया) प्रकट हुईं।
+            </p>
+            <p>
+                उन्होंने राजा से कहा — "मैं ब्रह्मा जी की मानस पुत्री हूँ और पालनकर्त्री हूँ। जो मेरी पूजा करेगा, उसे संतान और सुख मिलेगा।" राजा प्रियव्रत ने देवी षष्ठी की पूजा की और उन्हें पुत्र प्राप्त हुआ।
+            </p>
+
+            <h3>🏹 2. राम जी की कथा</h3>
+            <p>
+                कथा के अनुसार, जब राम जी लंका से अयोध्या लौटे, तो उन्होंने कार्तिक शुक्ल षष्ठी को <strong>सूर्य देव की पूजा</strong> की और <strong>उपवास</strong> रखा। यह परंपरा छठ पूजा के रूप में जारी है।
+            </p>
+
+            <h3>🌾 3. द्रौपदी की कथा</h3>
+            <p>
+                कथा के अनुसार, <strong>द्रौपदी</strong> ने भी सूर्य देव की पूजा की थी। महाभारत युद्ध के बाद उन्होंने <strong>कार्तिक मास में सूर्य षष्ठी व्रत</strong> रखा और पांडवों को खोया राज्य वापस मिला।
+            </p>
+
+            <h3>🌞 4. कर्ण की कथा</h3>
+            <p>
+                कथा के अनुसार, <strong>कर्ण</strong> सूर्य देव के पुत्र थे। वे प्रतिदिन सूर्य को जल अर्पित करते थे और रोज़ किसी ज़रूरतमंद को दान देते थे। यह <strong>सूर्य उपासना</strong> का प्रतीक है।
+            </p>
+
+            <h3>🦌 5. शंबूक और पुत्र की कथा</h3>
+            <p>
+                कथा के अनुसार, एक निःसंतान ब्राह्मण दंपत्ति ने छठी मैया की पूजा की और उन्हें पुत्र प्राप्त हुआ। यह <strong>संतान प्राप्ति</strong> का आशीर्वाद है।
+            </p>
+        </div>
+
+        <!-- 3. 4 दिन की विधि -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🌅</span> छठ पूजा के 4 दिन — विस्तृत जानकारी</h2>
+            <p style="font-size:13px; color: var(--ink-soft);">
+                कार्ड पर <strong>click करें</strong> और हर दिन की पूरी विधि पढ़ें।
+            </p>
+
+            <div class="day-grid" id="dayGrid"></div>
+        </div>
+
+        <!-- 4. अर्घ्य देने की विधि -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🙏</span> अर्घ्य देने की विधि</h2>
+            <p>छठ पूजा में <strong>डूबते सूर्य</strong> (संध्या अर्घ्य) और <strong>उगते सूर्य</strong> (उषा अर्घ्य) — दोनों को अर्घ्य दिया जाता है।</p>
+            <ol class="steps-list">
+                <li><strong>स्थान:</strong> नदी, तालाब, या पोखर के किनारे जाएँ।</li>
+                <li><strong>स्नान:</strong> जल में खड़े होकर स्नान करें।</li>
+                <li><strong>डाला:</strong> बाँस के डाला (टोकरी) में प्रसाद रखें।</li>
+                <li><strong>सूप:</strong> सूप में ठेकुआ, कसार, गन्ना, केला, नारियल रखें।</li>
+                <li><strong>दीपक:</strong> सूप में दीपक जलाएँ।</li>
+                <li><strong>सूर्य दर्शन:</strong> सूर्य की ओर मुख करके खड़े हों।</li>
+                <li><strong>जल अर्पण:</strong> ताम्र पात्र से जल अर्पित करें।</li>
+                <li><strong>दूध अर्पण:</strong> दूध से अर्घ्य दें।</li>
+                <li><strong>प्रसाद अर्पण:</strong> ठेकुआ, कसार, गन्ना, और फल अर्पित करें।</li>
+                <li><strong>प्रदक्षिणा:</strong> सूर्य की 3 या 7 परिक्रमा करें।</li>
+                <li><strong>प्रार्थना:</strong> संतान, आरोग्य, और समृद्धि की प्रार्थना करें।</li>
+                <li><strong>दीपदान:</strong> जल में दीपक प्रवाहित करें।</li>
+            </ol>
+
+            <h3>📿 मुख्य मंत्र</h3>
+            <div class="mantra-box">
+                ॐ सूर्याय नमः
+                <small>सूर्य देव का मूल मंत्र</small>
+            </div>
+            <div class="mantra-box">
+                ॐ षष्ठ्यै नमः
+                <small>छठी मैया का मंत्र — संतान और आरोग्य के लिए</small>
+            </div>
+        </div>
+
+        <!-- 5. सामग्री -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🛒</span> छठ पूजा सामग्री</h2>
+            <ul style="list-style: none; padding: 0; font-size: 13.5px; line-height: 2;">
+                <li>✅ बाँस का डाला (टोकरी)</li>
+                <li>✅ सूप (बाँस का)</li>
+                <li>✅ ठेकुआ (गुड़ और आटे का)</li>
+                <li>✅ कसार (चावल के आटे का लड्डू)</li>
+                <li>✅ गन्ना</li>
+                <li>✅ नारियल</li>
+                <li>✅ केला (कच्चा और पका)</li>
+                <li>✅ संतरा, सेब, और अन्य फल</li>
+                <li>✅ अदरक और हल्दी</li>
+                <li>✅ दीपक (मिट्टी के)</li>
+                <li>✅ ताम्र पात्र (अर्घ्य के लिए)</li>
+                <li>✅ दूध और जल</li>
+                <li>✅ सिंदूर, कुमकुम</li>
+                <li>✅ लाल वस्त्र</li>
+                <li>✅ पीला वस्त्र</li>
+                <li>✅ बाँस की टोकरी (पूजा के लिए)</li>
+            </ul>
+        </div>
+
+        <!-- 6. क्या करें / क्या न करें -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">✅</span> क्या करें और क्या न करें</h2>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <h4>✅ क्या करें</h4>
+                    <ul>
+                        <li>36 घंटे निर्जला व्रत रखें</li>
+                        <li>डूबते और उगते सूर्य को अर्घ्य दें</li>
+                        <li>ठेकुआ और कसार बनाएँ</li>
+                        <li>नदी/तालाब के किनारे पूजा करें</li>
+                        <li>दीपदान करें</li>
+                        <li>प्रसाद बाँटें</li>
+                        <li>सफाई रखें</li>
+                        <li>बड़ों का आशीर्वाद लें</li>
+                    </ul>
+                </div>
+                <div class="dont-box">
+                    <h4>❌ क्या न करें</h4>
+                    <ul>
+                        <li>अशुद्ध न रहें</li>
+                        <li>तामसिक भोजन न करें</li>
+                        <li>क्रोध न करें</li>
+                        <li>झूठ न बोलें</li>
+                        <li>पानी न पिएँ (व्रत में)</li>
+                        <li>नदी में कचरा न फेंकें</li>
+                        <li>शराब/मांस न लें</li>
+                        <li>कलह न करें</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. व्रत के नियम -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🛕</span> छठ पूजा व्रत के नियम</h2>
+            <ul class="benefit-list">
+                <li><strong>36 घंटे निर्जला व्रत:</strong> खरना के बाद से उषा अर्घ्य तक</li>
+                <li><strong>निर्जला:</strong> पानी भी नहीं पीना</li>
+                <li><strong>खरना:</strong> खरना के बाद 36 घंटे का व्रत शुरू</li>
+                <li><strong>स्नान:</strong> नदी/तालाब में स्नान करें</li>
+                <li><strong>अर्घ्य:</strong> डूबते और उगते सूर्य को अर्घ्य दें</li>
+                <li><strong>प्रसाद:</strong> ठेकुआ, कसार, और फल का प्रसाद</li>
+                <li><strong>व्रत तोड़ें:</strong> उषा अर्घ्य के बाद प्रसाद ग्रहण करके</li>
+                <li><strong>मन का संयम:</strong> क्रोध, झूठ, और कलह से दूर रहें</li>
+            </ul>
+            <div class="highlight-box">
+                <strong>💡 ध्यान:</strong> छठ पूजा का व्रत <strong>सबसे कठिन व्रत</strong> माना जाता है — क्योंकि इसमें <strong>36 घंटे निर्जला</strong> रहना होता है। यह <strong>संतान, आरोग्य, और समृद्धि</strong> के लिए किया जाता है।
+            </div>
+        </div>
+
+        <!-- 8. प्रसाद -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🍯</span> छठ पूजा का प्रसाद</h2>
+            <div class="highlight-box">
+                <strong>छठ पूजा के पारंपरिक प्रसाद:</strong>
+            </div>
+            <ul style="list-style: none; padding: 0; font-size: 13.5px; line-height: 2;">
+                <li>🍡 <strong>ठेकुआ</strong> — गुड़ और आटे का</li>
+                <li>🍮 <strong>कसार</strong> — चावल के आटे का लड्डू</li>
+                <li>🌾 <strong>गन्ना</strong> — शुभ फल</li>
+                <li>🥥 <strong>नारियल</strong> — पूजा का प्रमुख प्रसाद</li>
+                <li>🍌 <strong>केला</strong> — कच्चा और पका</li>
+                <li>🍊 <strong>संतरा, सेब, अन्य फल</strong></li>
+                <li>🫚 <strong>अदरक और हल्दी</strong></li>
+                <li>🍬 <strong>गुड़ और मिश्री</strong></li>
+            </ul>
+        </div>
+
+        <!-- 9. Related Links -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🔗</span> संबंधित लिंक</h2>
+            <div class="related-grid">
+                <a href="../devta/surya.html" class="related-link">🌞 सूर्य देव</a>
+                <a href="../stotra/aditya-hridayam.html" class="related-link">📜 आदित्य हृदय स्तोत्र</a>
+                <a href="../stotra/surya-aarti.html" class="related-link">🪔 सूर्य आरती</a>
+                <a href="../mantra/index.html" class="related-link">📿 सूर्य मंत्र</a>
+                <a href="../katha/chhath-katha.html" class="related-link">📖 छठ कथा</a>
+                <a href="index.html" class="related-link">🎉 अन्य त्योहार</a>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय सूर्य देव</p>
+        </footer>
+
+    </main>
+
+    <button class="back-top" id="backTop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="../devta/index.html" class="nav-link"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-calendar-days"></i><p>त्योहार</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>पंचांग</p></a>
+    </nav>
+
+    <script>
+        // ============================================================
+        //  CHHATH PUJA — 4 Days Deep Detail
+        // ============================================================
+
+        const chhathDays = [
+            {
+                day: 1,
+                name: 'नहाय-खाय',
+                en: 'Nahay-Khay',
+                meaning: 'स्नान और भोजन',
+                date: 'कार्तिक शुक्ल चतुर्थी',
+                isMain: false,
+                katha: 'यह छठ पूजा का पहला दिन है। इस दिन व्रती <strong>स्नान करके शुद्ध भोजन</strong> ग्रहण करते हैं। यह भोजन <strong>कद्दू, चने की दाल, और चावल</strong> से बनाया जाता है।',
+                vidhi: [
+                    'प्रातः स्नान करें (नदी/तालाब में)',
+                    'घर की सफाई करें',
+                    'कद्दू, चने की दाल, और चावल बनाएँ',
+                    'शुद्ध घी में बना भोजन करें',
+                    'अगले दिन के व्रत की तैयारी करें',
+                    'पूरे परिवार के साथ भोजन करें'
+                ],
+                prasad: 'कद्दू, चने की दाल, चावल',
+                dos: [
+                    'स्नान करें',
+                    'शुद्ध भोजन बनाएँ',
+                    'पूजा की तैयारी करें',
+                    'सफाई रखें'
+                ],
+                donts: [
+                    'तामसिक भोजन न करें',
+                    'प्याज-लहसुन न खाएँ',
+                    'क्रोध न करें',
+                    'अशुद्ध न रहें'
+                ],
+                benefits: [
+                    'शरीर शुद्धि',
+                    'पूजा की तैयारी',
+                    'मन की शांति',
+                    'संकल्प शक्ति'
+                ],
+                significance: 'यह दिन छठ पूजा की शुरुआत है — जिसमें व्रती शुद्ध भोजन ग्रहण करके व्रत की तैयारी करते हैं।'
+            },
+            {
+                day: 2,
+                name: 'खरना',
+                en: 'Kharna',
+                meaning: 'व्रत की शुरुआत',
+                date: 'कार्तिक शुक्ल पंचमी',
+                isMain: true,
+                katha: 'यह छठ पूजा का दूसरा दिन है — जिसमें <strong>36 घंटे का निर्जला व्रत</strong> शुरू होता है। इस दिन व्रती <strong>गुड़ की खीर</strong> बनाते हैं और शाम को भोजन करते हैं। इसके बाद 36 घंटे तक <strong>कुछ नहीं खाते</strong>।',
+                vidhi: [
+                    'प्रातः स्नान करें',
+                    'घर की सफाई करें',
+                    'गुड़ की खीर बनाएँ',
+                    'रोटी और केला तैयार करें',
+                    'संध्या काल में भोजन करें',
+                    'भोजन के बाद 36 घंटे का व्रत शुरू',
+                    'जल ग्रहण न करें'
+                ],
+                prasad: 'गुड़ की खीर, रोटी, केला',
+                dos: [
+                    'गुड़ की खीर बनाएँ',
+                    'संध्या काल में भोजन करें',
+                    '36 घंटे का व्रत रखें',
+                    'पूजा की तैयारी करें'
+                ],
+                donts: [
+                    'व्रत के बाद कुछ न खाएँ',
+                    'पानी न पिएँ',
+                    'क्रोध न करें',
+                    'अशुद्ध न रहें'
+                ],
+                benefits: [
+                    'संतान प्राप्ति',
+                    'आरोग्य',
+                    'मन की शक्ति',
+                    'व्रत की सफलता'
+                ],
+                significance: 'खरना के बाद 36 घंटे का निर्जला व्रत शुरू होता है — जो छठ पूजा का सबसे कठिन हिस्सा है।'
+            },
+            {
+                day: 3,
+                name: 'संध्या अर्घ्य',
+                en: 'Sandhya Arghya',
+                meaning: 'डूबते सूर्य को अर्घ्य',
+                date: 'कार्तिक शुक्ल षष्ठी',
+                isMain: true,
+                katha: 'यह छठ पूजा का तीसरा और <strong>मुख्य दिन</strong> है। इस दिन व्रती <strong>डूबते सूर्य</strong> को अर्घ्य देते हैं। यह दिन <strong>छठी मैया की पूजा</strong> का दिन है।',
+                vidhi: [
+                    'प्रातः स्नान करें',
+                    'डाला (टोकरी) सजाएँ',
+                    'सूप में ठेकुआ, कसार, गन्ना रखें',
+                    'नदी/तालाब के किनारे जाएँ',
+                    'जल में खड़े होकर स्नान करें',
+                    'सूर्य की ओर मुख करके खड़े हों',
+                    'ताम्र पात्र से जल अर्पित करें',
+                    'दूध से अर्घ्य दें',
+                    'प्रसाद अर्पित करें',
+                    'सूर्य की 7 परिक्रमा करें',
+                    'जल में दीपक प्रवाहित करें'
+                ],
+                prasad: 'ठेकुआ, कसार, गन्ना, नारियल, केला',
+                dos: [
+                    'डाला और सूप सजाएँ',
+                    'डूबते सूर्य को अर्घ्य दें',
+                    'छठी मैया की पूजा करें',
+                    'दीपदान करें',
+                    'प्रसाद बाँटें'
+                ],
+                donts: [
+                    'अशुद्ध न रहें',
+                    'नदी में कचरा न फेंकें',
+                    'क्रोध न करें',
+                    'जल का अपमान न करें'
+                ],
+                benefits: [
+                    'संतान प्राप्ति',
+                    'आरोग्य',
+                    'समृद्धि',
+                    'सूर्य कृपा',
+                    'छठी मैया का आशीर्वाद'
+                ],
+                significance: 'संध्या अर्घ्य छठ पूजा का <strong>मुख्य दिन</strong> है — जब डूबते सूर्य को अर्घ्य दिया जाता है।'
+            },
+            {
+                day: 4,
+                name: 'उषा अर्घ्य',
+                en: 'Usha Arghya',
+                meaning: 'उगते सूर्य को अर्घ्य',
+                date: 'कार्तिक शुक्ल सप्तमी',
+                isMain: true,
+                katha: 'यह छठ पूजा का चौथा और <strong>अंतिम दिन</strong> है। इस दिन व्रती <strong>उगते सूर्य</strong> को अर्घ्य देते हैं। इसके बाद <strong>36 घंटे का व्रत तोड़ा जाता है</strong>।',
+                vidhi: [
+                    'प्रातः 4 बजे उठें',
+                    'नदी/तालाब के किनारे जाएँ',
+                    'जल में खड़े होकर स्नान करें',
+                    'उगते सूर्य को अर्घ्य दें',
+                    'ताम्र पात्र से जल अर्पित करें',
+                    'दूध और प्रसाद अर्पित करें',
+                    'सूर्य की 7 परिक्रमा करें',
+                    'दीपदान करें',
+                    'प्रसाद ग्रहण करके व्रत तोड़ें',
+                    'घर जाकर प्रसाद बाँटें'
+                ],
+                prasad: 'ठेकुआ, कसार, गन्ना, नारियल, केला',
+                dos: [
+                    'उगते सूर्य को अर्घ्य दें',
+                    'व्रत तोड़ें',
+                    'प्रसाद बाँटें',
+                    'आशीर्वाद लें'
+                ],
+                donts: [
+                    'व्रत तोड़ने से पहले कुछ न खाएँ',
+                    'अशुद्ध न रहें',
+                    'क्रोध न करें',
+                    'जल का अपमान न करें'
+                ],
+                benefits: [
+                    'व्रत की सफलता',
+                    'संतान',
+                    'आरोग्य',
+                    'समृद्धि',
+                    'मोक्ष'
+                ],
+                significance: 'उषा अर्घ्य छठ पूजा का <strong>अंतिम दिन</strong> है — जिसमें उगते सूर्य को अर्घ्य देकर 36 घंटे का व्रत तोड़ा जाता है।'
+            }
+        ];
+
+        function renderDays() {
+            const grid = document.getElementById('dayGrid');
+            grid.innerHTML = chhathDays.map(d => `
+                <div class="day-card ${d.isMain ? 'main-day' : ''}" id="day-${d.day}">
+                    <div class="day-header" onclick="toggleDay(${d.day})">
+                        <div class="day-badge">
+                            <span class="day-num">${d.day}</span>
+                            <span class="day-text">दिन</span>
+                        </div>
+                        <div class="day-info">
+                            <div class="day-name">
+                                ${d.name}
+                                ${d.isMain ? '<span class="main-tag">⭐ मुख्य दिन</span>' : ''}
+                            </div>
+                            <div class="day-sub">
+                                <span><i class="fa-solid fa-om"></i> ${d.en}</span>
+                                <span><i class="fa-solid fa-calendar"></i> ${d.date}</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-down day-arrow"></i>
+                    </div>
+                    <div class="day-body">
+                        <div class="day-body-inner">
+
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <div class="lbl">अर्थ</div>
+                                    <div class="val" style="font-size:11px;">${d.meaning}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="lbl">तिथि</div>
+                                    <div class="val">${d.date}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="lbl">प्रसाद</div>
+                                    <div class="val" style="font-size:11px;">${d.prasad}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="lbl">दिन</div>
+                                    <div class="val">${d.isMain ? 'मुख्य दिन' : 'तैयारी'}</div>
+                                </div>
+                            </div>
+
+                            <div class="day-section">
+                                <div class="day-section-title"><span class="ri">📜</span> महत्व</div>
+                                <p>${d.katha}</p>
+                            </div>
+
+                            <div class="day-section">
+                                <div class="day-section-title"><span class="ri">🙏</span> विधि</div>
+                                <ol class="steps-list">
+                                    ${d.vidhi.map(v => `<li>${v}</li>`).join('')}
+                                </ol>
+                            </div>
+
+                            <div class="day-section">
+                                <div class="day-section-title"><span class="ri">✅</span> क्या करें और क्या न करें</div>
+                                <div class="do-dont-grid">
+                                    <div class="do-box">
+                                        <h4>✅ क्या करें</h4>
+                                        <ul>${d.dos.map(x => `<li>${x}</li>`).join('')}</ul>
+                                    </div>
+                                    <div class="dont-box">
+                                        <h4>❌ क्या न करें</h4>
+                                        <ul>${d.donts.map(x => `<li>${x}</li>`).join('')}</ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="day-section">
+                                <div class="day-section-title"><span class="ri">✨</span> लाभ</div>
+                                <ul class="benefit-list">
+                                    ${d.benefits.map(b => `<li>${b}</li>`).join('')}
+                                </ul>
+                            </div>
+
+                            <div class="day-section">
+                                <div class="day-section-title"><span class="ri">🌟</span> महत्व</div>
+                                <div class="highlight-box">${d.significance}</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleDay(day) {
+            const card = document.getElementById(`day-${day}`);
+            card.classList.toggle('open');
+            if (card.classList.contains('open')) {
+                setTimeout(() => {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 300);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderDays();
+        });
+
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backTop');
+            if (btn) {
+                if (window.scrollY > 400) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        const darkToggle = document.getElementById('darkToggle');
+        if (darkToggle) {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+                darkToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            }
+            darkToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                const icon = this.querySelector('i');
+                const isDark = document.body.classList.contains('dark-mode');
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+                localStorage.setItem('darkMode', isDark);
+            });
+        }
+    </script>
+</body>
+</html>
