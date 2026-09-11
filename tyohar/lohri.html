@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>लोहड़ी — संपूर्ण जानकारी | Sanatan Gyan Kosh</title>
+    <meta name="description" content="लोहड़ी का संपूर्ण ज्ञान — अग्नि पूजा, मकर संक्रांति से संबंध, तिल-मूंगफली-रेवड़ी, भांगड़ा-गिद्दा, कथा, पूजा विधि, और हर छोटी से छोटी बात।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .festival-hero {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, rgba(255,87,34,0.22), rgba(255,193,7,0.18), rgba(200,50,50,0.15));
+            border-radius: var(--radius);
+            margin-bottom: 16px;
+            border: 2px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+        .festival-hero::before {
+            content: '🔥';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            font-size: 140px;
+            opacity: 0.08;
+        }
+        .festival-hero .hero-icon {
+            font-size: 80px;
+            display: block;
+            line-height: 1;
+            animation: fireDance 2s ease-in-out infinite;
+        }
+        @keyframes fireDance {
+            0%, 100% { transform: scale(1) rotate(-3deg); filter: drop-shadow(0 0 15px rgba(255,87,34,0.8)); }
+            50% { transform: scale(1.1) rotate(3deg); filter: drop-shadow(0 0 35px rgba(255,193,7,1)); }
+        }
+        .festival-hero .hero-name {
+            font-family: var(--font-display);
+            font-size: 34px;
+            color: var(--maroon);
+            margin-top: 8px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #c0392b, #ff5722, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .festival-hero .hero-subtitle {
+            font-size: 14px;
+            color: var(--ink-soft);
+            margin-top: 6px;
+            letter-spacing: 1px;
+        }
+        .festival-hero .hero-date {
+            display: inline-block;
+            background: var(--maroon);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        .festival-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 20px 18px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .festival-section h2 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--maroon);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+        }
+        .festival-section h2 .sec-icon { font-size: 26px; }
+        .festival-section h3 {
+            font-family: var(--font-display);
+            font-size: 16px;
+            color: var(--maroon);
+            margin: 16px 0 8px;
+        }
+        .festival-section p {
+            font-size: 14px;
+            line-height: 1.9;
+            color: var(--ink-soft);
+            margin-bottom: 10px;
+        }
+        .festival-section p strong { color: var(--maroon); }
+
+        .mantra-box {
+            background: linear-gradient(135deg, rgba(255,87,34,0.12), rgba(255,193,7,0.08));
+            border-left: 4px solid #ff5722;
+            padding: 12px 14px;
+            border-radius: 10px;
+            font-family: var(--font-display);
+            font-size: 15px;
+            text-align: center;
+            margin: 8px 0;
+            line-height: 1.8;
+            color: var(--maroon);
+            font-weight: 600;
+        }
+        .mantra-box small {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 11px;
+            color: var(--ink-soft);
+            font-weight: 400;
+            margin-top: 4px;
+        }
+
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 6px;
+        }
+        .benefit-list li {
+            padding: 5px 0 5px 22px;
+            font-size: 12.5px;
+            line-height: 1.6;
+            color: var(--ink-soft);
+            position: relative;
+        }
+        .benefit-list li::before {
+            content: '🔥';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            font-size: 12px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255,87,34,0.12), rgba(255,193,7,0.08));
+            border-left: 4px solid #ff5722;
+            padding: 12px 14px;
+            border-radius: 10px;
+            margin: 8px 0;
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+        }
+        .highlight-box strong { color: var(--maroon); }
+
+        .steps-list {
+            list-style: none;
+            padding: 0;
+            counter-reset: step-counter;
+            margin: 8px 0;
+        }
+        .steps-list li {
+            counter-increment: step-counter;
+            padding: 8px 10px 8px 40px;
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+            border-bottom: 1px dashed var(--border);
+            position: relative;
+        }
+        .steps-list li:last-child { border-bottom: none; }
+        .steps-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff5722, #c0392b);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin-top: 12px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #ffd700, #ff5722, #c0392b);
+            border-radius: 3px;
+        }
+        .timeline-item {
+            position: relative;
+            padding-bottom: 18px;
+        }
+        .timeline-item:last-child { padding-bottom: 0; }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 3px;
+            width: 19px;
+            height: 19px;
+            border-radius: 50%;
+            background: #ff5722;
+            border: 4px solid var(--card-bg);
+            box-shadow: 0 0 0 2px #ff5722;
+        }
+        .timeline-item .t-time {
+            font-size: 10px;
+            background: var(--maroon);
+            color: white;
+            padding: 2px 10px;
+            border-radius: 10px;
+            display: inline-block;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .timeline-item .t-title {
+            font-family: var(--font-display);
+            font-size: 15px;
+            color: var(--maroon);
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+        .timeline-item .t-desc {
+            font-size: 12.5px;
+            line-height: 1.7;
+            color: var(--ink-soft);
+        }
+        .timeline-item .t-desc strong { color: var(--maroon); }
+
+        /* Prasad Grid */
+        .prasad-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .prasad-item {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            border-radius: 12px;
+            padding: 14px 12px;
+            text-align: center;
+            border: 2px solid #ff5722;
+            transition: var(--transition);
+        }
+        .prasad-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255,87,34,0.3);
+        }
+        .prasad-item .p-icon {
+            font-size: 32px;
+            display: block;
+            line-height: 1;
+        }
+        .prasad-item .p-name {
+            font-family: var(--font-display);
+            font-size: 14px;
+            color: var(--maroon);
+            font-weight: 700;
+            margin-top: 6px;
+        }
+        .prasad-item .p-desc {
+            font-size: 11px;
+            color: var(--ink-soft);
+            margin-top: 2px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg);
+            color: var(--maroon);
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+        .back-btn:hover { background: var(--maroon); color: white; }
+
+        .back-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--maroon);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 16px rgba(122,46,46,0.4);
+            z-index: 90;
+        }
+        .back-top.show { display: flex; }
+
+        .do-dont-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .do-box, .dont-box {
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+        .do-box {
+            background: #eef7ee;
+            border-left: 3px solid #27ae60;
+        }
+        .do-box h4 { color: #27ae60; font-size: 12px; margin-bottom: 6px; }
+        .dont-box {
+            background: #fdecea;
+            border-left: 3px solid #dc3545;
+        }
+        .dont-box h4 { color: #dc3545; font-size: 12px; margin-bottom: 6px; }
+        .do-box ul, .dont-box ul { list-style: none; padding: 0; }
+        .do-box ul li, .dont-box ul li {
+            padding: 2px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 5px;
+        }
+        .do-box ul li::before { content: '✅'; flex-shrink: 0; font-size: 11px; }
+        .dont-box ul li::before { content: '❌'; flex-shrink: 0; font-size: 11px; }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .related-link {
+            padding: 12px;
+            background: var(--bg);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--maroon);
+            font-weight: 600;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .related-link:hover {
+            background: var(--card-bg);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 420px) {
+            .festival-hero .hero-icon { font-size: 60px; }
+            .festival-hero .hero-name { font-size: 26px; }
+            .festival-section h2 { font-size: 17px; }
+            .do-dont-grid { grid-template-columns: 1fr; }
+            .prasad-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ त्योहार</span>
+            <h1>लोहड़ी</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <a href="index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i> सभी त्योहार
+        </a>
+
+        <!-- Hero -->
+        <div class="festival-hero">
+            <span class="hero-icon">🔥</span>
+            <div class="hero-name">लोहड़ी</div>
+            <div class="hero-subtitle">पंजाब का फसल उत्सव · अग्नि और खुशी का पर्व</div>
+            <div class="hero-date">📅 13 जनवरी · पौष मास</div>
+        </div>
+
+        <!-- 1. परिचय -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">📖</span> लोहड़ी क्या है?</h2>
+            <p>
+                <strong>लोहड़ी</strong> पंजाब, हरियाणा, और उत्तर भारत का सबसे बड़ा <strong>फसल उत्सव</strong> है — जो <strong>13 जनवरी</strong> को मनाया जाता है। यह <strong>मकर संक्रांति से एक दिन पहले</strong> आता है।
+            </p>
+            <p>
+                लोहड़ी <strong>अग्नि देव</strong> को समर्पित है — जिसमें लोग <strong>अग्नि जलाकर</strong> तिल, गुड़, रेवड़ी, और मूंगफली चढ़ाते हैं। यह <strong>नई फसल की खुशी</strong> और <strong>सूर्य के उत्तरायण होने</strong> का प्रतीक है।
+            </p>
+            <div class="highlight-box">
+                <strong>🔥 मुख्य बात:</strong> लोहड़ी <strong>संतान प्राप्ति</strong> और <strong>नवविवाहित जोड़ों</strong> के लिए विशेष महत्व रखती है। यह <strong>परिवार के मिलन</strong> और <strong>खुशहाली</strong> का पर्व है।
+            </div>
+        </div>
+
+        <!-- 2. कथाएँ -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">📜</span> लोहड़ी की कथाएँ</h2>
+
+            <h3>👧 1. लोहड़ी की कथा</h3>
+            <p>
+                <strong>सबसे प्रसिद्ध कथा:</strong> कथा के अनुसार, <strong>लोहड़ी</strong> नामक एक स्त्री थी — जो अत्यंत <strong>सुंदर और धर्मात्मा</strong> थी। उसने <strong>सूर्य देव</strong> की घोर तपस्या की और उसे <strong>पुत्र प्राप्ति</strong> का वरदान मिला। उसके पुत्र का नाम <strong>राजा लोहड़ी</strong> रखा गया।
+            </p>
+            <p>
+                लोहड़ी की मृत्यु के बाद, उसके पुत्र ने <strong>अग्नि में अपनी माँ की आत्मा की शांति</strong> के लिए आहुति दी। तब से लोहड़ी पर <strong>अग्नि पूजा</strong> की परंपरा शुरू हुई।
+            </p>
+
+            <h3>👑 2. राजा पुरू और सरस्वती</h3>
+            <p>
+                कथा के अनुसार, <strong>राजा पुरू</strong> की पत्नी <strong>सरस्वती</strong> ने पहली बार लोहड़ी मनाई थी। उसने अपने पुत्र की रक्षा के लिए अग्नि देव की पूजा की।
+            </p>
+
+            <h3>❤️ 3. दुल्ला भट्टी की कथा</h3>
+            <p>
+                <strong>सबसे लोकप्रिय कथा:</strong> <strong>दुल्ला भट्टी</strong> मुगल काल का एक नायक था — जो <strong>गरीब कन्याओं की शादी</strong> में मदद करता था। उसने कई कन्याओं को <strong>बलात्कारियों और शोषकों</strong> से बचाया।
+            </p>
+            <p>
+                लोहड़ी के गीतों में आज भी <strong>"दुल्ला भट्टी वाला"</strong> का जिक्र होता है — जो <strong>साहस और परोपकार</strong> का प्रतीक है।
+            </p>
+
+            <h3>🌾 4. फसल उत्सव</h3>
+            <p>
+                कथा के अनुसार, लोहड़ी <strong>रबी की फसल</strong> के पकने का उत्सव है। किसान अपनी नई फसल की खुशी में अग्नि में <strong>गेहूं की बालियाँ</strong> चढ़ाते हैं।
+            </p>
+
+            <h3>🌞 5. सूर्य उत्तरायण</h3>
+            <p>
+                कथा के अनुसार, लोहड़ी <strong>सूर्य के उत्तरायण होने</strong> का प्रतीक है। यह <strong>नई ऊर्जा और नई शुरुआत</strong> का पर्व है।
+            </p>
+        </div>
+
+        <!-- 3. पूजा विधि -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🔥</span> लोहड़ी पूजा विधि (Step by Step)</h2>
+            <ol class="steps-list">
+                <li><strong>तैयारी:</strong> सायं काल में लकड़ी, उपले, और तिनके इकट्ठा करें।</li>
+                <li><strong>अग्नि स्थल:</strong> खुले स्थान पर अग्नि जलाएँ।</li>
+                <li><strong>परिक्रमा:</strong> अग्नि की 3 या 7 परिक्रमा करें।</li>
+                <li><strong>तिल-गुड़ चढ़ाएँ:</strong> अग्नि में तिल, गुड़, रेवड़ी, और मूंगफली चढ़ाएँ।</li>
+                <li><strong>गेहूं की बालियाँ:</strong> नई फसल की बालियाँ अग्नि में चढ़ाएँ।</li>
+                <li><strong>प्रसाद:</strong> रेवड़ी, मूंगफली, और गुड़ का प्रसाद बाँटें।</li>
+                <li><strong>गीत:</strong> "सुंदर मुंदरीए हो" गीत गाएँ।</li>
+                <li><strong>दुल्ला भट्टी:</strong> "दुल्ला भट्टी वाला" गीत गाएँ।</li>
+                <li><strong>भांगड़ा-गिद्दा:</strong> अग्नि के चारों ओर नृत्य करें।</li>
+                <li><strong>प्रसाद वितरण:</strong> सभी को प्रसाद और रेवड़ी बाँटें।</li>
+            </ol>
+
+            <h3>📿 मुख्य मंत्र</h3>
+            <div class="mantra-box">
+                ॐ अग्नये नमः
+                <small>अग्नि देव का मूल मंत्र — लोहड़ी की अग्नि में चढ़ाते समय</small>
+            </div>
+            <div class="mantra-box">
+                ॐ सूर्याय नमः
+                <small>सूर्य देव का मंत्र — उत्तरायण के लिए</small>
+            </div>
+        </div>
+
+        <!-- 4. Timeline -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🔥</span> लोहड़ी का दिन (Timeline)</h2>
+            <p>लोहड़ी के दिन पूरी दिनचर्या इस प्रकार होती है:</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="t-time">प्रातः</span>
+                    <div class="t-title">🚿 स्नान और तैयारी</div>
+                    <div class="t-desc">प्रातः स्नान करके स्वच्छ वस्त्र धारण करें। घर की सफाई करें।</div>
+                </div>
+                <div class="timeline-item">
+                    <span class="t-time">दोपहर</span>
+                    <div class="t-title">🍬 प्रसाद की तैयारी</div>
+                    <div class="t-desc">रेवड़ी, मूंगफली, गुड़, और तिल की तैयारी करें। नए वस्त्र पहनें।</div>
+                </div>
+                <div class="timeline-item">
+                    <span class="t-time">सायं 5:00 - 6:00</span>
+                    <div class="t-title">🔥 अग्नि स्थल</div>
+                    <div class="t-desc">खुले स्थान पर लकड़ी, उपले, और तिनके से <strong>लोहड़ी की अग्नि</strong> जलाएँ।</div>
+                </div>
+                <div class="timeline-item">
+                    <span class="t-time">सायं 6:00 - 7:00</span>
+                    <div class="t-title">🙏 पूजा और परिक्रमा</div>
+                    <div class="t-desc">अग्नि की <strong>3 या 7 परिक्रमा</strong> करें। तिल, गुड़, रेवड़ी, और मूंगफली चढ़ाएँ।</div>
+                </div>
+                <div class="timeline-item">
+                    <span class="t-time">सायं 7:00 - 8:00</span>
+                    <div class="t-title">🎵 गीत और नृत्य</div>
+                    <div class="t-desc"><strong>"सुंदर मुंदरीए हो"</strong> और <strong>"दुल्ला भट्टी वाला"</strong> गीत गाएँ। भांगड़ा-गिद्दा करें।</div>
+                </div>
+                <div class="timeline-item">
+                    <span class="t-time">रात्रि 8:00</span>
+                    <div class="t-title">🍬 प्रसाद वितरण</div>
+                    <div class="t-desc">सभी को <strong>रेवड़ी, मूंगफली, और गुड़</strong> का प्रसाद बाँटें।</div>
+                </div>
+                <div class="timeline-item">
+                    <span class="t-time">रात्रि</span>
+                    <div class="t-title">🍽️ पारंपरिक भोजन</div>
+                    <div class="t-desc">मक्की की रोटी, सरसों का साग, और मीठे चावल का भोजन करें।</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. सामग्री -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🛒</span> पूजा सामग्री</h2>
+            <ul style="list-style: none; padding: 0; font-size: 13.5px; line-height: 2;">
+                <li>✅ लकड़ी, उपले, और तिनके</li>
+                <li>✅ रेवड़ी (तिल और गुड़ की)</li>
+                <li>✅ मूंगफली (भुनी हुई)</li>
+                <li>✅ गुड़</li>
+                <li>✅ तिल (काले और सफेद)</li>
+                <li>✅ गेहूं की बालियाँ</li>
+                <li>✅ गजक</li>
+                <li>✅ फल (केला, सेब, संतरा)</li>
+                <li>✅ मक्के के दाने (भुने)</li>
+                <li>✅ मिठाई (लड्डू, बर्फी)</li>
+                <li>✅ पीले और लाल वस्त्र</li>
+                <li>✅ नए वस्त्र</li>
+                <li>✅ दीपक और घी</li>
+                <li>✅ धूप और अगरबत्ती</li>
+                <li>✅ रोली और अक्षत</li>
+                <li>✅ नारियल</li>
+            </ul>
+        </div>
+
+        <!-- 6. क्या करें / क्या न करें -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">✅</span> क्या करें और क्या न करें</h2>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <h4>✅ क्या करें</h4>
+                    <ul>
+                        <li>अग्नि जलाएँ</li>
+                        <li>तिल-गुड़ चढ़ाएँ</li>
+                        <li>रेवड़ी-मूंगफली बाँटें</li>
+                        <li>गीत गाएँ</li>
+                        <li>भांगड़ा-गिद्दा करें</li>
+                        <li>नए वस्त्र पहनें</li>
+                        <li>परिवार के साथ मिलें</li>
+                        <li>बड़ों का आशीर्वाद लें</li>
+                    </ul>
+                </div>
+                <div class="dont-box">
+                    <h4>❌ क्या न करें</h4>
+                    <ul>
+                        <li>अग्नि में कचरा न डालें</li>
+                        <li>अग्नि के पास नशा न करें</li>
+                        <li>बच्चों को अकेला न छोड़ें</li>
+                        <li>क्रोध न करें</li>
+                        <li>झूठ न बोलें</li>
+                        <li>तामसिक भोजन न करें</li>
+                        <li>शराब/मांस न लें</li>
+                        <li>कलह न करें</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. व्रत के नियम -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🛕</span> लोहड़ी व्रत के नियम</h2>
+            <ul class="benefit-list">
+                <li><strong>पूरे दिन व्रत:</strong> सूर्योदय से सूर्यास्त तक</li>
+                <li><strong>फलाहार:</strong> फल, दूध, और पारंपरिक व्यंजन</li>
+                <li><strong>न खाएँ:</strong> अन्न, प्याज, लहसुन</li>
+                <li><strong>अग्नि पूजा:</strong> सायं काल में अग्नि जलाएँ</li>
+                <li><strong>परिक्रमा:</strong> अग्नि की 3 या 7 परिक्रमा करें</li>
+                <li><strong>प्रसाद:</strong> रेवड़ी, मूंगफली, और गुड़ का प्रसाद</li>
+                <li><strong>व्रत तोड़ें:</strong> प्रसाद ग्रहण करके</li>
+                <li><strong>मन का संयम:</strong> क्रोध, झूठ, और कलह से दूर रहें</li>
+            </ul>
+        </div>
+
+        <!-- 8. प्रसाद -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🍬</span> लोहड़ी का प्रसाद</h2>
+            <p style="font-size:13px; color: var(--ink-soft);">
+                लोहड़ी पर पारंपरिक रूप से ये चीज़ें अग्नि में चढ़ाई और बाँटी जाती हैं:
+            </p>
+
+            <div class="prasad-grid">
+                <div class="prasad-item">
+                    <span class="p-icon">🍬</span>
+                    <div class="p-name">रेवड़ी</div>
+                    <div class="p-desc">तिल और गुड़ की</div>
+                </div>
+                <div class="prasad-item">
+                    <span class="p-icon">🥜</span>
+                    <div class="p-name">मूंगफली</div>
+                    <div class="p-desc">भुनी हुई</div>
+                </div>
+                <div class="prasad-item">
+                    <span class="p-icon">🍯</span>
+                    <div class="p-name">गुड़</div>
+                    <div class="p-desc">शुद्ध गुड़</div>
+                </div>
+                <div class="prasad-item">
+                    <span class="p-icon">🌾</span>
+                    <div class="p-name">तिल</div>
+                    <div class="p-desc">काले और सफेद</div>
+                </div>
+                <div class="prasad-item">
+                    <span class="p-icon">🍡</span>
+                    <div class="p-name">गजक</div>
+                    <div class="p-desc">तिल की गजक</div>
+                </div>
+                <div class="prasad-item">
+                    <span class="p-icon">🍿</span>
+                    <div class="p-name">मक्के के दाने</div>
+                    <div class="p-desc">भुने हुए</div>
+                </div>
+                <div class="prasad-item">
+                    <span class="p-icon">🍮</span>
+                    <div class="p-name">लड्डू</div>
+                    <div class="p-desc">तिल के लड्डू</div>
+                </div>
+                <div class="prasad-item">
+                    <span class="p-icon">🍎</span>
+                    <div class="p-name">फल</div>
+                    <div class="p-desc">केला, सेब</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 9. लोहड़ी के गीत -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🎵</span> लोहड़ी के प्रसिद्ध गीत</h2>
+            <p style="font-size:13px; color: var(--ink-soft);">
+                लोहड़ी पर ये पारंपरिक गीत गाए जाते हैं:
+            </p>
+
+            <div class="mantra-box">
+                सुंदर मुंदरीए हो, तेरा कौन विचारा हो ।<br>
+                दुल्ला भट्टी वाला हो, तेरा बेली विचारा हो ॥
+                <small>अर्थ: हे सुंदर स्त्री, तेरा कौन विचार करता है? दुल्ला भट्टी तेरा सहायक है।</small>
+            </div>
+
+            <div class="mantra-box">
+                दे माई लोहड़ी, तेरी जीवे जोड़ी ।<br>
+                जीवे जोड़ी ते बहुते, तेरी जीवे कुड़माई ॥
+                <small>अर्थ: हे माँ, लोहड़ी दे, तेरा जोड़ा जीवित रहे। जोड़ा बहुत जीवित रहे, तेरी संतान जीवित रहे।</small>
+            </div>
+
+            <div class="highlight-box">
+                <strong>💡 महत्व:</strong> ये गीत <strong>संतान प्राप्ति</strong> और <strong>नवविवाहित जोड़ों</strong> के लिए आशीर्वाद के रूप में गाए जाते हैं।
+            </div>
+        </div>
+
+        <!-- 10. Related Links -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🔗</span> संबंधित लिंक</h2>
+            <div class="related-grid">
+                <a href="../devta/surya.html" class="related-link">🌞 सूर्य देव</a>
+                <a href="makar-sankranti.html" class="related-link">🌞 मकर संक्रांति</a>
+                <a href="../stotra/surya-aarti.html" class="related-link">🪔 सूर्य आरती</a>
+                <a href="../mantra/index.html" class="related-link">📿 अग्नि मंत्र</a>
+                <a href="../katha/dulla-bhatti.html" class="related-link">📖 दुल्ला भट्टी</a>
+                <a href="index.html" class="related-link">🎉 अन्य त्योहार</a>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय माता दी</p>
+        </footer>
+
+    </main>
+
+    <button class="back-top" id="backTop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="../devta/index.html" class="nav-link"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-calendar-days"></i><p>त्योहार</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>पंचांग</p></a>
+    </nav>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backTop');
+            if (btn) {
+                if (window.scrollY > 400) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        const darkToggle = document.getElementById('darkToggle');
+        if (darkToggle) {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+                darkToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            }
+            darkToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                const icon = this.querySelector('i');
+                const isDark = document.body.classList.contains('dark-mode');
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+                localStorage.setItem('darkMode', isDark);
+            });
+        }
+    </script>
+</body>
+</html>
