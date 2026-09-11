@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>पोंगल — संपूर्ण जानकारी | Sanatan Gyan Kosh</title>
+    <meta name="description" content="पोंगल का संपूर्ण ज्ञान — सूर्य देव की पूजा, 4 दिन (भोगी, सूर्य, मट्टू, कानुम), पोंगल व्यंजन, गाय-बैल की पूजा, और हर छोटी से छोटी बात।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .festival-hero {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, rgba(255,193,7,0.25), rgba(76,175,80,0.2), rgba(255,140,0,0.18));
+            border-radius: var(--radius);
+            margin-bottom: 16px;
+            border: 2px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+        .festival-hero::before {
+            content: '🌾';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            font-size: 140px;
+            opacity: 0.08;
+        }
+        .festival-hero .hero-icon {
+            font-size: 80px;
+            display: block;
+            line-height: 1;
+            animation: harvest 3s ease-in-out infinite;
+        }
+        @keyframes harvest {
+            0%, 100% { transform: scale(1) rotate(-3deg); filter: drop-shadow(0 0 15px rgba(255,193,7,0.6)); }
+            50% { transform: scale(1.08) rotate(3deg); filter: drop-shadow(0 0 35px rgba(76,175,80,1)); }
+        }
+        .festival-hero .hero-name {
+            font-family: var(--font-display);
+            font-size: 34px;
+            color: var(--maroon);
+            margin-top: 8px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #4caf50, #f39c12, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .festival-hero .hero-subtitle {
+            font-size: 14px;
+            color: var(--ink-soft);
+            margin-top: 6px;
+            letter-spacing: 1px;
+        }
+        .festival-hero .hero-date {
+            display: inline-block;
+            background: var(--maroon);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        .festival-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 20px 18px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .festival-section h2 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--maroon);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+        }
+        .festival-section h2 .sec-icon { font-size: 26px; }
+        .festival-section h3 {
+            font-family: var(--font-display);
+            font-size: 16px;
+            color: var(--maroon);
+            margin: 16px 0 8px;
+        }
+        .festival-section p {
+            font-size: 14px;
+            line-height: 1.9;
+            color: var(--ink-soft);
+            margin-bottom: 10px;
+        }
+        .festival-section p strong { color: var(--maroon); }
+
+        .mantra-box {
+            background: linear-gradient(135deg, rgba(255,193,7,0.12), rgba(76,175,80,0.1));
+            border-left: 4px solid #4caf50;
+            padding: 12px 14px;
+            border-radius: 10px;
+            font-family: var(--font-display);
+            font-size: 15px;
+            text-align: center;
+            margin: 8px 0;
+            line-height: 1.8;
+            color: var(--maroon);
+            font-weight: 600;
+        }
+        .mantra-box small {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 11px;
+            color: var(--ink-soft);
+            font-weight: 400;
+            margin-top: 4px;
+        }
+
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 6px;
+        }
+        .benefit-list li {
+            padding: 5px 0 5px 22px;
+            font-size: 12.5px;
+            line-height: 1.6;
+            color: var(--ink-soft);
+            position: relative;
+        }
+        .benefit-list li::before {
+            content: '🌾';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            font-size: 12px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255,193,7,0.12), rgba(76,175,80,0.1));
+            border-left: 4px solid #4caf50;
+            padding: 12px 14px;
+            border-radius: 10px;
+            margin: 8px 0;
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+        }
+        .highlight-box strong { color: var(--maroon); }
+
+        .steps-list {
+            list-style: none;
+            padding: 0;
+            counter-reset: step-counter;
+            margin: 8px 0;
+        }
+        .steps-list li {
+            counter-increment: step-counter;
+            padding: 8px 10px 8px 40px;
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+            border-bottom: 1px dashed var(--border);
+            position: relative;
+        }
+        .steps-list li:last-child { border-bottom: none; }
+        .steps-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4caf50, #f39c12);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        /* 4 Days Grid */
+        .day-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 12px;
+        }
+        .day-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--border);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .day-card:hover {
+            border-color: var(--gold);
+            box-shadow: var(--shadow-hover);
+        }
+        .day-card.open { border-color: var(--maroon); }
+        .day-card.main-day {
+            border: 2px solid #f39c12;
+            background: linear-gradient(135deg, #fff8e7, #fffbf0);
+        }
+        .day-card.main-day.open { border-color: var(--maroon); }
+        .day-header {
+            padding: 16px 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: var(--transition);
+        }
+        .day-header:hover { background: var(--bg); }
+        .day-card.open .day-header {
+            background: linear-gradient(135deg, rgba(255,193,7,0.12), rgba(76,175,80,0.1));
+            border-bottom: 1px solid var(--border);
+        }
+        .day-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4caf50, #f39c12);
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(76,175,80,0.3);
+        }
+        .day-badge .day-num {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1;
+        }
+        .day-badge .day-text {
+            font-size: 8px;
+            opacity: 0.9;
+            margin-top: 2px;
+            letter-spacing: 0.5px;
+        }
+        .day-info { flex: 1; }
+        .day-name {
+            font-family: var(--font-display);
+            font-size: 17px;
+            color: var(--maroon);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .day-name .main-tag {
+            display: inline-block;
+            background: #f39c12;
+            color: white;
+            font-size: 9px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-family: var(--font-body);
+            font-weight: 700;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+        .day-sub {
+            font-size: 11px;
+            color: var(--ink-soft);
+            margin-top: 3px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .day-sub span {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+        .day-sub i { color: var(--gold); font-size: 10px; }
+        .day-arrow {
+            color: var(--gold);
+            font-size: 18px;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+        .day-card.open .day-arrow { transform: rotate(180deg); }
+
+        .day-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        .day-card.open .day-body { max-height: 5000px; }
+        .day-body-inner { padding: 18px; }
+
+        .day-section { margin-bottom: 14px; }
+        .day-section:last-child { margin-bottom: 0; }
+        .day-section-title {
+            font-family: var(--font-display);
+            font-size: 14px;
+            color: var(--maroon);
+            font-weight: 700;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .day-section-title .ri { font-size: 16px; }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 6px;
+        }
+        .info-item {
+            background: var(--bg);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+        }
+        .info-item .lbl {
+            font-size: 9px;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-item .val {
+            font-weight: 600;
+            color: var(--maroon);
+            margin-top: 2px;
+            font-size: 12.5px;
+        }
+
+        .day-body p {
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+        }
+        .day-body p strong { color: var(--maroon); }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg);
+            color: var(--maroon);
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+        .back-btn:hover { background: var(--maroon); color: white; }
+
+        .back-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--maroon);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 16px rgba(122,46,46,0.4);
+            z-index: 90;
+        }
+        .back-top.show { display: flex; }
+
+        .do-dont-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .do-box, .dont-box {
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+        .do-box {
+            background: #eef7ee;
+            border-left: 3px solid #27ae60;
+        }
+        .do-box h4 { color: #27ae60; font-size: 12px; margin-bottom: 6px; }
+        .dont-box {
+            background: #fdecea;
+            border-left: 3px solid #dc3545;
+        }
+        .dont-box h4 { color: #dc3545; font-size: 12px; margin-bottom: 6px; }
+        .do-box ul, .dont-box ul { list-style: none; padding: 0; }
+        .do-box ul li, .dont-box ul li {
+            padding: 2px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 5px;
+        }
+        .do-box ul li::before { content: '✅'; flex-shrink: 0; font-size: 11px; }
+        .dont-box ul li::before { content: '❌'; flex-shrink: 0; font-size: 11px; }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .related-link {
+            padding: 12px;
+            background: var(--bg);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--maroon);
+            font-weight: 600;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .related-link:hover {
+            background: var(--card-bg);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 420px) {
+            .festival-hero .hero-icon { font-size: 60px; }
+            .festival-hero .hero-name { font-size: 26px; }
+            .festival-section h2 { font-size: 17px; }
+            .day-name { font-size: 15px; }
+            .day-badge { width: 48px; height: 48px; }
+            .day-badge .day-num { font-size: 17px; }
+            .do-dont-grid { grid-template-columns: 1fr; }
+            .info-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ त्योहार</span>
+            <h1>पोंगल</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <a href="index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i> सभी त्योहार
+        </a>
+
+        <!-- Hero -->
+        <div class="festival-hero">
+            <span class="hero-icon">🌾</span>
+            <div class="hero-name">पोंगल</div>
+            <div class="hero-subtitle">तमिलनाडु का फसल उत्सव · सूर्य देव की पूजा</div>
+            <div class="hero-date">📅 14-17 जनवरी · तमिल मास</div>
+        </div>
+
+        <!-- 1. परिचय -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">📖</span> पोंगल क्या है?</h2>
+            <p>
+                <strong>पोंगल</strong> तमिलनाडु का सबसे बड़ा और सबसे पवित्र त्योहार है — जो <strong>सूर्य देव</strong> को समर्पित है। यह <strong>4 दिनों</strong> तक चलता है और <strong>फसल उत्सव</strong> के रूप में मनाया जाता है।
+            </p>
+            <p>
+                "पोंगल" का अर्थ है — <strong>"उबलना"</strong>। यह उस क्षण का प्रतीक है जब <strong>नया चावल दूध के साथ उबलता है</strong> और समृद्धि की शुरुआत होती है। यह <strong>किसानों का सबसे बड़ा उत्सव</strong> है।
+            </p>
+            <div class="highlight-box">
+                <strong>🌾 मुख्य बात:</strong> पोंगल <strong>4 दिन</strong> तक मनाया जाता है — <strong>भोगी पोंगल, सूर्य पोंगल, मट्टू पोंगल, और कानुम पोंगल</strong>। हर दिन का अपना अलग महत्व है।
+            </div>
+        </div>
+
+        <!-- 2. कथाएँ -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">📜</span> पोंगल की कथाएँ</h2>
+
+            <h3>🌊 1. समुद्र मंथन की कथा</h3>
+            <p>
+                <strong>सबसे प्रसिद्ध कथा:</strong> कथा के अनुसार, <strong>समुद्र मंथन</strong> के समय <strong>भगवान शिव</strong> ने <strong>हलाहल विष</strong> पिया। इससे उनका गला नीला हो गया — इसलिए उन्हें <strong>नीलकंठ</strong> कहा जाता है। कुछ मान्यताओं के अनुसार, यह घटना पोंगल से जुड़ी है।
+            </p>
+
+            <h3>🐄 2. नंदी और शिव की कथा</h3>
+            <p>
+                कथा के अनुसार, भगवान शिव ने अपने <strong>वाहन नंदी</strong> को पृथ्वी पर भेजा और कहा — "जाओ और मनुष्यों से कहो कि <strong>रोज़ तेल से स्नान करें और महीने में एक बार भोजन करें</strong>।" लेकिन नंदी ने गलती से कहा — "रोज़ भोजन करें और महीने में एक बार तेल से स्नान करें।"
+            </p>
+            <p>
+                इससे अन्न की कमी हो गई। शिव जी ने नंदी से कहा — "तुम्हें पृथ्वी पर रहकर मनुष्यों की खेती में मदद करनी होगी।" तब से <strong>बैल खेती में मदद करते हैं</strong>। इसलिए पोंगल में <strong>गाय-बैल की पूजा</strong> की जाती है।
+            </p>
+
+            <h3>☀️ 3. सूर्य देव की कथा</h3>
+            <p>
+                कथा के अनुसार, <strong>सूर्य देव</strong> सभी जीवों को ऊर्जा और प्रकाश देते हैं। किसान अपनी नई फसल के लिए सूर्य देव को धन्यवाद देते हैं। इसलिए पोंगल में <strong>सूर्य देव की पूजा</strong> मुख्य है।
+            </p>
+
+            <h3>🌾 4. फसल और किसान की कथा</h3>
+            <p>
+                कथा के अनुसार, एक किसान ने घोर परिश्रम से खेती की और उसे अच्छी फसल मिली। उसने अपनी फसल का पहला भाग <strong>सूर्य देव और गाय-बैल</strong> को अर्पित किया। यही परंपरा पोंगल के रूप में जारी है।
+            </p>
+
+            <h3>🦁 5. इंद्र देव की कथा</h3>
+            <p>
+                कथा के अनुसार, <strong>इंद्र देव</strong> वर्षा के देवता हैं। किसान इंद्र देव से अच्छी वर्षा की प्रार्थना करते हैं। पोंगल के पहले दिन <strong>भोगी पोंगल</strong> में इंद्र देव की पूजा की जाती है।
+            </p>
+        </div>
+
+        <!-- 3. 4 दिन की विधि -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🌾</span> पोंगल के 4 दिन — विस्तृत जानकारी</h2>
+            <p style="font-size:13px; color: var(--ink-soft);">
+                कार्ड पर <strong>click करें</strong> और हर दिन की पूरी विधि पढ़ें।
+            </p>
+
+            <div class="day-grid" id="dayGrid"></div>
+        </div>
+
+        <!-- 4. पूजा विधि -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🙏</span> पोंगल पूजा विधि (Step by Step)</h2>
+            <ol class="steps-list">
+                <li><strong>स्नान और तैयारी:</strong> प्रातः स्नान करके स्वच्छ वस्त्र धारण करें।</li>
+                <li><strong>घर की सफाई:</strong> पूरे घर को साफ करें और गंगाजल छिड़कें।</li>
+                <li><strong>रंगोली:</strong> मुख्य द्वार पर रंगोली बनाएँ।</li>
+                <li><strong>मिट्टी का बर्तन:</strong> नए मिट्टी के बर्तन में चावल और दूध डालें।</li>
+                <li><strong>पोंगल पकाएँ:</strong> सूर्योदय के समय पोंगल पकाएँ — जब दूध उबलकर बाहर आए।</li>
+                <li><strong>"पोंगलो पोंगल" कहें:</strong> दूध उबलते समय यह शब्द बोलें।</li>
+                <li><strong>गन्ना और हल्दी:</strong> पोंगल में गन्ना और हल्दी डालें।</li>
+                <li><strong>नारियल और केला:</strong> पोंगल पर नारियल और केला रखें।</li>
+                <li><strong>सूर्य पूजा:</strong> ताम्र पात्र से सूर्य देव को जल अर्पित करें।</li>
+                <li><strong>सूर्य देव का भोग:</strong> पोंगल का प्रसाद सूर्य देव को अर्पित करें।</li>
+                <li><strong>आरती:</strong> सूर्य देव की आरती करें।</li>
+                <li><strong>गाय-बैल पूजा:</strong> गाय और बैल को पोंगल खिलाएँ।</li>
+                <li><strong>प्रसाद बाँटें:</strong> सभी को प्रसाद बाँटें।</li>
+                <li><strong>उपहार:</strong> नए वस्त्र और उपहार दें।</li>
+            </ol>
+
+            <h3>📿 मुख्य मंत्र</h3>
+            <div class="mantra-box">
+                ॐ सूर्याय नमः
+                <small>सूर्य देव का मूल मंत्र — 108 बार जपें</small>
+            </div>
+            <div class="mantra-box">
+                ॐ सूर्याय नमः · ॐ इंद्राय नमः
+                <small>सूर्य और इंद्र देव का मंत्र — फसल के लिए</small>
+            </div>
+        </div>
+
+        <!-- 5. सामग्री -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🛒</span> पूजा सामग्री</h2>
+            <ul style="list-style: none; padding: 0; font-size: 13.5px; line-height: 2;">
+                <li>✅ मिट्टी का नया बर्तन</li>
+                <li>✅ नया चावल</li>
+                <li>✅ गाय का दूध</li>
+                <li>✅ गुड़ और चीनी</li>
+                <li>✅ इलायची और काजू</li>
+                <li>✅ हल्दी की गाँठ</li>
+                <li>✅ गन्ना</li>
+                <li>✅ नारियल</li>
+                <li>✅ केला (कच्चा और पका)</li>
+                <li>✅ पीले और लाल फूल</li>
+                <li>✅ रोली, कुमकुम</li>
+                <li>✅ अक्षत (चावल)</li>
+                <li>✅ दीपक, धूप, कपूर</li>
+                <li>✅ घंटी, शंख</li>
+                <li>✅ ताम्र पात्र</li>
+                <li>✅ नए वस्त्र</li>
+            </ul>
+        </div>
+
+        <!-- 6. क्या करें / क्या न करें -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">✅</span> क्या करें और क्या न करें</h2>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <h4>✅ क्या करें</h4>
+                    <ul>
+                        <li>पोंगल पकाएँ</li>
+                        <li>सूर्य देव को अर्घ्य दें</li>
+                        <li>गाय-बैल की पूजा करें</li>
+                        <li>नए वस्त्र पहनें</li>
+                        <li>उपहार दें</li>
+                        <li>प्रसाद बाँटें</li>
+                        <li>नई फसल अर्पित करें</li>
+                        <li>सभी को भोजन कराएँ</li>
+                    </ul>
+                </div>
+                <div class="dont-box">
+                    <h4>❌ क्या न करें</h4>
+                    <ul>
+                        <li>अशुद्ध न रहें</li>
+                        <li>क्रोध न करें</li>
+                        <li>झूठ न बोलें</li>
+                        <li>तामसिक भोजन न करें</li>
+                        <li>शराब/मांस न लें</li>
+                        <li>गाय-बैल को न मारें</li>
+                        <li>अन्न का अपमान न करें</li>
+                        <li>कलह न करें</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. व्रत के नियम -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🛕</span> पोंगल व्रत के नियम</h2>
+            <ul class="benefit-list">
+                <li><strong>प्रातः स्नान:</strong> रोज़ स्नान करके स्वच्छ वस्त्र पहनें</li>
+                <li><strong>व्रत:</strong> सूर्य पोंगल के दिन व्रत रखें</li>
+                <li><strong>फलाहार:</strong> फल, दूध, और पारंपरिक व्यंजन</li>
+                <li><strong>न खाएँ:</strong> प्याज, लहसुन, और मांस (4 दिन)</li>
+                <li><strong>पोंगल पकाएँ:</strong> सूर्योदय के समय पोंगल पकाएँ</li>
+                <li><strong>सूर्य पूजा:</strong> सूर्य देव को जल अर्पित करें</li>
+                <li><strong>गाय-बैल पूजा:</strong> मट्टू पोंगल पर गाय-बैल की पूजा करें</li>
+                <li><strong>व्रत तोड़ें:</strong> सूर्य पोंगल के दिन प्रसाद ग्रहण करके</li>
+            </ul>
+        </div>
+
+        <!-- 8. प्रसाद -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🍚</span> पोंगल का प्रसाद</h2>
+            <div class="highlight-box">
+                <strong>पोंगल के पारंपरिक व्यंजन:</strong>
+            </div>
+            <ul style="list-style: none; padding: 0; font-size: 13.5px; line-height: 2;">
+                <li>🍚 <strong>वेन पोंगल</strong> — नमकीन चावल-दाल</li>
+                <li>🍚 <strong>शक्कर पोंगल</strong> — मीठा चावल-दाल</li>
+                <li>🥥 <strong>नारियल पोंगल</strong> — नारियल वाला</li>
+                <li>🌾 <strong>चक्कर पोंगल</strong> — मीठा चावल</li>
+                <li>🍬 <strong>गुड़ और चीनी</strong></li>
+                <li>🍌 <strong>केला और नारियल</strong></li>
+                <li>🥜 <strong>मेवे</strong> — काजू, बादाम</li>
+                <li>🥘 <strong>सांभर और रसम</strong></li>
+            </ul>
+        </div>
+
+        <!-- 9. Related Links -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🔗</span> संबंधित लिंक</h2>
+            <div class="related-grid">
+                <a href="../devta/surya.html" class="related-link">🌞 सूर्य देव</a>
+                <a href="../stotra/aditya-hridayam.html" class="related-link">📜 आदित्य हृदय स्तोत्र</a>
+                <a href="../stotra/surya-aarti.html" class="related-link">🪔 सूर्य आरती</a>
+                <a href="../mantra/index.html" class="related-link">📿 सूर्य मंत्र</a>
+                <a href="../katha/nandi-katha.html" class="related-link">📖 नंदी कथा</a>
+                <a href="index.html" class="related-link">🎉 अन्य त्योहार</a>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय सूर्य देव</p>
+        </footer>
+
+    </main>
+
+    <button class="back-top" id="backTop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="../devta/index.html" class="nav-link"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-calendar-days"></i><p>त्योहार</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>पंचांग</p></a>
+    </nav>
+
+    <script>
+        // ============================================================
+        //  PONGAL — 4 Days Deep Detail
+        // ============================================================
+
+        const pongalDays = [
+            {
+                day: 1,
+                name: 'भोगी पोंगल',
+                en: 'Bhogi Pongal',
+                meaning: 'इंद्र देव की पूजा',
+                date: 'तमिल मास की अंतिम दिन',
+                isMain: false,
+                katha: 'यह पोंगल का पहला दिन है — जो <strong>इंद्र देव</strong> (वर्षा के देवता) को समर्पित है। इस दिन लोग पुरानी चीज़ों को त्याग कर नई चीज़ों को अपनाते हैं। यह <strong>नई शुरुआत</strong> का प्रतीक है।',
+                vidhi: [
+                    'प्रातः स्नान करें',
+                    'घर की सफाई करें',
+                    'पुरानी चीज़ें त्यागें',
+                    'इंद्र देव की पूजा करें',
+                    'नए वस्त्र पहनें',
+                    'रंगोली बनाएँ',
+                    'अग्नि जलाकर पुरानी चीज़ें जलाएँ'
+                ],
+                prasad: 'चावल, दाल, गुड़',
+                dos: [
+                    'घर की सफाई करें',
+                    'इंद्र देव की पूजा करें',
+                    'नए वस्त्र पहनें',
+                    'रंगोली बनाएँ'
+                ],
+                donts: [
+                    'अशुद्ध न रहें',
+                    'क्रोध न करें',
+                    'पुरानी चीज़ों का मोह न रखें',
+                    'कलह न करें'
+                ],
+                benefits: [
+                    'नई शुरुआत',
+                    'मन की शुद्धि',
+                    'समृद्धि',
+                    'इंद्र कृपा'
+                ],
+                significance: 'भोगी पोंगल पुराने को त्याग कर नए को अपनाने का प्रतीक है।'
+            },
+            {
+                day: 2,
+                name: 'सूर्य पोंगल',
+                en: 'Surya Pongal',
+                meaning: 'सूर्य देव की पूजा',
+                date: 'तमिल मास का पहला दिन',
+                isMain: true,
+                katha: 'यह पोंगल का <strong>मुख्य दिन</strong> है — जो <strong>सूर्य देव</strong> को समर्पित है। इस दिन नया चावल और दूध से <strong>पोंगल</strong> बनाई जाती है। जब दूध उबलकर बाहर आता है, तो "पोंगलो पोंगल" कहा जाता है — जो <strong>समृद्धि का प्रतीक</strong> है।',
+                vidhi: [
+                    'प्रातः स्नान करें',
+                    'नए मिट्टी के बर्तन में चावल और दूध डालें',
+                    'सूर्योदय के समय पोंगल पकाएँ',
+                    'गन्ना और हल्दी डालें',
+                    'नारियल और केला रखें',
+                    'सूर्य देव को जल अर्पित करें',
+                    'पोंगल का भोग लगाएँ',
+                    'आरती करें'
+                ],
+                prasad: 'पोंगल (मीठा और नमकीन), गन्ना, नारियल',
+                dos: [
+                    'पोंगल पकाएँ',
+                    'सूर्य देव को अर्घ्य दें',
+                    'प्रसाद बाँटें',
+                    'नए वस्त्र पहनें'
+                ],
+                donts: [
+                    'अशुद्ध न रहें',
+                    'क्रोध न करें',
+                    'अन्न का अपमान न करें',
+                    'कलह न करें'
+                ],
+                benefits: [
+                    'सूर्य कृपा',
+                    'आरोग्य',
+                    'समृद्धि',
+                    'फसल की वृद्धि',
+                    'सुख-शांति'
+                ],
+                significance: 'सूर्य पोंगल पोंगल का <strong>मुख्य दिन</strong> है — जब सूर्य देव की पूजा होती है और नई फसल अर्पित की जाती है।'
+            },
+            {
+                day: 3,
+                name: 'मट्टू पोंगल',
+                en: 'Mattu Pongal',
+                meaning: 'गाय-बैल की पूजा',
+                date: 'तमिल मास का दूसरा दिन',
+                isMain: false,
+                katha: 'यह पोंगल का तीसरा दिन है — जो <strong>गाय और बैल</strong> को समर्पित है। किसान अपने पशुओं को धन्यवाद देते हैं — जो खेती में मदद करते हैं। इन्हें <strong>सजाया जाता है</strong>, नहलाया जाता है, और <strong>पोंगल खिलाई जाती है</strong>।',
+                vidhi: [
+                    'प्रातः स्नान करें',
+                    'गाय-बैल को नहलाएँ',
+                    'उन्हें फूलों से सजाएँ',
+                    'उनके सींगों पर रंग लगाएँ',
+                    'उन्हें पोंगल खिलाएँ',
+                    'उनकी पूजा करें',
+                    'उनकी परिक्रमा करें'
+                ],
+                prasad: 'पोंगल, गुड़, और चावल',
+                dos: [
+                    'गाय-बैल को नहलाएँ',
+                    'उन्हें सजाएँ',
+                    'उन्हें पोंगल खिलाएँ',
+                    'उनकी पूजा करें'
+                ],
+                donts: [
+                    'पशुओं को न मारें',
+                    'उन्हें भूखा न रखें',
+                    'उनके साथ क्रूरता न करें',
+                    'उन्हें डराएँ नहीं'
+                ],
+                benefits: [
+                    'पशु कृपा',
+                    'खेती में वृद्धि',
+                    'समृद्धि',
+                    'गौ सेवा का पुण्य'
+                ],
+                significance: 'मट्टू पोंगल गाय-बैल के प्रति कृतज्ञता का प्रतीक है — जो खेती और जीवन में मदद करते हैं।'
+            },
+            {
+                day: 4,
+                name: 'कानुम पोंगल',
+                en: 'Kaanum Pongal',
+                meaning: 'पारिवारिक मिलन का दिन',
+                date: 'तमिल मास का तीसरा दिन',
+                isMain: false,
+                katha: 'यह पोंगल का चौथा और <strong>अंतिम दिन</strong> है — जो <strong>पारिवारिक मिलन</strong> को समर्पित है। इस दिन लोग अपने रिश्तेदारों से मिलने जाते हैं, उन्हें उपहार देते हैं, और <strong>नदी/समुद्र के किनारे</strong> पिकनिक मनाते हैं।',
+                vidhi: [
+                    'प्रातः स्नान करें',
+                    'नए वस्त्र पहनें',
+                    'रिश्तेदारों से मिलें',
+                    'उन्हें उपहार दें',
+                    'पारिवारिक भोज करें',
+                    'नदी/समुद्र के किनारे जाएँ',
+                    'सभी को प्रसाद बाँटें'
+                ],
+                prasad: 'पोंगल, मिठाई, और फल',
+                dos: [
+                    'रिश्तेदारों से मिलें',
+                    'उपहार दें',
+                    'पारिवारिक भोज करें',
+                    'प्रसाद बाँटें'
+                ],
+                donts: [
+                    'किसी को नाराज़ न करें',
+                    'कलह न करें',
+                    'किसी का अपमान न करें',
+                    'परिवार से दूर न रहें'
+                ],
+                benefits: [
+                    'पारिवारिक सुख',
+                    'रिश्तों में मिठास',
+                    'प्रेम और एकता',
+                    'खुशहाली'
+                ],
+                significance: 'कानुम पोंगल पारिवारिक मिलन और प्रेम का प्रतीक है — जिसमें सभी एक साथ मिलकर उत्सव मनाते हैं।'
+            }
+        ];
+
+        function renderDays() {
+            const grid = document.getElementById('dayGrid');
+            grid.innerHTML = pongalDays.map(d => `
+                <div class="day-card ${d.isMain ? 'main-day' : ''}" id="day-${d.day}">
+                    <div class="day-header" onclick="toggleDay(${d.day})">
+                        <div class="day-badge">
+                            <span class="day-num">${d.day}</span>
+                            <span class="day-text">दिन</span>
+                        </div>
+                        <div class="day-info">
+                            <div class="day-name">
+                                ${d.name}
+                                ${d.isMain ? '<span class="main-tag">⭐ मुख्य दिन</span>' : ''}
+                            </div>
+                            <div class="day-sub">
+                                <span><i class="fa-solid fa-om"></i> ${d.en}</span>
+                                <span><i class="fa-solid fa-calendar"></i> ${d.date}</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-down day-arrow"></i>
+                    </div>
+                    <div class="day-body">
+                        <div class="day-body-inner">
+
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <div class="lbl">अर्थ</div>
+                                    <div class="val" style="font-size:11px;">${d.meaning}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="lbl">तिथि</div>
+                                    <div class="val">${d.date}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="lbl">प्रसाद</div>
+                                    <div class="val" style="font-size:11px;">${d.prasad}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="lbl">दिन</div>
+                                    <div class="val">${d.isMain ? 'मुख्य दिन' : 'उत्सव'}</div>
+                                </div>
+                            </div>
+
+                            <div class="day-section">
+                                <div class="day-section-title"><span class="ri">📜</span> महत्व</div>
+                                <p>${d.katha}</p>
+                            </div>
+
+                            <div class="day-section">
+                                <div class="day-section-title"><span class="ri">🙏</span> विधि</div>
+                                <ol class="steps-list">
+                                    ${d.vidhi.map(v => `<li>${v}</li>`).join('')}
+                                </ol>
+                            </div>
+
+                            <div class="day-section">
+                                <div class="day-section-title"><span class="ri">✅</span> क्या करें और क्या न करें</div>
+                                <div class="do-dont-grid">
+                                    <div class="do-box">
+                                        <h4>✅ क्या करें</h4>
+                                        <ul>${d.dos.map(x => `<li>${x}</li>`).join('')}</ul>
+                                    </div>
+                                    <div class="dont-box">
+                                        <h4>❌ क्या न करें</h4>
+                                        <ul>${d.donts.map(x => `<li>${x}</li>`).join('')}</ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="day-section">
+                                <div class="day-section-title"><span class="ri">✨</span> लाभ</div>
+                                <ul class="benefit-list">
+                                    ${d.benefits.map(b => `<li>${b}</li>`).join('')}
+                                </ul>
+                            </div>
+
+                            <div class="day-section">
+                                <div class="day-section-title"><span class="ri">🌟</span> महत्व</div>
+                                <div class="highlight-box">${d.significance}</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleDay(day) {
+            const card = document.getElementById(`day-${day}`);
+            card.classList.toggle('open');
+            if (card.classList.contains('open')) {
+                setTimeout(() => {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 300);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderDays();
+        });
+
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backTop');
+            if (btn) {
+                if (window.scrollY > 400) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        const darkToggle = document.getElementById('darkToggle');
+        if (darkToggle) {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+                darkToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            }
+            darkToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                const icon = this.querySelector('i');
+                const isDark = document.body.classList.contains('dark-mode');
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+                localStorage.setItem('darkMode', isDark);
+            });
+        }
+    </script>
+</body>
+</html>
