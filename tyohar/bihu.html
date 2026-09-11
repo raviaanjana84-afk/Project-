@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>बिहू — संपूर्ण जानकारी | Sanatan Gyan Kosh</title>
+    <meta name="description" content="बिहू का संपूर्ण ज्ञान — असम का महापर्व, तीनों बिहू (बोहाग, काति, माघ), बिहू नृत्य, पिठा, मेजी, और हर छोटी से छोटी बात।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .festival-hero {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, rgba(76,175,80,0.22), rgba(255,193,7,0.18), rgba(255,87,34,0.15));
+            border-radius: var(--radius);
+            margin-bottom: 16px;
+            border: 2px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+        .festival-hero::before {
+            content: '🌸';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            font-size: 140px;
+            opacity: 0.08;
+        }
+        .festival-hero .hero-icon {
+            font-size: 80px;
+            display: block;
+            line-height: 1;
+            animation: bihuDance 3s ease-in-out infinite;
+        }
+        @keyframes bihuDance {
+            0%, 100% { transform: scale(1) rotate(-4deg); filter: drop-shadow(0 0 15px rgba(76,175,80,0.7)); }
+            50% { transform: scale(1.1) rotate(4deg); filter: drop-shadow(0 0 35px rgba(255,193,7,1)); }
+        }
+        .festival-hero .hero-name {
+            font-family: var(--font-display);
+            font-size: 34px;
+            color: var(--maroon);
+            margin-top: 8px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2e7d32, #f39c12, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .festival-hero .hero-subtitle {
+            font-size: 14px;
+            color: var(--ink-soft);
+            margin-top: 6px;
+            letter-spacing: 1px;
+        }
+        .festival-hero .hero-date {
+            display: inline-block;
+            background: var(--maroon);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        .festival-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 20px 18px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .festival-section h2 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--maroon);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+        }
+        .festival-section h2 .sec-icon { font-size: 26px; }
+        .festival-section h3 {
+            font-family: var(--font-display);
+            font-size: 16px;
+            color: var(--maroon);
+            margin: 16px 0 8px;
+        }
+        .festival-section p {
+            font-size: 14px;
+            line-height: 1.9;
+            color: var(--ink-soft);
+            margin-bottom: 10px;
+        }
+        .festival-section p strong { color: var(--maroon); }
+
+        .mantra-box {
+            background: linear-gradient(135deg, rgba(76,175,80,0.12), rgba(255,193,7,0.08));
+            border-left: 4px solid #2e7d32;
+            padding: 12px 14px;
+            border-radius: 10px;
+            font-family: var(--font-display);
+            font-size: 15px;
+            text-align: center;
+            margin: 8px 0;
+            line-height: 1.8;
+            color: var(--maroon);
+            font-weight: 600;
+        }
+        .mantra-box small {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 11px;
+            color: var(--ink-soft);
+            font-weight: 400;
+            margin-top: 4px;
+        }
+
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 6px;
+        }
+        .benefit-list li {
+            padding: 5px 0 5px 22px;
+            font-size: 12.5px;
+            line-height: 1.6;
+            color: var(--ink-soft);
+            position: relative;
+        }
+        .benefit-list li::before {
+            content: '🌸';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            font-size: 12px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(76,175,80,0.12), rgba(255,193,7,0.08));
+            border-left: 4px solid #2e7d32;
+            padding: 12px 14px;
+            border-radius: 10px;
+            margin: 8px 0;
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+        }
+        .highlight-box strong { color: var(--maroon); }
+
+        .steps-list {
+            list-style: none;
+            padding: 0;
+            counter-reset: step-counter;
+            margin: 8px 0;
+        }
+        .steps-list li {
+            counter-increment: step-counter;
+            padding: 8px 10px 8px 40px;
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+            border-bottom: 1px dashed var(--border);
+            position: relative;
+        }
+        .steps-list li:last-child { border-bottom: none; }
+        .steps-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2e7d32, #f39c12);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        /* 3 Bihu Grid */
+        .bihu-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 12px;
+        }
+        .bihu-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--border);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .bihu-card:hover {
+            border-color: var(--gold);
+            box-shadow: var(--shadow-hover);
+        }
+        .bihu-card.open { border-color: var(--maroon); }
+        .bihu-card.main-day {
+            border: 2px solid #2e7d32;
+            background: linear-gradient(135deg, #f1f8e9, #fffbf0);
+        }
+        .bihu-card.main-day.open { border-color: var(--maroon); }
+        .bihu-header {
+            padding: 16px 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: var(--transition);
+        }
+        .bihu-header:hover { background: var(--bg); }
+        .bihu-card.open .bihu-header {
+            background: linear-gradient(135deg, rgba(76,175,80,0.12), rgba(255,193,7,0.1));
+            border-bottom: 1px solid var(--border);
+        }
+        .bihu-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2e7d32, #f39c12);
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(46,125,50,0.3);
+        }
+        .bihu-badge .b-icon {
+            font-size: 24px;
+            line-height: 1;
+        }
+        .bihu-info { flex: 1; }
+        .bihu-name {
+            font-family: var(--font-display);
+            font-size: 17px;
+            color: var(--maroon);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .bihu-name .main-tag {
+            display: inline-block;
+            background: #2e7d32;
+            color: white;
+            font-size: 9px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-family: var(--font-body);
+            font-weight: 700;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+        .bihu-sub {
+            font-size: 11px;
+            color: var(--ink-soft);
+            margin-top: 3px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .bihu-sub span {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+        .bihu-sub i { color: var(--gold); font-size: 10px; }
+        .bihu-arrow {
+            color: var(--gold);
+            font-size: 18px;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+        .bihu-card.open .bihu-arrow { transform: rotate(180deg); }
+
+        .bihu-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        .bihu-card.open .bihu-body { max-height: 5000px; }
+        .bihu-body-inner { padding: 18px; }
+
+        .bihu-section { margin-bottom: 14px; }
+        .bihu-section:last-child { margin-bottom: 0; }
+        .bihu-section-title {
+            font-family: var(--font-display);
+            font-size: 14px;
+            color: var(--maroon);
+            font-weight: 700;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .bihu-section-title .ri { font-size: 16px; }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 6px;
+        }
+        .info-item {
+            background: var(--bg);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+        }
+        .info-item .lbl {
+            font-size: 9px;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-item .val {
+            font-weight: 600;
+            color: var(--maroon);
+            margin-top: 2px;
+            font-size: 12.5px;
+        }
+
+        .bihu-body p {
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+        }
+        .bihu-body p strong { color: var(--maroon); }
+
+        /* Pitha Grid */
+        .pitha-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .pitha-item {
+            background: linear-gradient(135deg, #f1f8e9, #fff8e7);
+            border-radius: 12px;
+            padding: 14px 12px;
+            text-align: center;
+            border: 2px solid #2e7d32;
+            transition: var(--transition);
+        }
+        .pitha-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(46,125,50,0.3);
+        }
+        .pitha-item .p-icon {
+            font-size: 32px;
+            display: block;
+            line-height: 1;
+        }
+        .pitha-item .p-name {
+            font-family: var(--font-display);
+            font-size: 14px;
+            color: var(--maroon);
+            font-weight: 700;
+            margin-top: 6px;
+        }
+        .pitha-item .p-desc {
+            font-size: 11px;
+            color: var(--ink-soft);
+            margin-top: 2px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg);
+            color: var(--maroon);
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+        .back-btn:hover { background: var(--maroon); color: white; }
+
+        .back-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--maroon);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 16px rgba(122,46,46,0.4);
+            z-index: 90;
+        }
+        .back-top.show { display: flex; }
+
+        .do-dont-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .do-box, .dont-box {
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+        .do-box {
+            background: #eef7ee;
+            border-left: 3px solid #27ae60;
+        }
+        .do-box h4 { color: #27ae60; font-size: 12px; margin-bottom: 6px; }
+        .dont-box {
+            background: #fdecea;
+            border-left: 3px solid #dc3545;
+        }
+        .dont-box h4 { color: #dc3545; font-size: 12px; margin-bottom: 6px; }
+        .do-box ul, .dont-box ul { list-style: none; padding: 0; }
+        .do-box ul li, .dont-box ul li {
+            padding: 2px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 5px;
+        }
+        .do-box ul li::before { content: '✅'; flex-shrink: 0; font-size: 11px; }
+        .dont-box ul li::before { content: '❌'; flex-shrink: 0; font-size: 11px; }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .related-link {
+            padding: 12px;
+            background: var(--bg);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--maroon);
+            font-weight: 600;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .related-link:hover {
+            background: var(--card-bg);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 420px) {
+            .festival-hero .hero-icon { font-size: 60px; }
+            .festival-hero .hero-name { font-size: 26px; }
+            .festival-section h2 { font-size: 17px; }
+            .bihu-name { font-size: 15px; }
+            .bihu-badge { width: 48px; height: 48px; }
+            .bihu-badge .b-icon { font-size: 20px; }
+            .do-dont-grid { grid-template-columns: 1fr; }
+            .pitha-grid { grid-template-columns: 1fr; }
+            .info-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ त्योहार</span>
+            <h1>बिहू</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <a href="index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i> सभी त्योहार
+        </a>
+
+        <!-- Hero -->
+        <div class="festival-hero">
+            <span class="hero-icon">🌸</span>
+            <div class="hero-name">बिहू</div>
+            <div class="hero-subtitle">असम का महापर्व · 3 बिहू · नृत्य और संगीत</div>
+            <div class="hero-date">📅 अप्रैल · अक्टूबर · जनवरी</div>
+        </div>
+
+        <!-- 1. परिचय -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">📖</span> बिहू क्या है?</h2>
+            <p>
+                <strong>बिहू</strong> असम का सबसे बड़ा और सबसे प्रिय त्योहार है — जो <strong>तीन बार</strong> साल में मनाया जाता है। यह <strong>असमिया संस्कृति</strong> की आत्मा है — जिसमें <strong>नृत्य, संगीत, और प्रकृति</strong> का संगम होता है।
+            </p>
+            <p>
+                "बिहू" शब्द की उत्पत्ति <strong>"बिशु"</strong> से हुई है — जिसका अर्थ है <strong>"विशेष"</strong> या <strong>"प्रसन्नता"</strong>। यह <strong>फसल उत्सव</strong> भी है — जिसमें किसान अपनी फसल की खुशी मनाते हैं।
+            </p>
+            <div class="highlight-box">
+                <strong>🌸 मुख्य बात:</strong> बिहू के <strong>तीन प्रकार</strong> हैं — <strong>बोहाग बिहू</strong> (अप्रैल), <strong>काति बिहू</strong> (अक्टूबर), और <strong>माघ बिहू</strong> (जनवरी)। इनमें <strong>बोहाग बिहू</strong> सबसे बड़ा होता है।
+            </div>
+        </div>
+
+        <!-- 2. कथा -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">📜</span> बिहू की कथाएँ</h2>
+
+            <h3>🌾 1. कृषि और प्रकृति की कथा</h3>
+            <p>
+                <strong>सबसे प्राचीन कथा:</strong> कथा के अनुसार, बिहू <strong>प्रकृति और कृषि</strong> से जुड़ा है। प्राचीन काल में असम के लोग <strong>प्रकृति की पूजा</strong> करते थे — सूर्य, वर्षा, और पृथ्वी। बिहू उसी परंपरा का हिस्सा है।
+            </p>
+            <p>
+                <strong>बोहाग बिहू:</strong> यह <strong>नई फसल की बुआई</strong> का समय है।<br>
+                <strong>काति बिहू:</strong> यह <strong>फसल की देखभाल</strong> का समय है।<br>
+                <strong>माघ बिहू:</strong> यह <strong>फसल कटाई</strong> का समय है।
+            </p>
+
+            <h3>👑 2. राजा भगदत्त की कथा</h3>
+            <p>
+                कथा के अनुसार, <strong>राजा भगदत्त</strong> असम के महान राजा थे। उन्होंने <strong>बिहू उत्सव</strong> की परंपरा शुरू की। वे <strong>महाभारत</strong> में कौरवों की ओर से लड़े थे। बिहू उनके सम्मान में मनाया जाता है।
+            </p>
+
+            <h3>🌺 3. बरदोईचिला की कथा</h3>
+            <p>
+                कथा के अनुसार, बिहू <strong>बरदोईचिला</strong> (असम के पहाड़ी क्षेत्र) से शुरू हुआ। वहाँ के लोग <strong>प्रकृति की पूजा</strong> करते थे और <strong>बिहू नृत्य</strong> करते थे।
+            </p>
+
+            <h3>🦚 4. कामदेव की कथा</h3>
+            <p>
+                कथा के अनुसार, <strong>बोहाग बिहू</strong> <strong>कामदेव</strong> (प्रेम के देवता) से जुड़ा है। बसंत ऋतु में कामदेव जीवित होते हैं — इसलिए यह <strong>प्रेम और खुशी</strong> का पर्व है।
+            </p>
+
+            <h3>🌊 5. ब्रह्मपुत्र नदी की कथा</h3>
+            <p>
+                कथा के अनुसार, <strong>ब्रह्मपुत्र नदी</strong> असम की जीवन रेखा है। बिहू में ब्रह्मपुत्र को <strong>माँ</strong> के रूप में पूजा जाता है।
+            </p>
+        </div>
+
+        <!-- 3. 3 बिहू की विधि -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🌸</span> बिहू के 3 प्रकार — विस्तृत जानकारी</h2>
+            <p style="font-size:13px; color: var(--ink-soft);">
+                कार्ड पर <strong>click करें</strong> और हर बिहू की पूरी विधि पढ़ें।
+            </p>
+
+            <div class="bihu-grid" id="bihuGrid"></div>
+        </div>
+
+        <!-- 4. पूजा विधि -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🙏</span> बिहू पूजा विधि (Step by Step)</h2>
+            <ol class="steps-list">
+                <li><strong>स्नान:</strong> प्रातः स्नान करके स्वच्छ वस्त्र धारण करें।</li>
+                <li><strong>घर की सफाई:</strong> पूरे घर को साफ करें और गंगाजल छिड़कें।</li>
+                <li><strong>रंगोली:</strong> मुख्य द्वार पर रंगोली बनाएँ।</li>
+                <li><strong>प्रकृति पूजा:</strong> सूर्य, वर्षा, और पृथ्वी की पूजा करें।</li>
+                <li><strong>ब्रह्मपुत्र पूजा:</strong> ब्रह्मपुत्र नदी को जल अर्पित करें।</li>
+                <li><strong>गाय-बैल पूजा:</strong> गाय-बैल को नहलाएँ और सजाएँ।</li>
+                <li><strong>मेजी बनाएँ:</strong> पुआल की झोपड़ी (मेजी) बनाएँ।</li>
+                <li><strong>मेजी जलाएँ:</strong> मेजी जलाकर पुरानी चीज़ें त्यागें।</li>
+                <li><strong>बिहू नृत्य:</strong> बिहू नृत्य और गीत गाएँ।</li>
+                <li><strong>पिठा बनाएँ:</strong> चावल के पिठा (मिठाई) बनाएँ।</li>
+                <li><strong>प्रसाद:</strong> पिठा, लारू, और मिठाई का प्रसाद बाँटें।</li>
+                <li><strong>उपहार:</strong> नए वस्त्र और उपहार दें।</li>
+            </ol>
+
+            <h3>📿 मुख्य मंत्र</h3>
+            <div class="mantra-box">
+                ॐ सूर्याय नमः · ॐ वरुणाय नमः
+                <small>सूर्य और वरुण देव का मंत्र — फसल के लिए</small>
+            </div>
+            <div class="mantra-box">
+                ॐ पृथ्व्यै नमः
+                <small>पृथ्वी माता का मंत्र — प्रकृति पूजा के लिए</small>
+            </div>
+        </div>
+
+        <!-- 5. सामग्री -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🛒</span> पूजा सामग्री</h2>
+            <ul style="list-style: none; padding: 0; font-size: 13.5px; line-height: 2;">
+                <li>✅ चावल का आटा (पिठा के लिए)</li>
+                <li>✅ नारियल</li>
+                <li>✅ गुड़ और चीनी</li>
+                <li>✅ तिल</li>
+                <li>✅ चना और मूंग दाल</li>
+                <li>✅ दूध और दही</li>
+                <li>✅ पान के पत्ते</li>
+                <li>✅ तामुल (सुपारी)</li>
+                <li>✅ पीले और लाल फूल</li>
+                <li>✅ रोली, चंदन, अक्षत</li>
+                <li>✅ दीपक, धूप, कपूर</li>
+                <li>✅ घंटी, शंख</li>
+                <li>✅ कलश और जल</li>
+                <li>✅ पुआल (मेजी के लिए)</li>
+                <li>✅ नए वस्त्र</li>
+                <li>✅ पारंपरिक बिहू वस्त्र</li>
+            </ul>
+        </div>
+
+        <!-- 6. क्या करें / क्या न करें -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">✅</span> क्या करें और क्या न करें</h2>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <h4>✅ क्या करें</h4>
+                    <ul>
+                        <li>पिठा बनाएँ</li>
+                        <li>बिहू नृत्य करें</li>
+                        <li>मेजी जलाएँ</li>
+                        <li>प्रकृति पूजा करें</li>
+                        <li>नए वस्त्र पहनें</li>
+                        <li>उपहार दें</li>
+                        <li>प्रसाद बाँटें</li>
+                        <li>बड़ों का आशीर्वाद लें</li>
+                    </ul>
+                </div>
+                <div class="dont-box">
+                    <h4>❌ क्या न करें</h4>
+                    <ul>
+                        <li>पेड़ न काटें</li>
+                        <li>जानवरों को न मारें</li>
+                        <li>प्रकृति को नुकसान न पहुँचाएँ</li>
+                        <li>क्रोध न करें</li>
+                        <li>झूठ न बोलें</li>
+                        <li>तामसिक भोजन न करें</li>
+                        <li>शराब/मांस न लें</li>
+                        <li>कलह न करें</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. व्रत के नियम -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🛕</span> बिहू व्रत के नियम</h2>
+            <ul class="benefit-list">
+                <li><strong>प्रातः स्नान:</strong> रोज़ स्नान करके स्वच्छ वस्त्र पहनें</li>
+                <li><strong>व्रत:</strong> बोहाग बिहू के पहले दिन व्रत रखें</li>
+                <li><strong>फलाहार:</strong> फल, दूध, और पारंपरिक व्यंजन (पिठा)</li>
+                <li><strong>न खाएँ:</strong> प्याज, लहसुन, और मांस</li>
+                <li><strong>प्रकृति पूजा:</strong> सूर्य, वर्षा, और पृथ्वी की पूजा करें</li>
+                <li><strong>गाय-बैल पूजा:</strong> गाय-बैल को नहलाएँ</li>
+                <li><strong>मेजी:</strong> मेजी बनाकर जलाएँ</li>
+                <li><strong>व्रत तोड़ें:</strong> प्रसाद ग्रहण करके</li>
+            </ul>
+        </div>
+
+        <!-- 8. पिठा -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🍡</span> बिहू के पारंपरिक पिठा</h2>
+            <p style="font-size:13px; color: var(--ink-soft);">
+                बिहू पर <strong>चावल के आटे</strong> से बने पिठा (मिठाई) बनाए जाते हैं:
+            </p>
+
+            <div class="pitha-grid">
+                <div class="pitha-item">
+                    <span class="p-icon">🍡</span>
+                    <div class="p-name">तिल पिठा</div>
+                    <div class="p-desc">तिल और गुड़ के</div>
+                </div>
+                <div class="pitha-item">
+                    <span class="p-icon">🥥</span>
+                    <div class="p-name">नारिकल पिठा</div>
+                    <div class="p-desc">नारियल के</div>
+                </div>
+                <div class="pitha-item">
+                    <span class="p-icon">🍮</span>
+                    <div class="p-name">घिला पिठा</div>
+                    <div class="p-desc">चावल के आटे के</div>
+                </div>
+                <div class="pitha-item">
+                    <span class="p-icon">🍯</span>
+                    <div class="p-name">सुंगा पिठा</div>
+                    <div class="p-desc">गुड़ के</div>
+                </div>
+                <div class="pitha-item">
+                    <span class="p-icon">🌾</span>
+                    <div class="p-name">चिरा पिठा</div>
+                    <div class="p-desc">चावल के</div>
+                </div>
+                <div class="pitha-item">
+                    <span class="p-icon">🍌</span>
+                    <div class="p-name">केरा पिठा</div>
+                    <div class="p-desc">केले के</div>
+                </div>
+                <div class="pitha-item">
+                    <span class="p-icon">🥜</span>
+                    <div class="p-name">लारू</div>
+                    <div class="p-desc">नारियल के लड्डू</div>
+                </div>
+                <div class="pitha-item">
+                    <span class="p-icon">🍬</span>
+                    <div class="p-name">खर पिठा</div>
+                    <div class="p-desc">नमकीन पिठा</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 9. बिहू नृत्य -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">💃</span> बिहू नृत्य</h2>
+            <p>
+                बिहू नृत्य असम की सबसे प्रसिद्ध <strong>लोक नृत्य</strong> है — जिसमें <strong>युवा लड़के-लड़कियाँ</strong> पारंपरिक वस्त्र पहनकर नाचते हैं। यह <strong>प्रेम, खुशी, और प्रकृति</strong> का प्रतीक है।
+            </p>
+            <h3>💃 बिहू नृत्य की विशेषताएँ</h3>
+            <ul class="benefit-list">
+                <li><strong>हुसोरी:</strong> पारंपरिक बिहू गीत</li>
+                <li><strong>ढोल:</strong> पारंपरिक वाद्य यंत्र</li>
+                <li><strong>पेपा:</strong> भैंस के सींग का वाद्य</li>
+                <li><strong>गगना:</strong> बाँस का वाद्य</li>
+                <li><strong>वस्त्र:</strong> महिलाएँ मुगा सिल्क की मेखला चादर पहनती हैं</li>
+                <li><strong>पुरुष:</strong> धोती और गमछा पहनते हैं</li>
+                <li><strong>गहने:</strong> जापी, जोनबिरी, और गामखारू</li>
+                <li><strong>मुद्रा:</strong> हाथों को फैलाकर कमर पर रखना</li>
+            </ul>
+        </div>
+
+        <!-- 10. Related Links -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🔗</span> संबंधित लिंक</h2>
+            <div class="related-grid">
+                <a href="../devta/surya.html" class="related-link">🌞 सूर्य देव</a>
+                <a href="makar-sankranti.html" class="related-link">🌞 मकर संक्रांति</a>
+                <a href="pongal.html" class="related-link">🌾 पोंगल</a>
+                <a href="onam.html" class="related-link">🌺 ओणम</a>
+                <a href="lohri.html" class="related-link">🔥 लोहड़ी</a>
+                <a href="index.html" class="related-link">🎉 अन्य त्योहार</a>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय श्री राम</p>
+        </footer>
+
+    </main>
+
+    <button class="back-top" id="backTop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="../devta/index.html" class="nav-link"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-calendar-days"></i><p>त्योहार</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>पंचांग</p></a>
+    </nav>
+
+    <script>
+        // ============================================================
+        //  BIHU — 3 Types
+        // ============================================================
+
+        const bihus = [
+            {
+                icon: '🌸',
+                name: 'बोहाग बिहू',
+                en: 'Bohag Bihu',
+                meaning: 'नववर्ष और फसल बुआई',
+                date: 'अप्रैल (बोहाग मास की पहली तिथि)',
+                isMain: true,
+                katha: 'यह बिहू का सबसे बड़ा और सबसे प्रसिद्ध रूप है — जो <strong>असमिया नववर्ष</strong> की शुरुआत का प्रतीक है। यह <strong>नई फसल की बुआई</strong> का समय है। इसे <strong>"रंगाली बिहू"</strong> भी कहा जाता है — क्योंकि इसमें <strong>रंग और खुशी</strong> की बहार होती है।',
+                vidhi: [
+                    'प्रातः स्नान करें',
+                    'नए वस्त्र पहनें',
+                    'गाय-बैल को नहलाएँ और सजाएँ',
+                    'ब्रह्मपुत्र नदी को जल अर्पित करें',
+                    'बिहू नृत्य करें',
+                    'पिठा और लारू बनाएँ',
+                    'सभी को उपहार दें',
+                    'प्रसाद बाँटें'
+                ],
+                prasad: 'तिल पिठा, नारिकल पिठा, लारू',
+                dos: [
+                    'नए वस्त्र पहनें',
+                    'गाय-बैल की पूजा करें',
+                    'पिठा बनाएँ',
+                    'बिहू नृत्य करें',
+                    'उपहार दें',
+                    'प्रसाद बाँटें'
+                ],
+                donts: [
+                    'पेड़ न काटें',
+                    'जानवरों को न मारें',
+                    'क्रोध न करें',
+                    'झूठ न बोलें'
+                ],
+                benefits: [
+                    'नई फसल',
+                    'समृद्धि',
+                    'खुशहाली',
+                    'प्रेम और एकता',
+                    'प्रकृति कृपा'
+                ],
+                significance: 'बोहाग बिहू असम का <strong>सबसे बड़ा त्योहार</strong> है — जो 7 दिनों तक मनाया जाता है।'
+            },
+            {
+                icon: '🌾',
+                name: 'काति बिहू',
+                en: 'Kati Bihu',
+                meaning: 'फसल की देखभाल',
+                date: 'अक्टूबर (काति मास)',
+                isMain: false,
+                katha: 'यह बिहू का दूसरा रूप है — जो <strong>फसल की देखभाल</strong> का समय है। इसे <strong>"कोंगाली बिहू"</strong> भी कहा जाता है — क्योंकि इस समय <strong>अन्न की कमी</strong> होती है। इस दिन लोग <strong>तुलसी के पौधे</strong> के नीचे दीपक जलाते हैं।',
+                vidhi: [
+                    'प्रातः स्नान करें',
+                    'तुलसी के पौधे की पूजा करें',
+                    'तुलसी के नीचे दीपक जलाएँ',
+                    'खेतों में दीपक जलाएँ',
+                    'प्रकृति की पूजा करें',
+                    'पिठा बनाएँ',
+                    'प्रसाद बाँटें'
+                ],
+                prasad: 'तिल पिठा और चावल',
+                dos: [
+                    'तुलसी पूजा करें',
+                    'दीपदान करें',
+                    'प्रकृति पूजा करें',
+                    'प्रसाद बाँटें'
+                ],
+                donts: [
+                    'पेड़ न काटें',
+                    'जानवरों को न मारें',
+                    'क्रोध न करें',
+                    'झूठ न बोलें'
+                ],
+                benefits: [
+                    'फसल की रक्षा',
+                    'प्रकृति कृपा',
+                    'समृद्धि',
+                    'पितरों का आशीर्वाद'
+                ],
+                significance: 'काति बिहू फसल की देखभाल और पितरों की पूजा का प्रतीक है।'
+            },
+            {
+                icon: '🏠',
+                name: 'माघ बिहू',
+                en: 'Magh Bihu',
+                meaning: 'फसल कटाई और भोज',
+                date: 'जनवरी (माघ मास)',
+                isMain: false,
+                katha: 'यह बिहू का तीसरा रूप है — जो <strong>फसल कटाई</strong> का समय है। इसे <strong>"भोगाली बिहू"</strong> भी कहा जाता है — क्योंकि इस समय <strong>अन्न की प्रचुरता</strong> होती है। लोग <strong>मेजी</strong> (पुआल की झोपड़ी) बनाकर जलाते हैं और <strong>भोज</strong> करते हैं।',
+                vidhi: [
+                    'प्रातः स्नान करें',
+                    'मेजी बनाएँ',
+                    'मेजी जलाएँ',
+                    'उरुका (अग्नि कुंड) बनाएँ',
+                    'पिठा और लारू बनाएँ',
+                    'पारंपरिक भोज करें',
+                    'प्रसाद बाँटें'
+                ],
+                prasad: 'चिरा, पिठा, लारू, दही',
+                dos: [
+                    'मेजी बनाएँ',
+                    'उरुका जलाएँ',
+                    'पारंपरिक भोज करें',
+                    'प्रसाद बाँटें'
+                ],
+                donts: [
+                    'पेड़ न काटें',
+                    'जानवरों को न मारें',
+                    'क्रोध न करें',
+                    'झूठ न बोलें'
+                ],
+                benefits: [
+                    'फसल की समृद्धि',
+                    'खुशहाली',
+                    'पारिवारिक सुख',
+                    'प्रकृति कृपा'
+                ],
+                significance: 'माघ बिहू फसल कटाई और भोज का प्रतीक है — जो जनवरी में मनाया जाता है।'
+            }
+        ];
+
+        function renderBihus() {
+            const grid = document.getElementById('bihuGrid');
+            grid.innerHTML = bihus.map((b, i) => `
+                <div class="bihu-card ${b.isMain ? 'main-day' : ''}" id="bihu-${i}">
+                    <div class="bihu-header" onclick="toggleBihu(${i})">
+                        <div class="bihu-badge">
+                            <span class="b-icon">${b.icon}</span>
+                        </div>
+                        <div class="bihu-info">
+                            <div class="bihu-name">
+                                ${b.name}
+                                ${b.isMain ? '<span class="main-tag">⭐ मुख्य</span>' : ''}
+                            </div>
+                            <div class="bihu-sub">
+                                <span><i class="fa-solid fa-om"></i> ${b.en}</span>
+                                <span><i class="fa-solid fa-calendar"></i> ${b.date}</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-down bihu-arrow"></i>
+                    </div>
+                    <div class="bihu-body">
+                        <div class="bihu-body-inner">
+
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <div class="lbl">अर्थ</div>
+                                    <div class="val" style="font-size:11px;">${b.meaning}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="lbl">तिथि</div>
+                                    <div class="val">${b.date}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="lbl">प्रसाद</div>
+                                    <div class="val" style="font-size:11px;">${b.prasad}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="lbl">प्रकार</div>
+                                    <div class="val">${b.isMain ? 'मुख्य बिहू' : 'बिहू'}</div>
+                                </div>
+                            </div>
+
+                            <div class="bihu-section">
+                                <div class="bihu-section-title"><span class="ri">📜</span> महत्व</div>
+                                <p>${b.katha}</p>
+                            </div>
+
+                            <div class="bihu-section">
+                                <div class="bihu-section-title"><span class="ri">🙏</span> विधि</div>
+                                <ol class="steps-list">
+                                    ${b.vidhi.map(v => `<li>${v}</li>`).join('')}
+                                </ol>
+                            </div>
+
+                            <div class="bihu-section">
+                                <div class="bihu-section-title"><span class="ri">✅</span> क्या करें और क्या न करें</div>
+                                <div class="do-dont-grid">
+                                    <div class="do-box">
+                                        <h4>✅ क्या करें</h4>
+                                        <ul>${b.dos.map(x => `<li>${x}</li>`).join('')}</ul>
+                                    </div>
+                                    <div class="dont-box">
+                                        <h4>❌ क्या न करें</h4>
+                                        <ul>${b.donts.map(x => `<li>${x}</li>`).join('')}</ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bihu-section">
+                                <div class="bihu-section-title"><span class="ri">✨</span> लाभ</div>
+                                <ul class="benefit-list">
+                                    ${b.benefits.map(ben => `<li>${ben}</li>`).join('')}
+                                </ul>
+                            </div>
+
+                            <div class="bihu-section">
+                                <div class="bihu-section-title"><span class="ri">🌟</span> महत्व</div>
+                                <div class="highlight-box">${b.significance}</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleBihu(i) {
+            const card = document.getElementById(`bihu-${i}`);
+            card.classList.toggle('open');
+            if (card.classList.contains('open')) {
+                setTimeout(() => {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 300);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderBihus();
+        });
+
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backTop');
+            if (btn) {
+                if (window.scrollY > 400) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        const darkToggle = document.getElementById('darkToggle');
+        if (darkToggle) {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+                darkToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            }
+            darkToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                const icon = this.querySelector('i');
+                const isDark = document.body.classList.contains('dark-mode');
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+                localStorage.setItem('darkMode', isDark);
+            });
+        }
+    </script>
+</body>
+</html>
