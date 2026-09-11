@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>राम नवमी — संपूर्ण जानकारी | Sanatan Gyan Kosh</title>
+    <meta name="description" content="राम नवमी का संपूर्ण ज्ञान — राम जन्म कथा, रामायण के 7 कांड, पूजा विधि, व्रत, प्रसाद, और हर छोटी से छोटी बात।" />
+    <meta name="theme-color" content="#7A2E2E" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .festival-hero {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, rgba(255,140,0,0.18), rgba(122,46,46,0.15), rgba(0,100,200,0.12));
+            border-radius: var(--radius);
+            margin-bottom: 16px;
+            border: 2px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+        .festival-hero::before {
+            content: '🏹';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            font-size: 140px;
+            opacity: 0.08;
+        }
+        .festival-hero .hero-icon {
+            font-size: 80px;
+            display: block;
+            line-height: 1;
+            animation: bow 2.5s ease-in-out infinite;
+        }
+        @keyframes bow {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.05) rotate(-3deg); filter: drop-shadow(0 0 20px rgba(255,140,0,0.7)); }
+        }
+        .festival-hero .hero-name {
+            font-family: var(--font-display);
+            font-size: 34px;
+            color: var(--maroon);
+            margin-top: 8px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #7b1d1d, #ff8c00, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .festival-hero .hero-subtitle {
+            font-size: 14px;
+            color: var(--ink-soft);
+            margin-top: 6px;
+            letter-spacing: 1px;
+        }
+        .festival-hero .hero-date {
+            display: inline-block;
+            background: var(--maroon);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        .festival-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 20px 18px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+        }
+        .festival-section h2 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--maroon);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+        }
+        .festival-section h2 .sec-icon { font-size: 26px; }
+        .festival-section h3 {
+            font-family: var(--font-display);
+            font-size: 16px;
+            color: var(--maroon);
+            margin: 16px 0 8px;
+        }
+        .festival-section p {
+            font-size: 14px;
+            line-height: 1.9;
+            color: var(--ink-soft);
+            margin-bottom: 10px;
+        }
+        .festival-section p strong { color: var(--maroon); }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin-top: 12px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--gold), #ff8c00, var(--maroon));
+            border-radius: 3px;
+        }
+        .timeline-item {
+            position: relative;
+            padding-bottom: 18px;
+        }
+        .timeline-item:last-child { padding-bottom: 0; }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 3px;
+            width: 19px;
+            height: 19px;
+            border-radius: 50%;
+            background: #ff8c00;
+            border: 4px solid var(--card-bg);
+            box-shadow: 0 0 0 2px #ff8c00;
+        }
+        .timeline-item .t-time {
+            font-size: 10px;
+            background: var(--maroon);
+            color: white;
+            padding: 2px 10px;
+            border-radius: 10px;
+            display: inline-block;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .timeline-item .t-title {
+            font-family: var(--font-display);
+            font-size: 15px;
+            color: var(--maroon);
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+        .timeline-item .t-desc {
+            font-size: 12.5px;
+            line-height: 1.7;
+            color: var(--ink-soft);
+        }
+        .timeline-item .t-desc strong { color: var(--maroon); }
+
+        /* Kand Cards */
+        .kand-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 12px;
+        }
+        .kand-card {
+            background: var(--card-bg);
+            border-radius: 14px;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--border);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .kand-card:hover {
+            border-color: var(--gold);
+            box-shadow: var(--shadow-hover);
+        }
+        .kand-card.open { border-color: var(--maroon); }
+        .kand-header {
+            padding: 14px 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: var(--transition);
+        }
+        .kand-header:hover { background: var(--bg); }
+        .kand-card.open .kand-header {
+            background: linear-gradient(135deg, rgba(255,140,0,0.12), rgba(122,46,46,0.08));
+            border-bottom: 1px solid var(--border);
+        }
+        .kand-num {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff8c00, var(--maroon));
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .kand-info { flex: 1; }
+        .kand-name {
+            font-family: var(--font-display);
+            font-size: 16px;
+            color: var(--maroon);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .kand-sub {
+            font-size: 11px;
+            color: var(--ink-soft);
+            margin-top: 2px;
+        }
+        .kand-arrow {
+            color: var(--gold);
+            font-size: 16px;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+        .kand-card.open .kand-arrow { transform: rotate(180deg); }
+
+        .kand-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        .kand-card.open .kand-body { max-height: 3000px; }
+        .kand-body-inner {
+            padding: 16px;
+        }
+        .kand-body p {
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+        }
+        .kand-body p strong { color: var(--maroon); }
+
+        .mantra-box {
+            background: linear-gradient(135deg, rgba(255,140,0,0.1), rgba(122,46,46,0.06));
+            border-left: 4px solid #ff8c00;
+            padding: 12px 14px;
+            border-radius: 10px;
+            font-family: var(--font-display);
+            font-size: 15px;
+            text-align: center;
+            margin: 8px 0;
+            line-height: 1.8;
+            color: var(--maroon);
+            font-weight: 600;
+        }
+        .mantra-box small {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 11px;
+            color: var(--ink-soft);
+            font-weight: 400;
+            margin-top: 4px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 6px;
+        }
+        .info-item {
+            background: var(--bg);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+        }
+        .info-item .lbl {
+            font-size: 9px;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-item .val {
+            font-weight: 600;
+            color: var(--maroon);
+            margin-top: 2px;
+            font-size: 12.5px;
+        }
+
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 6px;
+        }
+        .benefit-list li {
+            padding: 5px 0 5px 22px;
+            font-size: 12.5px;
+            line-height: 1.6;
+            color: var(--ink-soft);
+            position: relative;
+        }
+        .benefit-list li::before {
+            content: '🏹';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            font-size: 12px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255,140,0,0.1), rgba(122,46,46,0.06));
+            border-left: 4px solid #ff8c00;
+            padding: 12px 14px;
+            border-radius: 10px;
+            margin: 8px 0;
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+        }
+        .highlight-box strong { color: var(--maroon); }
+
+        .steps-list {
+            list-style: none;
+            padding: 0;
+            counter-reset: step-counter;
+            margin: 8px 0;
+        }
+        .steps-list li {
+            counter-increment: step-counter;
+            padding: 8px 10px 8px 40px;
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+            border-bottom: 1px dashed var(--border);
+            position: relative;
+        }
+        .steps-list li:last-child { border-bottom: none; }
+        .steps-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff8c00, var(--maroon));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg);
+            color: var(--maroon);
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+        .back-btn:hover { background: var(--maroon); color: white; }
+
+        .back-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--maroon);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 16px rgba(122,46,46,0.4);
+            z-index: 90;
+        }
+        .back-top.show { display: flex; }
+
+        .do-dont-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .do-box, .dont-box {
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+        .do-box {
+            background: #eef7ee;
+            border-left: 3px solid #27ae60;
+        }
+        .do-box h4 { color: #27ae60; font-size: 12px; margin-bottom: 6px; }
+        .dont-box {
+            background: #fdecea;
+            border-left: 3px solid #dc3545;
+        }
+        .dont-box h4 { color: #dc3545; font-size: 12px; margin-bottom: 6px; }
+        .do-box ul, .dont-box ul { list-style: none; padding: 0; }
+        .do-box ul li, .dont-box ul li {
+            padding: 2px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 5px;
+        }
+        .do-box ul li::before { content: '✅'; flex-shrink: 0; font-size: 11px; }
+        .dont-box ul li::before { content: '❌'; flex-shrink: 0; font-size: 11px; }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .related-link {
+            padding: 12px;
+            background: var(--bg);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--maroon);
+            font-weight: 600;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .related-link:hover {
+            background: var(--card-bg);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 420px) {
+            .festival-hero .hero-icon { font-size: 60px; }
+            .festival-hero .hero-name { font-size: 26px; }
+            .festival-section h2 { font-size: 17px; }
+            .kand-name { font-size: 14px; }
+            .do-dont-grid { grid-template-columns: 1fr; }
+            .info-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header-title">
+            <span class="eyebrow">🕉️ त्योहार</span>
+            <h1>राम नवमी</h1>
+        </div>
+        <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <div class="diya-row">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <main>
+
+        <a href="index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i> सभी त्योहार
+        </a>
+
+        <!-- Hero -->
+        <div class="festival-hero">
+            <span class="hero-icon">🏹</span>
+            <div class="hero-name">राम नवमी</div>
+            <div class="hero-subtitle">भगवान श्री राम का जन्मोत्सव · चैत्र नवरात्रि का अंतिम दिन</div>
+            <div class="hero-date">📅 चैत्र शुक्ल नवमी · मार्च-अप्रैल</div>
+        </div>
+
+        <!-- 1. परिचय -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">📖</span> राम नवमी क्या है?</h2>
+            <p>
+                <strong>राम नवमी</strong> भगवान <strong>श्री राम</strong> का जन्मोत्सव है — जो उनके अयोध्या में जन्म की खुशी में मनाया जाता है। यह <strong>चैत्र शुक्ल नवमी</strong> को मनाई जाती है और <strong>चैत्र नवरात्रि का अंतिम दिन</strong> होती है।
+            </p>
+            <p>
+                राम जी <strong>भगवान विष्णु के सातवें अवतार</strong> हैं और <strong>मर्यादा पुरुषोत्तम</strong> कहलाते हैं — अर्थात् मर्यादा के सर्वोच्च पालनकर्ता। उन्हें <strong>धर्म, सत्य, न्याय, और आदर्श जीवन</strong> का प्रतीक माना जाता है।
+            </p>
+            <div class="highlight-box">
+                <strong>🏹 मुख्य बात:</strong> राम जी का जन्म <strong>चैत्र शुक्ल नवमी</strong> को <strong>दोपहर 12 बजे</strong> हुआ था — जब सूर्य और चंद्रमा अपने उच्च स्थान पर थे। इसलिए यह दिन <strong>अत्यंत शुभ</strong> माना जाता है।
+            </div>
+        </div>
+
+        <!-- 2. जन्म कथा Timeline -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">📜</span> राम जन्म की कथा</h2>
+            <p>
+                <strong>त्रेता युग</strong> में अयोध्या के राजा <strong>दशरथ</strong> की तीन पत्नियाँ थीं — <strong>कौशल्या, कैकेयी, और सुमित्रा</strong>। संतान न होने के कारण राजा दशरथ ने <strong>पुत्रकामेष्टि यज्ञ</strong> कराया।
+            </p>
+
+            <h3>📅 घटनाक्रम (Timeline)</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="t-time">पुत्रकामेष्टि यज्ञ</span>
+                    <div class="t-title">🪔 यज्ञ की शुरुआत</div>
+                    <div class="t-desc">राजा दशरथ ने <strong>ऋष्यशृंग ऋषि</strong> से पुत्रकामेष्टि यज्ञ कराया। यज्ञ से एक <strong>दिव्य खीर</strong> प्रकट हुई।</div>
+                </div>
+                <div class="timeline-item">
+                    <span class="t-time">यज्ञ प्रसाद वितरण</span>
+                    <div class="t-title">🥣 तीनों रानियों को प्रसाद</div>
+                    <div class="t-desc">राजा दशरथ ने खीर आधी कौशल्या को, आधी कैकेयी को, और उसका आधा सुमित्रा को दिया। तीनों रानियों ने ग्रहण किया।</div>
+                </div>
+                <div class="timeline-item">
+                    <span class="t-time">चैत्र शुक्ल नवमी · दोपहर 12 बजे</span>
+                    <div class="t-title">🎉 राम जन्म</div>
+                    <div class="t-desc">कौशल्या ने <strong>राम</strong> को जन्म दिया — जो विष्णु के सातवें अवतार हैं। उस समय <strong>सूर्य और चंद्रमा अपने उच्च स्थान पर थे</strong>।</div>
+                </div>
+                <div class="timeline-item">
+                    <span class="t-time">तुरंत बाद</span>
+                    <div class="t-title">👶 भरत, लक्ष्मण, शत्रुघ्न का जन्म</div>
+                    <div class="t-desc"><strong>कैकेयी</strong> ने <strong>भरत</strong> को, और <strong>सुमित्रा</strong> ने <strong>लक्ष्मण और शत्रुघ्न</strong> को जन्म दिया। चारों भाई एक साथ खेलते-पढ़ते बड़े हुए।</div>
+                </div>
+                <div class="timeline-item">
+                    <span class="t-time">बाल्यकाल</span>
+                    <div class="t-title">📚 शिक्षा</div>
+                    <div class="t-desc">चारों भाइयों को <strong>वशिष्ठ ऋषि</strong> ने शिक्षा दी। उसके बाद <strong>विश्वामित्र ऋषि</strong> ने राम और लक्ष्मण को अस्त्र-शस्त्र की शिक्षा दी।</div>
+                </div>
+                <div class="timeline-item">
+                    <span class="t-time">मिथिला</span>
+                    <div class="t-title">💍 सीता स्वयंवर</div>
+                    <div class="t-desc">राम जी ने <strong>शिव धनुष</strong> तोड़कर सीता माता से विवाह किया। यह विवाह पंचमी के रूप में मनाया जाता है।</div>
+                </div>
+                <div class="timeline-item">
+                    <span class="t-time">अयोध्या</span>
+                    <div class="t-title">👑 राज्याभिषेक की तैयारी</div>
+                    <div class="t-desc">दशरथ ने राम को युवराज बनाने का निर्णय लिया। लेकिन <strong>कैकेयी के वरदान</strong> से राम को 14 वर्ष का वनवास मिला।</div>
+                </div>
+                <div class="timeline-item">
+                    <span class="t-time">14 वर्ष बाद</span>
+                    <div class="t-title">🏹 रावण वध और राम राज्य</div>
+                    <div class="t-desc">राम ने रावण का वध किया, सीता को मुक्त कराया, और अयोध्या लौटकर <strong>राम राज्य</strong> की स्थापना की।</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. रामायण के 7 कांड -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">📚</span> रामायण के 7 कांड</h2>
+            <p style="font-size:13px; color: var(--ink-soft);">
+                कार्ड पर <strong>click करें</strong> और हर कांड की पूरी कथा पढ़ें।
+            </p>
+
+            <div class="kand-grid" id="kandGrid"></div>
+        </div>
+
+        <!-- 4. पूजा विधि -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🙏</span> राम नवमी पूजा विधि (Step by Step)</h2>
+            <ol class="steps-list">
+                <li><strong>स्नान और तैयारी:</strong> प्रातः स्नान करके स्वच्छ वस्त्र धारण करें।</li>
+                <li><strong>व्रत का संकल्प:</strong> पूरे दिन व्रत रखने का संकल्प लें।</li>
+                <li><strong>मंदिर सजावट:</strong> पूजा स्थान को फूलों और दीपों से सजाएँ।</li>
+                <li><strong>राम दरबार स्थापना:</strong> राम, सीता, लक्ष्मण, और हनुमान की प्रतिमा स्थापित करें।</li>
+                <li><strong>गणेश और शिव पूजा:</strong> सबसे पहले गणेश और शिव जी की पूजा करें।</li>
+                <li><strong>कलश स्थापना:</strong> जल से भरा कलश स्थापित करें।</li>
+                <li><strong>राम जन्म पूजा:</strong> दोपहर 12 बजे राम जन्म की पूजा करें।</li>
+                <li><strong>पंचामृत स्नान:</strong> राम जी को पंचामृत से स्नान कराएँ।</li>
+                <li><strong>वस्त्र और आभूषण:</strong> पीले वस्त्र और मुकुट पहनाएँ।</li>
+                <li><strong>भोग:</strong> खीर, पूरी, हलवा, फल, पान अर्पित करें।</li>
+                <li><strong>मंत्र जप:</strong> "ॐ श्री रामाय नमः" 108 बार जपें।</li>
+                <li><strong>सुंदरकांड पाठ:</strong> सुंदरकांड या रामचरितमानस पाठ करें।</li>
+                <li><strong>आरती:</strong> "श्री रामचंद्र कृपालु भजमन" आरती गाएँ।</li>
+                <li><strong>हवन:</strong> हवन कराएँ और प्रसाद बाँटें।</li>
+                <li><strong>व्रत तोड़ें:</strong> अगले दिन स्नान के बाद व्रत तोड़ें।</li>
+            </ol>
+
+            <h3>📿 मुख्य मंत्र</h3>
+            <div class="mantra-box">
+                ॐ श्री रामाय नमः
+                <small>राम जी का मूल मंत्र — 108 बार जपें</small>
+            </div>
+            <div class="mantra-box">
+                ॐ दाशरथये विद्महे ।<br>सीतावल्लभाय धीमहि ।<br>तन्नो रामः प्रचोदयात् ॥
+                <small>राम गायत्री मंत्र — राम कृपा के लिए</small>
+            </div>
+        </div>
+
+        <!-- 5. सामग्री -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🛒</span> पूजा सामग्री</h2>
+            <ul style="list-style: none; padding: 0; font-size: 13.5px; line-height: 2;">
+                <li>✅ राम दरबार की प्रतिमा</li>
+                <li>✅ राम जी की प्रतिमा (छोटी)</li>
+                <li>✅ पीले वस्त्र</li>
+                <li>✅ मुकुट और आभूषण</li>
+                <li>✅ धनुष-बाण (चित्र)</li>
+                <li>✅ खीर, पूरी, हलवा</li>
+                <li>✅ फल (केला, सेब, नारियल)</li>
+                <li>✅ पान, सुपारी</li>
+                <li>✅ तुलसी दल</li>
+                <li>✅ पीले फूल</li>
+                <li>✅ दीपक, धूप, कपूर</li>
+                <li>✅ घंटी, शंख</li>
+                <li>✅ रोली, चंदन, अक्षत</li>
+                <li>✅ पंचामृत (दूध, दही, घी, शहद, गुड़)</li>
+                <li>✅ रामचरितमानस या सुंदरकांड पुस्तक</li>
+                <li>✅ हवन सामग्री</li>
+            </ul>
+        </div>
+
+        <!-- 6. क्या करें / क्या न करें -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">✅</span> क्या करें और क्या न करें</h2>
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <h4>✅ क्या करें</h4>
+                    <ul>
+                        <li>व्रत रखें</li>
+                        <li>रामचरितमानस पाठ करें</li>
+                        <li>सुंदरकांड पाठ करें</li>
+                        <li>राम दरबार की पूजा करें</li>
+                        <li>हवन कराएँ</li>
+                        <li>राम नाम का जप करें</li>
+                        <li>प्रसाद बाँटें</li>
+                        <li>बच्चों को कथा सुनाएँ</li>
+                    </ul>
+                </div>
+                <div class="dont-box">
+                    <h4>❌ क्या न करें</h4>
+                    <ul>
+                        <li>अन्न न खाएँ</li>
+                        <li>तामसिक भोजन न करें</li>
+                        <li>क्रोध न करें</li>
+                        <li>झूठ न बोलें</li>
+                        <li>अशुद्ध न रहें</li>
+                        <li>राम जी का अनादर न करें</li>
+                        <li>शराब/मांस न लें</li>
+                        <li>किसी से कलह न करें</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. व्रत के नियम -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🛕</span> राम नवमी व्रत के नियम</h2>
+            <ul class="benefit-list">
+                <li><strong>पूरे दिन व्रत:</strong> सूर्योदय से अगले दिन सूर्योदय तक</li>
+                <li><strong>फलाहार:</strong> फल, दूध, दही, मखाना, साबूदाना, आलू, कुट्टू</li>
+                <li><strong>न खाएँ:</strong> अन्न, चावल, गेहूं, दाल, प्याज, लहसुन</li>
+                <li><strong>रामचरितमानस पाठ:</strong> पूरा या अंश पढ़ें</li>
+                <li><strong>सुंदरकांड:</strong> सुंदरकांड पाठ विशेष रूप से करें</li>
+                <li><strong>हवन:</strong> दोपहर 12 बजे के बाद हवन कराएँ</li>
+                <li><strong>व्रत तोड़ें:</strong> अगले दिन स्नान के बाद प्रसाद ग्रहण करके</li>
+            </ul>
+            <div class="highlight-box">
+                <strong>💡 ध्यान:</strong> राम नवमी व्रत में <strong>रामचरितमानस पाठ</strong> और <strong>सुंदरकांड</strong> सबसे महत्वपूर्ण है — क्योंकि यह राम कथा और हनुमान भक्ति का संगम है।
+            </div>
+        </div>
+
+        <!-- 8. प्रसाद -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🍯</span> राम नवमी का प्रसाद</h2>
+            <div class="highlight-box">
+                <strong>राम जी को प्रिय भोग:</strong>
+            </div>
+            <ul style="list-style: none; padding: 0; font-size: 13.5px; line-height: 2;">
+                <li>🍚 <strong>खीर</strong> — राम जी का प्रिय</li>
+                <li>🥘 <strong>पूरी और हलवा</strong> — पारंपरिक भोग</li>
+                <li>🌿 <strong>तुलसी दल</strong> — राम जी का प्रिय</li>
+                <li>🍎 <strong>फल</strong> — केला, सेब, नारियल</li>
+                <li>🍬 <strong>मिठाई</strong> — लड्डू, बर्फी</li>
+                <li>🥛 <strong>दूध और मिश्री</strong></li>
+                <li>🍯 <strong>गुड़ और चना</strong></li>
+                <li>🥜 <strong>मेवे</strong> — बादाम, काजू</li>
+            </ul>
+        </div>
+
+        <!-- 9. Related Links -->
+        <div class="festival-section">
+            <h2><span class="sec-icon">🔗</span> संबंधित लिंक</h2>
+            <div class="related-grid">
+                <a href="../devta/ram.html" class="related-link">🏹 राम जी</a>
+                <a href="../devta/hanuman.html" class="related-link">🐒 हनुमान जी</a>
+                <a href="../stotra/ram-raksha.html" class="related-link">📜 राम रक्षा स्तोत्र</a>
+                <a href="../stotra/sundarkand.html" class="related-link">📜 सुंदरकांड</a>
+                <a href="../katha/ramayan-katha.html" class="related-link">📖 रामायण कथा</a>
+                <a href="index.html" class="related-link">🎉 अन्य त्योहार</a>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>🕉️ सनातन ज्ञान कोश</p>
+            <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+            <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय श्री राम</p>
+        </footer>
+
+    </main>
+
+    <button class="back-top" id="backTop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+        <a href="../devta/index.html" class="nav-link"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="../mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-calendar-days"></i><p>त्योहार</p></a>
+        <a href="../panchang/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>पंचांग</p></a>
+    </nav>
+
+    <script>
+        // ============================================================
+        //  RAMAYAN — 7 Kands
+        // ============================================================
+
+        const kands = [
+            {
+                num: 1,
+                name: 'बाल कांड',
+                en: 'Bal Kand',
+                desc: 'राम जन्म, बाल लीला, विश्वामित्र के साथ जाना, ताड़का वध, सीता स्वयंवर, और राम-सीता विवाह। इस कांड में राम जी का बाल्यकाल और युवावस्था का वर्णन है।'
+            },
+            {
+                num: 2,
+                name: 'अयोध्या कांड',
+                en: 'Ayodhya Kand',
+                desc: 'राम के राज्याभिषेक की तैयारी, कैकेयी के वरदान, राम का 14 वर्ष का वनवास, दशरथ की मृत्यु, भरत मिलाप, और केवट प्रसंग। इस कांड में राम के वनवास की कथा है।'
+            },
+            {
+                num: 3,
+                name: 'अरण्य कांड',
+                en: 'Aranya Kand',
+                desc: 'वन में जीवन, पंचवटी में निवास, शूर्पणखा का नाक काटना, खर-दूषण वध, स्वर्ण मृग, सीता हरण, जटायु मोक्ष, और शबरी के बेर। इस कांड में सीता हरण की कथा है।'
+            },
+            {
+                num: 4,
+                name: 'किष्किंधा कांड',
+                en: 'Kishkindha Kand',
+                desc: 'हनुमान मिलन, सुग्रीव मित्रता, बाली वध, सुग्रीव का राज्याभिषेक, और सीता की खोज की तैयारी। इस कांड में हनुमान जी का राम जी से मिलन होता है।'
+            },
+            {
+                num: 5,
+                name: 'सुंदर कांड',
+                en: 'Sundar Kand',
+                desc: 'हनुमान का लंका जाना, समुद्र पार करना, सीता माता से मिलन, अशोक वाटिका उजाड़ना, लंका दहन, और राम के पास वापसी। यह सबसे प्रसिद्ध कांड है — भक्ति और वीरता का संगम।'
+            },
+            {
+                num: 6,
+                name: 'लंका कांड',
+                en: 'Lanka Kand',
+                desc: 'सेतु निर्माण, लंका युद्ध, कुंभकर्ण वध, मेघनाद वध, रावण वध, विभीषण राज्याभिषेक, और सीता माता की अग्नि परीक्षा। इस कांड में राम-रावण युद्ध की पूरी कथा है।'
+            },
+            {
+                num: 7,
+                name: 'उत्तर कांड',
+                en: 'Uttar Kand',
+                desc: 'अयोध्या वापसी, राम राज्याभिषेक, राम राज्य की स्थापना, लव-कुश का जन्म, सीता का वन गमन, और राम जी का वैकुंठ गमन। इस कांड में राम राज्य की महिमा है।'
+            }
+        ];
+
+        function renderKands() {
+            const grid = document.getElementById('kandGrid');
+            grid.innerHTML = kands.map(k => `
+                <div class="kand-card" id="kand-${k.num}">
+                    <div class="kand-header" onclick="toggleKand(${k.num})">
+                        <div class="kand-num">${k.num}</div>
+                        <div class="kand-info">
+                            <div class="kand-name">${k.name}</div>
+                            <div class="kand-sub">${k.en}</div>
+                        </div>
+                        <i class="fa-solid fa-chevron-down kand-arrow"></i>
+                    </div>
+                    <div class="kand-body">
+                        <div class="kand-body-inner">
+                            <p>${k.desc}</p>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleKand(num) {
+            const card = document.getElementById(`kand-${num}`);
+            card.classList.toggle('open');
+            if (card.classList.contains('open')) {
+                setTimeout(() => {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 300);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderKands();
+        });
+
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backTop');
+            if (btn) {
+                if (window.scrollY > 400) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        const darkToggle = document.getElementById('darkToggle');
+        if (darkToggle) {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+                darkToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            }
+            darkToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                const icon = this.querySelector('i');
+                const isDark = document.body.classList.contains('dark-mode');
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+                localStorage.setItem('darkMode', isDark);
+            });
+        }
+    </script>
+</body>
+</html>
