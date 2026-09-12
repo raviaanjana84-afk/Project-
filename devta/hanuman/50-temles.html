@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>हनुमान जी के प्रमुख मंदिर — संपूर्ण संग्रह | Sanatan Gyan Kosh</title>
+<meta name="description" content="हनुमान जी के 25+ प्रमुख मंदिर — सालासर, मेहंदीपुर, अयोध्या, पटना, काशी और अन्य। पूरी जानकारी हिंदी में।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+/* ========== PAGE SPECIFIC STYLES ========== */
+.temple-hero {
+  width: 100%;
+  padding: 34px 20px 28px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(212,175,55,.4), transparent 65%),
+    linear-gradient(135deg, rgba(122,46,46,.22), rgba(255,107,53,.14));
+  border-radius: var(--radius);
+  text-align: center;
+  margin: 16px 0;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.temple-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(212,175,55,.15), transparent 70%);
+  animation: pulseGlow 4s infinite;
+}
+.temple-hero .temple-emoji {
+  font-size: 90px;
+  display: block;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 26px rgba(212,175,55,.85));
+  animation: floatIcon 3.5s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+.temple-hero h2 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 28px;
+  color: var(--maroon);
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 2;
+}
+body.dark .temple-hero h2 { color: var(--gold-light); }
+.temple-hero .temple-sub {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+.temple-hero .temple-meta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  position: relative;
+  z-index: 2;
+}
+.temple-hero .temple-meta span { display: flex; align-items: center; gap: 5px; }
+.temple-hero .temple-meta i { color: var(--gold); }
+
+/* Stats */
+.temple-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 16px 0;
+}
+.stat-item {
+  padding: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+.stat-item .num {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--maroon);
+  font-family: 'Tiro Devanagari Hindi', serif;
+}
+body.dark .stat-item .num { color: var(--gold-light); }
+.stat-item .lbl {
+  font-size: 10.5px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+/* Category Chips */
+.cat-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.cat-chip {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  font-family: 'Hind', sans-serif;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: all .25s ease;
+}
+.cat-chip:hover {
+  border-color: var(--gold);
+  color: var(--maroon);
+}
+.cat-chip.active {
+  background: linear-gradient(135deg, var(--maroon), var(--saffron));
+  color: #fff;
+  border-color: transparent;
+}
+
+/* Temple Cards */
+.temple-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  margin-top: 12px;
+}
+.temple-card {
+  display: block;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  text-decoration: none;
+  color: inherit;
+  transition: all .3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.temple-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--maroon), var(--gold), var(--saffron));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .4s ease;
+}
+.temple-card:hover::before { transform: scaleX(1); }
+.temple-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 8px 28px rgba(212,175,55,.18);
+}
+.temple-card .tc-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.temple-card .tc-emoji {
+  font-size: 42px;
+  filter: drop-shadow(0 0 12px rgba(212,175,55,.5));
+  flex-shrink: 0;
+  transition: transform .3s ease;
+}
+.temple-card:hover .tc-emoji { transform: scale(1.1) rotate(-5deg); }
+.temple-card .tc-info { flex: 1; min-width: 0; }
+.temple-card .tc-title {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 17px;
+  color: var(--maroon);
+  margin: 0 0 3px;
+  line-height: 1.3;
+}
+body.dark .temple-card .tc-title { color: var(--gold-light); }
+.temple-card .tc-badge {
+  display: inline-block;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: rgba(212,175,55,.15);
+  color: var(--maroon);
+  font-weight: 600;
+  letter-spacing: .5px;
+}
+body.dark .temple-card .tc-badge { color: var(--gold-light); }
+.temple-card .tc-desc {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin: 0 0 12px;
+}
+.temple-card .tc-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+.temple-card .tc-foot .tc-loc {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.temple-card .tc-foot .tc-arrow {
+  color: var(--gold);
+  transition: transform .3s ease;
+}
+.temple-card:hover .tc-foot .tc-arrow { transform: translateX(4px); }
+
+/* Featured Card */
+.temple-card.featured {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(212,175,55,.1), rgba(122,46,46,.05));
+  border-color: rgba(212,175,55,.4);
+}
+.temple-card.featured .tc-emoji { font-size: 56px; }
+
+/* No Result */
+.no-result {
+  display: none;
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+.no-result.show { display: block; }
+
+/* Responsive */
+@media (max-width: 480px) {
+  .temple-hero .temple-emoji { font-size: 70px; }
+  .temple-hero h2 { font-size: 23px; }
+  .temple-grid { grid-template-columns: 1fr; }
+  .temple-card .tc-emoji { font-size: 36px; }
+  .temple-card.featured .tc-emoji { font-size: 46px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Header -->
+<header class="app-header">
+  <a href="../hanuman.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान जी</span>
+    <h1>प्रमुख मंदिर</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<!-- Diya Row -->
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<!-- ========== HERO ========== -->
+<div class="temple-hero">
+  <span class="temple-emoji">🛕</span>
+  <h2>हनुमान जी के प्रमुख मंदिर</h2>
+  <div class="temple-sub">25+ Temples • Complete Guide</div>
+  <div class="temple-meta">
+    <span><i class="fa-solid fa-place-of-worship"></i> 25+ मंदिर</span>
+    <span><i class="fa-solid fa-clock"></i> 45 मिनट</span>
+    <span><i class="fa-solid fa-language"></i> विस्तृत जानकारी</span>
+  </div>
+</div>
+
+<!-- ========== INTRO ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> मंदिरों का महत्व</h2>
+  <p>हनुमान जी के मंदिर भारत के हर कोने में स्थित हैं। ये मंदिर केवल पूजा स्थल नहीं हैं — ये भक्ति, शक्ति और आस्था के केंद्र हैं। यहाँ दर्शन मात्र से भक्तों के सभी संकट दूर होते हैं।</p>
+  <p>हनुमान जी के कुछ मंदिर तो इतने प्रसिद्ध हैं कि दूर-दूर से भक्त यहाँ दर्शन के लिए आते हैं। सालासर बालाजी, मेहंदीपुर बालाजी, हनुमानगढ़ी अयोध्या और महावीर मंदिर पटना — ये सभी भारत के प्रमुख हनुमान मंदिर हैं।</p>
+  <p>यहाँ <strong>25+ प्रमुख हनुमान मंदिरों</strong> की जानकारी दी गई है — स्थान, महत्व, दर्शन समय और विशेषताओं सहित।</p>
+</div>
+
+<!-- ========== STATS ========== -->
+<div class="temple-stats">
+  <div class="stat-item"><div class="num">25+</div><div class="lbl">मंदिर</div></div>
+  <div class="stat-item"><div class="num">12</div><div class="lbl">राज्य</div></div>
+  <div class="stat-item"><div class="num">6</div><div class="lbl">विस्तृत पेज</div></div>
+</div>
+
+<!-- ========== CATEGORY CHIPS ========== -->
+<div class="cat-chips" id="catChips">
+  <button class="cat-chip active" data-cat="all" onclick="filterCat(this)">सभी</button>
+  <button class="cat-chip" data-cat="rajasthan" onclick="filterCat(this)">राजस्थान</button>
+  <button class="cat-chip" data-cat="up" onclick="filterCat(this)">उत्तर प्रदेश</button>
+  <button class="cat-chip" data-cat="bihar" onclick="filterCat(this)">बिहार</button>
+  <button class="cat-chip" data-cat="maharashtra" onclick="filterCat(this)">महाराष्ट्र</button>
+  <button class="cat-chip" data-cat="other" onclick="filterCat(this)">अन्य राज्य</button>
+</div>
+
+<!-- ========== TEMPLE GRID ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🛕</span> सभी मंदिर</h2>
+
+  <div class="temple-grid" id="templeGrid">
+
+    <!-- Featured: सालासर बालाजी -->
+    <a href="50a-salasar.html" class="temple-card featured" data-cat="rajasthan">
+      <div class="tc-top">
+        <span class="tc-emoji">🛕</span>
+        <div class="tc-info">
+          <h3 class="tc-title">सालासर बालाजी मंदिर</h3>
+          <span class="tc-badge">सबसे प्रसिद्ध</span>
+        </div>
+      </div>
+      <p class="tc-desc">राजस्थान के चूरू जिले में स्थित हनुमान जी का अत्यंत प्रसिद्ध मंदिर। यहाँ दर्शन मात्र से मनोकामना पूर्ण होती है। सालासर बालाजी की महिमा पूरे भारत में फैली है।</p>
+      <div class="tc-foot">
+        <span class="tc-loc"><i class="fa-solid fa-location-dot"></i> चूरू, राजस्थान</span>
+        <span class="tc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- मेहंदीपुर बालाजी -->
+    <a href="50b-mehandipur.html" class="temple-card" data-cat="rajasthan">
+      <div class="tc-top">
+        <span class="tc-emoji">🙏</span>
+        <div class="tc-info">
+          <h3 class="tc-title">मेहंदीपुर बालाजी</h3>
+          <span class="tc-badge">राजस्थान</span>
+        </div>
+      </div>
+      <p class="tc-desc">दौसा जिले में स्थित यह मंदिर भूत-प्रेत बाधा से मुक्ति के लिए विश्व प्रसिद्ध है। यहाँ दिल्ली-जयपुर हाईवे पर स्थित है।</p>
+      <div class="tc-foot">
+        <span class="tc-loc"><i class="fa-solid fa-location-dot"></i> दौसा, राजस्थान</span>
+        <span class="tc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- हनुमानगढ़ी -->
+    <a href="50c-ayodhya.html" class="temple-card" data-cat="up">
+      <div class="tc-top">
+        <span class="tc-emoji">🏹</span>
+        <div class="tc-info">
+          <h3 class="tc-title">हनुमानगढ़ी, अयोध्या</h3>
+          <span class="tc-badge">उत्तर प्रदेश</span>
+        </div>
+      </div>
+      <p class="tc-desc">अयोध्या में स्थित यह मंदिर वही स्थान है जहाँ हनुमान जी ने श्रीराम की सेवा की थी। यहाँ बाल हनुमान की मूर्ति है।</p>
+      <div class="tc-foot">
+        <span class="tc-loc"><i class="fa-solid fa-location-dot"></i> अयोध्या, उ.प्र.</span>
+        <span class="tc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- महावीर मंदिर -->
+    <a href="50d-patna.html" class="temple-card" data-cat="bihar">
+      <div class="tc-top">
+        <span class="tc-emoji">🕉️</span>
+        <div class="tc-info">
+          <h3 class="tc-title">महावीर मंदिर, पटना</h3>
+          <span class="tc-badge">बिहार</span>
+        </div>
+      </div>
+      <p class="tc-desc">पटना का प्रसिद्ध महावीर मंदिर। यहाँ हनुमान जी की दिव्य मूर्ति है। मंगलवार और शनिवार को विशेष भीड़ होती है।</p>
+      <div class="tc-foot">
+        <span class="tc-loc"><i class="fa-solid fa-location-dot"></i> पटना, बिहार</span>
+        <span class="tc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- काशी हनुमान मंदिर -->
+    <a href="50e-kashi.html" class="temple-card" data-cat="up">
+      <div class="tc-top">
+        <span class="tc-emoji">🌊</span>
+        <div class="tc-info">
+          <h3 class="tc-title">काशी हनुमान मंदिर</h3>
+          <span class="tc-badge">उत्तर प्रदेश</span>
+        </div>
+      </div>
+      <p class="tc-desc">वाराणसी (काशी) में गंगा तट पर स्थित हनुमान मंदिर। यहाँ हनुमान जी की दिव्य शक्ति का अनुभव होता है।</p>
+      <div class="tc-foot">
+        <span class="tc-loc"><i class="fa-solid fa-location-dot"></i> वाराणसी, उ.प्र.</span>
+        <span class="tc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- जामसावली मंदिर -->
+    <a href="50f-jamsawli.html" class="temple-card" data-cat="maharashtra">
+      <div class="tc-top">
+        <span class="tc-emoji">⛰️</span>
+        <div class="tc-info">
+          <h3 class="tc-title">जामसावली मंदिर</h3>
+          <span class="tc-badge">महाराष्ट्र</span>
+        </div>
+      </div>
+      <p class="tc-desc">महाराष्ट्र के सतारा जिले में स्थित हनुमान जी का प्राचीन मंदिर। यहाँ हनुमान जी की स्वयंभू मूर्ति है।</p>
+      <div class="tc-foot">
+        <span class="tc-loc"><i class="fa-solid fa-location-dot"></i> सतारा, महाराष्ट्र</span>
+        <span class="tc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- Other Temples -->
+    <a href="50-temples.html" class="temple-card" data-cat="rajasthan">
+      <div class="tc-top">
+        <span class="tc-emoji">🛕</span>
+        <div class="tc-info">
+          <h3 class="tc-title">खाटू श्याम मंदिर</h3>
+          <span class="tc-badge">राजस्थान</span>
+        </div>
+      </div>
+      <p class="tc-desc">सीकर जिले में स्थित खाटू श्याम जी का मंदिर। हनुमान जी के वरदान से श्याम बाबा का जन्म हुआ था।</p>
+      <div class="tc-foot">
+        <span class="tc-loc"><i class="fa-solid fa-location-dot"></i> सीकर, राजस्थान</span>
+        <span class="tc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <a href="50-temples.html" class="temple-card" data-cat="rajasthan">
+      <div class="tc-top">
+        <span class="tc-emoji">🛕</span>
+        <div class="tc-info">
+          <h3 class="tc-title">महावीरजी मंदिर</h3>
+          <span class="tc-badge">राजस्थान</span>
+        </div>
+      </div>
+      <p class="tc-desc">करौली जिले में स्थित हनुमान जी का प्राचीन मंदिर। यहाँ हनुमान जी की दाढ़ी-मूँछ वाली मूर्ति है।</p>
+      <div class="tc-foot">
+        <span class="tc-loc"><i class="fa-solid fa-location-dot"></i> करौली, राजस्थान</span>
+        <span class="tc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <a href="50-temples.html" class="temple-card" data-cat="other">
+      <div class="tc-top">
+        <span class="tc-emoji">🛕</span>
+        <div class="tc-info">
+          <h3 class="tc-title">हनुमान मंदिर, कन्याकुमारी</h3>
+          <span class="tc-badge">तमिलनाडु</span>
+        </div>
+      </div>
+      <p class="tc-desc">कन्याकुमारी में स्थित हनुमान मंदिर। यहाँ हनुमान जी की विशाल मूर्ति है।</p>
+      <div class="tc-foot">
+        <span class="tc-loc"><i class="fa-solid fa-location-dot"></i> कन्याकुमारी, तमिलनाडु</span>
+        <span class="tc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <a href="50-temples.html" class="temple-card" data-cat="other">
+      <div class="tc-top">
+        <span class="tc-emoji">🛕</span>
+        <div class="tc-info">
+          <h3 class="tc-title">श्री हनुमान मंदिर, दिल्ली</h3>
+          <span class="tc-badge">दिल्ली</span>
+        </div>
+      </div>
+      <p class="tc-desc">दिल्ली के कनॉट प्लेस के पास स्थित प्राचीन हनुमान मंदिर। यहाँ हनुमान जी की स्वयंभू मूर्ति है।</p>
+      <div class="tc-foot">
+        <span class="tc-loc"><i class="fa-solid fa-location-dot"></i> दिल्ली</span>
+        <span class="tc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <a href="50-temples.html" class="temple-card" data-cat="other">
+      <div class="tc-top">
+        <span class="tc-emoji">🛕</span>
+        <div class="tc-info">
+          <h3 class="tc-title">हनुमान मंदिर, हरिद्वार</h3>
+          <span class="tc-badge">उत्तराखंड</span>
+        </div>
+      </div>
+      <p class="tc-desc">हरिद्वार में गंगा तट पर स्थित हनुमान मंदिर। यहाँ हनुमान जी की दिव्य मूर्ति है।</p>
+      <div class="tc-foot">
+        <span class="tc-loc"><i class="fa-solid fa-location-dot"></i> हरिद्वार, उत्तराखंड</span>
+        <span class="tc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <a href="50-temples.html" class="temple-card" data-cat="other">
+      <div class="tc-top">
+        <span class="tc-emoji">🛕</span>
+        <div class="tc-info">
+          <h3 class="tc-title">हनुमान मंदिर, जयपुर</h3>
+          <span class="tc-badge">राजस्थान</span>
+        </div>
+      </div>
+      <p class="tc-desc">जयपुर के मोती डूंगरी क्षेत्र में स्थित प्राचीन हनुमान मंदिर। यहाँ हनुमान जी की अद्भुत मूर्ति है।</p>
+      <div class="tc-foot">
+        <span class="tc-loc"><i class="fa-solid fa-location-dot"></i> जयपुर, राजस्थान</span>
+        <span class="tc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <a href="50-temples.html" class="temple-card" data-cat="up">
+      <div class="tc-top">
+        <span class="tc-emoji">🛕</span>
+        <div class="tc-info">
+          <h3 class="tc-title">हनुमान मंदिर, वृंदावन</h3>
+          <span class="tc-badge">उत्तर प्रदेश</span>
+        </div>
+      </div>
+      <p class="tc-desc">वृंदावन में स्थित हनुमान मंदिर। यहाँ हनुमान जी की दिव्य मूर्ति है।</p>
+      <div class="tc-foot">
+        <span class="tc-loc"><i class="fa-solid fa-location-dot"></i> वृंदावन, उ.प्र.</span>
+        <span class="tc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <a href="50-temples.html" class="temple-card" data-cat="other">
+      <div class="tc-top">
+        <span class="tc-emoji">🛕</span>
+        <div class="tc-info">
+          <h3 class="tc-title">हनुमान मंदिर, गोवा</h3>
+          <span class="tc-badge">गोवा</span>
+        </div>
+      </div>
+      <p class="tc-desc">गोवा के पणजी में स्थित प्राचीन हनुमान मंदिर। यहाँ हनुमान जी की दिव्य मूर्ति है।</p>
+      <div class="tc-foot">
+        <span class="tc-loc"><i class="fa-solid fa-location-dot"></i> पणजी, गोवा</span>
+        <span class="tc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <a href="50-temples.html" class="temple-card" data-cat="other">
+      <div class="tc-top">
+        <span class="tc-emoji">🛕</span>
+        <div class="tc-info">
+          <h3 class="tc-title">हनुमान मंदिर, कोलकाता</h3>
+          <span class="tc-badge">पश्चिम बंगाल</span>
+        </div>
+      </div>
+      <p class="tc-desc">कोलकाता के हावड़ा क्षेत्र में स्थित हनुमान मंदिर। यहाँ हनुमान जी की स्वयंभू मूर्ति है।</p>
+      <div class="tc-foot">
+        <span class="tc-loc"><i class="fa-solid fa-location-dot"></i> कोलकाता, प.बं.</span>
+        <span class="tc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <a href="50-temples.html" class="temple-card" data-cat="other">
+      <div class="tc-top">
+        <span class="tc-emoji">🛕</span>
+        <div class="tc-info">
+          <h3 class="tc-title">हनुमान मंदिर, हैदराबाद</h3>
+          <span class="tc-badge">तेलंगाना</span>
+        </div>
+      </div>
+      <p class="tc-desc">हैदराबाद में स्थित हनुमान मंदिर। यहाँ हनुमान जी की विशाल मूर्ति है।</p>
+      <div class="tc-foot">
+        <span class="tc-loc"><i class="fa-solid fa-location-dot"></i> हैदराबाद, तेलंगाना</span>
+        <span class="tc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <a href="50-temples.html" class="temple-card" data-cat="other">
+      <div class="tc-top">
+        <span class="tc-emoji">🛕</span>
+        <div class="tc-info">
+          <h3 class="tc-title">हनुमान मंदिर, बैंगलोर</h3>
+          <span class="tc-badge">कर्नाटक</span>
+        </div>
+      </div>
+      <p class="tc-desc">बैंगलोर के बसवनगुड़ी क्षेत्र में स्थित प्राचीन हनुमान मंदिर। यहाँ हनुमान जी की दिव्य मूर्ति है।</p>
+      <div class="tc-foot">
+        <span class="tc-loc"><i class="fa-solid fa-location-dot"></i> बैंगलोर, कर्नाटक</span>
+        <span class="tc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <a href="50-temples.html" class="temple-card" data-cat="maharashtra">
+      <div class="tc-top">
+        <span class="tc-emoji">🛕</span>
+        <div class="tc-info">
+          <h3 class="tc-title">हनुमान मंदिर, मुंबई</h3>
+          <span class="tc-badge">महाराष्ट्र</span>
+        </div>
+      </div>
+      <p class="tc-desc">मुंबई के दादर क्षेत्र में स्थित प्राचीन हनुमान मंदिर। यहाँ हनुमान जी की दिव्य मूर्ति है।</p>
+      <div class="tc-foot">
+        <span class="tc-loc"><i class="fa-solid fa-location-dot"></i> मुंबई, महाराष्ट्र</span>
+        <span class="tc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <a href="50-temples.html" class="temple-card" data-cat="bihar">
+      <div class="tc-top">
+        <span class="tc-emoji">🛕</span>
+        <div class="tc-info">
+          <h3 class="tc-title">हनुमान मंदिर, गया</h3>
+          <span class="tc-badge">बिहार</span>
+        </div>
+      </div>
+      <p class="tc-desc">गया में स्थित प्राचीन हनुमान मंदिर। यहाँ हनुमान जी की दिव्य मूर्ति है।</p>
+      <div class="tc-foot">
+        <span class="tc-loc"><i class="fa-solid fa-location-dot"></i> गया, बिहार</span>
+        <span class="tc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <a href="50-temples.html" class="temple-card" data-c
