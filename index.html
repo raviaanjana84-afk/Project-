@@ -11,6 +11,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        /* Coming Soon Badge */
+        .devta-card {
+            position: relative;
+        }
+        .devta-card .coming-badge {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            font-size: 8px;
+            background: rgba(122, 46, 46, .15);
+            color: var(--maroon);
+            padding: 2px 7px;
+            border-radius: 10px;
+            font-weight: 700;
+            letter-spacing: .3px;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 <body>
 
@@ -39,7 +58,7 @@
             </div>
         </div>
         <a href="index.html"><i class="fa-solid fa-house"></i> होम</a>
-        <a href="devta/hanuman.html"><i class="fa-solid fa-om"></i> देवता ज्ञान</a>
+        <a href="devta/index.html"><i class="fa-solid fa-om"></i> देवता ज्ञान</a>
         <a href="mantra/index.html"><i class="fa-solid fa-book-open"></i> मंत्र कोश</a>
         <a href="stotra/index.html"><i class="fa-solid fa-scroll"></i> स्तोत्र / आरती</a>
         <a href="tyohar/index.html"><i class="fa-solid fa-calendar-days"></i> त्योहार</a>
@@ -74,7 +93,7 @@
         <!-- Quick Access (Main Categories) -->
         <p class="section-title"><i class="fa-solid fa-bolt"></i> मुख्य श्रेणियाँ</p>
         <div class="services-grid">
-            <a href="devta/hanuman.html" class="service-card">
+            <a href="devta/index.html" class="service-card">
                 <i class="fa-solid fa-om"></i>
                 <span>देवता</span>
             </a>
@@ -131,46 +150,55 @@
                 <span class="devta-icon">🐒</span>
                 <span class="devta-name">हनुमान</span>
                 <span class="devta-sub">बल · बुद्धि · भक्ति</span>
+                <span class="coming-badge" style="background:rgba(212,175,55,.9);color:#7A2E2E;">🔥 संपूर्ण</span>
             </a>
-            <a href="devta/shiva.html" class="devta-card">
+            <a href="#" class="devta-card" onclick="showComingSoon(event, 'शिव जी')">
                 <span class="devta-icon">🔱</span>
                 <span class="devta-name">शिव</span>
                 <span class="devta-sub">ध्यान · त्याग · तांडव</span>
+                <span class="coming-badge">Coming Soon</span>
             </a>
-            <a href="devta/ram.html" class="devta-card">
+            <a href="#" class="devta-card" onclick="showComingSoon(event, 'राम जी')">
                 <span class="devta-icon">🏹</span>
                 <span class="devta-name">राम</span>
                 <span class="devta-sub">मर्यादा · धर्म · आदर्श</span>
+                <span class="coming-badge">Coming Soon</span>
             </a>
-            <a href="devta/krishna.html" class="devta-card">
+            <a href="#" class="devta-card" onclick="showComingSoon(event, 'कृष्ण जी')">
                 <span class="devta-icon">🟡</span>
                 <span class="devta-name">कृष्ण</span>
                 <span class="devta-sub">लीला · प्रेम · गीता</span>
+                <span class="coming-badge">Coming Soon</span>
             </a>
-            <a href="devta/durga.html" class="devta-card">
+            <a href="#" class="devta-card" onclick="showComingSoon(event, 'दुर्गा माता')">
                 <span class="devta-icon">🌺</span>
                 <span class="devta-name">दुर्गा</span>
                 <span class="devta-sub">शक्ति · रक्षा · विजय</span>
+                <span class="coming-badge">Coming Soon</span>
             </a>
-            <a href="devta/ganesh.html" class="devta-card">
+            <a href="#" class="devta-card" onclick="showComingSoon(event, 'गणेश जी')">
                 <span class="devta-icon">🐘</span>
                 <span class="devta-name">गणेश</span>
                 <span class="devta-sub">सिद्धि · बुद्धि · विघ्नहर्ता</span>
+                <span class="coming-badge">Coming Soon</span>
             </a>
-            <a href="devta/surya.html" class="devta-card">
+            <a href="#" class="devta-card" onclick="showComingSoon(event, 'सूर्य देव')">
                 <span class="devta-icon">🌞</span>
                 <span class="devta-name">सूर्य</span>
                 <span class="devta-sub">ऊर्जा · तेज · आरोग्य</span>
+                <span class="coming-badge">Coming Soon</span>
             </a>
-            <a href="devta/lakshmi.html" class="devta-card">
+            <a href="#" class="devta-card" onclick="showComingSoon(event, 'लक्ष्मी माता')">
                 <span class="devta-icon">🌺</span>
                 <span class="devta-name">लक्ष्मी</span>
                 <span class="devta-sub">धन · समृद्धि · सौभाग्य</span>
+                <span class="coming-badge">Coming Soon</span>
             </a>
-            <a href="devta/saraswati.html" class="devta-card">
+            <a href="#" class="devta-card" onclick="showComingSoon(event, 'सरस्वती माता')">
                 <span class="devta-icon">📚</span>
                 <span class="devta-name">सरस्वती</span>
                 <span class="devta-sub">विद्या · कला · ज्ञान</span>
+                <span class="coming-badge">Coming Soon</span>
             </a>
         </div>
 
@@ -230,12 +258,57 @@
     <!-- ================= BOTTOM NAV ================= -->
     <nav class="bottom-nav">
         <a href="index.html" class="nav-link active"><i class="fa-solid fa-house"></i><p>होम</p></a>
-        <a href="devta/hanuman.html" class="nav-link"><i class="fa-solid fa-om"></i><p>देवता</p></a>
+        <a href="devta/index.html" class="nav-link"><i class="fa-solid fa-om"></i><p>देवता</p></a>
         <a href="mantra/index.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>मंत्र</p></a>
         <a href="panchang/index.html" class="nav-link"><i class="fa-solid fa-calendar-days"></i><p>पंचांग</p></a>
         <a href="quiz/index.html" class="nav-link"><i class="fa-solid fa-puzzle-piece"></i><p>क्विज</p></a>
     </nav>
 
     <script src="script.js"></script>
+    <script>
+        function showComingSoon(e, name) {
+            e.preventDefault();
+            showToast(name + ' का section जल्द आ रहा है! 🙏');
+        }
+        
+        function showToast(msg) {
+            // Simple alert fallback if no toast in script.js
+            if (typeof window.alert === 'function') {
+                // Check if there's a toast element
+                let toast = document.getElementById('siteToast');
+                if (!toast) {
+                    toast = document.createElement('div');
+                    toast.id = 'siteToast';
+                    toast.style.cssText = `
+                        position: fixed;
+                        bottom: 100px;
+                        left: 50%;
+                        transform: translateX(-50%) translateY(120px);
+                        background: #7A2E2E;
+                        color: #fff;
+                        padding: 13px 26px;
+                        border-radius: 30px;
+                        font-size: 13.5px;
+                        font-weight: 600;
+                        z-index: 9999;
+                        opacity: 0;
+                        transition: all .4s;
+                        box-shadow: 0 8px 28px rgba(0,0,0,.4);
+                        font-family: 'Hind', sans-serif;
+                        max-width: 90vw;
+                        text-align: center;
+                    `;
+                    document.body.appendChild(toast);
+                }
+                toast.textContent = msg;
+                toast.style.opacity = '1';
+                toast.style.transform = 'translateX(-50%) translateY(0)';
+                setTimeout(() => {
+                    toast.style.opacity = '0';
+                    toast.style.transform = 'translateX(-50%) translateY(120px)';
+                }, 2200);
+            }
+        }
+    </script>
 </body>
-                    </html>
+</html>
