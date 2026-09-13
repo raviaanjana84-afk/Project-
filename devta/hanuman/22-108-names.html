@@ -47,7 +47,6 @@ body.dark .n108-hero h2{color:var(--gold-light)}
 .n108-hero .n108-meta span{display:flex;align-items:center;gap:5px}
 .n108-hero .n108-meta i{color:var(--gold)}
 
-/* Search */
 .n108-search{
   position:sticky;top:62px;z-index:60;
   background:var(--bg);padding:10px 0;margin-bottom:12px;
@@ -69,7 +68,6 @@ body.dark .n108-hero h2{color:var(--gold-light)}
 }
 .n108-search .search-bar input::placeholder{color:var(--ink-light)}
 
-/* Progress */
 .n108-progress-wrap{
   background:var(--card-bg);border-radius:12px;padding:12px 16px;
   margin-bottom:14px;border:1px solid var(--border);
@@ -91,7 +89,6 @@ body.dark .n108-progress-info strong{color:var(--gold-light)}
   border-radius:8px;
 }
 
-/* Names grid */
 .n108-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -165,7 +162,6 @@ body.dark .n108-name{color:var(--gold-light)}
   opacity:.85;
 }
 
-/* Modal detail */
 .name-detail-modal{
   position:fixed;inset:0;
   background:rgba(0,0,0,.75);
@@ -282,7 +278,6 @@ body.dark .name-detail-benefit{color:var(--gold-light)}
 }
 body.dark .name-detail-action.secondary{color:var(--gold-light)}
 
-/* Info */
 .n108-info{
   background:linear-gradient(135deg, rgba(212,175,55,.14), rgba(122,46,46,.06));
   border-radius:14px;padding:16px 18px;
@@ -356,7 +351,6 @@ body.dark .n108-info li strong{color:var(--gold-light)}
   <p><strong>किसी भी नाम पर टैप करें</strong> — पूरा अर्थ, मंत्र, और लाभ देखें।</p>
 </div>
 
-<!-- Search -->
 <div class="n108-search">
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass"></i>
@@ -364,7 +358,6 @@ body.dark .n108-info li strong{color:var(--gold-light)}
   </div>
 </div>
 
-<!-- Progress -->
 <div class="n108-progress-wrap">
   <div class="n108-progress-info">
     <span>जप प्रगति</span>
@@ -375,7 +368,6 @@ body.dark .n108-info li strong{color:var(--gold-light)}
   </div>
 </div>
 
-<!-- Grid -->
 <div class="n108-grid" id="namesGrid"></div>
 
 <div class="no-results" id="noResults">
@@ -383,7 +375,6 @@ body.dark .n108-info li strong{color:var(--gold-light)}
   कोई नाम नहीं मिला। दूसरा शब्द खोजें।
 </div>
 
-<!-- Info -->
 <div class="devta-section">
   <h2><span class="sec-icon">🪔</span> जप विधि</h2>
   <div class="n108-info">
@@ -402,18 +393,18 @@ body.dark .n108-info li strong{color:var(--gold-light)}
 
 <div class="devta-section">
   <h2><span class="sec-icon">🌺</span> 108 नाम जप के लाभ</h2>
-  <div class="st-benefits">
-    <span class="st-benefit"><i class="fa-solid fa-check"></i> सर्व मनोकामना</span>
-    <span class="st-benefit"><i class="fa-solid fa-check"></i> संकट मोचन</span>
-    <span class="st-benefit"><i class="fa-solid fa-check"></i> रोग नाश</span>
-    <span class="st-benefit"><i class="fa-solid fa-check"></i> शत्रु नाश</span>
-    <span class="st-benefit"><i class="fa-solid fa-check"></i> भय मुक्ति</span>
-    <span class="st-benefit"><i class="fa-solid fa-check"></i> बल वृद्धि</span>
-    <span class="st-benefit"><i class="fa-solid fa-check"></i> बुद्धि वृद्धि</span>
-    <span class="st-benefit"><i class="fa-solid fa-check"></i> यश और कीर्ति</span>
-    <span class="st-benefit"><i class="fa-solid fa-check"></i> धन प्राप्ति</span>
-    <span class="st-benefit"><i class="fa-solid fa-check"></i> संतान सुख</span>
-    <span class="st-benefit"><i class="fa-solid fa-check"></i> मोक्ष</span>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> सर्व मनोकामना</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> संकट मोचन</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> रोग नाश</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> शत्रु नाश</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> भय मुक्ति</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> बल वृद्धि</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> बुद्धि वृद्धि</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> यश और कीर्ति</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> धन प्राप्ति</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> संतान सुख</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> मोक्ष</span>
   </div>
 </div>
 
@@ -435,7 +426,6 @@ body.dark .n108-info li strong{color:var(--gold-light)}
 
 </main>
 
-<!-- Detail Modal -->
 <div class="name-detail-modal" id="nameDetailModal">
   <div class="name-detail-box">
     <button class="name-detail-close" onclick="closeNameDetail()">✕</button>
@@ -586,7 +576,11 @@ const NAMES_108 = [
   {n:'सुख', m:'सुख के दाता', b:['सुख','आनंद']},
   {n:'आनंद', m:'आनंद स्वरूप', b:['आनंद','प्रसन्नता']},
   {n:'शांति', m:'शांति के दाता', b:['शांति','मानसिक सुख']},
-  {n:'कल्याण', m:'कल्याण करने वाले', b:['कल्याण','समृद्धि']}
+  {n:'कल्याण', m:'कल्याण करने वाले', b:['कल्याण','समृद्धि']},
+  {n:'अंजनीगर्भसंभूत', m:'अंजना के गर्भ से प्रकट', b:['जन्म कथा','माता कृपा']},
+  {n:'वायुतनय', m:'वायु के पुत्र', b:['गति','शक्ति']},
+  {n:'रामेष्ट', m:'राम के प्रिय', b:['राम कृपा','भक्ति']},
+  {n:'फाल्गुनसखा', m:'फाल्गुन (अर्जुन) के मित्र', b:['मित्रता','सहयोग']}
 ];
 
 let recited = JSON.parse(localStorage.getItem('recited108') || '[]');
@@ -658,7 +652,6 @@ function markRecited() {
   closeNameDetail();
 }
 
-/* Search */
 document.getElementById('nameSearch')?.addEventListener('input', (e) => {
   const q = e.target.value.toLowerCase().trim();
   const cards = document.querySelectorAll('.n108-card');
@@ -671,7 +664,6 @@ document.getElementById('nameSearch')?.addEventListener('input', (e) => {
   document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
 });
 
-/* Close modal on outside click */
 document.getElementById('nameDetailModal')?.addEventListener('click', (e) => {
   if (e.target.id === 'nameDetailModal') closeNameDetail();
 });
@@ -679,7 +671,6 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeNameDetail();
 });
 
-/* Init */
 document.addEventListener('DOMContentLoaded', renderGrid);
 </script>
 </body>
