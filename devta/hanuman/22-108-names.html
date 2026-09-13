@@ -85,44 +85,30 @@ body.dark .n108-progress-info strong{color:var(--gold-light)}
 .n108-progress-bar .fill{
   height:100%;width:0%;
   background:linear-gradient(90deg,var(--gold),var(--saffron));
-  transition:width .4s;
-  border-radius:8px;
+  transition:width .4s;border-radius:8px;
 }
 
 .n108-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
-  margin-bottom:20px;
+  display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px;
 }
 @media(min-width:600px){.n108-grid{grid-template-columns:1fr 1fr 1fr}}
 @media(max-width:360px){.n108-grid{grid-template-columns:1fr}}
 
 .n108-card{
-  background:var(--card-bg);
-  border-radius:12px;
-  padding:12px 10px;
-  border:1px solid var(--border);
-  cursor:pointer;
-  transition:var(--transition);
-  position:relative;
-  overflow:hidden;
-  text-align:center;
+  background:var(--card-bg);border-radius:12px;
+  padding:12px 10px;border:1px solid var(--border);
+  cursor:pointer;transition:var(--transition);
+  position:relative;overflow:hidden;text-align:center;
 }
 .n108-card::before{
-  content:'';
-  position:absolute;
-  top:0;left:0;
+  content:'';position:absolute;top:0;left:0;
   width:3px;height:100%;
   background:linear-gradient(180deg,var(--gold),var(--saffron));
-  transform:scaleY(0);
-  transform-origin:top;
-  transition:transform .3s;
+  transform:scaleY(0);transform-origin:top;transition:transform .3s;
 }
 .n108-card:hover::before{transform:scaleY(1)}
 .n108-card:hover{
-  transform:translateY(-3px);
-  border-color:var(--gold);
+  transform:translateY(-3px);border-color:var(--gold);
   box-shadow:0 8px 20px rgba(122,46,46,.12);
 }
 .n108-card:active{transform:scale(.96)}
@@ -131,54 +117,33 @@ body.dark .n108-progress-info strong{color:var(--gold-light)}
   border-color:var(--gold);
 }
 .n108-card.recited::after{
-  content:'✓';
-  position:absolute;
-  top:6px;right:8px;
-  color:var(--gold);
-  font-size:12px;
-  font-weight:700;
+  content:'✓';position:absolute;top:6px;right:8px;
+  color:var(--gold);font-size:12px;font-weight:700;
 }
 .n108-num{
-  font-size:10px;
-  color:var(--ink-light);
-  font-weight:600;
-  letter-spacing:.5px;
-  display:block;
-  margin-bottom:2px;
+  font-size:10px;color:var(--ink-light);font-weight:600;
+  letter-spacing:.5px;display:block;margin-bottom:2px;
 }
 .n108-name{
   font-family:'Tiro Devanagari Hindi',serif;
-  font-size:14px;
-  color:var(--maroon);
-  font-weight:700;
-  line-height:1.3;
+  font-size:14px;color:var(--maroon);font-weight:700;line-height:1.3;
 }
 body.dark .n108-name{color:var(--gold-light)}
 .n108-meaning-short{
-  font-size:10.5px;
-  color:var(--ink-soft);
-  margin-top:3px;
-  line-height:1.35;
-  opacity:.85;
+  font-size:10.5px;color:var(--ink-soft);
+  margin-top:3px;line-height:1.35;opacity:.85;
 }
 
 .name-detail-modal{
-  position:fixed;inset:0;
-  background:rgba(0,0,0,.75);
-  z-index:1000;
-  display:none;align-items:center;justify-content:center;
-  padding:20px;
-  backdrop-filter:blur(6px);
+  position:fixed;inset:0;background:rgba(0,0,0,.75);
+  z-index:1000;display:none;align-items:center;justify-content:center;
+  padding:20px;backdrop-filter:blur(6px);
 }
 .name-detail-modal.show{display:flex;animation:fadeUp .3s ease}
 .name-detail-box{
-  background:var(--card-bg);
-  border-radius:22px;
-  max-width:440px;width:100%;
-  max-height:85vh;overflow-y:auto;
-  padding:28px 22px;
-  border:2px solid var(--gold);
-  position:relative;
+  background:var(--card-bg);border-radius:22px;
+  max-width:440px;width:100%;max-height:85vh;overflow-y:auto;
+  padding:28px 22px;border:2px solid var(--gold);position:relative;
 }
 .name-detail-close{
   position:absolute;top:14px;right:14px;
@@ -191,90 +156,56 @@ body.dark .name-detail-close{color:var(--gold-light)}
 .name-detail-num{
   display:inline-block;
   background:linear-gradient(135deg,var(--maroon),var(--saffron));
-  color:#fff;
-  font-size:11px;font-weight:700;
-  padding:4px 14px;border-radius:20px;
-  margin-bottom:10px;
+  color:#fff;font-size:11px;font-weight:700;
+  padding:4px 14px;border-radius:20px;margin-bottom:10px;
 }
 .name-detail-title{
   font-family:'Tiro Devanagari Hindi',serif;
-  font-size:26px;
-  color:var(--maroon);
-  margin-bottom:6px;
-  text-align:center;
+  font-size:26px;color:var(--maroon);margin-bottom:6px;text-align:center;
 }
 body.dark .name-detail-title{color:var(--gold-light)}
 .name-detail-mantra{
   font-family:'Tiro Devanagari Hindi',serif;
-  font-size:16px;
-  color:var(--maroon);
-  background:rgba(212,175,55,.14);
-  padding:12px;
-  border-radius:10px;
-  text-align:center;
-  margin:12px 0;
-  line-height:1.9;
-  position:relative;
+  font-size:16px;color:var(--maroon);
+  background:rgba(212,175,55,.14);padding:12px;border-radius:10px;
+  text-align:center;margin:12px 0;line-height:1.9;position:relative;
 }
 body.dark .name-detail-mantra{color:var(--gold-light)}
 .name-detail-copy{
   position:absolute;top:8px;right:8px;
-  background:rgba(122,46,46,.1);
-  border:none;color:var(--maroon);
+  background:rgba(122,46,46,.1);border:none;color:var(--maroon);
   width:28px;height:28px;border-radius:50%;
   cursor:pointer;font-size:11px;
   display:flex;align-items:center;justify-content:center;
 }
 .name-detail-copy:hover{background:var(--maroon);color:#fff}
 .name-detail-meaning{
-  font-size:14px;
-  color:var(--ink-soft);
-  line-height:1.9;
-  background:var(--bg-alt);
-  padding:14px;
-  border-radius:10px;
-  border-left:3px solid var(--gold);
-  margin-bottom:12px;
+  font-size:14px;color:var(--ink-soft);line-height:1.9;
+  background:var(--bg-alt);padding:14px;border-radius:10px;
+  border-left:3px solid var(--gold);margin-bottom:12px;
 }
 .name-detail-meaning strong{color:var(--maroon)}
 body.dark .name-detail-meaning strong{color:var(--gold-light)}
 .name-detail-benefits{
-  display:flex;
-  flex-wrap:wrap;
-  gap:6px;
-  margin-bottom:14px;
+  display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;
 }
 .name-detail-benefit{
-  font-size:11.5px;
-  padding:5px 11px;
+  font-size:11.5px;padding:5px 11px;
   background:linear-gradient(135deg,rgba(212,175,55,.18),rgba(255,107,53,.1));
-  border:1px solid var(--gold);
-  border-radius:20px;
-  color:var(--maroon);
-  font-weight:600;
+  border:1px solid var(--gold);border-radius:20px;
+  color:var(--maroon);font-weight:600;
 }
 body.dark .name-detail-benefit{color:var(--gold-light)}
 .name-detail-action{
-  width:100%;
-  padding:12px;
+  width:100%;padding:12px;
   background:linear-gradient(135deg,var(--maroon),var(--saffron));
-  color:#fff;
-  border:none;
-  border-radius:12px;
-  font-size:14px;
-  font-weight:600;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  font-family:inherit;
-  margin-bottom:8px;
+  color:#fff;border:none;border-radius:12px;
+  font-size:14px;font-weight:600;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  font-family:inherit;margin-bottom:8px;
 }
 .name-detail-action.secondary{
-  background:var(--bg-alt);
-  color:var(--maroon);
-  border:1px solid var(--border);
+  background:var(--bg-alt);color:var(--maroon);border:1px solid var(--border);
 }
 body.dark .name-detail-action.secondary{color:var(--gold-light)}
 
@@ -284,33 +215,25 @@ body.dark .name-detail-action.secondary{color:var(--gold-light)}
   border-left:4px solid var(--gold);margin:14px 0;
 }
 .n108-info h4{
-  font-family:'Tiro Devanagari Hindi',serif;
-  font-size:16px;color:var(--maroon);
-  margin-bottom:10px;
+  font-family:'Tiro Devanagari Hindi',serif;font-size:16px;
+  color:var(--maroon);margin-bottom:10px;
   display:flex;align-items:center;gap:8px;
 }
 body.dark .n108-info h4{color:var(--gold-light)}
 .n108-info ul{padding-left:20px;margin:6px 0}
 .n108-info li{
-  font-size:13.5px;line-height:1.85;
-  color:var(--ink-soft);margin-bottom:6px;
+  font-size:13.5px;line-height:1.85;color:var(--ink-soft);margin-bottom:6px;
 }
 .n108-info li strong{color:var(--maroon)}
 body.dark .n108-info li strong{color:var(--gold-light)}
 
 .no-results{
-  text-align:center;
-  padding:40px 20px;
-  color:var(--ink-light);
-  font-size:14px;
-  display:none;
+  text-align:center;padding:40px 20px;
+  color:var(--ink-light);font-size:14px;display:none;
 }
 .no-results i{
-  font-size:48px;
-  color:var(--gold);
-  display:block;
-  margin-bottom:12px;
-  opacity:.5;
+  font-size:48px;color:var(--gold);
+  display:block;margin-bottom:12px;opacity:.5;
 }
 </style>
 </head>
@@ -471,7 +394,7 @@ body.dark .n108-info li strong{color:var(--gold-light)}
 
 <script src="common.js"></script>
 <script>
-/* ===== 108 NAMES DATA ===== */
+/* ===== 108 NAMES DATA (EXACTLY 108) ===== */
 const NAMES_108 = [
   {n:'हनुमान', m:'ज्ञान और सम्मान वाले', b:['बुद्धि वृद्धि','सम्मान']},
   {n:'अंजनीसुत', m:'अंजना के पुत्र', b:['माता का आशीर्वाद','संतान सुख']},
@@ -578,10 +501,6 @@ const NAMES_108 = [
   {n:'शांति', m:'शांति के दाता', b:['शांति','मानसिक सुख']},
   {n:'कल्याण', m:'कल्याण करने वाले', b:['कल्याण','समृद्धि']},
   {n:'अंजनीगर्भसंभूत', m:'अंजना के गर्भ से प्रकट', b:['जन्म कथा','माता कृपा']},
-  {n:'वायुतनय', m:'वायु के पुत्र', b:['गति','शक्ति']},
-  {n:'रामेष्ट', m:'राम के प्रिय', b:['राम कृपा','भक्ति']},
-  {n:'फाल्गुनसखा', m:'फाल्गुन (अर्जुन) के मित्र', b:['मित्रता','सहयोग']}
-    {n:'अंजनीगर्भसंभूत', m:'अंजना के गर्भ से प्रकट', b:['जन्म कथा','माता कृपा']},
   {n:'वायुतनय', m:'वायु के पुत्र', b:['गति','शक्ति']},
   {n:'रामेष्ट', m:'राम के प्रिय', b:['राम कृपा','भक्ति']},
   {n:'फाल्गुनसखा', m:'फाल्गुन (अर्जुन) के मित्र', b:['मित्रता','सहयोग']}
