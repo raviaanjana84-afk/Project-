@@ -13,10 +13,8 @@
 </head>
 <body>
 
-<!-- Progress Bar -->
 <div class="progress-bar" id="progressBar"></div>
 
-<!-- Header -->
 <header class="app-header">
   <a href="../hanuman.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
   <div class="header-title">
@@ -26,7 +24,6 @@
   <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
 </header>
 
-<!-- Diya Row -->
 <div class="diya-row">
   <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
 </div>
@@ -312,6 +309,10 @@
   <div class="names-grid" id="namesGrid">
     <!-- JS will populate -->
   </div>
+
+  <p style="text-align:center;font-size:12.5px;color:var(--ink-light);margin-top:14px;">
+    <strong id="namesCount">108</strong> नाम · अष्टोत्तर शतनाम
+  </p>
 </div>
 
 <!-- ============================================
@@ -361,7 +362,7 @@
 </div>
 
 <!-- ============================================
-     SECTION 7 — NAMAVALI (108 Names List)
+     SECTION 7 — NAMAVALI (Categories)
 ============================================ -->
 <div class="devta-section">
   <h2><span class="sec-icon">🙏</span> हनुमान जी के अन्य प्रमुख नाम</h2>
@@ -506,7 +507,7 @@
 </div>
 
 <!-- ============================================
-     SECTION 10 — AARTI / STUTI QUICK
+     SECTION 10 — STUTI QUICK
 ============================================ -->
 <div class="devta-section">
   <h2><span class="sec-icon">🙏</span> संक्षिप्त स्तुति</h2>
@@ -544,24 +545,18 @@
   </div>
 </div>
 
-<!-- ============================================
-     SECTION 12 — SHARE
-============================================ -->
 <button class="share-btn" onclick="sharePage()">
   <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
 </button>
 
 </main>
 
-<!-- Floating Hanuman -->
 <div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
 
-<!-- Sankat Modal -->
 <div class="modal-overlay" id="sankatModal">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
     <h3>🚨 संकट मोचन</h3>
-    <p style="text-align:center;font-size:14px;color:var(--ink-soft);margin-bottom:16px;">जब भी संकट में हों, यह मंत्र पढ़ें।</p>
     <div class="mantra-box">
       ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
       <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
@@ -569,10 +564,8 @@
   </div>
 </div>
 
-<!-- Toast -->
-<div class="toast" id="toast">मंत्र कॉपी हो गया 🙏</div>
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
 
-<!-- Bottom Nav -->
 <nav class="bottom-nav">
   <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
   <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
@@ -581,11 +574,10 @@
   <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
 </nav>
 
-<!-- Scripts -->
 <script src="common.js"></script>
 <script>
 /* ============================================
-   108 NAMES
+   108 NAMES — EXACTLY 108 (String Format)
 ============================================ */
 const HANUMAN_108_NAMES = [
   'हनुमान','अंजनीसुत','वायुपुत्र','महावीर','बजरंगबली','संकटमोचन','रामदूत','बालाजी',
@@ -600,11 +592,15 @@ const HANUMAN_108_NAMES = [
   'सुंदर','रूपवान','लावण्य','सौम्य','शांत','क्रोधनाशक','दयालु','करुणासागर',
   'भक्तवत्सल','प्रेम','प्रीति','श्रद्धा','भक्ति','सेवा','समर्पण','निष्ठा',
   'धैर्य','सहनशील','क्षमाशील','संयम','नियम','व्रत','तप','ज्ञान',
-  'वैराग्य','मुक्ति','सिद्धि','निधि','सुख','आनंद','शांति','कल्याण'
+  'वैराग्य','मुक्ति','सिद्धि','निधि','सुख','आनंद','शांति','कल्याण',
+  'अंजनीगर्भसंभूत','वायुतनय','रामेष्ट','फाल्गुनसखा'
 ];
 
-const grid = document.getElementById('namesGrid');
-if (grid) {
+// Render 108 Names Grid
+function renderNames() {
+  const grid = document.getElementById('namesGrid');
+  if (!grid) return;
+  grid.innerHTML = '';
   HANUMAN_108_NAMES.forEach((name, i) => {
     const chip = document.createElement('div');
     chip.className = 'name-chip';
@@ -615,11 +611,17 @@ if (grid) {
     });
     grid.appendChild(chip);
   });
+  // Update count
+  const countEl = document.getElementById('namesCount');
+  if (countEl) countEl.textContent = HANUMAN_108_NAMES.length;
 }
 
-/* ============================================
-   SMOOTH SCROLL FOR NAV CHIPS
-============================================ */
+// Accordion toggle
+function toggleAccordion(el) {
+  el.parentElement.classList.toggle('open');
+}
+
+// Smooth scroll for cat-chips
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', function(e) {
     const href = this.getAttribute('href');
@@ -632,6 +634,12 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
       this.classList.add('active');
     }
   });
+});
+
+// Init
+document.addEventListener('DOMContentLoaded', () => {
+  renderNames();
+  console.log('108 Names Count:', HANUMAN_108_NAMES.length);
 });
 </script>
 </body>
