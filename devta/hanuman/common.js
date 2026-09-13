@@ -1,6 +1,159 @@
 /* ============================================
    HANUMAN SECTION — COMMON JS
+   With Jai Shri Ram Voice on Click
 ============================================ */
+
+/* ============================================
+   JAI SHRI RAM — AUDIO ON CLICK
+============================================ */
+(function() {
+  'use strict';
+  
+  const SOUND_KEY = 'site-sound';
+  const AUDIO_FILE_PATH = 'assets/audio/jai-shri-ram.mp3';
+  const SPEAK_TEXT = 'जय श्री राम';
+  const SPOKE_DELAY = 700;
+  
+  let lastSpokenTime = 0;
+  let audioCache = null;
+  let useAudioFile = false;
+  let hindiVoice = null;
+  
+  // Try to load audio file (optional)
+  function initAudioFile() {
+    try {
+      audioCache = new Audio(AUDIO_FILE_PATH);
+      audioCache.preload = 'auto';
+      audioCache.volume = 0.7;
+      audioCache.addEventListener('canplaythrough', () => {
+        useAudioFile = true;
+      }, { once: true });
+      audioCache.addEventListener('error', () => {
+        useAudioFile = false;
+      }, { once: true });
+    } catch(e) {
+      useAudioFile = false;
+    }
+  }
+  
+  // Load Hindi voice
+  function loadVoices() {
+    if (!('speechSynthesis' in window)) return;
+    const voices = window.speechSynthesis.getVoices();
+    if (voices.length > 0) {
+      hindiVoice = voices.find(v => v.lang === 'hi-IN')
+        || voices.find(v => v.lang.startsWith('hi'))
+        || voices.find(v => v.lang === 'en-IN')
+        || null;
+    }
+  }
+  
+  // Speak using TTS
+  function speakTTS(text) {
+    if (!('speechSynthesis' in window)) return;
+    try {
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'hi-IN';
+      utterance.rate = 0.95;
+      utterance.pitch = 1.05;
+      utterance.volume = 0.7;
+      if (hindiVoice) utterance.voice = hindiVoice;
+      window.speechSynthesis.speak(utterance);
+    } catch(e) {}
+  }
+  
+  // Main speak function
+  function speakJaiShriRam(text) {
+    if (localStorage.getItem(SOUND_KEY) === 'off') return;
+    
+    const now = Date.now();
+    if (now - lastSpokenTime < SPOKE_DELAY) return;
+    lastSpokenTime = now;
+    
+    const t = text || SPEAK_TEXT;
+    
+    // Try audio file first
+    if (useAudioFile && audioCache) {
+      try {
+        audioCache.currentTime = 0;
+        const p = audioCache.play();
+        if (p) p.catch(() => speakTTS(t));
+        return;
+      } catch(e) {}
+    }
+    
+    // Fallback to TTS
+    speakTTS(t);
+  }
+  
+  // Attach to all interactive clicks
+  function handleClick(e) {
+    const target = e.target.closest(
+      'a, button, .hub-card, .cat-chip, .qa-btn, .nav-link, ' +
+      '.card, [onclick], .floating-hanuman, .back-top'
+    );
+    
+    // Skip toggle buttons themselves
+    if (target && (
+      target.id === 'soundToggle' ||
+      target.id === 'darkToggle' ||
+      target.id === 'menuBtn' ||
+      target.classList.contains('modal-close')
+    )) return;
+    
+    if (target) {
+      const customVoice = target.dataset.voice || document.body.dataset.voice;
+      speakJaiShriRam(customVoice);
+    }
+  }
+  
+  // Initialize
+  if ('speechSynthesis' in window) {
+    if (window.speechSynthesis.getVoices().length > 0) {
+      loadVoices();
+    } else {
+      window.speechSynthesis.onvoiceschanged = loadVoices;
+    }
+  }
+  
+  initAudioFile();
+  document.addEventListener('click', handleClick, true);
+  
+  // Expose functions globally
+  window.toggleSiteSound = function() {
+    const current = localStorage.getItem(SOUND_KEY);
+    const newState = current === 'off' ? 'on' : 'off';
+    localStorage.setItem(SOUND_KEY, newState);
+    return newState;
+  };
+  
+  window.isSoundOff = function() {
+    return localStorage.getItem(SOUND_KEY) === 'off';
+  };
+})();
+
+
+/* ===== SOUND TOGGLE (Header Button) ===== */
+function toggleSoundIcon() {
+  const newState = window.toggleSiteSound();
+  const icon = document.getElementById('soundIcon');
+  if (icon) {
+    icon.className = newState === 'off' 
+      ? 'fa-solid fa-volume-xmark' 
+      : 'fa-solid fa-volume-high';
+  }
+  showToast(newState === 'off' ? '🔇 आवाज़ बंद' : '🔊 आवाज़ चालू');
+}
+
+// Initialize sound icon
+document.addEventListener('DOMContentLoaded', () => {
+  const icon = document.getElementById('soundIcon');
+  if (icon && localStorage.getItem('site-sound') === 'off') {
+    icon.className = 'fa-solid fa-volume-xmark';
+  }
+});
+
 
 /* ===== DARK MODE ===== */
 const DARK_KEY = 'hanuman-dark';
@@ -20,6 +173,7 @@ if (darkToggle) {
   });
 }
 
+
 /* ===== PROGRESS BAR ===== */
 const progressBar = document.getElementById('progressBar');
 if (progressBar) {
@@ -37,6 +191,7 @@ if (progressBar) {
   }, {passive:true});
 }
 
+
 /* ===== JAI RAM COUNTER ===== */
 const JAI_KEY = 'jaiRamCount';
 let jaiRamCount = parseInt(localStorage.getItem(JAI_KEY) || '0', 10);
@@ -53,6 +208,7 @@ function chantJaiRam() {
   }
 }
 
+
 /* ===== TOAST ===== */
 let toastTimeout;
 function showToast(msg) {
@@ -63,6 +219,7 @@ function showToast(msg) {
   clearTimeout(toastTimeout);
   toastTimeout = setTimeout(() => t.classList.remove('show'), 2200);
 }
+
 
 /* ===== MODAL ===== */
 function openSankatModal() {
@@ -79,10 +236,12 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeModal('sankatModal');
 });
 
+
 /* ===== ACCORDION ===== */
 function toggleAccordion(el) {
   el.parentElement.classList.toggle('open');
 }
+
 
 /* ===== COPY MANTRA ===== */
 function copyMantra(text) {
@@ -104,11 +263,13 @@ function fallbackCopy(text, done) {
   document.body.removeChild(ta);
 }
 
+
 /* ===== VERSE HIGHLIGHT ===== */
 function highlightVerse(el) {
   el.classList.toggle('highlight');
   if (navigator.vibrate) navigator.vibrate(15);
 }
+
 
 /* ===== SHARE ===== */
 function sharePage() {
@@ -125,10 +286,12 @@ function sharePage() {
   }
 }
 
+
 /* ===== SCROLL TOP ===== */
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
 
 /* ===== DAILY QUOTE ===== */
 const QUOTES = [
@@ -148,6 +311,7 @@ if (quoteEl) {
   const dayIndex = new Date().getDate() % QUOTES.length;
   quoteEl.innerHTML = QUOTES[dayIndex];
 }
+
 
 /* ===== SMOOTH SCROLL FOR CAT-CHIPS ===== */
 document.addEventListener('DOMContentLoaded', () => {
